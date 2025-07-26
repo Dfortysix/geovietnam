@@ -17,9 +17,19 @@ class HomeScreen extends StatelessWidget {
               fit: BoxFit.cover,
             ),
           ),
-          Container(
-            decoration: const BoxDecoration(
-              gradient: AppTheme.backgroundGradient,
+          Positioned.fill(
+            child: Container(
+              decoration: BoxDecoration(
+                gradient: LinearGradient(
+                  begin: Alignment.topCenter,
+                  end: Alignment.bottomCenter,
+                  colors: [
+                    Colors.white.withOpacity(0.65),
+                    Colors.transparent,
+                    AppTheme.primaryOrange.withOpacity(0.18),
+                  ],
+                ),
+              ),
             ),
           ),
           SafeArea(
