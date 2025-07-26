@@ -14,6 +14,12 @@ class GeoVietnamApp extends StatelessWidget {
     return MaterialApp(
       title: 'GeoVietnam - Game Địa Lý Việt Nam',
       theme: AppTheme.lightTheme,
+      builder: (context, child) {
+        return MediaQuery(
+          data: MediaQuery.of(context).copyWith(textScaleFactor: 1.0),
+          child: child!,
+        );
+      },
       home: const HomeScreen(),
       debugShowCheckedModeBanner: false,
     );
