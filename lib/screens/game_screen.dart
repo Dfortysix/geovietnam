@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import '../theme/app_theme.dart';
 import '../widgets/vietnam_map_widget.dart';
-import '../widgets/image_senni_widget.dart';
+import '../widgets/authentic_senni_widget.dart';
 
 class GameScreen extends StatefulWidget {
   const GameScreen({Key? key}) : super(key: key);
@@ -38,7 +38,7 @@ class _GameScreenState extends State<GameScreen> {
 
   @override
   Widget build(BuildContext context) {
-    return ImageSenniHelper.showSenniInScreen(
+    return AuthenticSenniHelper.showSenniInScreen(
       situation: _senniSituation,
       provinceName: _senniProvinceName,
       senniSize: 100,

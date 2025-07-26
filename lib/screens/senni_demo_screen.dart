@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import '../theme/app_theme.dart';
-import '../widgets/image_senni_widget.dart';
+import '../widgets/animated_senni_widget.dart';
 import '../services/senni_service.dart';
 
 class SenniDemoScreen extends StatefulWidget {
@@ -71,7 +71,7 @@ class _SenniDemoScreenState extends State<SenniDemoScreen> {
 
   @override
   Widget build(BuildContext context) {
-    return ImageSenniHelper.showSenniInScreen(
+    return AnimatedSenniHelper.showSenniInScreen(
       situation: _currentSituation,
       provinceName: _currentProvince,
       senniSize: 120,

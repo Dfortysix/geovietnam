@@ -1,16 +1,18 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_animate/flutter_animate.dart';
 import '../theme/app_theme.dart';
-import '../widgets/image_senni_widget.dart';
+import '../widgets/authentic_senni_widget.dart';
 import 'game_screen.dart';
 import 'senni_demo_screen.dart';
+import 'senni_animation_demo_screen.dart';
+import 'authentic_senni_demo_screen.dart';
 
 class HomeScreen extends StatelessWidget {
   const HomeScreen({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
-    return ImageSenniHelper.showSenniInScreen(
+    return AuthenticSenniHelper.showSenniInScreen(
       situation: 'greeting',
       senniSize: 120,
       messageDuration: const Duration(seconds: 5),
@@ -281,6 +283,60 @@ class HomeScreen extends StatelessWidget {
                               duration: 800.ms,
                               delay: 2100.ms,
                             ),
+
+                            const SizedBox(height: 16),
+
+                            _buildGameOption(
+                              context,
+                              icon: Icons.animation,
+                              title: '🎭 Animation Demo',
+                              subtitle: 'Xem tất cả animation sinh động',
+                              gradient: const LinearGradient(
+                                colors: [Colors.orange, Colors.red],
+                              ),
+                              onTap: () {
+                                Navigator.push(
+                                  context,
+                                  MaterialPageRoute(
+                                    builder: (context) => const SenniAnimationDemoScreen(),
+                                  ),
+                                );
+                              },
+                            ).animate().fadeIn(
+                              duration: 800.ms,
+                              delay: 2400.ms,
+                            ).slideX(
+                              begin: 0.3,
+                              duration: 800.ms,
+                              delay: 2400.ms,
+                            ),
+
+                            const SizedBox(height: 16),
+
+                            _buildGameOption(
+                              context,
+                              icon: Icons.face_retouching_natural,
+                              title: '🌸 Authentic Senni',
+                              subtitle: 'Linh vật theo phong cách mascot.txt',
+                              gradient: const LinearGradient(
+                                colors: [Color(0xFFFFB6C1), Color(0xFFFF69B4)],
+                              ),
+                              onTap: () {
+                                Navigator.push(
+                                  context,
+                                  MaterialPageRoute(
+                                    builder: (context) => const AuthenticSenniDemoScreen(),
+                                  ),
+                                );
+                              },
+                            ).animate().fadeIn(
+                              duration: 800.ms,
+                              delay: 2700.ms,
+                            ).slideX(
+                              begin: 0.3,
+                              duration: 800.ms,
+                              delay: 2700.ms,
+                            ),
                             
                             const SizedBox(height: 40),
                             
@@ -311,14 +367,14 @@ class HomeScreen extends StatelessWidget {
                                   ),
                                 ],
                               ),
-                            ).animate().fadeIn(
-                              duration: 800.ms,
-                              delay: 2400.ms,
-                            ).slideY(
-                              begin: 0.3,
-                              duration: 800.ms,
-                              delay: 2400.ms,
-                            ),
+                                        ).animate().fadeIn(
+              duration: 800.ms,
+              delay: 3000.ms,
+            ).slideY(
+              begin: 0.3,
+              duration: 800.ms,
+              delay: 3000.ms,
+            ),
                           ],
                         ),
                       ),
