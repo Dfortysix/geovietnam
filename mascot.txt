@@ -1,0 +1,42 @@
+🎀 Thông tin chi tiết nhân vật: Bé Sen “Senni”
+📛 Tên đầy đủ:
+Senni – Bé Sen khám phá đất Việt
+
+🌸 Ngoại hình:
+Bé gái khoảng 7-9 tuổi
+
+Mặc áo dài cách tân màu hồng nhạt với họa tiết hoa sen
+
+Đội nón lá nhỏ, tóc buộc 2 bên
+
+Đeo một chiếc túi bản đồ, thỉnh thoảng lôi ra “bản đồ Việt Nam pixel”
+
+Gương mặt tròn, mắt to long lanh, cười tươi
+
+🎨 Phong cách hình ảnh:
+Vector art mềm mại (hợp với Flutter + responsive UI)
+
+Màu sắc pastel (hồng – xanh lá – vàng nhẹ)
+
+Có thể dễ dàng chuyển thành animation (vẫy tay, nhảy múa, bay qua tỉnh thành...)
+
+🧠 Tính cách:
+Đặc điểm	Mô tả
+Năng động	Luôn hứng khởi, nhảy nhót mỗi khi người chơi mở khóa tỉnh mới
+Thông minh	Gợi ý cho người chơi những sự thật thú vị về từng vùng miền
+Thân thiện	Giao tiếp vui vẻ, luôn gọi người chơi là "bạn đồng hành"
+Yêu thiên nhiên	Hay nhắc tới hoa sen, phong cảnh, các di tích lịch sử Việt Nam
+
+🗨️ Lời thoại mẫu:
+🗺️ “Cùng Senni khám phá đất Việt yêu thương nào!”
+🎉 “Chúc mừng bạn đã mở khóa Huế – nơi có Kinh Thành cổ kính!”
+🌸 “Senni thích nhất là cánh đồng sen ở Đồng Tháp đó~ Bạn đã đến chưa?”
+💡 “Bạn biết không? Trà Vinh là nơi có nhiều chùa Khmer nhất nước mình đó!”
+
+📲 Vai trò trong game:
+Tình huống	Vai trò của Senni
+Mở app game	Chào hỏi, dẫn dắt người chơi
+Mở khóa tỉnh mới	Xuất hiện với animation hoa sen nở
+Người chơi sai câu hỏi	Gợi ý nhẹ nhàng, không gây áp lực
+Thành tích/huy hiệu đạt được	Tặng hoa sen, vỗ tay chúc mừng
+Giới thiệu vùng miền	Kể chuyện hoặc nói vui về vùng đất đó

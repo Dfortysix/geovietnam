@@ -1,16 +1,22 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_animate/flutter_animate.dart';
 import '../theme/app_theme.dart';
+import '../widgets/image_senni_widget.dart';
 import 'game_screen.dart';
+import 'senni_demo_screen.dart';
 
 class HomeScreen extends StatelessWidget {
   const HomeScreen({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      body: Stack(
-        children: [
+    return ImageSenniHelper.showSenniInScreen(
+      situation: 'greeting',
+      senniSize: 120,
+      messageDuration: const Duration(seconds: 5),
+      child: Scaffold(
+        body: Stack(
+          children: [
           Positioned.fill(
             child: Image.asset(
               'assets/images/background.png',
@@ -249,6 +255,33 @@ class HomeScreen extends StatelessWidget {
                               delay: 1800.ms,
                             ),
                             
+                            const SizedBox(height: 16),
+                            
+                            _buildGameOption(
+                              context,
+                              icon: Icons.face,
+                              title: '🌸 Demo Senni',
+                              subtitle: 'Xem demo linh vật Senni',
+                              gradient: const LinearGradient(
+                                colors: [Colors.pink, Colors.purple],
+                              ),
+                              onTap: () {
+                                Navigator.push(
+                                  context,
+                                  MaterialPageRoute(
+                                    builder: (context) => const SenniDemoScreen(),
+                                  ),
+                                );
+                              },
+                            ).animate().fadeIn(
+                              duration: 800.ms,
+                              delay: 2100.ms,
+                            ).slideX(
+                              begin: 0.3,
+                              duration: 800.ms,
+                              delay: 2100.ms,
+                            ),
+                            
                             const SizedBox(height: 40),
                             
                             // Footer with animation
@@ -280,11 +313,11 @@ class HomeScreen extends StatelessWidget {
                               ),
                             ).animate().fadeIn(
                               duration: 800.ms,
-                              delay: 2100.ms,
+                              delay: 2400.ms,
                             ).slideY(
                               begin: 0.3,
                               duration: 800.ms,
-                              delay: 2100.ms,
+                              delay: 2400.ms,
                             ),
                           ],
                         ),
@@ -297,7 +330,7 @@ class HomeScreen extends StatelessWidget {
           ),
         ],
       ),
-    );
+    ));
   }
 
   Widget _buildGameOption(
