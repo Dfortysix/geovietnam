@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import '../theme/app_theme.dart';
 import '../widgets/vietnam_map_widget.dart';
 
 class GameScreen extends StatefulWidget {
@@ -36,27 +37,28 @@ class _GameScreenState extends State<GameScreen> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text('Game Địa Lý Việt Nam'),
-        backgroundColor: Colors.blue.shade700,
-        foregroundColor: Colors.white,
+        backgroundColor: Colors.transparent,
         elevation: 0,
+        centerTitle: true,
+        title: Text(
+          '🌏 GeoVietnam',
+          style: Theme.of(context).textTheme.titleLarge?.copyWith(
+            color: AppTheme.primaryOrange,
+            fontWeight: FontWeight.bold,
+            letterSpacing: 1.2,
+          ),
+        ),
+        iconTheme: const IconThemeData(color: AppTheme.primaryOrange),
       ),
       body: Container(
-        decoration: BoxDecoration(
-          gradient: LinearGradient(
-            begin: Alignment.topCenter,
-            end: Alignment.bottomCenter,
-            colors: [
-              Colors.blue.shade50,
-              Colors.white,
-            ],
-          ),
+        decoration: const BoxDecoration(
+          gradient: AppTheme.backgroundGradient,
         ),
         child: Column(
           children: [
             // Header với thông tin game
             Container(
-              padding: EdgeInsets.all(16),
+              padding: const EdgeInsets.all(16),
               child: Row(
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 children: [
@@ -64,112 +66,102 @@ class _GameScreenState extends State<GameScreen> {
                     crossAxisAlignment: CrossAxisAlignment.start,
                     children: [
                       Text(
-                        'Câu hỏi ${currentQuestion + 1}/${questions.length}',
-                        style: TextStyle(
-                          fontSize: 16,
+                        'Câu hỏi  {currentQuestion + 1}/${questions.length}',
+                        style: Theme.of(context).textTheme.bodyLarge?.copyWith(
+                          color: AppTheme.textSecondary,
                           fontWeight: FontWeight.w600,
-                          color: Colors.grey.shade700,
                         ),
                       ),
-                      SizedBox(height: 4),
+                      const SizedBox(height: 4),
                       Text(
                         'Điểm: $score',
-                        style: TextStyle(
-                          fontSize: 18,
+                        style: Theme.of(context).textTheme.headlineMedium?.copyWith(
+                          color: AppTheme.primaryOrange,
                           fontWeight: FontWeight.bold,
-                          color: Colors.blue.shade700,
                         ),
                       ),
                     ],
                   ),
                   Container(
-                    padding: EdgeInsets.symmetric(horizontal: 16, vertical: 8),
+                    padding: const EdgeInsets.symmetric(horizontal: 16, vertical: 8),
                     decoration: BoxDecoration(
-                      color: Colors.blue.shade100,
+                      gradient: AppTheme.primaryGradient,
                       borderRadius: BorderRadius.circular(20),
+                      boxShadow: AppTheme.softShadow,
                     ),
                     child: Text(
                       'Level 1',
-                      style: TextStyle(
+                      style: Theme.of(context).textTheme.bodyMedium?.copyWith(
+                        color: Colors.white,
                         fontWeight: FontWeight.w600,
-                        color: Colors.blue.shade700,
                       ),
                     ),
                   ),
                 ],
               ),
             ),
-            
             // Câu hỏi hiện tại
             if (currentQuestion < questions.length)
               Container(
-                margin: EdgeInsets.symmetric(horizontal: 16),
-                padding: EdgeInsets.all(16),
+                margin: const EdgeInsets.symmetric(horizontal: 16),
+                padding: const EdgeInsets.all(16),
                 decoration: BoxDecoration(
-                  color: Colors.white,
-                  borderRadius: BorderRadius.circular(12),
-                  boxShadow: [
-                    BoxShadow(
-                      color: Colors.grey.shade200,
-                      blurRadius: 8,
-                      offset: Offset(0, 2),
-                    ),
-                  ],
+                  gradient: AppTheme.cardGradient,
+                  borderRadius: BorderRadius.circular(16),
+                  boxShadow: AppTheme.softShadow,
                 ),
                 child: Column(
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
                     Text(
                       'Câu hỏi:',
-                      style: TextStyle(
-                        fontSize: 14,
+                      style: Theme.of(context).textTheme.bodyMedium?.copyWith(
+                        color: AppTheme.textSecondary,
                         fontWeight: FontWeight.w600,
-                        color: Colors.grey.shade600,
                       ),
                     ),
-                    SizedBox(height: 8),
+                    const SizedBox(height: 8),
                     Text(
                       questions[currentQuestion]['question'],
-                      style: TextStyle(
-                        fontSize: 18,
+                      style: Theme.of(context).textTheme.titleLarge?.copyWith(
+                        color: AppTheme.textPrimary,
                         fontWeight: FontWeight.w600,
-                        color: Colors.black87,
                       ),
                     ),
                   ],
                 ),
               ),
-            
-            SizedBox(height: 16),
-            
+            const SizedBox(height: 16),
             // Bản đồ Việt Nam
             Expanded(
               child: Container(
-                margin: EdgeInsets.symmetric(horizontal: 16),
+                margin: const EdgeInsets.symmetric(horizontal: 16),
+                decoration: BoxDecoration(
+                  color: Colors.white.withOpacity(0.7),
+                  borderRadius: BorderRadius.circular(20),
+                  boxShadow: AppTheme.softShadow,
+                ),
                 child: VietnamMapWidget(
                   onProvinceTap: _handleProvinceTap,
                   interactive: true,
                 ),
               ),
             ),
-            
-            SizedBox(height: 16),
-            
+            const SizedBox(height: 16),
             // Các lựa chọn
             if (currentQuestion < questions.length)
               Container(
-                margin: EdgeInsets.symmetric(horizontal: 16),
+                margin: const EdgeInsets.symmetric(horizontal: 16),
                 child: Column(
                   children: [
                     Text(
                       'Chọn tỉnh trên bản đồ hoặc chọn từ danh sách:',
-                      style: TextStyle(
-                        fontSize: 14,
+                      style: Theme.of(context).textTheme.bodyMedium?.copyWith(
+                        color: AppTheme.textSecondary,
                         fontWeight: FontWeight.w500,
-                        color: Colors.grey.shade700,
                       ),
                     ),
-                    SizedBox(height: 12),
+                    const SizedBox(height: 12),
                     Wrap(
                       spacing: 8,
                       runSpacing: 8,
@@ -180,40 +172,45 @@ class _GameScreenState extends State<GameScreen> {
                   ],
                 ),
               ),
-            
-            SizedBox(height: 16),
-            
+            const SizedBox(height: 16),
             // Nút điều khiển
             Container(
-              padding: EdgeInsets.all(16),
+              padding: const EdgeInsets.all(16),
               child: Row(
                 children: [
                   Expanded(
                     child: ElevatedButton(
                       onPressed: currentQuestion > 0 ? _previousQuestion : null,
                       style: ElevatedButton.styleFrom(
-                        backgroundColor: Colors.grey.shade300,
-                        foregroundColor: Colors.grey.shade700,
-                        padding: EdgeInsets.symmetric(vertical: 12),
+                        backgroundColor: AppTheme.buttonSecondary,
+                        foregroundColor: AppTheme.textPrimary,
+                        padding: const EdgeInsets.symmetric(vertical: 12),
                         shape: RoundedRectangleBorder(
-                          borderRadius: BorderRadius.circular(8),
+                          borderRadius: BorderRadius.circular(12),
                         ),
+                        elevation: 0,
                       ),
-                      child: Text('Câu trước'),
+                      child: const Text('Câu trước'),
                     ),
                   ),
-                  SizedBox(width: 16),
+                  const SizedBox(width: 16),
                   Expanded(
                     child: ElevatedButton(
                       onPressed: currentQuestion < questions.length - 1 
                           ? _nextQuestion 
                           : _finishGame,
                       style: ElevatedButton.styleFrom(
-                        backgroundColor: Colors.blue.shade600,
+                        backgroundColor: AppTheme.primaryOrange,
                         foregroundColor: Colors.white,
-                        padding: EdgeInsets.symmetric(vertical: 12),
+                        padding: const EdgeInsets.symmetric(vertical: 12),
                         shape: RoundedRectangleBorder(
-                          borderRadius: BorderRadius.circular(8),
+                          borderRadius: BorderRadius.circular(12),
+                        ),
+                        elevation: 4,
+                        shadowColor: AppTheme.primaryOrange.withOpacity(0.3),
+                        textStyle: Theme.of(context).textTheme.titleLarge?.copyWith(
+                          color: Colors.white,
+                          fontWeight: FontWeight.bold,
                         ),
                       ),
                       child: Text(
@@ -235,30 +232,38 @@ class _GameScreenState extends State<GameScreen> {
   Widget _buildOptionButton(String option) {
     bool isSelected = selectedProvince == option;
     bool isCorrect = option == questions[currentQuestion]['answer'];
-    
+    Color bgColor = Colors.white;
+    Color borderColor = AppTheme.lightOrange;
+    Color textColor = AppTheme.textPrimary;
+    if (isSelected) {
+      if (isCorrect) {
+        bgColor = AppTheme.buttonSuccess.withOpacity(0.15);
+        borderColor = AppTheme.buttonSuccess;
+        textColor = AppTheme.buttonSuccess;
+      } else {
+        bgColor = AppTheme.buttonError.withOpacity(0.15);
+        borderColor = AppTheme.buttonError;
+        textColor = AppTheme.buttonError;
+      }
+    }
     return GestureDetector(
       onTap: () => _selectOption(option),
       child: Container(
-        padding: EdgeInsets.symmetric(horizontal: 16, vertical: 8),
+        padding: const EdgeInsets.symmetric(horizontal: 16, vertical: 8),
         decoration: BoxDecoration(
-          color: isSelected 
-              ? (isCorrect ? Colors.green.shade100 : Colors.red.shade100)
-              : Colors.white,
+          color: bgColor,
           border: Border.all(
-            color: isSelected 
-                ? (isCorrect ? Colors.green.shade400 : Colors.red.shade400)
-                : Colors.grey.shade300,
+            color: borderColor,
             width: isSelected ? 2 : 1,
           ),
           borderRadius: BorderRadius.circular(20),
+          boxShadow: isSelected ? AppTheme.softShadow : [],
         ),
         child: Text(
           option,
-          style: TextStyle(
+          style: Theme.of(context).textTheme.bodyLarge?.copyWith(
             fontWeight: isSelected ? FontWeight.w600 : FontWeight.normal,
-            color: isSelected 
-                ? (isCorrect ? Colors.green.shade700 : Colors.red.shade700)
-                : Colors.black87,
+            color: textColor,
           ),
         ),
       ),
