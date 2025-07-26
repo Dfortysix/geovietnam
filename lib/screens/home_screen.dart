@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_animate/flutter_animate.dart';
+import '../theme/app_theme.dart';
 import 'game_screen.dart';
 
 class HomeScreen extends StatelessWidget {
@@ -8,46 +10,72 @@ class HomeScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       body: Container(
-        decoration: BoxDecoration(
-          gradient: LinearGradient(
-            begin: Alignment.topCenter,
-            end: Alignment.bottomCenter,
-            colors: [
-              Colors.blue.shade700,
-              Colors.blue.shade500,
-              Colors.blue.shade300,
-            ],
-          ),
+        decoration: const BoxDecoration(
+          gradient: AppTheme.backgroundGradient,
         ),
         child: SafeArea(
           child: Column(
             children: [
-              // Header
+              // Header with animated elements
               Container(
-                padding: EdgeInsets.all(24),
+                padding: const EdgeInsets.all(24),
                 child: Column(
                   children: [
-                    Icon(
-                      Icons.map,
-                      size: 80,
-                      color: Colors.white,
-                    ),
-                    SizedBox(height: 16),
-                    Text(
-                      'GeoVietnam',
-                      style: TextStyle(
-                        fontSize: 32,
-                        fontWeight: FontWeight.bold,
+                    // Animated globe icon
+                    Container(
+                      padding: const EdgeInsets.all(20),
+                      decoration: BoxDecoration(
+                        gradient: AppTheme.primaryGradient,
+                        borderRadius: BorderRadius.circular(50),
+                        boxShadow: AppTheme.glowShadow,
+                      ),
+                      child: const Icon(
+                        Icons.public,
+                        size: 60,
                         color: Colors.white,
                       ),
+                    ).animate().scale(
+                      duration: 1.2.seconds,
+                      curve: Curves.elasticOut,
+                    ).then().shimmer(
+                      duration: 2.seconds,
+                      color: Colors.white.withOpacity(0.3),
                     ),
-                    SizedBox(height: 8),
+                    
+                    const SizedBox(height: 24),
+                    
+                    // Title with animation
                     Text(
-                      'Game Địa Lý Việt Nam',
-                      style: TextStyle(
-                        fontSize: 18,
-                        color: Colors.white.withOpacity(0.9),
+                      '🌏 GeoVietnam',
+                      style: Theme.of(context).textTheme.displayLarge?.copyWith(
+                        background: Paint()
+                          ..shader = AppTheme.primaryGradient.createShader(
+                            const Rect.fromLTWH(0, 0, 200, 70),
+                          ),
                       ),
+                    ).animate().fadeIn(
+                      duration: 800.ms,
+                      delay: 300.ms,
+                    ).slideY(
+                      begin: 0.3,
+                      duration: 800.ms,
+                      delay: 300.ms,
+                    ),
+                    
+                    const SizedBox(height: 12),
+                    
+                    Text(
+                      '🎮 Khám phá địa lý Việt Nam',
+                      style: Theme.of(context).textTheme.headlineMedium?.copyWith(
+                        color: AppTheme.textSecondary,
+                      ),
+                    ).animate().fadeIn(
+                      duration: 800.ms,
+                      delay: 600.ms,
+                    ).slideY(
+                      begin: 0.3,
+                      duration: 800.ms,
+                      delay: 600.ms,
                     ),
                   ],
                 ),
@@ -57,101 +85,187 @@ class HomeScreen extends StatelessWidget {
               Expanded(
                 child: Container(
                   width: double.infinity,
-                  decoration: BoxDecoration(
-                    color: Colors.white,
+                  decoration: const BoxDecoration(
+                    color: AppTheme.cardBackground,
                     borderRadius: BorderRadius.only(
                       topLeft: Radius.circular(30),
                       topRight: Radius.circular(30),
                     ),
+                    boxShadow: [
+                      BoxShadow(
+                        color: AppTheme.cardShadow,
+                        blurRadius: 20,
+                        offset: Offset(0, -5),
+                      ),
+                    ],
                   ),
                   child: Padding(
-                    padding: EdgeInsets.all(24),
+                    padding: const EdgeInsets.all(24),
                     child: SingleChildScrollView(
                       child: Column(
                         children: [
-                          // Welcome text
-                          Text(
-                            'Chào mừng bạn đến với Game Địa Lý Việt Nam!',
-                            style: TextStyle(
-                              fontSize: 20,
-                              fontWeight: FontWeight.w600,
-                              color: Colors.grey.shade800,
+                          // Welcome text with animation
+                          Container(
+                            padding: const EdgeInsets.all(20),
+                            decoration: BoxDecoration(
+                              gradient: AppTheme.cardGradient,
+                              borderRadius: BorderRadius.circular(20),
+                              boxShadow: AppTheme.softShadow,
                             ),
-                            textAlign: TextAlign.center,
-                          ),
-                          SizedBox(height: 16),
-                          Text(
-                            'Hãy thử sức với những câu hỏi thú vị về địa lý Việt Nam',
-                            style: TextStyle(
-                              fontSize: 16,
-                              color: Colors.grey.shade600,
+                            child: Column(
+                              children: [
+                                Text(
+                                  '🌟 Chào mừng bạn!',
+                                  style: Theme.of(context).textTheme.headlineLarge?.copyWith(
+                                    color: AppTheme.textPrimary,
+                                  ),
+                                  textAlign: TextAlign.center,
+                                ),
+                                const SizedBox(height: 12),
+                                Text(
+                                  'Hãy thử sức với những câu hỏi thú vị về địa lý Việt Nam',
+                                  style: Theme.of(context).textTheme.bodyLarge?.copyWith(
+                                    color: AppTheme.textSecondary,
+                                  ),
+                                  textAlign: TextAlign.center,
+                                ),
+                              ],
                             ),
-                            textAlign: TextAlign.center,
+                          ).animate().fadeIn(
+                            duration: 800.ms,
+                            delay: 900.ms,
+                          ).slideY(
+                            begin: 0.3,
+                            duration: 800.ms,
+                            delay: 900.ms,
                           ),
                           
-                          SizedBox(height: 40),
+                          const SizedBox(height: 40),
                           
-                          // Game options
+                          // Game options with animations
                           _buildGameOption(
                             context,
                             icon: Icons.play_arrow,
-                            title: 'Bắt đầu chơi',
+                            title: '🚀 Bắt đầu chơi',
                             subtitle: 'Tham gia ngay vào cuộc phiêu lưu địa lý',
+                            gradient: AppTheme.primaryGradient,
                             onTap: () {
                               Navigator.push(
                                 context,
                                 MaterialPageRoute(
-                                  builder: (context) => GameScreen(),
+                                  builder: (context) => const GameScreen(),
                                 ),
                               );
                             },
+                          ).animate().fadeIn(
+                            duration: 800.ms,
+                            delay: 1200.ms,
+                          ).slideX(
+                            begin: 0.3,
+                            duration: 800.ms,
+                            delay: 1200.ms,
                           ),
                           
-                          SizedBox(height: 16),
+                          const SizedBox(height: 16),
                           
                           _buildGameOption(
                             context,
                             icon: Icons.leaderboard,
-                            title: 'Bảng xếp hạng',
+                            title: '🏆 Bảng xếp hạng',
                             subtitle: 'Xem điểm số cao nhất',
+                            gradient: const LinearGradient(
+                              colors: [AppTheme.secondaryYellow, AppTheme.lightOrange],
+                            ),
                             onTap: () {
                               // TODO: Implement leaderboard
                               ScaffoldMessenger.of(context).showSnackBar(
                                 SnackBar(
-                                  content: Text('Tính năng đang phát triển'),
-                                  backgroundColor: Colors.orange,
+                                  content: const Text('Tính năng đang phát triển'),
+                                  backgroundColor: AppTheme.primaryOrange,
+                                  behavior: SnackBarBehavior.floating,
+                                  shape: RoundedRectangleBorder(
+                                    borderRadius: BorderRadius.circular(12),
+                                  ),
                                 ),
                               );
                             },
+                          ).animate().fadeIn(
+                            duration: 800.ms,
+                            delay: 1500.ms,
+                          ).slideX(
+                            begin: 0.3,
+                            duration: 800.ms,
+                            delay: 1500.ms,
                           ),
                           
-                          SizedBox(height: 16),
+                          const SizedBox(height: 16),
                           
                           _buildGameOption(
                             context,
                             icon: Icons.settings,
-                            title: 'Cài đặt',
+                            title: '⚙️ Cài đặt',
                             subtitle: 'Tùy chỉnh game theo ý thích',
+                            gradient: const LinearGradient(
+                              colors: [AppTheme.lightOrange, AppTheme.accentOrange],
+                            ),
                             onTap: () {
                               // TODO: Implement settings
                               ScaffoldMessenger.of(context).showSnackBar(
                                 SnackBar(
-                                  content: Text('Tính năng đang phát triển'),
-                                  backgroundColor: Colors.orange,
+                                  content: const Text('Tính năng đang phát triển'),
+                                  backgroundColor: AppTheme.primaryOrange,
+                                  behavior: SnackBarBehavior.floating,
+                                  shape: RoundedRectangleBorder(
+                                    borderRadius: BorderRadius.circular(12),
+                                  ),
                                 ),
                               );
                             },
+                          ).animate().fadeIn(
+                            duration: 800.ms,
+                            delay: 1800.ms,
+                          ).slideX(
+                            begin: 0.3,
+                            duration: 800.ms,
+                            delay: 1800.ms,
                           ),
                           
-                          SizedBox(height: 40),
+                          const SizedBox(height: 40),
                           
-                          // Footer
-                          Text(
-                            'Phiên bản 1.0.0',
-                            style: TextStyle(
-                              fontSize: 14,
-                              color: Colors.grey.shade500,
+                          // Footer with animation
+                          Container(
+                            padding: const EdgeInsets.all(16),
+                            decoration: BoxDecoration(
+                              color: AppTheme.lightOrange.withOpacity(0.1),
+                              borderRadius: BorderRadius.circular(16),
+                              border: Border.all(
+                                color: AppTheme.lightOrange.withOpacity(0.3),
+                              ),
                             ),
+                            child: Row(
+                              mainAxisAlignment: MainAxisAlignment.center,
+                              children: [
+                                Icon(
+                                  Icons.info_outline,
+                                  color: AppTheme.textSecondary,
+                                  size: 16,
+                                ),
+                                const SizedBox(width: 8),
+                                Text(
+                                  'Phiên bản 1.0.0',
+                                  style: Theme.of(context).textTheme.bodyMedium?.copyWith(
+                                    color: AppTheme.textSecondary,
+                                  ),
+                                ),
+                              ],
+                            ),
+                          ).animate().fadeIn(
+                            duration: 800.ms,
+                            delay: 2100.ms,
+                          ).slideY(
+                            begin: 0.3,
+                            duration: 800.ms,
+                            delay: 2100.ms,
                           ),
                         ],
                       ),
@@ -172,59 +286,55 @@ class HomeScreen extends StatelessWidget {
     required String title,
     required String subtitle,
     required VoidCallback onTap,
+    LinearGradient? gradient,
   }) {
     return GestureDetector(
       onTap: onTap,
       child: Container(
-        padding: EdgeInsets.all(20),
+        padding: const EdgeInsets.all(20),
         decoration: BoxDecoration(
-          color: Colors.white,
-          borderRadius: BorderRadius.circular(16),
-          boxShadow: [
-            BoxShadow(
-              color: Colors.grey.shade200,
-              blurRadius: 10,
-              offset: Offset(0, 4),
-            ),
-          ],
+          gradient: gradient ?? const LinearGradient(
+            colors: [AppTheme.cardBackground, AppTheme.cardBackground],
+          ),
+          borderRadius: BorderRadius.circular(20),
+          boxShadow: AppTheme.softShadow,
           border: Border.all(
-            color: Colors.grey.shade100,
+            color: AppTheme.lightOrange.withOpacity(0.3),
             width: 1,
           ),
         ),
         child: Row(
           children: [
             Container(
-              padding: EdgeInsets.all(12),
+              padding: const EdgeInsets.all(12),
               decoration: BoxDecoration(
-                color: Colors.blue.shade50,
+                gradient: gradient ?? AppTheme.primaryGradient,
                 borderRadius: BorderRadius.circular(12),
+                boxShadow: AppTheme.softShadow,
               ),
               child: Icon(
                 icon,
-                color: Colors.blue.shade600,
+                color: Colors.white,
                 size: 24,
               ),
             ),
-            SizedBox(width: 16),
+            const SizedBox(width: 16),
             Expanded(
               child: Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
                   Text(
                     title,
-                    style: TextStyle(
-                      fontSize: 18,
+                    style: Theme.of(context).textTheme.titleLarge?.copyWith(
+                      color: AppTheme.textPrimary,
                       fontWeight: FontWeight.w600,
-                      color: Colors.grey.shade800,
                     ),
                   ),
-                  SizedBox(height: 4),
+                  const SizedBox(height: 4),
                   Text(
                     subtitle,
-                    style: TextStyle(
-                      fontSize: 14,
-                      color: Colors.grey.shade600,
+                    style: Theme.of(context).textTheme.bodyMedium?.copyWith(
+                      color: AppTheme.textSecondary,
                     ),
                   ),
                 ],
@@ -232,7 +342,7 @@ class HomeScreen extends StatelessWidget {
             ),
             Icon(
               Icons.arrow_forward_ios,
-              color: Colors.grey.shade400,
+              color: AppTheme.textLight,
               size: 16,
             ),
           ],

@@ -39,7 +39,6 @@ dependencies:
   audioplayers: ^5.2.1
   shared_preferences: ^2.2.2
   provider: ^6.1.1
-  flutter_animate: ^4.5.0
   
   # SVG and Map dependencies
   flutter_svg: ^2.0.9
@@ -47,6 +46,12 @@ dependencies:
   # Additional utilities
   xml: ^6.5.0
   path_provider: ^2.1.2
+  
+  # UI Enhancement
+  google_fonts: ^6.1.0
+  flutter_animate: ^4.5.0
+  lottie: ^3.0.0
+  shimmer: ^3.0.0
 
 dev_dependencies:
   flutter_test:

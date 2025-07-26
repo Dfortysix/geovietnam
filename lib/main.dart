@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'theme/app_theme.dart';
 import 'screens/home_screen.dart';
 
 void main() {
@@ -12,14 +13,7 @@ class GeoVietnamApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       title: 'GeoVietnam - Game Địa Lý Việt Nam',
-      theme: ThemeData(
-        colorScheme: ColorScheme.fromSeed(
-          seedColor: Colors.blue,
-          brightness: Brightness.light,
-        ),
-        useMaterial3: true,
-        fontFamily: 'Roboto',
-      ),
+      theme: AppTheme.lightTheme,
       home: const HomeScreen(),
       debugShowCheckedModeBanner: false,
     );
