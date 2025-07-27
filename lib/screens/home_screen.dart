@@ -6,6 +6,8 @@ import 'game_screen.dart';
 import 'senni_demo_screen.dart';
 import 'senni_animation_demo_screen.dart';
 import 'authentic_senni_demo_screen.dart';
+import 'senni_preview_screen.dart';
+
 
 class HomeScreen extends StatelessWidget {
   const HomeScreen({Key? key}) : super(key: key);
@@ -369,11 +371,11 @@ class HomeScreen extends StatelessWidget {
                               ),
                                         ).animate().fadeIn(
               duration: 800.ms,
-              delay: 3000.ms,
+              delay: 4500.ms,
             ).slideY(
               begin: 0.3,
               duration: 800.ms,
-              delay: 3000.ms,
+              delay: 4500.ms,
             ),
                           ],
                         ),
