@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_animate/flutter_animate.dart';
 import '../theme/app_theme.dart';
-import '../widgets/vietnam_map_widget.dart';
+import '../widgets/svg_canvas_vietnam_map_widget.dart';
 import '../services/game_progress_service.dart';
 import '../models/game_progress.dart';
 import '../models/province.dart';
@@ -184,7 +184,7 @@ class _MapExplorationScreenState extends State<MapExplorationScreen> with Ticker
                       ),
                       child: ClipRRect(
                         borderRadius: BorderRadius.circular(16),
-                        child: VietnamMapWidget(
+                        child: SvgCanvasVietnamMapWidget(
                           onProvinceTap: _onProvinceTap,
                           unlockedProvinces: _gameProgress != null 
                               ? Map.fromEntries(
