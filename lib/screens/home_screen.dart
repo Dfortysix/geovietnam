@@ -1,13 +1,60 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_animate/flutter_animate.dart';
 import '../theme/app_theme.dart';
+import '../services/game_progress_service.dart';
+import '../models/game_progress.dart';
 import 'game_screen.dart';
+import 'map_exploration_screen.dart';
+import 'progress_screen.dart';
 
-class HomeScreen extends StatelessWidget {
+class HomeScreen extends StatefulWidget {
   const HomeScreen({Key? key}) : super(key: key);
 
   @override
+  State<HomeScreen> createState() => _HomeScreenState();
+}
+
+class _HomeScreenState extends State<HomeScreen> {
+  GameProgress? _gameProgress;
+  bool _isLoading = true;
+
+  @override
+  void initState() {
+    super.initState();
+    _loadGameProgress();
+  }
+
+  Future<void> _loadGameProgress() async {
+    try {
+      final progress = await GameProgressService.getCurrentProgress();
+      setState(() {
+        _gameProgress = progress;
+        _isLoading = false;
+      });
+    } catch (e) {
+      setState(() {
+        _isLoading = false;
+      });
+    }
+  }
+
+  @override
   Widget build(BuildContext context) {
+    if (_isLoading) {
+      return Scaffold(
+        body: Container(
+          decoration: const BoxDecoration(
+            gradient: AppTheme.backgroundGradient,
+          ),
+          child: const Center(
+            child: CircularProgressIndicator(
+              color: AppTheme.primaryOrange,
+            ),
+          ),
+        ),
+      );
+    }
+
     return Scaffold(
       body: Stack(
         children: [
@@ -35,7 +82,7 @@ class HomeScreen extends StatelessWidget {
           SafeArea(
             child: Column(
               children: [
-                // Header with animated elements
+                // Header với thông tin game
                 Container(
                   padding: const EdgeInsets.all(24),
                   child: Column(
@@ -63,7 +110,7 @@ class HomeScreen extends StatelessWidget {
                       
                       const SizedBox(height: 24),
                       
-                      // Title with animation
+                      // Title với animation
                       Text(
                         '🌏 GeoVietnam',
                         style: Theme.of(context).textTheme.displayLarge?.copyWith(
@@ -96,6 +143,74 @@ class HomeScreen extends StatelessWidget {
                         duration: 800.ms,
                         delay: 600.ms,
                       ),
+
+                      const SizedBox(height: 20),
+
+                      // Progress indicator
+                      if (_gameProgress != null) ...[
+                        Container(
+                          padding: const EdgeInsets.all(16),
+                          decoration: BoxDecoration(
+                            color: Colors.white.withOpacity(0.9),
+                            borderRadius: BorderRadius.circular(16),
+                            boxShadow: AppTheme.softShadow,
+                          ),
+                          child: Column(
+                            children: [
+                              Row(
+                                mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                                children: [
+                                  Text(
+                                    'Tiến độ khám phá',
+                                    style: Theme.of(context).textTheme.titleMedium?.copyWith(
+                                      color: AppTheme.textPrimary,
+                                      fontWeight: FontWeight.w600,
+                                    ),
+                                  ),
+                                  Text(
+                                    '${_gameProgress!.unlockedCount}/${_gameProgress!.provinces.length}',
+                                    style: Theme.of(context).textTheme.titleMedium?.copyWith(
+                                      color: AppTheme.primaryOrange,
+                                      fontWeight: FontWeight.bold,
+                                    ),
+                                  ),
+                                ],
+                              ),
+                              const SizedBox(height: 8),
+                              LinearProgressIndicator(
+                                value: _gameProgress!.completionPercentage / 100,
+                                backgroundColor: AppTheme.lightOrange.withOpacity(0.3),
+                                valueColor: const AlwaysStoppedAnimation<Color>(AppTheme.primaryOrange),
+                                minHeight: 8,
+                                borderRadius: BorderRadius.circular(4),
+                              ),
+                              const SizedBox(height: 12),
+                              Row(
+                                mainAxisAlignment: MainAxisAlignment.spaceAround,
+                                children: [
+                                  _buildStatItem(
+                                    icon: Icons.star,
+                                    label: 'Điểm số',
+                                    value: '${_gameProgress!.totalScore}',
+                                  ),
+                                  _buildStatItem(
+                                    icon: Icons.local_fire_department,
+                                    label: 'Streak',
+                                    value: '${_gameProgress!.dailyStreak} ngày',
+                                  ),
+                                ],
+                              ),
+                            ],
+                          ),
+                        ).animate().fadeIn(
+                          duration: 800.ms,
+                          delay: 900.ms,
+                        ).slideY(
+                          begin: 0.3,
+                          duration: 800.ms,
+                          delay: 900.ms,
+                        ),
+                      ],
                     ],
                   ),
                 ),
@@ -109,8 +224,8 @@ class HomeScreen extends StatelessWidget {
                         _buildGameOption(
                           context,
                           icon: Icons.play_arrow,
-                          title: '🎯 Bắt đầu chơi',
-                          subtitle: 'Khám phá các tỉnh thành Việt Nam',
+                          title: '🎯 Daily Challenge',
+                          subtitle: 'Hoàn thành 7 câu hỏi để mở khóa khu vực mới',
                           gradient: AppTheme.primaryGradient,
                           onTap: () {
                             Navigator.push(
@@ -118,15 +233,42 @@ class HomeScreen extends StatelessWidget {
                               MaterialPageRoute(
                                 builder: (context) => const GameScreen(),
                               ),
+                            ).then((_) => _loadGameProgress());
+                          },
+                        ).animate().fadeIn(
+                          duration: 800.ms,
+                          delay: 1200.ms,
+                        ).slideX(
+                          begin: 0.3,
+                          duration: 800.ms,
+                          delay: 1200.ms,
+                        ),
+                        
+                        const SizedBox(height: 16),
+                        
+                        _buildGameOption(
+                          context,
+                          icon: Icons.map,
+                          title: '🗺️ Khám phá bản đồ',
+                          subtitle: 'Xem các khu vực đã mở khóa và thông tin chi tiết',
+                          gradient: const LinearGradient(
+                            colors: [AppTheme.secondaryYellow, AppTheme.lightOrange],
+                          ),
+                          onTap: () {
+                            Navigator.push(
+                              context,
+                              MaterialPageRoute(
+                                builder: (context) => const MapExplorationScreen(),
+                              ),
                             );
                           },
                         ).animate().fadeIn(
                           duration: 800.ms,
-                          delay: 900.ms,
+                          delay: 1500.ms,
                         ).slideX(
                           begin: 0.3,
                           duration: 800.ms,
-                          delay: 900.ms,
+                          delay: 1500.ms,
                         ),
                         
                         const SizedBox(height: 16),
@@ -134,68 +276,31 @@ class HomeScreen extends StatelessWidget {
                         _buildGameOption(
                           context,
                           icon: Icons.leaderboard,
-                          title: '🏆 Bảng xếp hạng',
-                          subtitle: 'Xem điểm số cao nhất',
-                          gradient: const LinearGradient(
-                            colors: [AppTheme.secondaryYellow, AppTheme.lightOrange],
-                          ),
-                          onTap: () {
-                            // TODO: Implement leaderboard
-                            ScaffoldMessenger.of(context).showSnackBar(
-                              SnackBar(
-                                content: const Text('Tính năng đang phát triển'),
-                                backgroundColor: AppTheme.primaryOrange,
-                                behavior: SnackBarBehavior.floating,
-                                shape: RoundedRectangleBorder(
-                                  borderRadius: BorderRadius.circular(12),
-                                ),
-                              ),
-                            );
-                          },
-                        ).animate().fadeIn(
-                          duration: 800.ms,
-                          delay: 1200.ms,
-                        ).slideX(
-                          begin: 0.3,
-                          duration: 800.ms,
-                          delay: 1200.ms,
-                        ),
-                        
-                        const SizedBox(height: 16),
-                        
-                        _buildGameOption(
-                          context,
-                          icon: Icons.settings,
-                          title: '⚙️ Cài đặt',
-                          subtitle: 'Tùy chỉnh game theo ý thích',
+                          title: '🏆 Tiến độ & Thành tích',
+                          subtitle: 'Xem thống kê chi tiết và thành tích của bạn',
                           gradient: const LinearGradient(
                             colors: [AppTheme.lightOrange, AppTheme.accentOrange],
                           ),
                           onTap: () {
-                            // TODO: Implement settings
-                            ScaffoldMessenger.of(context).showSnackBar(
-                              SnackBar(
-                                content: const Text('Tính năng đang phát triển'),
-                                backgroundColor: AppTheme.primaryOrange,
-                                behavior: SnackBarBehavior.floating,
-                                shape: RoundedRectangleBorder(
-                                  borderRadius: BorderRadius.circular(12),
-                                ),
+                            Navigator.push(
+                              context,
+                              MaterialPageRoute(
+                                builder: (context) => const ProgressScreen(),
                               ),
                             );
                           },
                         ).animate().fadeIn(
                           duration: 800.ms,
-                          delay: 1500.ms,
+                          delay: 1800.ms,
                         ).slideX(
                           begin: 0.3,
                           duration: 800.ms,
-                          delay: 1500.ms,
+                          delay: 1800.ms,
                         ),
 
                         const SizedBox(height: 40),
                         
-                        // Footer with animation
+                        // Footer với animation
                         Container(
                           padding: const EdgeInsets.all(16),
                           decoration: BoxDecoration(
@@ -215,7 +320,7 @@ class HomeScreen extends StatelessWidget {
                               ),
                               const SizedBox(width: 8),
                               Text(
-                                'Phiên bản 1.0.0',
+                                'Phiên bản 1.0.0 - Hệ thống Unlock Daily',
                                 style: Theme.of(context).textTheme.bodyMedium?.copyWith(
                                   color: AppTheme.textSecondary,
                                 ),
@@ -224,11 +329,11 @@ class HomeScreen extends StatelessWidget {
                           ),
                         ).animate().fadeIn(
                           duration: 800.ms,
-                          delay: 1800.ms,
+                          delay: 2100.ms,
                         ).slideY(
                           begin: 0.3,
                           duration: 800.ms,
-                          delay: 1800.ms,
+                          delay: 2100.ms,
                         ),
                       ],
                     ),
@@ -239,6 +344,36 @@ class HomeScreen extends StatelessWidget {
           ),
         ],
       ),
+    );
+  }
+
+  Widget _buildStatItem({
+    required IconData icon,
+    required String label,
+    required String value,
+  }) {
+    return Column(
+      children: [
+        Icon(
+          icon,
+          color: AppTheme.primaryOrange,
+          size: 24,
+        ),
+        const SizedBox(height: 4),
+        Text(
+          value,
+          style: Theme.of(context).textTheme.titleMedium?.copyWith(
+            color: AppTheme.textPrimary,
+            fontWeight: FontWeight.bold,
+          ),
+        ),
+        Text(
+          label,
+          style: Theme.of(context).textTheme.bodySmall?.copyWith(
+            color: AppTheme.textSecondary,
+          ),
+        ),
+      ],
     );
   }
 
