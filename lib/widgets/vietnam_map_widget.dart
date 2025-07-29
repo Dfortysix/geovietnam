@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
-import 'dart:convert';
+import 'dart:math' as math;
+import 'dart:async';
+import '../services/svg_path_service.dart';
 
 class VietnamMapWidget extends StatefulWidget {
   final Function(String)? onProvinceTap;
@@ -9,20 +11,36 @@ class VietnamMapWidget extends StatefulWidget {
   final bool interactive;
 
   const VietnamMapWidget({
-    Key? key,
+    super.key,
     this.onProvinceTap,
     this.provinceColors,
     this.unlockedProvinces,
     this.interactive = true,
-  }) : super(key: key);
+  });
 
   @override
   State<VietnamMapWidget> createState() => _VietnamMapWidgetState();
 }
 
-class _VietnamMapWidgetState extends State<VietnamMapWidget> {
+class _VietnamMapWidgetState extends State<VietnamMapWidget> with TickerProviderStateMixin {
   String? selectedProvince;
   String? hoveredProvince;
+  double _scale = 1.0;
+  Offset _offset = Offset.zero;
+  Offset? _startingFocalPoint;
+  double? _startingScale;
+  Offset? _startingOffset;
+  
+  // Cache cho SVG để tránh rebuild
+  late final SvgPicture _svgPicture;
+  
+  // Animation controller cho smooth transitions
+  late final AnimationController _animationController;
+  late final Animation<double> _fadeAnimation;
+  
+  // Debounce cho hover để tránh lag
+  Timer? _hoverTimer;
+  
   Map<String, Color> defaultColors = {
     'Ha Noi': Colors.red.shade300,
     'Ho Chi Minh': Colors.blue.shade300,
@@ -52,6 +70,14 @@ class _VietnamMapWidgetState extends State<VietnamMapWidget> {
     'An Giang': Colors.indigo.shade300,
     'Truong Sa': Colors.cyan.shade300,
     'Hoang Sa': Colors.lime.shade300,
+    'Thai Nguyen': Colors.deepOrange.shade300,
+    'Thanh Hoa': Colors.brown.shade300,
+    'Hue': Colors.pink.shade300,
+    'Dong Thap': Colors.amber.shade300,
+    'Vinh Long': Colors.lightGreen.shade300,
+    'Phu Tho': Colors.deepPurple.shade300,
+    'Tuyen Quang': Colors.blueGrey.shade300,
+    'Lao Cai': Colors.lightBlue.shade300,
   };
 
   // Danh sách các tỉnh có thể tương tác
@@ -61,14 +87,63 @@ class _VietnamMapWidgetState extends State<VietnamMapWidget> {
     'Gia Lai', 'Ha Tinh', 'Lai Chau', 'Lam Dong', 'Lang Son',
     'Nghe An', 'Ninh Binh', 'Khanh Hoa', 'Dak Lak', 'Quang Ngai',
     'Quang Ninh', 'Quang Tri', 'Son La', 'Tay Ninh', 'Hung Yen',
-    'An Giang', 'Truong Sa', 'Hoang Sa'
+    'An Giang', 'Truong Sa', 'Hoang Sa', 'Thai Nguyen', 'Thanh Hoa',
+    'Hue', 'Dong Thap', 'Vinh Long', 'Phu Tho', 'Tuyen Quang', 'Lao Cai'
   ];
+
+  @override
+  void initState() {
+    super.initState();
+    
+    // Initialize SVG Path Service
+    _initializeSvgPathService();
+    
+    // Cache SVG picture
+    _svgPicture = SvgPicture.asset(
+      'assets/svg/vietnam_map_split_new.svg',
+      width: 800,
+      height: 600,
+      fit: BoxFit.contain,
+      allowDrawingOutsideViewBox: true,
+      colorFilter: ColorFilter.mode(
+        Colors.grey.shade400,
+        BlendMode.srcIn,
+      ),
+    );
+    
+    // Setup animation
+    _animationController = AnimationController(
+      duration: const Duration(milliseconds: 200),
+      vsync: this,
+    );
+    
+    _fadeAnimation = Tween<double>(
+      begin: 0.0,
+      end: 1.0,
+    ).animate(CurvedAnimation(
+      parent: _animationController,
+      curve: Curves.easeInOut,
+    ));
+  }
+
+  Future<void> _initializeSvgPathService() async {
+    await SvgPathService.initialize();
+    // Debug: Print loaded provinces
+    SvgPathService.debugPrintProvinces();
+  }
+
+  @override
+  void dispose() {
+    _animationController.dispose();
+    _hoverTimer?.cancel();
+    super.dispose();
+  }
 
   @override
   Widget build(BuildContext context) {
     return Container(
       width: double.infinity,
-      height: 400,
+      height: 600,
       decoration: BoxDecoration(
         border: Border.all(color: Colors.grey.shade300),
         borderRadius: BorderRadius.circular(8),
@@ -77,46 +152,99 @@ class _VietnamMapWidgetState extends State<VietnamMapWidget> {
         borderRadius: BorderRadius.circular(8),
         child: GestureDetector(
           onTapUp: widget.interactive ? _handleTap : null,
-          onPanUpdate: widget.interactive ? _handlePanUpdate : null,
-          child: Stack(
-            children: [
-              // Background SVG
-              SvgPicture.asset(
-                'assets/svg/vietnam_map_split_new.svg',
-                fit: BoxFit.contain,
-                allowDrawingOutsideViewBox: true,
-                colorFilter: ColorFilter.mode(
-                  Colors.grey.shade400,
-                  BlendMode.srcIn,
-                ),
+          onScaleStart: _handleScaleStart,
+          onScaleUpdate: _handleScaleUpdate,
+          child: Transform(
+            transform: Matrix4.identity()
+              ..translate(_offset.dx, _offset.dy)
+              ..scale(_scale),
+            alignment: Alignment.center,
+            child: SizedBox(
+              width: 800,
+              height: 600,
+              child: Stack(
+                children: [
+                  // Background SVG (cached)
+                  _svgPicture,
+                  
+                  // Chỉ render overlay cho tỉnh được chọn hoặc hover
+                  if (selectedProvince != null)
+                    _buildProvinceOverlay(selectedProvince!, isSelected: true),
+                  
+                  if (hoveredProvince != null && hoveredProvince != selectedProvince)
+                    _buildProvinceOverlay(hoveredProvince!, isHovered: true),
+                ],
               ),
-              
-              // Overlay cho các tỉnh đã mở khóa
-              if (widget.unlockedProvinces != null)
-                ...widget.unlockedProvinces!.entries.map((entry) {
-                  if (entry.value) {
-                    return _buildProvinceOverlay(entry.key);
-                  }
-                  return const SizedBox.shrink();
-                }).toList(),
-              
-              // Overlay cho tỉnh đang hover
-              if (hoveredProvince != null)
-                _buildProvinceOverlay(hoveredProvince!, isHovered: true),
-              
-              // Overlay cho tỉnh được chọn
-              if (selectedProvince != null)
-                _buildProvinceOverlay(selectedProvince!, isSelected: true),
-            ],
+            ),
           ),
         ),
       ),
     );
   }
 
+  void _handleScaleStart(ScaleStartDetails details) {
+    _startingFocalPoint = details.focalPoint;
+    _startingScale = _scale;
+    _startingOffset = _offset;
+  }
+
+  void _handleScaleUpdate(ScaleUpdateDetails details) {
+    if (_startingScale == null || _startingOffset == null) return;
+    
+    setState(() {
+      _scale = (_startingScale! * details.scale).clamp(0.5, 4.0);
+      
+      final Offset normalizedOffset = details.focalPoint - _startingFocalPoint!;
+      _offset = _startingOffset! + normalizedOffset;
+    });
+    
+    // Debounce hover detection để tránh lag
+    _hoverTimer?.cancel();
+    _hoverTimer = Timer(const Duration(milliseconds: 50), () {
+      _updateHoverState(details.focalPoint);
+    });
+  }
+
+  void _updateHoverState(Offset globalPosition) {
+    if (!mounted) return;
+    
+    final RenderBox renderBox = context.findRenderObject() as RenderBox;
+    final localPosition = renderBox.globalToLocal(globalPosition);
+    
+    // Convert to SVG coordinates
+    final svgPosition = _convertToSvgCoordinates(localPosition);
+    
+    // Use SVG Path Service for detection
+    final provinceId = SvgPathService.getProvinceAtPosition(svgPosition);
+    
+    if (provinceId != null && interactiveProvinces.contains(provinceId)) {
+      if (hoveredProvince != provinceId) {
+        setState(() {
+          hoveredProvince = provinceId;
+        });
+        _animationController.forward();
+      }
+    } else {
+      if (hoveredProvince != null) {
+        setState(() {
+          hoveredProvince = null;
+        });
+        _animationController.reverse();
+      }
+    }
+  }
+
   Widget _buildProvinceOverlay(String provinceId, {bool isHovered = false, bool isSelected = false}) {
-    final provinceArea = _getProvinceArea(provinceId);
-    if (provinceArea == null) return const SizedBox.shrink();
+    final provinceBounds = SvgPathService.getProvinceBounds(provinceId);
+    if (provinceBounds == null) return const SizedBox.shrink();
+    
+    // Convert SVG bounds to relative coordinates
+    final relativeBounds = Rect.fromLTWH(
+      provinceBounds.left / 800,
+      provinceBounds.top / 600,
+      provinceBounds.width / 800,
+      provinceBounds.height / 600,
+    );
     
     Color overlayColor;
     double opacity;
@@ -134,70 +262,39 @@ class _VietnamMapWidgetState extends State<VietnamMapWidget> {
     }
     
     return Positioned(
-      left: provinceArea.left,
-      top: provinceArea.top,
-      child: Container(
-        width: provinceArea.width,
-        height: provinceArea.height,
-        decoration: BoxDecoration(
-          color: overlayColor.withOpacity(opacity),
-          borderRadius: BorderRadius.circular(4),
-          border: isSelected || isHovered 
-              ? Border.all(color: overlayColor, width: 2)
-              : null,
-        ),
+      left: relativeBounds.left * 800,
+      top: relativeBounds.top * 600,
+      child: AnimatedBuilder(
+        animation: _fadeAnimation,
+        builder: (context, child) {
+          return Opacity(
+            opacity: _fadeAnimation.value,
+            child: Container(
+              width: relativeBounds.width * 800,
+              height: relativeBounds.height * 600,
+              decoration: BoxDecoration(
+                color: overlayColor.withValues(alpha: opacity),
+                borderRadius: BorderRadius.circular(4),
+                border: isSelected || isHovered 
+                    ? Border.all(color: overlayColor, width: 2)
+                    : null,
+              ),
+            ),
+          );
+        },
       ),
     );
   }
 
-  Rect? _getProvinceArea(String provinceId) {
-    // Định nghĩa vùng cho từng tỉnh (tọa độ tương đối 0-1)
-    final areas = {
-      'Ha Noi': Rect.fromLTWH(0.25, 0.1, 0.1, 0.1),
-      'Ho Chi Minh': Rect.fromLTWH(0.2, 0.7, 0.15, 0.15),
-      'Da Nang': Rect.fromLTWH(0.4, 0.4, 0.1, 0.1),
-      'Hai Phong': Rect.fromLTWH(0.3, 0.1, 0.1, 0.1),
-      'Can Tho': Rect.fromLTWH(0.25, 0.75, 0.1, 0.1),
-      'Bac Ninh': Rect.fromLTWH(0.3, 0.1, 0.05, 0.05),
-      'Ca Mau': Rect.fromLTWH(0.2, 0.8, 0.1, 0.1),
-      'Cao Bang': Rect.fromLTWH(0.3, 0.05, 0.1, 0.1),
-      'Dien Bien': Rect.fromLTWH(0.1, 0.1, 0.1, 0.1),
-      'Dong Nai': Rect.fromLTWH(0.35, 0.65, 0.1, 0.1),
-      'Gia Lai': Rect.fromLTWH(0.45, 0.5, 0.1, 0.1),
-      'Ha Tinh': Rect.fromLTWH(0.25, 0.25, 0.1, 0.1),
-      'Lai Chau': Rect.fromLTWH(0.15, 0.05, 0.1, 0.1),
-      'Lam Dong': Rect.fromLTWH(0.4, 0.6, 0.1, 0.1),
-      'Lang Son': Rect.fromLTWH(0.35, 0.1, 0.1, 0.1),
-      'Nghe An': Rect.fromLTWH(0.25, 0.2, 0.1, 0.1),
-      'Ninh Binh': Rect.fromLTWH(0.25, 0.15, 0.1, 0.1),
-      'Khanh Hoa': Rect.fromLTWH(0.45, 0.6, 0.1, 0.1),
-      'Dak Lak': Rect.fromLTWH(0.45, 0.55, 0.1, 0.1),
-      'Quang Ngai': Rect.fromLTWH(0.45, 0.45, 0.1, 0.1),
-      'Quang Ninh': Rect.fromLTWH(0.35, 0.1, 0.1, 0.1),
-      'Quang Tri': Rect.fromLTWH(0.25, 0.35, 0.1, 0.1),
-      'Son La': Rect.fromLTWH(0.2, 0.1, 0.1, 0.1),
-      'Tay Ninh': Rect.fromLTWH(0.3, 0.65, 0.1, 0.1),
-      'Hung Yen': Rect.fromLTWH(0.3, 0.15, 0.05, 0.05),
-      'An Giang': Rect.fromLTWH(0.2, 0.7, 0.1, 0.1),
-      'Truong Sa': Rect.fromLTWH(0.6, 0.9, 0.2, 0.1),
-      'Hoang Sa': Rect.fromLTWH(0.6, 0.4, 0.1, 0.1),
-    };
-    
-    return areas[provinceId];
-  }
-
   void _handleTap(TapUpDetails details) {
-    // Xử lý tap để xác định tỉnh được chọn
     final RenderBox renderBox = context.findRenderObject() as RenderBox;
     final localPosition = renderBox.globalToLocal(details.globalPosition);
     
-    // Tính toán vị trí tương đối trong SVG (0-1)
-    final size = renderBox.size;
-    final relativeX = localPosition.dx / size.width;
-    final relativeY = localPosition.dy / size.height;
+    // Convert to SVG coordinates
+    final svgPosition = _convertToSvgCoordinates(localPosition);
     
-    // Xác định tỉnh dựa trên vị trí tap
-    final provinceId = _getProvinceAtPosition(relativeX, relativeY);
+    // Use SVG Path Service for detection
+    final provinceId = SvgPathService.getProvinceAtPosition(svgPosition);
     
     if (provinceId != null && interactiveProvinces.contains(provinceId)) {
       setState(() {
@@ -219,173 +316,22 @@ class _VietnamMapWidgetState extends State<VietnamMapWidget> {
     }
   }
 
-  void _handlePanUpdate(DragUpdateDetails details) {
-    // Xử lý hover khi di chuyển ngón tay
-    final RenderBox renderBox = context.findRenderObject() as RenderBox;
-    final localPosition = renderBox.globalToLocal(details.globalPosition);
+  // Convert local coordinates to SVG coordinates
+  Offset _convertToSvgCoordinates(Offset localPosition) {
+    // Apply inverse transform
+    final inverseScale = 1.0 / _scale;
+    final inverseOffset = Offset(-_offset.dx * inverseScale, -_offset.dy * inverseScale);
     
-    final size = renderBox.size;
-    final relativeX = localPosition.dx / size.width;
-    final relativeY = localPosition.dy / size.height;
+    final transformedPosition = Offset(
+      (localPosition.dx * inverseScale) + inverseOffset.dx,
+      (localPosition.dy * inverseScale) + inverseOffset.dy,
+    );
     
-    final provinceId = _getProvinceAtPosition(relativeX, relativeY);
-    
-    if (provinceId != null && interactiveProvinces.contains(provinceId)) {
-      setState(() {
-        hoveredProvince = provinceId;
-      });
-    } else {
-      setState(() {
-        hoveredProvince = null;
-      });
-    }
-  }
-
-  String? _getProvinceAtPosition(double x, double y) {
-    // Logic đơn giản để xác định tỉnh dựa trên vị trí
-    // Trong thực tế, bạn sẽ cần parse SVG path và kiểm tra point-in-polygon
-    
-    // Khu vực Hà Nội (khoảng giữa phía Bắc)
-    if (x >= 0.25 && x <= 0.35 && y >= 0.1 && y <= 0.2) {
-      return 'Ha Noi';
-    }
-    
-    // Khu vực TP.HCM (phía Nam)
-    if (x >= 0.2 && x <= 0.35 && y >= 0.7 && y <= 0.85) {
-      return 'Ho Chi Minh';
-    }
-    
-    // Khu vực Đà Nẵng (miền Trung)
-    if (x >= 0.4 && x <= 0.5 && y >= 0.4 && y <= 0.5) {
-      return 'Da Nang';
-    }
-    
-    // Khu vực Hải Phòng (Đông Bắc)
-    if (x >= 0.3 && x <= 0.4 && y >= 0.1 && y <= 0.2) {
-      return 'Hai Phong';
-    }
-    
-    // Khu vực Cần Thơ (ĐBSCL)
-    if (x >= 0.25 && x <= 0.35 && y >= 0.75 && y <= 0.85) {
-      return 'Can Tho';
-    }
-    
-    // Khu vực Bắc Ninh
-    if (x >= 0.3 && x <= 0.35 && y >= 0.1 && y <= 0.15) {
-      return 'Bac Ninh';
-    }
-    
-    // Khu vực Cà Mau (cực Nam)
-    if (x >= 0.2 && x <= 0.3 && y >= 0.8 && y <= 0.9) {
-      return 'Ca Mau';
-    }
-    
-    // Khu vực Cao Bằng (cực Bắc)
-    if (x >= 0.3 && x <= 0.4 && y >= 0.05 && y <= 0.15) {
-      return 'Cao Bang';
-    }
-    
-    // Khu vực Điện Biên (Tây Bắc)
-    if (x >= 0.1 && x <= 0.2 && y >= 0.1 && y <= 0.2) {
-      return 'Dien Bien';
-    }
-    
-    // Khu vực Đồng Nai (Đông Nam Bộ)
-    if (x >= 0.35 && x <= 0.45 && y >= 0.65 && y <= 0.75) {
-      return 'Dong Nai';
-    }
-    
-    // Khu vực Gia Lai (Tây Nguyên)
-    if (x >= 0.45 && x <= 0.55 && y >= 0.5 && y <= 0.6) {
-      return 'Gia Lai';
-    }
-    
-    // Khu vực Hà Tĩnh
-    if (x >= 0.25 && x <= 0.35 && y >= 0.25 && y <= 0.35) {
-      return 'Ha Tinh';
-    }
-    
-    // Khu vực Lai Châu
-    if (x >= 0.15 && x <= 0.25 && y >= 0.05 && y <= 0.15) {
-      return 'Lai Chau';
-    }
-    
-    // Khu vực Lâm Đồng
-    if (x >= 0.4 && x <= 0.5 && y >= 0.6 && y <= 0.7) {
-      return 'Lam Dong';
-    }
-    
-    // Khu vực Lạng Sơn
-    if (x >= 0.35 && x <= 0.45 && y >= 0.1 && y <= 0.2) {
-      return 'Lang Son';
-    }
-    
-    // Khu vực Nghệ An
-    if (x >= 0.25 && x <= 0.35 && y >= 0.2 && y <= 0.3) {
-      return 'Nghe An';
-    }
-    
-    // Khu vực Ninh Bình
-    if (x >= 0.25 && x <= 0.35 && y >= 0.15 && y <= 0.25) {
-      return 'Ninh Binh';
-    }
-    
-    // Khu vực Khánh Hòa
-    if (x >= 0.45 && x <= 0.55 && y >= 0.6 && y <= 0.7) {
-      return 'Khanh Hoa';
-    }
-    
-    // Khu vực Đắk Lắk
-    if (x >= 0.45 && x <= 0.55 && y >= 0.55 && y <= 0.65) {
-      return 'Dak Lak';
-    }
-    
-    // Khu vực Quảng Ngãi
-    if (x >= 0.45 && x <= 0.55 && y >= 0.45 && y <= 0.55) {
-      return 'Quang Ngai';
-    }
-    
-    // Khu vực Quảng Ninh
-    if (x >= 0.35 && x <= 0.45 && y >= 0.1 && y <= 0.2) {
-      return 'Quang Ninh';
-    }
-    
-    // Khu vực Quảng Trị
-    if (x >= 0.25 && x <= 0.35 && y >= 0.35 && y <= 0.45) {
-      return 'Quang Tri';
-    }
-    
-    // Khu vực Sơn La
-    if (x >= 0.2 && x <= 0.3 && y >= 0.1 && y <= 0.2) {
-      return 'Son La';
-    }
-    
-    // Khu vực Tây Ninh
-    if (x >= 0.3 && x <= 0.4 && y >= 0.65 && y <= 0.75) {
-      return 'Tay Ninh';
-    }
-    
-    // Khu vực Hưng Yên
-    if (x >= 0.3 && x <= 0.35 && y >= 0.15 && y <= 0.2) {
-      return 'Hung Yen';
-    }
-    
-    // Khu vực An Giang
-    if (x >= 0.2 && x <= 0.3 && y >= 0.7 && y <= 0.8) {
-      return 'An Giang';
-    }
-    
-    // Khu vực Trường Sa
-    if (x >= 0.6 && x <= 0.8 && y >= 0.9 && y <= 1.0) {
-      return 'Truong Sa';
-    }
-    
-    // Khu vực Hoàng Sa
-    if (x >= 0.6 && x <= 0.7 && y >= 0.4 && y <= 0.5) {
-      return 'Hoang Sa';
-    }
-    
-    return null;
+    // Convert to SVG coordinate system (800x600)
+    return Offset(
+      transformedPosition.dx * 800 / 600, // Assuming widget width is 600
+      transformedPosition.dy * 600 / 600,  // Assuming widget height is 600
+    );
   }
 
   String _getProvinceName(String provinceId) {
@@ -418,6 +364,14 @@ class _VietnamMapWidgetState extends State<VietnamMapWidget> {
       'An Giang': 'An Giang',
       'Truong Sa': 'Trường Sa',
       'Hoang Sa': 'Hoàng Sa',
+      'Thai Nguyen': 'Thái Nguyên',
+      'Thanh Hoa': 'Thanh Hóa',
+      'Hue': 'Huế',
+      'Dong Thap': 'Đồng Tháp',
+      'Vinh Long': 'Vĩnh Long',
+      'Phu Tho': 'Phú Thọ',
+      'Tuyen Quang': 'Tuyên Quang',
+      'Lao Cai': 'Lào Cai',
     };
     
     return nameMap[provinceId] ?? provinceId;

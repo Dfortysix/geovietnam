@@ -7,34 +7,64 @@ import '../models/game_progress.dart';
 import '../models/province.dart';
 
 class MapExplorationScreen extends StatefulWidget {
-  const MapExplorationScreen({Key? key}) : super(key: key);
+  const MapExplorationScreen({super.key});
 
   @override
   State<MapExplorationScreen> createState() => _MapExplorationScreenState();
 }
 
-class _MapExplorationScreenState extends State<MapExplorationScreen> {
+class _MapExplorationScreenState extends State<MapExplorationScreen> with TickerProviderStateMixin {
   GameProgress? _gameProgress;
   bool _isLoading = true;
   Province? _selectedProvince;
+  
+  // Animation controller cho smooth transitions
+  late final AnimationController _fadeController;
+  late final Animation<double> _fadeAnimation;
 
   @override
   void initState() {
     super.initState();
+    
+    // Setup animation
+    _fadeController = AnimationController(
+      duration: const Duration(milliseconds: 300),
+      vsync: this,
+    );
+    
+    _fadeAnimation = Tween<double>(
+      begin: 0.0,
+      end: 1.0,
+    ).animate(CurvedAnimation(
+      parent: _fadeController,
+      curve: Curves.easeInOut,
+    ));
+    
     _loadGameProgress();
+  }
+
+  @override
+  void dispose() {
+    _fadeController.dispose();
+    super.dispose();
   }
 
   Future<void> _loadGameProgress() async {
     try {
       final progress = await GameProgressService.getCurrentProgress();
-      setState(() {
-        _gameProgress = progress;
-        _isLoading = false;
-      });
+      if (mounted) {
+        setState(() {
+          _gameProgress = progress;
+          _isLoading = false;
+        });
+        _fadeController.forward();
+      }
     } catch (e) {
-      setState(() {
-        _isLoading = false;
-      });
+      if (mounted) {
+        setState(() {
+          _isLoading = false;
+        });
+      }
     }
   }
 
@@ -82,197 +112,190 @@ class _MapExplorationScreenState extends State<MapExplorationScreen> {
           children: [
             // Header với thông tin tiến độ
             if (_gameProgress != null)
-              Container(
-                margin: const EdgeInsets.all(16),
-                padding: const EdgeInsets.all(16),
-                decoration: BoxDecoration(
-                  color: Colors.white.withOpacity(0.9),
-                  borderRadius: BorderRadius.circular(16),
-                  boxShadow: AppTheme.softShadow,
-                ),
-                child: Column(
-                  children: [
-                    Row(
-                      mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                      children: [
-                        Text(
-                          'Tiến độ khám phá',
-                          style: Theme.of(context).textTheme.titleMedium?.copyWith(
-                            color: AppTheme.textPrimary,
-                            fontWeight: FontWeight.w600,
+              AnimatedBuilder(
+                animation: _fadeAnimation,
+                builder: (context, child) {
+                  return Opacity(
+                    opacity: _fadeAnimation.value,
+                    child: Container(
+                      margin: const EdgeInsets.all(16),
+                      padding: const EdgeInsets.all(16),
+                      decoration: BoxDecoration(
+                        color: Colors.white.withValues(alpha: 0.9),
+                        borderRadius: BorderRadius.circular(16),
+                        boxShadow: AppTheme.softShadow,
+                      ),
+                      child: Column(
+                        children: [
+                          Row(
+                            mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                            children: [
+                              Text(
+                                'Tiến độ khám phá',
+                                style: Theme.of(context).textTheme.titleMedium?.copyWith(
+                                  color: AppTheme.textPrimary,
+                                  fontWeight: FontWeight.bold,
+                                ),
+                              ),
+                              Container(
+                                padding: const EdgeInsets.symmetric(horizontal: 12, vertical: 6),
+                                decoration: BoxDecoration(
+                                  color: AppTheme.primaryOrange.withValues(alpha: 0.1),
+                                  borderRadius: BorderRadius.circular(20),
+                                  border: Border.all(color: AppTheme.primaryOrange.withValues(alpha: 0.3)),
+                                ),
+                                child: Text(
+                                  '${_gameProgress!.unlockedProvincesCount}/${_gameProgress!.provinces.length}',
+                                  style: Theme.of(context).textTheme.bodySmall?.copyWith(
+                                    color: AppTheme.primaryOrange,
+                                    fontWeight: FontWeight.w600,
+                                  ),
+                                ),
+                              ),
+                            ],
                           ),
-                        ),
-                        Text(
-                          '${_gameProgress!.unlockedCount}/${_gameProgress!.provinces.length}',
-                          style: Theme.of(context).textTheme.titleMedium?.copyWith(
-                            color: AppTheme.primaryOrange,
-                            fontWeight: FontWeight.bold,
+                          const SizedBox(height: 12),
+                          LinearProgressIndicator(
+                            value: _gameProgress!.unlockedProvincesCount / _gameProgress!.provinces.length,
+                            backgroundColor: Colors.grey.shade200,
+                            valueColor: AlwaysStoppedAnimation<Color>(AppTheme.primaryOrange),
                           ),
-                        ),
-                      ],
-                    ),
-                    const SizedBox(height: 8),
-                    LinearProgressIndicator(
-                      value: _gameProgress!.completionPercentage / 100,
-                      backgroundColor: AppTheme.lightOrange.withOpacity(0.3),
-                      valueColor: const AlwaysStoppedAnimation<Color>(AppTheme.primaryOrange),
-                      minHeight: 8,
-                      borderRadius: BorderRadius.circular(4),
-                    ),
-                    const SizedBox(height: 12),
-                    Text(
-                      '${_gameProgress!.completionPercentage.toStringAsFixed(1)}% hoàn thành',
-                      style: Theme.of(context).textTheme.bodyMedium?.copyWith(
-                        color: AppTheme.textSecondary,
+                        ],
                       ),
                     ),
-                  ],
-                ),
-              ).animate().fadeIn(duration: 600.ms),
+                  );
+                },
+              ),
 
             // Bản đồ Việt Nam
             Expanded(
-              child: Container(
-                margin: const EdgeInsets.symmetric(horizontal: 16),
-                decoration: BoxDecoration(
-                  color: Colors.white,
-                  borderRadius: BorderRadius.circular(16),
-                  boxShadow: AppTheme.softShadow,
-                ),
-                child: ClipRRect(
-                  borderRadius: BorderRadius.circular(16),
-                                  child: VietnamMapWidget(
-                  onProvinceTap: _onProvinceTap,
-                  unlockedProvinces: _gameProgress != null 
-                      ? Map.fromEntries(
-                          _gameProgress!.provinces.map((p) => MapEntry(p.id, p.isUnlocked))
-                        )
-                      : null,
-                ),
-                ),
-              ).animate().fadeIn(duration: 600.ms, delay: 200.ms),
+              child: AnimatedBuilder(
+                animation: _fadeAnimation,
+                builder: (context, child) {
+                  return Opacity(
+                    opacity: _fadeAnimation.value,
+                    child: Container(
+                      height: 600,
+                      margin: const EdgeInsets.symmetric(horizontal: 16),
+                      decoration: BoxDecoration(
+                        color: Colors.white.withValues(alpha: 0.9),
+                        borderRadius: BorderRadius.circular(16),
+                        boxShadow: AppTheme.softShadow,
+                      ),
+                      child: ClipRRect(
+                        borderRadius: BorderRadius.circular(16),
+                        child: VietnamMapWidget(
+                          onProvinceTap: _onProvinceTap,
+                          unlockedProvinces: _gameProgress != null 
+                              ? Map.fromEntries(
+                                  _gameProgress!.provinces.map((p) => MapEntry(p.id, p.isUnlocked))
+                                )
+                              : null,
+                        ),
+                      ),
+                    ),
+                  );
+                },
+              ),
             ),
 
             // Thông tin tỉnh được chọn
             if (_selectedProvince != null)
-              Container(
-                margin: const EdgeInsets.all(16),
-                padding: const EdgeInsets.all(16),
-                decoration: BoxDecoration(
-                  color: Colors.white.withOpacity(0.9),
-                  borderRadius: BorderRadius.circular(16),
-                  boxShadow: AppTheme.softShadow,
-                ),
-                child: Column(
-                  crossAxisAlignment: CrossAxisAlignment.start,
-                  children: [
-                    Row(
-                      children: [
-                        Icon(
-                          _selectedProvince!.isUnlocked 
-                              ? Icons.check_circle 
-                              : Icons.lock,
-                          color: _selectedProvince!.isUnlocked 
-                              ? Colors.green 
-                              : Colors.grey,
-                          size: 24,
-                        ),
-                        const SizedBox(width: 8),
-                        Expanded(
-                          child: Text(
-                            _selectedProvince!.nameVietnamese,
-                            style: Theme.of(context).textTheme.titleLarge?.copyWith(
-                              color: AppTheme.textPrimary,
-                              fontWeight: FontWeight.bold,
+              AnimatedBuilder(
+                animation: _fadeAnimation,
+                builder: (context, child) {
+                  return Opacity(
+                    opacity: _fadeAnimation.value,
+                    child: Container(
+                      margin: const EdgeInsets.all(16),
+                      padding: const EdgeInsets.all(16),
+                      decoration: BoxDecoration(
+                        color: Colors.white.withValues(alpha: 0.9),
+                        borderRadius: BorderRadius.circular(16),
+                        boxShadow: AppTheme.softShadow,
+                      ),
+                      child: Column(
+                        crossAxisAlignment: CrossAxisAlignment.start,
+                        children: [
+                          Row(
+                            children: [
+                              Icon(
+                                _selectedProvince!.isUnlocked 
+                                    ? Icons.check_circle 
+                                    : Icons.lock,
+                                color: _selectedProvince!.isUnlocked 
+                                    ? Colors.green 
+                                    : Colors.grey,
+                                size: 24,
+                              ),
+                              const SizedBox(width: 8),
+                              Expanded(
+                                child: Text(
+                                  _selectedProvince!.nameVietnamese,
+                                  style: Theme.of(context).textTheme.titleLarge?.copyWith(
+                                    color: AppTheme.textPrimary,
+                                    fontWeight: FontWeight.bold,
+                                  ),
+                                ),
+                              ),
+                              if (!_selectedProvince!.isUnlocked)
+                                Container(
+                                  padding: const EdgeInsets.symmetric(horizontal: 8, vertical: 4),
+                                  decoration: BoxDecoration(
+                                    color: Colors.orange.withValues(alpha: 0.2),
+                                    borderRadius: BorderRadius.circular(12),
+                                  ),
+                                  child: Text(
+                                    'Chưa mở khóa',
+                                    style: Theme.of(context).textTheme.bodySmall?.copyWith(
+                                      color: Colors.orange,
+                                      fontWeight: FontWeight.w600,
+                                    ),
+                                  ),
+                                ),
+                            ],
+                          ),
+                          const SizedBox(height: 8),
+                          Text(
+                            _selectedProvince!.description,
+                            style: Theme.of(context).textTheme.bodyMedium?.copyWith(
+                              color: AppTheme.textSecondary,
                             ),
                           ),
-                        ),
-                        if (!_selectedProvince!.isUnlocked)
-                          Container(
-                            padding: const EdgeInsets.symmetric(horizontal: 8, vertical: 4),
-                            decoration: BoxDecoration(
-                              color: Colors.orange.withOpacity(0.2),
-                              borderRadius: BorderRadius.circular(12),
-                            ),
-                            child: Text(
-                              'Chưa mở khóa',
-                              style: Theme.of(context).textTheme.bodySmall?.copyWith(
-                                color: Colors.orange,
+                          if (_selectedProvince!.isUnlocked) ...[
+                            const SizedBox(height: 12),
+                            Text(
+                              'Thông tin thú vị:',
+                              style: Theme.of(context).textTheme.titleSmall?.copyWith(
+                                color: AppTheme.textPrimary,
                                 fontWeight: FontWeight.w600,
                               ),
                             ),
-                          ),
-                      ],
-                    ),
-                    const SizedBox(height: 8),
-                    Text(
-                      _selectedProvince!.description,
-                      style: Theme.of(context).textTheme.bodyMedium?.copyWith(
-                        color: AppTheme.textSecondary,
-                      ),
-                    ),
-                    if (_selectedProvince!.isUnlocked) ...[
-                      const SizedBox(height: 12),
-                      Text(
-                        'Thông tin thú vị:',
-                        style: Theme.of(context).textTheme.titleSmall?.copyWith(
-                          color: AppTheme.textPrimary,
-                          fontWeight: FontWeight.w600,
-                        ),
-                      ),
-                      const SizedBox(height: 8),
-                      ..._selectedProvince!.facts.map((fact) => Padding(
-                        padding: const EdgeInsets.only(bottom: 4),
-                        child: Row(
-                          crossAxisAlignment: CrossAxisAlignment.start,
-                          children: [
-                            const Text('• ', style: TextStyle(color: AppTheme.primaryOrange)),
-                            Expanded(
-                              child: Text(
-                                fact,
-                                style: Theme.of(context).textTheme.bodySmall?.copyWith(
-                                  color: AppTheme.textSecondary,
-                                ),
+                            const SizedBox(height: 8),
+                            ..._selectedProvince!.facts.map((fact) => Padding(
+                              padding: const EdgeInsets.only(bottom: 4),
+                              child: Row(
+                                crossAxisAlignment: CrossAxisAlignment.start,
+                                children: [
+                                  const Text('• ', style: TextStyle(color: AppTheme.primaryOrange)),
+                                  Expanded(
+                                    child: Text(
+                                      fact,
+                                      style: Theme.of(context).textTheme.bodySmall?.copyWith(
+                                        color: AppTheme.textSecondary,
+                                      ),
+                                    ),
+                                  ),
+                                ],
                               ),
-                            ),
+                            )),
                           ],
-                        ),
-                      )),
-                    ],
-                  ],
-                ),
-              ).animate().fadeIn(duration: 600.ms, delay: 400.ms),
-
-            // Hướng dẫn
-            Container(
-              margin: const EdgeInsets.all(16),
-              padding: const EdgeInsets.all(12),
-              decoration: BoxDecoration(
-                color: AppTheme.lightOrange.withOpacity(0.1),
-                borderRadius: BorderRadius.circular(12),
-                border: Border.all(
-                  color: AppTheme.lightOrange.withOpacity(0.3),
-                ),
-              ),
-              child: Row(
-                children: [
-                  Icon(
-                    Icons.info_outline,
-                    color: AppTheme.textSecondary,
-                    size: 20,
-                  ),
-                  const SizedBox(width: 8),
-                  Expanded(
-                    child: Text(
-                      'Chạm vào tỉnh trên bản đồ để xem thông tin. Hoàn thành Daily Challenge để mở khóa khu vực mới!',
-                      style: Theme.of(context).textTheme.bodySmall?.copyWith(
-                        color: AppTheme.textSecondary,
+                        ],
                       ),
                     ),
-                  ),
-                ],
+                  );
+                },
               ),
-            ).animate().fadeIn(duration: 600.ms, delay: 600.ms),
           ],
         ),
       ),
