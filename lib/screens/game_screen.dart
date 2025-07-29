@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 import '../theme/app_theme.dart';
 import '../widgets/vietnam_map_widget.dart';
-import '../widgets/authentic_senni_widget.dart';
 
 class GameScreen extends StatefulWidget {
   const GameScreen({Key? key}) : super(key: key);
@@ -14,8 +13,6 @@ class _GameScreenState extends State<GameScreen> {
   String? selectedProvince;
   int score = 0;
   int currentQuestion = 0;
-  String _senniSituation = 'greeting';
-  String? _senniProvinceName;
   
   // Danh sách câu hỏi mẫu
   final List<Map<String, dynamic>> questions = [
@@ -38,201 +35,176 @@ class _GameScreenState extends State<GameScreen> {
 
   @override
   Widget build(BuildContext context) {
-    return AuthenticSenniHelper.showSenniInScreen(
-      situation: _senniSituation,
-      provinceName: _senniProvinceName,
-      senniSize: 100,
-      messageDuration: const Duration(seconds: 4),
-      child: Scaffold(
-        appBar: AppBar(
-          backgroundColor: Colors.transparent,
-          elevation: 0,
-          centerTitle: true,
-          title: Text(
-            '🌏 GeoVietnam',
-            style: Theme.of(context).textTheme.titleLarge?.copyWith(
-              color: AppTheme.primaryOrange,
-              fontWeight: FontWeight.bold,
-              letterSpacing: 1.2,
-            ),
+    return Scaffold(
+      appBar: AppBar(
+        backgroundColor: Colors.transparent,
+        elevation: 0,
+        centerTitle: true,
+        title: Text(
+          '🌏 GeoVietnam',
+          style: Theme.of(context).textTheme.titleLarge?.copyWith(
+            color: AppTheme.primaryOrange,
+            fontWeight: FontWeight.bold,
+            letterSpacing: 1.2,
           ),
-          iconTheme: const IconThemeData(color: AppTheme.primaryOrange),
         ),
-        body: Container(
-          decoration: const BoxDecoration(
-            gradient: AppTheme.backgroundGradient,
-          ),
-          child: Column(
-            children: [
-              // Header với thông tin game
-              Container(
-                padding: const EdgeInsets.all(16),
-                child: Row(
-                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                  children: [
-                    Column(
-                      crossAxisAlignment: CrossAxisAlignment.start,
-                      children: [
-                        Text(
-                          'Câu hỏi ${currentQuestion + 1}/${questions.length}',
-                          style: Theme.of(context).textTheme.bodyLarge?.copyWith(
-                            color: AppTheme.textSecondary,
-                            fontWeight: FontWeight.w600,
-                          ),
-                        ),
-                        const SizedBox(height: 4),
-                        Text(
-                          'Điểm: $score',
-                          style: Theme.of(context).textTheme.headlineMedium?.copyWith(
-                            color: AppTheme.primaryOrange,
-                            fontWeight: FontWeight.bold,
-                          ),
-                        ),
-                      ],
-                    ),
-                    Container(
-                      padding: const EdgeInsets.symmetric(horizontal: 16, vertical: 8),
-                      decoration: BoxDecoration(
-                        gradient: AppTheme.primaryGradient,
-                        borderRadius: BorderRadius.circular(20),
-                        boxShadow: AppTheme.softShadow,
-                      ),
-                      child: Text(
-                        'Level 1',
-                        style: Theme.of(context).textTheme.bodyMedium?.copyWith(
-                          color: Colors.white,
-                          fontWeight: FontWeight.w600,
-                        ),
-                      ),
-                    ),
-                  ],
-                ),
-              ),
-              // Câu hỏi hiện tại
-              if (currentQuestion < questions.length)
-                Container(
-                  margin: const EdgeInsets.symmetric(horizontal: 16),
-                  padding: const EdgeInsets.all(16),
-                  decoration: BoxDecoration(
-                    gradient: AppTheme.cardGradient,
-                    borderRadius: BorderRadius.circular(16),
-                    boxShadow: AppTheme.softShadow,
-                  ),
-                  child: Column(
+        iconTheme: const IconThemeData(color: AppTheme.primaryOrange),
+      ),
+      body: Container(
+        decoration: const BoxDecoration(
+          gradient: AppTheme.backgroundGradient,
+        ),
+        child: Column(
+          children: [
+            // Header với thông tin game
+            Container(
+              padding: const EdgeInsets.all(16),
+              child: Row(
+                mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                children: [
+                  Column(
                     crossAxisAlignment: CrossAxisAlignment.start,
                     children: [
                       Text(
-                        'Câu hỏi:',
-                        style: Theme.of(context).textTheme.bodyMedium?.copyWith(
+                        'Câu hỏi ${currentQuestion + 1}/${questions.length}',
+                        style: Theme.of(context).textTheme.bodyLarge?.copyWith(
                           color: AppTheme.textSecondary,
                           fontWeight: FontWeight.w600,
                         ),
                       ),
-                      const SizedBox(height: 8),
+                      const SizedBox(height: 4),
                       Text(
-                        questions[currentQuestion]['question'],
-                        style: Theme.of(context).textTheme.titleLarge?.copyWith(
-                          color: AppTheme.textPrimary,
-                          fontWeight: FontWeight.w600,
+                        'Điểm: $score',
+                        style: Theme.of(context).textTheme.headlineMedium?.copyWith(
+                          color: AppTheme.primaryOrange,
+                          fontWeight: FontWeight.bold,
                         ),
                       ),
                     ],
                   ),
-                ),
-              const SizedBox(height: 16),
-              // Bản đồ Việt Nam
-              Expanded(
-                child: Container(
-                  margin: const EdgeInsets.symmetric(horizontal: 16),
-                  decoration: BoxDecoration(
-                    color: Colors.white.withOpacity(0.7),
-                    borderRadius: BorderRadius.circular(20),
-                    boxShadow: AppTheme.softShadow,
+                  Container(
+                    padding: const EdgeInsets.symmetric(horizontal: 16, vertical: 8),
+                    decoration: BoxDecoration(
+                      gradient: AppTheme.primaryGradient,
+                      borderRadius: BorderRadius.circular(20),
+                      boxShadow: AppTheme.softShadow,
+                    ),
+                    child: Text(
+                      '🎯 ${((score / (questions.length * 10)) * 100).toInt()}%',
+                      style: Theme.of(context).textTheme.bodyMedium?.copyWith(
+                        color: Colors.white,
+                        fontWeight: FontWeight.bold,
+                      ),
+                    ),
                   ),
+                ],
+              ),
+            ),
+
+            // Câu hỏi hiện tại
+            Container(
+              margin: const EdgeInsets.symmetric(horizontal: 16),
+              padding: const EdgeInsets.all(20),
+              decoration: BoxDecoration(
+                color: Colors.white,
+                borderRadius: BorderRadius.circular(16),
+                boxShadow: AppTheme.softShadow,
+              ),
+              child: Column(
+                children: [
+                  Text(
+                    questions[currentQuestion]['question'],
+                    style: Theme.of(context).textTheme.headlineSmall?.copyWith(
+                      color: AppTheme.textPrimary,
+                      fontWeight: FontWeight.w600,
+                    ),
+                    textAlign: TextAlign.center,
+                  ),
+                  const SizedBox(height: 20),
+                  
+                  // Các lựa chọn
+                  Wrap(
+                    spacing: 12,
+                    runSpacing: 12,
+                    children: questions[currentQuestion]['options']
+                        .map<Widget>((option) => _buildOptionButton(option))
+                        .toList(),
+                  ),
+                ],
+              ),
+            ),
+
+            const SizedBox(height: 20),
+
+            // Bản đồ Việt Nam
+            Expanded(
+              child: Container(
+                margin: const EdgeInsets.symmetric(horizontal: 16),
+                decoration: BoxDecoration(
+                  color: Colors.white,
+                  borderRadius: BorderRadius.circular(16),
+                  boxShadow: AppTheme.softShadow,
+                ),
+                child: ClipRRect(
+                  borderRadius: BorderRadius.circular(16),
                   child: VietnamMapWidget(
                     onProvinceTap: _handleProvinceTap,
-                    interactive: true,
                   ),
                 ),
               ),
-              const SizedBox(height: 16),
-              // Các lựa chọn
-              if (currentQuestion < questions.length)
-                Container(
-                  margin: const EdgeInsets.symmetric(horizontal: 16),
-                  child: Column(
-                    children: [
-                      Text(
-                        'Chọn tỉnh trên bản đồ hoặc chọn từ danh sách:',
-                        style: Theme.of(context).textTheme.bodyMedium?.copyWith(
-                          color: AppTheme.textSecondary,
-                          fontWeight: FontWeight.w500,
-                        ),
+            ),
+
+            // Navigation buttons
+            Container(
+              padding: const EdgeInsets.all(16),
+              child: Row(
+                mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                children: [
+                  ElevatedButton.icon(
+                    onPressed: currentQuestion > 0 ? _previousQuestion : null,
+                    icon: const Icon(Icons.arrow_back),
+                    label: const Text('Trước'),
+                    style: ElevatedButton.styleFrom(
+                      backgroundColor: AppTheme.lightOrange,
+                      foregroundColor: Colors.white,
+                      padding: const EdgeInsets.symmetric(horizontal: 20, vertical: 12),
+                      shape: RoundedRectangleBorder(
+                        borderRadius: BorderRadius.circular(25),
                       ),
-                      const SizedBox(height: 12),
-                      Wrap(
-                        spacing: 8,
-                        runSpacing: 8,
-                        children: questions[currentQuestion]['options']
-                            .map<Widget>((option) => _buildOptionButton(option))
-                            .toList(),
-                      ),
-                    ],
+                    ),
                   ),
-                ),
-              const SizedBox(height: 16),
-              // Nút điều khiển
-              Container(
-                padding: const EdgeInsets.all(16),
-                child: Row(
-                  children: [
-                    Expanded(
-                      child: ElevatedButton(
-                        onPressed: currentQuestion > 0 ? _previousQuestion : null,
-                        style: ElevatedButton.styleFrom(
-                          backgroundColor: AppTheme.buttonSecondary,
-                          foregroundColor: AppTheme.textPrimary,
-                          padding: const EdgeInsets.symmetric(vertical: 12),
-                          shape: RoundedRectangleBorder(
-                            borderRadius: BorderRadius.circular(12),
-                          ),
-                          elevation: 0,
-                        ),
-                        child: const Text('Câu trước'),
+                  
+                  ElevatedButton.icon(
+                    onPressed: currentQuestion < questions.length - 1 ? _nextQuestion : null,
+                    icon: const Icon(Icons.arrow_forward),
+                    label: const Text('Tiếp'),
+                    style: ElevatedButton.styleFrom(
+                      backgroundColor: AppTheme.primaryOrange,
+                      foregroundColor: Colors.white,
+                      padding: const EdgeInsets.symmetric(horizontal: 20, vertical: 12),
+                      shape: RoundedRectangleBorder(
+                        borderRadius: BorderRadius.circular(25),
                       ),
                     ),
-                    const SizedBox(width: 16),
-                    Expanded(
-                      child: ElevatedButton(
-                        onPressed: currentQuestion < questions.length - 1 
-                            ? _nextQuestion 
-                            : _finishGame,
-                        style: ElevatedButton.styleFrom(
-                          backgroundColor: AppTheme.primaryOrange,
-                          foregroundColor: Colors.white,
-                          padding: const EdgeInsets.symmetric(vertical: 12),
-                          shape: RoundedRectangleBorder(
-                            borderRadius: BorderRadius.circular(12),
-                          ),
-                          elevation: 4,
-                          shadowColor: AppTheme.primaryOrange.withOpacity(0.3),
-                          textStyle: Theme.of(context).textTheme.titleLarge?.copyWith(
-                            color: Colors.white,
-                            fontWeight: FontWeight.bold,
-                          ),
-                        ),
-                        child: Text(
-                          currentQuestion < questions.length - 1 
-                              ? 'Câu tiếp' 
-                              : 'Kết thúc',
-                        ),
+                  ),
+                  
+                  ElevatedButton.icon(
+                    onPressed: _finishGame,
+                    icon: const Icon(Icons.flag),
+                    label: const Text('Kết thúc'),
+                    style: ElevatedButton.styleFrom(
+                      backgroundColor: AppTheme.accentOrange,
+                      foregroundColor: Colors.white,
+                      padding: const EdgeInsets.symmetric(horizontal: 20, vertical: 12),
+                      shape: RoundedRectangleBorder(
+                        borderRadius: BorderRadius.circular(25),
                       ),
                     ),
-                  ],
-                ),
+                  ),
+                ],
               ),
-            ],
-          ),
+            ),
+          ],
         ),
       ),
     );
@@ -244,6 +216,7 @@ class _GameScreenState extends State<GameScreen> {
     Color bgColor = Colors.white;
     Color borderColor = AppTheme.lightOrange;
     Color textColor = AppTheme.textPrimary;
+    
     if (isSelected) {
       if (isCorrect) {
         bgColor = AppTheme.buttonSuccess.withOpacity(0.15);
@@ -255,6 +228,7 @@ class _GameScreenState extends State<GameScreen> {
         textColor = AppTheme.buttonError;
       }
     }
+    
     return GestureDetector(
       onTap: () => _selectOption(option),
       child: Container(
@@ -303,20 +277,6 @@ class _GameScreenState extends State<GameScreen> {
     
     if (isCorrect) {
       score += 10;
-      setState(() {
-        _senniSituation = 'correct_answer';
-        _senniProvinceName = selectedAnswer;
-      });
-      
-      // Reset Senni situation after a delay
-      Future.delayed(const Duration(seconds: 3), () {
-        if (mounted) {
-          setState(() {
-            _senniSituation = 'greeting';
-            _senniProvinceName = null;
-          });
-        }
-      });
       
       ScaffoldMessenger.of(context).showSnackBar(
         SnackBar(
@@ -326,19 +286,6 @@ class _GameScreenState extends State<GameScreen> {
         ),
       );
     } else {
-      setState(() {
-        _senniSituation = 'wrong_answer';
-      });
-      
-      // Reset Senni situation after a delay
-      Future.delayed(const Duration(seconds: 3), () {
-        if (mounted) {
-          setState(() {
-            _senniSituation = 'greeting';
-          });
-        }
-      });
-      
       ScaffoldMessenger.of(context).showSnackBar(
         SnackBar(
           content: Text('Sai rồi! Đáp án đúng là: $correctAnswer'),
@@ -354,7 +301,6 @@ class _GameScreenState extends State<GameScreen> {
       setState(() {
         currentQuestion++;
         selectedProvince = null;
-        _senniSituation = 'greeting';
       });
     }
   }
@@ -364,16 +310,11 @@ class _GameScreenState extends State<GameScreen> {
       setState(() {
         currentQuestion--;
         selectedProvince = null;
-        _senniSituation = 'greeting';
       });
     }
   }
 
   void _finishGame() {
-    setState(() {
-      _senniSituation = 'game_end';
-    });
-    
     showDialog(
       context: context,
       builder: (context) => AlertDialog(
@@ -404,8 +345,6 @@ class _GameScreenState extends State<GameScreen> {
       currentQuestion = 0;
       score = 0;
       selectedProvince = null;
-      _senniSituation = 'greeting';
-      _senniProvinceName = null;
     });
   }
 } 
