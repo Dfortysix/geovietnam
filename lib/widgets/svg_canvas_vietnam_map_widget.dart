@@ -773,6 +773,10 @@ class PathCommand {
    final double scale;
    final Offset offset;
    final Size containerSize;
+   
+   // Constants cho màu sắc để đảm bảo consistency
+   static const Color LOCKED_FILL_COLOR = Color(0x40CCCCCC); // Grey with 0.25 opacity - đậm hơn
+   static const Color LOCKED_BORDER_COLOR = Color(0xFF757575); // Grey.shade600 - đậm hơn
 
    SvgVietnamMapPainter({
      required this.provincePaths,
@@ -805,26 +809,30 @@ class PathCommand {
       final isHovered = provinceId == hoveredProvince;
       final isUnlocked = unlockedProvinces?[provinceId] ?? false;
       
-      // Xác định màu sắc
+      // Xác định màu sắc với sự phân biệt rõ ràng
       Color fillColor;
       Color borderColor;
       double borderWidth;
       
       if (isSelected) {
-        fillColor = AppTheme.primaryOrange.withOpacity(0.7);
+        // Tỉnh đang được chọn - màu cam đậm
+        fillColor = AppTheme.primaryOrange.withOpacity(0.8);
         borderColor = AppTheme.primaryOrange;
         borderWidth = 3.0;
       } else if (isHovered) {
-        fillColor = Colors.yellow.withOpacity(0.5);
+        // Tỉnh đang hover - màu vàng
+        fillColor = Colors.yellow.withOpacity(0.6);
         borderColor = Colors.yellow.shade700;
         borderWidth = 2.5;
       } else if (isUnlocked) {
-        fillColor = AppTheme.primaryOrange.withOpacity(0.4);
-        borderColor = AppTheme.primaryOrange;
+        // Tỉnh đã mở khóa - màu xanh lá
+        fillColor = Colors.green.withOpacity(0.5);
+        borderColor = Colors.green.shade700;
         borderWidth = 1.5;
       } else {
-        fillColor = Colors.grey.withOpacity(0.3);
-        borderColor = Colors.grey.shade600;
+        // Tỉnh chưa mở khóa - màu xám nhạt (sử dụng constant để đảm bảo consistency)
+        fillColor = LOCKED_FILL_COLOR;
+        borderColor = LOCKED_BORDER_COLOR;
         borderWidth = 1.0;
       }
       
