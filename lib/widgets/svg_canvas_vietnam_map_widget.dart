@@ -55,55 +55,60 @@ class _SvgCanvasVietnamMapWidgetState extends State<SvgCanvasVietnamMapWidget> {
       
       final Map<String, List<List<Offset>>> provincePaths = {};
       
-      // Parse path elements
-      final paths = document.findAllElements('path');
-      print('Tìm thấy ${paths.length} path elements');
+             // Parse path elements
+       final paths = document.findAllElements('path');
+       
+       for (final path in paths) {
+         final id = path.getAttribute('id');
+         final d = path.getAttribute('d');
+         
+         if (id != null && d != null) {
+           // Skip background/container elements
+           if (id.contains('Vector') || 
+               id.contains('vietnam_map_split_new_01_07') ||
+               id.contains('Truong Sa')) {
+             continue;
+           }
+           
+           final polygons = _parseSvgPath(d);
+           if (polygons.isNotEmpty) {
+             provincePaths[id] = polygons;
+           }
+         }
+       }
       
-      for (final path in paths) {
-        final id = path.getAttribute('id');
-        final d = path.getAttribute('d');
-        
-        if (id != null && d != null) {
-          final polygons = _parseSvgPath(d);
-          if (polygons.isNotEmpty) {
-            provincePaths[id] = polygons;
-            print('Đã parse tỉnh: $id với ${polygons.length} polygons');
-          } else {
-            print('Không parse được tỉnh: $id');
-          }
-        }
-      }
+             // Parse g elements (groups that contain paths)
+       final groups = document.findAllElements('g');
+       
+       for (final group in groups) {
+         final groupId = group.getAttribute('id');
+         if (groupId != null) {
+           // Skip background/container layers
+           if (groupId.contains('vietnam_map_split_new_01_07') || 
+               groupId.contains('Vector') ||
+               groupId.contains('Truong Sa')) {
+             continue;
+           }
+           
+           // Find all path elements within this group
+           final groupPaths = group.findAllElements('path');
+           final List<List<Offset>> allPolygons = [];
+           
+           for (final path in groupPaths) {
+             final d = path.getAttribute('d');
+             if (d != null) {
+               final polygons = _parseSvgPath(d);
+               allPolygons.addAll(polygons);
+             }
+           }
+           
+           if (allPolygons.isNotEmpty) {
+             provincePaths[groupId] = allPolygons;
+           }
+         }
+       }
       
-      // Parse g elements (groups that contain paths)
-      final groups = document.findAllElements('g');
-      print('Tìm thấy ${groups.length} group elements');
       
-      for (final group in groups) {
-        final groupId = group.getAttribute('id');
-        if (groupId != null) {
-          // Find all path elements within this group
-          final groupPaths = group.findAllElements('path');
-          final List<List<Offset>> allPolygons = [];
-          
-          for (final path in groupPaths) {
-            final d = path.getAttribute('d');
-            if (d != null) {
-              final polygons = _parseSvgPath(d);
-              allPolygons.addAll(polygons);
-            }
-          }
-          
-          if (allPolygons.isNotEmpty) {
-            provincePaths[groupId] = allPolygons;
-            print('Đã parse tỉnh group: $groupId với ${allPolygons.length} polygons');
-          } else {
-            print('Không parse được tỉnh group: $groupId');
-          }
-        }
-      }
-      
-      print('Tổng cộng parse được ${provincePaths.length} tỉnh');
-      print('Danh sách tỉnh: ${provincePaths.keys.toList()}');
       
              if (mounted) {
          setState(() {
@@ -259,8 +264,7 @@ class _SvgCanvasVietnamMapWidgetState extends State<SvgCanvasVietnamMapWidget> {
        }
      }
      
-     _mapBounds = Rect.fromLTRB(minX, minY, maxX, maxY);
-     print('Map bounds: $_mapBounds');
+            _mapBounds = Rect.fromLTRB(minX, minY, maxX, maxY);
    }
 
        void _centerMapInContainer() {
@@ -288,22 +292,50 @@ class _SvgCanvasVietnamMapWidgetState extends State<SvgCanvasVietnamMapWidget> {
       });
     }
 
-    void _resetToInitialView() {
-      if (_initialFitScale == null || _mapBounds == null || _containerSize == null) return;
-      
-      final mapWidth = _mapBounds!.width;
-      final mapHeight = _mapBounds!.height;
-      final containerWidth = _containerSize!.width;
-      final containerHeight = _containerSize!.height;
-      
-      setState(() {
-        _scale = _initialFitScale!;
-        _offset = Offset(
-          (containerWidth - mapWidth * _initialFitScale!) / 2 - _mapBounds!.left * _initialFitScale!,
-          (containerHeight - mapHeight * _initialFitScale!) / 2 - _mapBounds!.top * _initialFitScale!,
-        );
-      });
-    }
+         void _resetToInitialView() {
+       if (_initialFitScale == null || _mapBounds == null || _containerSize == null) return;
+       
+       final mapWidth = _mapBounds!.width;
+       final mapHeight = _mapBounds!.height;
+       final containerWidth = _containerSize!.width;
+       final containerHeight = _containerSize!.height;
+       
+       setState(() {
+         _scale = _initialFitScale!;
+         _offset = Offset(
+           (containerWidth - mapWidth * _initialFitScale!) / 2 - _mapBounds!.left * _initialFitScale!,
+           (containerHeight - mapHeight * _initialFitScale!) / 2 - _mapBounds!.top * _initialFitScale!,
+         );
+       });
+     }
+
+     // Tính toán giới hạn pan dựa trên scale hiện tại
+     PanLimits _calculatePanLimits() {
+       if (_mapBounds == null || _containerSize == null) {
+         return PanLimits(minX: -100, maxX: 100, minY: -100, maxY: 100);
+       }
+       
+       final mapWidth = _mapBounds!.width * _scale;
+       final mapHeight = _mapBounds!.height * _scale;
+       final containerWidth = _containerSize!.width;
+       final containerHeight = _containerSize!.height;
+       
+       // Tính toán giới hạn để bản đồ không bị di chuyển ra ngoài container
+       final maxOffsetX = max(0, mapWidth - containerWidth);
+       final maxOffsetY = max(0, mapHeight - containerHeight);
+       final minOffsetX = min(0, containerWidth - mapWidth);
+       final minOffsetY = min(0, containerHeight - mapHeight);
+       
+       // Thêm margin để có thể di chuyển một chút ra ngoài
+       final margin = 50.0;
+       
+       return PanLimits(
+         minX: minOffsetX - margin,
+         maxX: maxOffsetX + margin,
+         minY: minOffsetY - margin,
+         maxY: maxOffsetY + margin,
+       );
+     }
 
   @override
   Widget build(BuildContext context) {
@@ -385,11 +417,11 @@ class _SvgCanvasVietnamMapWidgetState extends State<SvgCanvasVietnamMapWidget> {
                   builder: (context, constraints) {
                     final containerSize = Size(constraints.maxWidth, constraints.maxHeight);
                     
-                    // Lưu kích thước container và căn giữa bản đồ nếu cần
+                    // Lưu kích thước container và chỉ căn giữa bản đồ lần đầu
                     if (_containerSize != containerSize) {
                       _containerSize = containerSize;
-                      if (_mapBounds != null) {
-                        // Delay để tránh setState trong build
+                      if (_mapBounds != null && _initialFitScale == null) {
+                        // Chỉ căn giữa lần đầu khi load, không reset khi thay đổi kích thước
                         WidgetsBinding.instance.addPostFrameCallback((_) {
                           _centerMapInContainer();
                         });
@@ -446,6 +478,8 @@ class _SvgCanvasVietnamMapWidgetState extends State<SvgCanvasVietnamMapWidget> {
         widget.onProvinceTap!(tappedProvince);
       }
       
+      
+      
       ScaffoldMessenger.of(context).showSnackBar(
         SnackBar(
           content: Text('Bạn đã chọn: ${_getProvinceName(tappedProvince)}'),
@@ -463,12 +497,43 @@ class _SvgCanvasVietnamMapWidgetState extends State<SvgCanvasVietnamMapWidget> {
     // Chuyển đổi vị trí tap từ screen coordinates sang map coordinates
     final mapPosition = (position - _offset) / _scale;
     
-    for (final entry in _provincePaths!.entries) {
-      if (_isPointInPolygons(mapPosition, entry.value)) {
-        return entry.key;
+         List<String> foundProvinces = [];
+     for (final entry in _provincePaths!.entries) {
+       if (_isPointInPolygons(mapPosition, entry.value)) {
+         foundProvinces.add(entry.key);
+       }
+     }
+    
+         if (foundProvinces.isNotEmpty) {
+       // Nếu có nhiều tỉnh, chọn tỉnh có diện tích nhỏ nhất (tỉnh cụ thể)
+       String selectedProvince = foundProvinces.first;
+       double minArea = double.infinity;
+       
+       for (final provinceId in foundProvinces) {
+         final polygons = _provincePaths![provinceId]!;
+         double area = 0;
+         
+         for (final polygon in polygons) {
+           // Tính diện tích polygon bằng công thức shoelace
+           double polygonArea = 0;
+           for (int i = 0; i < polygon.length; i++) {
+             final j = (i + 1) % polygon.length;
+             polygonArea += polygon[i].dx * polygon[j].dy;
+             polygonArea -= polygon[j].dx * polygon[i].dy;
+           }
+           area += polygonArea.abs() / 2;
+         }
+         
+         if (area < minArea) {
+           minArea = area;
+           selectedProvince = provinceId;
+         }
+       }
+       
+               return selectedProvince;
       }
-    }
-    return null;
+      
+      return null;
   }
 
   bool _isPointInPolygons(Offset point, List<List<Offset>> polygons) {
@@ -503,75 +568,71 @@ class _SvgCanvasVietnamMapWidgetState extends State<SvgCanvasVietnamMapWidget> {
     _focalPoint = details.focalPoint;
   }
 
-     void _handleScaleUpdate(ScaleUpdateDetails details) {
-     if (_focalPoint == null) return;
-     
-     setState(() {
-       if (details.pointerCount == 1) {
-         // Pan (di chuyển) khi có 1 ngón tay - tăng tốc độ
-         final focalPointDelta = details.focalPoint - _focalPoint!;
-         final newOffset = _offset + focalPointDelta * 1.5; // Tăng tốc độ pan lên 1.5x
-         
-                   // Giới hạn pan dựa trên kích thước bản đồ và container
-          final maxOffsetX = _containerSize != null ? _containerSize!.width * 0.3 : 100.0;
-          final maxOffsetY = _containerSize != null ? _containerSize!.height * 0.3 : 20.0;
-          final minOffsetX = _containerSize != null ? -_containerSize!.width * 0.3 : -50.0;
-          final minOffsetY = _containerSize != null ? -_containerSize!.height * 0.3 : -50.0;
-         
-         _offset = Offset(
-           newOffset.dx.clamp(minOffsetX, maxOffsetX),
-           newOffset.dy.clamp(minOffsetY, maxOffsetY),
-         );
-         
-         _focalPoint = details.focalPoint;
-         
-         // Xử lý hover
-         final RenderBox renderBox = context.findRenderObject() as RenderBox;
-         final localPosition = renderBox.globalToLocal(details.focalPoint);
-         final hoveredProvince = _getProvinceAtPosition(localPosition);
-         
-         if (this.hoveredProvince != hoveredProvince) {
-           this.hoveredProvince = hoveredProvince;
+           void _handleScaleUpdate(ScaleUpdateDetails details) {
+      if (_focalPoint == null) return;
+      
+      setState(() {
+                 if (details.pointerCount == 1) {
+           // Pan (di chuyển) khi có 1 ngón tay
+           final focalPointDelta = details.focalPoint - _focalPoint!;
+           // Tăng tốc độ pan dựa trên scale - khi zoom in thì pan nhanh hơn
+           final panSpeed = 1.0 + (_scale - 1.0) * 0.5; // Tăng tốc độ theo scale
+           final newOffset = _offset + focalPointDelta * panSpeed;
+          
+          // Giới hạn pan dựa trên scale hiện tại và kích thước bản đồ
+          final panLimits = _calculatePanLimits();
+          
+          _offset = Offset(
+            newOffset.dx.clamp(panLimits.minX, panLimits.maxX),
+            newOffset.dy.clamp(panLimits.minY, panLimits.maxY),
+          );
+          
+          _focalPoint = details.focalPoint;
+          
+          // Xử lý hover
+          final RenderBox renderBox = context.findRenderObject() as RenderBox;
+          final localPosition = renderBox.globalToLocal(details.focalPoint);
+          final hoveredProvince = _getProvinceAtPosition(localPosition);
+          
+          if (this.hoveredProvince != hoveredProvince) {
+            this.hoveredProvince = hoveredProvince;
+          }
+                 } else if (details.pointerCount == 2) {
+           // Zoom khi có 2 ngón tay
+           final scaleFactor = 0.5; // Giảm tốc độ zoom
+           final newScale = (_scale * (1 + (details.scale - 1) * scaleFactor)).clamp(_minScale, _maxScale);
+           
+           // Tính toán vị trí zoom chính xác
+           final RenderBox renderBox = context.findRenderObject() as RenderBox;
+           final localFocalPoint = renderBox.globalToLocal(_focalPoint!);
+           
+           // Chuyển đổi từ screen coordinates sang map coordinates (trước khi thay đổi scale)
+           final mapFocalPoint = (localFocalPoint - _offset) / _scale;
+           
+           // Cập nhật scale
+           final oldScale = _scale;
+           _scale = newScale;
+           
+           // Tính toán offset mới để giữ nguyên vị trí focal point
+           // Công thức: newOffset = localFocalPoint - (mapFocalPoint * newScale)
+           final newOffset = localFocalPoint - (mapFocalPoint * _scale);
+           
+           // Giới hạn offset sau khi zoom
+           final panLimits = _calculatePanLimits();
+           
+           _offset = Offset(
+             newOffset.dx.clamp(panLimits.minX, panLimits.maxX),
+             newOffset.dy.clamp(panLimits.minY, panLimits.maxY),
+           );
+           
+           _focalPoint = details.focalPoint;
          }
-       } else if (details.pointerCount == 2) {
-         // Zoom khi có 2 ngón tay - giảm tốc độ
-         final scaleFactor = 0.5; // Giảm tốc độ zoom xuống 0.5x
-         final newScale = (_scale * (1 + (details.scale - 1) * scaleFactor)).clamp(_minScale, _maxScale);
-         
-         // Tính toán vị trí zoom chính xác
-         final RenderBox renderBox = context.findRenderObject() as RenderBox;
-         final localFocalPoint = renderBox.globalToLocal(_focalPoint!);
-         
-         // Chuyển đổi từ screen coordinates sang map coordinates
-         final mapFocalPoint = (localFocalPoint - _offset) / _scale;
-         
-         // Cập nhật scale
-         final oldScale = _scale;
-         _scale = newScale;
-         
-         // Tính toán offset mới để zoom vào đúng vị trí
-         final newMapFocalPoint = mapFocalPoint * _scale;
-         final newScreenFocalPoint = newMapFocalPoint + _offset;
-         final newOffset = localFocalPoint - newScreenFocalPoint;
-         
-                   // Giới hạn offset sau khi zoom dựa trên kích thước container
-          final maxOffsetX = _containerSize != null ? _containerSize!.width * 0.3 : 50.0;
-          final maxOffsetY = _containerSize != null ? _containerSize!.height * 0.3 : 50.0;
-          final minOffsetX = _containerSize != null ? -_containerSize!.width * 0.3 : -50.0;
-          final minOffsetY = _containerSize != null ? -_containerSize!.height * 0.3 : -50.0;
-         
-         _offset = Offset(
-           newOffset.dx.clamp(minOffsetX, maxOffsetX),
-           newOffset.dy.clamp(minOffsetY, maxOffsetY),
-         );
-         
-         _focalPoint = details.focalPoint;
-       }
-     });
-   }
+      });
+    }
 
   String _getProvinceName(String provinceId) {
     final provinceNames = {
+      // Thành phố trực thuộc Trung ương
       'Ha Noi': 'Hà Nội',
       'Ho Chi Minh': 'Thành phố Hồ Chí Minh',
       'Da Nang': 'Đà Nẵng',
@@ -812,8 +873,23 @@ class PathCommand {
     );
   }
 
-  @override
-  bool shouldRepaint(covariant CustomPainter oldDelegate) {
-    return true;
-  }
-} 
+     @override
+   bool shouldRepaint(covariant CustomPainter oldDelegate) {
+     return true;
+   }
+ }
+
+ // Class để lưu trữ giới hạn pan
+ class PanLimits {
+   final double minX;
+   final double maxX;
+   final double minY;
+   final double maxY;
+
+   PanLimits({
+     required this.minX,
+     required this.maxX,
+     required this.minY,
+     required this.maxY,
+   });
+ } 
