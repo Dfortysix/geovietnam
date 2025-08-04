@@ -65,8 +65,7 @@ class _SvgCanvasVietnamMapWidgetState extends State<SvgCanvasVietnamMapWidget> {
          if (id != null && d != null) {
            // Skip background/container elements
            if (id.contains('Vector') || 
-               id.contains('vietnam_map_split_new_01_07') ||
-               id.contains('Truong Sa')) {
+               id.contains('vietnam_map_split_new_01_07')) {
              continue;
            }
            
@@ -85,8 +84,7 @@ class _SvgCanvasVietnamMapWidgetState extends State<SvgCanvasVietnamMapWidget> {
          if (groupId != null) {
            // Skip background/container layers
            if (groupId.contains('vietnam_map_split_new_01_07') || 
-               groupId.contains('Vector') ||
-               groupId.contains('Truong Sa')) {
+               groupId.contains('Vector')) {
              continue;
            }
            
@@ -497,43 +495,58 @@ class _SvgCanvasVietnamMapWidgetState extends State<SvgCanvasVietnamMapWidget> {
     // Chuyển đổi vị trí tap từ screen coordinates sang map coordinates
     final mapPosition = (position - _offset) / _scale;
     
-         List<String> foundProvinces = [];
-     for (final entry in _provincePaths!.entries) {
-       if (_isPointInPolygons(mapPosition, entry.value)) {
-         foundProvinces.add(entry.key);
-       }
-     }
+    List<String> foundProvinces = [];
+    for (final entry in _provincePaths!.entries) {
+      if (_isPointInPolygons(mapPosition, entry.value)) {
+        foundProvinces.add(entry.key);
+      }
+    }
     
-         if (foundProvinces.isNotEmpty) {
-       // Nếu có nhiều tỉnh, chọn tỉnh có diện tích nhỏ nhất (tỉnh cụ thể)
-       String selectedProvince = foundProvinces.first;
-       double minArea = double.infinity;
-       
-       for (final provinceId in foundProvinces) {
-         final polygons = _provincePaths![provinceId]!;
-         double area = 0;
-         
-         for (final polygon in polygons) {
-           // Tính diện tích polygon bằng công thức shoelace
-           double polygonArea = 0;
-           for (int i = 0; i < polygon.length; i++) {
-             final j = (i + 1) % polygon.length;
-             polygonArea += polygon[i].dx * polygon[j].dy;
-             polygonArea -= polygon[j].dx * polygon[i].dy;
-           }
-           area += polygonArea.abs() / 2;
-         }
-         
-         if (area < minArea) {
-           minArea = area;
-           selectedProvince = provinceId;
-         }
-       }
-       
-               return selectedProvince;
+    // Nếu không tìm thấy tỉnh nào, thử tìm với vùng click mở rộng cho các đảo nhỏ
+    if (foundProvinces.isEmpty) {
+      final expandedPosition = mapPosition;
+      final searchRadius = 5.0; // Bán kính tìm kiếm mở rộng
+      
+      for (final entry in _provincePaths!.entries) {
+        // Chỉ áp dụng cho Hoàng Sa và Trường Sa
+        if (entry.key == 'Hoang Sa' || entry.key == 'Truong Sa') {
+          if (_isPointNearPolygons(expandedPosition, entry.value, searchRadius)) {
+            foundProvinces.add(entry.key);
+          }
+        }
+      }
+    }
+    
+    if (foundProvinces.isNotEmpty) {
+      // Nếu có nhiều tỉnh, chọn tỉnh có diện tích nhỏ nhất (tỉnh cụ thể)
+      String selectedProvince = foundProvinces.first;
+      double minArea = double.infinity;
+      
+      for (final provinceId in foundProvinces) {
+        final polygons = _provincePaths![provinceId]!;
+        double area = 0;
+        
+        for (final polygon in polygons) {
+          // Tính diện tích polygon bằng công thức shoelace
+          double polygonArea = 0;
+          for (int i = 0; i < polygon.length; i++) {
+            final j = (i + 1) % polygon.length;
+            polygonArea += polygon[i].dx * polygon[j].dy;
+            polygonArea -= polygon[j].dx * polygon[i].dy;
+          }
+          area += polygonArea.abs() / 2;
+        }
+        
+        if (area < minArea) {
+          minArea = area;
+          selectedProvince = provinceId;
+        }
       }
       
-      return null;
+      return selectedProvince;
+    }
+    
+    return null;
   }
 
   bool _isPointInPolygons(Offset point, List<List<Offset>> polygons) {
@@ -543,6 +556,71 @@ class _SvgCanvasVietnamMapWidgetState extends State<SvgCanvasVietnamMapWidget> {
       }
     }
     return false;
+  }
+
+  // Kiểm tra điểm có gần với polygon không (cho các đảo nhỏ)
+  bool _isPointNearPolygons(Offset point, List<List<Offset>> polygons, double radius) {
+    for (final polygon in polygons) {
+      if (_isPointNearPolygon(point, polygon, radius)) {
+        return true;
+      }
+    }
+    return false;
+  }
+
+  // Kiểm tra điểm có gần với polygon không
+  bool _isPointNearPolygon(Offset point, List<Offset> polygon, double radius) {
+    // Kiểm tra khoảng cách từ điểm đến các cạnh của polygon
+    for (int i = 0; i < polygon.length; i++) {
+      final j = (i + 1) % polygon.length;
+      final p1 = polygon[i];
+      final p2 = polygon[j];
+      
+      // Tính khoảng cách từ điểm đến đoạn thẳng
+      final distance = _distanceToLineSegment(point, p1, p2);
+      if (distance <= radius) {
+        return true;
+      }
+    }
+    
+    // Kiểm tra khoảng cách đến các đỉnh
+    for (final vertex in polygon) {
+      final distance = (point - vertex).distance;
+      if (distance <= radius) {
+        return true;
+      }
+    }
+    
+    return false;
+  }
+
+  // Tính khoảng cách từ điểm đến đoạn thẳng
+  double _distanceToLineSegment(Offset point, Offset p1, Offset p2) {
+    final A = point.dx - p1.dx;
+    final B = point.dy - p1.dy;
+    final C = p2.dx - p1.dx;
+    final D = p2.dy - p1.dy;
+
+    final dot = A * C + B * D;
+    final lenSq = C * C + D * D;
+    
+    if (lenSq == 0) {
+      // p1 và p2 trùng nhau
+      return (point - p1).distance;
+    }
+    
+    final param = dot / lenSq;
+    
+    Offset closest;
+    if (param < 0) {
+      closest = p1;
+    } else if (param > 1) {
+      closest = p2;
+    } else {
+      closest = Offset(p1.dx + param * C, p1.dy + param * D);
+    }
+    
+    return (point - closest).distance;
   }
 
   bool _isPointInPolygon(Offset point, List<Offset> polygon) {
