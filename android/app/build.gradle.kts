@@ -3,6 +3,8 @@ plugins {
     id("kotlin-android")
     // The Flutter Gradle Plugin must be applied after the Android and Kotlin Gradle plugins.
     id("dev.flutter.flutter-gradle-plugin")
+    // Google Play Games Services
+    id("com.google.gms.google-services")
 }
 
 android {
@@ -41,4 +43,11 @@ android {
 
 flutter {
     source = "../.."
+}
+
+dependencies {
+    // Google Play Games Services
+    implementation("com.google.android.gms:play-services-games:23.1.0")
+    implementation("com.google.android.gms:play-services-auth:20.7.0")
+    implementation("com.google.firebase:firebase-analytics:21.5.0")
 }

@@ -4,6 +4,7 @@ import '../theme/app_theme.dart';
 import '../services/game_progress_service.dart';
 import '../services/daily_challenge_service.dart';
 import '../models/game_progress.dart';
+import '../widgets/google_play_games_widget.dart';
 import 'game_screen.dart';
 import 'daily_challenge_screen.dart';
 import 'map_exploration_screen.dart';
@@ -280,6 +281,18 @@ class _HomeScreenState extends State<HomeScreen> {
                           begin: 0.3,
                           duration: 800.ms,
                           delay: 1500.ms,
+                        ),
+
+                        const SizedBox(height: 16),
+                        
+                        // Google Play Games Integration
+                        const GooglePlayGamesWidget().animate().fadeIn(
+                          duration: 800.ms,
+                          delay: 1800.ms,
+                        ).slideX(
+                          begin: 0.3,
+                          duration: 800.ms,
+                          delay: 1800.ms,
                         ),
 
                         const SizedBox(height: 40),

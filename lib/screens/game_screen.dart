@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_animate/flutter_animate.dart';
 import '../theme/app_theme.dart';
 import '../services/game_progress_service.dart';
+import '../widgets/google_play_games_widget.dart';
 
 class GameScreen extends StatefulWidget {
   const GameScreen({Key? key}) : super(key: key);
@@ -435,6 +436,14 @@ class _GameScreenState extends State<GameScreen> {
                   ).animate().scale(duration: 600.ms).then().shimmer(duration: 1.seconds),
 
                 const SizedBox(height: 32),
+
+                // Google Play Games Integration
+                GooglePlayGamesQuickActions(
+                  currentScore: score,
+                  gameMode: 'daily_challenge',
+                ),
+
+                const SizedBox(height: 16),
 
                 // Buttons
                 Row(
