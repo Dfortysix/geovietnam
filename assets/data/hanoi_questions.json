@@ -1,0 +1,242 @@
+[
+  {
+    "id": "hanoi_001",
+    "type": "text",
+    "question": "Hà Nội trong quá khứ từng có tên gọi là gì?",
+    "options": [
+      "Phong Châu",
+      "Đại La",
+      "Thăng Long",
+      "Hoa Lư"
+    ],
+    "answer": 2
+  },
+  {
+    "id": "hanoi_002",
+    "type": "text",
+    "question": "Sông nào chảy qua trung tâm thành phố Hà Nội?",
+    "options": [
+      "Sông Hồng",
+      "Sông Cầu",
+      "Sông Lô",
+      "Sông Đáy"
+    ],
+    "answer": 0
+  },
+  {
+    "id": "hanoi_003",
+    "type": "text",
+    "question": "Hồ nào nổi tiếng nhất ở trung tâm Hà Nội?",
+    "options": [
+      "Hồ Tây",
+      "Hồ Hoàn Kiếm",
+      "Hồ Bảy Mẫu",
+      "Hồ Giảng Võ"
+    ],
+    "answer": 1
+  },
+  {
+    "id": "hanoi_004",
+    "type": "text",
+    "question": "Văn Miếu - Quốc Tử Giám được xây dựng vào triều đại nào?",
+    "options": [
+      "Triều Trần",
+      "Triều Lê",
+      "Triều Lý",
+      "Triều Nguyễn"
+    ],
+    "answer": 2
+  },
+  {
+    "id": "hanoi_005",
+    "type": "text",
+    "question": "Hà Nội trở thành thủ đô của nước Việt Nam Dân chủ Cộng hòa vào năm nào?",
+    "options": [
+      "1945",
+      "1946",
+      "1954",
+      "1976"
+    ],
+    "answer": 0
+  },
+  {
+    "id": "hanoi_006",
+    "type": "text",
+    "question": "Đền Ngọc Sơn nằm trên hồ nào?",
+    "options": [
+      "Hồ Tây",
+      "Hồ Hoàn Kiếm",
+      "Hồ Trúc Bạch",
+      "Hồ Linh Đàm"
+    ],
+    "answer": 1
+  },
+  {
+    "id": "hanoi_007",
+    "type": "text",
+    "question": "Biểu tượng kiến trúc cổ nổi tiếng của Hà Nội là?",
+    "options": [
+      "Chùa Một Cột",
+      "Chùa Bái Đính",
+      "Nhà thờ Đức Bà",
+      "Chợ Bến Thành"
+    ],
+    "answer": 0
+  },
+  {
+    "id": "hanoi_008",
+    "type": "text",
+    "question": "Hà Nội được chính thức mở rộng địa giới hành chính vào năm nào (sáp nhập với Hà Tây)?",
+    "options": [
+      "1986",
+      "1991",
+      "2008",
+      "2010"
+    ],
+    "answer": 2
+  },
+  {
+    "id": "hanoi_009",
+    "type": "text",
+    "question": "Lễ hội truyền thống lớn nhất của Hà Nội là gì?",
+    "options": [
+      "Lễ hội Phủ Tây Hồ",
+      "Lễ hội Gióng",
+      "Lễ hội Yên Tử",
+      "Lễ hội Cổ Loa"
+    ],
+    "answer": 1
+  },
+  {
+    "id": "hanoi_010",
+    "type": "text",
+    "question": "Phố cổ Hà Nội nổi tiếng nhất với nghề thủ công gì?",
+    "options": [
+      "Dệt lụa",
+      "Nghề kim hoàn",
+      "Gốm sứ",
+      "Buôn bán các ngành nghề truyền thống"
+    ],
+    "answer": 3
+  },
+  {
+    "id": "hanoi_011",
+    "type": "text",
+    "question": "Quảng trường lớn nhất ở Hà Nội là?",
+    "options": [
+      "Quảng trường Ba Đình",
+      "Quảng trường Đông Kinh Nghĩa Thục",
+      "Quảng trường Nhà Hát Lớn",
+      "Quảng trường Cách mạng"
+    ],
+    "answer": 0
+  },
+  {
+    "id": "hanoi_012",
+    "type": "text",
+    "question": "Hà Nội nằm ở khu vực địa lý nào của Việt Nam?",
+    "options": [
+      "Trung Bộ",
+      "Nam Bộ",
+      "Tây Nguyên",
+      "Đồng bằng sông Hồng"
+    ],
+    "answer": 3
+  },
+  {
+    "id": "hanoi_013",
+    "type": "text",
+    "question": "Quốc lộ số mấy đi qua trung tâm Hà Nội?",
+    "options": [
+      "Quốc lộ 1A",
+      "Quốc lộ 5",
+      "Quốc lộ 6",
+      "Quốc lộ 7"
+    ],
+    "answer": 0
+  },
+  {
+    "id": "hanoi_014",
+    "type": "text",
+    "question": "Hà Nội có bao nhiêu quận tính đến năm 2025?",
+    "options": [
+      "12",
+      "10",
+      "8",
+      "15"
+    ],
+    "answer": 0
+  },
+  {
+    "id": "hanoi_015",
+    "type": "text",
+    "question": "Hồ nào rộng nhất Hà Nội?",
+    "options": [
+      "Hồ Gươm",
+      "Hồ Tây",
+      "Hồ Linh Đàm",
+      "Hồ Bảy Mẫu"
+    ],
+    "answer": 1
+  },
+  {
+    "id": "hanoi_016",
+    "type": "text",
+    "question": "Tên gọi “Hà Nội” chính thức xuất hiện từ năm nào?",
+    "options": [
+      "1802",
+      "1831",
+      "1945",
+      "1911"
+    ],
+    "answer": 1
+  },
+  {
+    "id": "hanoi_017",
+    "type": "text",
+    "question": "Thành cổ nổi tiếng nào còn lại ở Hà Nội?",
+    "options": [
+      "Thành nhà Hồ",
+      "Thành Cổ Loa",
+      "Thành Hà Nội (Hoàng thành Thăng Long)",
+      "Thành Trường Sa"
+    ],
+    "answer": 2
+  },
+  {
+    "id": "hanoi_018",
+    "type": "text",
+    "question": "Vườn quốc gia nào nằm trên địa phận Hà Nội?",
+    "options": [
+      "Vườn quốc gia Cúc Phương",
+      "Vườn quốc gia Ba Vì",
+      "Vườn quốc gia Xuân Sơn",
+      "Vườn quốc gia Tam Đảo"
+    ],
+    "answer": 1
+  },
+  {
+    "id": "hanoi_019",
+    "type": "text",
+    "question": "Hà Nội từng là thủ đô của những triều đại nào?",
+    "options": [
+      "Lý, Trần, Lê",
+      "Nguyễn",
+      "Hồ",
+      "Tây Sơn"
+    ],
+    "answer": 0
+  },
+  {
+    "id": "hanoi_020",
+    "type": "text",
+    "question": "Tên sân bay quốc tế lớn nhất Hà Nội là?",
+    "options": [
+      "Nội Bài",
+      "Tân Sơn Nhất",
+      "Đồng Hới",
+      "Phù Cát"
+    ],
+    "answer": 0
+  }
+]

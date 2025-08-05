@@ -1,0 +1,242 @@
+[
+  {
+    "id": "haiphong_001",
+    "type": "text",
+    "question": "Ai là người được coi là khai phá đất Hải Phòng?",
+    "options": [
+      "Trần Hưng Đạo",
+      "Lê Chân",
+      "Ngô Quyền",
+      "Đinh Bộ Lĩnh"
+    ],
+    "answer": 1
+  },
+  {
+    "id": "haiphong_002",
+    "type": "text",
+    "question": "Hải Phòng được thành lập thành phố vào năm nào?",
+    "options": [
+      "1831",
+      "1945",
+      "1888",
+      "1976"
+    ],
+    "answer": 2
+  },
+  {
+    "id": "haiphong_003",
+    "type": "text",
+    "question": "Dòng sông lớn chảy qua trung tâm Hải Phòng là?",
+    "options": [
+      "Sông Hồng",
+      "Sông Đáy",
+      "Sông Cấm",
+      "Sông Lô"
+    ],
+    "answer": 2
+  },
+  {
+    "id": "haiphong_004",
+    "type": "text",
+    "question": "Hải Phòng có biệt danh là gì?",
+    "options": [
+      "Thành phố ngàn hoa",
+      "Thành phố cảng",
+      "Thành phố biển xanh",
+      "Thành phố đỏ"
+    ],
+    "answer": 1
+  },
+  {
+    "id": "haiphong_005",
+    "type": "text",
+    "question": "Đảo lớn nhất thuộc thành phố Hải Phòng là?",
+    "options": [
+      "Đảo Cồn Cỏ",
+      "Đảo Phú Quốc",
+      "Đảo Cát Bà",
+      "Đảo Lý Sơn"
+    ],
+    "answer": 2
+  },
+  {
+    "id": "haiphong_006",
+    "type": "text",
+    "question": "Khu du lịch biển nổi tiếng gần Hải Phòng là?",
+    "options": [
+      "Sầm Sơn",
+      "Đồ Sơn",
+      "Bãi Cháy",
+      "Cửa Lò"
+    ],
+    "answer": 1
+  },
+  {
+    "id": "haiphong_007",
+    "type": "text",
+    "question": "Hải Phòng giáp với tỉnh nào về phía bắc?",
+    "options": [
+      "Thái Bình",
+      "Quảng Ninh",
+      "Nam Định",
+      "Hải Dương"
+    ],
+    "answer": 1
+  },
+  {
+    "id": "haiphong_008",
+    "type": "text",
+    "question": "Trận chiến trên sông Bạch Đằng nổi tiếng nhất do ai chỉ huy?",
+    "options": [
+      "Lý Thường Kiệt",
+      "Trần Hưng Đạo",
+      "Ngô Quyền",
+      "Lê Lợi"
+    ],
+    "answer": 1
+  },
+  {
+    "id": "haiphong_009",
+    "type": "text",
+    "question": "Hải Phòng có vị trí nằm ở vùng địa lý nào?",
+    "options": [
+      "Tây Nguyên",
+      "Duyên hải Bắc Bộ",
+      "Miền Trung",
+      "Đông Nam Bộ"
+    ],
+    "answer": 1
+  },
+  {
+    "id": "haiphong_010",
+    "type": "text",
+    "question": "Cảng biển lớn nhất Việt Nam đặt tại Hải Phòng tên là gì?",
+    "options": [
+      "Cảng Cái Lân",
+      "Cảng Đình Vũ",
+      "Cảng Hải Phòng",
+      "Cảng Sa Kỳ"
+    ],
+    "answer": 2
+  },
+  {
+    "id": "haiphong_011",
+    "type": "text",
+    "question": "Khu kinh tế lớn thuộc Hải Phòng là?",
+    "options": [
+      "Khu kinh tế Vũng Áng",
+      "Khu kinh tế Đình Vũ - Cát Hải",
+      "Khu kinh tế Nghi Sơn",
+      "Khu kinh tế Chu Lai"
+    ],
+    "answer": 1
+  },
+  {
+    "id": "haiphong_012",
+    "type": "text",
+    "question": "Biểu tượng kiến trúc nổi bật tại trung tâm Hải Phòng là?",
+    "options": [
+      "Nhà thờ Đá",
+      "Nhà hát lớn Hải Phòng",
+      "Nhà rồng",
+      "Văn Miếu"
+    ],
+    "answer": 1
+  },
+  {
+    "id": "haiphong_013",
+    "type": "text",
+    "question": "Sân bay quốc tế của Hải Phòng tên là gì?",
+    "options": [
+      "Tân Sơn Nhất",
+      "Nội Bài",
+      "Cát Bi",
+      "Phú Bài"
+    ],
+    "answer": 2
+  },
+  {
+    "id": "haiphong_014",
+    "type": "text",
+    "question": "Tháng nào hàng năm Hải Phòng tổ chức Lễ hội Hoa phượng đỏ?",
+    "options": [
+      "Tháng 5",
+      "Tháng 6",
+      "Tháng 4",
+      "Tháng 3"
+    ],
+    "answer": 0
+  },
+  {
+    "id": "haiphong_015",
+    "type": "text",
+    "question": "Đỉnh núi cao nhất tại Hải Phòng là?",
+    "options": [
+      "Núi Yên Tử",
+      "Núi Voi",
+      "Núi Tam Đảo",
+      "Núi Côn Sơn"
+    ],
+    "answer": 1
+  },
+  {
+    "id": "haiphong_016",
+    "type": "text",
+    "question": "Quần đảo xa bờ duy nhất thuộc Hải Phòng là?",
+    "options": [
+      "Hoàng Sa",
+      "Trường Sa",
+      "Bạch Long Vĩ",
+      "Cồn Cỏ"
+    ],
+    "answer": 2
+  },
+  {
+    "id": "haiphong_017",
+    "type": "text",
+    "question": "Địa danh Cát Bà thuộc huyện nào của Hải Phòng?",
+    "options": [
+      "Thủy Nguyên",
+      "Kiến Thụy",
+      "Cát Hải",
+      "Vĩnh Bảo"
+    ],
+    "answer": 2
+  },
+  {
+    "id": "haiphong_018",
+    "type": "text",
+    "question": "Địa danh nào sau đây KHÔNG thuộc địa phận Hải Phòng?",
+    "options": [
+      "An Dương",
+      "An Lão",
+      "Đông Anh",
+      "Kiến An"
+    ],
+    "answer": 2
+  },
+  {
+    "id": "haiphong_019",
+    "type": "text",
+    "question": "Đặc sản nào nổi tiếng nhất của Hải Phòng?",
+    "options": [
+      "Phở cuốn",
+      "Bánh đa cua",
+      "Chả cá Lã Vọng",
+      "Cao lầu"
+    ],
+    "answer": 1
+  },
+  {
+    "id": "haiphong_020",
+    "type": "text",
+    "question": "Địa danh nào là cái nôi Hiệp hội cảng biển Việt Nam đặt trụ sở?",
+    "options": [
+      "Quảng Ninh",
+      "Hải Phòng",
+      "Đà Nẵng",
+      "Bà Rịa - Vũng Tàu"
+    ],
+    "answer": 1
+  }
+]
