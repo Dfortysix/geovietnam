@@ -12,7 +12,7 @@
 ## Bước 2: Thêm ứng dụng Android
 
 1. Trong Firebase Console, nhấn biểu tượng Android
-2. Nhập package name: `com.example.geovietnam`
+2. Nhập package name: `com.tridug.geovietnam`
 3. Nhập app nickname: `GeoVietnam`
 4. Nhấn "Register app"
 
@@ -65,9 +65,9 @@ Thay thế các giá trị trong file `android/app/google-services.json`:
     {
       "client_info": {
         "mobilesdk_app_id": "1:123456789012:android:abcdef1234567890",  // Thay bằng app ID thực
-        "android_client_info": {
-          "package_name": "com.example.geovietnam"
-        }
+                 "android_client_info": {
+           "package_name": "com.tridug.geovietnam"
+         }
       },
       "oauth_client": [
         {

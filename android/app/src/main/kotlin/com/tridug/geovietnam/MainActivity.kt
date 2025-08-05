@@ -1,4 +1,4 @@
-package com.example.geovietnam
+package com.tridug.geovietnam
 
 import io.flutter.embedding.android.FlutterActivity
 

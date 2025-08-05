@@ -6,12 +6,12 @@
   },
   "client": [
     {
-      "client_info": {
-        "mobilesdk_app_id": "1:YOUR_PROJECT_NUMBER:android:YOUR_APP_ID",
-        "android_client_info": {
-          "package_name": "com.example.geovietnam"
-        }
-      },
+             "client_info": {
+         "mobilesdk_app_id": "1:YOUR_PROJECT_NUMBER:android:YOUR_APP_ID",
+         "android_client_info": {
+           "package_name": "com.tridug.geovietnam"
+         }
+       },
       "oauth_client": [
         {
           "client_id": "YOUR_CLIENT_ID.apps.googleusercontent.com",
