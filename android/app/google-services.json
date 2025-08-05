@@ -1,33 +1,41 @@
 {
   "project_info": {
-    "project_number": "YOUR_PROJECT_NUMBER",
-    "project_id": "geovietnam-game",
-    "storage_bucket": "geovietnam-game.appspot.com"
+    "project_number": "172432279115",
+    "project_id": "high-age-418301",
+    "storage_bucket": "high-age-418301.firebasestorage.app"
   },
   "client": [
     {
-             "client_info": {
-         "mobilesdk_app_id": "1:YOUR_PROJECT_NUMBER:android:YOUR_APP_ID",
-         "android_client_info": {
-           "package_name": "com.tridug.geovietnam"
-         }
-       },
+      "client_info": {
+        "mobilesdk_app_id": "1:172432279115:android:946e3fe1001b5537182fce",
+        "android_client_info": {
+          "package_name": "com.tridug.geovietnam"
+        }
+      },
       "oauth_client": [
         {
-          "client_id": "YOUR_CLIENT_ID.apps.googleusercontent.com",
+          "client_id": "172432279115-6ps00282g1qaa5cfofleu67acbg5rsqm.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.tridug.geovietnam",
+            "certificate_hash": "7108dd7ca6bc0a66ba839e7e1938c7b3b1c0e4b2"
+          }
+        },
+        {
+          "client_id": "172432279115-urpsj7ljhs9nriqoshrjqkf5od6b6l80.apps.googleusercontent.com",
           "client_type": 3
         }
       ],
       "api_key": [
         {
-          "current_key": "YOUR_API_KEY"
+          "current_key": "AIzaSyCqBEvjVZGNqLclsHoeTIxyVaKwdpINX38"
         }
       ],
       "services": {
         "appinvite_service": {
           "other_platform_oauth_client": [
             {
-              "client_id": "YOUR_CLIENT_ID.apps.googleusercontent.com",
+              "client_id": "172432279115-urpsj7ljhs9nriqoshrjqkf5od6b6l80.apps.googleusercontent.com",
               "client_type": 3
             }
           ]
@@ -36,4 +44,4 @@
     }
   ],
   "configuration_version": "1"
-} 
+}
