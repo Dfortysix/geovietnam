@@ -2,8 +2,10 @@ import 'package:flutter/material.dart';
 import 'package:flutter_animate/flutter_animate.dart';
 import '../theme/app_theme.dart';
 import '../services/game_progress_service.dart';
+import '../services/daily_challenge_service.dart';
 import '../models/game_progress.dart';
 import 'game_screen.dart';
+import 'daily_challenge_screen.dart';
 import 'map_exploration_screen.dart';
 import 'progress_screen.dart';
 
@@ -17,6 +19,7 @@ class HomeScreen extends StatefulWidget {
 class _HomeScreenState extends State<HomeScreen> {
   GameProgress? _gameProgress;
   bool _isLoading = true;
+  Map<String, dynamic>? _dailyChallenge;
 
   @override
   void initState() {
@@ -27,8 +30,10 @@ class _HomeScreenState extends State<HomeScreen> {
   Future<void> _loadGameProgress() async {
     try {
       final progress = await GameProgressService.getCurrentProgress();
+      final dailyChallenge = await DailyChallengeService.getCurrentDailyChallenge();
       setState(() {
         _gameProgress = progress;
+        _dailyChallenge = dailyChallenge;
         _isLoading = false;
       });
     } catch (e) {
@@ -221,28 +226,7 @@ class _HomeScreenState extends State<HomeScreen> {
                     padding: const EdgeInsets.symmetric(horizontal: 24),
                     child: Column(
                       children: [
-                        _buildGameOption(
-                          context,
-                          icon: Icons.play_arrow,
-                          title: '🎯 Daily Challenge',
-                          subtitle: 'Hoàn thành 7 câu hỏi để mở khóa khu vực mới',
-                          gradient: AppTheme.primaryGradient,
-                          onTap: () {
-                            Navigator.push(
-                              context,
-                              MaterialPageRoute(
-                                builder: (context) => const GameScreen(),
-                              ),
-                            ).then((_) => _loadGameProgress());
-                          },
-                        ).animate().fadeIn(
-                          duration: 800.ms,
-                          delay: 1200.ms,
-                        ).slideX(
-                          begin: 0.3,
-                          duration: 800.ms,
-                          delay: 1200.ms,
-                        ),
+                        _buildDailyChallengeOption(context),
                         
                         const SizedBox(height: 16),
                         
@@ -264,11 +248,11 @@ class _HomeScreenState extends State<HomeScreen> {
                           },
                         ).animate().fadeIn(
                           duration: 800.ms,
-                          delay: 1500.ms,
+                          delay: 1200.ms,
                         ).slideX(
                           begin: 0.3,
                           duration: 800.ms,
-                          delay: 1500.ms,
+                          delay: 1200.ms,
                         ),
                         
                         const SizedBox(height: 16),
@@ -291,11 +275,11 @@ class _HomeScreenState extends State<HomeScreen> {
                           },
                         ).animate().fadeIn(
                           duration: 800.ms,
-                          delay: 1800.ms,
+                          delay: 1500.ms,
                         ).slideX(
                           begin: 0.3,
                           duration: 800.ms,
-                          delay: 1800.ms,
+                          delay: 1500.ms,
                         ),
 
                         const SizedBox(height: 40),
@@ -374,6 +358,151 @@ class _HomeScreenState extends State<HomeScreen> {
           ),
         ),
       ],
+    );
+  }
+
+  Widget _buildDailyChallengeOption(BuildContext context) {
+    final canPlay = _dailyChallenge?['canPlay'] ?? false;
+    final attempts = _dailyChallenge?['attempts'] ?? 0;
+    final maxAttempts = _dailyChallenge?['maxAttempts'] ?? 3;
+    final remainingAttempts = maxAttempts - attempts;
+    final isProvinceUnlockedToday = _dailyChallenge?['isProvinceUnlockedToday'] ?? false;
+    
+    return GestureDetector(
+      onTap: (canPlay && !isProvinceUnlockedToday) ? () {
+        Navigator.push(
+          context,
+          MaterialPageRoute(
+            builder: (context) => const DailyChallengeScreen(),
+          ),
+        ).then((_) => _loadGameProgress());
+      } : null,
+      child: Container(
+        padding: const EdgeInsets.all(20),
+        decoration: BoxDecoration(
+          gradient: isProvinceUnlockedToday
+              ? const LinearGradient(
+                  colors: [Colors.green, Colors.greenAccent],
+                )
+              : canPlay 
+                  ? const LinearGradient(
+                      colors: [Color(0xFFFF6B35), Color(0xFFFF8E53)],
+                    )
+                  : const LinearGradient(
+                      colors: [Colors.grey, Colors.grey],
+                    ),
+          borderRadius: BorderRadius.circular(20),
+          boxShadow: AppTheme.softShadow,
+          border: Border.all(
+            color: isProvinceUnlockedToday
+                ? Colors.green.withOpacity(0.3)
+                : canPlay 
+                    ? AppTheme.primaryOrange.withOpacity(0.3)
+                    : Colors.grey.withOpacity(0.3),
+            width: 1,
+          ),
+        ),
+        child: Row(
+          children: [
+            Container(
+              padding: const EdgeInsets.all(12),
+              decoration: BoxDecoration(
+                color: Colors.white.withOpacity(0.2),
+                borderRadius: BorderRadius.circular(12),
+                boxShadow: AppTheme.softShadow,
+              ),
+                             child: Icon(
+                 isProvinceUnlockedToday ? Icons.check_circle : Icons.celebration,
+                 color: Colors.white,
+                 size: 24,
+               ),
+            ),
+            const SizedBox(width: 16),
+            Expanded(
+              child: Column(
+                crossAxisAlignment: CrossAxisAlignment.start,
+                children: [
+                                     Row(
+                     children: [
+                       Flexible(
+                         child: Text(
+                           isProvinceUnlockedToday ? '🎉 Chúc mừng!' : '🎯 Daily Challenge',
+                           style: Theme.of(context).textTheme.titleLarge?.copyWith(
+                             color: Colors.white,
+                             fontWeight: FontWeight.w600,
+                           ),
+                           overflow: TextOverflow.ellipsis,
+                         ),
+                       ),
+                       if (isProvinceUnlockedToday) ...[
+                         const SizedBox(width: 8),
+                         Container(
+                           padding: const EdgeInsets.symmetric(horizontal: 8, vertical: 4),
+                           decoration: BoxDecoration(
+                             color: Colors.white.withOpacity(0.2),
+                             borderRadius: BorderRadius.circular(12),
+                           ),
+                           child: const Text(
+                             'Hoàn thành',
+                             style: TextStyle(
+                               color: Colors.white,
+                               fontSize: 12,
+                               fontWeight: FontWeight.bold,
+                             ),
+                           ),
+                         ),
+                       ] else if (!canPlay) ...[
+                         const SizedBox(width: 8),
+                         Container(
+                           padding: const EdgeInsets.symmetric(horizontal: 8, vertical: 4),
+                           decoration: BoxDecoration(
+                             color: Colors.white.withOpacity(0.2),
+                             borderRadius: BorderRadius.circular(12),
+                           ),
+                           child: const Text(
+                             'Hết lượt',
+                             style: TextStyle(
+                               color: Colors.white,
+                               fontSize: 12,
+                               fontWeight: FontWeight.bold,
+                             ),
+                           ),
+                         ),
+                       ],
+                     ],
+                   ),
+                  const SizedBox(height: 4),
+                                     Text(
+                     isProvinceUnlockedToday
+                         ? 'Đã mở khóa tỉnh hôm nay!'
+                         : canPlay 
+                             ? '7 câu hỏi - Còn $remainingAttempts lần thử hôm nay'
+                             : 'Đã hết lượt thử hôm nay',
+                     style: Theme.of(context).textTheme.bodyMedium?.copyWith(
+                       color: Colors.white.withOpacity(0.9),
+                     ),
+                     overflow: TextOverflow.ellipsis,
+                     maxLines: 2,
+                   ),
+                ],
+              ),
+            ),
+                         if (canPlay && !isProvinceUnlockedToday)
+               Icon(
+                 Icons.arrow_forward_ios,
+                 color: Colors.white,
+                 size: 16,
+               ),
+          ],
+        ),
+      ),
+    ).animate().fadeIn(
+      duration: 800.ms,
+      delay: 1200.ms,
+    ).slideX(
+      begin: 0.3,
+      duration: 800.ms,
+      delay: 1200.ms,
     );
   }
 
