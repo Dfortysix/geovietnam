@@ -1,8 +1,9 @@
+import 'package:flutter/material.dart';
 import 'dart:async';
 import 'package:google_sign_in/google_sign_in.dart';
 import 'package:firebase_analytics/firebase_analytics.dart';
 
-class GooglePlayGamesService {
+class GooglePlayGamesService extends ChangeNotifier {
   static final GooglePlayGamesService _instance = GooglePlayGamesService._internal();
   factory GooglePlayGamesService() => _instance;
   GooglePlayGamesService._internal();
@@ -36,6 +37,7 @@ class GooglePlayGamesService {
       }
       
       _isInitialized = true;
+      notifyListeners();
       print('Google Play Games Services đã được khởi tạo thành công');
       return true;
     } catch (e) {
@@ -51,7 +53,11 @@ class GooglePlayGamesService {
       if (account != null) {
         _isSignedIn = true;
         _currentUser = account;
+        notifyListeners();
         print('Đăng nhập thành công: ${account.email}');
+        print('Tên hiển thị: ${account.displayName}');
+        print('ID: ${account.id}');
+        print('Avatar URL: ${account.photoUrl}');
         
         // Ghi log analytics
         await FirebaseAnalytics.instance.logEvent(
@@ -59,6 +65,8 @@ class GooglePlayGamesService {
           parameters: {
             'method': 'google_play_games',
             'user_id': account.id,
+            'email': account.email,
+            'display_name': account.displayName ?? '',
           },
         );
         
@@ -77,6 +85,7 @@ class GooglePlayGamesService {
       await _googleSignIn.signOut();
       _isSignedIn = false;
       _currentUser = null;
+      notifyListeners();
       print('Đăng xuất thành công');
     } catch (e) {
       print('Lỗi đăng xuất: $e');

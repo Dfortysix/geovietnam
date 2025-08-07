@@ -22,7 +22,7 @@ class GeoVietnamApp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Provider<GooglePlayGamesService>(
+    return ChangeNotifierProvider<GooglePlayGamesService>(
       create: (_) => GooglePlayGamesService(),
       child: MaterialApp(
         title: 'GeoVietnam - Game Địa Lý Việt Nam',

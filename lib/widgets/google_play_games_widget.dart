@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 import '../services/google_play_games_service.dart';
+import 'user_avatar_widget.dart';
 
 class GooglePlayGamesWidget extends StatelessWidget {
   const GooglePlayGamesWidget({super.key});
@@ -16,23 +17,31 @@ class GooglePlayGamesWidget extends StatelessWidget {
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
-                Row(
-                  children: [
-                    Icon(
-                      Icons.games,
-                      color: Theme.of(context).primaryColor,
-                      size: 24,
-                    ),
-                    const SizedBox(width: 8),
-                    const Text(
-                      'Google Play Games',
-                      style: TextStyle(
-                        fontSize: 18,
-                        fontWeight: FontWeight.bold,
-                      ),
-                    ),
-                  ],
-                ),
+                                 Row(
+                   children: [
+                     Icon(
+                       Icons.games,
+                       color: Theme.of(context).primaryColor,
+                       size: 24,
+                     ),
+                     const SizedBox(width: 8),
+                     const Text(
+                       'Google Play Games',
+                       style: TextStyle(
+                         fontSize: 18,
+                         fontWeight: FontWeight.bold,
+                       ),
+                     ),
+                     const Spacer(),
+                                           // Avatar nhỏ nếu đã đăng nhập
+                      if (gamesService.isSignedIn && gamesService.currentUser != null)
+                        UserAvatarWidget(
+                          photoUrl: gamesService.currentUser!.photoUrl,
+                          size: 32,
+                          borderColor: Colors.green,
+                        ),
+                   ],
+                 ),
                 const SizedBox(height: 16),
                 
                 // Hiển thị trạng thái đăng nhập
@@ -46,8 +55,9 @@ class GooglePlayGamesWidget extends StatelessWidget {
                 const SizedBox(height: 12),
                 
                 // Thông tin người dùng nếu đã đăng nhập
-                if (gamesService.isSignedIn && gamesService.currentUser != null)
+                if (gamesService.isSignedIn && gamesService.currentUser != null) ...[
                   _buildUserInfo(gamesService.currentUser!),
+                ],
               ],
             ),
           ),
@@ -96,9 +106,10 @@ class GooglePlayGamesWidget extends StatelessWidget {
             if (context.mounted) {
               if (success) {
                 ScaffoldMessenger.of(context).showSnackBar(
-                  const SnackBar(
-                    content: Text('Đăng nhập thành công!'),
+                  SnackBar(
+                    content: Text('Đăng nhập thành công! Email: ${gamesService.currentUser?.email ?? 'N/A'}'),
                     backgroundColor: Colors.green,
+                    duration: const Duration(seconds: 3),
                   ),
                 );
               } else {
@@ -136,21 +147,11 @@ class GooglePlayGamesWidget extends StatelessWidget {
         color: Colors.grey[100],
         borderRadius: BorderRadius.circular(8),
       ),
-      child: Column(
-        crossAxisAlignment: CrossAxisAlignment.start,
-        children: [
-          const Text(
-            'Thông tin người chơi:',
-            style: TextStyle(
-              fontWeight: FontWeight.bold,
-              fontSize: 14,
-            ),
-          ),
-          const SizedBox(height: 8),
-          Text('Email: ${currentUser.email}'),
-          if (currentUser.displayName != null)
-            Text('Tên: ${currentUser.displayName}'),
-        ],
+      child: UserAvatarWithNameWidget(
+        photoUrl: currentUser.photoUrl,
+        displayName: currentUser.displayName,
+        email: currentUser.email,
+        avatarSize: 40,
       ),
     );
   }
