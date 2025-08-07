@@ -3,6 +3,8 @@ import 'package:shared_preferences/shared_preferences.dart';
 import '../models/game_progress.dart';
 import '../models/province.dart';
 import '../data/provinces_data.dart';
+import 'user_service.dart';
+import 'google_play_games_service.dart';
 
 class GameProgressService {
   static const String _progressKey = 'game_progress';
@@ -11,8 +13,33 @@ class GameProgressService {
   static const String _totalScoreKey = 'total_score';
   static const String _unlockedProvincesKey = 'unlocked_provinces';
 
-  // Lấy tiến độ game hiện tại
+  static final UserService _userService = UserService();
+
+  // Lấy tiến độ game hiện tại (ưu tiên Firestore nếu user đã đăng nhập)
   static Future<GameProgress> getCurrentProgress() async {
+    final gamesService = GooglePlayGamesService();
+    
+    // Nếu user đã đăng nhập, lấy từ Firestore
+    if (gamesService.isSignedIn && gamesService.currentUser != null) {
+      try {
+        final cloudProgress = await _userService.getCompleteGameProgress(gamesService.currentUser!.id);
+        if (cloudProgress != null) {
+          // Đồng bộ với local storage
+          await _saveToLocalStorage(cloudProgress);
+          return cloudProgress;
+        }
+      } catch (e) {
+        print('Error getting cloud progress: $e');
+        // Fallback to local storage
+      }
+    }
+    
+    // Lấy từ local storage
+    return _getLocalProgress();
+  }
+
+  // Lấy tiến độ từ local storage
+  static Future<GameProgress> _getLocalProgress() async {
     final prefs = await SharedPreferences.getInstance();
     
     // Lấy danh sách tỉnh
@@ -26,7 +53,7 @@ class GameProgressService {
       if (unlockedProvinceIds.contains(provinces[i].id)) {
         provinces[i] = provinces[i].copyWith(
           isUnlocked: true,
-          unlockedDate: DateTime.now(), // Có thể lưu ngày unlock thực tế
+          unlockedDate: DateTime.now(),
         );
       }
     }
@@ -44,12 +71,29 @@ class GameProgressService {
       dailyStreak: dailyStreak,
       lastPlayDate: lastPlayDate,
       unlockedProvincesCount: unlockedProvinceIds.length,
-      completedDailyChallenges: [], // Có thể mở rộng sau
+      completedDailyChallenges: [],
     );
   }
 
-  // Lưu tiến độ game
+  // Lưu tiến độ game (cả local và cloud)
   static Future<void> saveProgress(GameProgress progress) async {
+    // Lưu local storage
+    await _saveToLocalStorage(progress);
+    
+    // Lưu cloud nếu user đã đăng nhập
+    final gamesService = GooglePlayGamesService();
+    if (gamesService.isSignedIn && gamesService.currentUser != null) {
+      try {
+        await _userService.saveGameProgress(gamesService.currentUser!.id, progress);
+        await _userService.saveAllProvinces(gamesService.currentUser!.id, progress.provinces);
+      } catch (e) {
+        print('Error saving to cloud: $e');
+      }
+    }
+  }
+
+  // Lưu vào local storage
+  static Future<void> _saveToLocalStorage(GameProgress progress) async {
     final prefs = await SharedPreferences.getInstance();
     
     // Lưu thông tin cơ bản
@@ -69,7 +113,20 @@ class GameProgressService {
   static Future<void> updateScore(int newScore) async {
     final prefs = await SharedPreferences.getInstance();
     int currentScore = prefs.getInt(_totalScoreKey) ?? 0;
-    await prefs.setInt(_totalScoreKey, currentScore + newScore);
+    int updatedScore = currentScore + newScore;
+    
+    // Cập nhật local
+    await prefs.setInt(_totalScoreKey, updatedScore);
+    
+    // Cập nhật cloud nếu user đã đăng nhập
+    final gamesService = GooglePlayGamesService();
+    if (gamesService.isSignedIn && gamesService.currentUser != null) {
+      try {
+        await _userService.updateTotalScore(gamesService.currentUser!.id, updatedScore);
+      } catch (e) {
+        print('Error updating cloud score: $e');
+      }
+    }
   }
 
   // Cập nhật daily streak
@@ -83,44 +140,101 @@ class GameProgressService {
     DateTime today = DateTime.now();
     DateTime yesterday = today.subtract(const Duration(days: 1));
     
+    int newStreak = currentStreak;
+    
     // Kiểm tra xem có chơi hôm qua không
     if (lastPlayDate.year == yesterday.year &&
         lastPlayDate.month == yesterday.month &&
         lastPlayDate.day == yesterday.day) {
       // Tăng streak
-      await prefs.setInt(_dailyStreakKey, currentStreak + 1);
+      newStreak = currentStreak + 1;
     } else if (lastPlayDate.year != today.year ||
                lastPlayDate.month != today.month ||
                lastPlayDate.day != today.day) {
       // Reset streak nếu không chơi liên tục
-      await prefs.setInt(_dailyStreakKey, 1);
+      newStreak = 1;
     }
     
-    // Cập nhật ngày chơi cuối
+    // Cập nhật local
+    await prefs.setInt(_dailyStreakKey, newStreak);
     await prefs.setString(_lastPlayDateKey, today.toIso8601String());
+    
+    // Cập nhật cloud nếu user đã đăng nhập
+    final gamesService = GooglePlayGamesService();
+    if (gamesService.isSignedIn && gamesService.currentUser != null) {
+      try {
+        await _userService.updateDailyStreak(gamesService.currentUser!.id, newStreak);
+      } catch (e) {
+        print('Error updating cloud streak: $e');
+      }
+    }
   }
 
   // Mở khóa tỉnh mới
-  static Future<bool> unlockProvince(String provinceId) async {
+  static Future<void> unlockProvince(String provinceId) async {
     final prefs = await SharedPreferences.getInstance();
     List<String> unlockedProvinceIds = prefs.getStringList(_unlockedProvincesKey) ?? [];
     
-    // Kiểm tra xem tỉnh đã được mở khóa chưa
-    if (unlockedProvinceIds.contains(provinceId)) {
-      return false; // Đã mở khóa rồi
+    if (!unlockedProvinceIds.contains(provinceId)) {
+      unlockedProvinceIds.add(provinceId);
+      await prefs.setStringList(_unlockedProvincesKey, unlockedProvinceIds);
+      
+      // Cập nhật cloud nếu user đã đăng nhập
+      final gamesService = GooglePlayGamesService();
+      if (gamesService.isSignedIn && gamesService.currentUser != null) {
+        try {
+          await _userService.unlockProvince(gamesService.currentUser!.id, provinceId);
+        } catch (e) {
+          print('Error unlocking province in cloud: $e');
+        }
+      }
     }
-    
-    // Thêm tỉnh vào danh sách đã mở khóa
-    unlockedProvinceIds.add(provinceId);
-    await prefs.setStringList(_unlockedProvincesKey, unlockedProvinceIds);
-    
-    return true;
   }
 
-  // Kiểm tra xem có thể mở khóa tỉnh mới không
-  static Future<bool> canUnlockNewProvince(int currentScore) async {
-    final progress = await getCurrentProgress();
-    return progress.canUnlockNewProvince(currentScore);
+  // Cập nhật điểm số cho tỉnh
+  static Future<void> updateProvinceScore(String provinceId, int score) async {
+    // Cập nhật cloud nếu user đã đăng nhập
+    final gamesService = GooglePlayGamesService();
+    if (gamesService.isSignedIn && gamesService.currentUser != null) {
+      try {
+        await _userService.updateProvinceScore(gamesService.currentUser!.id, provinceId, score);
+      } catch (e) {
+        print('Error updating province score in cloud: $e');
+      }
+    }
+  }
+
+  // Đánh dấu tỉnh đã khám phá
+  static Future<void> exploreProvince(String provinceId) async {
+    // Cập nhật cloud nếu user đã đăng nhập
+    final gamesService = GooglePlayGamesService();
+    if (gamesService.isSignedIn && gamesService.currentUser != null) {
+      try {
+        await _userService.exploreProvince(gamesService.currentUser!.id, provinceId);
+      } catch (e) {
+        print('Error exploring province in cloud: $e');
+      }
+    }
+  }
+
+  // Thêm daily challenge đã hoàn thành
+  static Future<void> addCompletedDailyChallenge(String challengeId) async {
+    // Cập nhật cloud nếu user đã đăng nhập
+    final gamesService = GooglePlayGamesService();
+    if (gamesService.isSignedIn && gamesService.currentUser != null) {
+      try {
+        await _userService.addCompletedDailyChallenge(gamesService.currentUser!.id, challengeId);
+      } catch (e) {
+        print('Error adding completed daily challenge in cloud: $e');
+      }
+    }
+  }
+
+  // Hoàn thành daily challenge: lưu điểm, streak, daily challenge, mở khóa tỉnh nếu đủ điểm
+  static Future<void> completeDailyChallenge(int score) async {
+    await updateScore(score);
+    await updateDailyStreak();
+    // Có thể thêm logic lưu challengeId nếu cần
   }
 
   // Lấy tỉnh tiếp theo có thể mở khóa
@@ -129,53 +243,31 @@ class GameProgressService {
     return progress.getNextUnlockableProvince();
   }
 
-  // Reset tiến độ game (cho testing)
-  static Future<void> resetProgress() async {
-    final prefs = await SharedPreferences.getInstance();
-    await prefs.remove(_progressKey);
-    await prefs.remove(_lastPlayDateKey);
-    await prefs.remove(_dailyStreakKey);
-    await prefs.remove(_totalScoreKey);
-    await prefs.remove(_unlockedProvincesKey);
+  // Đồng bộ dữ liệu từ cloud về local
+  static Future<void> syncFromCloud() async {
+    final gamesService = GooglePlayGamesService();
+    if (gamesService.isSignedIn && gamesService.currentUser != null) {
+      try {
+        final cloudProgress = await _userService.getCompleteGameProgress(gamesService.currentUser!.id);
+        if (cloudProgress != null) {
+          await _saveToLocalStorage(cloudProgress);
+        }
+      } catch (e) {
+        print('Error syncing from cloud: $e');
+      }
+    }
   }
 
-  // Lấy thống kê game
-  static Future<Map<String, dynamic>> getGameStats() async {
-    final progress = await getCurrentProgress();
-    
-    return {
-      'totalProvinces': progress.provinces.length,
-      'unlockedProvinces': progress.unlockedCount,
-      'completionPercentage': progress.completionPercentage,
-      'totalScore': progress.totalScore,
-      'dailyStreak': progress.dailyStreak,
-      'lastPlayDate': progress.lastPlayDate,
-    };
-  }
-
-  // Kiểm tra daily challenge
-  static Future<bool> isDailyChallengeCompleted() async {
-    final prefs = await SharedPreferences.getInstance();
-    DateTime lastPlayDate = DateTime.parse(
-      prefs.getString(_lastPlayDateKey) ?? DateTime.now().toIso8601String()
-    );
-    
-    DateTime today = DateTime.now();
-    return lastPlayDate.year == today.year &&
-           lastPlayDate.month == today.month &&
-           lastPlayDate.day == today.day;
-  }
-
-  // Hoàn thành daily challenge
-  static Future<void> completeDailyChallenge(int score) async {
-    await updateScore(score);
-    await updateDailyStreak();
-    
-    // Kiểm tra xem có thể mở khóa tỉnh mới không
-    if (await canUnlockNewProvince(score)) {
-      final nextProvince = await getNextUnlockableProvince();
-      if (nextProvince != null) {
-        await unlockProvince(nextProvince.id);
+  // Đồng bộ dữ liệu từ local lên cloud
+  static Future<void> syncToCloud() async {
+    final gamesService = GooglePlayGamesService();
+    if (gamesService.isSignedIn && gamesService.currentUser != null) {
+      try {
+        final localProgress = await _getLocalProgress();
+        await _userService.saveGameProgress(gamesService.currentUser!.id, localProgress);
+        await _userService.saveAllProvinces(gamesService.currentUser!.id, localProgress.provinces);
+      } catch (e) {
+        print('Error syncing to cloud: $e');
       }
     }
   }

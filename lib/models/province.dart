@@ -3,8 +3,10 @@ class Province {
   final String name;
   final String nameVietnamese;
   final bool isUnlocked;
+  final bool isExplored;
   final DateTime? unlockedDate;
   final int requiredScore;
+  final int score;
   final String description;
   final List<String> facts;
 
@@ -13,8 +15,10 @@ class Province {
     required this.name,
     required this.nameVietnamese,
     this.isUnlocked = false,
+    this.isExplored = false,
     this.unlockedDate,
     this.requiredScore = 70,
+    this.score = 0,
     required this.description,
     required this.facts,
   });
@@ -25,10 +29,12 @@ class Province {
       name: json['name'],
       nameVietnamese: json['nameVietnamese'],
       isUnlocked: json['isUnlocked'] ?? false,
+      isExplored: json['isExplored'] ?? false,
       unlockedDate: json['unlockedDate'] != null 
           ? DateTime.parse(json['unlockedDate']) 
           : null,
       requiredScore: json['requiredScore'] ?? 70,
+      score: json['score'] ?? 0,
       description: json['description'],
       facts: List<String>.from(json['facts']),
     );
@@ -40,8 +46,10 @@ class Province {
       'name': name,
       'nameVietnamese': nameVietnamese,
       'isUnlocked': isUnlocked,
+      'isExplored': isExplored,
       'unlockedDate': unlockedDate?.toIso8601String(),
       'requiredScore': requiredScore,
+      'score': score,
       'description': description,
       'facts': facts,
     };
@@ -52,8 +60,10 @@ class Province {
     String? name,
     String? nameVietnamese,
     bool? isUnlocked,
+    bool? isExplored,
     DateTime? unlockedDate,
     int? requiredScore,
+    int? score,
     String? description,
     List<String>? facts,
   }) {
@@ -62,8 +72,10 @@ class Province {
       name: name ?? this.name,
       nameVietnamese: nameVietnamese ?? this.nameVietnamese,
       isUnlocked: isUnlocked ?? this.isUnlocked,
+      isExplored: isExplored ?? this.isExplored,
       unlockedDate: unlockedDate ?? this.unlockedDate,
       requiredScore: requiredScore ?? this.requiredScore,
+      score: score ?? this.score,
       description: description ?? this.description,
       facts: facts ?? this.facts,
     );

@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'dart:async';
 import 'package:google_sign_in/google_sign_in.dart';
 import 'package:firebase_analytics/firebase_analytics.dart';
+import 'user_service.dart';
 
 class GooglePlayGamesService extends ChangeNotifier {
   static final GooglePlayGamesService _instance = GooglePlayGamesService._internal();
@@ -14,6 +15,8 @@ class GooglePlayGamesService extends ChangeNotifier {
       'profile',
     ],
   );
+
+  final UserService _userService = UserService();
 
   bool _isSignedIn = false;
   bool _isInitialized = false;
@@ -58,6 +61,9 @@ class GooglePlayGamesService extends ChangeNotifier {
         print('Tên hiển thị: ${account.displayName}');
         print('ID: ${account.id}');
         print('Avatar URL: ${account.photoUrl}');
+        
+        // Tạo hoặc cập nhật user profile trên Firestore
+        await _userService.createOrUpdateUserProfile(account);
         
         // Ghi log analytics
         await FirebaseAnalytics.instance.logEvent(
