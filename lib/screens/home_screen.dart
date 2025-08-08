@@ -3,6 +3,7 @@ import 'package:flutter_animate/flutter_animate.dart';
 import '../theme/app_theme.dart';
 import '../services/game_progress_service.dart';
 import '../services/daily_challenge_service.dart';
+import '../services/auth_service.dart';
 import '../models/game_progress.dart';
 import 'profile_screen.dart';
 import 'game_screen.dart';
@@ -21,6 +22,7 @@ class _HomeScreenState extends State<HomeScreen> {
   GameProgress? _gameProgress;
   bool _isLoading = true;
   Map<String, dynamic>? _dailyChallenge;
+  final AuthService _authService = AuthService();
 
   @override
   void initState() {
@@ -93,6 +95,84 @@ class _HomeScreenState extends State<HomeScreen> {
                   padding: const EdgeInsets.all(24),
                   child: Column(
                     children: [
+                      // Login status indicator
+                      Row(
+                        mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                        children: [
+                          // Login status
+                          Container(
+                            padding: const EdgeInsets.symmetric(horizontal: 12, vertical: 6),
+                            decoration: BoxDecoration(
+                              color: _authService.isLoggedIn 
+                                  ? Colors.green.withOpacity(0.2)
+                                  : Colors.orange.withOpacity(0.2),
+                              borderRadius: BorderRadius.circular(20),
+                              border: Border.all(
+                                color: _authService.isLoggedIn 
+                                    ? Colors.green.withOpacity(0.5)
+                                    : Colors.orange.withOpacity(0.5),
+                                width: 1,
+                              ),
+                            ),
+                            child: Row(
+                              mainAxisSize: MainAxisSize.min,
+                              children: [
+                                Icon(
+                                  _authService.isLoggedIn ? Icons.check_circle : Icons.warning,
+                                  color: _authService.isLoggedIn ? Colors.green : Colors.orange,
+                                  size: 16,
+                                ),
+                                const SizedBox(width: 6),
+                                Text(
+                                  _authService.isLoggedIn ? 'Đã đăng nhập' : 'Chưa đăng nhập',
+                                  style: TextStyle(
+                                    color: _authService.isLoggedIn ? Colors.green : Colors.orange,
+                                    fontSize: 12,
+                                    fontWeight: FontWeight.w500,
+                                  ),
+                                ),
+                              ],
+                            ),
+                          ),
+                          
+                          // User info if logged in
+                          if (_authService.isLoggedIn && _authService.currentGoogleUser != null)
+                            Container(
+                              padding: const EdgeInsets.symmetric(horizontal: 12, vertical: 6),
+                              decoration: BoxDecoration(
+                                color: Colors.white.withOpacity(0.2),
+                                borderRadius: BorderRadius.circular(20),
+                                border: Border.all(
+                                  color: Colors.white.withOpacity(0.3),
+                                  width: 1,
+                                ),
+                              ),
+                              child: Row(
+                                mainAxisSize: MainAxisSize.min,
+                                children: [
+                                  CircleAvatar(
+                                    radius: 12,
+                                    backgroundImage: NetworkImage(
+                                      _authService.currentGoogleUser!.photoUrl ?? '',
+                                    ),
+                                  ),
+                                  const SizedBox(width: 6),
+                                  Text(
+                                    _authService.currentGoogleUser!.displayName ?? 'Người chơi',
+                                    style: const TextStyle(
+                                      color: Colors.white,
+                                      fontSize: 12,
+                                      fontWeight: FontWeight.w500,
+                                    ),
+                                  ),
+                                ],
+                              ),
+                            ),
+                        ],
+                      ),
+                      
+                      const SizedBox(height: 20),
+                      
                       // Animated globe icon
                       Container(
                         padding: const EdgeInsets.all(20),
@@ -239,13 +319,16 @@ class _HomeScreenState extends State<HomeScreen> {
                           gradient: const LinearGradient(
                             colors: [AppTheme.secondaryYellow, AppTheme.lightOrange],
                           ),
-                          onTap: () {
-                            Navigator.push(
-                              context,
-                              MaterialPageRoute(
-                                builder: (context) => const MapExplorationScreen(),
-                              ),
-                            );
+                          onTap: () async {
+                            final isLoggedIn = await AuthService.requireLogin(context);
+                            if (isLoggedIn) {
+                              Navigator.push(
+                                context,
+                                MaterialPageRoute(
+                                  builder: (context) => const MapExplorationScreen(),
+                                ),
+                              );
+                            }
                           },
                         ).animate().fadeIn(
                           duration: 800.ms,
@@ -266,13 +349,16 @@ class _HomeScreenState extends State<HomeScreen> {
                           gradient: const LinearGradient(
                             colors: [AppTheme.lightOrange, AppTheme.accentOrange],
                           ),
-                          onTap: () {
-                            Navigator.push(
-                              context,
-                              MaterialPageRoute(
-                                builder: (context) => const ProgressScreen(),
-                              ),
-                            );
+                          onTap: () async {
+                            final isLoggedIn = await AuthService.requireLogin(context);
+                            if (isLoggedIn) {
+                              Navigator.push(
+                                context,
+                                MaterialPageRoute(
+                                  builder: (context) => const ProgressScreen(),
+                                ),
+                              );
+                            }
                           },
                         ).animate().fadeIn(
                           duration: 800.ms,
@@ -289,13 +375,16 @@ class _HomeScreenState extends State<HomeScreen> {
                         Container(
                           width: double.infinity,
                           child: ElevatedButton.icon(
-                            onPressed: () {
-                              Navigator.push(
-                                context,
-                                MaterialPageRoute(
-                                  builder: (context) => const ProfileScreen(),
-                                ),
-                              );
+                            onPressed: () async {
+                              final isLoggedIn = await AuthService.requireLogin(context);
+                              if (isLoggedIn) {
+                                Navigator.push(
+                                  context,
+                                  MaterialPageRoute(
+                                    builder: (context) => const ProfileScreen(),
+                                  ),
+                                );
+                              }
                             },
                             icon: const Icon(Icons.person),
                             label: const Text('Hồ sơ người chơi'),
@@ -406,13 +495,16 @@ class _HomeScreenState extends State<HomeScreen> {
     final isProvinceUnlockedToday = _dailyChallenge?['isProvinceUnlockedToday'] ?? false;
     
     return GestureDetector(
-      onTap: (canPlay && !isProvinceUnlockedToday) ? () {
-        Navigator.push(
-          context,
-          MaterialPageRoute(
-            builder: (context) => const DailyChallengeScreen(),
-          ),
-        ).then((_) => _loadGameProgress());
+      onTap: (canPlay && !isProvinceUnlockedToday) ? () async {
+        final isLoggedIn = await AuthService.requireLogin(context);
+        if (isLoggedIn) {
+          Navigator.push(
+            context,
+            MaterialPageRoute(
+              builder: (context) => const DailyChallengeScreen(),
+            ),
+          ).then((_) => _loadGameProgress());
+        }
       } : null,
       child: Container(
         padding: const EdgeInsets.all(20),

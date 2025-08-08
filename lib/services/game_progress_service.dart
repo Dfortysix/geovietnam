@@ -720,7 +720,89 @@ class GameProgressService {
   static Future<void> clearDataOnLogout() async {
     final userId = _currentUserId;
     if (userId != null) {
-      await clearLocalData();
+      // KHÔNG xóa dữ liệu local nữa để hỗ trợ nhiều user
+      // await clearLocalData();
+      print('User $userId logged out - keeping local data for multi-user support');
     }
+  }
+
+  // Chuyển đổi giữa các user (giữ dữ liệu của tất cả user)
+  static Future<void> switchToUser(String userId) async {
+    print('Switching to user: $userId');
+    // Không cần làm gì vì _currentUserId sẽ tự động cập nhật
+  }
+
+  // Lấy danh sách tất cả user có dữ liệu local
+  static Future<List<String>> getAllLocalUsers() async {
+    final prefs = await SharedPreferences.getInstance();
+    final allKeys = prefs.getKeys();
+    
+    // Lấy tất cả user IDs từ keys
+    final userIds = <String>{};
+    for (final key in allKeys) {
+      if (key.contains('_total_score')) {
+        final userId = key.replaceAll('_total_score', '');
+        if (userId != 'anonymous') {
+          userIds.add(userId);
+        }
+      }
+    }
+    
+    return userIds.toList();
+  }
+
+  // Debug: In thông tin tất cả user
+  static Future<void> debugAllUsers() async {
+    final prefs = await SharedPreferences.getInstance();
+    final allKeys = prefs.getKeys();
+    
+    print('=== DEBUG ALL USERS ===');
+    print('Total keys in SharedPreferences: ${allKeys.length}');
+    
+    // Phân loại theo user
+    final userData = <String, Map<String, dynamic>>{};
+    
+    for (final key in allKeys) {
+      if (key.contains('_total_score')) {
+        final userId = key.replaceAll('_total_score', '');
+        if (userId != 'anonymous') {
+          userData[userId] = {};
+        }
+      }
+    }
+    
+    // Lấy dữ liệu của từng user
+    for (final userId in userData.keys) {
+      final totalScore = prefs.getInt('${userId}_total_score') ?? 0;
+      final dailyStreak = prefs.getInt('${userId}_daily_streak') ?? 0;
+      final unlockedProvinces = prefs.getStringList('${userId}_unlocked_provinces') ?? [];
+      final exploredProvinces = prefs.getStringList('${userId}_explored_provinces') ?? [];
+      
+      userData[userId] = {
+        'totalScore': totalScore,
+        'dailyStreak': dailyStreak,
+        'unlockedProvinces': unlockedProvinces,
+        'exploredProvinces': exploredProvinces,
+      };
+    }
+    
+    // In thông tin từng user
+    for (final userId in userData.keys) {
+      final data = userData[userId]!;
+      print('\n--- User: $userId ---');
+      print('Total Score: ${data['totalScore']}');
+      print('Daily Streak: ${data['dailyStreak']}');
+      print('Unlocked Provinces: ${data['unlockedProvinces']}');
+      print('Explored Provinces: ${data['exploredProvinces']}');
+    }
+    
+    // In thông tin anonymous
+    final anonymousTotalScore = prefs.getInt('anonymous_total_score') ?? 0;
+    if (anonymousTotalScore > 0) {
+      print('\n--- Anonymous User ---');
+      print('Total Score: $anonymousTotalScore');
+    }
+    
+    print('=== END DEBUG ALL USERS ===');
   }
 } 
