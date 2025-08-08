@@ -9,6 +9,7 @@ import 'game_screen.dart';
 import 'daily_challenge_screen.dart';
 import 'map_exploration_screen.dart';
 import 'progress_screen.dart';
+import 'debug_screen.dart';
 
 class HomeScreen extends StatefulWidget {
   const HomeScreen({Key? key}) : super(key: key);
@@ -316,6 +317,41 @@ class _HomeScreenState extends State<HomeScreen> {
                           duration: 800.ms,
                           delay: 1800.ms,
                         ),
+
+                        const SizedBox(height: 16),
+                        
+                        // Debug Button (chỉ hiển thị trong debug mode)
+                        if (const bool.fromEnvironment('dart.vm.product') == false)
+                          Container(
+                            width: double.infinity,
+                            child: ElevatedButton.icon(
+                              onPressed: () {
+                                Navigator.push(
+                                  context,
+                                  MaterialPageRoute(
+                                    builder: (context) => const DebugScreen(),
+                                  ),
+                                );
+                              },
+                              icon: const Icon(Icons.bug_report),
+                              label: const Text('Debug Firebase'),
+                              style: ElevatedButton.styleFrom(
+                                backgroundColor: Colors.red,
+                                foregroundColor: Colors.white,
+                                padding: const EdgeInsets.symmetric(vertical: 16),
+                                shape: RoundedRectangleBorder(
+                                  borderRadius: BorderRadius.circular(12),
+                                ),
+                              ),
+                            ),
+                          ).animate().fadeIn(
+                            duration: 800.ms,
+                            delay: 2100.ms,
+                          ).slideX(
+                            begin: 0.3,
+                            duration: 800.ms,
+                            delay: 2100.ms,
+                          ),
 
                         const SizedBox(height: 40),
                         

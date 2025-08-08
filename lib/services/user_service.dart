@@ -1,4 +1,5 @@
 import 'package:cloud_firestore/cloud_firestore.dart';
+import 'package:firebase_auth/firebase_auth.dart';
 import 'package:google_sign_in/google_sign_in.dart';
 import '../models/game_progress.dart';
 import '../models/province.dart';
@@ -14,21 +15,88 @@ class UserService {
   /// Tạo hoặc cập nhật user profile
   Future<void> createOrUpdateUserProfile(GoogleSignInAccount user) async {
     try {
-      final userDoc = _firestore.collection('users').doc(user.id);
+      print('=== CREATE/UPDATE USER PROFILE START ===');
+      print('Google Sign-In Account: ${user.email}');
+      print('Google Sign-In ID: ${user.id}');
       
-      await userDoc.set({
+      // Sử dụng Firebase Auth user ID thay vì Google Sign-In ID
+      final User? firebaseUser = FirebaseAuth.instance.currentUser;
+      if (firebaseUser == null) {
+        print('Firebase Auth user is null!');
+        print('Waiting for Firebase Auth to complete...');
+        
+        // Thử đợi lâu hơn và lấy lại
+        await Future.delayed(Duration(milliseconds: 2000));
+        final User? retryUser = FirebaseAuth.instance.currentUser;
+        if (retryUser == null) {
+          print('Firebase Auth user still null after retry!');
+          print('Attempting to get current user from auth state...');
+          
+          // Thử lắng nghe auth state changes
+          final authStateStream = FirebaseAuth.instance.authStateChanges();
+          final authStateSubscription = authStateStream.listen((User? user) {
+            print('Auth state changed: ${user?.uid}');
+          });
+          
+          await Future.delayed(Duration(milliseconds: 3000));
+          authStateSubscription.cancel();
+          
+          final finalRetryUser = FirebaseAuth.instance.currentUser;
+          if (finalRetryUser == null) {
+            print('Firebase Auth user still null after all retries!');
+            throw Exception('Firebase Auth user not authenticated after multiple attempts');
+          }
+          
+          print('Using Firebase Auth UID (final retry): ${finalRetryUser.uid}');
+          await _createUserProfile(finalRetryUser.uid, user);
+          return;
+        }
+        
+        print('Using Firebase Auth UID (retry): ${retryUser.uid}');
+        await _createUserProfile(retryUser.uid, user);
+        return;
+      }
+      
+      print('Using Firebase Auth UID: ${firebaseUser.uid}');
+      await _createUserProfile(firebaseUser.uid, user);
+      
+    } catch (e) {
+      print('Error creating/updating user profile: $e');
+      print('Stack trace: ${StackTrace.current}');
+      rethrow;
+    }
+  }
+
+  /// Helper method để tạo user profile
+  Future<void> _createUserProfile(String firebaseUid, GoogleSignInAccount googleUser) async {
+    try {
+      print('Creating user profile for Firebase UID: $firebaseUid');
+      
+      final userDoc = _firestore.collection('users').doc(firebaseUid);
+      
+      final profileData = {
         'profile': {
-          'displayName': user.displayName,
-          'email': user.email,
-          'photoUrl': user.photoUrl,
+          'displayName': googleUser.displayName,
+          'email': googleUser.email,
+          'photoUrl': googleUser.photoUrl,
+          'googleId': googleUser.id, // Lưu Google ID để reference
+          'firebaseUid': firebaseUid, // Lưu Firebase UID để reference
           'createdAt': FieldValue.serverTimestamp(),
           'lastUpdated': FieldValue.serverTimestamp(),
         },
-      }, SetOptions(merge: true));
+      };
       
-      print('User profile created/updated successfully');
+      print('Profile data to save: $profileData');
+      
+      await userDoc.set(profileData, SetOptions(merge: true));
+      
+      print('User profile created/updated successfully with Firebase Auth UID: $firebaseUid');
+      print('=== CREATE/UPDATE USER PROFILE END ===');
+      
     } catch (e) {
-      print('Error creating/updating user profile: $e');
+      print('Error in _createUserProfile: $e');
+      print('Firebase UID: $firebaseUid');
+      print('Google User Email: ${googleUser.email}');
       rethrow;
     }
   }
@@ -50,7 +118,11 @@ class UserService {
   /// Lưu game progress
   Future<void> saveGameProgress(String userId, GameProgress progress) async {
     try {
-      final userDoc = _firestore.collection('users').doc(userId);
+      // Sử dụng Firebase Auth user ID nếu có
+      final User? firebaseUser = FirebaseAuth.instance.currentUser;
+      final String actualUserId = firebaseUser?.uid ?? userId;
+      
+      final userDoc = _firestore.collection('users').doc(actualUserId);
       
       await userDoc.set({
         'gameProgress': {
@@ -72,7 +144,11 @@ class UserService {
   /// Lấy game progress
   Future<GameProgress?> getGameProgress(String userId) async {
     try {
-      final doc = await _firestore.collection('users').doc(userId).get();
+      // Sử dụng Firebase Auth user ID nếu có
+      final User? firebaseUser = FirebaseAuth.instance.currentUser;
+      final String actualUserId = firebaseUser?.uid ?? userId;
+      
+      final doc = await _firestore.collection('users').doc(actualUserId).get();
       if (doc.exists) {
         final data = doc.data()?['gameProgress'] as Map<String, dynamic>?;
         if (data != null) {

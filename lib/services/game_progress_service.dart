@@ -5,6 +5,7 @@ import '../models/province.dart';
 import '../data/provinces_data.dart';
 import 'user_service.dart';
 import 'google_play_games_service.dart';
+import 'package:cloud_firestore/cloud_firestore.dart';
 
 class GameProgressService {
   static const String _progressKey = 'game_progress';
@@ -178,16 +179,38 @@ class GameProgressService {
     if (!unlockedProvinceIds.contains(provinceId)) {
       unlockedProvinceIds.add(provinceId);
       await prefs.setStringList(_unlockedProvincesKey, unlockedProvinceIds);
-      
+      print('[DEBUG] Đã unlock local: $provinceId');
       // Cập nhật cloud nếu user đã đăng nhập
       final gamesService = GooglePlayGamesService();
       if (gamesService.isSignedIn && gamesService.currentUser != null) {
         try {
+          print('[DEBUG] Ghi Firestore: userId=${gamesService.currentUser!.id}, provinceId=$provinceId');
           await _userService.unlockProvince(gamesService.currentUser!.id, provinceId);
+          print('[DEBUG] Đã unlock Firestore: $provinceId');
         } catch (e) {
-          print('Error unlocking province in cloud: $e');
+          print('[DEBUG] Error unlocking province in cloud: $e');
         }
+      } else {
+        print('[DEBUG] Không đăng nhập, không ghi Firestore');
       }
+    } else {
+      print('[DEBUG] Province đã unlock trước đó: $provinceId');
+    }
+  }
+
+  // Hàm test ghi Firestore
+  static Future<void> testFirestoreWrite() async {
+    try {
+      final gamesService = GooglePlayGamesService();
+      final userId = gamesService.currentUser?.id ?? 'test';
+      print('[DEBUG] Test ghi Firestore với userId=$userId');
+      await FirebaseFirestore.instance
+          .collection('users')
+          .doc(userId)
+          .set({'test': true, 'timestamp': DateTime.now().toIso8601String()});
+      print('[DEBUG] Ghi Firestore thành công!');
+    } catch (e) {
+      print('[DEBUG] Lỗi test ghi Firestore: $e');
     }
   }
 

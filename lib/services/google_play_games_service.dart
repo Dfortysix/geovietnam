@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'dart:async';
 import 'package:google_sign_in/google_sign_in.dart';
 import 'package:firebase_analytics/firebase_analytics.dart';
+import 'package:firebase_auth/firebase_auth.dart';
 import 'user_service.dart';
 
 class GooglePlayGamesService extends ChangeNotifier {
@@ -52,35 +53,97 @@ class GooglePlayGamesService extends ChangeNotifier {
   /// Đăng nhập vào Google Play Games
   Future<bool> signIn() async {
     try {
+      print('=== GOOGLE SIGN-IN START ===');
+      
       final GoogleSignInAccount? account = await _googleSignIn.signIn();
       if (account != null) {
+        print('Google Sign-In successful: ${account.email}');
+        print('Google Account ID: ${account.id}');
+        print('Google Display Name: ${account.displayName}');
+        
+        // Liên kết với Firebase Auth
+        print('Getting Google authentication...');
+        final GoogleSignInAuthentication googleAuth = await account.authentication;
+        print('Google Auth Access Token: ${googleAuth.accessToken != null ? 'Present' : 'Missing'}');
+        print('Google Auth ID Token: ${googleAuth.idToken != null ? 'Present' : 'Missing'}');
+        
+        final credential = GoogleAuthProvider.credential(
+          accessToken: googleAuth.accessToken,
+          idToken: googleAuth.idToken,
+        );
+        
+        print('Signing in to Firebase with Google credential...');
+        final UserCredential userCredential = await FirebaseAuth.instance.signInWithCredential(credential);
+        
+        // Debug Firebase Auth
+        print('=== FIREBASE AUTH RESULT ===');
+        print('Firebase Auth User ID: ${userCredential.user?.uid}');
+        print('Firebase Auth Email: ${userCredential.user?.email}');
+        print('Firebase Auth Display Name: ${userCredential.user?.displayName}');
+        print('Firebase Auth isAnonymous: ${userCredential.user?.isAnonymous}');
+        print('Firebase Auth isEmailVerified: ${userCredential.user?.emailVerified}');
+        print('Firebase Auth Provider Data: ${userCredential.user?.providerData.map((p) => p.providerId).toList()}');
+        print('==========================');
+
         _isSignedIn = true;
         _currentUser = account;
         notifyListeners();
-        print('Đăng nhập thành công: ${account.email}');
-        print('Tên hiển thị: ${account.displayName}');
-        print('ID: ${account.id}');
-        print('Avatar URL: ${account.photoUrl}');
+        
+        // Đợi để Firebase Auth hoàn tất
+        print('Waiting for Firebase Auth to complete...');
+        await Future.delayed(Duration(milliseconds: 1000));
+        
+        // Debug Firebase Auth trước khi ghi Firestore
+        final User? currentFirebaseUser = FirebaseAuth.instance.currentUser;
+        print('=== CURRENT FIREBASE USER ===');
+        print('Current Firebase User: ${currentFirebaseUser?.uid}');
+        print('Firebase User Email: ${currentFirebaseUser?.email}');
+        print('Firebase User Display Name: ${currentFirebaseUser?.displayName}');
+        print('Firebase User isAnonymous: ${currentFirebaseUser?.isAnonymous}');
+        print('Firebase User isEmailVerified: ${currentFirebaseUser?.emailVerified}');
+        print('==========================');
         
         // Tạo hoặc cập nhật user profile trên Firestore
-        await _userService.createOrUpdateUserProfile(account);
+        print('=== CREATING USER PROFILE ===');
+        print('Firebase Auth User ID: ${userCredential.user?.uid}');
+        print('Google Sign-In ID: ${account.id}');
+        print('==========================');
+        
+        try {
+          await _userService.createOrUpdateUserProfile(account);
+          print('User profile created/updated successfully');
+        } catch (profileError) {
+          print('Error creating user profile: $profileError');
+          // Không throw error để không làm gián đoạn quá trình đăng nhập
+        }
         
         // Ghi log analytics
-        await FirebaseAnalytics.instance.logEvent(
-          name: 'game_sign_in',
-          parameters: {
-            'method': 'google_play_games',
-            'user_id': account.id,
-            'email': account.email,
-            'display_name': account.displayName ?? '',
-          },
-        );
+        try {
+          await FirebaseAnalytics.instance.logEvent(
+            name: 'game_sign_in',
+            parameters: {
+              'method': 'google_play_games',
+              'user_id': account.id,
+              'email': account.email,
+              'display_name': account.displayName ?? '',
+            },
+          );
+          print('Analytics event logged successfully');
+        } catch (analyticsError) {
+          print('Error logging analytics: $analyticsError');
+        }
         
+        print('=== GOOGLE SIGN-IN COMPLETED ===');
         return true;
+      } else {
+        print('Google Sign-In cancelled by user');
+        return false;
       }
-      return false;
     } catch (e) {
-      print('Lỗi đăng nhập: $e');
+      print('=== GOOGLE SIGN-IN ERROR ===');
+      print('Error during sign-in: $e');
+      print('Stack trace: ${StackTrace.current}');
+      print('==========================');
       return false;
     }
   }
