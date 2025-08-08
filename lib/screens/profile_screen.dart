@@ -19,6 +19,7 @@ class _ProfileScreenState extends State<ProfileScreen> {
   GameProgress? _gameProgress;
   bool _isLoading = true;
   final AuthService _authService = AuthService();
+  final GameProgressService _gameProgressService = GameProgressService();
 
   @override
   void initState() {
@@ -26,17 +27,25 @@ class _ProfileScreenState extends State<ProfileScreen> {
     _loadGameProgress();
     // Lắng nghe thay đổi trạng thái đăng nhập
     _authService.addListener(_onAuthStateChanged);
+    // Lắng nghe thay đổi tiến độ game
+    _gameProgressService.addListener(_onGameProgressChanged);
   }
 
   @override
   void dispose() {
     _authService.removeListener(_onAuthStateChanged);
+    _gameProgressService.removeListener(_onGameProgressChanged);
     super.dispose();
   }
 
   void _onAuthStateChanged() {
     // Refresh UI khi trạng thái đăng nhập thay đổi
     setState(() {});
+  }
+
+  void _onGameProgressChanged() {
+    // Refresh UI khi tiến độ game thay đổi
+    _loadGameProgress();
   }
 
   Future<void> _loadGameProgress() async {

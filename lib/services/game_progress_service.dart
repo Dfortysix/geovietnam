@@ -1,4 +1,5 @@
 import 'dart:convert';
+import 'package:flutter/foundation.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 import '../models/game_progress.dart';
 import '../models/province.dart';
@@ -8,7 +9,11 @@ import 'google_play_games_service.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 
-class GameProgressService {
+class GameProgressService extends ChangeNotifier {
+  static final GameProgressService _instance = GameProgressService._internal();
+  factory GameProgressService() => _instance;
+  GameProgressService._internal();
+
   static const String _progressKey = 'game_progress';
   static const String _lastPlayDateKey = 'last_play_date';
   static const String _dailyStreakKey = 'daily_streak';
@@ -16,6 +21,11 @@ class GameProgressService {
   static const String _unlockedProvincesKey = 'unlocked_provinces';
 
   static final UserService _userService = UserService();
+
+  // Method để notify listeners khi có thay đổi
+  void notifyProgressChanged() {
+    notifyListeners();
+  }
 
   // Lấy Firebase Auth UID của user hiện tại
   static String? get _currentUserId {
@@ -222,6 +232,9 @@ class GameProgressService {
         // Ignore cloud update error
       }
     }
+    
+    // Notify listeners về thay đổi
+    GameProgressService().notifyProgressChanged();
   }
 
   // Cập nhật daily streak
@@ -269,6 +282,9 @@ class GameProgressService {
         // Ignore cloud update error
       }
     }
+    
+    // Notify listeners về thay đổi
+    GameProgressService().notifyProgressChanged();
   }
 
   // Mở khóa tỉnh mới
@@ -294,6 +310,9 @@ class GameProgressService {
           // Ignore cloud update error
         }
       }
+      
+      // Notify listeners về thay đổi
+      GameProgressService().notifyProgressChanged();
     }
   }
 
@@ -322,6 +341,9 @@ class GameProgressService {
         // Ignore cloud update error
       }
     }
+    
+    // Notify listeners về thay đổi
+    GameProgressService().notifyProgressChanged();
   }
 
   // Đánh dấu tỉnh đã khám phá
@@ -350,6 +372,9 @@ class GameProgressService {
         // Ignore cloud update error
       }
     }
+    
+    // Notify listeners về thay đổi
+    GameProgressService().notifyProgressChanged();
   }
 
   // Thêm daily challenge đã hoàn thành
@@ -695,23 +720,26 @@ class GameProgressService {
         // Lấy dữ liệu từ cloud
         final cloudProgress = await _userService.getCompleteGameProgress(userId);
         if (cloudProgress != null) {
-          // Lưu dữ liệu cloud về local
-          await _saveToLocalStorage(cloudProgress, userId);
-          print('Sync on login completed for user $userId - loaded from cloud');
-        } else {
-          // Nếu không có dữ liệu cloud, tạo dữ liệu mới với provinces từ data
-          final provinces = await _loadProvincesFromData();
-          final newProgress = GameProgress(
-            provinces: provinces,
-            totalScore: 0,
-            dailyStreak: 0,
-            lastPlayDate: DateTime.now(),
-            unlockedProvincesCount: 0,
-            completedDailyChallenges: [],
-          );
-          await _saveToLocalStorage(newProgress, userId);
-          print('Created new progress for user $userId - fresh start');
-        }
+                  // Lưu dữ liệu cloud về local
+        await _saveToLocalStorage(cloudProgress, userId);
+        print('Sync on login completed for user $userId - loaded from cloud');
+      } else {
+        // Nếu không có dữ liệu cloud, tạo dữ liệu mới với provinces từ data
+        final provinces = await _loadProvincesFromData();
+        final newProgress = GameProgress(
+          provinces: provinces,
+          totalScore: 0,
+          dailyStreak: 0,
+          lastPlayDate: DateTime.now(),
+          unlockedProvincesCount: 0,
+          completedDailyChallenges: [],
+        );
+        await _saveToLocalStorage(newProgress, userId);
+        print('Created new progress for user $userId - fresh start');
+      }
+      
+      // Notify listeners về thay đổi
+      GameProgressService().notifyProgressChanged();
       } catch (e) {
         print('Error syncing on login: $e');
         // Nếu có lỗi, tạo dữ liệu mới với provinces từ data
@@ -726,6 +754,9 @@ class GameProgressService {
         );
         await _saveToLocalStorage(newProgress, userId);
       }
+      
+      // Notify listeners về thay đổi
+      GameProgressService().notifyProgressChanged();
     }
   }
 
