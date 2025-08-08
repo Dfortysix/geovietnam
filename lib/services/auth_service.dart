@@ -3,7 +3,7 @@ import 'package:firebase_auth/firebase_auth.dart';
 import 'package:google_sign_in/google_sign_in.dart';
 import 'google_play_games_service.dart';
 
-class AuthService {
+class AuthService extends ChangeNotifier {
   static final AuthService _instance = AuthService._internal();
   factory AuthService() => _instance;
   AuthService._internal();
@@ -110,6 +110,11 @@ class AuthService {
     ) ?? false;
   }
 
+  /// Refresh UI khi trạng thái đăng nhập thay đổi
+  void refreshUI() {
+    notifyListeners();
+  }
+
   /// Kiểm tra và yêu cầu đăng nhập nếu cần
   static Future<bool> requireLogin(BuildContext context) async {
     final authService = AuthService();
@@ -120,6 +125,9 @@ class AuthService {
         // Thực hiện đăng nhập
         final success = await authService._googleService.signIn();
         if (success) {
+          // Refresh UI
+          authService.refreshUI();
+          
           // Hiển thị thông báo thành công
           ScaffoldMessenger.of(context).showSnackBar(
             SnackBar(

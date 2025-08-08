@@ -28,6 +28,19 @@ class _HomeScreenState extends State<HomeScreen> {
   void initState() {
     super.initState();
     _loadGameProgress();
+    // Lắng nghe thay đổi trạng thái đăng nhập
+    _authService.addListener(_onAuthStateChanged);
+  }
+
+  @override
+  void dispose() {
+    _authService.removeListener(_onAuthStateChanged);
+    super.dispose();
+  }
+
+  void _onAuthStateChanged() {
+    // Refresh UI khi trạng thái đăng nhập thay đổi
+    setState(() {});
   }
 
   Future<void> _loadGameProgress() async {

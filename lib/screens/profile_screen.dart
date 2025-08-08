@@ -4,6 +4,7 @@ import 'package:provider/provider.dart';
 import '../theme/app_theme.dart';
 import '../services/google_play_games_service.dart';
 import '../services/game_progress_service.dart';
+import '../services/auth_service.dart';
 import '../models/game_progress.dart';
 import '../widgets/user_avatar_widget.dart';
 
@@ -17,11 +18,25 @@ class ProfileScreen extends StatefulWidget {
 class _ProfileScreenState extends State<ProfileScreen> {
   GameProgress? _gameProgress;
   bool _isLoading = true;
+  final AuthService _authService = AuthService();
 
   @override
   void initState() {
     super.initState();
     _loadGameProgress();
+    // Lắng nghe thay đổi trạng thái đăng nhập
+    _authService.addListener(_onAuthStateChanged);
+  }
+
+  @override
+  void dispose() {
+    _authService.removeListener(_onAuthStateChanged);
+    super.dispose();
+  }
+
+  void _onAuthStateChanged() {
+    // Refresh UI khi trạng thái đăng nhập thay đổi
+    setState(() {});
   }
 
   Future<void> _loadGameProgress() async {

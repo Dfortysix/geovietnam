@@ -5,6 +5,7 @@ import 'package:firebase_analytics/firebase_analytics.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'user_service.dart';
 import 'game_progress_service.dart';
+import 'auth_service.dart';
 
 class GooglePlayGamesService extends ChangeNotifier {
   static final GooglePlayGamesService _instance = GooglePlayGamesService._internal();
@@ -121,10 +122,13 @@ class GooglePlayGamesService extends ChangeNotifier {
         // Ignore sync error
       }
       
-      await _googleSignIn.signOut();
-      _isSignedIn = false;
-      _currentUser = null;
-      notifyListeners();
+                              await _googleSignIn.signOut();
+                        _isSignedIn = false;
+                        _currentUser = null;
+                        notifyListeners();
+                        
+                        // Refresh UI của AuthService
+                        AuthService().refreshUI();
       
       // Xóa dữ liệu local sau khi đăng xuất
       try {

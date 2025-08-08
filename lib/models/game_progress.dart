@@ -17,6 +17,18 @@ class GameProgress {
     this.completedDailyChallenges = const [],
   });
 
+  // Factory method để tạo GameProgress mới (reset state)
+  factory GameProgress.initial() {
+    return GameProgress(
+      provinces: [], // Sẽ được load từ provinces_data.dart
+      totalScore: 0,
+      dailyStreak: 0,
+      lastPlayDate: DateTime.now(),
+      unlockedProvincesCount: 0,
+      completedDailyChallenges: [],
+    );
+  }
+
   factory GameProgress.fromJson(Map<String, dynamic> json) {
     return GameProgress(
       provinces: (json['provinces'] as List)

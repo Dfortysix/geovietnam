@@ -689,14 +689,42 @@ class GameProgressService {
     final userId = _currentUserId;
     if (userId != null) {
       try {
+        // Xóa dữ liệu local cũ (nếu có) để reset về ban đầu
+        await clearLocalData();
+        
         // Lấy dữ liệu từ cloud
         final cloudProgress = await _userService.getCompleteGameProgress(userId);
         if (cloudProgress != null) {
-          // Lưu vào local storage
+          // Lưu dữ liệu cloud về local
           await _saveToLocalStorage(cloudProgress, userId);
+          print('Sync on login completed for user $userId - loaded from cloud');
+        } else {
+          // Nếu không có dữ liệu cloud, tạo dữ liệu mới với provinces từ data
+          final provinces = await _loadProvincesFromData();
+          final newProgress = GameProgress(
+            provinces: provinces,
+            totalScore: 0,
+            dailyStreak: 0,
+            lastPlayDate: DateTime.now(),
+            unlockedProvincesCount: 0,
+            completedDailyChallenges: [],
+          );
+          await _saveToLocalStorage(newProgress, userId);
+          print('Created new progress for user $userId - fresh start');
         }
       } catch (e) {
-        // Nếu không lấy được từ cloud, giữ nguyên local data
+        print('Error syncing on login: $e');
+        // Nếu có lỗi, tạo dữ liệu mới với provinces từ data
+        final provinces = await _loadProvincesFromData();
+        final newProgress = GameProgress(
+          provinces: provinces,
+          totalScore: 0,
+          dailyStreak: 0,
+          lastPlayDate: DateTime.now(),
+          unlockedProvincesCount: 0,
+          completedDailyChallenges: [],
+        );
+        await _saveToLocalStorage(newProgress, userId);
       }
     }
   }
@@ -720,9 +748,9 @@ class GameProgressService {
   static Future<void> clearDataOnLogout() async {
     final userId = _currentUserId;
     if (userId != null) {
-      // KHÔNG xóa dữ liệu local nữa để hỗ trợ nhiều user
-      // await clearLocalData();
-      print('User $userId logged out - keeping local data for multi-user support');
+      // Xóa dữ liệu local để reset về ban đầu
+      await clearLocalData();
+      print('User $userId logged out - cleared local data, reset to initial state');
     }
   }
 
@@ -749,6 +777,16 @@ class GameProgressService {
     }
     
     return userIds.toList();
+  }
+
+  // Load provinces từ data
+  static Future<List<Province>> _loadProvincesFromData() async {
+    try {
+      return ProvincesData.getAllProvinces();
+    } catch (e) {
+      print('Error loading provinces from data: $e');
+      return [];
+    }
   }
 
   // Debug: In thông tin tất cả user
