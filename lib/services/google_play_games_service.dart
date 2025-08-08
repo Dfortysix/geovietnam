@@ -4,6 +4,7 @@ import 'package:google_sign_in/google_sign_in.dart';
 import 'package:firebase_analytics/firebase_analytics.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'user_service.dart';
+import 'game_progress_service.dart';
 
 class GooglePlayGamesService extends ChangeNotifier {
   static final GooglePlayGamesService _instance = GooglePlayGamesService._internal();
@@ -79,6 +80,13 @@ class GooglePlayGamesService extends ChangeNotifier {
           // Không throw error để không làm gián đoạn quá trình đăng nhập
         }
         
+        // Đồng bộ dữ liệu game progress
+        try {
+          await GameProgressService.syncOnLogin();
+        } catch (syncError) {
+          // Ignore sync error
+        }
+        
         // Ghi log analytics
         try {
           await FirebaseAnalytics.instance.logEvent(
@@ -106,10 +114,24 @@ class GooglePlayGamesService extends ChangeNotifier {
   /// Đăng xuất khỏi Google Play Games
   Future<void> signOut() async {
     try {
+      // Đồng bộ dữ liệu trước khi đăng xuất
+      try {
+        await GameProgressService.syncOnLogout();
+      } catch (syncError) {
+        // Ignore sync error
+      }
+      
       await _googleSignIn.signOut();
       _isSignedIn = false;
       _currentUser = null;
       notifyListeners();
+      
+      // Xóa dữ liệu local sau khi đăng xuất
+      try {
+        await GameProgressService.clearDataOnLogout();
+      } catch (clearError) {
+        // Ignore clear error
+      }
     } catch (e) {
       // Ignore sign out error
     }
