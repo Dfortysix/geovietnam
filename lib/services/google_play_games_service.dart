@@ -53,67 +53,29 @@ class GooglePlayGamesService extends ChangeNotifier {
   /// Đăng nhập vào Google Play Games
   Future<bool> signIn() async {
     try {
-      print('=== GOOGLE SIGN-IN START ===');
-      
       final GoogleSignInAccount? account = await _googleSignIn.signIn();
       if (account != null) {
-        print('Google Sign-In successful: ${account.email}');
-        print('Google Account ID: ${account.id}');
-        print('Google Display Name: ${account.displayName}');
-        
         // Liên kết với Firebase Auth
-        print('Getting Google authentication...');
         final GoogleSignInAuthentication googleAuth = await account.authentication;
-        print('Google Auth Access Token: ${googleAuth.accessToken != null ? 'Present' : 'Missing'}');
-        print('Google Auth ID Token: ${googleAuth.idToken != null ? 'Present' : 'Missing'}');
         
         final credential = GoogleAuthProvider.credential(
           accessToken: googleAuth.accessToken,
           idToken: googleAuth.idToken,
         );
         
-        print('Signing in to Firebase with Google credential...');
         final UserCredential userCredential = await FirebaseAuth.instance.signInWithCredential(credential);
-        
-        // Debug Firebase Auth
-        print('=== FIREBASE AUTH RESULT ===');
-        print('Firebase Auth User ID: ${userCredential.user?.uid}');
-        print('Firebase Auth Email: ${userCredential.user?.email}');
-        print('Firebase Auth Display Name: ${userCredential.user?.displayName}');
-        print('Firebase Auth isAnonymous: ${userCredential.user?.isAnonymous}');
-        print('Firebase Auth isEmailVerified: ${userCredential.user?.emailVerified}');
-        print('Firebase Auth Provider Data: ${userCredential.user?.providerData.map((p) => p.providerId).toList()}');
-        print('==========================');
 
         _isSignedIn = true;
         _currentUser = account;
         notifyListeners();
         
         // Đợi để Firebase Auth hoàn tất
-        print('Waiting for Firebase Auth to complete...');
         await Future.delayed(Duration(milliseconds: 1000));
         
-        // Debug Firebase Auth trước khi ghi Firestore
-        final User? currentFirebaseUser = FirebaseAuth.instance.currentUser;
-        print('=== CURRENT FIREBASE USER ===');
-        print('Current Firebase User: ${currentFirebaseUser?.uid}');
-        print('Firebase User Email: ${currentFirebaseUser?.email}');
-        print('Firebase User Display Name: ${currentFirebaseUser?.displayName}');
-        print('Firebase User isAnonymous: ${currentFirebaseUser?.isAnonymous}');
-        print('Firebase User isEmailVerified: ${currentFirebaseUser?.emailVerified}');
-        print('==========================');
-        
         // Tạo hoặc cập nhật user profile trên Firestore
-        print('=== CREATING USER PROFILE ===');
-        print('Firebase Auth User ID: ${userCredential.user?.uid}');
-        print('Google Sign-In ID: ${account.id}');
-        print('==========================');
-        
         try {
           await _userService.createOrUpdateUserProfile(account);
-          print('User profile created/updated successfully');
         } catch (profileError) {
-          print('Error creating user profile: $profileError');
           // Không throw error để không làm gián đoạn quá trình đăng nhập
         }
         
@@ -128,22 +90,15 @@ class GooglePlayGamesService extends ChangeNotifier {
               'display_name': account.displayName ?? '',
             },
           );
-          print('Analytics event logged successfully');
         } catch (analyticsError) {
-          print('Error logging analytics: $analyticsError');
+          // Ignore analytics error
         }
         
-        print('=== GOOGLE SIGN-IN COMPLETED ===');
         return true;
       } else {
-        print('Google Sign-In cancelled by user');
         return false;
       }
     } catch (e) {
-      print('=== GOOGLE SIGN-IN ERROR ===');
-      print('Error during sign-in: $e');
-      print('Stack trace: ${StackTrace.current}');
-      print('==========================');
       return false;
     }
   }
@@ -155,9 +110,8 @@ class GooglePlayGamesService extends ChangeNotifier {
       _isSignedIn = false;
       _currentUser = null;
       notifyListeners();
-      print('Đăng xuất thành công');
     } catch (e) {
-      print('Lỗi đăng xuất: $e');
+      // Ignore sign out error
     }
   }
 
@@ -172,7 +126,7 @@ class GooglePlayGamesService extends ChangeNotifier {
         parameters: parameters,
       );
     } catch (e) {
-      print('Lỗi ghi log sự kiện: $e');
+      // Ignore analytics error
     }
   }
 
@@ -182,17 +136,16 @@ class GooglePlayGamesService extends ChangeNotifier {
     String? gameMode,
   }) async {
     try {
-              await FirebaseAnalytics.instance.logEvent(
-          name: 'game_score',
-          parameters: {
-            'score': score,
-            'game_mode': gameMode ?? 'default',
-            'user_id': _currentUser?.id ?? '',
-          },
-        );
-      print('Điểm số đã được ghi log: $score');
+      await FirebaseAnalytics.instance.logEvent(
+        name: 'game_score',
+        parameters: {
+          'score': score,
+          'game_mode': gameMode ?? 'default',
+          'user_id': _currentUser?.id ?? '',
+        },
+      );
     } catch (e) {
-      print('Lỗi ghi log điểm số: $e');
+      // Ignore analytics error
     }
   }
 
@@ -202,17 +155,16 @@ class GooglePlayGamesService extends ChangeNotifier {
     String? achievementName,
   }) async {
     try {
-              await FirebaseAnalytics.instance.logEvent(
-          name: 'achievement_unlocked',
-          parameters: {
-            'achievement_id': achievementId,
-            'achievement_name': achievementName ?? achievementId,
-            'user_id': _currentUser?.id ?? '',
-          },
-        );
-      print('Achievement đã được ghi log: $achievementId');
+      await FirebaseAnalytics.instance.logEvent(
+        name: 'achievement_unlocked',
+        parameters: {
+          'achievement_id': achievementId,
+          'achievement_name': achievementName ?? achievementId,
+          'user_id': _currentUser?.id ?? '',
+        },
+      );
     } catch (e) {
-      print('Lỗi ghi log achievement: $e');
+      // Ignore analytics error
     }
   }
 
@@ -222,16 +174,16 @@ class GooglePlayGamesService extends ChangeNotifier {
     required String provinceId,
   }) async {
     try {
-              await FirebaseAnalytics.instance.logEvent(
-          name: 'province_explored',
-          parameters: {
-            'province_name': provinceName,
-            'province_id': provinceId,
-            'user_id': _currentUser?.id ?? '',
-          },
-        );
+      await FirebaseAnalytics.instance.logEvent(
+        name: 'province_explored',
+        parameters: {
+          'province_name': provinceName,
+          'province_id': provinceId,
+          'user_id': _currentUser?.id ?? '',
+        },
+      );
     } catch (e) {
-      print('Lỗi ghi log khám phá tỉnh: $e');
+      // Ignore analytics error
     }
   }
 
@@ -242,17 +194,17 @@ class GooglePlayGamesService extends ChangeNotifier {
     String? difficulty,
   }) async {
     try {
-              await FirebaseAnalytics.instance.logEvent(
-          name: 'challenge_completed',
-          parameters: {
-            'challenge_type': challengeType,
-            'score': score,
-            'difficulty': difficulty ?? 'normal',
-            'user_id': _currentUser?.id ?? '',
-          },
-        );
+      await FirebaseAnalytics.instance.logEvent(
+        name: 'challenge_completed',
+        parameters: {
+          'challenge_type': challengeType,
+          'score': score,
+          'difficulty': difficulty ?? 'normal',
+          'user_id': _currentUser?.id ?? '',
+        },
+      );
     } catch (e) {
-      print('Lỗi ghi log hoàn thành thử thách: $e');
+      // Ignore analytics error
     }
   }
 } 

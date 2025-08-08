@@ -30,7 +30,6 @@ class GameProgressService {
           return cloudProgress;
         }
       } catch (e) {
-        print('Error getting cloud progress: $e');
         // Fallback to local storage
       }
     }
@@ -88,7 +87,7 @@ class GameProgressService {
         await _userService.saveGameProgress(gamesService.currentUser!.id, progress);
         await _userService.saveAllProvinces(gamesService.currentUser!.id, progress.provinces);
       } catch (e) {
-        print('Error saving to cloud: $e');
+        // Ignore cloud save error
       }
     }
   }
@@ -125,7 +124,7 @@ class GameProgressService {
       try {
         await _userService.updateTotalScore(gamesService.currentUser!.id, updatedScore);
       } catch (e) {
-        print('Error updating cloud score: $e');
+        // Ignore cloud update error
       }
     }
   }
@@ -166,7 +165,7 @@ class GameProgressService {
       try {
         await _userService.updateDailyStreak(gamesService.currentUser!.id, newStreak);
       } catch (e) {
-        print('Error updating cloud streak: $e');
+        // Ignore cloud update error
       }
     }
   }
@@ -179,40 +178,19 @@ class GameProgressService {
     if (!unlockedProvinceIds.contains(provinceId)) {
       unlockedProvinceIds.add(provinceId);
       await prefs.setStringList(_unlockedProvincesKey, unlockedProvinceIds);
-      print('[DEBUG] Đã unlock local: $provinceId');
       // Cập nhật cloud nếu user đã đăng nhập
       final gamesService = GooglePlayGamesService();
       if (gamesService.isSignedIn && gamesService.currentUser != null) {
         try {
-          print('[DEBUG] Ghi Firestore: userId=${gamesService.currentUser!.id}, provinceId=$provinceId');
           await _userService.unlockProvince(gamesService.currentUser!.id, provinceId);
-          print('[DEBUG] Đã unlock Firestore: $provinceId');
         } catch (e) {
-          print('[DEBUG] Error unlocking province in cloud: $e');
+          // Ignore cloud update error
         }
-      } else {
-        print('[DEBUG] Không đăng nhập, không ghi Firestore');
       }
-    } else {
-      print('[DEBUG] Province đã unlock trước đó: $provinceId');
     }
   }
 
-  // Hàm test ghi Firestore
-  static Future<void> testFirestoreWrite() async {
-    try {
-      final gamesService = GooglePlayGamesService();
-      final userId = gamesService.currentUser?.id ?? 'test';
-      print('[DEBUG] Test ghi Firestore với userId=$userId');
-      await FirebaseFirestore.instance
-          .collection('users')
-          .doc(userId)
-          .set({'test': true, 'timestamp': DateTime.now().toIso8601String()});
-      print('[DEBUG] Ghi Firestore thành công!');
-    } catch (e) {
-      print('[DEBUG] Lỗi test ghi Firestore: $e');
-    }
-  }
+
 
   // Cập nhật điểm số cho tỉnh
   static Future<void> updateProvinceScore(String provinceId, int score) async {
@@ -222,7 +200,7 @@ class GameProgressService {
       try {
         await _userService.updateProvinceScore(gamesService.currentUser!.id, provinceId, score);
       } catch (e) {
-        print('Error updating province score in cloud: $e');
+        // Ignore cloud update error
       }
     }
   }
@@ -235,7 +213,7 @@ class GameProgressService {
       try {
         await _userService.exploreProvince(gamesService.currentUser!.id, provinceId);
       } catch (e) {
-        print('Error exploring province in cloud: $e');
+        // Ignore cloud update error
       }
     }
   }
@@ -248,7 +226,7 @@ class GameProgressService {
       try {
         await _userService.addCompletedDailyChallenge(gamesService.currentUser!.id, challengeId);
       } catch (e) {
-        print('Error adding completed daily challenge in cloud: $e');
+        // Ignore cloud update error
       }
     }
   }
@@ -276,7 +254,7 @@ class GameProgressService {
           await _saveToLocalStorage(cloudProgress);
         }
       } catch (e) {
-        print('Error syncing from cloud: $e');
+        // Ignore sync error
       }
     }
   }
@@ -290,7 +268,7 @@ class GameProgressService {
         await _userService.saveGameProgress(gamesService.currentUser!.id, localProgress);
         await _userService.saveAllProvinces(gamesService.currentUser!.id, localProgress.provinces);
       } catch (e) {
-        print('Error syncing to cloud: $e');
+        // Ignore sync error
       }
     }
   }

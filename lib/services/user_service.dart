@@ -15,54 +15,36 @@ class UserService {
   /// Tạo hoặc cập nhật user profile
   Future<void> createOrUpdateUserProfile(GoogleSignInAccount user) async {
     try {
-      print('=== CREATE/UPDATE USER PROFILE START ===');
-      print('Google Sign-In Account: ${user.email}');
-      print('Google Sign-In ID: ${user.id}');
-      
       // Sử dụng Firebase Auth user ID thay vì Google Sign-In ID
       final User? firebaseUser = FirebaseAuth.instance.currentUser;
       if (firebaseUser == null) {
-        print('Firebase Auth user is null!');
-        print('Waiting for Firebase Auth to complete...');
-        
         // Thử đợi lâu hơn và lấy lại
         await Future.delayed(Duration(milliseconds: 2000));
         final User? retryUser = FirebaseAuth.instance.currentUser;
         if (retryUser == null) {
-          print('Firebase Auth user still null after retry!');
-          print('Attempting to get current user from auth state...');
-          
           // Thử lắng nghe auth state changes
           final authStateStream = FirebaseAuth.instance.authStateChanges();
-          final authStateSubscription = authStateStream.listen((User? user) {
-            print('Auth state changed: ${user?.uid}');
-          });
+          final authStateSubscription = authStateStream.listen((User? user) {});
           
           await Future.delayed(Duration(milliseconds: 3000));
           authStateSubscription.cancel();
           
           final finalRetryUser = FirebaseAuth.instance.currentUser;
           if (finalRetryUser == null) {
-            print('Firebase Auth user still null after all retries!');
             throw Exception('Firebase Auth user not authenticated after multiple attempts');
           }
           
-          print('Using Firebase Auth UID (final retry): ${finalRetryUser.uid}');
           await _createUserProfile(finalRetryUser.uid, user);
           return;
         }
         
-        print('Using Firebase Auth UID (retry): ${retryUser.uid}');
         await _createUserProfile(retryUser.uid, user);
         return;
       }
       
-      print('Using Firebase Auth UID: ${firebaseUser.uid}');
       await _createUserProfile(firebaseUser.uid, user);
       
     } catch (e) {
-      print('Error creating/updating user profile: $e');
-      print('Stack trace: ${StackTrace.current}');
       rethrow;
     }
   }
@@ -70,8 +52,6 @@ class UserService {
   /// Helper method để tạo user profile
   Future<void> _createUserProfile(String firebaseUid, GoogleSignInAccount googleUser) async {
     try {
-      print('Creating user profile for Firebase UID: $firebaseUid');
-      
       final userDoc = _firestore.collection('users').doc(firebaseUid);
       
       final profileData = {
@@ -86,17 +66,9 @@ class UserService {
         },
       };
       
-      print('Profile data to save: $profileData');
-      
       await userDoc.set(profileData, SetOptions(merge: true));
       
-      print('User profile created/updated successfully with Firebase Auth UID: $firebaseUid');
-      print('=== CREATE/UPDATE USER PROFILE END ===');
-      
     } catch (e) {
-      print('Error in _createUserProfile: $e');
-      print('Firebase UID: $firebaseUid');
-      print('Google User Email: ${googleUser.email}');
       rethrow;
     }
   }
@@ -110,7 +82,6 @@ class UserService {
       }
       return null;
     } catch (e) {
-      print('Error getting user profile: $e');
       return null;
     }
   }
@@ -134,9 +105,8 @@ class UserService {
         },
       }, SetOptions(merge: true));
       
-      print('Game progress saved successfully');
+      // Game progress saved successfully
     } catch (e) {
-      print('Error saving game progress: $e');
       rethrow;
     }
   }
@@ -164,7 +134,6 @@ class UserService {
       }
       return null;
     } catch (e) {
-      print('Error getting game progress: $e');
       return null;
     }
   }
@@ -183,9 +152,8 @@ class UserService {
         'lastPlayed': FieldValue.serverTimestamp(),
       });
       
-      print('Province data saved successfully');
+      // Province data saved successfully
     } catch (e) {
-      print('Error saving province data: $e');
       rethrow;
     }
   }
@@ -209,9 +177,8 @@ class UserService {
       }
       
       await batch.commit();
-      print('All provinces saved successfully');
+      // All provinces saved successfully
     } catch (e) {
-      print('Error saving all provinces: $e');
       rethrow;
     }
   }
@@ -252,7 +219,6 @@ class UserService {
         );
       }).toList();
     } catch (e) {
-      print('Error getting user provinces: $e');
       return [];
     }
   }
@@ -269,7 +235,6 @@ class UserService {
       
       return null;
     } catch (e) {
-      print('Error getting complete game progress: $e');
       return null;
     }
   }
@@ -284,9 +249,8 @@ class UserService {
         'lastPlayed': FieldValue.serverTimestamp(),
       });
       
-      print('Province score updated successfully');
+      // Province score updated successfully
     } catch (e) {
-      print('Error updating province score: $e');
       rethrow;
     }
   }
@@ -301,9 +265,8 @@ class UserService {
         'lastPlayed': FieldValue.serverTimestamp(),
       });
       
-      print('Province unlocked successfully');
+      // Province unlocked successfully
     } catch (e) {
-      print('Error unlocking province: $e');
       rethrow;
     }
   }
@@ -318,9 +281,8 @@ class UserService {
         'lastPlayed': FieldValue.serverTimestamp(),
       });
       
-      print('Province explored successfully');
+      // Province explored successfully
     } catch (e) {
-      print('Error exploring province: $e');
       rethrow;
     }
   }
@@ -334,9 +296,8 @@ class UserService {
         'gameProgress.completedDailyChallenges': FieldValue.arrayUnion([challengeId]),
       });
       
-      print('Daily challenge completed successfully');
+      // Daily challenge completed successfully
     } catch (e) {
-      print('Error adding completed daily challenge: $e');
       rethrow;
     }
   }
@@ -351,9 +312,8 @@ class UserService {
         'gameProgress.lastPlayDate': FieldValue.serverTimestamp(),
       });
       
-      print('Daily streak updated successfully');
+      // Daily streak updated successfully
     } catch (e) {
-      print('Error updating daily streak: $e');
       rethrow;
     }
   }
@@ -367,9 +327,8 @@ class UserService {
         'gameProgress.totalScore': totalScore,
       });
       
-      print('Total score updated successfully');
+      // Total score updated successfully
     } catch (e) {
-      print('Error updating total score: $e');
       rethrow;
     }
   }
