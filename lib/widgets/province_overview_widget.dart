@@ -3,6 +3,7 @@ import 'package:flutter_animate/flutter_animate.dart';
 import '../theme/app_theme.dart';
 import '../services/province_detail_service.dart';
 import '../models/province.dart';
+import '../data/provinces_data.dart';
 import 'province_detail_widget.dart';
 
 class ProvinceOverviewWidget extends StatefulWidget {

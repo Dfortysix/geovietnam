@@ -8,6 +8,7 @@ import '../services/game_progress_service.dart';
 import '../services/province_detail_service.dart';
 import '../models/game_progress.dart';
 import '../models/province.dart';
+import '../data/provinces_data.dart';
 
 class MapExplorationScreen extends StatefulWidget {
   const MapExplorationScreen({super.key});
@@ -84,48 +85,8 @@ class _MapExplorationScreenState extends State<MapExplorationScreen> with Ticker
     }
   }
 
-  // Load thông tin tổng quan từ JSON
-  Future<Map<String, dynamic>?> _loadProvinceOverview(String provinceId) async {
-    try {
-      return await ProvinceDetailService.getProvinceOverview(provinceId);
-    } catch (e) {
-      print('Error loading province overview: $e');
-      return null;
-    }
-  }
-
   String? _getProvinceBackgroundImage(String provinceId) {
-    // Map province ID to background image path
-    final backgroundMap = {
-      'Hai Phong': 'assets/images/provinces/hai_phong_bg.jpg',
-    };
-    return backgroundMap[provinceId];
-  }
-
-  Future<bool> _checkImageExists(String imagePath) async {
-    try {
-      // Thử load image để kiểm tra xem có tồn tại không
-      await precacheImage(AssetImage(imagePath), context);
-      return true;
-    } catch (e) {
-      print('Image not found: $imagePath - $e');
-      return false;
-    }
-  }
-
-  Widget _buildFallbackBackground() {
-    return Container(
-      decoration: BoxDecoration(
-        gradient: LinearGradient(
-          begin: Alignment.topLeft,
-          end: Alignment.bottomRight,
-          colors: [
-            AppTheme.primaryOrange.withValues(alpha: 0.3),
-            AppTheme.primaryOrange.withValues(alpha: 0.1),
-          ],
-        ),
-      ),
-    );
+    return ProvincesData.getProvinceBackgroundImage(provinceId);
   }
 
   void _showProvinceDetailScreen(BuildContext context) {

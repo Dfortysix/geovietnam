@@ -386,4 +386,41 @@ class ProvincesData {
   static List<Province> getLockedProvinces(List<Province> provinces) {
     return provinces.where((province) => !province.isUnlocked).toList();
   }
+
+  /// Lấy đường dẫn background image cho tỉnh
+  static String? getProvinceBackgroundImage(String provinceId) {
+    final backgroundMap = {
+      'Hai Phong': 'assets/images/provinces/hai_phong_bg.jpg',
+      // Thêm các tỉnh khác khi có background image
+    };
+    return backgroundMap[provinceId];
+  }
+
+  /// Kiểm tra xem tỉnh có background image không
+  static bool hasBackgroundImage(String provinceId) {
+    return getProvinceBackgroundImage(provinceId) != null;
+  }
+
+  /// Lấy danh sách tất cả tỉnh có background image
+  static List<String> getProvincesWithBackgroundImage() {
+    return getProvinceBackgroundImage('Hai Phong') != null ? ['Hai Phong'] : [];
+  }
+
+  /// Lấy thông tin hiển thị cho tỉnh (tổng hợp từ province data và background)
+  static Map<String, dynamic> getProvinceDisplayInfo(String provinceId) {
+    final province = getProvinceById(provinceId);
+    if (province == null) {
+      return {};
+    }
+
+    return {
+      'id': province.id,
+      'nameVietnamese': province.nameVietnamese,
+      'description': province.description,
+      'facts': province.facts,
+      'isUnlocked': province.isUnlocked,
+      'backgroundImage': getProvinceBackgroundImage(provinceId),
+      'hasBackgroundImage': hasBackgroundImage(provinceId),
+    };
+  }
 } 
