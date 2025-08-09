@@ -30,6 +30,33 @@ class GooglePlayGamesService extends ChangeNotifier {
   bool get isInitialized => _isInitialized;
   GoogleSignInAccount? get currentUser => _currentUser;
 
+  /// Refresh trạng thái đăng nhập hiện tại
+  Future<void> refreshSignInStatus() async {
+    try {
+      final wasSignedIn = _isSignedIn;
+      _isSignedIn = await _googleSignIn.isSignedIn();
+      
+      if (_isSignedIn) {
+        // Đảm bảo load thông tin user đầy đủ
+        _currentUser = await _googleSignIn.signInSilently();
+        if (_currentUser == null) {
+          // Nếu không load được, thử lấy current user
+          _currentUser = _googleSignIn.currentUser;
+        }
+      } else {
+        _currentUser = null;
+      }
+      
+      // Chỉ notify nếu có thay đổi
+      if (wasSignedIn != _isSignedIn || _currentUser != null) {
+        notifyListeners();
+        print('Refresh sign in status: $_isSignedIn - ${_currentUser?.displayName}');
+      }
+    } catch (e) {
+      print('Lỗi refresh sign in status: $e');
+    }
+  }
+
   /// Khởi tạo Google Play Games Services
   Future<bool> initialize() async {
     try {
@@ -39,12 +66,19 @@ class GooglePlayGamesService extends ChangeNotifier {
       // Kiểm tra trạng thái đăng nhập hiện tại
       _isSignedIn = await _googleSignIn.isSignedIn();
       if (_isSignedIn) {
-        _currentUser = _googleSignIn.currentUser;
+        // Đảm bảo load thông tin user đầy đủ
+        _currentUser = await _googleSignIn.signInSilently();
+        if (_currentUser == null) {
+          // Nếu không load được, thử lấy current user
+          _currentUser = _googleSignIn.currentUser;
+        }
       }
       
       _isInitialized = true;
       notifyListeners();
       print('Google Play Games Services đã được khởi tạo thành công');
+      print('Trạng thái đăng nhập: $_isSignedIn');
+      print('User hiện tại: ${_currentUser?.displayName} (${_currentUser?.email})');
       return true;
     } catch (e) {
       print('Lỗi khởi tạo Google Play Games Services: $e');

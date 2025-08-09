@@ -33,6 +33,12 @@ class _HomeScreenState extends State<HomeScreen> {
     _authService.addListener(_onAuthStateChanged);
     // Lắng nghe thay đổi tiến độ game
     _gameProgressService.addListener(_onGameProgressChanged);
+    // Refresh trạng thái đăng nhập khi khởi tạo
+    _refreshLoginStatus();
+  }
+
+  Future<void> _refreshLoginStatus() async {
+    await _authService.refreshLoginStatus();
   }
 
   @override

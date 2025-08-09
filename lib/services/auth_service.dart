@@ -22,6 +22,12 @@ class AuthService extends ChangeNotifier {
   /// Lấy thông tin Google user
   GoogleSignInAccount? get currentGoogleUser => _googleService.currentUser;
 
+  /// Refresh trạng thái đăng nhập
+  Future<void> refreshLoginStatus() async {
+    await _googleService.refreshSignInStatus();
+    notifyListeners();
+  }
+
   /// Hiển thị popup yêu cầu đăng nhập
   static Future<bool> showLoginRequiredDialog(BuildContext context) async {
     return await showDialog<bool>(
