@@ -390,6 +390,7 @@ class ProvincesData {
   /// Lấy đường dẫn background image cho tỉnh
   static String? getProvinceBackgroundImage(String provinceId) {
     final backgroundMap = {
+      'Ha Noi': 'assets/images/provinces/ha_noi_bg.jpg',
       'Hai Phong': 'assets/images/provinces/hai_phong_bg.jpg',
       // Thêm các tỉnh khác khi có background image
     };
@@ -403,7 +404,10 @@ class ProvincesData {
 
   /// Lấy danh sách tất cả tỉnh có background image
   static List<String> getProvincesWithBackgroundImage() {
-    return getProvinceBackgroundImage('Hai Phong') != null ? ['Hai Phong'] : [];
+    final provinces = <String>[];
+    if (getProvinceBackgroundImage('Ha Noi') != null) provinces.add('Ha Noi');
+    if (getProvinceBackgroundImage('Hai Phong') != null) provinces.add('Hai Phong');
+    return provinces;
   }
 
   /// Lấy thông tin hiển thị cho tỉnh (tổng hợp từ province data và background)

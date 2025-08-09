@@ -617,16 +617,16 @@ class GameProgressService extends ChangeNotifier {
     print('Updated score by 100');
     
     // Test 3: Mở khóa một tỉnh
-    await unlockProvince('hanoi');
-    print('Unlocked Hanoi province');
+    await unlockProvince('Ha Noi');
+    print('Unlocked Ha Noi province');
     
     // Test 4: Cập nhật score cho tỉnh
-    await updateProvinceScore('hanoi', 50);
-    print('Updated Hanoi province score to 50');
+    await updateProvinceScore('Ha Noi', 50);
+    print('Updated Ha Noi province score to 50');
     
     // Test 5: Đánh dấu tỉnh đã khám phá
-    await exploreProvince('hanoi');
-    print('Marked Hanoi as explored');
+    await exploreProvince('Ha Noi');
+    print('Marked Ha Noi as explored');
     
     // Test 6: Lấy tiến độ sau khi cập nhật
     final updatedProgress = await getCurrentProgress();

@@ -175,43 +175,54 @@ class _ProvinceOverviewWidgetState extends State<ProvinceOverviewWidget> {
               ],
             ],
           ),
-          const SizedBox(height: 8),
           Text(
             widget.province.description,
             style: Theme.of(context).textTheme.bodyMedium?.copyWith(
               color: Colors.white.withValues(alpha: 0.9),
             ),
           ),
-          if (widget.province.isUnlocked) ...[
-            const SizedBox(height: 8),
-            Row(
-              children: [
-                Expanded(
-                  child: Text(
-                    'Thông tin thú vị:',
-                    style: Theme.of(context).textTheme.titleSmall?.copyWith(
-                      color: Colors.white,
-                      fontWeight: FontWeight.w600,
-                    ),
+          const SizedBox(height: 8),
+          Row(
+            children: [
+              Expanded(
+                child: Text(
+                  'Thông tin thú vị:',
+                  style: Theme.of(context).textTheme.titleSmall?.copyWith(
+                    color: Colors.white,
+                    fontWeight: FontWeight.w600,
                   ),
                 ),
-                ElevatedButton.icon(
-                  onPressed: widget.onDetailPressed ?? () {
-                    // Default navigation if no callback provided
-                    Navigator.push(
-                      context,
-                      MaterialPageRoute(
-                        builder: (context) => ProvinceDetailWidget(
-                          provinceId: widget.province.id,
-                          provinceName: widget.province.nameVietnamese,
-                        ),
-                      ),
-                    );
-                  },
-                  icon: const Icon(Icons.info_outline, size: 16),
-                  label: const Text('Chi tiết'),
+              ),
+              Flexible(
+                child: ElevatedButton.icon(
+                  onPressed: widget.province.isUnlocked 
+                      ? (widget.onDetailPressed ?? () {
+                          // Default navigation if no callback provided
+                          Navigator.push(
+                            context,
+                            MaterialPageRoute(
+                              builder: (context) => ProvinceDetailWidget(
+                                provinceId: widget.province.id,
+                                provinceName: widget.province.nameVietnamese,
+                              ),
+                            ),
+                          );
+                        })
+                      : null, // Disable button if not unlocked
+                  icon: Icon(
+                    widget.province.isUnlocked ? Icons.info_outline : Icons.lock,
+                    size: 14,
+                  ),
+                  label: Text(
+                    widget.province.isUnlocked ? 'Chi tiết' : 'Mở khóa để xem chi tiết',
+                    style: TextStyle(
+                      fontSize: widget.province.isUnlocked ? 14 : 11,
+                    ),
+                  ),
                   style: ElevatedButton.styleFrom(
-                    backgroundColor: AppTheme.primaryOrange,
+                    backgroundColor: widget.province.isUnlocked 
+                        ? AppTheme.primaryOrange 
+                        : Colors.grey.withValues(alpha: 0.8),
                     foregroundColor: Colors.white,
                     padding: const EdgeInsets.symmetric(horizontal: 12, vertical: 6),
                     shape: RoundedRectangleBorder(
@@ -219,30 +230,30 @@ class _ProvinceOverviewWidgetState extends State<ProvinceOverviewWidget> {
                     ),
                   ),
                 ),
-              ],
-            ),
-            const SizedBox(height: 4),
-            ...widget.province.facts.map((fact) => Padding(
-              padding: const EdgeInsets.only(bottom: 2),
-              child: Row(
-                crossAxisAlignment: CrossAxisAlignment.start,
-                children: [
-                  const Text('• ', style: TextStyle(color: AppTheme.primaryOrange)),
-                  Expanded(
-                    child: Text(
-                      fact,
-                      style: Theme.of(context).textTheme.bodySmall?.copyWith(
-                        color: Colors.white.withValues(alpha: 0.8),
-                      ),
+              ),
+            ],
+          ),
+          const SizedBox(height: 4),
+          ...widget.province.facts.map((fact) => Padding(
+            padding: const EdgeInsets.only(bottom: 2),
+            child: Row(
+              crossAxisAlignment: CrossAxisAlignment.start,
+              children: [
+                const Text('• ', style: TextStyle(color: AppTheme.primaryOrange)),
+                Expanded(
+                  child: Text(
+                    fact,
+                    style: Theme.of(context).textTheme.bodySmall?.copyWith(
+                      color: Colors.white.withValues(alpha: 0.8),
                     ),
                   ),
-                ],
-              ),
-            )),
-          ],
+                ),
+              ],
+            ),
+          )),
         ],
       ),
-    );
+    ).animate().fadeIn(duration: 300.ms);
   }
 
   Widget _buildDetailedContent() {
@@ -302,36 +313,48 @@ class _ProvinceOverviewWidgetState extends State<ProvinceOverviewWidget> {
               color: Colors.white.withValues(alpha: 0.9),
             ),
           ),
-          if (widget.province.isUnlocked) ...[
-            const SizedBox(height: 8),
-            Row(
-              children: [
-                Expanded(
-                  child: Text(
-                    'Thông tin thú vị:',
-                    style: Theme.of(context).textTheme.titleSmall?.copyWith(
-                      color: Colors.white,
-                      fontWeight: FontWeight.w600,
-                    ),
+          const SizedBox(height: 8),
+          Row(
+            children: [
+              Expanded(
+                child: Text(
+                  'Thông tin thú vị:',
+                  style: Theme.of(context).textTheme.titleSmall?.copyWith(
+                    color: Colors.white,
+                    fontWeight: FontWeight.w600,
                   ),
                 ),
-                ElevatedButton.icon(
-                  onPressed: widget.onDetailPressed ?? () {
-                    // Default navigation if no callback provided
-                    Navigator.push(
-                      context,
-                      MaterialPageRoute(
-                        builder: (context) => ProvinceDetailWidget(
-                          provinceId: widget.province.id,
-                          provinceName: widget.province.nameVietnamese,
-                        ),
-                      ),
-                    );
-                  },
-                  icon: const Icon(Icons.info_outline, size: 16),
-                  label: const Text('Chi tiết'),
+              ),
+              Flexible(
+                child: ElevatedButton.icon(
+                  onPressed: widget.province.isUnlocked 
+                      ? (widget.onDetailPressed ?? () {
+                          // Default navigation if no callback provided
+                          Navigator.push(
+                            context,
+                            MaterialPageRoute(
+                              builder: (context) => ProvinceDetailWidget(
+                                provinceId: widget.province.id,
+                                provinceName: widget.province.nameVietnamese,
+                              ),
+                            ),
+                          );
+                        })
+                      : null, // Disable button if not unlocked
+                  icon: Icon(
+                    widget.province.isUnlocked ? Icons.info_outline : Icons.lock,
+                    size: 14,
+                  ),
+                  label: Text(
+                    widget.province.isUnlocked ? 'Chi tiết' : 'Mở khóa để xem chi tiết',
+                    style: TextStyle(
+                      fontSize: widget.province.isUnlocked ? 14 : 11,
+                    ),
+                  ),
                   style: ElevatedButton.styleFrom(
-                    backgroundColor: AppTheme.primaryOrange,
+                    backgroundColor: widget.province.isUnlocked 
+                        ? AppTheme.primaryOrange 
+                        : Colors.grey.withValues(alpha: 0.8),
                     foregroundColor: Colors.white,
                     padding: const EdgeInsets.symmetric(horizontal: 12, vertical: 6),
                     shape: RoundedRectangleBorder(
@@ -339,28 +362,28 @@ class _ProvinceOverviewWidgetState extends State<ProvinceOverviewWidget> {
                     ),
                   ),
                 ),
-              ],
-            ),
-            const SizedBox(height: 4),
-            // Hiển thị facts từ province data
-            ...facts.map((fact) => Padding(
-              padding: const EdgeInsets.only(bottom: 2),
-              child: Row(
-                crossAxisAlignment: CrossAxisAlignment.start,
-                children: [
-                  const Text('• ', style: TextStyle(color: AppTheme.primaryOrange)),
-                  Expanded(
-                    child: Text(
-                      fact,
-                      style: Theme.of(context).textTheme.bodySmall?.copyWith(
-                        color: Colors.white.withValues(alpha: 0.8),
-                      ),
+              ),
+            ],
+          ),
+          const SizedBox(height: 4),
+          // Hiển thị facts từ province data
+          ...facts.map((fact) => Padding(
+            padding: const EdgeInsets.only(bottom: 2),
+            child: Row(
+              crossAxisAlignment: CrossAxisAlignment.start,
+              children: [
+                const Text('• ', style: TextStyle(color: AppTheme.primaryOrange)),
+                Expanded(
+                  child: Text(
+                    fact,
+                    style: Theme.of(context).textTheme.bodySmall?.copyWith(
+                      color: Colors.white.withValues(alpha: 0.8),
                     ),
                   ),
-                ],
-              ),
-            )),
-          ],
+                ),
+              ],
+            ),
+          )),
         ],
       ),
     ).animate().fadeIn(duration: 300.ms);
