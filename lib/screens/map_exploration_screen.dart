@@ -2,7 +2,10 @@ import 'package:flutter/material.dart';
 import 'package:flutter_animate/flutter_animate.dart';
 import '../theme/app_theme.dart';
 import '../widgets/svg_canvas_vietnam_map_widget.dart';
+import '../widgets/province_detail_widget.dart';
+import '../widgets/province_overview_widget.dart';
 import '../services/game_progress_service.dart';
+import '../services/province_detail_service.dart';
 import '../models/game_progress.dart';
 import '../models/province.dart';
 
@@ -68,28 +71,35 @@ class _MapExplorationScreenState extends State<MapExplorationScreen> with Ticker
     }
   }
 
-  void _onProvinceTap(String provinceId) {
+  void _onProvinceTap(String provinceId) async {
     if (_gameProgress != null) {
       final province = _gameProgress!.provinces.firstWhere(
         (p) => p.id == provinceId,
         orElse: () => _gameProgress!.provinces.first,
       );
+      
       setState(() {
         _selectedProvince = province;
       });
     }
   }
 
+  // Load thông tin tổng quan từ JSON
+  Future<Map<String, dynamic>?> _loadProvinceOverview(String provinceId) async {
+    try {
+      return await ProvinceDetailService.getProvinceOverview(provinceId);
+    } catch (e) {
+      print('Error loading province overview: $e');
+      return null;
+    }
+  }
+
   String? _getProvinceBackgroundImage(String provinceId) {
     // Map province ID to background image path
     final backgroundMap = {
-      'Hai Phong': 'assets/images/provinces/hai_phong_bg.png',
+      'Hai Phong': 'assets/images/provinces/hai_phong_bg.jpg',
     };
-    final imagePath = backgroundMap[provinceId];
-    if (imagePath != null) {
-      print('Loading background image: $imagePath for province: $provinceId');
-    }
-    return imagePath;
+    return backgroundMap[provinceId];
   }
 
   Future<bool> _checkImageExists(String imagePath) async {
@@ -116,6 +126,20 @@ class _MapExplorationScreenState extends State<MapExplorationScreen> with Ticker
         ),
       ),
     );
+  }
+
+  void _showProvinceDetailScreen(BuildContext context) {
+    if (_selectedProvince != null) {
+      Navigator.push(
+        context,
+        MaterialPageRoute(
+          builder: (context) => ProvinceDetailWidget(
+            provinceId: _selectedProvince!.id,
+            provinceName: _selectedProvince!.nameVietnamese,
+          ),
+        ),
+      );
+    }
   }
 
   @override
@@ -246,158 +270,10 @@ class _MapExplorationScreenState extends State<MapExplorationScreen> with Ticker
                     opacity: _fadeAnimation.value,
                     child: Container(
                       margin: const EdgeInsets.all(16),
-                      height: 200,
-                      decoration: BoxDecoration(
-                        borderRadius: BorderRadius.circular(16),
-                        boxShadow: AppTheme.softShadow,
-                      ),
-                      child: ClipRRect(
-                        borderRadius: BorderRadius.circular(16),
-                        child: Stack(
-                          children: [
-                                                                                      // Background image cho tỉnh có hình ảnh
-                             if (_getProvinceBackgroundImage(_selectedProvince!.id) != null)
-                               Positioned.fill(
-                                 child: Image.asset(
-                                   _getProvinceBackgroundImage(_selectedProvince!.id)!,
-                                   fit: BoxFit.cover,
-                                   errorBuilder: (context, error, stackTrace) {
-                                     print('Error loading image: $error');
-                                     return _buildFallbackBackground();
-                                   },
-                                 ),
-                               ),
-                             // Fallback background cho các tỉnh khác
-                             if (_getProvinceBackgroundImage(_selectedProvince!.id) == null)
-                              Positioned.fill(
-                                child: Container(
-                                  decoration: BoxDecoration(
-                                    color: Colors.white.withValues(alpha: 0.9),
-                                  ),
-                                ),
-                              ),
-                            // Overlay để text dễ đọc
-                            Positioned.fill(
-                              child: Container(
-                                decoration: BoxDecoration(
-                                  gradient: LinearGradient(
-                                    begin: Alignment.topCenter,
-                                    end: Alignment.bottomCenter,
-                                    colors: [
-                                      Colors.black.withValues(alpha: 0.3),
-                                      Colors.black.withValues(alpha: 0.7),
-                                    ],
-                                  ),
-                                ),
-                              ),
-                            ),
-                            // Content
-                            Padding(
-                              padding: const EdgeInsets.all(16),
-                              child: Column(
-                                crossAxisAlignment: CrossAxisAlignment.start,
-                                children: [
-                                  Row(
-                                    children: [
-                                      Icon(
-                                        _selectedProvince!.isUnlocked 
-                                            ? Icons.check_circle 
-                                            : Icons.lock,
-                                        color: _selectedProvince!.isUnlocked 
-                                            ? Colors.green 
-                                            : Colors.white,
-                                        size: 24,
-                                      ),
-                                      const SizedBox(width: 8),
-                                      Expanded(
-                                        child: Text(
-                                          _selectedProvince!.nameVietnamese,
-                                          style: Theme.of(context).textTheme.titleLarge?.copyWith(
-                                            color: Colors.white,
-                                            fontWeight: FontWeight.bold,
-                                          ),
-                                        ),
-                                      ),
-                                      if (!_selectedProvince!.isUnlocked)
-                                        Container(
-                                          padding: const EdgeInsets.symmetric(horizontal: 8, vertical: 4),
-                                          decoration: BoxDecoration(
-                                            color: Colors.orange.withValues(alpha: 0.8),
-                                            borderRadius: BorderRadius.circular(12),
-                                          ),
-                                          child: Text(
-                                            'Chưa mở khóa',
-                                            style: Theme.of(context).textTheme.bodySmall?.copyWith(
-                                              color: Colors.white,
-                                              fontWeight: FontWeight.w600,
-                                            ),
-                                          ),
-                                        ),
-                                    ],
-                                  ),
-                                  const SizedBox(height: 8),
-                                  Expanded(
-                                    child: Text(
-                                      _selectedProvince!.description,
-                                      style: Theme.of(context).textTheme.bodyMedium?.copyWith(
-                                        color: Colors.white.withValues(alpha: 0.9),
-                                      ),
-                                    ),
-                                  ),
-                                  if (_selectedProvince!.isUnlocked) ...[
-                                    const SizedBox(height: 8),
-                                    Row(
-                                      children: [
-                                        Expanded(
-                                          child: Text(
-                                            'Thông tin thú vị:',
-                                            style: Theme.of(context).textTheme.titleSmall?.copyWith(
-                                              color: Colors.white,
-                                              fontWeight: FontWeight.w600,
-                                            ),
-                                          ),
-                                        ),
-                                        ElevatedButton.icon(
-                                          onPressed: () {
-                                            // TODO: Implement detailed info action
-                                          },
-                                          icon: const Icon(Icons.info_outline, size: 16),
-                                          label: const Text('Chi tiết'),
-                                          style: ElevatedButton.styleFrom(
-                                            backgroundColor: AppTheme.primaryOrange,
-                                            foregroundColor: Colors.white,
-                                            padding: const EdgeInsets.symmetric(horizontal: 12, vertical: 6),
-                                            shape: RoundedRectangleBorder(
-                                              borderRadius: BorderRadius.circular(20),
-                                            ),
-                                          ),
-                                        ),
-                                      ],
-                                    ),
-                                    const SizedBox(height: 4),
-                                    ..._selectedProvince!.facts.take(2).map((fact) => Padding(
-                                      padding: const EdgeInsets.only(bottom: 2),
-                                      child: Row(
-                                        crossAxisAlignment: CrossAxisAlignment.start,
-                                        children: [
-                                          const Text('• ', style: TextStyle(color: AppTheme.primaryOrange)),
-                                          Expanded(
-                                            child: Text(
-                                              fact,
-                                              style: Theme.of(context).textTheme.bodySmall?.copyWith(
-                                                color: Colors.white.withValues(alpha: 0.8),
-                                              ),
-                                            ),
-                                          ),
-                                        ],
-                                      ),
-                                    )),
-                                  ],
-                                ],
-                              ),
-                            ),
-                          ],
-                        ),
+                      child: ProvinceOverviewWidget(
+                        province: _selectedProvince!,
+                        backgroundImagePath: _getProvinceBackgroundImage(_selectedProvince!.id),
+                        onDetailPressed: () => _showProvinceDetailScreen(context),
                       ),
                     ),
                   );

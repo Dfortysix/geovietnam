@@ -49,7 +49,6 @@ class ProvincesData {
         description: 'Thành phố cảng lớn nhất miền Bắc',
         facts: [
           'Thành phố Hoa Phượng Đỏ',
-          'Có 7 quận và 8 huyện',
           'Diện tích: 1,527 km²',
           'Dân số: khoảng 2.1 triệu người',
           'Nổi tiếng với bánh đa cua',

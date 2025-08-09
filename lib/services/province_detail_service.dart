@@ -1,0 +1,125 @@
+import 'dart:convert';
+import 'package:flutter/services.dart';
+
+class ProvinceDetailService {
+  static final Map<String, Map<String, dynamic>> _cache = {};
+
+  /// Load dữ liệu chi tiết của một tỉnh từ file JSON
+  static Future<Map<String, dynamic>?> getProvinceDetail(String provinceId) async {
+    // Kiểm tra cache trước
+    if (_cache.containsKey(provinceId)) {
+      return _cache[provinceId];
+    }
+
+    try {
+      // Convert provinceId to snake_case for file name
+      final fileName = provinceId.toLowerCase().replaceAll(' ', '_');
+      
+      // Load file JSON từ assets
+      final String jsonString = await rootBundle.loadString(
+        'assets/data/provinces/$fileName.json',
+      );
+      
+      final Map<String, dynamic> data = json.decode(jsonString);
+      
+      // Cache dữ liệu
+      _cache[provinceId] = data;
+      
+      return data;
+    } catch (e) {
+      print('Error loading province detail for $provinceId: $e');
+      return null;
+    }
+  }
+
+  /// Load overview của tỉnh (thông tin cơ bản)
+  static Future<Map<String, dynamic>?> getProvinceOverview(String provinceId) async {
+    final detail = await getProvinceDetail(provinceId);
+    return detail?['overview'];
+  }
+
+  /// Load thông tin địa lý
+  static Future<Map<String, dynamic>?> getProvinceGeography(String provinceId) async {
+    final detail = await getProvinceDetail(provinceId);
+    return detail?['geography'];
+  }
+
+  /// Load thông tin văn hóa
+  static Future<Map<String, dynamic>?> getProvinceCulture(String provinceId) async {
+    final detail = await getProvinceDetail(provinceId);
+    return detail?['culture'];
+  }
+
+  /// Load thông tin kinh tế
+  static Future<Map<String, dynamic>?> getProvinceEconomy(String provinceId) async {
+    final detail = await getProvinceDetail(provinceId);
+    return detail?['economy'];
+  }
+
+  /// Load thông tin lịch sử
+  static Future<Map<String, dynamic>?> getProvinceHistory(String provinceId) async {
+    final detail = await getProvinceDetail(provinceId);
+    return detail?['history'];
+  }
+
+  /// Load danh sách facts
+  static Future<List<String>?> getProvinceFacts(String provinceId) async {
+    final detail = await getProvinceDetail(provinceId);
+    final facts = detail?['facts'];
+    return facts != null ? List<String>.from(facts) : null;
+  }
+
+  /// Load thông tin hình ảnh
+  static Future<Map<String, dynamic>?> getProvinceImages(String provinceId) async {
+    final detail = await getProvinceDetail(provinceId);
+    return detail?['images'];
+  }
+
+  /// Load thông tin du lịch
+  static Future<Map<String, dynamic>?> getProvinceTourism(String provinceId) async {
+    final detail = await getProvinceDetail(provinceId);
+    return detail?['tourism'];
+  }
+
+  /// Load thông tin giao thông
+  static Future<Map<String, dynamic>?> getProvinceTransportation(String provinceId) async {
+    final detail = await getProvinceDetail(provinceId);
+    return detail?['transportation'];
+  }
+
+  /// Load thông tin giáo dục
+  static Future<Map<String, dynamic>?> getProvinceEducation(String provinceId) async {
+    final detail = await getProvinceDetail(provinceId);
+    return detail?['education'];
+  }
+
+  /// Clear cache
+  static void clearCache() {
+    _cache.clear();
+  }
+
+  /// Clear cache cho một tỉnh cụ thể
+  static void clearCacheForProvince(String provinceId) {
+    _cache.remove(provinceId);
+  }
+
+  /// Kiểm tra xem tỉnh có file JSON chi tiết không
+  static Future<bool> hasDetailedData(String provinceId) async {
+    try {
+      // Convert provinceId to snake_case for file name
+      final fileName = provinceId.toLowerCase().replaceAll(' ', '_');
+      await rootBundle.loadString('assets/data/provinces/$fileName.json');
+      return true;
+    } catch (e) {
+      return false;
+    }
+  }
+
+  /// Get danh sách tất cả tỉnh có dữ liệu chi tiết
+  static Future<List<String>> getProvincesWithDetailedData() async {
+    // Có thể implement để load danh sách từ một file index
+    // Hoặc scan thư mục assets/data/provinces/
+    // Tạm thời return danh sách hardcode
+    return ['hai_phong']; // Thêm các tỉnh khác khi có file JSON
+  }
+} 
