@@ -534,6 +534,38 @@ class ProvincesData {
     final backgroundMap = {
       'Ha Noi': 'assets/images/provinces/ha_noi_bg.jpg',
       'Hai Phong': 'assets/images/provinces/hai_phong_bg.jpg',
+      'Hue': 'assets/images/provinces/hue_bg.jpg',
+      'Lai Chau': 'assets/images/provinces/lai_chau_bg.jpg',
+      'Quang Ninh': 'assets/images/provinces/quang_ninh.jpg',
+      'Lang Son': 'assets/images/provinces/lang_son.jpg',
+      'Son La': 'assets/images/provinces/son_la.jpg',
+      'Dien Bien': 'assets/images/provinces/dien_bien.jpg',
+      'Ha Tinh': 'assets/images/provinces/ha_tinh.jpg',
+      'Nghe An': 'assets/images/provinces/nghe_an.jpg',
+      'Thanh Hoa': 'assets/images/provinces/thanh_hoa.jpg',
+      'Bac Ninh': 'assets/images/provinces/bac_ninh.jpg',
+      'Phu Tho': 'assets/images/provinces/phu_tho.jpg',
+      'Thai Nguyen': 'assets/images/provinces/thai_nguyen.jpg',
+      'Lao Cai': 'assets/images/provinces/lao_cai.jpg',
+      'Tuyen Quang': 'assets/images/provinces/tuyen_quang.jpg',
+      'Cao Bang': 'assets/images/provinces/cao_bang.jpg',
+      'Da Nang': 'assets/images/provinces/da_nang.jpg',
+      'Quang Tri': 'assets/images/provinces/quang_tri.jpg',
+      'Ninh Binh': 'assets/images/provinces/ninh_binh.jpg',
+      'Hung Yen': 'assets/images/provinces/hung_yen.jpg',
+      'Lam Dong': 'assets/images/provinces/lam_dong.jpg',
+      'Khanh Hoa': 'assets/images/provinces/nha_trang.jpeg',
+      'Gia Lai': 'assets/images/provinces/gia_lai.jpg',
+      'Quang Ngai': 'assets/images/provinces/quang_ngai.jpg',
+      'Ho Chi Minh': 'assets/images/provinces/ho_chi_minh.jpg',
+      'Dak Lak': 'assets/images/provinces/dak_lak.webp',
+      'An Giang': 'assets/images/provinces/an_giang.jpg',
+      'Ca Mau': 'assets/images/provinces/ca_mau.webp',
+      'Dong Thap': 'assets/images/provinces/dong_thap.jpg',
+      'Vinh Long': 'assets/images/provinces/vinh_long.jpg',
+      'Can Tho': 'assets/images/provinces/can_tho.jpg',
+      'Tay Ninh': 'assets/images/provinces/tay_ninh.jpg',
+      'Dong Nai': 'assets/images/provinces/dong_nai.jpg',
       // Thêm các tỉnh khác khi có background image
     };
     return backgroundMap[provinceId];
@@ -549,6 +581,38 @@ class ProvincesData {
     final provinces = <String>[];
     if (getProvinceBackgroundImage('Ha Noi') != null) provinces.add('Ha Noi');
     if (getProvinceBackgroundImage('Hai Phong') != null) provinces.add('Hai Phong');
+    if (getProvinceBackgroundImage('Hue') != null) provinces.add('Hue');
+    if (getProvinceBackgroundImage('Lai Chau') != null) provinces.add('Lai Chau');
+    if (getProvinceBackgroundImage('Quang Ninh') != null) provinces.add('Quang Ninh');
+    if (getProvinceBackgroundImage('Lang Son') != null) provinces.add('Lang Son');
+    if (getProvinceBackgroundImage('Son La') != null) provinces.add('Son La');
+    if (getProvinceBackgroundImage('Dien Bien') != null) provinces.add('Dien Bien');
+    if (getProvinceBackgroundImage('Ha Tinh') != null) provinces.add('Ha Tinh');
+    if (getProvinceBackgroundImage('Nghe An') != null) provinces.add('Nghe An');
+    if (getProvinceBackgroundImage('Thanh Hoa') != null) provinces.add('Thanh Hoa');
+    if (getProvinceBackgroundImage('Bac Ninh') != null) provinces.add('Bac Ninh');
+    if (getProvinceBackgroundImage('Phu Tho') != null) provinces.add('Phu Tho');
+    if (getProvinceBackgroundImage('Thai Nguyen') != null) provinces.add('Thai Nguyen');
+    if (getProvinceBackgroundImage('Lao Cai') != null) provinces.add('Lao Cai');
+    if (getProvinceBackgroundImage('Tuyen Quang') != null) provinces.add('Tuyen Quang');
+    if (getProvinceBackgroundImage('Cao Bang') != null) provinces.add('Cao Bang');
+    if (getProvinceBackgroundImage('Da Nang') != null) provinces.add('Da Nang');
+    if (getProvinceBackgroundImage('Quang Tri') != null) provinces.add('Quang Tri');
+    if (getProvinceBackgroundImage('Ninh Binh') != null) provinces.add('Ninh Binh');
+    if (getProvinceBackgroundImage('Hung Yen') != null) provinces.add('Hung Yen');
+    if (getProvinceBackgroundImage('Lam Dong') != null) provinces.add('Lam Dong');
+    if (getProvinceBackgroundImage('Khanh Hoa') != null) provinces.add('Khanh Hoa');
+    if (getProvinceBackgroundImage('Gia Lai') != null) provinces.add('Gia Lai');
+    if (getProvinceBackgroundImage('Quang Ngai') != null) provinces.add('Quang Ngai');
+    if (getProvinceBackgroundImage('Ho Chi Minh') != null) provinces.add('Ho Chi Minh');
+    if (getProvinceBackgroundImage('Dak Lak') != null) provinces.add('Dak Lak');
+    if (getProvinceBackgroundImage('An Giang') != null) provinces.add('An Giang');
+    if (getProvinceBackgroundImage('Ca Mau') != null) provinces.add('Ca Mau');
+    if (getProvinceBackgroundImage('Dong Thap') != null) provinces.add('Dong Thap');
+    if (getProvinceBackgroundImage('Vinh Long') != null) provinces.add('Vinh Long');
+    if (getProvinceBackgroundImage('Can Tho') != null) provinces.add('Can Tho');
+    if (getProvinceBackgroundImage('Tay Ninh') != null) provinces.add('Tay Ninh');
+    if (getProvinceBackgroundImage('Dong Nai') != null) provinces.add('Dong Nai');
     return provinces;
   }
 
