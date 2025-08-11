@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_animate/flutter_animate.dart';
 import '../theme/app_theme.dart';
 import '../services/province_detail_service.dart';
+import 'gallery_full_screen.dart';
 
 class ProvinceDetailWidget extends StatefulWidget {
   final String provinceId;
@@ -156,18 +157,23 @@ class _ProvinceDetailWidgetState extends State<ProvinceDetailWidget> {
 
         const SizedBox(height: 16),
 
-        // Thông tin cơ bản
-        _buildInfoCard(
-          'Thông tin cơ bản',
-          Icons.info_outline,
-          [
-            'Diện tích: ${overview['area'] ?? 'N/A'}',
-            'Dân số: ${overview['population'] ?? 'N/A'}',
-            'Vùng: ${overview['region'] ?? 'N/A'}',
-            'Loại: ${overview['type'] ?? 'N/A'}',
-            'Biệt danh: ${overview['nickname'] ?? 'N/A'}',
-          ],
-        ),
+        // Button hiển thị Gallery
+        Container(
+          width: double.infinity,
+          child: ElevatedButton.icon(
+            onPressed: () => _showFullScreenGallery(_getGalleryImages(), 0),
+            icon: const Icon(Icons.photo_library, size: 20),
+            label: const Text('Xem Gallery ảnh'),
+            style: ElevatedButton.styleFrom(
+              backgroundColor: AppTheme.primaryOrange,
+              foregroundColor: Colors.white,
+              padding: const EdgeInsets.symmetric(vertical: 12),
+              shape: RoundedRectangleBorder(
+                borderRadius: BorderRadius.circular(12),
+              ),
+            ),
+          ),
+        ).animate().fadeIn(duration: 300.ms).slideY(begin: 0.2, end: 0),
 
         const SizedBox(height: 16),
 
@@ -341,6 +347,34 @@ class _ProvinceDetailWidgetState extends State<ProvinceDetailWidget> {
     );
   }
 
+  List<String> _getGalleryImages() {
+    final provinceId = widget.provinceId.toLowerCase().replaceAll(' ', '_');
+    final List<String> possibleImages = [
+      'assets/images/provinces/$provinceId/gallery_1.jpg',
+      'assets/images/provinces/$provinceId/gallery_2.jpg',
+      'assets/images/provinces/$provinceId/gallery_3.jpg',
+      'assets/images/provinces/$provinceId/gallery_4.jpg',
+      'assets/images/provinces/$provinceId/gallery_5.jpg',
+    ];
+    
+    // Trả về tất cả ảnh có thể có (Flutter sẽ tự động xử lý lỗi nếu file không tồn tại)
+    return possibleImages;
+  }
+
+  void _showFullScreenGallery(List<String> images, int initialIndex) {
+    Navigator.push(
+      context,
+      MaterialPageRoute(
+        builder: (context) => GalleryFullScreen(
+          images: images,
+          initialIndex: initialIndex,
+          provinceName: widget.provinceName,
+          provinceId: widget.provinceId,
+        ),
+      ),
+    );
+  }
+
   Widget _buildInfoCard(String title, IconData icon, List<String> items) {
     return Container(
       padding: const EdgeInsets.all(16),
@@ -366,6 +400,7 @@ class _ProvinceDetailWidgetState extends State<ProvinceDetailWidget> {
             ],
           ),
           const SizedBox(height: 12),
+          
           ...items.map((item) => Padding(
             padding: const EdgeInsets.only(bottom: 6),
             child: Row(

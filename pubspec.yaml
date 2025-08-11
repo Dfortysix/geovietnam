@@ -88,9 +88,44 @@ flutter:
   assets:
     - assets/images/
     - assets/images/provinces/
+    - assets/images/provinces/hai_phong/
+    - assets/images/provinces/ha_noi/
+    - assets/images/provinces/ho_chi_minh/
+    - assets/images/provinces/da_nang/
+    - assets/images/provinces/hue/
+    - assets/images/provinces/lai_chau/
+    - assets/images/provinces/quang_ninh/
+    - assets/images/provinces/lang_son/
+    - assets/images/provinces/son_la/
+    - assets/images/provinces/dien_bien/
+    - assets/images/provinces/ha_tinh/
+    - assets/images/provinces/nghe_an/
+    - assets/images/provinces/thanh_hoa/
+    - assets/images/provinces/bac_ninh/
+    - assets/images/provinces/phu_tho/
+    - assets/images/provinces/thai_nguyen/
+    - assets/images/provinces/lao_cai/
+    - assets/images/provinces/tuyen_quang/
+    - assets/images/provinces/cao_bang/
+    - assets/images/provinces/quang_tri/
+    - assets/images/provinces/ninh_binh/
+    - assets/images/provinces/hung_yen/
+    - assets/images/provinces/lam_dong/
+    - assets/images/provinces/khanh_hoa/
+    - assets/images/provinces/gia_lai/
+    - assets/images/provinces/quang_ngai/
+    - assets/images/provinces/dak_lak/
+    - assets/images/provinces/an_giang/
+    - assets/images/provinces/ca_mau/
+    - assets/images/provinces/dong_thap/
+    - assets/images/provinces/vinh_long/
+    - assets/images/provinces/can_tho/
+    - assets/images/provinces/tay_ninh/
+    - assets/images/provinces/dong_nai/
     - assets/audio/
     - assets/data/
     - assets/data/provinces/
+    - assets/data/gallery_descriptions/
     - assets/svg/
 
   # An image asset can refer to one or more resolution-specific "variants", see
