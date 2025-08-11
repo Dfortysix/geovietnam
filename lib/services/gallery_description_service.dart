@@ -29,6 +29,7 @@ class GalleryDescriptionService {
   static List<String> _getDefaultDescriptions(String provinceId) {
     // Description mặc định cho từng ảnh
     return [
+      'Bản đồ $provinceId sau sáp nhập 2025 - Thông tin về ranh giới, diện tích và dân số mới sau khi thực hiện sáp nhập theo Nghị quyết Quốc hội.',
       'Cảnh quan địa lý và thiên nhiên của $provinceId',
       'Văn hóa và di sản truyền thống',
       'Du lịch và điểm đến nổi tiếng',
