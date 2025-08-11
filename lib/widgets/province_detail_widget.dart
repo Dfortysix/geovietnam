@@ -113,7 +113,13 @@ class _ProvinceDetailWidgetState extends State<ProvinceDetailWidget> {
 
   Widget _buildDetailedInfo() {
     final overview = _provinceData!['overview'];
+    final geography = _provinceData!['geography'];
     final culture = _provinceData!['culture'];
+    final economy = _provinceData!['economy'];
+    final history = _provinceData!['history'];
+    final tourism = _provinceData!['tourism'];
+    final transportation = _provinceData!['transportation'];
+    final education = _provinceData!['education'];
     final facts = _provinceData!['facts'] as List<dynamic>;
 
     return ListView(
@@ -155,23 +161,171 @@ class _ProvinceDetailWidgetState extends State<ProvinceDetailWidget> {
           'Thông tin cơ bản',
           Icons.info_outline,
           [
-            'Diện tích: ${overview['area']}',
-            'Dân số: ${overview['population']}',
-            'Vùng: ${overview['region']}',
-            'Loại: ${overview['type']}',
+            'Diện tích: ${overview['area'] ?? 'N/A'}',
+            'Dân số: ${overview['population'] ?? 'N/A'}',
+            'Vùng: ${overview['region'] ?? 'N/A'}',
+            'Loại: ${overview['type'] ?? 'N/A'}',
+            'Biệt danh: ${overview['nickname'] ?? 'N/A'}',
           ],
         ),
 
         const SizedBox(height: 16),
 
-        // Văn hóa và ẩm thực
+        // Địa lý
+        if (geography != null) ...[
+          _buildInfoCard(
+            'Địa lý',
+            Icons.location_on,
+            [
+              'Vị trí: ${geography['location'] ?? 'N/A'}',
+              'Địa hình: ${geography['terrain'] ?? 'N/A'}',
+              'Khí hậu: ${geography['climate'] ?? 'N/A'}',
+              'Tài nguyên: ${geography['natural_resources'] ?? 'N/A'}',
+              if (geography['administrative_units'] != null) ...[
+                'Đơn vị hành chính: ${geography['administrative_units']['total'] ?? 'N/A'}',
+                if (geography['administrative_units']['details'] != null)
+                  ...(geography['administrative_units']['details'] as List<dynamic>).map((detail) => '  - $detail'),
+              ],
+            ],
+          ),
+          const SizedBox(height: 16),
+        ],
+
+        // Kinh tế
+        if (economy != null) ...[
+          _buildInfoCard(
+            'Kinh tế',
+            Icons.business,
+            [
+              'GRDP: ${economy['grdp'] ?? 'N/A'}',
+              'Thu ngân sách: ${economy['budget_revenue'] ?? 'N/A'}',
+              if (economy['key_industries'] != null) ...[
+                'Ngành kinh tế chính:',
+                ...(economy['key_industries'] as List<dynamic>).map((industry) => '  - $industry'),
+              ],
+              if (economy['infrastructure'] != null) ...[
+                'Hạ tầng:',
+                ...(economy['infrastructure'] as List<dynamic>).map((infra) => '  - $infra'),
+              ],
+            ],
+          ),
+          const SizedBox(height: 16),
+        ],
+
+        // Lịch sử
+        if (history != null) ...[
+          _buildInfoCard(
+            'Lịch sử',
+            Icons.history,
+            [
+              'Thời kỳ cổ đại: ${history['ancient_period'] ?? 'N/A'}',
+              'Thời Pháp thuộc: ${history['french_colonial'] ?? 'N/A'}',
+              'Phát triển hiện đại: ${history['modern_development'] ?? 'N/A'}',
+              'Trước sáp nhập: ${history['pre_merger'] ?? 'N/A'}',
+              'Sau sáp nhập 2025: ${history['post_merger_2025'] ?? 'N/A'}',
+            ],
+          ),
+          const SizedBox(height: 16),
+        ],
+
+        // Văn hóa
         if (culture != null) ...[
           _buildInfoCard(
-            'Văn hóa & Ẩm thực',
-            Icons.restaurant,
+            'Văn hóa',
+            Icons.theater_comedy,
             [
-              'Biệt danh: ${overview['nickname']}',
-              'Món ăn nổi tiếng: ${(culture['famous_foods'] as List<dynamic>).take(3).join(', ')}',
+              if (culture['heritage'] != null) ...[
+                'Di sản:',
+                ...(culture['heritage'] as List<dynamic>).map((heritage) => '  - $heritage'),
+              ],
+              if (culture['festivals'] != null) ...[
+                'Lễ hội:',
+                ...(culture['festivals'] as List<dynamic>).map((festival) => '  - $festival'),
+              ],
+              if (culture['traditional_arts'] != null) ...[
+                'Nghệ thuật truyền thống:',
+                ...(culture['traditional_arts'] as List<dynamic>).map((art) => '  - $art'),
+              ],
+              if (culture['craft_villages'] != null) ...[
+                'Làng nghề:',
+                ...(culture['craft_villages'] as List<dynamic>).map((village) => '  - $village'),
+              ],
+            ],
+          ),
+          const SizedBox(height: 16),
+
+          // Ẩm thực
+          if (culture['famous_foods'] != null) ...[
+            _buildInfoCard(
+              'Ẩm thực',
+              Icons.restaurant,
+              (culture['famous_foods'] as List<dynamic>).map((food) => food.toString()).toList(),
+            ),
+            const SizedBox(height: 16),
+          ],
+        ],
+
+        // Du lịch
+        if (tourism != null) ...[
+          _buildInfoCard(
+            'Du lịch',
+            Icons.beach_access,
+            [
+              if (tourism['famous_landmarks'] != null) ...[
+                'Địa danh nổi tiếng:',
+                ...(tourism['famous_landmarks'] as List<dynamic>).map((landmark) => '  - $landmark'),
+              ],
+              if (tourism['beaches_islands'] != null) ...[
+                'Biển đảo:',
+                ...(tourism['beaches_islands'] as List<dynamic>).map((beach) => '  - $beach'),
+              ],
+              'Đặc điểm: ${tourism['attractions'] ?? 'N/A'}',
+            ],
+          ),
+          const SizedBox(height: 16),
+        ],
+
+        // Giao thông
+        if (transportation != null) ...[
+          _buildInfoCard(
+            'Giao thông',
+            Icons.directions_car,
+            [
+              if (transportation['ports'] != null) ...[
+                'Cảng biển:',
+                ...(transportation['ports'] as List<dynamic>).map((port) => '  - $port'),
+              ],
+              if (transportation['airports'] != null) ...[
+                'Sân bay:',
+                ...(transportation['airports'] as List<dynamic>).map((airport) => '  - $airport'),
+              ],
+              if (transportation['highways'] != null) ...[
+                'Đường cao tốc:',
+                ...(transportation['highways'] as List<dynamic>).map((highway) => '  - $highway'),
+              ],
+              if (transportation['railways'] != null) ...[
+                'Đường sắt:',
+                ...(transportation['railways'] as List<dynamic>).map((railway) => '  - $railway'),
+              ],
+            ],
+          ),
+          const SizedBox(height: 16),
+        ],
+
+        // Giáo dục
+        if (education != null) ...[
+          _buildInfoCard(
+            'Giáo dục',
+            Icons.school,
+            [
+              if (education['universities'] != null) ...[
+                'Đại học:',
+                ...(education['universities'] as List<dynamic>).map((university) => '  - $university'),
+              ],
+              if (education['research_institutes'] != null) ...[
+                'Viện nghiên cứu:',
+                ...(education['research_institutes'] as List<dynamic>).map((institute) => '  - $institute'),
+              ],
             ],
           ),
           const SizedBox(height: 16),
@@ -181,7 +335,7 @@ class _ProvinceDetailWidgetState extends State<ProvinceDetailWidget> {
         _buildInfoCard(
           'Sự kiện thú vị',
           Icons.star,
-          facts.take(5).map((fact) => fact.toString()).toList(),
+          facts.map((fact) => fact.toString()).toList(),
         ),
       ],
     );
