@@ -475,15 +475,6 @@ class _SvgCanvasVietnamMapWidgetState extends State<SvgCanvasVietnamMapWidget> {
       if (widget.onProvinceTap != null) {
         widget.onProvinceTap!(tappedProvince);
       }
-      
-      
-      
-      ScaffoldMessenger.of(context).showSnackBar(
-        SnackBar(
-          content: Text('Bạn đã chọn: ${_getProvinceName(tappedProvince)}'),
-          duration: const Duration(seconds: 2),
-        ),
-      );
     }
   }
 
