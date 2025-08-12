@@ -1,0 +1,72 @@
+{
+  "id": "Tuyen Quang",
+  "nameVietnamese": "Tuyên Quang",
+  "overview": {
+    "title": "Vùng Đất Truyền Thống Cách Mạng Tây Bắc",
+    "description": "Tuyên Quang là tỉnh miền núi vùng Đông Bắc Bộ, nổi tiếng với truyền thống cách mạng kiên cường, văn hóa đa dạng các dân tộc thiểu số và cảnh quan thiên nhiên xanh tươi. Sau sáp nhập tỉnh Hà Giang năm 2025, tỉnh mở rộng quy mô diện tích và dân số, duy trì vị trí quan trọng vùng biên giới và phát triển kinh tế - xã hội ổn định với mô hình chính quyền hai cấp tinh gọn, hiệu quả.",
+    "area": "13.795,50 km²",
+    "population": "1.865.270 người (2025)",
+    "region": "Đông Bắc Bộ",
+    "type": "Tỉnh",
+    "nickname": "Vùng đất cách mạng và văn hóa đa sắc tộc"
+  },
+  "sapNhap2025": {
+    "title": "Tuyên Quang sau sáp nhập Hà Giang 2025",
+    "description": "Từ ngày 1/7/2025, tỉnh Tuyên Quang sáp nhập tỉnh Hà Giang, tạo thành tỉnh mới với diện tích và dân số tăng trưởng đáng kể. Mô hình hành chính được tổ chức theo chính quyền địa phương hai cấp gồm tỉnh và xã/phường, không còn cấp huyện/quận trung gian nhằm nâng cao hiệu quả quản lý và phục vụ dân.",
+    "details": [
+      "Sáp nhập tỉnh Hà Giang vào Tuyên Quang tạo thành tỉnh mới diện tích 13.795,50 km² và dân số hơn 1,86 triệu người.",
+      "Áp dụng mô hình chính quyền hai cấp gồm tỉnh và xã/phường trực thuộc, bỏ cấp huyện/quận trung gian.",
+      "Tỉnh có tổng cộng 124 đơn vị hành chính cấp xã, gồm 117 xã và 7 phường được tổ chức lại từ các xã, phường trước sáp nhập.",
+      "Trung tâm hành chính và chính trị đặt tại tỉnh Tuyên Quang hiện nay, sử dụng cơ sở hạ tầng hiện hữu.",
+      "Việc sáp nhập tạo thuận lợi cho phát triển kinh tế, xã hội, văn hóa, củng cố quốc phòng và an ninh vùng Tây Bắc."
+    ]
+  },
+  "lichSu": {
+    "title": "Lịch sử hình thành và phát triển Tuyên Quang",
+    "description": "Tuyên Quang và Hà Giang là vùng đất giàu truyền thống cách mạng, văn hóa đa dân tộc với nhiều sự kiện lịch sử quan trọng trong kháng chiến và xây dựng phát triển đất nước.",
+    "details": [
+      "Tuyên Quang được biết đến là căn cứ địa cách mạng trọng yếu, nơi diễn ra nhiều chiến thắng lịch sử Việt Bắc.",
+      "Hà Giang là vùng đất biên cương với lịch sử văn hóa lâu đời và đa dạng các dân tộc thiểu số.",
+      "Trước sáp nhập, hai tỉnh có lịch sử phát triển riêng biệt với nhiều dấu ấn văn hóa và đấu tranh cách mạng.",
+      "Hai tỉnh sau khi hợp nhất tiếp tục phát huy truyền thống, phát triển kinh tế - văn hóa đồng bộ.",
+      "2025 đánh dấu cột mốc quan trọng với mô hình chính quyền hai cấp giảm bớt cấp trung gian, nâng cao hiệu quả quản lý địa phương."
+    ]
+  },
+  "vanHoa": {
+    "title": "Văn hóa Tuyên Quang – Hà Giang đa dạng và đặc sắc",
+    "description": "Văn hóa vùng mới tiếp tục thể hiện sự đa dạng phong phú của nhiều dân tộc Tày, Nùng, Dao và các dân tộc thiểu số khác với nhiều lễ hội truyền thống và nghệ thuật dân gian đặc sắc.",
+    "details": [
+      "Lễ hội các dân tộc Tày, Nùng, Dao với nghi thức truyền thống như múa khèn, hát then, hát lượn đặc trưng vùng Đông Bắc.",
+      "Lễ hội Lồng Tồng, lễ hội Pác Bó và các lễ hội dân gian đặc sắc thu hút đông đảo người dân và du khách.",
+      "Các làng nghề truyền thống như dệt thổ cẩm, làm đồ gỗ, rèn, chế tác thủ công truyền thống.",
+      "Bảo tồn và phát triển các giá trị văn hóa phi vật thể, tăng cường giao lưu văn hóa vùng miền mới.",
+      "Giao lưu văn hóa và du lịch cộng đồng phát triển mạnh trên cơ sở bản sắc dân tộc đặc trưng."
+    ]
+  },
+  "amThuc": {
+    "title": "Ẩm thực Tuyên Quang – Hà Giang hương vị núi rừng Tây Bắc",
+    "description": "Ẩm thực tỉnh mới phong phú, đặc trưng vùng núi với nhiều món ăn dân tộc độc đáo, sử dụng nguyên liệu địa phương cùng cách chế biến truyền thống giữ trọn hương vị núi rừng và văn hóa dân tộc.",
+    "details": [
+      "Thắng cố – món ăn đặc trưng của đồng bào dân tộc Mông với nước dùng đậm đà, thơm ngon.",
+      "Cơm lam – gạo nếp nương nấu trong ống tre thơm phức đặc trưng vùng Tây Bắc.",
+      "Rượu cần – thức uống truyền thống trong sinh hoạt và lễ hội của các dân tộc thiểu số.",
+      "Món nộm rau rừng, gà nướng, thịt lợn bản địa với gia vị đặc trưng như mắc khén, hạt dổi.",
+      "Các món ăn dân dã phong phú phản ánh bản sắc ẩm thực đặc trưng của vùng núi Đông Bắc."
+    ]
+  },
+  "diaDanh": {
+    "title": "Địa danh nổi tiếng Tuyên Quang – Hà Giang",
+    "description": "Tỉnh mới sở hữu nhiều địa danh lịch sử, thắng cảnh và di tích văn hóa đặc sắc, kết hợp vẻ đẹp thiên nhiên hùng vĩ của vùng núi Đông Bắc Việt Nam.",
+    "details": [
+      "Khu di tích lịch sử cách mạng Pác Bó – điểm đến lịch sử trọng yếu, nơi Bác Hồ từng hoạt động.",
+      "Khu bảo tồn thiên nhiên Na Hang – hệ sinh thái rừng nguyên sinh đa dạng, cảnh quan thiên nhiên đẹp.",
+      "Đèo Giàng, hồ Thang Hen – cảnh quan núi rừng hoang sơ, điểm du lịch mạo hiểm và sinh thái nổi bật.",
+      "Các bản làng văn hóa dân tộc Tày, Nùng, Dao với các hoạt động du lịch cộng đồng đặc sắc.",
+      "Chùa Hương Nghiêm, các di tích tôn giáo và tâm linh góp phần làm phong phú giá trị văn hóa tỉnh mới."
+    ]
+  },
+  "ketLuan": {
+    "title": "Tổng kết về tỉnh Tuyên Quang mới sau sáp nhập",
+    "description": "Sau khi sáp nhập tỉnh Hà Giang, Tuyên Quang mới trở thành vùng đất rộng lớn với tiềm năng phát triển về kinh tế, văn hóa, quốc phòng và du lịch vùng núi Đông Bắc. Mô hình chính quyền hai cấp tinh gọn, hiệu quả giúp nâng cao chất lượng quản lý, phục vụ người dân, đồng thời phát huy mạnh mẽ giá trị văn hóa đa sắc tộc và tài nguyên thiên nhiên đặc sắc của vùng đất biên cương."
+  }
+}
