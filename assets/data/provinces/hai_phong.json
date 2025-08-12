@@ -10,141 +10,76 @@
     "type": "Thành phố trực thuộc Trung ương",
     "nickname": "Thành phố Hoa Phượng Đỏ"
   },
-  "geography": {
-    "location": "Vùng ven biển thuộc các tỉnh cổ Hải Dương, Nam Định, Ninh Bình",
-    "terrain": "Đồng bằng ven biển với nhiều đảo và vịnh",
-    "climate": "Khí hậu nhiệt đới gió mùa, mát mẻ quanh năm",
-    "natural_resources": "Biển, đảo, vịnh, rừng ngập mặn",
-    "administrative_units": {
-      "total": "114 đơn vị hành chính cấp xã",
-      "details": [
-        "67 xã",
-        "45 phường", 
-        "2 đặc khu (Bạch Long Vĩ, Cát Hải)"
-      ]
-    }
+  "sapNhap2025": {
+    "title": "Hải Phòng sau sáp nhập (2025)",
+    "description": "Hợp nhất cùng tỉnh Hải Dương theo Nghị quyết Quốc hội, hình thành thành phố trực thuộc Trung ương mới với quy mô lớn.",
+    "details": [
+      "Trung tâm hành chính tại phường Thủy Nguyên",
+      "Diện tích mở rộng từ 1.500km² lên 3.194,72km²",
+      "Dân số tăng từ 2 triệu lên 4.664.124 người",
+      "Có 114 đơn vị hành chính cấp xã (67 xã, 45 phường, 2 đặc khu)",
+      "GRDP hợp nhất đạt 658.000 tỷ đồng/năm (đứng thứ 3 cả nước)",
+      "Thu ngân sách hơn 147.000 tỷ đồng"
+    ]
   },
-  "culture": {
-    "heritage": [
-      "943 di tích văn hóa, lịch sử",
+  "lichSu": {
+    "title": "Lịch sử Hải Phòng",
+    "description": "Hải Phòng có lịch sử phát triển lâu đời, từ cửa ngõ giao thương đến thành phố cảng hiện đại.",
+    "details": [
+      "Thời cổ đại: Là cửa ngõ giao thương lớn từ thời nhà Lý, Trần. Trận Bạch Đằng lịch sử năm 1288 đánh dấu vai trò chiến lược",
+      "Thời Pháp thuộc (1887-1888): Thực dân Pháp tách các huyện ven biển của Hải Dương để lập tỉnh Hải Phòng. Tên 'Hải Phòng' xuất phát từ 'Hải Dương thương chính quan phòng'",
+      "Phát triển hiện đại: Trở thành thành phố trực trị, được quy hoạch theo mô hình đô thị phương Tây, nổi bật với kiến trúc Nhà hát lớn, cảng Hải Phòng",
+      "Trước sáp nhập: Thành phố cảng cấp 1, diện tích 1.500km², hơn 2 triệu dân, trung tâm kinh tế và giao thông vùng duyên hải Bắc Bộ"
+    ]
+  },
+  "vanHoa": {
+    "title": "Văn hóa và Di sản",
+    "description": "Hải Phòng sở hữu nền văn hóa đa dạng với nhiều di sản quý giá và lễ hội truyền thống.",
+    "details": [
+      "943 di tích văn hóa, lịch sử được bảo tồn",
       "2 di sản văn hóa UNESCO: Ca trù và Thực hành tín ngưỡng thờ Mẫu Tam phủ",
-      "Hơn 400 lễ hội truyền thống"
-    ],
-    "festivals": [
-      "Hội Cầu Ngư",
-      "Lễ hội Cá Ông",
-      "Chọi trâu Đồ Sơn",
-      "Hoa Phượng Đỏ",
-      "Đua thuyền Cát Bà",
-      "Đánh pháo đất"
-    ],
-    "traditional_arts": [
-      "Ca trù",
-      "Hát đúm",
-      "Tín ngưỡng thờ Mẫu Tam phủ"
-    ],
-    "craft_villages": [
-      "Đồng Minh (tạc tượng)",
-      "Minh Tân (gốm)",
-      "Quất cảnh Tràng Cát",
-      "Giò chả Hạ Lũng"
-    ],
-    "famous_foods": [
-      "Bánh đa cua",
-      "Nem cua bể",
-      "Bánh mì cay (Pate Cột đèn)",
-      "Bún cá cay",
-      "Bánh bèo",
-      "Giá bể xào",
-      "Nộm sứa đỏ",
-      "Ruốc tôm",
-      "Chả chìa Hạ Lũng",
-      "Hải sản tươi sống"
+      "Hơn 400 lễ hội truyền thống: Hội Cầu Ngư, Lễ hội Cá Ông, Chọi trâu Đồ Sơn, Hoa Phượng Đỏ, Đua thuyền Cát Bà",
+      "Nghệ thuật truyền thống: Ca trù, Hát đúm, Tín ngưỡng thờ Mẫu Tam phủ",
+      "Làng nghề truyền thống: Đồng Minh (tạc tượng), Minh Tân (gốm), Quất cảnh Tràng Cát, Giò chả Hạ Lũng",
+      "Biệt danh 'Thành phố Hoa Phượng Đỏ' với các tuyến phố rợp hoa phượng mỗi mùa hè"
     ]
   },
-  "economy": {
-    "grdp": "658.000 tỷ đồng/năm (đứng thứ 3 cả nước)",
-    "budget_revenue": "147.000 tỷ đồng",
-    "key_industries": [
-      "Cảng biển và logistics",
-      "Công nghiệp đóng tàu",
-      "Du lịch biển",
-      "Thủy sản",
-      "Thương mại"
-    ],
-    "infrastructure": [
-      "Cảng nước sâu Lạch Huyện",
-      "Sân bay quốc tế Cát Bi",
-      "Cao tốc và đường sắt",
-      "Đô thị hiện đại"
+  "amThuc": {
+    "title": "Ẩm thực Đặc sắc",
+    "description": "Hải Phòng nổi tiếng với nền ẩm thực phong phú, đặc biệt là các món hải sản tươi ngon.",
+    "details": [
+      "Bánh đa cua - Món ăn đặc trưng với nước dùng đậm đà từ cua đồng",
+      "Nem cua bể - Nem truyền thống với nhân cua bể tươi ngon",
+      "Bánh mì cay (Pate Cột đèn) - Đặc sản bánh mì với pate cay đặc biệt",
+      "Bún cá cay - Bún với cá tươi và nước dùng cay nồng",
+      "Bánh bèo - Bánh truyền thống với nhân tôm thịt",
+      "Giá bể xào - Món ăn từ giá đỗ và hải sản",
+      "Nộm sứa đỏ - Gỏi sứa tươi với nước chấm đặc biệt",
+      "Ruốc tôm - Món ăn từ tôm khô xay nhuyễn",
+      "Chả chìa Hạ Lũng - Chả truyền thống của làng Hạ Lũng",
+      "Hải sản tươi sống - Đa dạng các loại hải sản từ biển"
     ]
   },
-  "history": {
-    "ancient_period": "Là cửa ngõ giao thương lớn từ thời nhà Lý, Trần. Trận Bạch Đằng lịch sử năm 1288 đánh dấu vai trò chiến lược",
-    "french_colonial": "Năm 1887-1888, thực dân Pháp tách các huyện ven biển của Hải Dương để lập tỉnh Hải Phòng. Tên 'Hải Phòng' xuất phát từ 'Hải Dương thương chính quan phòng'",
-    "modern_development": "Trở thành thành phố trực trị, được quy hoạch theo mô hình đô thị phương Tây, nổi bật với kiến trúc Nhà hát lớn, cảng Hải Phòng",
-    "pre_merger": "Thành phố cảng cấp 1, diện tích 1.500km², hơn 2 triệu dân, trung tâm kinh tế và giao thông vùng duyên hải Bắc Bộ",
-    "post_merger_2025": "Hợp nhất cùng tỉnh Hải Dương theo Nghị quyết Quốc hội, hình thành thành phố trực thuộc Trung ương mới, trung tâm hành chính tại phường Thủy Nguyên"
-  },
-  "tourism": {
-    "famous_landmarks": [
-      "Đền Nghè (thờ nữ tướng Lê Chân)",
-      "Biệt thự Bảo Đại",
-      "Nhà hát lớn Hải Phòng",
-      "Bảo tàng Hải Phòng",
-      "Phố cổ Hải Phòng",
-      "Nhà thờ lớn",
-      "Hồ Tam Bạc",
-      "Chợ Tam Bạc",
-      "Chợ Hàng",
-      "Bạch Đằng Giang",
-      "Dải vườn hoa trung tâm"
-    ],
-    "beaches_islands": [
-      "Bãi biển Đồ Sơn",
-      "Đảo Cát Bà",
-      "Vịnh Lan Hạ"
-    ],
-    "attractions": "Điểm du lịch biển nổi tiếng, cảnh đẹp thiên nhiên, di tích lịch sử"
-  },
-  "transportation": {
-    "ports": [
-      "Cảng nước sâu Lạch Huyện",
-      "Cảng Hải Phòng"
-    ],
-    "airports": [
-      "Sân bay quốc tế Cát Bi"
-    ],
-    "highways": [
-      "Cao tốc Hà Nội - Hải Phòng",
-      "Quốc lộ 5",
-      "Quốc lộ 10"
-    ],
-    "railways": [
-      "Đường sắt Hà Nội - Hải Phòng"
+  "diaDanh": {
+    "title": "Địa danh và Du lịch",
+    "description": "Hải Phòng là điểm du lịch hấp dẫn với cảnh đẹp thiên nhiên, di tích lịch sử và bãi biển nổi tiếng.",
+    "details": [
+      "Đền Nghè (thờ nữ tướng Lê Chân) - Di tích lịch sử quan trọng",
+      "Biệt thự Bảo Đại - Kiến trúc Pháp cổ kính",
+      "Nhà hát lớn Hải Phòng - Công trình kiến trúc tiêu biểu",
+      "Bảo tàng Hải Phòng - Nơi lưu giữ lịch sử thành phố",
+      "Phố cổ Hải Phòng - Khu phố cổ với kiến trúc truyền thống",
+      "Nhà thờ lớn - Công trình tôn giáo cổ kính",
+      "Hồ Tam Bạc - Hồ nước đẹp ở trung tâm thành phố",
+      "Chợ Tam Bạc, Chợ Hàng - Các chợ truyền thống sôi động",
+      "Bạch Đằng Giang - Di tích lịch sử trận Bạch Đằng",
+      "Bãi biển Đồ Sơn - Bãi biển nổi tiếng với cảnh đẹp",
+      "Đảo Cát Bà - Di sản thiên nhiên thế giới với vịnh Lan Hạ",
+      "Vịnh Lan Hạ - Vịnh biển đẹp với nhiều đảo nhỏ"
     ]
   },
-  "education": {
-    "universities": [
-      "Đại học Hải Phòng",
-      "Đại học Y Dược Hải Phòng",
-      "Đại học Hàng hải Việt Nam"
-    ],
-    "research_institutes": [
-      "Viện Nghiên cứu Hải sản",
-      "Viện Nghiên cứu Biển"
-    ]
-  },
-  "facts": [
-    "Sau sáp nhập 2025: Diện tích 3.194,72km², dân số 4.664.124 người",
-    "GRDP hợp nhất trên 658.000 tỷ đồng/năm (đứng thứ 3 cả nước)",
-    "Thu ngân sách hơn 147.000 tỷ đồng",
-    "Đầu mối giao thông–logistics lớn nhất miền Bắc",
-    "Có 114 xã/phường/đặc khu (Bạch Long Vĩ, Cát Hải)",
-    "Hơn 400 lễ hội truyền thống",
-    "943 di tích văn hóa, lịch sử",
-    "2 di sản văn hóa UNESCO: Ca trù và Thực hành tín ngưỡng thờ Mẫu Tam phủ",
-    "Biệt danh 'Thành phố Hoa Phượng Đỏ'",
-    "Nổi tiếng với bánh đa cua, nem cua bể, hải sản tươi sống"
-  ]
+  "ketLuan": {
+    "title": "Kết luận",
+    "description": "Hải Phòng sau sáp nhập 2025 không chỉ giữ vững vị thế là thành phố cảng biển lớn nhất miền Bắc mà còn phát triển mạnh mẽ về kinh tế, văn hóa và du lịch. Thành phố vừa là trung tâm kinh tế - công nghiệp - cảng biển chiến lược, vừa là điểm đến hấp dẫn cho du khách với ẩm thực đặc sắc, di tích lịch sử phong phú và cảnh đẹp thiên nhiên đa dạng."
+  }
 } 

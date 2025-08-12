@@ -242,7 +242,7 @@ class _ProvinceDetailWidgetState extends State<ProvinceDetailWidget> {
           ],
 
           // Button hiển thị Gallery
-          Container(
+          SizedBox(
             width: double.infinity,
             child: ElevatedButton.icon(
               onPressed: () => _showFullScreenGallery(_getGalleryImages(), 0),
@@ -306,11 +306,13 @@ class _ProvinceDetailWidgetState extends State<ProvinceDetailWidget> {
             children: [
               Icon(icon, color: AppTheme.primaryOrange, size: 24),
               const SizedBox(width: 12),
-              Text(
-                title,
-                style: Theme.of(context).textTheme.titleMedium?.copyWith(
-                  color: AppTheme.textPrimary,
-                  fontWeight: FontWeight.w600,
+              Expanded(
+                child: Text(
+                  title,
+                  style: Theme.of(context).textTheme.titleMedium?.copyWith(
+                    color: AppTheme.textPrimary,
+                    fontWeight: FontWeight.w600,
+                  ),
                 ),
               ),
             ],
