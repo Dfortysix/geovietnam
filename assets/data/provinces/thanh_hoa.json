@@ -1,0 +1,72 @@
+{
+  "id": "Thanh Hoa",
+  "nameVietnamese": "Thanh Hóa",
+  "overview": {
+    "title": "Vùng Đất Địa Linh Nhân Kiệt Miền Trung",
+    "description": "Thanh Hóa là tỉnh lớn ở vùng Bắc Trung Bộ, nổi tiếng với truyền thống lịch sử lâu đời, văn hóa phong phú đa dạng và nhiều danh lam thắng cảnh nổi bật. Sau sáp nhập và sắp xếp hành chính năm 2025, Thanh Hóa vận hành mô hình chính quyền hai cấp gồm tỉnh và xã/phường với bộ máy tinh gọn, diện tích và dân số tiếp tục phát triển toàn diện, hướng tới hiện đại và bền vững.",
+    "area": "11.340 km²",
+    "population": "3.700.000 người (2025)",
+    "region": "Bắc Trung Bộ",
+    "type": "Tỉnh",
+    "nickname": "Đất địa linh nhân kiệt"
+  },
+  "sapNhap2025": {
+    "title": "Thanh Hóa sau sáp nhập 2025",
+    "description": "Theo Nghị quyết số 1686/NQ-UBTVQH15 và các quyết định của Chính phủ, từ ngày 1/7/2025, Thanh Hóa không còn cấp quận, huyện trung gian mà tổ chức theo mô hình chính quyền địa phương hai cấp gồm tỉnh và xã/phường trực thuộc tỉnh. Số lượng đơn vị hành chính cấp xã sau sắp xếp là 166 đơn vị, gồm 147 xã và 19 phường được sáp nhập, tổ chức lại nhằm tinh gọn bộ máy, nâng cao hiệu quả quản lý và phục vụ.",
+    "details": [
+      "Bãi bỏ cấp quận, huyện; xã, phường trực thuộc tỉnh quản lý trực tiếp.",
+      "Tỉnh có tổng cộng 166 đơn vị hành chính cấp xã (147 xã và 19 phường) sau sáp nhập.",
+      "Các xã, phường được hình thành qua sáp nhập nhiều đơn vị hành chính nhỏ hơn trước đây để tăng quy mô, nâng cao hiệu quả quản lý.",
+      "Hai trung tâm hành chính lớn của tỉnh được bàn giao cho các phường mới là thành phố Thanh Hóa và thành phố Sầm Sơn.",
+      "Mục tiêu xây dựng nền hành chính công gần dân, hiện đại, phục vụ hiệu quả và thúc đẩy phát triển kinh tế - xã hội."
+    ]
+  },
+  "lichSu": {
+    "title": "Lịch sử hình thành và phát triển Thanh Hóa",
+    "description": "Thanh Hóa là vùng đất cổ kính, có vai trò quan trọng trong lịch sử Việt Nam với nhiều di tích, truyền thống cách mạng và văn hóa đặc sắc trải qua nhiều thời kỳ.",
+    "details": [
+      "Là trung tâm của nhiều nền văn hoá cổ đại và lịch sử lâu đời trên đất Việt.",
+      "Thanh Hóa là quê hương của nhiều anh hùng dân tộc, gắn liền với các sự kiện lịch sử trọng đại của dân tộc Việt Nam.",
+      "Trong thời kỳ phong kiến, Thanh Hóa giữ vị trí quan trọng về kinh tế, văn hóa và quân sự.",
+      "Thời kỳ cách mạng và kháng chiến, tỉnh là một trong những vùng trọng điểm đấu tranh cách mạng.",
+      "Sau năm 1975, tỉnh tiếp tục phát triển kinh tế, văn hóa và xã hội đồng bộ."
+    ]
+  },
+  "vanHoa": {
+    "title": "Văn hóa Thanh Hóa – Đặc sắc và đa dạng",
+    "description": "Thanh Hóa có nền văn hóa phong phú với nhiều lễ hội truyền thống, di sản văn hóa và làng nghề thủ công độc đáo, thể hiện bản sắc đa dạng các dân tộc cư trú trong tỉnh.",
+    "details": [
+      "Lễ hội truyền thống như lễ hội Lam Kinh, lễ hội Chùa Bà Đế, các lễ hội dân gian đặc sắc khác.",
+      "Nghệ thuật dân gian nhiều loại hình như hát ví, giặm, hát chèo truyền thống, diễn xướng dân gian.",
+      "Bảo tồn và phát huy các di sản văn hóa phi vật thể cấp quốc gia và cấp tỉnh.",
+      "Làng nghề truyền thống như nghề mây tre đan, gốm sứ, dệt thổ cẩm.",
+      "Các hoạt động giao lưu văn hóa, phát triển du lịch văn hóa cộng đồng."
+    ]
+  },
+  "amThuc": {
+    "title": "Ẩm thực Thanh Hóa – Hương vị đậm đà miền Trung",
+    "description": "Ẩm thực Thanh Hóa nổi bật với nhiều món ăn truyền thống phong phú, đậm đà hương vị và đa dạng nguyên liệu, phản ánh đặc trưng văn hóa vùng Bắc Trung Bộ.",
+    "details": [
+      "Bánh cuốn, bánh bèo, bánh rế, bánh khoái là các món ngon dân dã được ưa chuộng.",
+      "Nem chua Thanh Hóa là đặc sản nổi tiếng cả nước.",
+      "Các món ăn từ cá sông Mã, gà đồi, lợn mường, hương vị đậm đà, cay nồng đặc trưng miền Trung.",
+      "Các món canh chua, mắm mặn, làm phong phú thêm bữa ăn truyền thống.",
+      "Ẩm thực còn đa dạng với các món chè, bánh truyền thống phục vụ dịp lễ tết."
+    ]
+  },
+  "diaDanh": {
+    "title": "Địa danh nổi tiếng Thanh Hóa",
+    "description": "Thanh Hóa sở hữu nhiều địa danh lịch sử, thắng cảnh thiên nhiên và khu di tích văn hóa nổi tiếng thu hút khách du lịch trong và ngoài nước.",
+    "details": [
+      "Khu di tích Lam Kinh – nơi sinh thành của Lê Lợi, Đức Thánh Lĩnh Nam Quốc Anh Hùng.",
+      "Thánh địa Mẫu Đồng Đăng và các chùa nổi tiếng như chùa Bà Đế, chùa Thầy.",
+      "Biển Sầm Sơn và các bãi biển đẹp trải dài với dịch vụ du lịch phát triển.",
+      "Khu bảo tồn thiên nhiên Pù Luông – vùng sinh thái rừng nguyên sinh rộng lớn.",
+      "Di tích Thành nhà Hồ – di sản văn hóa thế giới UNESCO."
+    ]
+  },
+  "ketLuan": {
+    "title": "Tổng kết về Thanh Hóa sau sáp nhập",
+    "description": "Sau sắp xếp hành chính năm 2025, Thanh Hóa phát triển theo mô hình chính quyền hai cấp với bộ máy tinh gọn, hiệu quả, giữ vững vai trò địa linh nhân kiệt miền Trung. Tỉnh tiếp tục phát huy thế mạnh về lịch sử, văn hóa, du lịch và kinh tế, hướng tới sự phát triển bền vững, hiện đại trong tương lai."
+  }
+}
