@@ -1,0 +1,74 @@
+{
+    "id": "Quang Ninh",
+    "nameVietnamese": "Quảng Ninh",
+    "overview": {
+      "title": "Vùng Di Sản Kết Nối Biển – Núi",
+      "description": "Quảng Ninh là tỉnh ven biển trọng điểm vùng Đông Bắc, nổi tiếng với Vịnh Hạ Long di sản thế giới, có vai trò là cửa ngõ kinh tế – du lịch – văn hóa, trung tâm cảng biển quốc tế, kết nối đất liền và biển đảo. Sau sáp nhập 2025, bộ máy tổ chức được tinh gọn, tạo bước chuyển lớn về phát triển đô thị đa trung tâm, dịch vụ, du lịch sinh thái và logistics biển.",
+      "area": "6.208 km²",
+      "population": "1.400.000 người (2025)",
+      "region": "Đông Bắc Bộ",
+      "type": "Tỉnh",
+      "nickname": "Vùng đất di sản, cửa ngõ Đông Bắc"
+    },
+    "sapNhap2025": {
+      "title": "Quảng Ninh sau sáp nhập 2025",
+      "description": "Năm 2025, Quảng Ninh không sáp nhập với tỉnh khác mà tiến hành sắp xếp mạnh mẽ các đơn vị hành chính cấp xã, giảm từ 171 xuống 54 đơn vị, tổ chức lại mô hình quản lý địa phương hai cấp (tỉnh – xã/phường/đặc khu), tối ưu hóa quản lý, nâng cao hiệu lực và phục vụ người dân.",
+      "details": [
+        "Có 54 đơn vị hành chính cấp xã (22 xã, 30 phường, 2 đặc khu: Vân Đồn, Cô Tô)",
+        "Không còn cấp trung gian huyện, các xã/phường/đặc khu trực thuộc tỉnh, mỗi đơn vị tối đa 8 lãnh đạo, 4 phòng chuyên môn chính",
+        "Trụ sở các đơn vị trung tâm (Hạ Long, Đông Triều, Vân Đồn, Cô Tô…) giữ nguyên vị trí, tăng cường phân quyền phục vụ nhân dân",
+        "Mô hình đa trung tâm: Hạ Long, Cẩm Phả, Móng Cái, Đông Triều, Uông Bí, Quảng Yên – hỗ trợ phát triển cực tăng trưởng mới, kết nối hạ tầng hiện đại",
+        "Dân số 1,400,000 người, diện tích 6,208km², thuộc nhóm tỉnh lớn về quy mô cả nước"
+      ]
+    },
+    "lichSu": {
+      "title": "Lịch sử hình thành và phát triển",
+      "description": "Quảng Ninh là vùng đất cổ, trải qua nhiều giai đoạn lịch sử từ cổ đại đến hiện đại, có quá trình phát triển đặc biệt về kinh tế – quốc phòng, từng là nơi hợp nhất của nhiều đơn vị hành chính, là cửa ngõ vùng Đông Bắc.",
+      "details": [
+        "Thời Tiền sử – Cổ đại: Cư dân Việt – Mường – Tày sinh sống, phát triển nghề biển, than đá, đất cảng",
+        "Thời Pháp thuộc: Các khu Hồng Quảng, tỉnh Hải Ninh… từng là căn cứ chiến lược, khai thác than và nghề biển hiện đại hóa sớm nhất miền Bắc",
+        "Năm 1963: Quốc hội ra Nghị quyết hợp nhất hai đơn vị Hồng Quảng và Hải Ninh thành tỉnh Quảng Ninh",
+        "Phát triển hiện đại: Trung tâm công nghiệp, du lịch, dịch vụ lớn, có di sản Vịnh Hạ Long; đô thị hóa nhanh, hạ tầng kết nối quốc tế",
+        "2025: Phát triển mô hình đa trung tâm, chuyển đổi bộ máy, sắp xếp các đơn vị hành chính cấp xã, đẩy mạnh đổi mới chính quyền"
+      ]
+    },
+    "vanHoa": {
+      "title": "Văn hóa Quảng Ninh – Đa dạng và đặc sắc",
+      "description": "Quảng Ninh có nền văn hóa đa dạng, với các di sản, lễ hội, nghệ thuật và làng nghề truyền thống tiêu biểu; văn hóa biển và văn hóa than là đặc điểm nổi bật.",
+      "details": [
+        "Di tích Quốc gia đặc biệt: Yên Tử – trung tâm Phật giáo, nơi dự kiến được đề cử Di sản Văn hóa Thế giới; đền Cửa Ông, chùa Ba Vàng, khu di tích lịch sử Đông Triều, chùa Lôi Âm",
+        "Lễ hội truyền thống: Carnaval Hạ Long, lễ hội đua thuyền, lễ hội hoa hậu Biển, lễ hội Yên Tử, lễ hội đâm trống, lễ hội cờ tướng… tổ chức quanh năm, thu hút đông đảo du khách quốc tế",
+        "Nghệ thuật và làng nghề: Múa biển, hát đối kết biển, làng nghề than đá, nghề chài lưới, làm gốm Đông Triều, bánh gật gù Tiên Yên",
+        "Di sản UNESCO: Vịnh Hạ Long (Di sản thiên nhiên thế giới), Yên Tử (đang được đề cử Di sản Văn hóa thế giới)",
+        "Hoạt động cộng đồng: Triển lãm nghệ thuật vì khí hậu, nghệ thuật đường phố Hạ Long, sự kiện văn hóa biển quốc tế"
+      ]
+    },
+    "amThuc": {
+      "title": "Ẩm thực Quảng Ninh – Vị biển đặc sắc",
+      "description": "Ẩm thực Quảng Ninh đậm đà bản sắc vùng biển, kết hợp sản vật địa phương và truyền thống, nổi tiếng trong nước và quốc tế.",
+      "details": [
+        "Chả mực Hạ Long – đặc sản trứ danh, giòn dai, thơm ngọt, nằm trong top đặc sản Việt Nam, thường ăn kèm xôi trắng, bánh cuốn hoặc cơm",
+        "Sam biển Móng Cái – chế biến thành nhiều món ngon như sam xào miến, sam hấp, sam trứng nướng",
+        "Bánh gật gù Tiên Yên – bánh gạo mềm dẻo dùng với nước chấm đặc trưng, món ăn dân dã vùng núi và biển",
+        "Gà đồi Tiên Yên, sá sùng Quan Lạn – hải sản quý hiếm nổi tiếng",
+        "Bún bề bề Quảng Yên, nem chạo Quảng Yên, ốc móng tay Vân Đồn, rượu ngô Bình Liêu, canh hà Quảng Yên"
+      ]
+    },
+    "diaDanh": {
+      "title": "Địa danh nổi tiếng Quảng Ninh",
+      "description": "Quảng Ninh sở hữu nhiều địa danh nổi tiếng cả nước, đặc biệt là các thắng cảnh tự nhiên, di sản thế giới, khu du lịch sinh thái và biển đảo, tạo hấp lực mạnh cho du lịch.",
+      "details": [
+        "Vịnh Hạ Long – Di sản thiên nhiên thế giới, với hơn 1.900 hòn đảo, hệ thống hang động nổi tiếng như Thiên Cung, Đầu Gỗ, Sửng Sốt, Trinh Nữ, Tam Cung",
+        "Yên Tử – Trung tâm Phật giáo Thiền phái Trúc Lâm, núi linh thiêng, quần thể kiến trúc, con đường hành hương và hệ sinh thái rừng độc đáo",
+        "Đảo Cô Tô, Quan Lạn, Vân Đồn – biển đảo hoang sơ, bãi biển đẹp, sinh vật biển đa dạng",
+        "Bãi Cháy – bãi tắm đẹp, trung tâm du lịch biển lớn nhất Hạ Long, dịch vụ sôi động, điểm nghỉ dưỡng nghỉ mát",
+        "Móng Cái – thành phố cửa khẩu, bãi biển Trà Cổ với bãi cát dài nhất Việt Nam, kiến trúc độc đáo, thương mại biên giới sôi động",
+        "Hồ Yên Trung – “Đà Lạt thu nhỏ của Quảng Ninh” với khí hậu mát mẻ, cảnh quan thơ mộng"
+      ]
+    },
+    "ketLuan": {
+      "title": "Tổng kết về Quảng Ninh sau sáp nhập",
+      "description": "Quảng Ninh sau sáp nhập 2025 tiếp tục khẳng định vị thế là vùng di sản hàng đầu, đầu tàu phát triển Đông Bắc Bộ với mô hình đa trung tâm, quản lý hiện đại. Tỉnh sở hữu di sản thế giới, hệ văn hóa – du lịch – kinh tế biển, ẩm thực đặc sắc và bản sắc vùng miền mạnh mẽ, đóng vai trò quan trọng trong kết nối quốc tế, phát triển bền vững và xây dựng hình ảnh Việt Nam hội nhập toàn cầu."
+    }
+  }
+  

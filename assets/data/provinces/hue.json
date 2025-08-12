@@ -1,0 +1,73 @@
+{
+    "id": "Hue",
+    "nameVietnamese": "Huế",
+    "overview": {
+      "title": "Thành Phố Di Sản Bên Sông Hương",
+      "description": "Huế là trung tâm văn hóa – du lịch nổi tiếng vùng Bắc Trung Bộ, nơi lưu giữ di sản cố đô, kiến trúc cung đình, dòng sông Hương thơ mộng và các giá trị truyền thống độc đáo của Việt Nam. Sau sáp nhập 2025, Huế vận hành theo mô hình chính quyền hai cấp (tỉnh và xã/phường) với bộ máy tinh gọn, phát triển đa cực gắn với di sản UNESCO và đô thị hiện đại.",
+      "area": "5.054 km²",
+      "population": "1.330.000 người (2025)",
+      "region": "Bắc Trung Bộ",
+      "type": "Thành phố trực thuộc Trung ương",
+      "nickname": "Cố đô trầm mặc bên dòng sông Hương"
+    },
+    "sapNhap2025": {
+      "title": "Huế sau sáp nhập 2025",
+      "description": "Từ năm 2025, Huế áp dụng mô hình chính quyền địa phương hai cấp không còn cấp quận, huyện. Thành phố trực thuộc Trung ương này có 40 đơn vị hành chính cấp xã gồm 21 phường và 19 xã, được tổ chức lại qua sáp nhập và tinh gọn để nâng cao hiệu quả quản lý và phục vụ người dân.",
+      "details": [
+        "Bỏ cấp quận, huyện; xã, phường trực thuộc tỉnh",
+        "Có tổng cộng 40 đơn vị hành chính cấp xã (21 phường, 19 xã)",
+        "Bộ máy tổ chức gồm các phòng chuyên môn tại cấp xã như Văn phòng HĐND và UBND, Phòng Kinh tế hoặc Kinh tế – Hạ tầng và Đô thị, Phòng Văn hóa – Xã hội",
+        "Quyền hạn và trách nhiệm của Chủ tịch UBND cấp xã được nâng cao, bộ máy tinh gọn, hiệu quả",
+        "Mục tiêu tối ưu hóa quản lý đô thị hiện đại, phát triển cân bằng giữa đô thị và nông thôn"
+      ]
+    },
+    "lichSu": {
+      "title": "Lịch sử hình thành và phát triển Huế",
+      "description": "Huế là vùng đất cổ, có lịch sử lâu đời gắn với các triều đại lớn, từng là kinh đô của triều Nguyễn, chịu ảnh hưởng sâu sắc của văn hóa Chămpa, Đại Việt và văn hóa phương Tây.",
+      "details": [
+        "Thời cổ đại: Vùng cư trú lâu đời, giao thoa văn hóa Chămpa và Đại Việt",
+        "Năm 1802-1945: Phú Xuân là Kinh đô triều Nguyễn, trung tâm chính trị – văn hóa cả nước",
+        "Thời Pháp thuộc: Thiết lập thị xã Huế năm 1899, phát triển kiến trúc đô thị và hành chính mới",
+        "Sau 1945: Chứng kiến sự kiện lịch sử lớn, kết thúc triều đại nhà Nguyễn, khởi đầu kỷ nguyên cách mạng",
+        "Sau năm 1975: Huế phát triển toàn diện, bảo tồn và phát huy di sản cố đô, trở thành thành phố trực thuộc Trung ương từ năm 2025"
+      ]
+    },
+    "vanHoa": {
+      "title": "Văn hóa Huế – Đan xen truyền thống và hiện đại",
+      "description": "Văn hóa Huế nổi bật với di sản cung đình, nghệ thuật dân gian, giao thoa Việt – Chăm – Minh Hương, tinh thần thanh lịch, tĩnh lặng và bản sắc riêng biệt.",
+      "details": [
+        "Di sản văn hóa cố đô: Đại Nội, lăng tẩm các vua Nguyễn, hệ thống cung điện, di tích kiến trúc Phật giáo, Kinh thành Huế (UNESCO)",
+        "Lễ hội truyền thống: Lễ Hội Huế, Festival Nghệ thuật, lễ hội cung đình, lễ hội làng nghề, lễ hội cầu ngư, lễ hội chùa Thiên Mụ",
+        "Nghệ thuật truyền thống: Ca Huế trên sông Hương, nhã nhạc cung đình (UNESCO), mặt nạ tuồng, tác phẩm thi pháp, nghệ thuật thêu, nón bài thơ",
+        "Làng nghề: Trúc chỉ, tranh làng Sình, đúc đồng, làm hương, sản xuất mè xửng",
+        "Giao thoa văn hóa: Kỹ thuật kiến trúc Pháp, nghệ thuật Chàm, văn hóa Minh Hương – Hoa Kiều"
+      ]
+    },
+    "amThuc": {
+      "title": "Ẩm thực Huế – Tinh hoa đất Cố đô",
+      "description": "Ẩm thực Huế đa dạng, tinh tế với hàng trăm món đặc sản truyền thống, nổi tiếng với phong cách cung đình và ẩm thực dân gian, mang vị đặc sắc đầy bản sắc.",
+      "details": [
+        "Bún bò Huế – đặc sản trứ danh với nước dùng cay, thịt bò, giò heo",
+        "Cơm hến, bún hến, bánh bèo, bánh bột lọc, bánh nậm, bánh khoái",
+        "Nem lụi, tré Huế, mè xửng, chè Huế, tôm chua, vả trộn, kẹo cau",
+        "Bánh canh Nam Phổ, cháo lòng, gỏi mít, bánh ít, bánh ram ít",
+        "Ẩm thực cung đình: mứt sen, mứt gừng, các món ăn vặt cung đình"
+      ]
+    },
+    "diaDanh": {
+      "title": "Địa danh nổi tiếng của Huế",
+      "description": "Huế là điểm đến du lịch đặc biệt với hệ thống di tích cung đình, thắng cảnh thiên nhiên, chùa chiền, sông Hương thơ mộng và các điểm du lịch sinh thái đặc sắc.",
+      "details": [
+        "Đại Nội Huế – di sản văn hóa thế giới, quần thể cung đình triều Nguyễn",
+        "Lăng tẩm các vua Nguyễn: Lăng Tự Đức, Lăng Khải Định, Lăng Minh Mạng",
+        "Chùa Thiên Mụ, Đàn Nam Giao – biểu tượng Phật giáo và tín ngưỡng kinh đô",
+        "Sông Hương, cầu Tràng Tiền – cảnh sắc thơ mộng, biểu tượng thi ca",
+        "Núi Ngự Bình, Đồi Vọng Cảnh, biển Lăng Cô, vườn Quốc gia Bạch Mã, chợ Đông Ba, nhà vườn An Hiên, suối Voi, Đầm Chuồn"
+      ]
+    },
+    "ketLuan": {
+      "title": "Tổng kết về Huế sau sáp nhập",
+      "description": "Huế sau sáp nhập 2025 khẳng định vị trí là thành phố di sản quốc gia, trung tâm văn hóa – du lịch đặc sắc của Việt Nam. Nơi đây hòa quyện giữa giá trị cổ kính cung đình và hiện đại hóa đô thị, sở hữu di sản thế giới, đa dạng ẩm thực, phong phú địa danh thu hút du khách trong và ngoài nước."
+    }
+  }
+  
