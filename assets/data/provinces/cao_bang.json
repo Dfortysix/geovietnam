@@ -1,0 +1,72 @@
+{
+  "id": "Cao Bang",
+  "nameVietnamese": "Cao Bằng",
+  "overview": {
+    "title": "Vùng Đất Biên Cương Đông Bắc",
+    "description": "Cao Bằng là tỉnh miền núi thuộc vùng Đông Bắc Bộ, nổi tiếng với cảnh quan thiên nhiên hùng vĩ, nhiều di tích lịch sử cách mạng như Pác Bó và sự đa dạng văn hóa của các dân tộc thiểu số. Sau sáp nhập và cải cách hành chính năm 2025, Cao Bằng vận hành theo mô hình chính quyền hai cấp với số lượng đơn vị hành chính cấp xã được tổ chức lại để nâng cao hiệu quả quản lý.",
+    "area": "6.700,4 km²",
+    "population": "543.050 người (2025)",
+    "region": "Đông Bắc Bộ",
+    "type": "Tỉnh",
+    "nickname": "Vùng đất biên cương giàu lịch sử và văn hóa"
+  },
+  "sapNhap2025": {
+    "title": "Cao Bằng sau sáp nhập 2025",
+    "description": "Cao Bằng không sáp nhập với tỉnh nào khác nhưng thực hiện cải cách hành chính mạnh mẽ theo mô hình chính quyền hai cấp gồm tỉnh và xã/phường, bãi bỏ cấp trung gian quận, huyện. Tỉnh giảm số đơn vị hành chính cấp xã từ 129 xuống còn 45 đơn vị, gồm xã và phường được tổ chức lại sau sáp nhập, tập trung quản lý và phục vụ người dân tốt hơn.",
+    "details": [
+      "Cấp trung gian huyện, quận bị loại bỏ hoàn toàn, xã/phường trực thuộc tỉnh",
+      "Giảm số đơn vị hành chính cấp xã từ 129 xuống còn 45 (42 xã và 3 phường)",
+      "Bộ máy hành chính cấp xã tinh gọn bao gồm các phòng như Văn phòng HĐND và UBND, Phòng Kinh tế hoặc Kinh tế – Hạ tầng và Đô thị, Phòng Văn hóa – Xã hội",
+      "Chủ tịch UBND cấp xã có quyền hạn và trách nhiệm trực tiếp điều hành công việc, nâng cao năng lực phục vụ",
+      "Mục tiêu phát triển kinh tế xã hội bền vững đồng thời bảo tồn bản sắc văn hóa các dân tộc"
+    ]
+  },
+  "lichSu": {
+    "title": "Lịch sử hình thành và phát triển Cao Bằng",
+    "description": "Cao Bằng là vùng đất cổ có truyền thống cách mạng lâu đời, là nơi ghi dấu nhiều sự kiện lịch sử quan trọng của Việt Nam, đặc biệt là Chiến khu cách mạng Pác Bó, nơi Chủ tịch Hồ Chí Minh từng hoạt động.",
+    "details": [
+      "Nơi sinh sống lâu đời của nhiều dân tộc thiểu số như Tày, Nùng, H'Mông, Dao",
+      "Trước cuộc kháng chiến chống Pháp, Cao Bằng là trung tâm cách mạng với khu di tích lịch sử Pác Bó",
+      "Thời kỳ Pháp thuộc, là điểm chiến lược quân sự quan trọng của miền Bắc",
+      "Giai đoạn hiện đại, phát triển kinh tế nông-lâm nghiệp gắn với du lịch sinh thái và lịch sử",
+      "Sau năm 2025, tiếp tục phát huy vai trò phát triển bền vững, xây dựng chính quyền địa phương hiệu quả"
+    ]
+  },
+  "vanHoa": {
+    "title": "Văn hóa Cao Bằng – Đa dạng đặc sắc",
+    "description": "Cao Bằng sở hữu nền văn hóa đa dạng phong phú của nhiều dân tộc thiểu số với nhiều lễ hội truyền thống và các làng nghề thủ công độc đáo.",
+    "details": [
+      "Lễ hội truyền thống như Lễ hội Lồng Tồng, lễ hội Nàng Hai, lễ hội chọi trâu đặc trưng của dân tộc Tày và Nùng",
+      "Nghệ thuật dân gian: múa sạp, múa khèn, hát then, hát lượn",
+      "Làng nghề truyền thống như dệt thổ cẩm, làm giấy dó, mây tre đan",
+      "Bảo tồn và phát huy các giá trị văn hóa đặc trưng dân tộc thiểu số",
+      "Các hoạt động giao lưu văn hóa, phát triển du lịch cộng đồng, tăng cường quảng bá văn hóa vùng miền"
+    ]
+  },
+  "amThuc": {
+    "title": "Ẩm thực Cao Bằng – Hương vị núi rừng miền biên viễn",
+    "description": "Ẩm thực Cao Bằng nổi bật với các món ăn đặc sản dân tộc mang đậm nét núi rừng, sử dụng các nguyên liệu tự nhiên phong phú cùng hương vị truyền thống độc đáo.",
+    "details": [
+      "Bánh cuốn Cao Bằng – món ăn đặc trưng ngon với bánh mềm, nhân thịt băm và nước chấm đặc biệt",
+      "Thịt lợn nướng lá mắc mật, mang hương vị núi rừng độc đáo",
+      "Thắng cố – món ăn truyền thống của dân tộc Mông với nước dùng thơm ngon",
+      "Rượu ngô Cao Bằng – rượu truyền thống nồng nàn của người địa phương",
+      "Các loại rau rừng, măng và hạt dổi thường được sử dụng trong các món ăn"
+    ]
+  },
+  "diaDanh": {
+    "title": "Địa danh nổi tiếng Cao Bằng",
+    "description": "Cao Bằng có nhiều điểm đến du lịch hấp dẫn với vẻ đẹp thiên nhiên hùng vĩ và các di tích lịch sử quan trọng.",
+    "details": [
+      "Thác Bản Giốc – thác nước tự nhiên hùng vĩ nằm ở biên giới Việt – Trung",
+      "Di tích Pác Bó – nơi Chủ tịch Hồ Chí Minh từng hoạt động cách mạng",
+      "Hang Ngườm Ngao – hệ thống hang động rộng lớn và đẹp mắt",
+      "Khu bảo tồn thiên nhiên Phja Oắc – Phja Đén với cảnh sắc núi rừng nguyên sơ",
+      "Các bản làng văn hóa các dân tộc thiểu số với trải nghiệm du lịch cộng đồng"
+    ]
+  },
+  "ketLuan": {
+    "title": "Tổng kết về Cao Bằng sau sáp nhập",
+    "description": "Cao Bằng sau cải cách hành chính năm 2025 tiếp tục giữ vững vị thế vùng đất biên cương giàu truyền thống cách mạng và văn hóa đa dạng. Mô hình chính quyền hai cấp giúp tỉnh nâng cao hiệu quả quản lý, phát triển kinh tế xã hội bền vững đồng thời bảo tồn và phát huy giá trị lịch sử, văn hóa, phục vụ người dân ngày càng tốt hơn."
+  }
+}
