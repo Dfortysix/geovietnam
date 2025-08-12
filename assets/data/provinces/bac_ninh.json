@@ -1,0 +1,73 @@
+{
+  "id": "Bac Ninh",
+  "nameVietnamese": "Bắc Ninh",
+  "overview": {
+    "title": "Trung Tâm Công Nghiệp Và Văn Hóa Vùng Đông Bắc",
+    "description": "Bắc Ninh là tỉnh thuộc vùng đồng bằng sông Hồng và Đông Bắc Bộ, nổi bật với truyền thống văn hóa dân gian đặc sắc của vùng Kinh Bắc cùng sự phát triển năng động về công nghiệp, đô thị và dịch vụ. Sau sáp nhập tỉnh Bắc Giang năm 2025, Bắc Ninh mở rộng quy mô diện tích và dân số, trung tâm chính trị - hành chính đặt tại thành phố Bắc Giang, vận hành theo mô hình chính quyền hai cấp với bộ máy tinh gọn và năng lực quản lý được nâng cao.",
+    "area": "4.718,6 km²",
+    "population": "3.619.433 người (2025)",
+    "region": "Đồng bằng sông Hồng - Đông Bắc Bộ",
+    "type": "Tỉnh",
+    "nickname": "Vùng đất Kinh Bắc – Cổ Truyền và Hiện Đại"
+  },
+  "sapNhap2025": {
+    "title": "Bắc Ninh sau sáp nhập Bắc Giang 2025",
+    "description": "Ngày 1/7/2025, tỉnh Bắc Ninh và tỉnh Bắc Giang tiến hành sáp nhập thành tỉnh Bắc Ninh mới với trung tâm chính trị - hành chính đặt tại thành phố Bắc Giang. Tỉnh tổ chức chính quyền theo mô hình hai cấp gồm tỉnh và cấp xã/phường, không còn cấp quận/huyện trung gian, với tổng cộng 99 đơn vị hành chính cấp xã được sắp xếp, tinh gọn nhằm nâng cao hiệu quả quản lý và phục vụ người dân.",
+    "details": [
+      "Sáp nhập hai tỉnh Bắc Ninh và Bắc Giang thành tỉnh Bắc Ninh mới với diện tích 4.718,6 km² và dân số 3.619.433 người.",
+      "Trung tâm chính trị - hành chính đặt tại thành phố Bắc Giang, tỉnh Bắc Giang cũ.",
+      "Tỉnh có tổng cộng 99 đơn vị hành chính cấp xã, gồm 66 xã và 33 phường được tổ chức lại sau sáp nhập.",
+      "Bãi bỏ cấp quận, huyện trung gian, các xã/phường trực thuộc tỉnh quản lý trực tiếp theo mô hình chính quyền hai cấp.",
+      "Tập trung tinh giản bộ máy hành chính, phát triển kinh tế công nghiệp, dịch vụ và bảo tồn giá trị văn hóa truyền thống đặc sắc của vùng Kinh Bắc và tỉnh Bắc Giang."
+    ]
+  },
+  "lichSu": {
+    "title": "Lịch sử hình thành và phát triển Bắc Ninh - Bắc Giang",
+    "description": "Bắc Ninh và Bắc Giang là hai tỉnh giàu truyền thống lịch sử, văn hóa trọng điểm vùng Đông Bắc Bộ với nhiều di tích và dấu ấn lịch sử quan trọng. Sau sáp nhập, tỉnh tiếp tục phát huy các giá trị di sản đồng thời đẩy mạnh phát triển kinh tế và xã hội hiện đại.",
+    "details": [
+      "Bắc Ninh nổi tiếng với truyền thống văn hóa Kinh Bắc và nhiều di tích lịch sử, là nơi phát triển các làng nghề truyền thống.",
+      "Bắc Giang có vị trí chiến lược vùng Đông Bắc với lịch sử văn hóa đa dạng và phát triển công nghiệp tiềm năng.",
+      "Hai tỉnh từng thuộc tỉnh Hà Bắc trong lịch sử, có sự liên kết văn hóa và chính trị lâu đời.",
+      "Sáp nhập tạo điều kiện phát huy sức mạnh tổng hợp, thúc đẩy phát triển kinh tế vùng đồng bộ.",
+      "Tỉnh mới kế thừa lịch sử phong phú, đẩy mạnh hiện đại hóa hệ thống chính quyền và quản lý."
+    ]
+  },
+  "vanHoa": {
+    "title": "Văn hóa Bắc Ninh - Bắc Giang kết hợp truyền thống và phát triển",
+    "description": "Tỉnh mới sở hữu nền văn hóa phong phú với nhiều giá trị truyền thống đặc sắc của vùng Kinh Bắc và vùng Đông Bắc, bao gồm các lễ hội dân gian, làng nghề truyền thống và nghệ thuật đặc trưng.",
+    "details": [
+      "Lễ hội truyền thống đậm đà như Lễ hội Đền Đô, Lễ hội Lim Bắc Ninh gắn với di sản dân ca Quan họ.",
+      "Hát Quan họ, chèo, ca trù là những loại hình nghệ thuật dân gian nổi bật được bảo tồn và phát huy.",
+      "Các làng nghề truyền thống như làm vàng mã, làng gốm Bát Tràng, làng nghề mây tre đan.",
+      "Các hoạt động giao lưu văn hóa giữa Bắc Ninh và Bắc Giang được tăng cường tạo sự phát triển đồng bộ.",
+      "Tỉnh giữ gìn và phát huy các giá trị văn hóa phi vật thể, đồng thời phát triển du lịch văn hóa đặc sắc."
+    ]
+  },
+  "amThuc": {
+    "title": "Ẩm thực Bắc Ninh - Bắc Giang đa dạng và đặc trưng",
+    "description": "Ẩm thực tỉnh mới mang nét đặc trưng vùng đồng bằng, kết hợp các món ăn truyền thống của Bắc Ninh và Bắc Giang với sự phong phú về nguyên liệu và cách chế biến.",
+    "details": [
+      "Bánh đa Kế – bánh đa dai, thường ăn với nước dùng đậm đà, món ăn đặc trưng vùng Bắc Ninh.",
+      "Nem chua Bắc Giang nổi tiếng với vị chua nhẹ, thanh mát và hương vị đặc biệt.",
+      "Cá rô đồng, canh cua đồng cùng các món đặc sản từ lúa nước địa phương.",
+      "Món bánh phu thê, bánh tro truyền thống dùng trong các dịp lễ hội và cưới hỏi.",
+      "Ẩm thực kết hợp độc đáo giữa hương vị truyền thống và phát triển hiện đại phục vụ du khách."
+    ]
+  },
+  "diaDanh": {
+    "title": "Địa danh nổi bật Bắc Ninh - Bắc Giang",
+    "description": "Tỉnh mới có nhiều địa danh du lịch và di tích lịch sử nổi tiếng, thu hút du khách với cảnh quan đẹp và giá trị văn hóa đặc sắc.",
+    "details": [
+      "Đền Đô Bắc Ninh – nơi thờ 8 vua nhà Lý, di tích lịch sử văn hóa cấp quốc gia.",
+      "Chùa Bút Tháp – ngôi chùa cổ nổi tiếng với kiến trúc độc đáo và nghệ thuật điêu khắc.",
+      "Khu di tích Lục Nam, các đền chùa và di tích ở Bắc Giang phong phú về giá trị lịch sử.",
+      "Khu du lịch Yên Dũng - Thắng cảnh thiên nhiên kết hợp du lịch tâm linh.",
+      "Thành cổ Luy Lâu – di tích lịch sử nổi bật của thời kỳ tiền Lý.",
+      "Các làng nghề truyền thống và các khu sinh thái ven đô phát triển du lịch sinh thái."
+    ]
+  },
+  "ketLuan": {
+    "title": "Tổng kết về tỉnh Bắc Ninh mới sau sáp nhập",
+    "description": "Tỉnh Bắc Ninh mới sau khi sáp nhập với Bắc Giang là điểm sáng của vùng Đông Bắc Bộ với quy mô diện tích và dân số tăng, phát triển kinh tế công nghiệp kết hợp bảo tồn văn hóa truyền thống đặc sắc. Mô hình chính quyền hai cấp tinh gọn giúp nâng cao hiệu quả quản lý, phục vụ nhân dân và thúc đẩy phát triển bền vững."
+  }
+}
