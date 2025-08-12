@@ -157,6 +157,6 @@ class ProvinceDetailService {
     // Có thể implement để load danh sách từ một file index
     // Hoặc scan thư mục assets/data/provinces/
     // Tạm thời return danh sách hardcode
-    return ['hai_phong', 'ha_noi', 'quang_ninh', 'hue', 'dien_bien', 'cao_bang']; // Thêm các tỉnh khác khi có file JSON
+    return ['hai_phong', 'ha_noi', 'quang_ninh', 'hue', 'dien_bien', 'cao_bang', 'lai_chau']; // Thêm các tỉnh khác khi có file JSON
   }
 } 

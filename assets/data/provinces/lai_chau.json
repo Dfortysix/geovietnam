@@ -1,0 +1,72 @@
+{
+  "id": "Lai Chau",
+  "nameVietnamese": "Lai Châu",
+  "overview": {
+    "title": "Vùng Núi Tây Bắc Hùng Vĩ",
+    "description": "Lai Châu là tỉnh miền núi nằm ở vùng Tây Bắc Việt Nam, nổi tiếng với cảnh quan thiên nhiên hùng vĩ, đa dạng văn hóa các dân tộc thiểu số và vị trí chiến lược biên giới gần Trung Quốc và Lào. Tỉnh giữ vai trò quan trọng về quốc phòng, phát triển kinh tế nông lâm nghiệp, thủy điện, du lịch sinh thái và kinh tế cửa khẩu. Sau sắp xếp năm 2025, Lai Châu vận hành theo mô hình chính quyền hai cấp gồm tỉnh và xã/phường, với bộ máy tinh gọn, nâng cao hiệu quả quản lý.",
+    "area": "9.069 km²",
+    "population": "512.601 người (2025)",
+    "region": "Tây Bắc Bộ",
+    "type": "Tỉnh",
+    "nickname": "Vùng đất biên cương đa sắc tộc"
+  },
+  "sapNhap2025": {
+    "title": "Lai Châu sau sắp xếp hành chính 2025",
+    "description": "Năm 2025, Lai Châu không thực hiện sáp nhập cấp tỉnh nhưng đã tinh gọn các đơn vị hành chính cấp xã theo Nghị quyết 1670/NQ-UBTVQH15. Tỉnh vận hành theo mô hình chính quyền hai cấp (tỉnh và xã/phường), xóa bỏ cấp huyện/quận trung gian, giúp bộ máy quản lý hiệu quả hơn và phục vụ người dân tốt hơn.",
+    "details": [
+      "Giảm số lượng đơn vị hành chính cấp xã từ 106 xuống còn 38 đơn vị (36 xã và 2 phường)",
+      "Xã, phường trực thuộc tỉnh, không còn cấp huyện, quận trung gian",
+      "Bộ máy tổ chức cấp xã gồm Văn phòng HĐND và UBND, Phòng Kinh tế hoặc Kinh tế – Hạ tầng và Đô thị, Phòng Văn hóa – Xã hội",
+      "Chủ tịch UBND cấp xã được giao quyền hạn điều hành trực tiếp, nâng cao hiệu quả phục vụ cộng đồng",
+      "Mục tiêu xây dựng hệ thống hành chính gọn nhẹ, phát triển kinh tế – xã hội bền vững, bảo tồn văn hóa đa dân tộc"
+    ]
+  },
+  "lichSu": {
+    "title": "Lịch sử hình thành và phát triển Lai Châu",
+    "description": "Lai Châu có lịch sử lâu đời với nhiều dân tộc sinh sống, trải qua các thời kỳ lịch sử từ cổ đại, thời Pháp thuộc cho đến giai đoạn hiện đại với nhiều dấu ấn cách mạng và phát triển kinh tế – xã hội.",
+    "details": [
+      "Nằm ở vị trí chiến lược biên giới, cư dân đa dân tộc sinh sống lâu đời với các giá trị văn hóa đặc sắc",
+      "Ngày 28/6/1909, tỉnh Lai Châu được thành lập dưới thời Pháp thuộc, là nơi áp dụng chế độ quân quản trong thời gian dài",
+      "Trong kháng chiến chống Pháp, Lai Châu là vùng chiến khu quan trọng với nhiều phong trào cách mạng nổi bật",
+      "Sau năm 1945 và đặc biệt từ khi tái lập tỉnh năm 2004, Lai Châu phát triển kinh tế, xã hội và văn hóa đa dạng",
+      "Năm 2025 tỉnh thực hiện sắp xếp hành chính cấp xã và đổi mới hoạt động chính quyền theo mô hình hai cấp"
+    ]
+  },
+  "vanHoa": {
+    "title": "Văn hóa Lai Châu – Đa dạng và đặc sắc",
+    "description": "Lai Châu là vùng đất của nhiều dân tộc thiểu số với nền văn hóa đa dạng, phong phú, có nhiều nét đặc trưng trong trang phục, lễ hội, nghệ thuật dân gian và các làng nghề truyền thống.",
+    "details": [
+      "Bảo tồn và phát triển các di sản văn hóa phi vật thể quốc gia như múa Xòe, hát Then, các lễ hội truyền thống dân tộc",
+      "Lễ hội truyền thống đặc sắc như lễ hội Kin Pang Then, lễ hội Nàng Han, lễ hội Kin lẩu khẩu mẩu",
+      "Nghệ thuật dân gian: múa khèn, hát lượn, múa sạp của các dân tộc Mông, Thái, Dao, Hà Nhì, Giáy",
+      "Làng nghề truyền thống với dệt thổ cẩm, làm giấy dó, rèn, đan lát mây tre",
+      "Hoạt động giao lưu văn hóa và du lịch cộng đồng phát triển góp phần bảo tồn và quảng bá văn hóa bản địa"
+    ]
+  },
+  "amThuc": {
+    "title": "Ẩm thực Lai Châu – Hương vị núi rừng Tây Bắc độc đáo",
+    "description": "Ẩm thực Lai Châu đậm đà tinh hoa núi rừng, mang đậm bản sắc dân tộc vùng Tây Bắc với nhiều món ăn đặc sản hấp dẫn, nguyên liệu tự nhiên phong phú.",
+    "details": [
+      "Xôi tím – xôi nương đặc trưng màu tím từ cây khẩu cắm, dẻo thơm, không thể thiếu trong các dịp lễ hội",
+      "Thịt trâu gác bếp – món ngon truyền thống đậm đà hương vị núi rừng",
+      "Lam nhọ – thịt nướng trong ống tre hòa quyện với rau rừng và gia vị đặc trưng",
+      "Măng nộm hoa ban – món ăn dân tộc mới lạ kết hợp măng rừng và hoa ban cùng cá suối",
+      "Các loại rượu ngô, rượu táo mèo truyền thống trong sinh hoạt và lễ hội của người dân"
+    ]
+  },
+  "diaDanh": {
+    "title": "Địa danh nổi tiếng Lai Châu",
+    "description": "Lai Châu có nhiều danh lam thắng cảnh núi rừng hoang sơ, di tích lịch sử cách mạng và các điểm đến du lịch cộng đồng hấp dẫn.",
+    "details": [
+      "Đèo Ô Quy Hồ – một trong tứ đại đỉnh đèo nổi tiếng của Tây Bắc với cảnh quan hùng vĩ",
+      "Đỉnh Pu Ta Leng – đỉnh núi cao 3.064m, điểm chinh phục yêu thích của du khách mạo hiểm",
+      "Cánh đồng Mường Than – khu vực nông nghiệp rộng lớn với cảnh sắc thiên nhiên tuyệt đẹp",
+      "Bản Sin Suối Hồ, bản Vàng Pheo, bản Sì Thầu Chải – điểm du lịch trải nghiệm văn hóa cộng đồng dân tộc",
+      "Thác Tác Tình, Cầu kính Rồng Mây – những khu du lịch sinh thái và trải nghiệm độc đáo"
+    ]
+  },
+  "ketLuan": {
+    "title": "Tổng kết về Lai Châu sau sáp nhập",
+    "description": "Lai Châu sau cải cách hành chính năm 2025 tiếp tục phát huy vai trò là vùng đất biên cương giàu bản sắc văn hóa, đa dân tộc, cùng mô hình chính quyền hai cấp tinh gọn, hiệu quả. Tỉnh có nhiều tiềm năng phát triển kinh tế bền vững dựa trên văn hóa đặc sắc, du lịch sinh thái và vị trí chiến lược an ninh quốc phòng."
+  }
+}
