@@ -1,0 +1,85 @@
+{
+  "id": "Ha Noi",
+  "nameVietnamese": "Hà Nội",
+  "overview": {
+    "title": "Thủ Đô Nghìn Năm Văn Hiến",
+    "description": "Thủ đô của Việt Nam, trung tâm chính trị, văn hóa và kinh tế hàng đầu. Sau sắp xếp lại đơn vị hành chính cấp xã theo Nghị quyết 1656/NQ-UBTVQH15 (2025), Hà Nội có 126 đơn vị cấp xã với diện tích 3.345 km² và dân số 8.000.000 người, trở thành một trong những đô thị lớn nhất Việt Nam.",
+    "area": "3.345 km²",
+    "population": "8.000.000 người (2025)",
+    "region": "Đồng bằng sông Hồng",
+    "type": "Thành phố trực thuộc Trung ương",
+    "nickname": "Thủ đô nghìn năm văn hiến"
+  },
+  "sapNhap2025": {
+    "title": "Hà Nội sau sáp nhập (2025)",
+    "description": "Từ ngày 1/7/2025, Hà Nội đã chính thức sắp xếp lại đơn vị hành chính cấp xã, chỉ còn lại 126 đơn vị cấp xã, gồm 51 phường và 75 xã. Đây là kết quả của Nghị quyết số 1656/NQ-UBTVQH15 nhằm tinh gọn bộ máy quản lý và nâng cao hiệu quả đô thị.",
+    "details": [
+      "Trung tâm hành chính mới tập trung tại phường Thủy Nguyên (Khu đô thị Bắc Sông Cấm)",
+      "Diện tích và dân số mở rộng, với các khu đô thị mới, hạ tầng giao thông hiện đại phát triển nhanh, đồng bộ",
+      "Hệ thống phường, xã mới sau sáp nhập nhiều nơi kết hợp các phường cũ tạo nên các quận trung tâm với tên gọi mới như phường Hoàn Kiếm bao gồm gộp 7 phường cũ như Hàng Bạc, Hàng Bồ, Hàng Đào...",
+      "Mục tiêu sắp xếp để xây dựng mô hình chính quyền địa phương hiệu quả, nâng cao năng lực quản lý đô thị và tiết kiệm ngân sách",
+      "Hà Nội với diện tích rộng lớn và dân số đông đúc sau sáp nhập càng khẳng định vị thế là thủ đô chính trị, trung tâm kinh tế - văn hóa lớn hàng đầu của Việt Nam"
+    ]
+  },
+  "lichSu": {
+    "title": "Lịch sử",
+    "description": "Hà Nội là kinh đô ngàn năm văn hiến, từng là trung tâm của nhiều triều đại lớn như Lý, Trần, Lê.",
+    "details": [
+      "Năm 1010, vua Lý Thái Tổ dời đô về Thăng Long (nay là Hà Nội)",
+      "Thời Pháp thuộc (1888), Hà Nội được thành lập thành phố với kiến trúc quy hoạch hiện đại, nhiều công trình tiêu biểu như Nhà hát lớn, Ga Hà Nội, cầu Long Biên, hệ thống phố cổ",
+      "Hà Nội là trung tâm chính trị - văn hóa - kinh tế quan trọng của Việt Nam, là thành phố lịch sử chiến đấu và phát triển với nhiều di tích, lễ hội truyền thống"
+    ]
+  },
+  "vanHoa": {
+    "title": "Văn hóa",
+    "description": "Hà Nội nổi bật với nét thanh lịch, tao nhã trong phong cách ứng xử, ăn mặc, giao tiếp của người Hà Thành.",
+    "details": [
+      "Các làng nghề truyền thống tiêu biểu như gốm Bát Tràng, lụa Vạn Phúc, tranh Đông Hồ vẫn được bảo tồn và phát triển",
+      "Nhiều lễ hội truyền thống nổi tiếng gồm Hội Gióng ở đền Phù Đổng, đền Sóc, lễ hội chùa Hương, Hội Lim, các môn nghệ thuật ca trù, hát ả đào, múa rối nước...",
+      "Thành phố tập trung nhiều bảo tàng, nhà hát, thư viện, trung tâm văn hóa lớn",
+      "Khoảng 400 lễ hội truyền thống được duy trì, góp phần gắn kết cộng đồng và giữ gìn giá trị văn hóa tinh thần"
+    ]
+  },
+  "amThuc": {
+    "title": "Ẩm thực",
+    "description": "Hà Nội có nền ẩm thực phong phú, tinh tế với nhiều món ăn truyền thống nổi tiếng, mang đậm nét văn hóa vùng miền.",
+    "details": [
+      "Phở (Phở Lý Quốc Sư, Phở Thìn)",
+      "Bún ốc hồ Tây",
+      "Bánh cuốn Thanh Trì",
+      "Bún thang",
+      "Chả cá Lã Vọng",
+      "Bún đậu mắm tôm",
+      "Cốm làng Vòng",
+      "Nem chua, nem rán",
+      "Món bánh tôm Hồ Tây, kem Tràng Tiền, cà phê trứng...",
+      "Các món ăn này không chỉ là đặc sản địa phương mà còn là biểu tượng văn hóa ẩm thực Hà Nội, thu hút đông đảo khách du lịch và được các nhà hàng nổi tiếng trưng bày, phục vụ"
+    ]
+  },
+  "diaDanh": {
+    "title": "Địa danh nổi bật",
+    "description": "Hà Nội sở hữu nhiều địa danh lịch sử, văn hóa và du lịch nổi tiếng, trong đó không thể bỏ qua:",
+    "details": [
+      "Quảng trường Ba Đình & Lăng Chủ tịch Hồ Chí Minh",
+      "Hồ Hoàn Kiếm và Đền Ngọc Sơn",
+      "Phố cổ Hà Nội với nhiều con phố mang tên truyền thống như Hàng Đào, Hàng Mã, Hàng Gai...",
+      "Văn Miếu - Quốc Tử Giám: trường đại học đầu tiên Việt Nam",
+      "Nhà thờ lớn Hà Nội",
+      "Chùa Một Cột",
+      "Chùa Trấn Quốc bên hồ Tây",
+      "Cầu Long Biên lịch sử",
+      "Nhà tù Hỏa Lò",
+      "Ga Hà Nội cổ kính",
+      "Chợ Đồng Xuân",
+      "Nhà hát lớn Hà Nội",
+      "Công viên Lê Nin",
+      "Cột cờ Hà Nội",
+      "Con đường Gốm sứ bên hồ Tây",
+      "Ngoài ra còn rất nhiều bảo tàng, các khu đô thị mới, công trình hiện đại phát triển mạnh mẽ sau sáp nhập như khu Thủy Nguyên, Bắc Sông Cấm"
+    ]
+  },
+  "ketLuan": {
+    "title": "Kết luận",
+    "description": "Hà Nội sau sáp nhập không chỉ giữ vững nền tảng lịch sử văn hóa nghìn năm mà còn phát triển mạnh mẽ về kinh tế, hạ tầng và đô thị hiện đại. Thành phố vừa là thủ đô chính trị, trung tâm văn hóa – giáo dục, vừa là điểm đến hấp dẫn cho du khách trong nước và quốc tế với ẩm thực tinh tế và nhiều danh lam thắng cảnh đa dạng."
+  }
+} 

@@ -113,237 +113,153 @@ class _ProvinceDetailWidgetState extends State<ProvinceDetailWidget> {
   }
 
   Widget _buildDetailedInfo() {
-    final overview = _provinceData!['overview'];
-    final geography = _provinceData!['geography'];
-    final culture = _provinceData!['culture'];
-    final economy = _provinceData!['economy'];
-    final history = _provinceData!['history'];
-    final tourism = _provinceData!['tourism'];
-    final transportation = _provinceData!['transportation'];
-    final education = _provinceData!['education'];
-    final facts = _provinceData!['facts'] as List<dynamic>;
+    if (_provinceData == null) return _buildBasicInfo();
 
-    return ListView(
+    final overview = _provinceData!['overview'] as Map<String, dynamic>?;
+    final sapNhap2025 = _provinceData!['sapNhap2025'] as Map<String, dynamic>?;
+    final lichSu = _provinceData!['lichSu'] as Map<String, dynamic>?;
+    final vanHoa = _provinceData!['vanHoa'] as Map<String, dynamic>?;
+    final amThuc = _provinceData!['amThuc'] as Map<String, dynamic>?;
+    final diaDanh = _provinceData!['diaDanh'] as Map<String, dynamic>?;
+    final ketLuan = _provinceData!['ketLuan'] as Map<String, dynamic>?;
+
+    return SingleChildScrollView(
       padding: const EdgeInsets.all(16),
-      children: [
-        // Header với title
-        Container(
-          padding: const EdgeInsets.all(16),
-          decoration: BoxDecoration(
-            color: Colors.white.withValues(alpha: 0.9),
-            borderRadius: BorderRadius.circular(16),
-            boxShadow: AppTheme.softShadow,
-          ),
-          child: Column(
-            crossAxisAlignment: CrossAxisAlignment.start,
-            children: [
-              Text(
-                overview['title'] ?? widget.provinceName,
-                style: Theme.of(context).textTheme.titleLarge?.copyWith(
-                  color: AppTheme.textPrimary,
-                  fontWeight: FontWeight.bold,
-                ),
-              ),
-              const SizedBox(height: 8),
-              Text(
-                overview['description'] ?? '',
-                style: Theme.of(context).textTheme.bodyMedium?.copyWith(
-                  color: AppTheme.textSecondary,
-                ),
-              ),
-            ],
-          ),
-        ).animate().fadeIn(duration: 300.ms).slideY(begin: 0.2, end: 0),
-
-        const SizedBox(height: 16),
-
-        // Button hiển thị Gallery
-        Container(
-          width: double.infinity,
-          child: ElevatedButton.icon(
-            onPressed: () => _showFullScreenGallery(_getGalleryImages(), 0),
-            icon: const Icon(Icons.photo_library, size: 20),
-            label: const Text('Xem Gallery ảnh'),
-            style: ElevatedButton.styleFrom(
-              backgroundColor: AppTheme.primaryOrange,
-              foregroundColor: Colors.white,
-              padding: const EdgeInsets.symmetric(vertical: 12),
-              shape: RoundedRectangleBorder(
-                borderRadius: BorderRadius.circular(12),
-              ),
-            ),
-          ),
-        ).animate().fadeIn(duration: 300.ms).slideY(begin: 0.2, end: 0),
-
-        const SizedBox(height: 16),
-
-        // Địa lý
-        if (geography != null) ...[
-          _buildInfoCard(
-            'Địa lý',
-            Icons.location_on,
-            [
-              'Vị trí: ${geography['location'] ?? 'N/A'}',
-              'Địa hình: ${geography['terrain'] ?? 'N/A'}',
-              'Khí hậu: ${geography['climate'] ?? 'N/A'}',
-              'Tài nguyên: ${geography['natural_resources'] ?? 'N/A'}',
-              if (geography['administrative_units'] != null) ...[
-                'Đơn vị hành chính: ${geography['administrative_units']['total'] ?? 'N/A'}',
-                if (geography['administrative_units']['details'] != null)
-                  ...(geography['administrative_units']['details'] as List<dynamic>).map((detail) => '  - $detail'),
-              ],
-            ],
-          ),
-          const SizedBox(height: 16),
-        ],
-
-        // Kinh tế
-        if (economy != null) ...[
-          _buildInfoCard(
-            'Kinh tế',
-            Icons.business,
-            [
-              'GRDP: ${economy['grdp'] ?? 'N/A'}',
-              'Thu ngân sách: ${economy['budget_revenue'] ?? 'N/A'}',
-              if (economy['key_industries'] != null) ...[
-                'Ngành kinh tế chính:',
-                ...(economy['key_industries'] as List<dynamic>).map((industry) => '  - $industry'),
-              ],
-              if (economy['infrastructure'] != null) ...[
-                'Hạ tầng:',
-                ...(economy['infrastructure'] as List<dynamic>).map((infra) => '  - $infra'),
-              ],
-            ],
-          ),
-          const SizedBox(height: 16),
-        ],
-
-        // Lịch sử
-        if (history != null) ...[
-          _buildInfoCard(
-            'Lịch sử',
-            Icons.history,
-            [
-              'Thời kỳ cổ đại: ${history['ancient_period'] ?? 'N/A'}',
-              'Thời Pháp thuộc: ${history['french_colonial'] ?? 'N/A'}',
-              'Phát triển hiện đại: ${history['modern_development'] ?? 'N/A'}',
-              'Trước sáp nhập: ${history['pre_merger'] ?? 'N/A'}',
-              'Sau sáp nhập 2025: ${history['post_merger_2025'] ?? 'N/A'}',
-            ],
-          ),
-          const SizedBox(height: 16),
-        ],
-
-        // Văn hóa
-        if (culture != null) ...[
-          _buildInfoCard(
-            'Văn hóa',
-            Icons.theater_comedy,
-            [
-              if (culture['heritage'] != null) ...[
-                'Di sản:',
-                ...(culture['heritage'] as List<dynamic>).map((heritage) => '  - $heritage'),
-              ],
-              if (culture['festivals'] != null) ...[
-                'Lễ hội:',
-                ...(culture['festivals'] as List<dynamic>).map((festival) => '  - $festival'),
-              ],
-              if (culture['traditional_arts'] != null) ...[
-                'Nghệ thuật truyền thống:',
-                ...(culture['traditional_arts'] as List<dynamic>).map((art) => '  - $art'),
-              ],
-              if (culture['craft_villages'] != null) ...[
-                'Làng nghề:',
-                ...(culture['craft_villages'] as List<dynamic>).map((village) => '  - $village'),
-              ],
-            ],
-          ),
-          const SizedBox(height: 16),
-
-          // Ẩm thực
-          if (culture['famous_foods'] != null) ...[
+      child: Column(
+        children: [
+          // Overview
+          if (overview != null) ...[
             _buildInfoCard(
-              'Ẩm thực',
-              Icons.restaurant,
-              (culture['famous_foods'] as List<dynamic>).map((food) => food.toString()).toList(),
+              overview['title'] ?? 'Tổng quan',
+              Icons.info_outline,
+              [
+                overview['description'] ?? 'N/A',
+                'Diện tích: ${overview['area'] ?? 'N/A'}',
+                'Dân số: ${overview['population'] ?? 'N/A'}',
+                'Vùng: ${overview['region'] ?? 'N/A'}',
+                'Loại: ${overview['type'] ?? 'N/A'}',
+                'Biệt danh: ${overview['nickname'] ?? 'N/A'}',
+              ],
             ),
             const SizedBox(height: 16),
           ],
-        ],
 
-        // Du lịch
-        if (tourism != null) ...[
-          _buildInfoCard(
-            'Du lịch',
-            Icons.beach_access,
-            [
-              if (tourism['famous_landmarks'] != null) ...[
-                'Địa danh nổi tiếng:',
-                ...(tourism['famous_landmarks'] as List<dynamic>).map((landmark) => '  - $landmark'),
+          // Sáp nhập 2025
+          if (sapNhap2025 != null) ...[
+            _buildInfoCard(
+              sapNhap2025['title'] ?? 'Sáp nhập 2025',
+              Icons.merge_type,
+              [
+                sapNhap2025['description'] ?? 'N/A',
+                if (sapNhap2025['details'] != null) ...[
+                  '',
+                  'Chi tiết:',
+                  ...(sapNhap2025['details'] as List<dynamic>).map((detail) => '  • $detail'),
+                ],
               ],
-              if (tourism['beaches_islands'] != null) ...[
-                'Biển đảo:',
-                ...(tourism['beaches_islands'] as List<dynamic>).map((beach) => '  - $beach'),
-              ],
-              'Đặc điểm: ${tourism['attractions'] ?? 'N/A'}',
-            ],
-          ),
-          const SizedBox(height: 16),
-        ],
+            ),
+            const SizedBox(height: 16),
+          ],
 
-        // Giao thông
-        if (transportation != null) ...[
-          _buildInfoCard(
-            'Giao thông',
-            Icons.directions_car,
-            [
-              if (transportation['ports'] != null) ...[
-                'Cảng biển:',
-                ...(transportation['ports'] as List<dynamic>).map((port) => '  - $port'),
+          // Lịch sử
+          if (lichSu != null) ...[
+            _buildInfoCard(
+              lichSu['title'] ?? 'Lịch sử',
+              Icons.history,
+              [
+                lichSu['description'] ?? 'N/A',
+                if (lichSu['details'] != null) ...[
+                  '',
+                  'Chi tiết:',
+                  ...(lichSu['details'] as List<dynamic>).map((detail) => '  • $detail'),
+                ],
               ],
-              if (transportation['airports'] != null) ...[
-                'Sân bay:',
-                ...(transportation['airports'] as List<dynamic>).map((airport) => '  - $airport'),
-              ],
-              if (transportation['highways'] != null) ...[
-                'Đường cao tốc:',
-                ...(transportation['highways'] as List<dynamic>).map((highway) => '  - $highway'),
-              ],
-              if (transportation['railways'] != null) ...[
-                'Đường sắt:',
-                ...(transportation['railways'] as List<dynamic>).map((railway) => '  - $railway'),
-              ],
-            ],
-          ),
-          const SizedBox(height: 16),
-        ],
+            ),
+            const SizedBox(height: 16),
+          ],
 
-        // Giáo dục
-        if (education != null) ...[
-          _buildInfoCard(
-            'Giáo dục',
-            Icons.school,
-            [
-              if (education['universities'] != null) ...[
-                'Đại học:',
-                ...(education['universities'] as List<dynamic>).map((university) => '  - $university'),
+          // Văn hóa
+          if (vanHoa != null) ...[
+            _buildInfoCard(
+              vanHoa['title'] ?? 'Văn hóa',
+              Icons.theater_comedy,
+              [
+                vanHoa['description'] ?? 'N/A',
+                if (vanHoa['details'] != null) ...[
+                  '',
+                  'Chi tiết:',
+                  ...(vanHoa['details'] as List<dynamic>).map((detail) => '  • $detail'),
+                ],
               ],
-              if (education['research_institutes'] != null) ...[
-                'Viện nghiên cứu:',
-                ...(education['research_institutes'] as List<dynamic>).map((institute) => '  - $institute'),
-              ],
-            ],
-          ),
-          const SizedBox(height: 16),
-        ],
+            ),
+            const SizedBox(height: 16),
+          ],
 
-        // Sự kiện thú vị
-        _buildInfoCard(
-          'Sự kiện thú vị',
-          Icons.star,
-          facts.map((fact) => fact.toString()).toList(),
-        ),
-      ],
+          // Ẩm thực
+          if (amThuc != null) ...[
+            _buildInfoCard(
+              amThuc['title'] ?? 'Ẩm thực',
+              Icons.restaurant,
+              [
+                amThuc['description'] ?? 'N/A',
+                if (amThuc['details'] != null) ...[
+                  '',
+                  'Các món ăn:',
+                  ...(amThuc['details'] as List<dynamic>).map((detail) => '  • $detail'),
+                ],
+              ],
+            ),
+            const SizedBox(height: 16),
+          ],
+
+          // Địa danh
+          if (diaDanh != null) ...[
+            _buildInfoCard(
+              diaDanh['title'] ?? 'Địa danh nổi bật',
+              Icons.place,
+              [
+                diaDanh['description'] ?? 'N/A',
+                if (diaDanh['details'] != null) ...[
+                  '',
+                  'Các địa danh:',
+                  ...(diaDanh['details'] as List<dynamic>).map((detail) => '  • $detail'),
+                ],
+              ],
+            ),
+            const SizedBox(height: 16),
+          ],
+
+          // Kết luận
+          if (ketLuan != null) ...[
+            _buildInfoCard(
+              ketLuan['title'] ?? 'Kết luận',
+              Icons.summarize,
+              [
+                ketLuan['description'] ?? 'N/A',
+              ],
+            ),
+            const SizedBox(height: 16),
+          ],
+
+          // Button hiển thị Gallery
+          Container(
+            width: double.infinity,
+            child: ElevatedButton.icon(
+              onPressed: () => _showFullScreenGallery(_getGalleryImages(), 0),
+              icon: const Icon(Icons.photo_library, size: 20),
+              label: const Text('Xem Gallery ảnh'),
+              style: ElevatedButton.styleFrom(
+                backgroundColor: AppTheme.primaryOrange,
+                foregroundColor: Colors.white,
+                padding: const EdgeInsets.symmetric(vertical: 12),
+                shape: RoundedRectangleBorder(
+                  borderRadius: BorderRadius.circular(12),
+                ),
+              ),
+            ),
+          ).animate().fadeIn(duration: 300.ms).slideY(begin: 0.2, end: 0),
+        ],
+      ),
     );
   }
 

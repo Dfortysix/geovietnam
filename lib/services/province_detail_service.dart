@@ -38,13 +38,50 @@ class ProvinceDetailService {
     return detail?['overview'];
   }
 
+  /// Load thông tin sáp nhập 2025
+  static Future<Map<String, dynamic>?> getProvinceSapNhap2025(String provinceId) async {
+    final detail = await getProvinceDetail(provinceId);
+    return detail?['sapNhap2025'];
+  }
+
+  /// Load thông tin lịch sử
+  static Future<Map<String, dynamic>?> getProvinceLichSu(String provinceId) async {
+    final detail = await getProvinceDetail(provinceId);
+    return detail?['lichSu'];
+  }
+
+  /// Load thông tin văn hóa
+  static Future<Map<String, dynamic>?> getProvinceVanHoa(String provinceId) async {
+    final detail = await getProvinceDetail(provinceId);
+    return detail?['vanHoa'];
+  }
+
+  /// Load thông tin ẩm thực
+  static Future<Map<String, dynamic>?> getProvinceAmThuc(String provinceId) async {
+    final detail = await getProvinceDetail(provinceId);
+    return detail?['amThuc'];
+  }
+
+  /// Load thông tin địa danh
+  static Future<Map<String, dynamic>?> getProvinceDiaDanh(String provinceId) async {
+    final detail = await getProvinceDetail(provinceId);
+    return detail?['diaDanh'];
+  }
+
+  /// Load thông tin kết luận
+  static Future<Map<String, dynamic>?> getProvinceKetLuan(String provinceId) async {
+    final detail = await getProvinceDetail(provinceId);
+    return detail?['ketLuan'];
+  }
+
+  // Các method cũ để tương thích ngược
   /// Load thông tin địa lý
   static Future<Map<String, dynamic>?> getProvinceGeography(String provinceId) async {
     final detail = await getProvinceDetail(provinceId);
     return detail?['geography'];
   }
 
-  /// Load thông tin văn hóa
+  /// Load thông tin văn hóa (cũ)
   static Future<Map<String, dynamic>?> getProvinceCulture(String provinceId) async {
     final detail = await getProvinceDetail(provinceId);
     return detail?['culture'];
@@ -56,7 +93,7 @@ class ProvinceDetailService {
     return detail?['economy'];
   }
 
-  /// Load thông tin lịch sử
+  /// Load thông tin lịch sử (cũ)
   static Future<Map<String, dynamic>?> getProvinceHistory(String provinceId) async {
     final detail = await getProvinceDetail(provinceId);
     return detail?['history'];
@@ -120,6 +157,6 @@ class ProvinceDetailService {
     // Có thể implement để load danh sách từ một file index
     // Hoặc scan thư mục assets/data/provinces/
     // Tạm thời return danh sách hardcode
-    return ['hai_phong']; // Thêm các tỉnh khác khi có file JSON
+    return ['hai_phong', 'ha_noi']; // Thêm các tỉnh khác khi có file JSON
   }
 } 
