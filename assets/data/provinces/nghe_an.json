@@ -1,0 +1,72 @@
+{
+  "id": "Nghe An",
+  "nameVietnamese": "Nghệ An",
+  "overview": {
+    "title": "Vùng Đất Địa Linh Nhân Kiệt Miền Trung",
+    "description": "Nghệ An là tỉnh lớn thuộc vùng Bắc Trung Bộ, nổi tiếng với truyền thống cách mạng, nhiều danh nhân văn hóa lịch sử, đa dạng văn hóa các dân tộc và cảnh quan thiên nhiên phong phú. Sau sắp xếp hành chính năm 2025, tỉnh vận hành theo mô hình chính quyền hai cấp gồm tỉnh và xã/phường, với bộ máy tinh gọn, phát triển kinh tế - xã hội đồng bộ và nâng cao hiệu quả phục vụ người dân.",
+    "area": "16.500 km²",
+    "population": "3.470.000 người (2025)",
+    "region": "Bắc Trung Bộ",
+    "type": "Tỉnh",
+    "nickname": "Địa linh nhân kiệt"
+  },
+  "sapNhap2025": {
+    "title": "Nghệ An sau sáp nhập 2025",
+    "description": "Từ ngày 1/7/2025, tỉnh Nghệ An thực hiện tinh gọn bộ máy hành chính theo mô hình chính quyền hai cấp (tỉnh và xã/phường) không còn cấp quận, huyện trung gian. Tỉnh có tổng cộng 130 đơn vị hành chính cấp xã mới, gồm 119 xã và 11 phường, được sáp nhập và tổ chức lại để nâng cao hiệu quả quản lý và phục vụ người dân.",
+    "details": [
+      "Loại bỏ cấp quận, huyện, xã/phường trực thuộc tỉnh quản lý trực tiếp.",
+      "Có 130 đơn vị hành chính cấp xã (119 xã và 11 phường).",
+      "Các xã, phường mới được thành lập từ sáp nhập các xã/phường cũ theo Nghị quyết 1678/NQ-UBTVQH15 năm 2025.",
+      "Bộ máy tổ chức cấp xã gồm các phòng chuyên môn: Văn phòng HĐND và UBND, Phòng Kinh tế hoặc Kinh tế – Hạ tầng và Đô thị, Phòng Văn hóa – Xã hội.",
+      "Chủ tịch UBND cấp xã được giao quyền hạn và trách nhiệm điều hành trực tiếp, tinh gọn và nâng cao năng lực phục vụ người dân."
+    ]
+  },
+  "lichSu": {
+    "title": "Lịch sử hình thành và phát triển Nghệ An",
+    "description": "Nghệ An có lịch sử lâu đời với nhiều thời kỳ chiến tranh và phát triển văn hóa, là vùng đất địa linh nhân kiệt với nhiều danh nhân nổi tiếng từ thời cổ đại đến hiện đại.",
+    "details": [
+      "Nghệ An là vùng đất cổ thuộc nước Việt Thường, nằm trong vùng lịch sử Văn Lang.",
+      "Thời nhà Lý – Trần, là nơi phát triển các khu thành trì và phong trào kháng chiến.",
+      "Trong lịch sử phong kiến, Nghệ An chịu ảnh hưởng sâu sắc văn hóa và chính trị Đại Việt.",
+      "Xứ Nghệ từng là vùng chiến trường và trung tâm cách mạng trong các cuộc kháng chiến chống Pháp, Mỹ và là quê hương Chủ tịch Hồ Chí Minh.",
+      "Sau năm 1975 đến nay phát triển kinh tế, văn hóa, giáo dục, trở thành tỉnh có diện tích lớn, dân số đông và phát triển đa ngành."
+    ]
+  },
+  "vanHoa": {
+    "title": "Văn hóa Nghệ An – Đặc sắc và phong phú",
+    "description": "Nghệ An sở hữu nền văn hóa đa dạng, phong phú với nhiều di sản văn hóa phi vật thể, lễ hội truyền thống, các nghệ thuật dân gian và làng nghề đặc sắc phản ánh đặc trưng vùng miền và dân tộc.",
+    "details": [
+      "Lưu giữ hơn 500 di sản văn hóa phi vật thể như dân ca ví, giặm, ca trù và các phong tục tập quán dân tộc.",
+      "Có nhiều lễ hội truyền thống tiêu biểu như lễ hội đền Cờn, đền Thanh Liệt, lễ hội đền Ông Hoàng Mười, lễ hội đền Quả Sơn, lễ Xăng Khan, có 9 di sản được công nhận quốc gia.",
+      "Nghệ thuật truyền thống gồm dân ca ví, giặm, nghệ thuật ca trù và nhiều hình thức biểu diễn dân gian đặc sắc.",
+      "Phát triển làng nghề truyền thống kết hợp du lịch cộng đồng.",
+      "Bảo tồn và phát huy giá trị văn hóa đa dân tộc miền Trung."
+    ]
+  },
+  "amThuc": {
+    "title": "Ẩm thực Nghệ An – Hương vị đặc trưng miền Trung",
+    "description": "Ẩm thực Nghệ An đa dạng và độc đáo với nhiều món ăn nổi tiếng mang đậm dấu ấn miền Trung và văn hóa vùng xứ Nghệ.",
+    "details": [
+      "Nem lụi Nghệ An – món ăn đặc sản nức tiếng được làm từ thịt heo xay, nướng trên que tre, ăn kèm rau sống và nước chấm.",
+      "Súp lươn và miến lươn – những món ngon bổ dưỡng được ưa chuộng tại địa phương.",
+      "Bánh đa xúc hến – bánh đa mỏng, hến tươi xào thơm ngon, đặc biệt được người dân và du khách yêu thích.",
+      "Giò bê Nghệ An – giò làm từ thịt bê tươi, ướp gia vị đặc trưng, hấp dẫn trong các dịp lễ tết.",
+      "Nhiều món ăn khác như cháo lươn, bánh mướt, thịt me, tương Nam Đàn đặc sắc."
+    ]
+  },
+  "diaDanh": {
+    "title": "Địa danh nổi tiếng Nghệ An",
+    "description": "Nghệ An có nhiều địa danh lịch sử, văn hóa và thắng cảnh thiên nhiên nổi bật, thu hút khách du lịch trong và ngoài nước.",
+    "details": [
+      "Khu di tích Kim Liên – khu sinh thái và tưởng niệm quê nhà Chủ tịch Hồ Chí Minh tại xã Kim Liên, huyện Nam Đàn.",
+      "Thành cổ Vinh – công trình lịch sử, kiến trúc cổ kính tại trung tâm thành phố Vinh.",
+      "Đền thờ Ông Hoàng Mười – đền linh thiêng và nổi tiếng thờ vị thần bảo hộ địa phương.",
+      "Đền Cờn ở thị xã Hoàng Mai – công trình văn hóa truyền thống với cảnh quan trang nghiêm.",
+      "Các địa điểm du lịch sinh thái như biển Cửa Lò, đồi chè Thanh Chương, đảo Lan Châu, cánh đồng hoa hướng dương, bảo tàng Nghệ An."
+    ]
+  },
+  "ketLuan": {
+    "title": "Tổng kết về Nghệ An sau sáp nhập",
+    "description": "Sau sáp nhập và tinh gọn bộ máy hành chính năm 2025, Nghệ An tiếp tục phát huy vai trò là tỉnh đa dạng văn hóa, giàu truyền thống lịch sử, phát triển kinh tế - xã hội ổn định. Tỉnh giữ vững vị thế địa linh nhân kiệt, đồng thời mở rộng và nâng cao hiệu quả quản lý, phục vụ người dân theo mô hình chính quyền hai cấp hiện đại."
+  }
+}
