@@ -1,0 +1,72 @@
+{
+  "id": "Ninh Binh",
+  "nameVietnamese": "Ninh Bình",
+  "overview": {
+    "title": "Vùng Đất Di Sản và Phát Triển Đồng Bằng Sông Hồng",
+    "description": "Ninh Bình là tỉnh thuộc vùng đồng bằng sông Hồng, nổi bật với nhiều di tích lịch sử, danh lam thắng cảnh nổi tiếng như Quần thể Tràng An - Di sản Văn hóa và Thiên nhiên Thế giới. Sau sáp nhập với các tỉnh Hà Nam và Nam Định năm 2025, Ninh Bình mở rộng diện tích và dân số, phát triển đồng bộ về kinh tế - văn hóa - xã hội với mô hình chính quyền hai cấp tinh gọn, hiệu quả quản lý được nâng cao.",
+    "area": "3.942,6 km²",
+    "population": "4.412.264 người (2025)",
+    "region": "Đồng bằng sông Hồng",
+    "type": "Tỉnh",
+    "nickname": "Vùng đất di sản và phát triển bền vững"
+  },
+  "sapNhap2025": {
+    "title": "Ninh Bình sau sáp nhập 2025",
+    "description": "Ngày 1/7/2025, tỉnh Ninh Bình đã hợp nhất với hai tỉnh Hà Nam và Nam Định theo Nghị quyết số 60/NQ-TW, mở rộng diện tích và dân số. Tỉnh thực hiện sắp xếp đơn vị hành chính cấp xã theo mô hình chính quyền hai cấp, bỏ cấp quận/huyện trung gian, với tổng cộng 129 đơn vị xã/phường được tổ chức lại nhằm tinh gọn bộ máy, nâng cao hiệu quả quản lý.",
+    "details": [
+      "Sáp nhập tỉnh Hà Nam, Nam Định và Ninh Bình thành tỉnh Ninh Bình mới với diện tích 3.942,6 km² và dân số hơn 4,4 triệu người.",
+      "Trung tâm chính trị và hành chính đặt tại tỉnh Ninh Bình hiện nay.",
+      "Tỉnh có tổng cộng 129 đơn vị hành chính cấp xã, gồm 97 xã và 32 phường được tổ chức lại từ các xã, phường cũ sau sáp nhập.",
+      "Áp dụng mô hình chính quyền địa phương hai cấp gồm tỉnh và xã/phường trực thuộc tỉnh, bãi bỏ cấp huyện/quận trung gian.",
+      "Việc sắp xếp nhằm tinh giản bộ máy hành chính, phát triển đô thị hiện đại, nâng cao hiệu quả phục vụ người dân và phát triển kinh tế bền vững."
+    ]
+  },
+  "lichSu": {
+    "title": "Lịch sử hình thành và phát triển Ninh Bình",
+    "description": "Ninh Bình là tỉnh có lịch sử lâu đời với nhiều di tích văn hóa, lịch sử nổi bật và là vùng đất có vai trò quan trọng trong các giai đoạn phát triển của khu vực đồng bằng sông Hồng.",
+    "details": [
+      "Là vùng đất cổ với nhiều di tích lịch sử từ các thời kỳ phong kiến đến hiện đại.",
+      "Sở hữu các di tích nổi bật như Cố đô Hoa Lư, nhiều địa danh gắn liền với lịch sử dân tộc.",
+      "Trải qua nhiều thay đổi trong lịch sử hành chính và phát triển kinh tế - văn hóa.",
+      "Sau khi sáp nhập với Hà Nam và Nam Định, tỉnh có đa dạng văn hóa và lịch sử vùng đồng bằng quy mô lớn hơn.",
+      "Phát triển kinh tế nông nghiệp, công nghiệp, du lịch và dịch vụ gắn với bảo tồn di sản."
+    ]
+  },
+  "vanHoa": {
+    "title": "Văn hóa Ninh Bình – Đậm đà bản sắc đồng bằng",
+    "description": "Ninh Bình là vùng đất văn hóa đặc sắc với nhiều lễ hội truyền thống, làng nghề thủ công, cùng các giá trị văn hóa phi vật thể được duy trì và phát triển mạnh mẽ.",
+    "details": [
+      "Lễ hội chùa Bái Đính, lễ hội Tràng An, và nhiều lễ hội văn hóa dân gian thu hút đông đảo du khách.",
+      "Các làng nghề truyền thống như làm đúc đồng, thủ công mỹ nghệ, chế biến nông sản.",
+      "Giữ gìn và phát huy nghệ thuật hát chèo, ca trù và các môn nghệ thuật dân gian.",
+      "Phát triển du lịch văn hóa cộng đồng, bảo tồn các di sản văn hóa truyền thống độc đáo.",
+      "Hệ thống di tích và lễ hội tạo nên nền văn hóa đặc sắc, đa dạng và độc đáo."
+    ]
+  },
+  "amThuc": {
+    "title": "Ẩm thực Ninh Bình – Hương vị đồng bằng sông Hồng",
+    "description": "Ẩm thực Ninh Bình nổi bật với những món ăn dân gian truyền thống vùng đồng bằng, sử dụng nguyên liệu địa phương phong phú, mang đậm hương vị đặc trưng của miền Bắc Việt Nam.",
+    "details": [
+      "Các món đặc sản như cơm cháy Ninh Bình, dê núi, thịt trâu gác bếp.",
+      "Các món ăn từ nông sản địa phương như cá rô đồng, rau củ quả vùng đồng bằng.",
+      "Ẩm thực truyền thống trong các dịp lễ hội với bánh đa nem, bánh gio, bánh cuốn.",
+      "Món ăn kết hợp giữa nét truyền thống và sự phát triển hiện đại trong du lịch ẩm thực.",
+      "Phát triển các món ăn địa phương phục vụ du lịch, góp phần nâng cao giá trị ẩm thực."
+    ]
+  },
+  "diaDanh": {
+    "title": "Địa danh nổi tiếng Ninh Bình",
+    "description": "Ninh Bình sở hữu nhiều danh lam thắng cảnh và di tích lịch sử nổi bật như Quần thể danh thắng Tràng An, Tam Cốc - Bích Động và Cố đô Hoa Lư, thu hút lượng khách du lịch lớn trong và ngoài nước.",
+    "details": [
+      "Quần thể danh thắng Tràng An – Di sản Văn hóa và Thiên nhiên Thế giới với cảnh quan núi non và sông nước tuyệt đẹp.",
+      "Cố đô Hoa Lư – kinh đô đầu tiên của Đại Việt với nhiều di tích lịch sử lâu đời.",
+      "Khu du lịch sinh thái Tam Cốc – Bích Động với hệ thống hang động và cánh đồng lúa xanh mướt.",
+      "Chùa Bái Đính – ngôi chùa lớn nhất Việt Nam với kiến trúc hiện đại và tâm linh độc đáo.",
+      "Nhiều địa điểm du lịch văn hóa và thiên nhiên khác như Vân Long, đầm Vân Long và các vùng sinh thái đa dạng."
+    ]
+  },
+  "ketLuan": {
+    "title": "Tổng kết về Ninh Bình sau sáp nhập",
+    "description": "Sau sáp nhập các tỉnh Hà Nam và Nam Định vào năm 2025, Ninh Bình trở thành tỉnh có quy mô lớn với diện tích, dân số và tiềm năng phát triển kinh tế, văn hóa, xã hội nổi bật trong vùng đồng bằng sông Hồng. Với mô hình chính quyền hai cấp, tỉnh tiếp tục tập trung phát triển bền vững, bảo tồn các giá trị di sản văn hóa và thiên nhiên đồng thời mở rộng các ngành công nghiệp, dịch vụ và du lịch."
+  }
+}
