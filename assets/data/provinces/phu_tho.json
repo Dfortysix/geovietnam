@@ -1,0 +1,72 @@
+{
+  "id": "Phu Tho",
+  "nameVietnamese": "Phú Thọ",
+  "overview": {
+    "title": "Vùng Đất Tổ Cội Nguồn Của Dân Tộc Việt Nam",
+    "description": "Phú Thọ là tỉnh trung du miền núi phía Bắc, nơi hợp lưu của ba con sông lớn và là cái nôi tín ngưỡng thờ cúng Hùng Vương - di sản văn hóa phi vật thể được UNESCO vinh danh. Sau sáp nhập 2025 gồm ba tỉnh Phú Thọ, Vĩnh Phúc và Hòa Bình, tỉnh có quy mô diện tích và dân số mở rộng, trung tâm hành chính đặt tại thành phố Việt Trì, với tổ chức bộ máy hành chính tinh gọn, đô thị và kinh tế phát triển đa dạng.",
+    "area": "9.361,38 km²",
+    "population": "4.022.638 người (2025)",
+    "region": "Trung du và miền núi Bắc Bộ",
+    "type": "Tỉnh",
+    "nickname": "Vùng đất tổ, cội nguồn dân tộc"
+  },
+  "sapNhap2025": {
+    "title": "Phú Thọ mới sau sáp nhập 2025",
+    "description": "Ngày 1/7/2025, tỉnh Phú Thọ mới thành lập trên cơ sở hợp nhất toàn bộ diện tích, dân số của ba tỉnh Phú Thọ, Vĩnh Phúc và Hòa Bình. Trung tâm hành chính tiếp tục đặt tại thành phố Việt Trì. Bộ máy tổ chức chính quyền áp dụng mô hình hai cấp gồm tỉnh và xã/phường, loại bỏ cấp huyện/quận, với tổng số 148 đơn vị hành chính cấp xã được tổ chức lại, tinh gọn để nâng cao hiệu quả quản lý và phục vụ nhân dân.",
+    "details": [
+      "Sáp nhập ba tỉnh Phú Thọ, Vĩnh Phúc và Hòa Bình thành tỉnh Phú Thọ mới với diện tích gần 9.361 km² và hơn 4 triệu dân.",
+      "Trung tâm chính trị và hành chính đặt tại thành phố Việt Trì, sử dụng các cơ sở hiện hữu để đảm bảo công tác lãnh đạo, điều hành.",
+      "Tổ chức chính quyền hai cấp với 148 đơn vị hành chính cấp xã (133 xã và 15 phường).",
+      "Bổ sung cải cách hành chính, chuyển đổi số và xây dựng chính quyền số, thúc đẩy phát triển đô thị, công nghiệp, du lịch và dịch vụ.",
+      "Mục tiêu phát triển thành vùng kinh tế trọng điểm, kết nối các giá trị văn hóa và sinh thái của khu vực trung du và miền núi phía Bắc."
+    ]
+  },
+  "lichSu": {
+    "title": "Lịch sử tỉnh Phú Thọ",
+    "description": "Phú Thọ là vùng đất cổ, có lịch sử lâu đời với nhiều di tích văn hóa, lịch sử quan trọng, là trung tâm tín ngưỡng thờ cúng Hùng Vương – cội nguồn dân tộc Việt Nam.",
+    "details": [
+      "Ngày 8/9/1891 được coi là ngày thành lập tỉnh Phú Thọ (tên gọi trước đó là tỉnh Hưng Hóa).",
+      "Trước sáp nhập, tỉnh gồm nhiều huyện và châu, có vị trí trung tâm giao lưu các vùng đồng bằng và miền núi.",
+      "Thời kỳ lịch sử kéo dài với nhiều sự kiện gắn liền với phát triển văn hóa, cách mạng và tổ chức hành chính.",
+      "Năm 1968, tỉnh được hợp nhất với Vĩnh Phúc thành tỉnh Vĩnh Phú, sau đó tái lập tỉnh Phú Thọ năm 1997.",
+      "2025, tỉnh mới thành lập từ sáp nhập ba tỉnh, tạo bước ngoặt phát triển vùng trung du miền núi."
+    ]
+  },
+  "vanHoa": {
+    "title": "Văn hóa Phú Thọ – Di sản và truyền thống",
+    "description": "Phú Thọ là vùng đất có nền văn hóa đặc sắc với nhiều di sản phi vật thể nổi tiếng, các lễ hội truyền thống lớn và các làng nghề thủ công đa dạng.",
+    "details": [
+      "Tín ngưỡng thờ cúng Hùng Vương – di sản văn hóa phi vật thể được UNESCO vinh danh.",
+      "Các lễ hội đền Hùng hàng năm thu hút hàng triệu người và khách du lịch trong nước, quốc tế.",
+      "Nhiều lễ hội truyền thống khác như hội đền Trù Mật, các làng nghề truyền thống, nghệ thuật hát Xoan.",
+      "Phát triển các hoạt động văn hóa như biểu diễn nghệ thuật truyền thống, bảo tồn các giá trị lịch sử.",
+      "Giao lưu văn hóa và phát triển du lịch cộng đồng gắn với các giá trị di sản và thiên nhiên."
+    ]
+  },
+  "amThuc": {
+    "title": "Ẩm thực Phú Thọ – Đặc trưng vùng Trung du miền núi",
+    "description": "Ẩm thực Phú Thọ phản ánh nét đặc trưng của vùng trung du và miền núi Bắc Bộ với nhiều món ăn đặc sản truyền thống và các sản phẩm địa phương phong phú.",
+    "details": [
+      "Các món ăn gắn với lễ hội đền Hùng như bánh chưng, bánh dày, xôi gấc, chè sen.",
+      "Món cá sông Đà, giò chả truyền thống được chế biến qua nhiều đời.",
+      "Các sản phẩm đặc sản từ rừng và nông nghiệp như măng, rau rừng, thịt trâu, gà đồi.",
+      "Các sản vật địa phương được phát triển trong ẩm thực như mật ong, nem chua, rượu cần.",
+      "Ẩm thực Phú Thọ góp phần quan trọng trong chương trình phát triển du lịch và văn hóa tỉnh."
+    ]
+  },
+  "diaDanh": {
+    "title": "Địa danh nổi tiếng của Phú Thọ",
+    "description": "Phú Thọ sở hữu nhiều di tích lịch sử, danh lam thắng cảnh, văn hóa truyền thống đặc sắc thu hút khách tham quan và nghiên cứu.",
+    "details": [
+      "Khu di tích lịch sử Đền Hùng – nơi thờ các Vua Hùng, trung tâm tín ngưỡng dân tộc Việt.",
+      "Thành cổ Đoan Hùng, chùa Hạ, đền Trù Mật, các khu sinh thái hồ Ao Châu, Ba Bể.",
+      "Các hang động, suối khoáng, khu du lịch sinh thái và danh thắng trải rộng khắp tỉnh.",
+      "Núi Nghĩa Lĩnh – biểu tượng linh thiêng bên dòng sông Lô.",
+      "Làng nghề truyền thống như dệt lanh, gốm sứ, thêu ren đặc sắc."
+    ]
+  },
+  "ketLuan": {
+    "title": "Tổng kết về tỉnh Phú Thọ sau sáp nhập",
+    "description": "Phú Thọ mới sau sáp nhập năm 2025 là vùng đất tổ cội nguồn của dân tộc Việt Nam với quy mô mở rộng về diện tích, dân số và tổ chức hành chính. Tỉnh phát triển theo mô hình chính quyền hai cấp tinh gọn, hiệu quả, phát huy giá trị văn hóa, du lịch di sản, sinh thái và tiềm năng kinh tế vùng trung du miền núi phía Bắc trong thời kỳ đổi mới và hội nhập."
+  }
+}
