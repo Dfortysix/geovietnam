@@ -1,0 +1,72 @@
+{
+  "id": "Ha Tinh",
+  "nameVietnamese": "Hà Tĩnh",
+  "overview": {
+    "title": "Vùng Đất Địa Linh Nhân Kiệt Miền Trung",
+    "description": "Hà Tĩnh là tỉnh thuộc vùng Bắc Trung Bộ, nổi bật với truyền thống văn hóa, lịch sử lâu đời và cảnh quan thiên nhiên đa dạng. Sau sáp nhập và sắp xếp hành chính năm 2025, Hà Tĩnh vận hành theo mô hình chính quyền hai cấp gồm tỉnh và xã/phường với bộ máy tinh gọn, phát triển kinh tế xã hội đồng bộ và nâng cao hiệu quả phục vụ người dân.",
+    "area": "4.938 km²",
+    "population": "1.260.000 người (2025)",
+    "region": "Bắc Trung Bộ",
+    "type": "Tỉnh",
+    "nickname": "Vùng đất địa linh nhân kiệt"
+  },
+  "sapNhap2025": {
+    "title": "Hà Tĩnh sau sáp nhập 2025",
+    "description": "Tỉnh Hà Tĩnh thực hiện sắp xếp các đơn vị hành chính cấp xã theo mô hình chính quyền địa phương hai cấp (tỉnh và xã/phường), loại bỏ cấp quận, huyện trung gian. Số lượng đơn vị hành chính cấp xã giảm từ 209 đơn vị xuống còn 69 đơn vị gồm 60 xã và 9 phường để tinh gọn bộ máy, nâng cao hiệu quả quản lý và phục vụ.",
+    "details": [
+      "Giảm số đơn vị hành chính cấp xã từ 209 xuống còn 69 đơn vị (60 xã và 9 phường).",
+      "Áp dụng mô hình chính quyền hai cấp với xã, phường trực thuộc tỉnh quản lý trực tiếp.",
+      "Bộ máy tổ chức cấp xã gồm các phòng chuyên môn như Văn phòng HĐND và UBND, Phòng Kinh tế hoặc Kinh tế - Hạ tầng và Đô thị, Phòng Văn hóa - Xã hội.",
+      "Chủ tịch UBND cấp xã có quyền hạn và trách nhiệm điều hành trực tiếp, bộ máy tinh gọn, nâng cao hiệu quả phục vụ người dân.",
+      "Việc sắp xếp xã, phường được thực hiện trên cơ sở hợp nhất các xã, phường nhỏ lại để tạo ra các đơn vị đủ quy mô, tăng hiệu quả quản lý."
+    ]
+  },
+  "lichSu": {
+    "title": "Lịch sử hình thành và phát triển Hà Tĩnh",
+    "description": "Hà Tĩnh có lịch sử lâu đời, từng là vùng đất thuộc bộ Cửu Đức thời Văn Lang, là nơi tập trung nhiều di tích lịch sử văn hóa, gắn với phong trào cách mạng và truyền thống anh hùng.",
+    "details": [
+      "Vùng đất thuộc bộ Cửu Đức - một trong 15 bộ của nước Văn Lang, là khu vực văn hóa và lịch sử trọng điểm.",
+      "Năm 1831 vua Minh Mạng thành lập tỉnh Hà Tĩnh trên cơ sở tách hai phủ Hà Hoa và Đức Thọ của trấn Nghệ An.",
+      "Trong lịch sử, Hà Tĩnh là vùng đất có nhiều đóng góp quan trọng trong phong trào kháng chiến và cách mạng Việt Nam.",
+      "Có nhiều di tích lịch sử cấp quốc gia và cấp tỉnh gắn liền với lịch sử dân tộc và văn hóa địa phương.",
+      "Sau năm 1975, Hà Tĩnh phát triển kinh tế xã hội, giữ vững truyền thống địa linh nhân kiệt."
+    ]
+  },
+  "vanHoa": {
+    "title": "Văn hóa Hà Tĩnh – Đặc sắc và bền vững",
+    "description": "Hà Tĩnh có nền văn hóa phong phú với nhiều di sản văn hóa phi vật thể, lễ hội truyền thống và các phong tục, nghệ thuật dân gian đặc sắc, góp phần tạo nên bản sắc riêng của vùng đất địa linh nhân kiệt này.",
+    "details": [
+      "Ca trù, chèo Kiều ở Nghi Xuân, hát sắc bùa ở Kỳ Anh, ví giặm Nghệ Tĩnh là di sản văn hóa phi vật thể đại diện của nhân loại.",
+      "Các lễ hội truyền thống như lễ hội Chùa Hương Tích, lễ hội đua thuyền, lễ hội Đền Chế thắng Phu nhân Nguyễn Thị Bích Châu, và nhiều lễ hội địa phương khác.",
+      "Nhiều làng nghề truyền thống phát triển, đồng thời có hoạt động bảo tồn và phát huy di sản văn hóa cấp quốc gia và địa phương.",
+      "Bản sắc văn hóa được giữ gìn và phát triển qua các hoạt động cộng đồng, lễ hội và giáo dục truyền thống.",
+      "Tỉnh có khoảng 1.800 di tích lịch sử, danh lam thắng cảnh trong đó có gần 650 di tích được xếp hạng cấp quốc gia."
+    ]
+  },
+  "amThuc": {
+    "title": "Ẩm thực Hà Tĩnh – Đậm đà bản sắc miền Trung",
+    "description": "Ẩm thực Hà Tĩnh đa dạng với những món đặc sản đậm đà hương vị, mang nét đặc trưng của vùng đất miền Trung với nguyên liệu phong phú và cách chế biến truyền thống.",
+    "details": [
+      "Mực nhảy Vũng Áng – đặc sản tươi ngon nổi tiếng của vùng biển Hà Tĩnh.",
+      "Cháo canh Hà Tĩnh – món ăn truyền thống với sợi bánh canh dai, nước dùng đậm đà.",
+      "Gỏi cá đục – món ăn đặc sắc của vùng biển Lộc Hà.",
+      "Bún bò Đò Trai – bún to, nước dùng đậm đà hương vị địa phương.",
+      "Các món ăn dân dã khác như ram bánh mướt, chả cá, bánh đa nem, đặc sản chè, bánh cuốn."
+    ]
+  },
+  "diaDanh": {
+    "title": "Địa danh nổi tiếng Hà Tĩnh",
+    "description": "Hà Tĩnh có nhiều danh lam thắng cảnh, di tích lịch sử và điểm du lịch văn hóa nổi bật thu hút du khách trong và ngoài nước.",
+    "details": [
+      "Chùa Hương Tích – danh lam thắng cảnh tâm linh nổi tiếng với kiến trúc cổ kính và khung cảnh thiên nhiên hùng vĩ.",
+      "Ngã ba Đồng Lộc – di tích lịch sử chiến tranh đặc biệt gắn với tinh thần anh hùng của các nữ thanh niên xung phong.",
+      "Núi Hồng Lĩnh – biểu tượng thiên nhiên và văn hóa đặc trưng của Hà Tĩnh.",
+      "Khu di tích Nguyễn Du – tỉnh lưu giữ kỷ vật và di tích của đại thi hào Nguyễn Du.",
+      "Các bãi biển như Thiên Cầm, Hoành Sơn, Xuân Thành với cảnh quan biển đẹp và du lịch phát triển."
+    ]
+  },
+  "ketLuan": {
+    "title": "Tổng kết về Hà Tĩnh sau sáp nhập",
+    "description": "Hà Tĩnh sau sáp nhập và tinh gọn bộ máy hành chính năm 2025 vận hành hiệu quả theo mô hình chính quyền hai cấp, phát huy truyền thống địa linh nhân kiệt, giữ gìn bản sắc văn hóa, phát triển kinh tế xã hội và nâng cao chất lượng phục vụ nhân dân. Tỉnh có tiềm năng lớn về du lịch văn hóa, sinh thái và biển, trở thành điểm đến hấp dẫn khu vực Bắc Trung Bộ."
+  }
+}
