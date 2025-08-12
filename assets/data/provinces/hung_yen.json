@@ -1,0 +1,72 @@
+{
+  "id": "Hung Yen",
+  "nameVietnamese": "Hưng Yên",
+  "overview": {
+    "title": "Vùng Đất Phát Triển Nổi Bật Vùng Đồng Bằng Sông Hồng",
+    "description": "Hưng Yên là tỉnh thuộc vùng đồng bằng sông Hồng, nổi bật với lịch sử văn hóa lâu đời, nền kinh tế phát triển mạnh mẽ, đặc biệt sau sáp nhập với tỉnh Thái Bình năm 2025. Tỉnh có quy mô diện tích và dân số mở rộng, trung tâm chính trị - hành chính đặt tại thành phố Hưng Yên, vận hành theo mô hình chính quyền địa phương hai cấp với bộ máy tinh gọn và hiệu quả quản lý được nâng cao.",
+    "area": "2.514,8 km²",
+    "population": "3.567.943 người (2025)",
+    "region": "Đồng bằng sông Hồng",
+    "type": "Tỉnh",
+    "nickname": "Vùng đất phát triển năng động và giàu truyền thống"
+  },
+  "sapNhap2025": {
+    "title": "Hưng Yên sau sáp nhập Thái Bình 2025",
+    "description": "Ngày 1/7/2025, tỉnh Hưng Yên và tỉnh Thái Bình tiến hành sáp nhập thành tỉnh Hưng Yên mới. Tỉnh tổ chức bộ máy chính quyền theo mô hình hai cấp gồm tỉnh và cấp xã/phường, không còn cấp huyện/quận trung gian. Số lượng đơn vị hành chính cấp xã được sắp xếp lại còn 104 đơn vị gồm 93 xã và 11 phường nhằm nâng cao hiệu quả quản lý và phục vụ người dân.",
+    "details": [
+      "Sáp nhập tỉnh Thái Bình vào tỉnh Hưng Yên, mở rộng diện tích lên 2.514,8 km² và dân số trên 3,5 triệu người.",
+      "Trung tâm chính trị - hành chính đặt tại thành phố Hưng Yên hiện nay.",
+      "Có 104 đơn vị hành chính cấp xã, gồm 93 xã và 11 phường, được tổ chức lại sau sáp nhập.",
+      "Bãi bỏ cấp huyện/quận trung gian, các xã/phường trực thuộc tỉnh quản lý trực tiếp để tinh gọn bộ máy hành chính.",
+      "Phát triển kinh tế, công nghiệp, nông nghiệp và dịch vụ gắn với bảo tồn giá trị văn hóa đặc sắc, nâng cao chất lượng dịch vụ công."
+    ]
+  },
+  "lichSu": {
+    "title": "Lịch sử hình thành và phát triển tỉnh Hưng Yên",
+    "description": "Hưng Yên có truyền thống lịch sử lâu đời, là vùng đất văn hóa giàu truyền thống với nhiều di tích lịch sử quan trọng cùng sự phát triển về kinh tế và giáo dục.",
+    "details": [
+      "Là vùng đất phù sa màu mỡ, có truyền thống canh tác lâu dài và phát triển kinh tế nông nghiệp.",
+      "Trải qua nhiều thời kỳ lịch sử, Hưng Yên giữ vị trí quan trọng trong vùng đồng bằng sông Hồng về văn hóa và chính trị.",
+      "Giai đoạn hiện đại, tỉnh đã phát triển mạnh mẽ về công nghiệp, dịch vụ và đô thị hóa.",
+      "Sau 2025, tỉnh tiếp tục phát huy vai trò trung tâm kinh tế - văn hóa của vùng với bộ máy hành chính tinh gọn.",
+      "Lịch sử gắn liền với các hoạt động đấu tranh cách mạng và phát triển xã hội đa dạng."
+    ]
+  },
+  "vanHoa": {
+    "title": "Văn hóa Hưng Yên – Giàu truyền thống và phát triển",
+    "description": "Hưng Yên sở hữu nhiều giá trị văn hóa truyền thống đặc sắc với các lễ hội vùng và nghệ thuật dân gian đặc trưng vùng đồng bằng Bắc Bộ.",
+    "details": [
+      "Nhiều lễ hội truyền thống được tổ chức như lễ hội Đền Mẫu, lễ hội chùa Dâu, lễ hội Cổ Pháp.",
+      "Nghệ thuật dân gian với hát chèo, hát quan họ, múa rối nước phổ biến trong đời sống văn hóa địa phương.",
+      "Các làng nghề truyền thống phát triển như làm gốm, dệt lụa, nghề mây tre đan.",
+      "Bảo tồn và phát huy các giá trị văn hóa phi vật thể, giao lưu văn hóa trong tỉnh và các địa phương liền kề.",
+      "Phát triển du lịch văn hóa gắn với lịch sử và cảnh quan sinh thái đa dạng."
+    ]
+  },
+  "amThuc": {
+    "title": "Ẩm thực Hưng Yên – Đặc sắc vùng đồng bằng sông Hồng",
+    "description": "Ẩm thực Hưng Yên thể hiện nét tinh tế của vùng đồng bằng Bắc Bộ với nhiều món ăn truyền thống nổi tiếng, nguyên liệu tươi ngon và cách chế biến độc đáo.",
+    "details": [
+      "Các món ăn đặc sản như bánh đa cua, nem chạo, bún thang, bánh răng bừa truyền thống.",
+      "Món hải sản, cá đồng, rau sạch tự nhiên từ hệ sinh thái đồng bằng sông Hồng.",
+      "Các món bánh truyền thống phục vụ lễ hội và ngày thường như bánh cuốn, bánh bèo, bánh gai.",
+      "Phát triển ẩm thực địa phương kết hợp du lịch trải nghiệm văn hóa ẩm thực phong phú.",
+      "Ẩm thực góp phần quan trọng trong chuỗi giá trị du lịch và phát triển kinh tế."
+    ]
+  },
+  "diaDanh": {
+    "title": "Địa danh nổi bật của tỉnh Hưng Yên",
+    "description": "Hưng Yên có nhiều địa danh lịch sử, văn hóa và thắng cảnh thiên nhiên đẹp, tạo thành điểm đến hấp dẫn du khách trong và ngoài nước.",
+    "details": [
+      "Đền Mẫu Cửu Trùng Thiên – di tích tôn giáo quan trọng với kiến trúc cổ kính độc đáo.",
+      "Chùa Dâu – ngôi chùa Phật giáo lâu đời nhất Việt Nam, biểu tượng văn hóa lịch sử.",
+      "Làng cổ Đông Bộ – nét đẹp truyền thống với kiến trúc xưa nguyên bản và văn hóa dân gian.",
+      "Khu du lịch sinh thái Thảo Nguyên Đồng quê – môi trường xanh, sông nước hài hòa, thân thiện.",
+      "Làng nghề truyền thống và các khu đô thị mới phát triển gắn với bảo tồn bản sắc địa phương."
+    ]
+  },
+  "ketLuan": {
+    "title": "Tổng kết về tỉnh Hưng Yên mới sau sáp nhập",
+    "description": "Tỉnh Hưng Yên mới sau sáp nhập với tỉnh Thái Bình năm 2025 trở thành vùng đất có quy mô diện tích và dân số lớn thuộc vùng đồng bằng sông Hồng, đẩy mạnh phát triển kinh tế - xã hội theo mô hình chính quyền hai cấp tinh gọn. Tỉnh tiếp tục phát huy giá trị văn hóa truyền thống, nâng cao hiệu quả quản lý và thúc đẩy phát triển bền vững, trở thành trung tâm kinh tế - văn hóa năng động của khu vực."
+  }
+}
