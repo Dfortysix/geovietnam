@@ -1,0 +1,73 @@
+{
+  "id": "Dien Bien",
+  "nameVietnamese": "Điện Biên",
+  "overview": {
+    "title": "Vùng Đất Chiến Thắng Lịch Sử",
+    "description": "Điện Biên là tỉnh miền núi Tây Bắc, nổi tiếng với chiến thắng Điện Biên Phủ lịch sử năm 1954, có địa hình đa dạng với núi cao, thung lũng và các dân tộc thiểu số phong phú. Sau sáp nhập 2025, Điện Biên vận hành theo mô hình chính quyền hai cấp với bộ máy tinh gọn, phát triển kinh tế - xã hội gắn với bảo tồn văn hóa dân tộc và du lịch sinh thái.",
+    "area": "9.539,93 km²",
+    "population": "673.091 người (2025)",
+    "region": "Tây Bắc Bộ",
+    "type": "Tỉnh",
+    "nickname": "Vùng đất chiến thắng lịch sử"
+  },
+  "sapNhap2025": {
+    "title": "Điện Biên sau sáp nhập 2025",
+    "description": "Từ năm 2025, Điện Biên áp dụng mô hình chính quyền địa phương hai cấp không còn cấp huyện. Tỉnh có 45 đơn vị hành chính cấp xã gồm 3 phường và 42 xã, được tổ chức lại qua sáp nhập và tinh gọn để nâng cao hiệu quả quản lý và phục vụ người dân vùng cao.",
+    "details": [
+      "Bỏ cấp huyện; xã, phường trực thuộc tỉnh",
+      "Có tổng cộng 45 đơn vị hành chính cấp xã (3 phường, 42 xã)",
+      "Bộ máy tổ chức gồm các phòng chuyên môn tại cấp xã như Văn phòng HĐND và UBND, Phòng Kinh tế hoặc Kinh tế – Hạ tầng, Phòng Văn hóa – Xã hội",
+      "Quyền hạn và trách nhiệm của Chủ tịch UBND cấp xã được nâng cao, bộ máy tinh gọn, hiệu quả",
+      "Mục tiêu phát triển kinh tế - xã hội vùng cao, bảo tồn văn hóa dân tộc và phát triển du lịch sinh thái"
+    ]
+  },
+  "lichSu": {
+    "title": "Lịch sử hình thành và phát triển Điện Biên",
+    "description": "Điện Biên có lịch sử lâu đời gắn với các dân tộc thiểu số, từng là vùng đất chiến lược quan trọng và nổi tiếng với chiến thắng Điện Biên Phủ lịch sử năm 1954.",
+    "details": [
+      "Thời cổ đại: Vùng cư trú của các dân tộc Thái, Mông, Dao, Khơ Mú từ hàng nghìn năm",
+      "Thời phong kiến: Là vùng đất biên viễn, có vị trí chiến lược quan trọng",
+      "Thời Pháp thuộc: Pháp xây dựng căn cứ quân sự tại Điện Biên Phủ",
+      "Năm 1954: Chiến thắng Điện Biên Phủ lịch sử, kết thúc thời kỳ Pháp thuộc",
+      "Sau năm 1975: Điện Biên phát triển toàn diện, trở thành tỉnh độc lập từ năm 2004"
+    ]
+  },
+  "vanHoa": {
+    "title": "Văn hóa Điện Biên – Đa dạng dân tộc",
+    "description": "Văn hóa Điện Biên đặc trưng bởi sự đa dạng của các dân tộc thiểu số với lễ hội truyền thống, nghệ thuật dân gian, trang phục và phong tục tập quán độc đáo.",
+    "details": [
+      "Dân tộc thiểu số: Thái, Mông, Dao, Khơ Mú, Lào, Sinh Mun với văn hóa đặc trưng",
+      "Lễ hội truyền thống: Lễ hội Hoa Ban, lễ hội Xên Mường, lễ hội Then Kin Pang, lễ hội cầu mưa",
+      "Nghệ thuật dân gian: Múa xòe Thái, khèn Mông, hát Then, múa sạp, đánh cồng chiêng",
+      "Trang phục truyền thống: Áo cóm Thái, váy Mông, trang phục Dao với hoa văn độc đáo",
+      "Làng nghề: Dệt thổ cẩm, đan lát, làm rượu cần, chế tác nhạc cụ dân tộc"
+    ]
+  },
+  "amThuc": {
+    "title": "Ẩm thực Điện Biên – Hương vị vùng cao",
+    "description": "Ẩm thực Điện Biên đặc trưng bởi các món ăn dân tộc với nguyên liệu tự nhiên, hương vị đậm đà và cách chế biến truyền thống độc đáo.",
+    "details": [
+      "Rượu cần – Đặc sản truyền thống của các dân tộc vùng cao",
+      "Cơm lam, xôi nếp nương, bánh dày, bánh chưng đen",
+      "Thịt trâu gác bếp, thịt lợn cắp nách, gà nướng lá mắc mật",
+      "Cá suối nướng, canh măng chua, rau rừng xào",
+      "Món ăn dân tộc: Pa pỉnh tộp (cá nướng), khau nhục, chẳm chéo"
+    ]
+  },
+  "diaDanh": {
+    "title": "Địa danh nổi tiếng của Điện Biên",
+    "description": "Điện Biên là điểm đến du lịch hấp dẫn với di tích lịch sử, cảnh quan thiên nhiên hùng vĩ và văn hóa dân tộc đặc sắc.",
+    "details": [
+      "Đồi A1 – Di tích lịch sử chiến thắng Điện Biên Phủ, nơi diễn ra trận đánh quyết định",
+      "Sở chỉ huy Đờ Cát – Di tích lịch sử quan trọng của chiến dịch Điện Biên Phủ",
+      "Hồ Pá Khoang – Hồ nước đẹp với cảnh quan thiên nhiên hùng vĩ",
+      "Đèo Pha Đin – Đèo cao nhất Việt Nam với cảnh sắc ngoạn mục",
+      "Bản Sin Chải, bản Ten, bản Na Sang – Các bản làng dân tộc với văn hóa truyền thống",
+      "Núi Pu Ta Leng, núi Pu Si Lung – Các đỉnh núi cao với cảnh quan thiên nhiên hoang dã"
+    ]
+  },
+  "ketLuan": {
+    "title": "Tổng kết về Điện Biên sau sáp nhập",
+    "description": "Điện Biên sau sáp nhập 2025 khẳng định vị trí là vùng đất chiến thắng lịch sử, nơi bảo tồn văn hóa đa dân tộc và phát triển du lịch sinh thái. Tỉnh sở hữu di tích lịch sử quan trọng, cảnh quan thiên nhiên hùng vĩ và văn hóa dân tộc đặc sắc, thu hút du khách trong và ngoài nước."
+  }
+}
