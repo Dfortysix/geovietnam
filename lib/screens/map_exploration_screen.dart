@@ -103,6 +103,44 @@ class _MapExplorationScreenState extends State<MapExplorationScreen> with Ticker
     }
   }
 
+  void _unlockAllProvinces() async {
+    if (_gameProgress != null) {
+      // Tạo danh sách tỉnh mới với tất cả đã mở khóa
+      final unlockedProvinces = _gameProgress!.provinces.map((province) {
+        return province.copyWith(
+          isUnlocked: true,
+          isExplored: true,
+          unlockedDate: DateTime.now(),
+        );
+      }).toList();
+      
+      // Tạo GameProgress mới
+      final newProgress = _gameProgress!.copyWith(
+        provinces: unlockedProvinces,
+        unlockedProvincesCount: unlockedProvinces.length,
+      );
+      
+      // Lưu vào storage
+      await GameProgressService.saveProgress(newProgress);
+      
+      // Cập nhật UI
+      setState(() {
+        _gameProgress = newProgress;
+      });
+      
+      // Hiển thị thông báo
+      if (mounted) {
+        ScaffoldMessenger.of(context).showSnackBar(
+          const SnackBar(
+            content: Text('Đã mở khóa tất cả các tỉnh!'),
+            backgroundColor: AppTheme.primaryOrange,
+            duration: Duration(seconds: 2),
+          ),
+        );
+      }
+    }
+  }
+
   @override
   Widget build(BuildContext context) {
     if (_isLoading) {
@@ -126,6 +164,15 @@ class _MapExplorationScreenState extends State<MapExplorationScreen> with Ticker
         backgroundColor: Colors.transparent,
         elevation: 0,
         iconTheme: const IconThemeData(color: AppTheme.primaryOrange),
+        actions: [
+          // Nút mở khóa tất cả (chỉ hiển thị khi chưa mở khóa hết)
+          if (_gameProgress != null && _gameProgress!.unlockedProvincesCount < _gameProgress!.provinces.length)
+            IconButton(
+              onPressed: _unlockAllProvinces,
+              icon: const Icon(Icons.lock_open, color: AppTheme.primaryOrange),
+              tooltip: 'Mở khóa tất cả tỉnh',
+            ),
+        ],
       ),
       body: Container(
         decoration: const BoxDecoration(
