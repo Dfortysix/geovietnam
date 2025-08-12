@@ -1,0 +1,72 @@
+{
+  "id": "Lang Son",
+  "nameVietnamese": "Lạng Sơn",
+  "overview": {
+    "title": "Vùng Đất Biên Cương Đông Bắc",
+    "description": "Lạng Sơn là tỉnh miền núi vùng Đông Bắc Bộ, nổi tiếng với vị trí cửa ngõ biên giới Việt – Trung, địa danh lịch sử và nền văn hóa đa dạng của các dân tộc thiểu số. Sau sắp xếp hành chính năm 2025, tỉnh vận hành theo mô hình chính quyền hai cấp (tỉnh và xã/phường) với bộ máy tinh gọn, phát triển kinh tế - xã hội hiệu quả và nâng cao chất lượng phục vụ dân.",
+    "area": "8.310,18 km²",
+    "population": "881.384 người (2025)",
+    "region": "Đông Bắc Bộ",
+    "type": "Tỉnh",
+    "nickname": "Vùng đất phía biên cương Đông Bắc"
+  },
+  "sapNhap2025": {
+    "title": "Lạng Sơn sau sắp xếp hành chính 2025",
+    "description": "Năm 2025, Lạng Sơn tiến hành sắp xếp và tinh gọn các đơn vị hành chính cấp xã, áp dụng mô hình chính quyền địa phương hai cấp gồm tỉnh và xã/phường. Cấp trung gian quận, huyện bị loại bỏ, xã, phường trực thuộc tỉnh quản lý trực tiếp. Toàn tỉnh có tổng cộng 65 đơn vị hành chính cấp xã, gồm 61 xã và 4 phường.",
+    "details": [
+      "Áp dụng mô hình chính quyền địa phương hai cấp (tỉnh và xã/phường), không còn cấp trung gian quận/huyện.",
+      "Giảm số đơn vị hành chính cấp xã từ 194 xuống còn 65 đơn vị (61 xã và 4 phường).",
+      "Cơ cấu tổ chức bộ máy tại cấp xã gồm các phòng chuyên môn: Văn phòng HĐND và UBND, Phòng Kinh tế hoặc Kinh tế – Hạ tầng và Đô thị, Phòng Văn hóa – Xã hội.",
+      "Chủ tịch UBND cấp xã có quyền hạn và trách nhiệm điều hành trực tiếp, nâng cao hiệu quả phục vụ nhân dân.",
+      "Các xã, phường mới được tổ chức sắp xếp dựa trên việc hợp nhất các xã, phường, thị trấn trước đây nhằm tối ưu hóa quản lý."
+    ]
+  },
+  "lichSu": {
+    "title": "Lịch sử hình thành và phát triển Lạng Sơn",
+    "description": "Lạng Sơn có lịch sử lâu đời, từng là vùng đất chiến lược với nhiều di tích lịch sử quan trọng, là điểm giao thoa văn hóa các dân tộc thiểu số, đồng thời là cửa ngõ kinh tế - chính trị biên giới quan trọng của Việt Nam.",
+    "details": [
+      "Vùng đất của các dân tộc thiểu số như Tày, Nùng, Dao sinh sống lâu đời.",
+      "Là địa bàn có nhiều di tích chiến tranh lịch sử, nổi bật nhất là trận chiến biên giới và các sự kiện lịch sử quan trọng gắn với vùng Đông Bắc.",
+      "Thời Pháp thuộc, Lạng Sơn là trung tâm hành chính và quân sự quan trọng.",
+      "Sau Cách mạng tháng Tám và trong thời kỳ đấu tranh bảo vệ biên giới, tỉnh phát triển với các giá trị văn hóa – lịch sử đặc trưng.",
+      "2025: Tinh gọn bộ máy hành chính cấp xã, vận hành mô hình chính quyền hai cấp, nâng cao hiệu quả quản lý địa phương."
+    ]
+  },
+  "vanHoa": {
+    "title": "Văn hóa Lạng Sơn – Đặc sắc vùng biên cương",
+    "description": "Lạng Sơn có nền văn hóa phong phú đặc trưng các dân tộc thiểu số với nhiều lễ hội truyền thống, nghệ thuật dân gian và làng nghề thủ công đóng vai trò quan trọng trong đời sống tinh thần và phát triển du lịch cộng đồng.",
+    "details": [
+      "Lễ hội văn hóa dân tộc Tày, Nùng, Dao với nghi lễ truyền thống, múa khèn và các hoạt động giao lưu văn hóa.",
+      "Lễ hội Trà Xuân, Lễ hội Lồng Tồng, và các lễ hội dân gian đặc sắc mang ý nghĩa tâm linh và cộng đồng.",
+      "Nghệ thuật dân gian: hát then, múa sạp, hát lượn đặc trưng vùng Đông Bắc.",
+      "Làng nghề truyền thống như dệt thổ cẩm, rèn, mây tre đan và các sản phẩm thủ công khác.",
+      "Phát triển du lịch cộng đồng và giao lưu văn hóa góp phần bảo tồn giá trị văn hóa bản địa."
+    ]
+  },
+  "amThuc": {
+    "title": "Ẩm thực Lạng Sơn – Vị núi rừng biên cương",
+    "description": "Ẩm thực Lạng Sơn đặc trưng với các món ăn dân tộc mang hương vị đậm đà núi rừng, sử dụng nguyên liệu địa phương phong phú, phản ánh đặc trưng văn hóa vùng biên giới Đông Bắc.",
+    "details": [
+      "Bánh cuốn Lạng Sơn – đặc sản truyền thống làm từ bột gạo thơm ngon, ăn kèm chả và nước mắm pha.",
+      "Thịt trâu, thịt lợn gác bếp – món ăn đặc trưng sử dụng nhiều trong các dịp lễ hội.",
+      "Rau rừng, măng và các món xào nướng với gia vị đặc trưng như mắc khén, hạt dổi.",
+      "Mèn mén – món ăn chế biến từ ngô đặc trưng của đồng bào dân tộc.",
+      "Rượu ngô truyền thống dùng trong các dịp lễ hội và sinh hoạt cộng đồng."
+    ]
+  },
+  "diaDanh": {
+    "title": "Địa danh nổi tiếng Lạng Sơn",
+    "description": "Lạng Sơn có nhiều địa danh lịch sử, thắng cảnh thiên nhiên và di sản văn hóa, thu hút du khách với các điểm đến đặc sắc vùng biên giới Đông Bắc.",
+    "details": [
+      "Cửa khẩu quốc tế Hữu Nghị – điểm giao thương quốc tế quan trọng Việt – Trung.",
+      "Đình Lũng Cú – địa danh lịch sử và cảnh sắc thiên nhiên hùng vĩ.",
+      "Động Tam Thanh – hang động có cảnh quan độc đáo và nhiều truyền thuyết dân gian.",
+      "Thác Mơ, Khe Hở – điểm du lịch sinh thái hấp dẫn với phong cảnh núi rừng.",
+      "Chùa thành Lạng Sơn, Văn Miếu Lạng Sơn – địa chỉ lịch sử và văn hóa tâm linh."
+    ]
+  },
+  "ketLuan": {
+    "title": "Tổng kết về Lạng Sơn sau sáp nhập",
+    "description": "Lạng Sơn là tỉnh trọng điểm vùng Đông Bắc với lợi thế về vị trí biên giới, di sản lịch sử và văn hóa đa dạng. Sau sắp xếp hành chính 2025, tỉnh vận hành mô hình chính quyền hai cấp tinh gọn, nâng cao hiệu quả quản lý và phục vụ người dân. Lạng Sơn phát huy thế mạnh văn hóa dân tộc, du lịch sinh thái và hoạt động kinh tế cửa khẩu, hướng tới phát triển bền vững và hội nhập quốc tế."
+  }
+}
