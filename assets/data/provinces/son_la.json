@@ -1,0 +1,72 @@
+{
+  "id": "Son La",
+  "nameVietnamese": "Sơn La",
+  "overview": {
+    "title": "Vùng Núi Tây Bắc Đa Dân Tộc",
+    "description": "Sơn La là tỉnh miền núi thuộc vùng Tây Bắc Bộ Việt Nam, nổi bật với địa hình đồi núi, cao nguyên Mộc Châu, và sự đa dạng văn hóa của 12 dân tộc anh em. Tỉnh có tiềm năng phát triển du lịch sinh thái, nông nghiệp đặc sản và văn hóa truyền thống phong phú. Sau sắp xếp hành chính năm 2025, Sơn La vận hành theo mô hình chính quyền hai cấp gồm tỉnh và xã/phường, tinh gọn bộ máy quản lý, phát triển bền vững.",
+    "area": "14.123,45 km²",
+    "population": "1.2 triệu người (2025)",
+    "region": "Tây Bắc Bộ",
+    "type": "Tỉnh",
+    "nickname": "Vùng đất đa sắc tộc, cao nguyên xanh"
+  },
+  "sapNhap2025": {
+    "title": "Sơn La sau sắp xếp hành chính 2025",
+    "description": "Năm 2025, Sơn La không sáp nhập tỉnh nào nhưng thực hiện sắp xếp đơn vị hành chính cấp xã, giảm mạnh số lượng đơn vị từ khoảng 193 xã/phường xuống còn 75 đơn vị mới, gồm 67 xã và 8 phường. Cấp trung gian huyện/quận được bãi bỏ, các xã/phường trực thuộc tỉnh.",
+    "details": [
+      "Giảm số xã/phường từ khoảng 193 xuống còn 75 xã/phường (67 xã, 8 phường)",
+      "Bãi bỏ cấp huyện/quận, các xã/phường trực thuộc tỉnh quản lý trực tiếp",
+      "Bộ máy cấp xã gồm các phòng chuyên môn như Văn phòng HĐND và UBND, Phòng Kinh tế hoặc Kinh tế - Hạ tầng và Đô thị, Phòng Văn hóa - Xã hội",
+      "Chủ tịch UBND cấp xã có quyền hạn và trách nhiệm điều hành trực tiếp tại cơ sở",
+      "Mục tiêu tinh gọn bộ máy, nâng cao hiệu quả quản lý và phục vụ nhân dân"
+    ]
+  },
+  "lichSu": {
+    "title": "Lịch sử hình thành và phát triển Sơn La",
+    "description": "Sơn La có lịch sử lâu đời với sự sinh sống của nhiều dân tộc thiểu số, là vùng đất chiến lược và giàu truyền thống cách mạng trong lịch sử Việt Nam.",
+    "details": [
+      "Vùng đất cư trú lâu đời của các dân tộc Thái, Mông, Khơ Mú và nhiều dân tộc khác",
+      "Thời kỳ kháng chiến chống Pháp và Mỹ, Sơn La có vai trò quan trọng trong phong trào cách mạng",
+      "Phát triển kinh tế nông – lâm nghiệp, đặc biệt nổi bật với cao nguyên Mộc Châu",
+      "Giai đoạn hiện đại tập trung phát triển du lịch sinh thái, văn hóa và hạ tầng giao thông",
+      "2025: Thực hiện cải cách hành chính, tinh gọn bộ máy theo mô hình chính quyền hai cấp"
+    ]
+  },
+  "vanHoa": {
+    "title": "Văn hóa Sơn La – Đa dạng và đặc sắc",
+    "description": "Sơn La có nền văn hóa đa dân tộc phong phú, với nhiều phong tục, lễ hội đặc trưng và làng nghề truyền thống phản ánh bản sắc độc đáo của vùng Tây Bắc.",
+    "details": [
+      "Lễ hội truyền thống của các dân tộc Thái, Mông, Khơ Mú như lễ hội mừng lúa mới, lễ hội hoa ban",
+      "Nghệ thuật dân gian như múa xòe, hát then, múa khèn, múa sạp",
+      "Làng nghề truyền thống sản xuất thổ cẩm, làm gốm, rèn dao và các sản phẩm thủ công khác",
+      "Bảo tồn trang phục truyền thống, âm nhạc và phong tục tập quán dân tộc thiểu số",
+      "Giao lưu văn hóa, phát triển du lịch cộng đồng gắn với bản sắc địa phương"
+    ]
+  },
+  "amThuc": {
+    "title": "Ẩm thực Sơn La – Hương vị núi rừng Tây Bắc",
+    "description": "Ẩm thực Sơn La đặc trưng bởi các món ăn dân tộc độc đáo, phong phú nguyên liệu núi rừng và cách chế biến truyền thống mang đậm bản sắc vùng cao.",
+    "details": [
+      "Thịt trâu gác bếp – đặc sản trứ danh của người Thái và các dân tộc vùng cao",
+      "Cơm lam – gạo nếp nương nấu trong ống tre thơm ngon đặc trưng",
+      "Nậm pịa – món ăn thử thách vị giác của đồng bào dân tộc Mông",
+      "Xôi ngũ sắc, cá suối nướng, rau rừng và các món ăn sử dụng gia vị đặc trưng như mắc khén, chẩm chéo",
+      "Rượu cần truyền thống dùng trong các dịp lễ hội và giao lưu cộng đồng"
+    ]
+  },
+  "diaDanh": {
+    "title": "Địa danh nổi tiếng Sơn La",
+    "description": "Sơn La có nhiều địa danh du lịch hấp dẫn với vẻ đẹp thiên nhiên hùng vĩ và các di tích lịch sử văn hóa đặc sắc.",
+    "details": [
+      "Cao nguyên Mộc Châu – điểm du lịch sinh thái nổi tiếng với đồi chè, rừng thông, thác nước và khí hậu trong lành",
+      "Nhà tù Sơn La – di tích lịch sử ghi dấu phong trào cách mạng Việt Nam",
+      "Hồ Chiềng Khoi – hồ nước tự nhiên thơ mộng ở thành phố Sơn La",
+      "Hang Dơi – động đá vôi với cảnh quan thiên nhiên độc đáo",
+      "Các bản làng dân tộc với trải nghiệm văn hóa đặc sắc và du lịch cộng đồng"
+    ]
+  },
+  "ketLuan": {
+    "title": "Tổng kết về Sơn La sau sáp nhập",
+    "description": "Sơn La sau sắp xếp hành chính năm 2025 vận hành theo mô hình chính quyền hai cấp tinh gọn, phát huy các giá trị văn hóa đa dân tộc, tiềm năng du lịch sinh thái và nông nghiệp đặc sản. Tỉnh tiếp tục phát triển bền vững, nâng cao hiệu quả quản lý và phục vụ người dân trong bối cảnh đổi mới và hội nhập."
+  }
+}
