@@ -1,0 +1,72 @@
+{
+  "id": "Quang Tri",
+  "nameVietnamese": "Quảng Trị",
+  "overview": {
+    "title": "Vùng Đất Lịch Sử Và Văn Hóa Miền Trung",
+    "description": "Quảng Trị là tỉnh thuộc vùng Bắc Trung Bộ, nổi bật với lịch sử hào hùng, văn hóa đặc sắc và cảnh quan thiên nhiên đa dạng, đặc biệt sau sáp nhập với tỉnh Quảng Bình năm 2025. Tỉnh có quy mô diện tích và dân số mở rộng, trung tâm chính trị - hành chính đặt tại thành phố Đông Hà, vận hành theo mô hình chính quyền địa phương hai cấp với bộ máy tinh gọn và hiệu quả quản lý được nâng cao.",
+    "area": "12.700,00 km²",
+    "population": "1.870.845 người (2025)",
+    "region": "Bắc Trung Bộ",
+    "type": "Tỉnh",
+    "nickname": "Vùng đất lịch sử và văn hóa miền Trung"
+  },
+  "sapNhap2025": {
+    "title": "Quảng Trị sau sáp nhập Quảng Bình 2025",
+    "description": "Ngày 1/7/2025, tỉnh Quảng Trị và tỉnh Quảng Bình tiến hành sáp nhập thành tỉnh Quảng Trị mới. Tỉnh tổ chức bộ máy chính quyền theo mô hình hai cấp gồm tỉnh và cấp xã/phường, không còn cấp huyện/quận trung gian. Số lượng đơn vị hành chính cấp xã được sắp xếp lại còn 77 đơn vị gồm 69 xã và 8 phường nhằm nâng cao hiệu quả quản lý và phục vụ người dân.",
+    "details": [
+      "Sáp nhập tỉnh Quảng Bình vào tỉnh Quảng Trị, mở rộng diện tích lên 12.700,00 km² và dân số gần 1,9 triệu người.",
+      "Trung tâm chính trị - hành chính đặt tại thành phố Đông Hà hiện nay.",
+      "Có 77 đơn vị hành chính cấp xã, gồm 69 xã và 8 phường, được tổ chức lại sau sáp nhập.",
+      "Bãi bỏ cấp huyện/quận trung gian, các xã/phường trực thuộc tỉnh quản lý trực tiếp để tinh gọn bộ máy hành chính.",
+      "Phát triển kinh tế, du lịch, nông nghiệp và dịch vụ gắn với bảo tồn giá trị văn hóa đặc sắc, nâng cao chất lượng dịch vụ công."
+    ]
+  },
+  "lichSu": {
+    "title": "Lịch sử hình thành và phát triển tỉnh Quảng Trị",
+    "description": "Quảng Trị có truyền thống lịch sử lâu đời, là vùng đất có vị trí chiến lược quan trọng với nhiều sự kiện lịch sử quan trọng cùng sự phát triển về kinh tế và văn hóa.",
+    "details": [
+      "Là vùng đất có vị trí chiến lược quan trọng trong lịch sử dựng nước và giữ nước của dân tộc Việt Nam.",
+      "Trải qua nhiều thời kỳ lịch sử, Quảng Trị giữ vị trí quan trọng trong việc bảo vệ biên cương phía Nam của Đại Việt.",
+      "Giai đoạn hiện đại, tỉnh đã trải qua nhiều sự kiện lịch sử quan trọng và phát triển mạnh mẽ về kinh tế, văn hóa.",
+      "Sau 2025, tỉnh tiếp tục phát huy vai trò trung tâm kinh tế - văn hóa của vùng Bắc Trung Bộ với bộ máy hành chính tinh gọn.",
+      "Lịch sử gắn liền với các hoạt động đấu tranh cách mạng và phát triển xã hội đa dạng."
+    ]
+  },
+  "vanHoa": {
+    "title": "Văn hóa Quảng Trị – Giàu truyền thống và đặc sắc",
+    "description": "Quảng Trị sở hữu nhiều giá trị văn hóa truyền thống đặc sắc với các lễ hội vùng và nghệ thuật dân gian đặc trưng vùng Bắc Trung Bộ.",
+    "details": [
+      "Nhiều lễ hội truyền thống được tổ chức như lễ hội Đền Bà, lễ hội chùa Sắc Tứ, lễ hội Cầu Ngư.",
+      "Nghệ thuật dân gian với hát bội, hát tuồng, múa lân phổ biến trong đời sống văn hóa địa phương.",
+      "Các làng nghề truyền thống phát triển như làm nón lá, dệt thổ cẩm, nghề đan lát.",
+      "Bảo tồn và phát huy các giá trị văn hóa phi vật thể, giao lưu văn hóa trong tỉnh và các địa phương liền kề.",
+      "Phát triển du lịch văn hóa gắn với lịch sử và cảnh quan thiên nhiên đa dạng."
+    ]
+  },
+  "amThuc": {
+    "title": "Ẩm thực Quảng Trị – Đặc sắc vùng Bắc Trung Bộ",
+    "description": "Ẩm thực Quảng Trị thể hiện nét tinh tế của vùng Bắc Trung Bộ với nhiều món ăn truyền thống nổi tiếng, nguyên liệu tươi ngon và cách chế biến độc đáo.",
+    "details": [
+      "Các món ăn đặc sản như bánh bèo, bánh ướt, bún bò Huế, bánh khoái truyền thống.",
+      "Món hải sản, cá đồng, rau sạch tự nhiên từ hệ sinh thái đa dạng của vùng.",
+      "Các món bánh truyền thống phục vụ lễ hội và ngày thường như bánh chưng, bánh tét, bánh gai.",
+      "Phát triển ẩm thực địa phương kết hợp du lịch trải nghiệm văn hóa ẩm thực phong phú.",
+      "Ẩm thực góp phần quan trọng trong chuỗi giá trị du lịch và phát triển kinh tế."
+    ]
+  },
+  "diaDanh": {
+    "title": "Địa danh nổi bật của tỉnh Quảng Trị",
+    "description": "Quảng Trị có nhiều địa danh lịch sử, văn hóa và thắng cảnh thiên nhiên đẹp, tạo thành điểm đến hấp dẫn du khách trong và ngoài nước.",
+    "details": [
+      "Địa đạo Vịnh Mốc – Di tích lịch sử quan trọng với hệ thống địa đạo phức tạp, nơi sinh sống và chiến đấu của quân dân trong kháng chiến.",
+      "Cầu Hiền Lương – Biểu tượng lịch sử với ý nghĩa chia cắt và thống nhất đất nước, là điểm đến không thể bỏ qua.",
+      "Quảng Bình (tỉnh cũ đã sáp nhập) – Vùng đất với văn hóa đặc sắc, nổi tiếng với các di tích lịch sử, thắng cảnh thiên nhiên và ẩm thực đặc sắc, từ 2025 đã sáp nhập vào Quảng Trị.",
+      "Bãi biển Cửa Việt – Cảnh quan thiên nhiên đẹp với bãi cát trắng, nước biển trong xanh, thích hợp cho du lịch biển.",
+      "Các di tích lịch sử và thắng cảnh thiên nhiên khác gắn với bảo tồn bản sắc địa phương."
+    ]
+  },
+  "ketLuan": {
+    "title": "Tổng kết về tỉnh Quảng Trị mới sau sáp nhập",
+    "description": "Tỉnh Quảng Trị mới sau sáp nhập với tỉnh Quảng Bình năm 2025 trở thành vùng đất có quy mô diện tích và dân số lớn thuộc vùng Bắc Trung Bộ, đẩy mạnh phát triển kinh tế - xã hội theo mô hình chính quyền hai cấp tinh gọn. Tỉnh tiếp tục phát huy giá trị văn hóa truyền thống, nâng cao hiệu quả quản lý và thúc đẩy phát triển bền vững, trở thành trung tâm kinh tế - văn hóa năng động của khu vực."
+  }
+}
