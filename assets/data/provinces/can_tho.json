@@ -1,0 +1,72 @@
+{
+  "id": "Can Tho",
+  "nameVietnamese": "Cần Thơ",
+  "overview": {
+    "title": "Trung Tâm Kinh Tế, Văn Hóa Và Du Lịch Vùng Đồng Bằng Sông Cửu Long",
+    "description": "Cần Thơ là trung tâm hành chính, kinh tế, văn hóa vùng đồng bằng sông Cửu Long, nổi bật với phát triển đô thị hiện đại, hệ thống sông ngòi phong phú và du lịch sinh thái. Sau sáp nhập với tỉnh Sóc Trăng và tỉnh Hậu Giang năm 2025, tỉnh mở rộng quy mô diện tích và dân số, vận hành theo mô hình chính quyền hai cấp tinh gọn, nâng cao hiệu quả quản lý, phục vụ phát triển kinh tế đa ngành và bảo tồn giá trị văn hóa đặc sắc.",
+    "area": "7.032,8 km²",
+    "population": "2.870.000 người (2025)",
+    "region": "Đồng bằng sông Cửu Long",
+    "type": "Tỉnh",
+    "nickname": "Trung tâm vùng đất sông nước và văn hóa đặc trưng"
+  },
+  "sapNhap2025": {
+    "title": "Cần Thơ sau sáp nhập Sóc Trăng và Hậu Giang 2025",
+    "description": "Từ ngày 1/7/2025, tỉnh Cần Thơ hợp nhất với tỉnh Sóc Trăng và tỉnh Hậu Giang, tạo thành tỉnh mới với diện tích và dân số tăng đáng kể. Mô hình chính quyền địa phương hai cấp gồm tỉnh và xã/phường được duy trì, loại bỏ cấp huyện/quận trung gian nhằm tinh gọn bộ máy và nâng cao hiệu quả quản lý, phục vụ nhân dân.",
+    "details": [
+      "Sáp nhập toàn bộ diện tích và dân số của tỉnh Sóc Trăng và tỉnh Hậu Giang vào Cần Thơ, tạo nên tỉnh mới có diện tích khoảng 7.032,8 km² và dân số gần 2,87 triệu người.",
+      "Trung tâm chính trị - hành chính đặt tại thành phố Cần Thơ hiện hữu.",
+      "Tỉnh mới có tổng cộng khoảng 138 đơn vị hành chính cấp xã, gồm xã và phường được tổ chức lại từ các đơn vị hành chính cũ.",
+      "Áp dụng mô hình chính quyền hai cấp với xã/phường trực thuộc tỉnh quản lý, loại bỏ cấp huyện/quận trung gian để tối ưu bộ máy quản lý hành chính.",
+      "Tập trung phát triển kinh tế đa ngành, công nghiệp, nông nghiệp, thương mại dịch vụ và du lịch sinh thái, đồng thời bảo tồn văn hóa vùng sông nước đặc trưng."
+    ]
+  },
+  "lichSu": {
+    "title": "Lịch sử hình thành và phát triển Cần Thơ mới",
+    "description": "Cần Thơ, Sóc Trăng và Hậu Giang là các vùng đất giàu truyền thống lịch sử, văn hóa và phát triển kinh tế đặc trưng vùng Đồng bằng sông Cửu Long. Sau sáp nhập, tỉnh mới tiếp tục phát huy giá trị văn hóa, lịch sử, tiềm năng phát triển đa dạng và kết nối vùng hiệu quả.",
+    "details": [
+      "Cần Thơ là trung tâm kinh tế, chính trị văn hóa với nhiều di tích lịch sử, lễ hội và là điểm giao thương quan trọng.",
+      "Sóc Trăng nổi tiếng với nền văn hóa đa sắc tộc, là trung tâm văn hóa Hoa, Khmer với nhiều lễ hội đặc trưng.",
+      "Hậu Giang là vùng đất trù phú với hệ thống sông ngòi dày đặc, phát triển mạnh kinh tế nông nghiệp và công nghiệp chế biến.",
+      "Ba tỉnh có mối liên kết lịch sử và kinh tế vùng chặt chẽ, góp phần phát triển bền vững khu vực Đồng bằng sông Cửu Long.",
+      "Sau sáp nhập, chính quyền mới vận hành theo mô hình hai cấp tinh gọn, hiện đại, phục vụ phát triển toàn diện."
+    ]
+  },
+  "vanHoa": {
+    "title": "Văn hóa Cần Thơ – Sóc Trăng – Hậu Giang đa dạng và đặc sắc",
+    "description": "Tỉnh mới sở hữu nền văn hóa phong phú, đa dạng của cộng đồng các dân tộc Kinh, Hoa, Khmer và các dân tộc vùng sông nước, với nhiều lễ hội truyền thống, nghệ thuật dân gian và các làng nghề truyền thống đặc trưng miền Tây sông nước.",
+    "details": [
+      "Các lễ hội như Ok Om Bok, lễ hội đua ghe ngo, lễ hội đua bò truyền thống thu hút đông đảo người dân và khách du lịch.",
+      "Nghệ thuật dân gian như đờn ca tài tử, hát bội, múa lân và các hoạt động tín ngưỡng địa phương phong phú.",
+      "Làng nghề truyền thống phát triển như làm lồng đèn, sản xuất bánh trái và chế biến thủ công mỹ nghệ.",
+      "Bảo tồn và phát huy các giá trị văn hóa phi vật thể đặc sắc, duy trì sự giao lưu và phát triển văn hóa vùng miền.",
+      "Tăng cường hoạt động du lịch cộng đồng, lễ hội văn hóa truyền thống nhằm quảng bá bản sắc độc đáo của vùng Đồng bằng sông Cửu Long."
+    ]
+  },
+  "amThuc": {
+    "title": "Ẩm thực Cần Thơ – Sóc Trăng – Hậu Giang đặc trưng miền Tây sông nước",
+    "description": "Ẩm thực tỉnh mới đa dạng và phong phú, phản ánh nét độc đáo của vùng Đồng bằng sông Cửu Long với nhiều món ăn truyền thống sử dụng nguyên liệu tươi ngon phong phú từ sông nước, rừng ngập mặn và hệ sinh thái đa dạng.",
+    "details": [
+      "Các món ăn nổi bật như lẩu mắm, cá lóc nướng trui, bún nước lèo, bánh xèo và hủ tiếu Nam Bộ.",
+      "Món ăn đặc sản vùng sông nước như bánh tầm bì, gỏi sầu đâu, bún cá Châu Đốc, cá kho tộ.",
+      "Ẩm thực vùng biển ven sông như hải sản tươi sống, mắm cá linh, đặc sản nghêu, sò, cua đồng.",
+      "Nguyên liệu tươi ngon và cách chế biến dân dã tạo nên hương vị đậm đà truyền thống.",
+      "Ẩm thực đồng hành phát triển du lịch và giới thiệu văn hóa ẩm thực đặc trưng miền Tây."
+    ]
+  },
+  "diaDanh": {
+    "title": "Địa danh nổi bật tỉnh Cần Thơ mới",
+    "description": "Tỉnh mới sở hữu nhiều danh lam thắng cảnh, di tích lịch sử, các khu du lịch sinh thái sông nước và di sản văn hóa truyền thống đặc sắc của vùng Đồng bằng sông Cửu Long.",
+    "details": [
+      "Chợ nổi Cái Răng – điểm du lịch độc đáo và văn hóa đặc trưng của miền sông nước.",
+      "Khu du lịch Làng nổi Tân Lập với hệ sinh thái rừng tràm nguyên sinh và trải nghiệm du lịch sinh thái.",
+      "Đền Bảo An, chùa Ông – các công trình tín ngưỡng văn hóa tiêu biểu.",
+      "Sông Hậu, sông Tiền với hệ thống quốc lộ đường thủy quan trọng và cảnh quan đặc trưng.",
+      "Các địa danh văn hóa, lịch sử và lễ hội truyền thống diễn ra sôi động toàn vùng."
+    ]
+  },
+  "ketLuan": {
+    "title": "Tổng kết về tỉnh Cần Thơ mới sau sáp nhập",
+    "description": "Sau khi sáp nhập tỉnh Sóc Trăng và Hậu Giang, tỉnh Cần Thơ mới trở thành vùng đất rộng lớn, giàu tiềm năng phát triển kinh tế, văn hóa và du lịch sinh thái vùng đồng bằng sông Cửu Long. Mô hình chính quyền hai cấp tinh gọn giúp nâng cao hiệu quả quản lý, phát huy rõ nét giá trị văn hóa đặc sắc đa dân tộc và tài nguyên thiên nhiên đa dạng, hướng tới phát triển bền vững, hiện đại và hội nhập quốc tế."
+  }
+}
