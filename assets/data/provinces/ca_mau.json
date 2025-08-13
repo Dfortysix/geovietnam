@@ -1,0 +1,72 @@
+{
+  "id": "Ca Mau",
+  "nameVietnamese": "Cà Mau",
+  "overview": {
+    "title": "Vùng Đất Cực Nam Tổ Quốc và Phát Triển Đồng Bằng Sông Cửu Long",
+    "description": "Cà Mau là tỉnh cực nam của Việt Nam, nổi bật với hệ sinh thái rừng ngập mặn đa dạng, phát triển kinh tế biển, nông nghiệp và nuôi trồng thủy sản. Sau sáp nhập tỉnh Bạc Liêu năm 2025, Cà Mau mở rộng về diện tích và dân số, duy trì vị trí chiến lược vùng cực Nam, phát triển đa ngành kinh tế cùng với mô hình chính quyền hai cấp tinh gọn, nâng cao hiệu quả quản lý và phục vụ người dân.",
+    "area": "8.331 km²",
+    "population": "1.722.000 người (2025)",
+    "region": "Đồng bằng sông Cửu Long",
+    "type": "Tỉnh",
+    "nickname": "Vùng đất rừng ngập mặn và biển đảo"
+  },
+  "sapNhap2025": {
+    "title": "Cà Mau sau sáp nhập Bạc Liêu 2025",
+    "description": "Ngày 1/7/2025, tỉnh Cà Mau hợp nhất với tỉnh Bạc Liêu theo Nghị quyết Quốc hội tạo thành tỉnh mới với diện tích và dân số mở rộng. Mô hình chính quyền được tổ chức theo hai cấp gồm tỉnh và xã/phường, không còn cấp huyện/quận trung gian nhằm nâng cao hiệu quả quản lý địa phương.",
+    "details": [
+      "Sáp nhập toàn bộ diện tích và dân số tỉnh Bạc Liêu vào tỉnh Cà Mau tạo tỉnh mới với diện tích mở rộng khoảng 8.331 km² và dân số gần 1,7 triệu người.",
+      "Trung tâm chính trị - hành chính đặt tại thành phố Cà Mau hiện hữu.",
+      "Tỉnh mới có tổng cộng khoảng 110 đơn vị hành chính cấp xã, gồm xã và phường được tổ chức lại từ các đơn vị cũ của hai tỉnh trước sáp nhập.",
+      "Áp dụng mô hình chính quyền hai cấp với xã/phường trực thuộc tỉnh, bãi bỏ cấp huyện/quận trung gian để tinh gọn bộ máy hành chính.",
+      "Tập trung phát triển kinh tế biển, nông nghiệp, nuôi trồng thủy sản, công nghiệp chế biến, du lịch sinh thái, đồng thời bảo tồn và phát huy giá trị văn hóa đặc sắc vùng đồng bằng sông Cửu Long."
+    ]
+  },
+  "lichSu": {
+    "title": "Lịch sử hình thành và phát triển Cà Mau mới",
+    "description": "Cà Mau và Bạc Liêu là những tỉnh giàu truyền thống văn hóa, lịch sử và phát triển kinh tế đặc trưng với nền nông nghiệp và kinh tế biển vùng Đồng bằng sông Cửu Long. Sau sáp nhập, tỉnh mới tiếp tục phát huy giá trị văn hóa, lịch sử và tiềm năng phát triển đa dạng vùng miền cực Nam tổ quốc.",
+    "details": [
+      "Cà Mau nổi tiếng với hệ sinh thái rừng ngập mặn và các hoạt động phát triển kinh tế biển, đa dạng sinh học phong phú.",
+      "Bạc Liêu có truyền thống văn hóa đặc sắc của các dân tộc Kinh, Hoa, Khmer và phát triển kinh tế nông nghiệp, công nghiệp chế biến.",
+      "Hai tỉnh từng phát triển kinh tế riêng biệt nhưng có mối liên hệ kinh tế và văn hóa chặt chẽ trong vùng Đồng bằng sông Cửu Long.",
+      "Sau sáp nhập, tỉnh mới sẽ phát triển đồng bộ kinh tế, văn hóa và quản lý hành chính hiệu quả.",
+      "Mô hình chính quyền hai cấp tinh gọn giúp nâng cao hiệu quả công tác quản lý và phục vụ người dân."
+    ]
+  },
+  "vanHoa": {
+    "title": "Văn hóa Cà Mau – Bạc Liêu đa dạng và đặc sắc",
+    "description": "Tỉnh mới sở hữu nền văn hóa phong phú với sự kết hợp hài hòa của cộng đồng các dân tộc Kinh, Khmer, Hoa với nhiều lễ hội truyền thống và nghệ thuật dân gian đặc trưng vùng Đồng bằng sông Cửu Long.",
+    "details": [
+      "Lễ hội đua ghe, lễ hội Ok Om Bok của đồng bào Khmer, lễ hội truyền thống vùng ven biển Cà Mau và Bạc Liêu.",
+      "Nghệ thuật dân gian như đờn ca tài tử, hát bài chòi và các hình thức nghệ thuật truyền thống vùng sông nước miền Tây.",
+      "Nhiều làng nghề truyền thống phát triển như làm mắm, đan lát, chế biến thủ công mỹ nghệ.",
+      "Hoạt động bảo tồn và phát huy các giá trị văn hóa phi vật thể và truyền thống địa phương.",
+      "Giao lưu văn hóa, phát triển du lịch cộng đồng và lễ hội văn hóa đặc sắc được tổ chức thường xuyên."
+    ]
+  },
+  "amThuc": {
+    "title": "Ẩm thực Cà Mau – Bạc Liêu đặc trưng miền Tây sông nước",
+    "description": "Ẩm thực tỉnh mới đa dạng và đặc sắc, phản ánh nét đặc trưng của vùng Đồng bằng sông Cửu Long với nhiều món ăn sử dụng nguyên liệu tươi ngon từ biển, sông ngòi và đất phù sa, mang hương vị truyền thống đặc trưng.",
+    "details": [
+      "Các món hải sản tươi sống như cá, tôm, cua, ghẹ, mắm cá linh và các món ăn chế biến từ hải sản biển.",
+      "Ẩm thực đặc sản miền Tây với lẩu mắm, cá lóc nướng trui, bún nước lèo, bánh xèo và hủ tiếu.",
+      "Món ăn của đồng bào Khmer, Hoa với các món chay đặc sắc, bánh truyền thống và gia vị đặc thù.",
+      "Sử dụng gia vị mắm, nước cốt dừa và các loại rau quả đặc trưng vùng sông nước tạo hương vị độc đáo.",
+      "Ẩm thực phục vụ phát triển du lịch sinh thái và văn hóa truyền thống vùng miền."
+    ]
+  },
+  "diaDanh": {
+    "title": "Địa danh nổi bật tỉnh Cà Mau mới",
+    "description": "Tỉnh sở hữu nhiều danh lam thắng cảnh, di tích lịch sử, các khu du lịch sinh thái và cảnh quan sông nước đặc sắc của vùng Đồng bằng sông Cửu Long.",
+    "details": [
+      "Vườn quốc gia U Minh Hạ – khu bảo tồn thiên nhiên rừng ngập mặn quý hiếm với hệ sinh thái đa dạng.",
+      "Mũi Cà Mau – điểm cực Nam của Tổ quốc, địa danh du lịch và biểu tượng quốc gia.",
+      "Khu di tích lịch sử Bạc Liêu với các công trình văn hóa, đền đài và các khu di tích chiến tranh.",
+      "Cánh đồng muối Bạc Liêu và các vùng nuôi trồng thủy sản rộng lớn tạo cảnh quan đặc trưng miền Tây.",
+      "Các chợ nổi, làng nghề truyền thống và các điểm du lịch văn hóa sinh thái hấp dẫn."
+    ]
+  },
+  "ketLuan": {
+    "title": "Tổng kết về tỉnh Cà Mau mới sau sáp nhập",
+    "description": "Sau sáp nhập tỉnh Bạc Liêu, Cà Mau mới trở thành tỉnh có quy mô diện tích và dân số lớn, phát triển kinh tế biển, nông nghiệp và du lịch sinh thái đặc sắc vùng Đồng bằng sông Cửu Long. Mô hình chính quyền hai cấp tinh gọn giúp nâng cao hiệu quả quản lý, phát huy bản sắc văn hóa đa dân tộc và tài nguyên thiên nhiên phong phú, hướng tới phát triển bền vững và hội nhập quốc tế."
+  }
+}
