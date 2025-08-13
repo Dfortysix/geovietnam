@@ -1,0 +1,73 @@
+{
+  "id": "Tay Ninh",
+  "nameVietnamese": "Tây Ninh",
+  "overview": {
+    "title": "Vùng Đất Giao Thoa Văn Hóa Và Phát Triển Kinh Tế Vùng Đồng Bằng Sông Cửu Long - Đông Nam Bộ",
+    "description": "Tây Ninh là tỉnh vùng Đông Nam Bộ, nổi bật với nền văn hóa đa dạng, truyền thống lịch sử lâu đời và phát triển công nghiệp, nông nghiệp cùng dịch vụ thương mại sôi động. Sau sáp nhập với tỉnh Long An từ ngày 1/7/2025, tỉnh mở rộng quy mô diện tích và dân số, trung tâm hành chính đặt tại thành phố Tân An, vận hành theo mô hình chính quyền hai cấp với bộ máy tinh gọn, nâng cao hiệu quả quản lý và phát triển kinh tế - xã hội bền vững.",
+    "area": "8.536,44 km²",
+    "population": "3.254.170 người (2025)",
+    "region": "Đồng bằng sông Cửu Long - Đông Nam Bộ",
+    "type": "Tỉnh",
+    "nickname": "Vùng đất giao thoa văn hóa, kinh tế năng động"
+  },
+  "sapNhap2025": {
+    "title": "Tây Ninh sau sáp nhập Long An năm 2025",
+    "description": "Ngày 1/7/2025, tỉnh Tây Ninh và tỉnh Long An chính thức hợp nhất thành tỉnh Tây Ninh mới. Tỉnh tổ chức chính quyền theo mô hình hai cấp gồm tỉnh và xã/phường, loại bỏ cấp huyện/quận trung gian. Tỉnh mới có tổng cộng 96 đơn vị hành chính cấp xã, gồm 82 xã và 14 phường được tổ chức lại, trung tâm hành chính đặt tại thành phố Tân An (Long An).",
+    "details": [
+      "Sáp nhập toàn bộ diện tích tự nhiên và dân số của tỉnh Long An vào tỉnh Tây Ninh, tạo tỉnh mới diện tích 8.536,44 km² và dân số khoảng 3,25 triệu người.",
+      "Trung tâm chính trị - hành chính đặt tại thành phố Tân An, tỉnh Long An cũ.",
+      "Xóa bỏ cấp huyện/quận trung gian, các xã/phường trực thuộc tỉnh quản lý trực tiếp theo mô hình chính quyền hai cấp.",
+      "Số lượng đơn vị hành chính cấp xã là 96, gồm 82 xã và 14 phường được tổ chức lại từ các đơn vị cũ hai tỉnh.",
+      "Tỉnh tập trung phát triển kinh tế - xã hội đa ngành, bao gồm công nghiệp, nông nghiệp, thương mại dịch vụ, đồng thời duy trì bản sắc văn hóa đặc trưng vùng biên giới và đồng bằng sông Cửu Long.",
+      "Bố trí các cơ quan, đơn vị hành chính tại TP Tây Ninh để đảm bảo vận hành hiệu quả và cân đối vùng miền."
+    ]
+  },
+  "lichSu": {
+    "title": "Lịch sử hình thành và phát triển Tây Ninh mới",
+    "description": "Tây Ninh và Long An đều là vùng đất giàu truyền thống lịch sử, văn hóa với nhiều dấu ấn cách mạng và phát triển kinh tế quan trọng ở vùng Đông Nam Bộ và Đồng bằng sông Cửu Long. Sau sáp nhập, tỉnh mới kế thừa và phát huy các giá trị lịch sử, văn hóa, đồng thời mở rộng tiềm năng phát triển kinh tế - xã hội.",
+    "details": [
+      "Tây Ninh nổi tiếng với các tín ngưỡng truyền thống, đặc biệt là đạo Cao Đài, nhiều di tích văn hóa, lịch sử đặc sắc.",
+      "Long An là vùng đất trọng điểm kinh tế nông nghiệp, công nghiệp và giao thương cửa ngõ phía Tây Nam Bộ.",
+      "Hai tỉnh từng đóng góp quan trọng trong các cuộc kháng chiến, có sự phát triển kinh tế, văn hóa tương đồng và bổ trợ lẫn nhau.",
+      "Sáp nhập đánh dấu bước tiến lớn trong tái cấu trúc hành chính và phát triển vùng đa ngành vùng Đồng bằng sông Cửu Long và Đông Nam Bộ.",
+      "Cải cách hành chính và phát triển bền vững là mục tiêu trọng tâm trong giai đoạn mới."
+    ]
+  },
+  "vanHoa": {
+    "title": "Văn hóa Tây Ninh – Long An đa dạng và phong phú",
+    "description": "Tỉnh mới sở hữu nền văn hóa đa dạng, kết hợp hài hòa giữa các giá trị truyền thống của các dân tộc Kinh, Khmer, Hoa và các dân tộc thiểu số, với nhiều lễ hội truyền thống và di sản văn hóa đặc sắc.",
+    "details": [
+      "Lễ hội Đình Thổ, lễ hội đạo Cao Đài và các lễ hội dân gian khác đặc trưng vùng Đông Nam Bộ ở Tây Ninh.",
+      "Văn hóa truyền thống các dân tộc, các lễ hội nông nghiệp, các làng nghề truyền thống và nghệ thuật dân gian tại Long An.",
+      "Nghệ thuật dân gian như hát cải lương, múa rối nước, đờn ca tài tử được bảo tồn và phát huy.",
+      "Các làng nghề truyền thống như trồng lúa, dệt chiếu, nghề làm gốm và chế biến thủ công mỹ nghệ.",
+      "Phát triển giao lưu văn hóa, du lịch cộng đồng và bảo tồn các giá trị phi vật thể trong tỉnh mới."
+    ]
+  },
+  "amThuc": {
+    "title": "Ẩm thực Tây Ninh – Long An đặc sắc miền Nam",
+    "description": "Ẩm thực tỉnh mới mang nét đặc trưng của vùng đồng bằng Nam Bộ với nhiều món ăn dân dã, phong phú về nguyên liệu và cách chế biến, tạo nên trải nghiệm ẩm thực độc đáo và đa dạng.",
+    "details": [
+      "Các món bánh tráng phơi sương, bánh xèo, hủ tiếu, bún nước lèo tiêu biểu cho ẩm thực Nam Bộ.",
+      "Món ăn đặc sản vùng biên giới Tây Ninh như bò một nắng, mắm cua đất, các món từ dừa và rau rừng.",
+      "Ẩm thực Long An với các món ăn sông nước như cá lóc nướng trui, lẩu cá linh và bánh tằm bì.",
+      "Phong cách chế biến truyền thống kết hợp sáng tạo, phục vụ nhu cầu đa dạng của người dân và du khách.",
+      "Ẩm thực kết nối phát triển cùng du lịch sinh thái, lễ hội văn hóa đa dạng vùng miền."
+    ]
+  },
+  "diaDanh": {
+    "title": "Địa danh nổi bật tỉnh Tây Ninh mới",
+    "description": "Tỉnh mới có nhiều danh lam thắng cảnh, di tích lịch sử và khu vực du lịch sinh thái đặc sắc với cảnh quan đa dạng từ vùng biên giới đến các khu đồng bằng ven sông.",
+    "details": [
+      "Thánh địa Cao Đài Tây Ninh – trung tâm tín ngưỡng nổi tiếng và kiến trúc đặc sắc.",
+      "Khu du lịch núi Bà Đen với cảnh quan núi non hùng vĩ, điểm leo núi và du lịch tâm linh.",
+      "Thành phố Tân An – trung tâm chính trị - hành chính mới của tỉnh với hạ tầng phát triển hiện đại.",
+      "Khu du lịch sinh thái rừng tràm Trà Sư, các khu bảo tồn sinh thái và khu vực ven sông phong phú.",
+      "Nhiều di tích lịch sử, sân vận động, công viên văn hóa và địa điểm du lịch cộng đồng."
+    ]
+  },
+  "ketLuan": {
+    "title": "Tổng kết về tỉnh Tây Ninh mới sau sáp nhập",
+    "description": "Sau khi sáp nhập tỉnh Long An, tỉnh Tây Ninh mới trở thành một vùng đất rộng lớn, năng động với tiềm năng phát triển kinh tế đa ngành, văn hóa đa dạng và hệ thống chính quyền hai cấp tinh gọn, hiệu quả. Tỉnh vừa phát huy giá trị truyền thống, vừa mở rộng không gian phát triển bền vững, đóng góp tích cực vào sự phát triển chung của vùng Đồng bằng sông Cửu Long và Đông Nam Bộ."
+  }
+}
