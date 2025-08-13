@@ -1,0 +1,72 @@
+{
+  "id": "Da Nang",
+  "nameVietnamese": "Đà Nẵng",
+  "overview": {
+    "title": "Thành phố cửa ngõ trung tâm mới miền Trung – Tây Nguyên",
+    "description": "Đà Nẵng là thành phố trung tâm vùng duyên hải miền Trung, nổi tiếng với vị thế giao thương, phát triển du lịch biển – công nghiệp công nghệ cao, sở hữu nhiều di tích UNESCO và cảnh quan độc đáo. Sau khi sáp nhập toàn bộ tỉnh Quảng Nam vào năm 2025, Đà Nẵng trở thành thành phố trực thuộc Trung ương lớn nhất cả nước về diện tích, quy mô dân số, phát triển mạnh về kinh tế hiện đại và đô thị hóa bền vững.",
+    "area": "11.859,59 km²",
+    "population": "3.065.628 người (2025)",
+    "region": "Duyên hải Nam Trung Bộ – Bắc Tây Nguyên",
+    "type": "Thành phố trực thuộc Trung ương",
+    "nickname": "Thành phố bên sông Hàn – Trung tâm động lực mới miền Trung"
+  },
+  "sapNhap2025": {
+    "title": "Đà Nẵng sau sáp nhập Quảng Nam 2025",
+    "description": "Ngày 1/7/2025, Đà Nẵng và toàn bộ tỉnh Quảng Nam chính thức hợp nhất thành thành phố Đà Nẵng mới, vận hành mô hình chính quyền hai cấp tỉnh – xã/phường, không còn cấp huyện/quận trung gian. Trung tâm hành chính, chính trị đặt tại Đà Nẵng hiện hữu. Số lượng đơn vị hành chính cấp xã là 94, gồm 23 phường, 70 xã, 1 đặc khu Hoàng Sa.",
+    "details": [
+      "Diện tích 11.859,59 km², dân số 3.065.628 người, lớn nhất trong các thành phố trực thuộc Trung ương.",
+      "Tổ chức đơn vị hành chính theo mô hình hai cấp: thành phố – xã/phường/đặc khu, bỏ cấp quận/huyện.",
+      "Có tổng cộng 94 đơn vị hành chính cấp xã, gồm 23 phường, 70 xã, 1 đặc khu Hoàng Sa.",
+      "Tận dụng tối đa tiềm năng sân bay Chu Lai, Đà Nẵng, các cảng quốc tế Tiên Sa, Liên Chiểu, Chu Lai.",
+      "Cơ cấu mới đảm bảo quản trị tinh gọn, phát triển đồng đều giữa đô thị biển, vùng ven, khu công nghiệp và các địa phương miền núi, hải đảo."
+    ]
+  },
+  "lichSu": {
+    "title": "Lịch sử hình thành và phát triển Đà Nẵng – Quảng Nam",
+    "description": "Đà Nẵng, Quảng Nam là hai vùng đất giàu truyền thống lịch sử, giao thoa văn hóa Chămpa – Đại Việt, nơi có nhiều di sản UNESCO và là điểm khởi nguồn đổi mới hành chính, kinh tế miền Trung.",
+    "details": [
+      "Đà Nẵng là thương cảng lịch sử, trung tâm hành chính Nam Trung Bộ từ thế kỷ XIX.",
+      "Quảng Nam là vương quốc Chămpa cổ, sở hữu nội đô Hội An, thánh địa Mỹ Sơn – hai di sản UNESCO.",
+      "Hai địa phương đi đầu các phong trào cách mạng, đấu tranh bảo vệ đất nước qua nhiều thời kỳ.",
+      "Trước sáp nhập (2025), Đà Nẵng và Quảng Nam hợp tác nhiều mặt về phát triển đô thị, du lịch và công nghiệp.",
+      "Năm 2025: sáp nhập toàn bộ, mở ra kỷ nguyên phát triển đô thị biển và vùng kinh tế động lực trung tâm"
+    ]
+  },
+  "vanHoa": {
+    "title": "Văn hóa Đà Nẵng – Quảng Nam: Di sản và hội nhập",
+    "description": "Đà Nẵng – Quảng Nam nổi bật với văn hóa giao thoa Chămpa, Việt, Hội An cổ kính, Mỹ Sơn thần bí và các làng nghề truyền thống ven sông, ven biển. Đời sống hiện đại kết hợp du lịch, lễ hội biển, nghệ thuật đường phố sôi động.",
+    "details": [
+      "Lễ hội pháo hoa Đà Nẵng, lễ hội Quảng Nam – di sản Việt Nam, lễ hội biển và ngày hội đô thị cổ Hội An.",
+      "Di sản văn hóa thế giới: phố cổ Hội An, thánh địa Mỹ Sơn, các làng nghề gốm Thanh Hà, làng lụa Hội An.",
+      "Nghệ thuật dân gian gồm hát bài chòi, hò khoan, tuồng cổ, múa Chăm.",
+      "Các làng chài truyền thống bên bờ biển Đà Nẵng, làng nghề truyền thống như chiếu Cẩm Nê, đồ gỗ Kim Bồng.",
+      "Chú trọng bảo tồn di sản phi vật thể và phát triển giao lưu văn hóa quốc tế song hành công cuộc đô thị hóa."
+    ]
+  },
+  "amThuc": {
+    "title": "Ẩm thực Đà Nẵng – Quảng Nam – Hội tụ tinh hoa biển và miền Trung",
+    "description": "Ẩm thực Đà Nẵng – Quảng Nam sau sáp nhập kết tinh và đa dạng với các món đặc sản biển, sông, đồng bằng, miền núi, ghi dấu nền ẩm thực sáng tạo của miền Trung.",
+    "details": [
+      "Mì Quảng – biểu tượng ẩm thực xứ Quảng, kết hợp tôm thịt trứng, bánh đa gạo vàng.",
+      "Bánh tráng cuốn thịt heo, bún mắm nêm, bún chả cá, ram cuốn cải Đà Nẵng nổi tiếng.",
+      "Cao lầu Hội An, cơm gà, chè bắp, bánh tổ truyền thống.",
+      "Các món hải sản Đà Nẵng, chí chòe, sò điệp, mực nang, ốc hút, cá lăng sông Vu Gia.",
+      "Ẩm thực đường phố, chợ đêm, các món ăn vặt mới như bánh mì Phượng, bánh xoài Hội An."
+    ]
+  },
+  "diaDanh": {
+    "title": "Địa danh nổi tiếng Đà Nẵng – Quảng Nam sau sáp nhập",
+    "description": "Thành phố Đà Nẵng mới sở hữu vô số cảnh quan thiên nhiên và di tích nổi tiếng cấp quốc gia, quốc tế, hội tụ điểm đến du lịch biển, di sản và khám phá.",
+    "details": [
+      "Phố cổ Hội An – di sản UNESCO, kiến trúc phố cổ hàng trăm năm, chùa Cầu, đèn lồng rực rỡ.",
+      "Thánh địa Mỹ Sơn – quần thể di tích Chămpa cổ huyền bí giữa núi rừng, di sản UNESCO.",
+      "Bán đảo Sơn Trà, bãi biển Mỹ Khê – thiên nhiên hoang sơ, cát trắng, du lịch biển đẳng cấp.",
+      "Núi Bà Nà, cầu Rồng Đà Nẵng, cầu sông Hàn biểu tượng đô thị hiện đại.",
+      "Khu kinh tế mở Chu Lai, hệ thống cảng biển quốc tế, các làng du lịch sinh thái ven sông, ven biển, đảo Cù Lao Chàm."
+    ]
+  },
+  "ketLuan": {
+    "title": "Tổng kết về thành phố Đà Nẵng mới sau sáp nhập",
+    "description": "Sau khi sáp nhập toàn bộ tỉnh Quảng Nam, Đà Nẵng trở thành trung tâm đô thị lớn nhất cả nước cả về diện tích lẫn dân số. Thành phố nổi bật với mô hình chính quyền hai cấp tinh gọn, phát triển đồng bộ kinh tế biển, du lịch di sản, công nghiệp công nghệ cao, đồng thời bảo tồn và phát huy các giá trị văn hóa lịch sử đặc sắc miền Trung, hướng tới trung tâm tài chính – giáo dục – du lịch quốc tế của Việt Nam."
+  }
+}
