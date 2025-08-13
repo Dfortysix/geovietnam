@@ -1,0 +1,72 @@
+{
+  "id": "Gia Lai",
+  "nameVietnamese": "Gia Lai",
+  "overview": {
+    "title": "Vùng Đất Trung Tâm Phát Triển Vùng Tây Nguyên Và Duyên Hải Miền Trung",
+    "description": "Gia Lai là tỉnh thuộc khu vực Tây Nguyên rộng lớn, nổi bật với cảnh quan núi rừng hoang sơ, văn hóa các dân tộc thiểu số phong phú và tiềm năng phát triển kinh tế nông-lâm nghiệp, công nghiệp chế biến và du lịch sinh thái. Sau sáp nhập tỉnh Bình Định năm 2025, Gia Lai trở thành tỉnh có diện tích lớn thứ hai cả nước, phát triển đa ngành, đa lĩnh vực và vận hành theo mô hình chính quyền địa phương hai cấp tinh gọn, hiệu quả.",
+    "area": "21.500 km²",
+    "population": "1.600.000 - 1.700.000 người (ước tính 2025)",
+    "region": "Tây Nguyên - Nam Trung Bộ",
+    "type": "Tỉnh",
+    "nickname": "Vùng đất cao nguyên, đa văn hóa và tiềm năng phát triển"
+  },
+  "sapNhap2025": {
+    "title": "Gia Lai sau sáp nhập Bình Định 2025",
+    "description": "Từ ngày 1/7/2025, tỉnh Gia Lai và tỉnh Bình Định hợp nhất thành tỉnh Gia Lai mới với quy mô diện tích và dân số tăng đáng kể. Tỉnh vận hành theo mô hình chính quyền hai cấp gồm tỉnh và xã/phường, không còn cấp huyện/quận trung gian, tổ chức bộ máy hành chính tinh gọn, tăng quyền hạn và nâng cao hiệu quả phục vụ người dân.",
+    "details": [
+      "Sáp nhập toàn bộ diện tích và dân số tỉnh Bình Định vào Gia Lai, tạo nên tỉnh mới với diện tích rộng lớn nhất nhì cả nước, khoảng 21.500 km².",
+      "Tổng dân số ước tính khoảng 1,6 - 1,7 triệu người, bổ sung nguồn lao động trẻ và năng động.",
+      "Bãi bỏ cấp huyện, quận trung gian; xã, phường trực thuộc tỉnh quản lý trực tiếp theo mô hình hai cấp.",
+      "Tập trung phát triển hành chính số, đổi mới mô hình quản lý hành chính dựa trên năng lực và hiệu quả.",
+      "Phát triển hạ tầng, logistics, kết nối vùng Đông Tây, đẩy mạnh công nghiệp chế biến, nông nghiệp công nghệ cao và du lịch sinh thái."
+    ]
+  },
+  "lichSu": {
+    "title": "Lịch sử hình thành và phát triển Gia Lai mới",
+    "description": "Gia Lai và Bình Định đều là vùng đất có truyền thống văn hóa và lịch sử lâu đời, với nhiều sự kiện quan trọng và đặc trưng riêng. Sau hợp nhất, tỉnh mới kế thừa và phát huy các giá trị truyền thống đồng thời hướng tới phát triển hiện đại, bền vững.",
+    "details": [
+      "Gia Lai từng là trung tâm nhiều dân tộc thiểu số Tây Nguyên sinh sống, có truyền thống văn hóa bản địa phong phú.",
+      "Bình Định là vùng đất có lịch sử lâu dài với các di tích văn hóa, anh hùng lịch sử và phát triển kinh tế biển.",
+      "Hai tỉnh trước đây đều có vai trò quan trọng trong các cuộc kháng chiến và xây dựng phát triển vùng Trung Nam Bộ và Tây Nguyên.",
+      "Sau hợp nhất tỉnh mới tiếp tục phát triển kinh tế – xã hội gắn kết vùng Đông Tây.",
+      "2025 là cột mốc quan trọng trong việc đổi mới tổ chức chính quyền, phát huy tối đa tiềm năng phát triển vùng."
+    ]
+  },
+  "vanHoa": {
+    "title": "Văn hóa Gia Lai – Bình Định kết hợp đa dạng đặc sắc",
+    "description": "Tỉnh mới sở hữu nền văn hóa đa dạng phong phú của các dân tộc Tây Nguyên và vùng duyên hải Nam Trung Bộ với nhiều lễ hội truyền thống, nghệ thuật dân gian độc đáo và làng nghề truyền thống.",
+    "details": [
+      "Văn hóa dân tộc thiểu số Gia Lai với cồng chiêng, múa xoang, lễ hội gắn với đời sống nông nghiệp, tín ngưỡng bản địa.",
+      "Văn hóa truyền thống Bình Định gồm múa võ Bình Định, hát bả trạo, lễ hội làng xã đặc trưng miền Trung.",
+      "Các làng nghề truyền thống gốm sứ, đan lát, dệt thổ cẩm, chế biến thủ công mỹ nghệ.",
+      "Phát triển giao lưu văn hóa, du lịch cộng đồng kết nối các giá trị văn hóa đặc trưng vùng miền.",
+      "Bảo tồn và phát huy các giá trị di sản phi vật thể và di tích lịch sử văn hóa quan trọng."
+    ]
+  },
+  "amThuc": {
+    "title": "Ẩm thực Gia Lai – Bình Định phong phú đậm đà",
+    "description": "Ẩm thực tỉnh mới là sự kết hợp tinh tế giữa ẩm thực đặc trưng của cao nguyên Tây Nguyên và vùng duyên hải miền Trung, đa dạng và đặc sắc, thu hút du khách trong và ngoài nước.",
+    "details": [
+      "Món Ăn Gia Lai với các đặc sản như cơm lam, gà nướng mắc khén, rượu cần và các loại rau rừng tươi ngon.",
+      "Ẩm thực Bình Định nổi bật với bánh xèo tôm nhảy, nem chợ huyện, bún lòng, cháo bò và các món đặc sản ven biển.",
+      "Sự đa dạng các nguyên liệu phong phú như hải sản, thịt rừng, các loại măng, rau rừng và gia vị đặc trưng.",
+      "Ẩm thực mang đậm dấu ấn văn hóa dân tộc, kết hợp hiện đại, phục vụ nhu cầu ẩm thực đa dạng.",
+      "Phát triển du lịch ẩm thực với các trải nghiệm độc đáo theo vùng, giúp nâng cao giá trị du lịch cộng đồng."
+    ]
+  },
+  "diaDanh": {
+    "title": "Địa danh nổi bật Gia Lai – Bình Định",
+    "description": "Tỉnh mới sở hữu nhiều điểm đến du lịch, danh lam thắng cảnh và di tích lịch sử đặc sắc từ cao nguyên đến duyên hải, tạo thành vùng du lịch đa dạng hấp dẫn.",
+    "details": [
+      "Thác Phú Cường, hồ T'Nưng, núi lửa Chư Đăng Ya – điểm nhấn cảnh quan núi rừng Gia Lai.",
+      "Quần thể di tích lịch sử Đình Chợ Bờ, Bình Định với hệ thống các làng nghề và di tích văn hóa truyền thống.",
+      "Khu bảo tồn thiên nhiên Kon Chư Răng – nơi đa dạng sinh học phong phú.",
+      "Bãi biển Quy Nhơn, Tháp Chàm Po Nagar và nhiều địa danh lịch sử ven biển Bình Định.",
+      "Các khu du lịch cộng đồng, sinh thái kết nối vùng Tây Nguyên và duyên hải miền Trung."
+    ]
+  },
+  "ketLuan": {
+    "title": "Tổng kết tỉnh Gia Lai mới sau sáp nhập",
+    "description": "Sau sáp nhập Bình Định, tỉnh Gia Lai mới mở rộng quy mô vượt bậc cả về diện tích và dân số, trở thành vùng trọng điểm kinh tế, văn hóa và sinh thái quan trọng của Tây Nguyên và Nam Trung Bộ. Mô hình chính quyền hai cấp tinh gọn giúp nâng cao hiệu quả quản lý, phục vụ nhân dân, phát huy các giá trị đạo đức, văn hóa dân tộc đa dạng và tiềm năng phát triển bền vững, góp phần thúc đẩy phát triển kinh tế vùng Đông Tây nối liền."
+  }
+}
