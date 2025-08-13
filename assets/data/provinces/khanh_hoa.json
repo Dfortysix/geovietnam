@@ -1,0 +1,72 @@
+{
+  "id": "Khanh Hoa",
+  "nameVietnamese": "Khánh Hòa",
+  "overview": {
+    "title": "Vùng Đất Biển Đảo – Du Lịch và Công Nghiệp Nam Trung Bộ",
+    "description": "Khánh Hòa là tỉnh ven biển Nam Trung Bộ, nổi bật với thành phố biển Nha Trang, di sản thiên nhiên phong phú, các đảo lớn nhỏ, cảng biển quốc tế và thế mạnh về du lịch, kinh tế biển. Sau sáp nhập với tỉnh Phú Yên năm 2025, Khánh Hòa mở rộng diện tích và dân số, vận hành mô hình chính quyền hai cấp hiện đại, phát triển đồng đều kinh tế, du lịch, dịch vụ và bảo tồn bản sắc văn hóa vùng biển đảo đặc sắc.",
+    "area": "10.195,5 km²",
+    "population": "2.985.100 người (2025)",
+    "region": "Nam Trung Bộ",
+    "type": "Tỉnh",
+    "nickname": "Vùng đất biển đảo, du lịch và phát triển kinh tế biển"
+  },
+  "sapNhap2025": {
+    "title": "Khánh Hòa sau sáp nhập Phú Yên 2025",
+    "description": "Từ ngày 1/7/2025, Khánh Hòa và toàn bộ tỉnh Phú Yên hợp nhất thành tỉnh Khánh Hòa mới, áp dụng mô hình chính quyền địa phương hai cấp gồm tỉnh và xã/phường, bãi bỏ cấp huyện/quận trung gian. Trung tâm hành chính đặt tại thành phố Nha Trang, với 108 đơn vị hành chính cấp xã (92 xã, 14 phường, 2 đặc khu).",
+    "details": [
+      "Sáp nhập toàn bộ diện tích và dân số hai tỉnh Khánh Hòa, Phú Yên thành một tỉnh mới rộng 10.195,5km², dân số gần 3 triệu người.",
+      "Tỉnh có 108 đơn vị hành chính cấp xã: 92 xã, 14 phường, 2 đặc khu (bao gồm các đảo lớn).",
+      "Trung tâm chính trị - hành chính đặt tại thành phố Nha Trang (Khánh Hòa cũ).",
+      "Chính quyền hai cấp quản lý trực tiếp, tăng quyền hạn cho đơn vị xã, phường nhằm nâng cao chất lượng phục vụ.",
+      "Tạo không gian phát triển đồng bộ ven biển, hải đảo, vùng núi phía tây, đẩy mạnh kinh tế biển, cảng biển, du lịch xanh và dịch vụ logistics quốc tế."
+    ]
+  },
+  "lichSu": {
+    "title": "Lịch sử hình thành và phát triển Khánh Hòa mới",
+    "description": "Khánh Hòa và Phú Yên là hai vùng đất biển Nam Trung Bộ với lịch sử phát triển lâu đời, từng là phần đất của vương quốc Chămpa, hội tụ nhiều giá trị lịch sử, chiến thắng cách mạng và phát triển công nghiệp, du lịch, nông – lâm – ngư nghiệp thời hiện đại.",
+    "details": [
+      "Là vùng đất cổ có nhiều di tích Chămpa, kinh đô của các triều đại Chăm, gắn liền thương cảng cổ – các tuyến giao thương biển quốc tế.",
+      "Qua các triều đại phong kiến Đại Việt, vùng đất chứng kiến nhiều biến động lịch sử, hình thành các làng chài truyền thống, cộng đồng các dân tộc Việt – Chăm – Hoa.",
+      "Trong kháng chiến, Khánh Hòa – Phú Yên đều là điểm nóng cách mạng, địa bàn chiến lược cả chính trị, quân sự và hậu cần.",
+      "Thời hiện đại phát triển mạnh công nghiệp tàu biển, dầu khí, thủy sản và du lịch biển đảo.",
+      "Sáp nhập năm 2025 đánh dấu giai đoạn hợp nhất nguồn lực, tăng sức mạnh tổng hợp và vị thế trong vùng Nam Trung Bộ."
+    ]
+  },
+  "vanHoa": {
+    "title": "Văn hóa Khánh Hòa – Phú Yên hội tụ biển đảo và di sản đa sắc",
+    "description": "Tỉnh mới nổi bật với sự đa dạng di sản vật thể, phi vật thể, nghệ thuật dân gian đặc sắc của các cộng đồng Việt, Chăm, Hoa gắn với truyền thống biển và lịch sử lâu đời.",
+    "details": [
+      "Lễ hội Tháp Bà Po Nagar, lễ hội Cá Ông, lễ hội Cầu Ngư, các ngày hội làng biển lớn của ngư dân.",
+      "Nghệ thuật dân gian như hò biển, dân ca miền Trung, múa Bài chòi đặc sản đạt danh hiệu di sản UNESCO.",
+      "Nhiều làng nghề truyền thống làm mắm, chế biến thủy hải sản, đan lưới, đóng tàu, gốm Chămpa.",
+      "Hoạt động văn hóa cộng đồng, lễ hội văn hóa ẩm thực biển và sự kiện quốc tế nổi bật tại thành phố Nha Trang.",
+      "Phát triển các không gian văn hóa mới kết hợp bảo tồn di sản gốc của vùng đồng bằng, biển đảo – miền núi."
+    ]
+  },
+  "amThuc": {
+    "title": "Ẩm thực Khánh Hòa – Phú Yên đậm vị biển đảo",
+    "description": "Ẩm thực tỉnh mới nổi bật vị biển tươi ngon, sự giao thoa nguyên liệu đồng bằng, núi – biển – đảo với nhiều món ăn dân gian độc đáo, sử dụng hải sản đặc trưng và gia vị miền Trung.",
+    "details": [
+      "Nem nướng Ninh Hòa, bánh căn, bánh xèo mực và các loại chả cá Nha Trang nổi tiếng.",
+      "Sò huyết Ô Loan, hàu đầm Cù Mông, cá ngừ đại dương, tôm hùm Bình Ba – những đặc sản trứ danh vùng biển.",
+      "Bò một nắng Phú Yên, các món gỏi cá, mắt cá ngừ Đại Dương tươi sống.",
+      "Mắm tôm chua, mắm nhum, mực rim và các loại khô đặc sản từ đảo và ven biển.",
+      "Ẩm thực đường phố: bún sứa, bún cá dầm, chè yến và các loại bánh truyền thống miền Trung."
+    ]
+  },
+  "diaDanh": {
+    "title": "Địa danh nổi bật của Khánh Hòa – Phú Yên mở rộng",
+    "description": "Tỉnh sở hữu nhiều thắng cảnh tự nhiên, di tích lịch sử, điểm đến du lịch hội tụ cả biển, đảo, núi rừng, hải đảo độc đáo của vùng duyên hải Nam Trung Bộ.",
+    "details": [
+      "Vinpearl Land, bãi biển Trần Phú, Vịnh Nha Trang – các bãi biển đẹp và trung tâm giải trí hấp dẫn nhất cả nước.",
+      "Quần thể Hòn Tre – Hòn Mun, Vịnh Vân Phong, đảo Bình Hưng, Bình Ba cùng các tour du lịch đảo nổi bật.",
+      "Gành Đá Đĩa, vịnh Xuân Đài (Phú Yên) – kiệt tác thiên nhiên với cấu trúc đá độc nhất Đông Nam Á.",
+      "Đầm Ô Loan, núi Chóp Chài, địa danh Gò Găng – thiên nhiên hoang sơ, phù hợp phát triển du lịch sinh thái.",
+      "Các di tích quốc gia: Tháp Bà Po Nagar, Thành cổ Diên Khánh, nhà thờ Mằng Lăng – mang đậm dấu ấn lịch sử, tôn giáo truyền thống."
+    ]
+  },
+  "ketLuan": {
+    "title": "Tổng kết về tỉnh Khánh Hòa mới sau sáp nhập",
+    "description": "Tỉnh Khánh Hòa mới sau khi hợp nhất với Phú Yên năm 2025 là vùng đất biển đảo – di sản phát triển năng động và hội nhập mạnh vào vùng kinh tế trọng điểm Nam Trung Bộ. Tỉnh duy trì mô hình chính quyền hai cấp tinh gọn, phát triển kinh tế biển – du lịch – nông nghiệp công nghệ cao, đồng thời bảo tồn các giá trị di sản – lịch sử, đưa tỉnh trở thành điểm đến hàng đầu về biển đảo, giao lưu văn hóa, dịch vụ, kinh tế quốc tế của Việt Nam."
+  }
+}
