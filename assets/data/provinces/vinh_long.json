@@ -1,0 +1,72 @@
+{
+  "id": "Vinh Long",
+  "nameVietnamese": "Vĩnh Long",
+  "overview": {
+    "title": "Vùng Đất Trù Phú Của Đồng Bằng Sông Cửu Long",
+    "description": "Vĩnh Long là tỉnh thuộc vùng đồng bằng sông Cửu Long, nổi bật với hệ thống sông ngòi chằng chịt, phát triển kinh tế nông nghiệp, du lịch sinh thái và văn hóa đặc sắc miền Tây Nam Bộ. Sau sáp nhập tỉnh Bến Tre và Trà Vinh vào năm 2025, tỉnh mở rộng quy mô diện tích và dân số, duy trì vị trí chiến lược phát triển kinh tế đa ngành, vận hành theo mô hình chính quyền hai cấp tinh gọn, nâng cao hiệu quả quản lý và phục vụ người dân.",
+    "area": "7.612,6 km²",
+    "population": "2.845.000 người (2025)",
+    "region": "Đồng bằng sông Cửu Long",
+    "type": "Tỉnh",
+    "nickname": "Vùng đất trù phú, sông nước hữu tình"
+  },
+  "sapNhap2025": {
+    "title": "Vĩnh Long sau sáp nhập Bến Tre và Trà Vinh 2025",
+    "description": "Ngày 1/7/2025, tỉnh Vĩnh Long hợp nhất với tỉnh Bến Tre và tỉnh Trà Vinh theo Nghị quyết Quốc hội, tạo thành tỉnh mới với diện tích và dân số tăng trưởng đáng kể. Mô hình chính quyền được tổ chức theo hai cấp gồm tỉnh và xã/phường, không còn cấp huyện/quận trung gian nhằm nâng cao hiệu quả quản lý và phục vụ cộng đồng.",
+    "details": [
+      "Sáp nhập toàn bộ diện tích và dân số tỉnh Bến Tre, Trà Vinh vào tỉnh Vĩnh Long, tạo nên tỉnh mới quy mô lớn với diện tích khoảng 7.612,6 km² và dân số khoảng 2,845 triệu người.",
+      "Trung tâm hành chính, chính trị đặt tại thành phố Vĩnh Long hiện hữu.",
+      "Tỉnh mới có tổng cộng khoảng 145 đơn vị hành chính cấp xã, gồm xã và phường được tổ chức lại từ các đơn vị cũ của ba tỉnh trước sáp nhập.",
+      "Áp dụng mô hình chính quyền hai cấp với xã/phường trực thuộc tỉnh, bãi bỏ cấp huyện/quận trung gian để tinh gọn bộ máy hành chính.",
+      "Tập trung phát triển kinh tế nông nghiệp, công nghiệp chế biến, thương mại dịch vụ, và du lịch sinh thái vùng đồng bằng, đồng thời bảo tồn văn hóa đặc sắc vùng sông nước."
+    ]
+  },
+  "lichSu": {
+    "title": "Lịch sử hình thành và phát triển Vĩnh Long mới",
+    "description": "Vĩnh Long, Bến Tre và Trà Vinh là các tỉnh giàu truyền thống văn hóa, lịch sử và phát triển kinh tế đặc trưng vùng Đồng bằng sông Cửu Long. Sau sáp nhập, tỉnh mới kế thừa và phát huy giá trị văn hóa, lịch sử và tiềm năng phát triển đa dạng vùng đồng bằng ven biển nam bộ.",
+    "details": [
+      "Vĩnh Long nổi tiếng với hệ thống sông ngòi, phát triển nghề cá và nông nghiệp truyền thống.",
+      "Bến Tre được biết đến là vùng đất dừa miền Tây với nhiều di tích lịch sử và văn hóa đặc sắc.",
+      "Trà Vinh có nền văn hóa Khmer phong phú cùng các lễ hội và di tích cổ truyền đặc trưng.",
+      "Ba tỉnh trước đây từng có sự phát triển kinh tế xã hội riêng biệt nhưng liên kết văn hóa chặt chẽ.",
+      "Sau sáp nhập, tỉnh mới sẽ phát triển đồng bộ kinh tế, văn hóa và quản lý hành chính hiệu quả."
+    ]
+  },
+  "vanHoa": {
+    "title": "Văn hóa Vĩnh Long – Bến Tre – Trà Vinh đa dạng đặc sắc",
+    "description": "Tỉnh mới sở hữu nền văn hóa phong phú với sự kết hợp hài hòa của các cộng đồng dân tộc Kinh, Khmer, Hoa và các dân tộc thiểu số khác với nhiều lễ hội truyền thống và nghệ thuật dân gian đặc sắc.",
+    "details": [
+      "Lễ hội đười ươi Bến Tre, lễ hội Ok Om Bok của đồng bào Khmer Trà Vinh mang đậm sắc thái văn hóa dân tộc.",
+      "Các điệu múa dân gian, hát dân ca Nam Bộ, lễ hội đường phố đặc sắc và truyền thống dân gian vùng sông nước.",
+      "Nhiều làng nghề truyền thống phát triển như làm dừa, đan lát, may mặc và chế biến thủ công mỹ nghệ.",
+      "Bảo tồn và phát huy các giá trị phi vật thể, văn hóa truyền thống liên tục được duy trì và phát triển.",
+      "Hoạt động giao lưu văn hóa, du lịch cộng đồng và lễ hội văn hóa đặc sắc được tổ chức thường xuyên."
+    ]
+  },
+  "amThuc": {
+    "title": "Ẩm thực Vĩnh Long – Bến Tre – Trà Vinh đặc trưng miền Tây sông nước",
+    "description": "Ẩm thực của tỉnh mới phong phú và đa dạng, phản ánh các món ăn đặc sản vùng Đồng bằng sông Cửu Long với nguyên liệu tươi ngon, hương vị đậm đà và nét truyền thống độc đáo.",
+    "details": [
+      "Các món ăn đặc sản từ dừa Bến Tre như bánh tráng dừa, mứt dừa, nước dừa tươi mát.",
+      "Ẩm thực Vĩnh Long nổi bật với các món cá lóc nướng trui, lẩu cá kèo, hủ tiếu và bánh xèo Nam Bộ.",
+      "Món ăn của đồng bào Khmer Trà Vinh với các món bún nước lèo, bánh tét lá cẩm, và các món chay đặc sắc.",
+      "Nguyên liệu tươi ngon từ các hệ sinh thái sông nước, kết hợp gia vị đặc trưng vùng miền tạo nên hương vị độc đáo.",
+      "Ẩm thực phát triển song song với du lịch sinh thái và lễ hội, góp phần nâng cao giá trị kinh tế và văn hóa."
+    ]
+  },
+  "diaDanh": {
+    "title": "Địa danh nổi bật tỉnh Vĩnh Long mới",
+    "description": "Tỉnh sở hữu nhiều danh lam thắng cảnh, di tích lịch sử và điểm du lịch sinh thái phong phú thu hút khách du lịch trong và ngoài nước vùng Đồng bằng sông Cửu Long.",
+    "details": [
+      "Khu du lịch sinh thái Mỹ Hòa Hưng – Vĩnh Long với cảnh quan sông nước hữu tình, trải nghiệm du lịch miệt vườn.",
+      "Đảo dừa Bến Tre – thủ phủ cây dừa Việt Nam với nhiều trải nghiệm văn hóa và du lịch sinh thái.",
+      "Khu di tích truyền thống cách mạng như nhà lưu niệm các anh hùng liệt sĩ, di tích lịch sử kháng chiến.",
+      "Làng nghề truyền thống và các bản làng dân tộc với nét văn hóa đặc trưng miền Tây sông nước.",
+      "Các lễ hội truyền thống và khu vực du lịch cộng đồng phát triển mạnh mẽ."
+    ]
+  },
+  "ketLuan": {
+    "title": "Tổng kết về tỉnh Vĩnh Long mới sau sáp nhập",
+    "description": "Sau khi sáp nhập tỉnh Bến Tre và Trà Vinh, Vĩnh Long mới trở thành tỉnh quy mô lớn và đa dạng với tiềm năng phát triển kinh tế nông nghiệp, công nghiệp chế biến và du lịch sinh thái. Mô hình chính quyền hai cấp tinh gọn giúp nâng cao hiệu quả quản lý và phục vụ người dân, đồng thời phát huy giá trị văn hóa đặc sắc và tiềm năng thiên nhiên của vùng miền Tây Nam Bộ, hướng đến phát triển bền vững và hội nhập quốc tế."
+  }
+}
