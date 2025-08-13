@@ -1,0 +1,72 @@
+{
+  "id": "Dong Thap",
+  "nameVietnamese": "Đồng Tháp",
+  "overview": {
+    "title": "Vùng Đất Nông Nghiệp Trù Phú Và Kinh Tế Sông Nước Đồng Bằng Sông Cửu Long",
+    "description": "Đồng Tháp là tỉnh thuộc vùng đồng bằng sông Cửu Long, nổi bật với thế mạnh nông nghiệp, vùng đất trù phú sông nước và phát triển đa dạng kinh tế. Sau sáp nhập tỉnh Tiền Giang vào năm 2025, Đồng Tháp mở rộng diện tích và dân số, đóng vai trò quan trọng trong phát triển kinh tế miền Tây với mô hình chính quyền hai cấp tinh gọn nâng cao hiệu quả quản lý và phục vụ.",
+    "area": "4.797,20 km²",
+    "population": "2.200.000 người (2025)",
+    "region": "Đồng bằng sông Cửu Long",
+    "type": "Tỉnh",
+    "nickname": "Vùng đất sen hồng, phát triển bền vững"
+  },
+  "sapNhap2025": {
+    "title": "Đồng Tháp sau sáp nhập Tiền Giang 2025",
+    "description": "Ngày 1/7/2025, tỉnh Đồng Tháp và tỉnh Tiền Giang chính thức hợp nhất theo Nghị quyết Quốc hội, tạo tỉnh mới với quy mô diện tích và dân số tăng đáng kể. Tỉnh vận hành theo mô hình chính quyền hai cấp gồm tỉnh và xã/phường, bỏ cấp huyện/quận trung gian nhằm nâng cao hiệu quả quản lý hành chính và phục vụ người dân.",
+    "details": [
+      "Sáp nhập tỉnh Tiền Giang vào Đồng Tháp, tạo tỉnh mới với diện tích 4.797,20 km² và dân số khoảng 2,2 triệu người.",
+      "Trung tâm chính trị – hành chính giữ tại địa bàn tỉnh Đồng Tháp hiện hữu.",
+      "Tỉnh mới có tổng cộng khoảng 120 đơn vị hành chính cấp xã sau sắp xếp, gồm xã và phường tổ chức lại từ các đơn vị cũ của hai tỉnh trước sáp nhập.",
+      "Áp dụng mô hình chính quyền hai cấp, xã/phường trực thuộc tỉnh quản lý, bỏ cấp huyện/quận trung gian để tinh gọn bộ máy.",
+      "Tập trung phát triển kinh tế nông nghiệp, thương mại dịch vụ, du lịch sinh thái và bảo tồn văn hóa đặc sắc vùng đồng bằng sông Cửu Long."
+    ]
+  },
+  "lichSu": {
+    "title": "Lịch sử hình thành và phát triển Đồng Tháp mới",
+    "description": "Đồng Tháp và Tiền Giang đều là những tỉnh có lịch sử phong phú, phát triển lâu đời trong vùng đồng bằng sông Cửu Long với nền văn hóa đa dạng và truyền thống sản xuất nông nghiệp đặc trưng. Sau sáp nhập, tỉnh mới kế thừa và phát huy các giá trị lịch sử, văn hóa và kinh tế vùng Đồng bằng sông Cửu Long.",
+    "details": [
+      "Đồng Tháp nổi tiếng với làng nghề truyền thống, vùng đất sen hồng và hệ sinh thái sông nước phong phú.",
+      "Tiền Giang là vùng đất có lịch sử phát triển mạnh về nông nghiệp, và các giá trị văn hóa sông nước đặc sắc.",
+      "Hai tỉnh có mối liên kết kinh tế, văn hóa chặt chẽ trong vùng Đồng bằng sông Cửu Long từ nhiều thế kỷ trước.",
+      "Sau sáp nhập, tỉnh mới tiếp tục phát triển đồng bộ kinh tế, nông nghiệp, công nghiệp và du lịch sinh thái.",
+      "Mô hình chính quyền hai cấp giúp nâng cao hiệu quả quản lý và chất lượng phục vụ người dân."
+    ]
+  },
+  "vanHoa": {
+    "title": "Văn hóa Đồng Tháp – Tiền Giang đa dạng và đặc sắc",
+    "description": "Tỉnh mới sở hữu nền văn hóa phong phú, hài hòa giữa các cộng đồng dân tộc Kinh, Hoa, Khmer với nhiều lễ hội truyền thống, nghệ thuật dân gian và làng nghề đậm nét miền Tây sông nước.",
+    "details": [
+      "Lễ hội mùa Sen Đồng Tháp và các lễ hội truyền thống đặc sắc vùng Tiền Giang.",
+      "Nghệ thuật dân gian như đờn ca tài tử, hát bội, hát xoan và các hình thức nghệ thuật truyền thống vùng sông nước miền Tây.",
+      "Làng nghề truyền thống phát triển như làm bánh tráng, dệt chiếu, mây tre đan và chế biến nông sản.",
+      "Hoạt động bảo tồn và phát huy các giá trị văn hóa phi vật thể và truyền thống địa phương.",
+      "Tăng cường giao lưu văn hóa, thúc đẩy phát triển du lịch văn hóa và cộng đồng."
+    ]
+  },
+  "amThuc": {
+    "title": "Ẩm thực Đồng Tháp – Tiền Giang đặc trưng vùng sông nước miền Tây",
+    "description": "Ẩm thực tỉnh mới đa dạng phong phú với những món ăn truyền thống mang đậm hương vị sông nước, nguyên liệu tươi ngon và chế biến theo cách dân dã đặc trưng vùng Đồng bằng sông Cửu Long.",
+    "details": [
+      "Các món nổi tiếng như cá lóc nướng trui, lẩu mắm, bánh xèo, hủ tiếu và các món ăn dân dã đặc trưng miền Tây.",
+      "Món ăn chế biến từ dừa, trái cây đặc sản vùng Tiền Giang và Đồng Tháp.",
+      "Ẩm thực kết hợp đa dạng hương vị các vùng miền miền Tây Nam Bộ.",
+      "Phát triển các sản phẩm đặc sản địa phương phục vụ du lịch và kinh tế nông thôn.",
+      "Ẩm thực góp phần quan trọng trong phát triển du lịch sinh thái và ẩm thực vùng miền."
+    ]
+  },
+  "diaDanh": {
+    "title": "Địa danh nổi bật tỉnh Đồng Tháp mới",
+    "description": "Tỉnh sở hữu nhiều danh lam thắng cảnh, di tích lịch sử và điểm du lịch sinh thái hấp dẫn với cảnh quan sông nước phong phú, văn hóa đa dạng đặc trưng vùng Đồng bằng sông Cửu Long.",
+    "details": [
+      "Vườn quốc gia Tràm Chim – khu bảo tồn thiên nhiên quốc gia với hệ sinh thái đa dạng.",
+      "Làng hoa Sa Đéc – trung tâm sản xuất hoa nổi tiếng miền Tây Nam Bộ.",
+      "Khu du lịch sinh thái Cù Lao Tân Phong, chùa Ông – các điểm du lịch văn hóa và tâm linh đặc sắc.",
+      "Các cù lao, rừng ngập mặn và hệ thống sông ngòi chằng chịt tạo điểm nhấn thiên nhiên và du lịch.",
+      "Khu di tích Xẻo Quýt, các bảo tàng và di tích lịch sử vùng sông nước miền Tây."
+    ]
+  },
+  "ketLuan": {
+    "title": "Tổng kết về tỉnh Đồng Tháp mới sau sáp nhập",
+    "description": "Sau khi sáp nhập tỉnh Tiền Giang, Đồng Tháp mới trở thành tỉnh có quy mô diện tích và dân số mở rộng, phát huy tiềm năng phát triển kinh tế nông nghiệp, công nghiệp chế biến và du lịch sinh thái đặc trưng vùng Đồng bằng sông Cửu Long. Mô hình chính quyền hai cấp tinh gọn giúp nâng cao hiệu quả quản lý và phục vụ người dân, đồng thời bảo tồn giá trị văn hóa đa dạng và tài nguyên thiên nhiên đặc sắc, hướng đến phát triển bền vững trong tương lai."
+  }
+}
