@@ -1,0 +1,72 @@
+{
+  "id": "Ho Chi Minh City",
+  "nameVietnamese": "Thành phố Hồ Chí Minh",
+  "overview": {
+    "title": "Siêu Đô Thị Trung Tâm Kinh Tế - Văn Hóa Miền Nam Việt Nam",
+    "description": "Thành phố Hồ Chí Minh là trung tâm kinh tế, tài chính, văn hóa và giáo dục lớn nhất khu vực phía Nam, nổi bật với sự phát triển đô thị hiện đại, hạ tầng đồng bộ và sức hút đầu tư mạnh mẽ. Sau sáp nhập toàn bộ tỉnh Bình Dương và tỉnh Bà Rịa – Vũng Tàu vào ngày 1/7/2025, TP.HCM mở rộng quy mô về diện tích và dân số vượt trội, trở thành đô thị lớn nhất cả nước cả về quy mô và tiềm năng phát triển.",
+    "area": "6.772,6 km²",
+    "population": "Khoảng 14 triệu người (2025)",
+    "region": "Đông Nam Bộ",
+    "type": "Thành phố trực thuộc Trung ương",
+    "nickname": "Siêu đô thị năng động và hiện đại"
+  },
+  "sapNhap2025": {
+    "title": "TP.HCM sau sáp nhập Bình Dương và Bà Rịa – Vũng Tàu năm 2025",
+    "description": "Từ ngày 1/7/2025, TP.HCM chính thức hợp nhất với tỉnh Bình Dương và tỉnh Bà Rịa – Vũng Tàu, vận hành mô hình chính quyền địa phương hai cấp gồm thành phố và xã/phường, không còn cấp quận/huyện trung gian. Thành phố có tổng cộng 168 đơn vị hành chính cấp xã gồm 113 phường, 54 xã và 1 đặc khu hành chính–kinh tế Côn Đảo.",
+    "details": [
+      "Sáp nhập toàn bộ diện tích và dân số tỉnh Bình Dương, Bà Rịa – Vũng Tàu vào TP.HCM, nâng tổng diện tích lên 6.772,6 km² và dân số khoảng 14 triệu người.",
+      "Trung tâm chính trị–hành chính đặt tại Quận 1, TP.HCM hiện hữu, là đầu não của vùng kinh tế trọng điểm phía Nam.",
+      "168 đơn vị hành chính cấp xã gồm 113 phường đô thị, 54 xã vùng ven và 1 đặc khu Côn Đảo tập trung phát triển kinh tế biển và du lịch.",
+      "Bãi bỏ cấp quận, huyện trung gian, xã/phường trực thuộc thành phố quản lý trực tiếp, tạo sự linh hoạt và hiệu quả trong điều hành.",
+      "Tập trung nâng cao chất lượng quản lý đô thị, phát triển các vùng công nghiệp, thương mại, logistics và dịch vụ hiện đại."
+    ]
+  },
+  "lichSu": {
+    "title": "Lịch sử phát triển và mở rộng TP.HCM",
+    "description": "TP.HCM có lịch sử phát triển hơn 300 năm, từ một điểm định cư nhỏ đến trung tâm kinh tế văn hóa lớn nhất miền Nam, trải qua nhiều giai đoạn phát triển và mở rộng địa giới hành chính. Việc sáp nhập mới là bước ngoặt quan trọng tiếp nối sự phát triển đa ngành, đa lĩnh vực, định hình đô thị hiện đại và mang tầm quốc tế.",
+    "details": [
+      "Điểm khởi đầu từ khu vực Sài Gòn – Gia Định vào thế kỷ 18, phát triển qua các giai đoạn lịch sử phong kiến, thuộc địa đến thời hiện đại.",
+      "Thành phố từng trải qua nhiều lần mở rộng địa giới hành chính, phát triển kinh tế, hạ tầng, văn hóa và xã hội.",
+      "Sáp nhập năm 2025 với Bình Dương và Bà Rịa – Vũng Tàu tạo nên vùng đô thị mở rộng, đa dạng về chức năng kinh tế và vùng phát triển.",
+      "Giữ vai trò trung tâm tài chính, giáo dục, y tế và logistics của khu vực phía Nam sau sáp nhập.",
+      "Tập trung phát triển bền vững, đô thị thông minh, kết nối vùng và đảm bảo an sinh xã hội."
+    ]
+  },
+  "vanHoa": {
+    "title": "Văn hóa TP.HCM – Đa dạng và quốc tế",
+    "description": "Thành phố là nơi hội tụ của nhiều nền văn hóa, cộng đồng dân cư từ khắp nơi, tạo nên môi trường đa dạng văn hóa, nghệ thuật và truyền thống cộng đồng sôi động, phong phú và hiện đại.",
+    "details": [
+      "Kết hợp giữa văn hóa truyền thống Việt Nam và văn hóa đa dân tộc, tiếp nhận ảnh hưởng quốc tế.",
+      "Nhiều lễ hội truyền thống, hoạt động nghệ thuật hiện đại và các không gian văn hóa đa dạng.",
+      "Phát triển các thiết chế văn hóa, bảo tồn giá trị di sản và thúc đẩy sáng tạo nghệ thuật.",
+      "Nơi giao lưu văn hóa, du lịch văn hóa, nghệ thuật đường phố và sự kiện quốc tế diễn ra thường xuyên.",
+      "Đẩy mạnh giáo dục văn hóa cộng đồng, nghệ thuật biểu diễn và phát triển công nghiệp văn hóa."
+    ]
+  },
+  "amThuc": {
+    "title": "Ẩm thực TP.HCM – Hội tụ đa dạng vùng miền và quốc tế",
+    "description": "Ẩm thực TP.HCM quy tụ văn hóa ẩm thực phong phú của mọi vùng miền Việt Nam cùng ảnh hưởng đa dạng quốc tế, tạo nên một trong những nền ẩm thực đô thị độc đáo và dao động đa dạng hương vị.",
+    "details": [
+      "Món ăn đặc sản đa dạng từ các vùng miền Bắc, Trung, Nam, kết hợp với các món ăn quốc tế đa dạng.",
+      "Ẩm thực đường phố nổi tiếng với các món như phở, bánh mì, hủ tiếu, bún riêu và các thức ăn nhanh quốc tế.",
+      "Phát triển mạnh các nhà hàng, quán ăn, khu ẩm thực phục vụ đa dạng nhu cầu thực khách quốc tế và trong nước.",
+      "Ẩm thực gắn với các lễ hội văn hóa, sự kiện du lịch và hoạt động quảng bá văn hóa đặc sắc.",
+      "Phong cách ẩm thực hiện đại, sáng tạo được phát triển song song với các món ăn truyền thống."
+    ]
+  },
+  "diaDanh": {
+    "title": "Địa danh nổi bật TP.HCM sau sáp nhập",
+    "description": "TP.HCM sở hữu nhiều địa danh lịch sử, trung tâm thương mại, khu đô thị, điểm du lịch và không gian văn hóa đa dạng, thu hút đông đảo khách du lịch trong và ngoài nước.",
+    "details": [
+      "Các quận trung tâm như Quận 1 với Dinh Thống Nhất, Nhà thờ Đức Bà, Bưu điện Thành phố là biểu tượng di sản văn hóa hiện đại.",
+      "Khu đô thị mới Thủ Thiêm là trung tâm tài chính trọng điểm và biểu tượng phát triển đô thị tương lai.",
+      "Các khu vực mở rộng như Bình Dương và Bà Rịa – Vũng Tàu phát triển công nghiệp, cảng biển, du lịch biển và đô thị sinh thái.",
+      "Đặc khu Côn Đảo với di tích lịch sử và thắng cảnh thiên nhiên, trọng điểm du lịch – sinh thái biển đảo.",
+      "Hệ thống giao thông đồng bộ gồm sân bay quốc tế, cảng biển, đường cao tốc và hệ thống metro kết nối các vùng."
+    ]
+  },
+  "ketLuan": {
+    "title": "Tổng kết về TP.HCM mới sau sáp nhập",
+    "description": "Sau sáp nhập Bình Dương và Bà Rịa – Vũng Tàu, TP.HCM trở thành siêu đô thị lớn nhất Việt Nam với diện tích và dân số vượt trội, vận hành theo mô hình chính quyền hai cấp tinh gọn, hiện đại. Thành phố phát huy vai trò đầu tàu kinh tế phía Nam, trung tâm tài chính, văn hóa và du lịch biển – đô thị đa dạng, hướng đến phát triển bền vững, thông minh và lan tỏa sức mạnh vùng Đông Nam Bộ."
+  }
+}
