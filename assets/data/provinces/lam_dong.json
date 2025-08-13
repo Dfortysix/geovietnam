@@ -1,0 +1,72 @@
+{
+  "id": "Lam Dong",
+  "nameVietnamese": "Lâm Đồng",
+  "overview": {
+    "title": "Vùng Đất Cao Nguyên Giao Thoa Biển - Núi Sau Sáp Nhập",
+    "description": "Lâm Đồng là tỉnh trung du và cao nguyên khu vực Nam Trung Bộ – Tây Nguyên, nổi tiếng với khí hậu ôn hòa, thành phố Đà Lạt mộng mơ, di tích lịch sử – văn hóa và cảnh quan thiên nhiên đa dạng. Sau sáp nhập với hai tỉnh Đắk Nông và Bình Thuận năm 2025, Lâm Đồng mở rộng diện tích, dân số vượt trội, trở thành tỉnh lớn nhất cả nước, trung tâm hành chính đặt tại thành phố Đà Lạt, phát triển kết nối các tiểu vùng kinh tế và văn hóa đặc sắc.",
+    "area": "24.233,10 km²",
+    "population": "3.872.999 người (2025)",
+    "region": "Nam Trung Bộ – Tây Nguyên",
+    "type": "Tỉnh",
+    "nickname": "Vùng đất cao nguyên – biển, phát triển đa dạng"
+  },
+  "sapNhap2025": {
+    "title": "Lâm Đồng sau sáp nhập Đắk Nông, Bình Thuận 2025",
+    "description": "Từ 1/7/2025, tỉnh Lâm Đồng mới thành lập trên cơ sở hợp nhất ba tỉnh Lâm Đồng, Đắk Nông, Bình Thuận; trung tâm hành chính và chính trị tại thành phố Đà Lạt. Chính quyền địa phương tổ chức theo mô hình hai cấp gồm tỉnh – xã/phường, không còn cấp huyện/quận trung gian; có 124 đơn vị hành chính cấp xã (103 xã, 20 phường, 1 đặc khu).",
+    "details": [
+      "Sáp nhập 3 tỉnh thành tỉnh Lâm Đồng mới với diện tích lớn nhất cả nước, trung tâm hành chính đặt tại Đà Lạt.",
+      "Tỉnh có 124 đơn vị hành chính cấp xã (103 xã, 20 phường, 1 đặc khu hành chính – kinh tế).",
+      "Bãi bỏ cấp huyện/quận, xã/phường trực thuộc tỉnh quản lý trực tiếp, nâng cao hiệu quả điều hành và phục vụ.",
+      "Bộ máy tổ chức hành chính cấp xã tinh gọn, tăng quyền hạn, trách nhiệm Chủ tịch UBND xã.",
+      "Phát triển đồng đều các vùng núi, cao nguyên và duyên hải, kết nối các tiểu vùng kinh tế – văn hóa của ba địa phương."
+    ]
+  },
+  "lichSu": {
+    "title": "Lịch sử hình thành và phát triển Lâm Đồng mới",
+    "description": "Ba tỉnh Lâm Đồng, Đắk Nông và Bình Thuận đều là vùng đất lâu đời với lịch sử phát triển văn hóa – xã hội phong phú, truyền thống đấu tranh, di tích cách mạng và sự giao thoa vùng miền, là cửa ngõ chiến lược Nam Trung Bộ – Tây Nguyên.",
+    "details": [
+      "Lâm Đồng: vùng đất cao nguyên hình thành, phát triển dân cư Đà Lạt – Bảo Lộc gắn với khai phá, văn hóa gốc Tây Nguyên và người Việt miền xuôi.",
+      "Đắk Nông: vùng đất Tây Nguyên truyền thống, nhiều dân tộc cư trú, đóng vai trò tuyến đầu trong các cuộc đấu tranh bảo vệ tổ quốc.",
+      "Bình Thuận: vùng duyên hải lâu đời với cảng biển Phan Thiết, địa danh lịch sử, nền văn hóa Chăm và Việt giao thoa.",
+      "Qua các thời kỳ đổi thay, phát triển kinh tế nông nghiệp, du lịch và công nghiệp hiện đại.",
+      "Sau năm 2025, hợp nhất hình thành Lâm Đồng mới, phát triển quy mô lớn, mở rộng không gian vùng mới trên nền tảng lịch sử đa dạng."
+    ]
+  },
+  "vanHoa": {
+    "title": "Văn hóa Lâm Đồng – Đa dạng miền cao nguyên, biển và dân tộc",
+    "description": "Tỉnh mới hội tụ, giao thoa bản sắc văn hóa của đồng bào các dân tộc vùng cao nguyên (Lâm Đồng – Đắk Nông), vùng biển và đô thị (Bình Thuận), nhiều lễ hội, truyền thống đặc sắc, nghệ thuật dân gian, làng nghề thủ công nổi tiếng.",
+    "details": [
+      "Lễ hội Hoa Đà Lạt, Festival Biển Bình Thuận, lễ hội mừng lúa mới Tây Nguyên, lễ hội Katê của người Chăm…",
+      "Nghệ thuật cộng đồng: cồng chiêng Tây Nguyên, các hội chợ, ngày hội văn hóa dân tộc thiểu số vùng cao.",
+      "Làng nghề truyền thống: dệt thổ cẩm, chế tác mỹ nghệ, gốm Chăm, chế biến chè, cà phê, đặc sản biển.",
+      "Trang phục, nhạc cụ và nghi lễ phong phú thể hiện sự đa dạng dân tộc – vùng miền.",
+      "Phát triển du lịch văn hóa, giao lưu vùng biển – núi, hình thành các không gian sáng tạo và bảo tồn di sản phi vật thể."
+    ]
+  },
+  "amThuc": {
+    "title": "Ẩm thực Lâm Đồng mới – Hương vị cao nguyên kết hợp biển",
+    "description": "Ẩm thực tỉnh mới là sự kết hợp giữa đặc sản cao nguyên, món dân dã vùng núi – dân tộc, với đặc sản biển, món ngon truyền thống của Bình Thuận và ẩm thực hiện đại đô thị.",
+    "details": [
+      "Các món đặc trưng như nem nướng, bánh căn, bánh xèo Phan Thiết, cá nướng, hải sản tươi sống vùng biển.",
+      "Cà phê Mê Linh, chè Bảo Lộc, rượu cần của người K'Ho – các thức uống nổi tiếng cao nguyên.",
+      "Gỏi cá mai, mực nướng (Bình Thuận), heo rừng quay, rau củ quả Đà Lạt, khoai, bắp nếp rừng.",
+      "Đặc sản trứ danh như nước mắm Phan Thiết, cá kho, bánh hỏi lòng heo, các món ăn dân dã vùng biển.",
+      "Ẩm thực giao thoa, phong phú mang đặc trưng vùng khí hậu, địa hình, văn hóa đa sắc màu của Lâm Đồng mới."
+    ]
+  },
+  "diaDanh": {
+    "title": "Địa danh nổi tiếng Lâm Đồng – Đắk Nông – Bình Thuận",
+    "description": "Tỉnh Lâm Đồng mới sở hữu nhiều danh lam thắng cảnh, di tích quốc gia đặc biệt và điểm du lịch nổi tiếng của Tây Nguyên và Nam Trung Bộ.",
+    "details": [
+      "Thành phố Đà Lạt – thành phố ngàn hoa, điểm du lịch nổi tiếng với khí hậu mát mẻ, cảnh quan thiên nhiên đẹp.",
+      "Hồ Tuyền Lâm, thác Datanla, đồi chè Cầu Đất – các điểm du lịch sinh thái nổi tiếng của Đà Lạt.",
+      "Bình Thuận (tỉnh cũ đã sáp nhập) – Vùng đất duyên hải với bãi biển đẹp, di tích lịch sử và văn hóa Chăm đặc sắc, từ 2025 đã sáp nhập vào Lâm Đồng.",
+      "Đắk Nông (tỉnh cũ đã sáp nhập) – Vùng đất Tây Nguyên với văn hóa dân tộc thiểu số phong phú, cảnh quan thiên nhiên hoang dã, từ 2025 đã sáp nhập vào Lâm Đồng.",
+      "Các di tích lịch sử, văn hóa và thắng cảnh thiên nhiên khác gắn với bảo tồn bản sắc địa phương."
+    ]
+  },
+  "ketLuan": {
+    "title": "Tổng kết về tỉnh Lâm Đồng mới sau sáp nhập",
+    "description": "Lâm Đồng mới sau khi hợp nhất với Đắk Nông và Bình Thuận là không gian phát triển lớn mạnh, kết nối cao nguyên – biển, hội tụ truyền thống văn hóa đa dạng và giá trị di sản phong phú. Tỉnh có vị trí chiến lược, tiềm năng du lịch, nông nghiệp, công nghiệp và dịch vụ được khai thác toàn diện, vận hành theo mô hình tinh gọn, hiện đại, hướng tới phát triển bền vững và nâng cao đời sống người dân Nam Trung Bộ – Tây Nguyên."
+  }
+}
