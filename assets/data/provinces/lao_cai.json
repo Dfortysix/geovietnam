@@ -1,0 +1,72 @@
+{
+  "id": "Lao Cai",
+  "nameVietnamese": "Lào Cai",
+  "overview": {
+    "title": "Vùng Đất Núi Non Và Giao Thoa Văn Hóa Tây Bắc",
+    "description": "Lào Cai là tỉnh miền núi vùng Tây Bắc Bộ, nổi bật với cảnh quan thiên nhiên hùng vĩ, nền văn hóa đa dạng của các dân tộc thiểu số và vai trò quan trọng trong phát triển kinh tế biên giới. Sau sáp nhập với tỉnh Yên Bái năm 2025, Lào Cai mở rộng diện tích và dân số, phát triển đồng bộ kinh tế - văn hóa - xã hội với mô hình chính quyền hai cấp tinh gọn, nâng cao hiệu quả quản lý và phục vụ người dân.",
+    "area": "14.256,7 km²",
+    "population": "1.840.000 người (2025)",
+    "region": "Tây Bắc Bộ",
+    "type": "Tỉnh",
+    "nickname": "Vùng đất núi non, bản sắc dân tộc đa dạng"
+  },
+  "sapNhap2025": {
+    "title": "Lào Cai sau sáp nhập Yên Bái 2025",
+    "description": "Từ ngày 1/7/2025, tỉnh Lào Cai chính thức hợp nhất với tỉnh Yên Bái theo nghị quyết Quốc hội. Tỉnh mới tổ chức bộ máy chính quyền theo mô hình hai cấp gồm tỉnh và xã/phường, không còn cấp huyện/quận trung gian nhằm tinh gọn bộ máy hành chính, nâng cao hiệu quả quản lý và phục vụ nhân dân vùng núi Tây Bắc.",
+    "details": [
+      "Sáp nhập toàn bộ diện tích và dân số tỉnh Yên Bái vào tỉnh Lào Cai, tạo tỉnh mới với diện tích 14.256,7 km² và dân số khoảng 1,84 triệu người.",
+      "Tỉnh có tổng cộng 115 đơn vị hành chính cấp xã, gồm các xã và phường được tổ chức lại từ các đơn vị cũ của hai tỉnh trước sáp nhập.",
+      "Bãi bỏ cấp huyện/quận trung gian, các xã/phường trực thuộc tỉnh quản lý trực tiếp theo mô hình chính quyền hai cấp.",
+      "Trung tâm chính trị và hành chính đặt tại thành phố Lào Cai hiện hữu, sử dụng cơ sở hạ tầng của hai tỉnh để vận hành hiệu quả.",
+      "Tập trung phát triển kinh tế biên mậu, du lịch sinh thái, văn hóa dân tộc và nâng cao chất lượng phục vụ người dân."
+    ]
+  },
+  "lichSu": {
+    "title": "Lịch sử hình thành và phát triển Lào Cai mới",
+    "description": "Lào Cai và Yên Bái là những tỉnh miền núi Tây Bắc Bộ giàu truyền thống lịch sử, văn hóa bản địa và có nhiều di tích, sự kiện quan trọng. Sự hợp nhất tạo điều kiện nâng cao năng lực quản lý, phát triển kinh tế xã hội đồng bộ và bền vững.",
+    "details": [
+      "Lào Cai nổi tiếng với vùng biên giới Việt - Trung lịch sử và nhiều dân tộc thiểu số sinh sống lâu đời.",
+      "Yên Bái có truyền thống văn hóa dân tộc đặc sắc, là điểm đến quan trọng trong phong trào cách mạng và phát triển nông nghiệp.",
+      "Hai tỉnh từng phát triển riêng biệt nhưng có sự liên kết chặt chẽ về kinh tế văn hóa trong vùng Tây Bắc.",
+      "Sáp nhập nhằm nâng cao hiệu quả quản lý, phát huy thế mạnh kinh tế và bảo tồn bản sắc văn hóa dân tộc.",
+      "Mô hình chính quyền hai cấp giúp đổi mới tổ chức hành chính, cải thiện đời sống nhân dân vùng núi."
+    ]
+  },
+  "vanHoa": {
+    "title": "Văn hóa Lào Cai – Yên Bái đa dạng, đặc sắc vùng Tây Bắc",
+    "description": "Tỉnh mới tiếp tục phát huy giá trị văn hóa truyền thống đa sắc tộc, với nhiều lễ hội đặc sắc, nghệ thuật dân gian phong phú và các làng nghề truyền thống của đồng bào dân tộc thiểu số.",
+    "details": [
+      "Lễ hội văn hóa các dân tộc Mông, Dao, Tày, Nùng với múa khèn, hát then, đua ngựa truyền thống.",
+      "Lễ hội Khèn Mông ở Lào Cai và lễ hội Mường Lò của dân tộc Thái tại Yên Bái được tổ chức quy mô.",
+      "Bảo tồn và phát huy các giá trị phi vật thể như trang phục, lễ nghi, ẩm thực đặc trưng vùng núi.",
+      "Phát triển các làng nghề thủ công truyền thống như dệt thổ cẩm, làm đồ gỗ, chế tác bạc.",
+      "Tăng cường giao lưu văn hóa và du lịch cộng đồng gắn với lễ hội và bản sắc dân tộc đặc trưng."
+    ]
+  },
+  "amThuc": {
+    "title": "Ẩm thực Lào Cai – Yên Bái đặc trưng núi rừng Tây Bắc",
+    "description": "Ẩm thực tỉnh mới đa dạng với nhiều món ăn đặc sản vùng núi, sử dụng nguyên liệu bản địa phong phú, thể hiện sự hòa quyện giữa các dân tộc thiểu số Tây Bắc và nét ẩm thực truyền thống độc đáo.",
+    "details": [
+      "Món thắng cố đặc trưng dân tộc Mông và các món nướng đa dạng của đồng bào các dân tộc.",
+      "Bánh chưng đen, xôi ngũ sắc, gà đen mổ sẻ và các loại rau rừng đặc sản vùng núi.",
+      "Ẩm thực gắn liền với lễ hội, tập tục truyền thống và nguyên liệu tự nhiên phong phú.",
+      "Các món ăn truyền thống được bảo tồn và phát triển phục vụ du lịch trải nghiệm văn hóa.",
+      "Ẩm thực kết hợp hài hòa giữa nét đặc trưng truyền thống và sáng tạo trong chế biến."
+    ]
+  },
+  "diaDanh": {
+    "title": "Địa danh nổi bật tỉnh Lào Cai mới",
+    "description": "Tỉnh sở hữu nhiều danh lam thắng cảnh nổi tiếng, các khu du lịch sinh thái, di tích lịch sử và văn hóa đa dạng, thu hút du khách trong và ngoài nước đến khám phá vùng Tây Bắc.",
+    "details": [
+      "Sa Pa – điểm đến du lịch sinh thái, văn hóa nổi bật với cảnh núi non hùng vĩ và bản sắc dân tộc đặc trưng.",
+      "Khu di tích quốc gia đặc biệt Nghĩa Lộ và Mường Lò, vùng đất truyền thống đồng bào Thái.",
+      "Cửa khẩu quốc tế Lào Cai – điểm giao thương quốc tế quan trọng, kết nối kinh tế biên mậu Việt - Trung.",
+      "Khu bảo tồn thiên nhiên Hoàng Liên – vườn quốc gia với hệ sinh thái rừng nguyên sinh đa dạng.",
+      "Các điểm du lịch sinh thái, văn hóa cộng đồng tại các bản làng dân tộc thiểu số vùng núi Tây Bắc."
+    ]
+  },
+  "ketLuan": {
+    "title": "Tổng kết về tỉnh Lào Cai mới sau sáp nhập",
+    "description": "Sau khi sáp nhập tỉnh Yên Bái, Lào Cai mới là vùng đất có quy mô diện tích và dân số tăng trưởng, phát triển đồng bộ kinh tế biên mậu, văn hóa đa sắc tộc và du lịch sinh thái đặc sắc vùng Tây Bắc. Mô hình chính quyền hai cấp tinh gọn giúp nâng cao hiệu quả quản lý, phục vụ tốt đời sống nhân dân và phát huy giá trị bản sắc văn hóa truyền thống vùng núi, hướng tới phát triển bền vững và hội nhập quốc tế."
+  }
+}
