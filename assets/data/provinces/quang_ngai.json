@@ -1,0 +1,72 @@
+{
+  "id": "Quang Ngai",
+  "nameVietnamese": "Quảng Ngãi",
+  "overview": {
+    "title": "Vùng Đất Giao Thoa Biển - Cao Nguyên Sau Sáp Nhập",
+    "description": "Quảng Ngãi là tỉnh ven biển miền Trung, nổi tiếng với truyền thống cách mạng, di tích văn hóa - lịch sử, khu kinh tế Dung Quất, đảo Lý Sơn và cảnh quan thiên nhiên đặc sắc. Sau sáp nhập với Kon Tum vào ngày 1/7/2025, tỉnh Quảng Ngãi mở rộng diện tích và dân số, kết nối không gian phát triển giữa duyên hải Nam Trung Bộ và Tây Nguyên bằng mô hình chính quyền hai cấp tinh gọn, nâng cao hiệu quả quản lý.",
+    "area": "14.832,55 km²",
+    "population": "2.161.755 người (2025)",
+    "region": "Nam Trung Bộ - Tây Nguyên",
+    "type": "Tỉnh",
+    "nickname": "Vùng đất giao thoa biển - cao nguyên, công nghiệp và di sản"
+  },
+  "sapNhap2025": {
+    "title": "Quảng Ngãi sau sáp nhập Kon Tum 2025",
+    "description": "Từ 1/7/2025, tỉnh Quảng Ngãi hợp nhất với tỉnh Kon Tum thành tỉnh Quảng Ngãi mới. Bộ máy hành chính áp dụng mô hình chính quyền hai cấp tỉnh-xã/phường, bãi bỏ hoàn toàn cấp huyện/quận trung gian. Tỉnh gồm tổng cộng 96 đơn vị cấp xã (86 xã, 9 phường, 1 đặc khu), trung tâm hành chính đặt tại thành phố Quảng Ngãi.",
+    "details": [
+      "Sáp nhập toàn bộ diện tích và dân số tỉnh Kon Tum, tạo nên tỉnh Quảng Ngãi mới với diện tích 14.832,55km², dân số hơn 2,16 triệu người.",
+      "Tổng cộng 96 đơn vị hành chính cấp xã: 86 xã, 9 phường, 1 đặc khu hành chính - kinh tế.",
+      "Trung tâm chính trị - hành chính đặt tại thành phố Quảng Ngãi.",
+      "Bỏ cấp huyện/quận, tổ chức bộ máy chính quyền hai cấp tinh gọn, phân quyền mạnh cho cấp xã/phường.",
+      "Tạo không gian phát triển vững chắc, gắn kết kinh tế biển miền Trung với khu vực cao nguyên, phát huy lợi thế mỗi vùng."
+    ]
+  },
+  "lichSu": {
+    "title": "Lịch sử hình thành và phát triển Quảng Ngãi mới",
+    "description": "Quảng Ngãi và Kon Tum là hai vùng đất có truyền thống lịch sử, cách mạng và văn hóa đa dạng. Sau hợp nhất, tỉnh mới kế thừa chiều sâu văn hóa, bản sắc dân tộc và các thành tựu phát triển của hai địa phương.",
+    "details": [
+      "Quảng Ngãi nổi tiếng với truyền thống yêu nước, các di tích như chứng tích Sơn Mỹ, địa đạo Đám Toải, di tích Ba Tơ, cùng các làng nghề lâu đời ven biển.",
+      "Kon Tum là cửa ngõ tây nguyên, có lịch sử hình thành các dân tộc bản địa lâu đời như Ba Na, Xơ Đăng, Gia Rai và truyền thống cách mạng kiên cường.",
+      "Sau năm 1945, Quảng Ngãi và Kon Tum đều đóng vai trò quan trọng trong các cuộc kháng chiến bảo vệ Tổ quốc.",
+      "Đầu thế kỷ XXI, Quảng Ngãi phát triển công nghiệp hiện đại (Dung Quất), còn Kon Tum chú trọng công nghiệp chế biến lâm sản, cây công nghiệp và du lịch sinh thái.",
+      "Năm 2025, hai tỉnh hợp nhất tạo nên không gian phát triển kinh tế - văn hóa - xã hội mới kết nối biển và cao nguyên."
+    ]
+  },
+  "vanHoa": {
+    "title": "Văn hóa Quảng Ngãi – Kon Tum hòa quyện đa dạng bản sắc",
+    "description": "Tỉnh mới là nơi hội tụ, giao thoa văn hóa vùng biển Quảng Ngãi và cao nguyên Kon Tum với nhiều lễ hội truyền thống, di sản các dân tộc thiểu số và nghệ thuật dân gian đặc sắc.",
+    "details": [
+      "Lễ hội ra khơi, lễ hội cầu ngư, lễ hội đảo Lý Sơn tại Quảng Ngãi gắn với thế mạnh biển và nghề cá.",
+      "Lễ hội mừng lúa mới, lễ hội đâm trâu, cồng chiêng truyền thống ở Kon Tum và các buôn làng cao nguyên.",
+      "Nghệ thuật dân gian: dân ca, bài chòi, nghệ thuật làm gốm, chạm khắc gỗ, dệt thổ cẩm.",
+      "Bảo tồn và phát huy các di sản phi vật thể: các làng nghề biển, làng nghề rượu cần, múa cồng chiêng Tây Nguyên.",
+      "Tăng cường giao lưu văn hóa, phát triển du lịch cộng đồng, tôn vinh giá trị đa dạng các dân tộc ven biển và cao nguyên."
+    ]
+  },
+  "amThuc": {
+    "title": "Ẩm thực Quảng Ngãi – Kon Tum kết tinh biển và núi",
+    "description": "Ẩm thực tỉnh mới đa dạng với hương vị đậm đà biển – cao nguyên, sử dụng nguyên liệu tươi ngon, kết hợp tinh hoa ẩm thực vùng Quảng Ngãi và Tây Nguyên.",
+    "details": [
+      "Cá bống sông Trà, don, bánh xèo Quảng Ngãi nổi tiếng khắp miền Trung.",
+      "Tỏi Lý Sơn, rong biển và các đặc sản hải sản tươi sống vùng biển Đông.",
+      "Gà nướng, cơm lam, muối kiến vàng, rượu cần – đặc sản các buôn làng Kon Tum.",
+      "Mỳ Quảng, bánh ít lá gai và các món ăn truyền thống của người miền Trung.",
+      "Ẩm thực là sự hòa quyện vị biển và vị rừng tạo nên trải nghiệm ẩm thực độc đáo, hấp dẫn du khách."
+    ]
+  },
+  "diaDanh": {
+    "title": "Địa danh nổi tiếng Quảng Ngãi – Kon Tum",
+    "description": "Tỉnh Quảng Ngãi mới sở hữu nhiều danh lam thắng cảnh, di tích quốc gia đặc biệt và điểm du lịch nổi tiếng của miền Trung và Tây Nguyên.",
+    "details": [
+      "Đảo Lý Sơn – đặc khu hành chính, điểm du lịch biển đảo tiền tiêu nổi tiếng cả nước.",
+      "Khu du lịch sinh thái Măng Đen – 'Đà Lạt thứ hai' của Việt Nam với khí hậu ôn hòa, rừng thông xanh mướt.",
+      "Khu kinh tế Dung Quất – vùng phát triển công nghiệp năng động, cảng biển nước sâu hiện đại.",
+      "Nhà máy lọc dầu Dung Quất, hệ thống các di tích Sơn Mỹ, Ba Tơ – dấu ấn lịch sử cách mạng.",
+      "Cửa khẩu quốc tế Bờ Y, ngã ba Đông Dương – điểm nối Việt Nam – Lào – Campuchia, thúc đẩy giao thương vùng tam giác."
+    ]
+  },
+  "ketLuan": {
+    "title": "Tổng kết về tỉnh Quảng Ngãi mới sau sáp nhập",
+    "description": "Quảng Ngãi mới sau khi hợp nhất với Kon Tum là không gian phát triển lớn mạnh, kết nối biển – cao nguyên, hội tụ truyền thống anh hùng và giá trị văn hóa đa dạng. Tỉnh có vị trí chiến lược, tiềm năng kinh tế biển, công nghiệp, du lịch và quốc phòng được khai thác toàn diện, vận hành theo mô hình tinh gọn, hiện đại, hướng tới phát triển bền vững và nâng cao đời sống người dân miền Trung – Tây Nguyên."
+  }
+}
