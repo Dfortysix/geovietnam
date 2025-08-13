@@ -1,0 +1,72 @@
+{
+  "id": "Dong Nai",
+  "nameVietnamese": "Đồng Nai",
+  "overview": {
+    "title": "Trung Tâm Kinh Tế Công Nghiệp Đô Thị Đông Nam Bộ",
+    "description": "Đồng Nai là tỉnh trọng điểm vùng Đông Nam Bộ, nổi bật với phát triển công nghiệp mạnh mẽ, đô thị hiện đại và hệ thống hạ tầng kinh tế - xã hội phát triển đồng bộ. Sau sáp nhập với tỉnh Bình Phước từ ngày 1/7/2025, tỉnh mở rộng diện tích và dân số, trở thành một trong những địa phương có quy mô lớn, vận hành mô hình chính quyền hai cấp tinh gọn, hiệu quả, tập trung phục vụ người dân và phát triển kinh tế bền vững.",
+    "area": "12.737,18 km²",
+    "population": "4.491.408 người (2025)",
+    "region": "Đông Nam Bộ",
+    "type": "Tỉnh",
+    "nickname": "Trung tâm công nghiệp và đô thị lớn của miền Nam"
+  },
+  "sapNhap2025": {
+    "title": "Đồng Nai sau sáp nhập Bình Phước 2025",
+    "description": "Ngày 1/7/2025, tỉnh Bình Phước được sáp nhập vào Đồng Nai theo Nghị quyết 202/2025/QH15, tạo thành tỉnh Đồng Nai mới với diện tích và dân số tăng mạnh. Tỉnh vận hành theo mô hình chính quyền hai cấp gồm tỉnh và xã/phường, bãi bỏ cấp huyện/quận trung gian. Tổng cộng tỉnh có 95 đơn vị hành chính cấp xã, gồm 23 phường và 72 xã được tổ chức lại từ các đơn vị trước sáp nhập.",
+    "details": [
+      "Sáp nhập tỉnh Bình Phước vào Đồng Nai, tạo tỉnh mới có diện tích 12.737,18 km² và dân số 4.491.408 người.",
+      "Bãi bỏ cấp huyện/quận trung gian, các xã/phường trực thuộc tỉnh quản lý theo mô hình chính quyền hai cấp.",
+      "Số lượng đơn vị hành chính cấp xã giảm từ tổng số cũ xuống còn 95 đơn vị (23 phường, 72 xã).",
+      "Trung tâm hành chính - chính trị đặt tại phường Trấn Biên, thành phố Biên Hòa – trung tâm kinh tế văn hóa tỉnh.",
+      "Cơ cấu bộ máy hành chính được tinh giản, tăng quyền hạn và trách nhiệm cho cấp xã/phường nhằm nâng cao hiệu quả quản lý và phục vụ người dân."
+    ]
+  },
+  "lichSu": {
+    "title": "Lịch sử hình thành và phát triển Đồng Nai mới",
+    "description": "Đồng Nai và Bình Phước đều là những địa phương có lịch sử phát triển kinh tế - văn hóa lâu đời ở khu vực Đông Nam Bộ, sau sáp nhập tiếp tục kế thừa và phát huy thế mạnh là trung tâm công nghiệp và đô thị lớn.",
+    "details": [
+      "Đồng Nai giàu truyền thống văn hóa bản địa và là nơi phát triển mạnh các khu công nghiệp, đô thị hóa.",
+      "Bình Phước là tỉnh có thế mạnh về nông nghiệp, khai khoáng và phát triển các khu công nghiệp.",
+      "Cùng nhau sáp nhập tạo thành tỉnh có tiềm năng tổng hợp về đất đai, dân số và phát triển kinh tế đa ngành.",
+      "Sau khi hợp nhất, tỉnh mới tiếp tục phát triển kinh tế công nghiệp, dịch vụ, đồng thời giữ gìn bản sắc văn hóa đa dạng.",
+      "Mô hình chính quyền mới giúp nâng cao năng lực quản lý nhà nước và cải thiện chất lượng phục vụ người dân."
+    ]
+  },
+  "vanHoa": {
+    "title": "Văn hóa Đồng Nai – Bình Phước đa dạng và phát triển",
+    "description": "Tỉnh mới kết hợp nền văn hóa đa dạng vùng Đông Nam Bộ với nhiều lễ hội truyền thống, nghệ thuật dân gian và làng nghề phát triển, tạo môi trường văn hóa phong phú.",
+    "details": [
+      "Lễ hội làng, lễ hội truyền thống các dân tộc thiểu số tại tỉnh Bình Phước.",
+      "Các sự kiện văn hóa, lễ hội cấp tỉnh và đô thị Biên Hòa, đảm bảo sự hòa quyện giữa truyền thống và hiện đại.",
+      "Nghệ thuật dân gian, các làng nghề như dệt thổ cẩm, làm đồ gốm, nghề thủ công truyền thống.",
+      "Phát triển giao lưu văn hóa giữa các vùng miền trong tỉnh mới, góp phần nâng cao văn hóa đời sống.",
+      "Duy trì và phát huy các giá trị văn hóa phi vật thể, tăng cường hoạt động du lịch văn hóa."
+    ]
+  },
+  "amThuc": {
+    "title": "Ẩm thực Đồng Nai – Bình Phước phong phú bản sắc miền Nam",
+    "description": "Ẩm thực tỉnh mới đa dạng với các món ăn đặc sản vùng Đông Nam Bộ, kết hợp hương vị nông thôn và đô thị, sử dụng nguyên liệu tươi ngon, cách chế biến truyền thống pha trộn hiện đại.",
+    "details": [
+      "Món gà nướng, cá lăng, bánh xèo miền Nam, bún mắm đặc trưng Đồng Nai.",
+      "Ẩm thực dân gian và các món truyền thống đặc sắc của các dân tộc thiểu số ở Bình Phước.",
+      "Các loại rau củ quả, thịt rừng, đặc sản đồng quê được chế biến đa dạng và hấp dẫn.",
+      "Ẩm thực hội nhập và phát triển phục vụ du lịch, công nghiệp và sinh hoạt cộng đồng.",
+      "Ẩm thực đặc sắc góp phần thu hút khách du lịch và phát triển kinh tế dịch vụ địa phương."
+    ]
+  },
+  "diaDanh": {
+    "title": "Địa danh nổi bật tỉnh Đồng Nai mới",
+    "description": "Tỉnh có nhiều danh lam thắng cảnh, di tích lịch sử và điểm du lịch đặc sắc kết hợp giữa vùng đô thị hiện đại và thiên nhiên xanh rộng lớn.",
+    "details": [
+      "Thành phố Biên Hòa – trung tâm hành chính và kinh tế, có nhiều di tích lịch sử và khu công nghiệp lớn.",
+      "Khu du lịch Bửu Long với hồ nước và cảnh quan thiên nhiên thu hút du khách.",
+      "Vườn quốc gia Cát Tiên – khu bảo tồn thiên nhiên đa dạng sinh học quý hiếm.",
+      "Các khu công nghiệp Biên Hòa - Vũng Tàu, khu vực phát triển công nghiệp trọng điểm quốc gia.",
+      "Cộng đồng các dân tộc thiểu số với văn hóa đặc trưng sinh sống rải rác tại các vùng đồi núi tỉnh."
+    ]
+  },
+  "ketLuan": {
+    "title": "Tổng kết về tỉnh Đồng Nai mới sau sáp nhập",
+    "description": "Sau sáp nhập tỉnh Bình Phước, Đồng Nai trở thành tỉnh lớn mạnh với quy mô diện tích và dân số đứng vào hàng top quốc gia. Tỉnh vận hành mô hình chính quyền hai cấp tinh gọn, hiện đại, phát huy tiềm năng phát triển kinh tế công nghiệp và dịch vụ, bảo tồn giá trị văn hóa đa dạng, hướng tới phát triển bền vững và nâng cao chất lượng đời sống nhân dân trong bối cảnh hội nhập và phát triển."
+  }
+}
