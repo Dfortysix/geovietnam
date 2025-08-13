@@ -1,0 +1,72 @@
+{
+  "id": "Dak Lak",
+  "nameVietnamese": "Đắk Lắk",
+  "overview": {
+    "title": "Trung Tâm Vùng Tây Nguyên Năng Động và Đa Dạng",
+    "description": "Đắk Lắk là tỉnh trung tâm vùng Tây Nguyên, nổi bật với cao nguyên Bảo Lộc, văn hóa đa dạng các dân tộc thiểu số, cảnh quan thiên nhiên hùng vĩ và tiềm năng phát triển nông nghiệp công nghệ cao, du lịch sinh thái. Sau sáp nhập tỉnh Phú Yên năm 2025, Đắk Lắk mở rộng quy mô diện tích và dân số, đồng thời vận hành mô hình chính quyền hai cấp tinh gọn, hiệu quả, tạo điều kiện phát triển kinh tế, văn hóa và xã hội đa ngành, đa lĩnh vực.",
+    "area": "18.096,40 km²",
+    "population": "3.346.853 người (2025)",
+    "region": "Tây Nguyên - Nam Trung Bộ",
+    "type": "Tỉnh",
+    "nickname": "Trung tâm văn hóa, kinh tế Tây Nguyên"
+  },
+  "sapNhap2025": {
+    "title": "Đắk Lắk sau sáp nhập Phú Yên 2025",
+    "description": "Ngày 1/7/2025, tỉnh Đắk Lắk và tỉnh Phú Yên chính thức hợp nhất thành tỉnh Đắk Lắk mới. Tỉnh tổ chức chính quyền theo mô hình hai cấp gồm tỉnh và xã/phường, bãi bỏ cấp huyện/quận trung gian. Tỉnh mới có tổng cộng 101 đơn vị hành chính cấp xã (gồm 67 xã và 34 phường được tổ chức lại từ hai tỉnh trước sáp nhập), trung tâm hành chính đặt tại thành phố Buôn Ma Thuột.",
+    "details": [
+      "Sáp nhập tỉnh Phú Yên vào Đắk Lắk, tạo nên tỉnh mới với diện tích 18.096,40 km² và dân số khoảng 3,35 triệu người.",
+      "Trung tâm chính trị - hành chính đặt tại thành phố Buôn Ma Thuột, tỉnh Đắk Lắk cũ.",
+      "Bãi bỏ cấp huyện/quận trung gian, các xã/phường trực thuộc tỉnh quản lý trực tiếp theo mô hình chính quyền hai cấp.",
+      "Bộ máy hành chính mới vận hành chuyên nghiệp, ứng dụng công nghệ thông tin hiện đại, đảm bảo hoạt động trơn tru ngay từ đầu.",
+      "Tỉnh tập trung phát triển nông nghiệp công nghệ cao, du lịch sinh thái, công nghiệp đa ngành và nâng cao hiệu quả quản lý phục vụ người dân."
+    ]
+  },
+  "lichSu": {
+    "title": "Lịch sử hình thành và phát triển Đắk Lắk mới",
+    "description": "Đắk Lắk và Phú Yên là hai vùng đất có lịch sử văn hóa và truyền thống lâu đời, vùng đất Tây Nguyên nổi bật với đa dạng các dân tộc thiểu số và cảnh quan thiên nhiên đặc sắc của khu vực Nam Trung Bộ. Sau sáp nhập, tỉnh mới kế thừa và phát huy các giá trị lịch sử, văn hóa và tiềm năng phát triển vùng lõi Tây Nguyên – Nam Trung Bộ.",
+    "details": [
+      "Đắk Lắk là trung tâm vùng Tây Nguyên với truyền thống cà phê, văn hóa các dân tộc thiểu số và kinh tế phát triển đa ngành.",
+      "Phú Yên nổi tiếng với bờ biển đẹp, di sản văn hóa và truyền thống lâu đời của vùng duyên hải Nam Trung Bộ.",
+      "Hai tỉnh đều đóng góp quan trọng trong các giai đoạn kháng chiến và phát triển kinh tế xã hội vùng miền.",
+      "Sáp nhập tạo điều kiện thuận lợi để liên kết và phát triển toàn diện, góp phần nâng cao đời sống người dân.",
+      "Chính quyền mới vận hành theo mô hình hai cấp tinh gọn, hiện đại với sự đồng bộ cao về quản lý hành chính."
+    ]
+  },
+  "vanHoa": {
+    "title": "Văn hóa Đắk Lắk – Phú Yên đa dạng và đặc sắc",
+    "description": "Tỉnh mới là nơi hội tụ, giao thoa bản sắc văn hóa của đồng bào các dân tộc Tây Nguyên và duyên hải Nam Trung Bộ với nhiều lễ hội truyền thống, nghệ thuật dân gian và làng nghề thủ công đặc trưng.",
+    "details": [
+      "Lễ hội cồng chiêng, mừng lúa mới, múa xoang đặc trưng của các dân tộc Tây Nguyên.",
+      "Lễ hội truyền thống vùng biển Phú Yên như lễ hội cá Ông, lễ hội cầu ngư và các nét văn hóa biển đặc sắc.",
+      "Nghệ thuật dân gian với hát then, múa xoang, hát bài chòi, nghệ thuật làm gốm và dệt thổ cẩm.",
+      "Phát triển các làng nghề truyền thống kết hợp hoạt động du lịch cộng đồng, giải trí văn hóa.",
+      "Bảo tồn và phát huy các giá trị phi vật thể, tăng cường giao lưu văn hóa giữa các vùng miền."
+    ]
+  },
+  "amThuc": {
+    "title": "Ẩm thực Đắk Lắk – Phú Yên kết hợp hương vị núi rừng và biển cả",
+    "description": "Ẩm thực tỉnh mới đa dạng và phong phú, kết hợp tinh hoa ẩm thực Tây Nguyên với các món hải sản, đặc sản vùng duyên hải Nam Trung Bộ, tạo nên trải nghiệm ẩm thực độc đáo.",
+    "details": [
+      "Các món ăn đặc sắc Tây Nguyên như cơm lam, thịt heo rừng nướng, rượu cần và các loại rau rừng tươi ngon.",
+      "Đặc sản biển Phú Yên với nghêu, sò, cá tươi, mắm nêm, mắm ruốc và các món hải sản hấp dẫn.",
+      "Phương pháp chế biến truyền thống được giữ gìn hòa quyện với sự sáng tạo hiện đại.",
+      "Ẩm thực đa dạng phục vụ du lịch sinh thái, nghỉ dưỡng và các sự kiện văn hóa địa phương.",
+      "Kết nối ẩm thực vùng miền tạo nên nét độc đáo và sự phong phú trong văn hóa ẩm thực."
+    ]
+  },
+  "diaDanh": {
+    "title": "Địa danh nổi bật Đắk Lắk – Phú Yên mở rộng",
+    "description": "Tỉnh mới sở hữu nhiều danh lam thắng cảnh, di tích lịch sử và các điểm du lịch sinh thái, biển đảo đặc sắc của vùng Tây Nguyên và duyên hải Nam Trung Bộ.",
+    "details": [
+      "Thành phố Buôn Ma Thuột – trung tâm hành chính và văn hóa Tây Nguyên với di sản cà phê nổi tiếng.",
+      "Khu du lịch hồ Lak, thác Dray Nur, Đăk Núi Dăng Yăh và các điểm sinh thái Tây Nguyên đặc sắc.",
+      "Biển Tuy Hòa, Bãi Môn, Vũng Rô – các bãi biển đẹp và điểm du lịch biển nổi tiếng Phú Yên.",
+      "Di tích lịch sử như địa đạo Đạm Bri, đền thờ các anh hùng cách mạng và các khu bảo tồn văn hóa Tây Nguyên.",
+      "Các cộng đồng dân tộc thiểu số với kiến trúc truyền thống, lễ hội văn hóa giàu bản sắc."
+    ]
+  },
+  "ketLuan": {
+    "title": "Tổng kết về tỉnh Đắk Lắk mới sau sáp nhập",
+    "description": "Sau khi sáp nhập tỉnh Phú Yên, Đắk Lắk mới trở thành tỉnh có quy mô diện tích và dân số lớn mạnh, phát triển đa ngành tại vùng Tây Nguyên – Nam Trung Bộ. Mô hình chính quyền hai cấp tinh gọn giúp nâng cao hiệu quả quản lý, phát huy bản sắc văn hóa đa dạng và tiềm năng kinh tế, du lịch sinh thái của vùng núi và biển, hướng đến phát triển bền vững và hội nhập quốc tế."
+  }
+}
