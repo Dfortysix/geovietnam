@@ -1,0 +1,72 @@
+{
+  "id": "An Giang",
+  "nameVietnamese": "An Giang",
+  "overview": {
+    "title": "Vùng Đất Lịch Sử Và Phát Triển Vùng Đồng Bằng Sông Cửu Long",
+    "description": "An Giang là tỉnh thuộc Đồng bằng sông Cửu Long, nổi bật với nền văn hóa đa dạng, hệ thống sông ngòi phong phú và thế mạnh phát triển nông nghiệp, thuỷ sản, du lịch sinh thái. Sau sáp nhập với tỉnh Kiên Giang năm 2025, tỉnh mở rộng diện tích và dân số, trở thành tỉnh lớn nhất vùng, vận hành với mô hình chính quyền hai cấp tinh gọn, nâng cao hiệu quả quản lý và phát triển kinh tế - xã hội đa ngành, đa lĩnh vực.",
+    "area": "9.888,91 km²",
+    "population": "4.952.238 người (2025)",
+    "region": "Đồng bằng sông Cửu Long",
+    "type": "Tỉnh",
+    "nickname": "Vùng đất đa sắc tộc, kinh tế - động lực phát triển vùng"
+  },
+  "sapNhap2025": {
+    "title": "An Giang sau sáp nhập Kiên Giang 2025",
+    "description": "Từ ngày 1/7/2025, tỉnh An Giang và tỉnh Kiên Giang chính thức hợp nhất thành tỉnh An Giang mới theo Nghị quyết Quốc hội. Tỉnh tổ chức chính quyền theo mô hình hai cấp gồm tỉnh và xã/phường, không còn cấp huyện/quận trung gian. Tỉnh có 102 đơn vị hành chính cấp xã, gồm 85 xã, 14 phường và 3 đặc khu (Phú Quốc, Kiên Hải và Thổ Châu), trung tâm hành chính đặt tại tỉnh Kiên Giang cũ, thành phố Rạch Giá.",
+    "details": [
+      "Sáp nhập toàn bộ diện tích và dân số tỉnh Kiên Giang vào tỉnh An Giang, tạo tỉnh mới với diện tích 9.888,91 km², dân số gần 5 triệu người.",
+      "Trung tâm chính trị – hành chính đặt tại thành phố Rạch Giá, tỉnh Kiên Giang cũ.",
+      "Tỉnh bỏ cấp huyện/quận trung gian, áp dụng mô hình chính quyền hai cấp với xã/phường trực thuộc tỉnh quản lý trực tiếp.",
+      "Có tổng cộng 102 đơn vị hành chính cấp xã sau sắp xếp, gồm 85 xã, 14 phường và 3 đặc khu hành chính – kinh tế.",
+      "Nâng cao hiệu quả quản lý, phát huy tiềm năng phát triển kinh tế đa ngành, hạ tầng, du lịch sinh thái và bảo tồn văn hóa đa sắc tộc."
+    ]
+  },
+  "lichSu": {
+    "title": "Lịch sử phát triển và hợp nhất tỉnh An Giang mới",
+    "description": "An Giang và Kiên Giang là các tỉnh có truyền thống lịch sử lâu đời, nhiều di tích văn hóa, đặc trưng văn hoá các dân tộc Kinh, Khmer, Hoa và nhiều dân tộc thiểu số khác. Sáp nhập tỉnh mới tạo nên nền tảng phát triển đồng bộ về kinh tế, văn hóa và xã hội cho vùng Đồng bằng sông Cửu Long.",
+    "details": [
+      "An Giang nổi tiếng với nền văn hóa đa dạng và hệ sinh thái đặc trưng vùng sông nước miền Tây.",
+      "Kiên Giang có vùng biển đảo rộng lớn với du lịch phát triển và tiềm năng kinh tế biển.",
+      "Hai tỉnh có lịch sử hợp tác kinh tế, giao lưu văn hóa sâu rộng và vị trí trọng điểm trong vùng.",
+      "Sáp nhập nhằm tối ưu tổ chức bộ máy, kết nối phát triển kinh tế và văn hoá xã hội.",
+      "Quy mô tỉnh mới lớn nhất vùng với nhiều điều kiện thuận lợi cho phát triển bền vững."
+    ]
+  },
+  "vanHoa": {
+    "title": "Văn hóa An Giang – Kiên Giang đa dạng, giàu bản sắc miền Tây",
+    "description": "Tỉnh mới sở hữu văn hóa phong phú của cộng đồng dân tộc Kinh, Khmer, Hoa và các dân tộc miền Tây với các lễ hội truyền thống, nghệ thuật dân gian đặc sắc và làng nghề phát triển.",
+    "details": [
+      "Lễ hội Ok Om Bok, lễ hội đua ghe ngo và các lễ hội truyền thống của đồng bào Khmer.",
+      "Nghệ thuật đờn ca tài tử, hát bội, ca nhạc dân gian và các hình thức nghệ thuật truyền thống miền Tây.",
+      "Các làng nghề truyền thống như làm lồng đèn, chế biến thủ công mỹ nghệ, nghề làm gốm và dệt chiếu.",
+      "Bảo tồn và phát huy các giá trị văn hóa phi vật thể đặc trưng vùng Đồng bằng sông Cửu Long.",
+      "Phát triển du lịch cộng đồng, giao lưu văn hóa và phát huy các giá trị truyền thống."
+    ]
+  },
+  "amThuc": {
+    "title": "Ẩm thực An Giang – Kiên Giang đặc sắc miền Tây Nam Bộ",
+    "description": "Ẩm thực của tỉnh mới đa dạng, phong phú với nhiều món ăn truyền thống, sử dụng nguyên liệu từ sông nước và vùng biển, mang đậm hương vị miền Tây Nam Bộ.",
+    "details": [
+      "Các món nổi tiếng như lẩu mắm, cá lóc nướng trui, bún nước lèo, bánh xèo, hủ tiếu.",
+      "Món ăn đặc sản vùng biển đảo Kiên Giang với hải sản tươi ngon đa dạng.",
+      "Ẩm thực đồng bào Khmer với các món chay, bánh truyền thống và gia vị đặc trưng.",
+      "Sử dụng gia vị mắm, nước cốt dừa, quả sầu riêng và các nguyên liệu đồng bằng đặc sản.",
+      "Phát triển ẩm thực phục vụ du lịch sinh thái và quảng bá đặc sản địa phương."
+    ]
+  },
+  "diaDanh": {
+    "title": "Địa danh nổi bật tỉnh An Giang mới",
+    "description": "Tỉnh mới sở hữu nhiều danh lam thắng cảnh, điểm du lịch sinh thái và di tích lịch sử nổi bật của vùng Đồng bằng sông Cửu Long, đa dạng về thiên nhiên và văn hóa vùng miền.",
+    "details": [
+      "Chợ nổi Cái Răng, rừng tràm Trà Sư và các khu sinh thái sông nước đặc trưng.",
+      "Đảo Phú Quốc – đặc khu kinh tế biển với cảnh quan thiên nhiên tuyệt đẹp và du lịch phát triển.",
+      "Khu di tích lịch sử, văn hóa đông đảo ở An Giang và Kiên Giang.",
+      "Các làng nghề truyền thống và cộng đồng dân tộc với nét văn hóa đặc trưng.",
+      "Các lễ hội truyền thống, lễ hội văn hóa dân gian và không gian sinh thái đa dạng."
+    ]
+  },
+  "ketLuan": {
+    "title": "Tổng kết về tỉnh An Giang mới sau sáp nhập",
+    "description": "Sau khi hợp nhất tỉnh Kiên Giang, tỉnh An Giang mới trở thành tỉnh có quy mô diện tích và dân số lớn nhất vùng Đồng bằng sông Cửu Long, phát triển đa ngành, đa lĩnh vực với mô hình chính quyền hai cấp tinh gọn, hiệu quả, phát huy giá trị văn hóa đa dạng và tiềm năng sinh thái phong phú, hướng tới phát triển bền vững, toàn diện và hội nhập quốc tế."
+  }
+}

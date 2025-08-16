@@ -1,0 +1,72 @@
+{
+  "id": "Thai Nguyen",
+  "nameVietnamese": "Thái Nguyên",
+  "overview": {
+    "title": "Tỉnh Trung Tâm Công Nghiệp Và Nông Nghiệp Vùng Trung Du Miền Núi Bắc Bộ",
+    "description": "Thái Nguyên là tỉnh trung du miền núi Bắc Bộ, nổi bật với hệ thống công nghiệp phát triển và tiềm năng nông nghiệp, du lịch sinh thái. Sau sáp nhập tỉnh Bắc Kạn năm 2025, Thái Nguyên mở rộng diện tích và dân số, vận hành theo mô hình chính quyền hai cấp tinh gọn, nâng cao hiệu quả quản lý nhà nước và phục vụ người dân, kết hợp phát triển đồng bộ các lĩnh vực kinh tế xã hội.",
+    "area": "8.375 km²",
+    "population": "1.799.489 người (2025)",
+    "region": "Trung du và miền núi Bắc Bộ",
+    "type": "Tỉnh",
+    "nickname": "Trung tâm phát triển công nghiệp và nông nghiệp miền núi"
+  },
+  "sapNhap2025": {
+    "title": "Thái Nguyên mới sau sáp nhập Bắc Kạn 2025",
+    "description": "Ngày 1/7/2025, tỉnh Bắc Kạn được sáp nhập vào tỉnh Thái Nguyên, thành lập tỉnh Thái Nguyên mới với diện tích và dân số được mở rộng. Tỉnh tổ chức chính quyền theo mô hình hai cấp gồm tỉnh và xã/phường, không còn cấp huyện/quận trung gian nhằm tinh gọn bộ máy và tăng cường hiệu quả quản lý.",
+    "details": [
+      "Sáp nhập tỉnh Bắc Kạn vào Thái Nguyên tạo tỉnh mới diện tích 8.375 km², dân số gần 1,8 triệu người.",
+      "Tỉnh có tổng cộng 92 đơn vị hành chính cấp xã, gồm 77 xã và 15 phường được tổ chức lại sau sáp nhập.",
+      "Bãi bỏ cấp huyện/quận trung gian, các xã/phường trực thuộc tỉnh quản lý trực tiếp.",
+      "Trung tâm chính trị - hành chính đặt tại thành phố Thái Nguyên cũ.",
+      "Đẩy mạnh phát triển công nghiệp, nông nghiệp công nghệ cao, du lịch sinh thái và phát triển vùng hoàn thiện."
+    ]
+  },
+  "lichSu": {
+    "title": "Lịch sử hình thành và phát triển Thái Nguyên mới",
+    "description": "Thái Nguyên và Bắc Kạn là những tỉnh miền núi có lịch sử văn hóa dân tộc và phát triển công nghiệp, nông nghiệp lâu đời. Việc hợp nhất tỉnh tạo điều kiện mở rộng quy mô phát triển bền vững và nâng cao hiệu quả quản lý hành chính.",
+    "details": [
+      "Thái Nguyên là vùng đất có truyền thống cách mạng và phát triển công nghiệp hàng đầu miền Bắc.",
+      "Bắc Kạn nổi tiếng với tài nguyên thiên nhiên, văn hóa các dân tộc thiểu số vùng núi Tây Bắc.",
+      "Hai tỉnh có mối liên hệ văn hóa, kinh tế và phòng thủ quốc phòng quan trọng.",
+      "Sáp nhập nhằm tối ưu hóa tổ chức bộ máy, nâng cao hiệu quả lãnh đạo quản lý.",
+      "Đại bộ phận người dân ủng hộ phong trào đổi mới và phát triển vùng mới."
+    ]
+  },
+  "vanHoa": {
+    "title": "Văn hóa Thái Nguyên – Bắc Kạn đa dạng phong phú",
+    "description": "Tỉnh mới sở hữu nền văn hóa đa sắc tộc với nhiều lễ hội truyền thống, các làng nghề thủ công và nghệ thuật dân gian đặc sắc, phản ánh sự giao thoa văn hóa đặc trưng miền núi phía Bắc.",
+    "details": [
+      "Lễ hội truyền thống của các dân tộc Tày, Nùng, Dao, Mông và các dân tộc thiểu số khác.",
+      "Nghệ thuật biểu diễn dân gian đa dạng: hát then, múa khèn, hát lượn và các nghi lễ tín ngưỡng.",
+      "Làng nghề truyền thống như dệt thổ cẩm, làm đồ bạc, chạm khắc gỗ và đồ thủ công mỹ nghệ.",
+      "Bảo tồn giá trị phi vật thể và di sản văn hóa địa phương.",
+      "Gia tăng các hoạt động giao lưu văn hóa, đẩy mạnh phát triển du lịch cộng đồng."
+    ]
+  },
+  "amThuc": {
+    "title": "Ẩm thực Thái Nguyên – Bắc Kạn đặc trưng núi rừng phía Bắc",
+    "description": "Ẩm thực tỉnh mới mang đậm hương vị núi rừng Tây Bắc với nhiều món ăn đặc sản truyền thống sử dụng nguồn nguyên liệu tự nhiên phong phú và chế biến cầu kỳ.",
+    "details": [
+      "Món thắng cố, thịt trâu gác bếp, xôi ngũ sắc và các loại rau rừng đặc sản.",
+      "Các món ăn truyền thống phục vụ lễ hội, tín ngưỡng và cuộc sống thường nhật.",
+      "Sự hài hòa giữa hương vị truyền thống và sáng tạo hiện đại trong ẩm thực.",
+      "Ẩm thực góp phần quảng bá văn hóa dân tộc và thu hút du lịch sinh thái.",
+      "Hệ thống ẩm thực vùng núi đa dạng, phong phú, đáp ứng nhu cầu đa dạng của cộng đồng."
+    ]
+  },
+  "diaDanh": {
+    "title": "Địa danh nổi bật tỉnh Thái Nguyên mới",
+    "description": "Tỉnh sở hữu nhiều danh lam thắng cảnh, khu du lịch sinh thái, di tích lịch sử văn hóa đặc trưng vùng miền núi phía Bắc với cảnh quan thiên nhiên đa dạng.",
+    "details": [
+      "Thành phố Thái Nguyên – trung tâm hành chính và công nghiệp trọng điểm miền núi.",
+      "Khu du lịch sinh thái Hồ Núi Cốc với cảnh quan đẹp và dịch vụ phong phú.",
+      "Khu bảo tồn thiên nhiên Ba Bể với hệ sinh thái động thực vật đa dạng.",
+      "Di tích lịch sử Côn Sơn – Kiếp Bạc, nhiều điểm di tích văn hóa dân tộc.",
+      "Các bản làng dân tộc thiểu số với cảnh quan đặc trưng và văn hóa bản địa."
+    ]
+  },
+  "ketLuan": {
+    "title": "Tổng kết về tỉnh Thái Nguyên mới sau sáp nhập",
+    "description": "Sau sáp nhập tỉnh Bắc Kạn, Thái Nguyên mới trở thành tỉnh miền núi có quy mô diện tích và dân số tăng trưởng, phát triển đa ngành và đa lĩnh vực. Mô hình chính quyền hai cấp tinh gọn giúp nâng cao hiệu quả quản lý, phát huy giá trị văn hóa đa dạng dân tộc và tiềm năng kinh tế - xã hội vùng núi phía Bắc, hướng tới phát triển bền vững và hội nhập quốc tế."
+  }
+}
