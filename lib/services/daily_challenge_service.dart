@@ -31,29 +31,47 @@ class DailyChallengeService {
        final currentProvinceId = prefs.getString(_dailyChallengeProvinceKey);
        Province selectedProvince;
        
-       if (currentProvinceId != null) {
-         // Nếu có tỉnh được chọn (tỉnh trước chưa unlock), sử dụng tỉnh đó
-         if (currentProvinceId == 'Ha Noi') {
-           selectedProvince = Province(
-             id: 'Ha Noi',
-             name: 'Ha Noi',
-             nameVietnamese: 'Hà Nội',
-             description: 'Thủ đô của Việt Nam',
-             facts: [],
-             isUnlocked: true,
-           );
-         } else if (currentProvinceId == 'Hai Phong') {
-           selectedProvince = Province(
-             id: 'Hai Phong',
-             name: 'Hai Phong',
-             nameVietnamese: 'Hải Phòng',
-             description: 'Thành phố cảng lớn nhất miền Bắc',
-             facts: [],
-             isUnlocked: true,
-           );
-         } else {
-           selectedProvince = await _selectRandomProvince();
-         }
+               if (currentProvinceId != null) {
+          // Nếu có tỉnh được chọn (tỉnh trước chưa unlock), sử dụng tỉnh đó
+          if (currentProvinceId == 'Ha Noi') {
+            selectedProvince = Province(
+              id: 'Ha Noi',
+              name: 'Ha Noi',
+              nameVietnamese: 'Hà Nội',
+              description: 'Thủ đô của Việt Nam',
+              facts: [],
+              isUnlocked: true,
+            );
+          } else if (currentProvinceId == 'Hai Phong') {
+            selectedProvince = Province(
+              id: 'Hai Phong',
+              name: 'Hai Phong',
+              nameVietnamese: 'Hải Phòng',
+              description: 'Thành phố cảng lớn nhất miền Bắc',
+              facts: [],
+              isUnlocked: true,
+            );
+          } else if (currentProvinceId == 'An Giang') {
+            selectedProvince = Province(
+              id: 'An Giang',
+              name: 'An Giang',
+              nameVietnamese: 'An Giang',
+              description: 'Tỉnh Đồng bằng sông Cửu Long',
+              facts: [],
+              isUnlocked: true,
+            );
+          } else if (currentProvinceId == 'Thai Nguyen') {
+            selectedProvince = Province(
+              id: 'Thai Nguyen',
+              name: 'Thai Nguyen',
+              nameVietnamese: 'Thái Nguyên',
+              description: 'Tỉnh Trung du miền núi Bắc Bộ',
+              facts: [],
+              isUnlocked: true,
+            );
+          } else {
+            selectedProvince = await _selectRandomProvince();
+          }
        } else {
          // Nếu không có tỉnh được chọn, chọn tỉnh mới
          selectedProvince = await _selectRandomProvince();
@@ -71,29 +89,47 @@ class DailyChallengeService {
          // Kiểm tra xem còn có thể chơi không
      final canPlay = attempts < _maxAttemptsPerDay && !isProvinceUnlockedToday;
     
-         // Tìm tỉnh được chọn từ danh sách có sẵn
-     Province? selectedProvince;
-     if (selectedProvinceId != null) {
-       if (selectedProvinceId == 'Ha Noi') {
-         selectedProvince = Province(
-           id: 'Ha Noi',
-           name: 'Ha Noi',
-           nameVietnamese: 'Hà Nội',
-           description: 'Thủ đô của Việt Nam',
-           facts: [],
-           isUnlocked: true,
-         );
-       } else if (selectedProvinceId == 'Hai Phong') {
-         selectedProvince = Province(
-           id: 'Hai Phong',
-           name: 'Hai Phong',
-           nameVietnamese: 'Hải Phòng',
-           description: 'Thành phố cảng lớn nhất miền Bắc',
-           facts: [],
-           isUnlocked: true,
-         );
-       }
-     }
+               // Tìm tỉnh được chọn từ danh sách có sẵn
+      Province? selectedProvince;
+      if (selectedProvinceId != null) {
+        if (selectedProvinceId == 'Ha Noi') {
+          selectedProvince = Province(
+            id: 'Ha Noi',
+            name: 'Ha Noi',
+            nameVietnamese: 'Hà Nội',
+            description: 'Thủ đô của Việt Nam',
+            facts: [],
+            isUnlocked: true,
+          );
+        } else if (selectedProvinceId == 'Hai Phong') {
+          selectedProvince = Province(
+            id: 'Hai Phong',
+            name: 'Hai Phong',
+            nameVietnamese: 'Hải Phòng',
+            description: 'Thành phố cảng lớn nhất miền Bắc',
+            facts: [],
+            isUnlocked: true,
+          );
+        } else if (selectedProvinceId == 'An Giang') {
+          selectedProvince = Province(
+            id: 'An Giang',
+            name: 'An Giang',
+            nameVietnamese: 'An Giang',
+            description: 'Tỉnh Đồng bằng sông Cửu Long',
+            facts: [],
+            isUnlocked: true,
+          );
+        } else if (selectedProvinceId == 'Thai Nguyen') {
+          selectedProvince = Province(
+            id: 'Thai Nguyen',
+            name: 'Thai Nguyen',
+            nameVietnamese: 'Thái Nguyên',
+            description: 'Tỉnh Trung du miền núi Bắc Bộ',
+            facts: [],
+            isUnlocked: true,
+          );
+        }
+      }
      
      return {
        'date': lastChallengeDate ?? todayString,
@@ -135,36 +171,79 @@ class DailyChallengeService {
     }
   }
 
-  // Chọn tỉnh random cho daily challenge (chỉ từ 2 tỉnh có sẵn data)
+  // Chọn tỉnh random cho daily challenge (chỉ từ các tỉnh chưa mở khóa)
   static Future<Province> _selectRandomProvince() async {
-    // Chỉ sử dụng 2 tỉnh có sẵn file JSON
-    final availableProvinces = [
-      Province(
-        id: 'Ha Noi',
-        name: 'Ha Noi',
-        nameVietnamese: 'Hà Nội',
-        description: 'Thủ đô của Việt Nam',
-        facts: [],
-        isUnlocked: true,
-      ),
-      Province(
-        id: 'Hai Phong',
-        name: 'Hai Phong',
-        nameVietnamese: 'Hải Phòng',
-        description: 'Thành phố cảng lớn nhất miền Bắc',
-        facts: [],
-        isUnlocked: true,
-      ),
-    ];
+    // Lấy danh sách tất cả tỉnh từ game progress
+    final progress = await GameProgressService.getCurrentProgress();
     
+    // Lọc ra các tỉnh chưa được unlock và có sẵn file questions
+    final unlockedProvinces = progress.provinces.where((province) => 
+      !province.isUnlocked && 
+      _hasQuestionsFile(province.id)
+    ).toList();
+    
+    // Nếu không có tỉnh nào chưa unlock, sử dụng danh sách mặc định
+    if (unlockedProvinces.isEmpty) {
+      final defaultProvinces = [
+        Province(
+          id: 'Ha Noi',
+          name: 'Ha Noi',
+          nameVietnamese: 'Hà Nội',
+          description: 'Thủ đô của Việt Nam',
+          facts: [],
+          isUnlocked: false,
+        ),
+        Province(
+          id: 'Hai Phong',
+          name: 'Hai Phong',
+          nameVietnamese: 'Hải Phòng',
+          description: 'Thành phố cảng lớn nhất miền Bắc',
+          facts: [],
+          isUnlocked: false,
+        ),
+        Province(
+          id: 'An Giang',
+          name: 'An Giang',
+          nameVietnamese: 'An Giang',
+          description: 'Tỉnh Đồng bằng sông Cửu Long',
+          facts: [],
+          isUnlocked: false,
+        ),
+        Province(
+          id: 'Thai Nguyen',
+          name: 'Thai Nguyen',
+          nameVietnamese: 'Thái Nguyên',
+          description: 'Tỉnh Trung du miền núi Bắc Bộ',
+          facts: [],
+          isUnlocked: false,
+        ),
+      ];
+      
+      final random = Random();
+      final selectedProvince = defaultProvinces[random.nextInt(defaultProvinces.length)];
+      
+      // Lưu tỉnh được chọn
+      final prefs = await SharedPreferences.getInstance();
+      await prefs.setString(_dailyChallengeProvinceKey, selectedProvince.id);
+      
+      return selectedProvince;
+    }
+    
+    // Random từ danh sách tỉnh chưa unlock
     final random = Random();
-    final selectedProvince = availableProvinces[random.nextInt(availableProvinces.length)];
+    final selectedProvince = unlockedProvinces[random.nextInt(unlockedProvinces.length)];
     
     // Lưu tỉnh được chọn
     final prefs = await SharedPreferences.getInstance();
     await prefs.setString(_dailyChallengeProvinceKey, selectedProvince.id);
     
     return selectedProvince;
+  }
+  
+  // Kiểm tra xem tỉnh có file questions không
+  static bool _hasQuestionsFile(String provinceId) {
+    final availableProvinces = ['Ha Noi', 'Hai Phong', 'An Giang', 'Thai Nguyen'];
+    return availableProvinces.contains(provinceId);
   }
 
   // Tăng số lần thử
@@ -183,22 +262,28 @@ class DailyChallengeService {
   // Load câu hỏi cho tỉnh được chọn
   static Future<List<Map<String, dynamic>>> loadQuestionsForProvince(String provinceId) async {
     try {
-      // Tìm file JSON tương ứng với tỉnh
+      // Tìm file JSON tương ứng với tỉnh trong thư mục questions
       String fileName;
       if (provinceId == 'Ha Noi') {
-        fileName = 'hanoi_questions.json';
+        fileName = 'hanoi.json';
       } else if (provinceId == 'Hai Phong') {
-        fileName = 'haiphong_questions.json';
+        fileName = 'haiphong.json';
+      } else if (provinceId == 'An Giang') {
+        fileName = 'an_giang.json';
+      } else if (provinceId == 'Thai Nguyen') {
+        fileName = 'thai_nguyen.json';
       } else {
-        fileName = '${provinceId.toLowerCase()}_questions.json';
+        fileName = '${provinceId.toLowerCase().replaceAll(' ', '_')}.json';
       }
       
-      final jsonString = await rootBundle.loadString('assets/data/$fileName');
+      print('Loading questions for province: $provinceId, file: $fileName');
+      final jsonString = await rootBundle.loadString('assets/data/questions/$fileName');
       final List<dynamic> jsonList = json.decode(jsonString);
       
       // Chuyển đổi thành List<Map<String, dynamic>>
       return jsonList.map((item) => Map<String, dynamic>.from(item)).toList();
     } catch (e) {
+      print('Error loading questions for province $provinceId: $e');
       // Nếu không tìm thấy file, trả về câu hỏi mặc định
       return _getDefaultQuestions();
     }

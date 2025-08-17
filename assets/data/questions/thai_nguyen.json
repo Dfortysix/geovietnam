@@ -1,0 +1,242 @@
+[
+  {
+    "id": "thai_nguyen_001",
+    "type": "text",
+    "question": "Thái Nguyên thuộc vùng địa lý nào của Việt Nam?",
+    "options": [
+      "Đồng bằng sông Hồng",
+      "Trung du và miền núi Bắc Bộ",
+      "Tây Nguyên",
+      "Duyên hải miền Trung"
+    ],
+    "answer": 1
+  },
+  {
+    "id": "thai_nguyen_002",
+    "type": "text",
+    "question": "Sau sáp nhập với Bắc Kạn năm 2025, Thái Nguyên có diện tích bao nhiêu?",
+    "options": [
+      "6.375 km²",
+      "7.375 km²",
+      "8.375 km²",
+      "9.375 km²"
+    ],
+    "answer": 2
+  },
+  {
+    "id": "thai_nguyen_003",
+    "type": "text",
+    "question": "Trung tâm hành chính của tỉnh Thái Nguyên mới sau sáp nhập đặt tại đâu?",
+    "options": [
+      "Thành phố Thái Nguyên",
+      "Thành phố Bắc Kạn",
+      "Thành phố Sông Công",
+      "Thành phố Phổ Yên"
+    ],
+    "answer": 0
+  },
+  {
+    "id": "thai_nguyen_004",
+    "type": "text",
+    "question": "Hồ nào nổi tiếng ở Thái Nguyên?",
+    "options": [
+      "Hồ Núi Cốc",
+      "Hồ Ba Bể",
+      "Hồ Tây",
+      "Hồ Hoàn Kiếm"
+    ],
+    "answer": 0
+  },
+  {
+    "id": "thai_nguyen_005",
+    "type": "text",
+    "question": "Đặc sản nổi tiếng của Thái Nguyên là gì?",
+    "options": [
+      "Chè Tân Cương",
+      "Vải thiều",
+      "Nhãn lồng",
+      "Mận Bắc Hà"
+    ],
+    "answer": 0
+  },
+  {
+    "id": "thai_nguyen_006",
+    "type": "text",
+    "question": "Món ăn truyền thống của đồng bào dân tộc vùng núi Thái Nguyên là gì?",
+    "options": [
+      "Thắng cố",
+      "Phở",
+      "Bún chả",
+      "Bánh mì"
+    ],
+    "answer": 0
+  },
+  {
+    "id": "thai_nguyen_007",
+    "type": "text",
+    "question": "Khu bảo tồn thiên nhiên nào nổi tiếng ở Thái Nguyên?",
+    "options": [
+      "Ba Bể",
+      "Cúc Phương",
+      "Tam Đảo",
+      "Xuân Sơn"
+    ],
+    "answer": 0
+  },
+  {
+    "id": "thai_nguyen_008",
+    "type": "text",
+    "question": "Thái Nguyên có bao nhiêu đơn vị hành chính cấp xã sau sáp nhập 2025?",
+    "options": [
+      "85",
+      "88",
+      "90",
+      "92"
+    ],
+    "answer": 3
+  },
+  {
+    "id": "thai_nguyen_009",
+    "type": "text",
+    "question": "Dân số tỉnh Thái Nguyên mới sau sáp nhập khoảng bao nhiêu?",
+    "options": [
+      "1,5 triệu người",
+      "1,8 triệu người",
+      "2 triệu người",
+      "2,5 triệu người"
+    ],
+    "answer": 1
+  },
+  {
+    "id": "thai_nguyen_010",
+    "type": "text",
+    "question": "Nghệ thuật dân gian đặc trưng của Thái Nguyên là gì?",
+    "options": [
+      "Hát then",
+      "Hát chèo",
+      "Ca trù",
+      "Hát xoan"
+    ],
+    "answer": 0
+  },
+  {
+    "id": "thai_nguyen_011",
+    "type": "text",
+    "question": "Thái Nguyên giáp với tỉnh nào về phía bắc?",
+    "options": [
+      "Bắc Kạn",
+      "Lạng Sơn",
+      "Cao Bằng",
+      "Tuyên Quang"
+    ],
+    "answer": 0
+  },
+  {
+    "id": "thai_nguyen_012",
+    "type": "text",
+    "question": "Sông nào chảy qua Thái Nguyên?",
+    "options": [
+      "Sông Hồng",
+      "Sông Cầu",
+      "Sông Lô",
+      "Sông Đáy"
+    ],
+    "answer": 1
+  },
+  {
+    "id": "thai_nguyen_013",
+    "type": "text",
+    "question": "Thành phố nào là trung tâm công nghiệp của Thái Nguyên?",
+    "options": [
+      "Thái Nguyên",
+      "Sông Công",
+      "Phổ Yên",
+      "Phú Bình"
+    ],
+    "answer": 0
+  },
+  {
+    "id": "thai_nguyen_014",
+    "type": "text",
+    "question": "Thái Nguyên có biệt danh là gì?",
+    "options": [
+      "Trung tâm công nghiệp miền núi",
+      "Vùng đất ngàn hoa",
+      "Vùng đất thần tiên",
+      "Vùng đất huyền thoại"
+    ],
+    "answer": 0
+  },
+  {
+    "id": "thai_nguyen_015",
+    "type": "text",
+    "question": "Làng nghề truyền thống nào nổi tiếng ở Thái Nguyên?",
+    "options": [
+      "Làng gốm Bát Tràng",
+      "Làng dệt thổ cẩm",
+      "Làng đúc đồng",
+      "Làng làm giấy"
+    ],
+    "answer": 1
+  },
+  {
+    "id": "thai_nguyen_016",
+    "type": "text",
+    "question": "Mô hình chính quyền của Thái Nguyên sau sáp nhập là gì?",
+    "options": [
+      "Ba cấp",
+      "Hai cấp",
+      "Bốn cấp",
+      "Năm cấp"
+    ],
+    "answer": 1
+  },
+  {
+    "id": "thai_nguyen_017",
+    "type": "text",
+    "question": "Thái Nguyên có bao nhiêu phường sau sáp nhập 2025?",
+    "options": [
+      "10",
+      "12",
+      "15",
+      "18"
+    ],
+    "answer": 2
+  },
+  {
+    "id": "thai_nguyen_018",
+    "type": "text",
+    "question": "Thái Nguyên có bao nhiêu xã sau sáp nhập 2025?",
+    "options": [
+      "70",
+      "75",
+      "77",
+      "80"
+    ],
+    "answer": 2
+  },
+  {
+    "id": "thai_nguyen_019",
+    "type": "text",
+    "question": "Lễ hội truyền thống nào của đồng bào dân tộc được tổ chức tại Thái Nguyên?",
+    "options": [
+      "Lễ hội Lồng Tồng",
+      "Lễ hội Gióng",
+      "Lễ hội Lim",
+      "Lễ hội Đền Hùng"
+    ],
+    "answer": 0
+  },
+  {
+    "id": "thai_nguyen_020",
+    "type": "text",
+    "question": "Thái Nguyên có bao nhiêu dân tộc thiểu số chính?",
+    "options": [
+      "3",
+      "4",
+      "5",
+      "6"
+    ],
+    "answer": 2
+  }
+]

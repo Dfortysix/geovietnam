@@ -1,0 +1,242 @@
+[
+  {
+    "id": "",
+    "type": "text",
+    "question": "An Giang thuộc vùng địa lý nào của Việt Nam?",
+    "options": [
+      "Đồng bằng sông Hồng",
+      "Đồng bằng sông Cửu Long",
+      "Tây Nguyên",
+      "Duyên hải miền Trung"
+    ],
+    "answer": 1
+  },
+  {
+    "id": "",
+    "type": "text",
+    "question": "Sau sáp nhập với Kiên Giang năm 2025, An Giang có diện tích bao nhiêu?",
+    "options": [
+      "6.888,91 km²",
+      "7.888,91 km²",
+      "8.888,91 km²",
+      "9.888,91 km²"
+    ],
+    "answer": 3
+  },
+  {
+    "id": "",
+    "type": "text",
+    "question": "Trung tâm hành chính của tỉnh An Giang mới sau sáp nhập đặt tại đâu?",
+    "options": [
+      "Thành phố Long Xuyên",
+      "Thành phố Rạch Giá",
+      "Thành phố Châu Đốc",
+      "Thành phố Cần Thơ"
+    ],
+    "answer": 1
+  },
+  {
+    "id": "",
+    "type": "text",
+    "question": "Đảo nào thuộc tỉnh An Giang mới sau sáp nhập?",
+    "options": [
+      "Đảo Phú Quốc",
+      "Đảo Côn Đảo",
+      "Đảo Lý Sơn",
+      "Đảo Cồn Cỏ"
+    ],
+    "answer": 0
+  },
+  {
+    "id": "",
+    "type": "text",
+    "question": "Lễ hội truyền thống nào của đồng bào Khmer được tổ chức tại An Giang?",
+    "options": [
+      "Lễ hội Ok Om Bok",
+      "Lễ hội Chol Chnam Thmay",
+      "Lễ hội Sen Dolta",
+      "Lễ hội Kathina"
+    ],
+    "answer": 0
+  },
+  {
+    "id": "",
+    "type": "text",
+    "question": "Món ăn đặc sản nổi tiếng của An Giang là gì?",
+    "options": [
+      "Lẩu mắm",
+      "Bún bò Huế",
+      "Phở Hà Nội",
+      "Cao lầu Hội An"
+    ],
+    "answer": 0
+  },
+  {
+    "id": "",
+    "type": "text",
+    "question": "Khu bảo tồn sinh thái nổi tiếng ở An Giang là gì?",
+    "options": [
+      "Rừng tràm Trà Sư",
+      "Vườn quốc gia U Minh Thượng",
+      "Rừng ngập mặn Cần Giờ",
+      "Vườn quốc gia Cát Tiên"
+    ],
+    "answer": 0
+  },
+  {
+    "id": "",
+    "type": "text",
+    "question": "Chợ nổi nào nổi tiếng ở An Giang?",
+    "options": [
+      "Chợ nổi Cái Răng",
+      "Chợ nổi Cái Bè",
+      "Chợ nổi Ngã Năm",
+      "Chợ nổi Phong Điền"
+    ],
+    "answer": 0
+  },
+  {
+    "id": "",
+    "type": "text",
+    "question": "An Giang có bao nhiêu đơn vị hành chính cấp xã sau sáp nhập 2025?",
+    "options": [
+      "92",
+      "95",
+      "100",
+      "102"
+    ],
+    "answer": 3
+  },
+  {
+    "id": "",
+    "type": "text",
+    "question": "Dân số tỉnh An Giang mới sau sáp nhập khoảng bao nhiêu?",
+    "options": [
+      "3 triệu người",
+      "4 triệu người",
+      "5 triệu người",
+      "6 triệu người"
+    ],
+    "answer": 2
+  },
+  {
+    "id": "",
+    "type": "text",
+    "question": "Nghệ thuật dân gian đặc trưng của An Giang là gì?",
+    "options": [
+      "Đờn ca tài tử",
+      "Hát chèo",
+      "Ca trù",
+      "Hát xoan"
+    ],
+    "answer": 0
+  },
+  {
+    "id": "",
+    "type": "text",
+    "question": "An Giang giáp với quốc gia nào?",
+    "options": [
+      "Lào",
+      "Campuchia",
+      "Thái Lan",
+      "Myanmar"
+    ],
+    "answer": 1
+  },
+  {
+    "id": "",
+    "type": "text",
+    "question": "Sông nào chảy qua An Giang?",
+    "options": [
+      "Sông Hồng",
+      "Sông Mekong",
+      "Sông Đồng Nai",
+      "Sông Sài Gòn"
+    ],
+    "answer": 1
+  },
+  {
+    "id": "",
+    "type": "text",
+    "question": "Thành phố nào là trung tâm kinh tế của An Giang?",
+    "options": [
+      "Long Xuyên",
+      "Châu Đốc",
+      "Tân Châu",
+      "An Phú"
+    ],
+    "answer": 0
+  },
+  {
+    "id": "",
+    "type": "text",
+    "question": "An Giang có biệt danh là gì?",
+    "options": [
+      "Vùng đất đa sắc tộc",
+      "Vùng đất ngàn hoa",
+      "Vùng đất thần tiên",
+      "Vùng đất huyền thoại"
+    ],
+    "answer": 0
+  },
+  {
+    "id": "",
+    "type": "text",
+    "question": "Làng nghề truyền thống nào nổi tiếng ở An Giang?",
+    "options": [
+      "Làng gốm Bát Tràng",
+      "Làng lồng đèn",
+      "Làng dệt chiếu",
+      "Làng đúc đồng"
+    ],
+    "answer": 2
+  },
+  {
+    "id": "",
+    "type": "text",
+    "question": "An Giang có bao nhiêu đặc khu hành chính - kinh tế?",
+    "options": [
+      "1",
+      "2",
+      "3",
+      "4"
+    ],
+    "answer": 2
+  },
+  {
+    "id": "",
+    "type": "text",
+    "question": "Mô hình chính quyền của An Giang sau sáp nhập là gì?",
+    "options": [
+      "Ba cấp",
+      "Hai cấp",
+      "Bốn cấp",
+      "Năm cấp"
+    ],
+    "answer": 1
+  },
+  {
+    "id": "",
+    "type": "text",
+    "question": "An Giang có bao nhiêu phường sau sáp nhập 2025?",
+    "options": [
+      "10",
+      "12",
+      "14",
+      "16"
+    ],
+    "answer": 2
+  },
+  {
+    "id": "",
+    "type": "text",
+    "question": "An Giang có bao nhiêu xã sau sáp nhập 2025?",
+    "options": [
+      "80",
+      "82",
+      "85",
+      "88"
+    ],
+    "answer": 2
+  }
+]

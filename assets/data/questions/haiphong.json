@@ -1,6 +1,6 @@
 [
   {
-    "id": "haiphong_001",
+    "id": "001",
     "type": "text",
     "question": "Ai là người được coi là khai phá đất Hải Phòng?",
     "options": [
@@ -12,7 +12,7 @@
     "answer": 1
   },
   {
-    "id": "haiphong_002",
+    "id": "002",
     "type": "text",
     "question": "Hải Phòng được thành lập thành phố vào năm nào?",
     "options": [
@@ -24,7 +24,7 @@
     "answer": 2
   },
   {
-    "id": "haiphong_003",
+    "id": "",
     "type": "text",
     "question": "Dòng sông lớn chảy qua trung tâm Hải Phòng là?",
     "options": [
@@ -36,7 +36,7 @@
     "answer": 2
   },
   {
-    "id": "haiphong_004",
+    "id": "",
     "type": "text",
     "question": "Hải Phòng có biệt danh là gì?",
     "options": [
@@ -48,7 +48,7 @@
     "answer": 1
   },
   {
-    "id": "haiphong_005",
+    "id": "",
     "type": "text",
     "question": "Đảo lớn nhất thuộc thành phố Hải Phòng là?",
     "options": [
@@ -60,7 +60,7 @@
     "answer": 2
   },
   {
-    "id": "haiphong_006",
+    "id": "",
     "type": "text",
     "question": "Khu du lịch biển nổi tiếng gần Hải Phòng là?",
     "options": [
@@ -72,7 +72,7 @@
     "answer": 1
   },
   {
-    "id": "haiphong_007",
+    "id": "",
     "type": "text",
     "question": "Hải Phòng giáp với tỉnh nào về phía bắc?",
     "options": [
@@ -84,7 +84,7 @@
     "answer": 1
   },
   {
-    "id": "haiphong_008",
+    "id": "",
     "type": "text",
     "question": "Trận chiến trên sông Bạch Đằng nổi tiếng nhất do ai chỉ huy?",
     "options": [
@@ -96,7 +96,7 @@
     "answer": 1
   },
   {
-    "id": "haiphong_009",
+    "id": "",
     "type": "text",
     "question": "Hải Phòng có vị trí nằm ở vùng địa lý nào?",
     "options": [
@@ -108,7 +108,7 @@
     "answer": 1
   },
   {
-    "id": "haiphong_010",
+    "id": "",
     "type": "text",
     "question": "Cảng biển lớn nhất Việt Nam đặt tại Hải Phòng tên là gì?",
     "options": [
@@ -120,7 +120,7 @@
     "answer": 2
   },
   {
-    "id": "haiphong_011",
+    "id": "",
     "type": "text",
     "question": "Khu kinh tế lớn thuộc Hải Phòng là?",
     "options": [
@@ -132,7 +132,7 @@
     "answer": 1
   },
   {
-    "id": "haiphong_012",
+    "id": "",
     "type": "text",
     "question": "Biểu tượng kiến trúc nổi bật tại trung tâm Hải Phòng là?",
     "options": [
@@ -144,7 +144,7 @@
     "answer": 1
   },
   {
-    "id": "haiphong_013",
+    "id": "",
     "type": "text",
     "question": "Sân bay quốc tế của Hải Phòng tên là gì?",
     "options": [
@@ -156,7 +156,7 @@
     "answer": 2
   },
   {
-    "id": "haiphong_014",
+    "id": "",
     "type": "text",
     "question": "Tháng nào hàng năm Hải Phòng tổ chức Lễ hội Hoa phượng đỏ?",
     "options": [
@@ -168,7 +168,7 @@
     "answer": 0
   },
   {
-    "id": "haiphong_015",
+    "id": "",
     "type": "text",
     "question": "Đỉnh núi cao nhất tại Hải Phòng là?",
     "options": [
@@ -180,7 +180,7 @@
     "answer": 1
   },
   {
-    "id": "haiphong_016",
+    "id": "",
     "type": "text",
     "question": "Quần đảo xa bờ duy nhất thuộc Hải Phòng là?",
     "options": [
@@ -192,7 +192,7 @@
     "answer": 2
   },
   {
-    "id": "haiphong_017",
+    "id": "",
     "type": "text",
     "question": "Địa danh Cát Bà thuộc huyện nào của Hải Phòng?",
     "options": [
@@ -204,7 +204,7 @@
     "answer": 2
   },
   {
-    "id": "haiphong_018",
+    "id": "",
     "type": "text",
     "question": "Địa danh nào sau đây KHÔNG thuộc địa phận Hải Phòng?",
     "options": [
@@ -216,7 +216,7 @@
     "answer": 2
   },
   {
-    "id": "haiphong_019",
+    "id": "",
     "type": "text",
     "question": "Đặc sản nào nổi tiếng nhất của Hải Phòng?",
     "options": [
@@ -228,7 +228,7 @@
     "answer": 1
   },
   {
-    "id": "haiphong_020",
+    "id": "",
     "type": "text",
     "question": "Địa danh nào là cái nôi Hiệp hội cảng biển Việt Nam đặt trụ sở?",
     "options": [

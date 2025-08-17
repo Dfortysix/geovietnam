@@ -1,6 +1,6 @@
 [
   {
-    "id": "hanoi_001",
+    "id": "001",
     "type": "text",
     "question": "Hà Nội trong quá khứ từng có tên gọi là gì?",
     "options": [
@@ -12,7 +12,7 @@
     "answer": 2
   },
   {
-    "id": "hanoi_002",
+    "id": "002",
     "type": "text",
     "question": "Sông nào chảy qua trung tâm thành phố Hà Nội?",
     "options": [
@@ -24,7 +24,7 @@
     "answer": 0
   },
   {
-    "id": "hanoi_003",
+    "id": "003",
     "type": "text",
     "question": "Hồ nào nổi tiếng nhất ở trung tâm Hà Nội?",
     "options": [
@@ -36,7 +36,7 @@
     "answer": 1
   },
   {
-    "id": "hanoi_004",
+    "id": "004",
     "type": "text",
     "question": "Văn Miếu - Quốc Tử Giám được xây dựng vào triều đại nào?",
     "options": [
@@ -48,7 +48,7 @@
     "answer": 2
   },
   {
-    "id": "hanoi_005",
+    "id": "005",
     "type": "text",
     "question": "Hà Nội trở thành thủ đô của nước Việt Nam Dân chủ Cộng hòa vào năm nào?",
     "options": [
@@ -60,7 +60,7 @@
     "answer": 0
   },
   {
-    "id": "hanoi_006",
+    "id": "006",
     "type": "text",
     "question": "Đền Ngọc Sơn nằm trên hồ nào?",
     "options": [
@@ -72,7 +72,7 @@
     "answer": 1
   },
   {
-    "id": "hanoi_007",
+    "id": "007",
     "type": "text",
     "question": "Biểu tượng kiến trúc cổ nổi tiếng của Hà Nội là?",
     "options": [
@@ -84,7 +84,7 @@
     "answer": 0
   },
   {
-    "id": "hanoi_008",
+    "id": "008",
     "type": "text",
     "question": "Hà Nội được chính thức mở rộng địa giới hành chính vào năm nào (sáp nhập với Hà Tây)?",
     "options": [
@@ -96,55 +96,55 @@
     "answer": 2
   },
   {
-    "id": "hanoi_009",
+    "id": "009",
     "type": "text",
-    "question": "Lễ hội truyền thống lớn nhất của Hà Nội là gì?",
+    "question": "Phố cổ Hà Nội có bao nhiêu phố?",
     "options": [
-      "Lễ hội Phủ Tây Hồ",
-      "Lễ hội Gióng",
-      "Lễ hội Yên Tử",
-      "Lễ hội Cổ Loa"
+      "30",
+      "36",
+      "40",
+      "45"
     ],
     "answer": 1
   },
   {
-    "id": "hanoi_010",
+    "id": "010",
     "type": "text",
-    "question": "Phố cổ Hà Nội nổi tiếng nhất với nghề thủ công gì?",
+    "question": "Món ăn đặc sản nổi tiếng nhất của Hà Nội là?",
     "options": [
-      "Dệt lụa",
-      "Nghề kim hoàn",
-      "Gốm sứ",
-      "Buôn bán các ngành nghề truyền thống"
-    ],
-    "answer": 3
-  },
-  {
-    "id": "hanoi_011",
-    "type": "text",
-    "question": "Quảng trường lớn nhất ở Hà Nội là?",
-    "options": [
-      "Quảng trường Ba Đình",
-      "Quảng trường Đông Kinh Nghĩa Thục",
-      "Quảng trường Nhà Hát Lớn",
-      "Quảng trường Cách mạng"
+      "Phở",
+      "Bún chả",
+      "Bánh cuốn",
+      "Chả cá"
     ],
     "answer": 0
   },
   {
-    "id": "hanoi_012",
+    "id": "011",
     "type": "text",
-    "question": "Hà Nội nằm ở khu vực địa lý nào của Việt Nam?",
+    "question": "Hà Nội có bao nhiêu quận, huyện tính đến năm 2025?",
     "options": [
-      "Trung Bộ",
-      "Nam Bộ",
-      "Tây Nguyên",
-      "Đồng bằng sông Hồng"
+      "30",
+      "32",
+      "35",
+      "38"
     ],
-    "answer": 3
+    "answer": 0
   },
   {
-    "id": "hanoi_013",
+    "id": "012",
+    "type": "text",
+    "question": "Di tích lịch sử nào được UNESCO công nhận là Di sản văn hóa thế giới?",
+    "options": [
+      "Văn Miếu - Quốc Tử Giám",
+      "Hoàng thành Thăng Long",
+      "Chùa Một Cột",
+      "Đền Ngọc Sơn"
+    ],
+    "answer": 1
+  },
+  {
+    "id": "013",
     "type": "text",
     "question": "Quốc lộ số mấy đi qua trung tâm Hà Nội?",
     "options": [
@@ -156,7 +156,7 @@
     "answer": 0
   },
   {
-    "id": "hanoi_014",
+    "id": "014",
     "type": "text",
     "question": "Hà Nội có bao nhiêu quận tính đến năm 2025?",
     "options": [
@@ -168,7 +168,7 @@
     "answer": 0
   },
   {
-    "id": "hanoi_015",
+    "id": "015",
     "type": "text",
     "question": "Hồ nào rộng nhất Hà Nội?",
     "options": [
@@ -180,9 +180,9 @@
     "answer": 1
   },
   {
-    "id": "hanoi_016",
+    "id": "016",
     "type": "text",
-    "question": "Tên gọi “Hà Nội” chính thức xuất hiện từ năm nào?",
+    "question": "Tên gọi \"Hà Nội\" chính thức xuất hiện từ năm nào?",
     "options": [
       "1802",
       "1831",
@@ -192,7 +192,7 @@
     "answer": 1
   },
   {
-    "id": "hanoi_017",
+    "id": "017",
     "type": "text",
     "question": "Thành cổ nổi tiếng nào còn lại ở Hà Nội?",
     "options": [
@@ -204,7 +204,7 @@
     "answer": 2
   },
   {
-    "id": "hanoi_018",
+    "id": "018",
     "type": "text",
     "question": "Vườn quốc gia nào nằm trên địa phận Hà Nội?",
     "options": [
@@ -216,7 +216,7 @@
     "answer": 1
   },
   {
-    "id": "hanoi_019",
+    "id": "019",
     "type": "text",
     "question": "Hà Nội từng là thủ đô của những triều đại nào?",
     "options": [
@@ -228,7 +228,7 @@
     "answer": 0
   },
   {
-    "id": "hanoi_020",
+    "id": "020",
     "type": "text",
     "question": "Tên sân bay quốc tế lớn nhất Hà Nội là?",
     "options": [

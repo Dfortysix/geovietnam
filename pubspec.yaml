@@ -126,6 +126,7 @@ flutter:
     - assets/data/
     - assets/data/provinces/
     - assets/data/gallery_descriptions/
+    - assets/data/questions/
     - assets/svg/
 
   # An image asset can refer to one or more resolution-specific "variants", see
