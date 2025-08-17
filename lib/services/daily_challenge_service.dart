@@ -40,7 +40,7 @@ class DailyChallengeService {
               nameVietnamese: 'Hà Nội',
               description: 'Thủ đô của Việt Nam',
               facts: [],
-              isUnlocked: true,
+              isUnlocked: false,
             );
           } else if (currentProvinceId == 'Hai Phong') {
             selectedProvince = Province(
@@ -49,7 +49,7 @@ class DailyChallengeService {
               nameVietnamese: 'Hải Phòng',
               description: 'Thành phố cảng lớn nhất miền Bắc',
               facts: [],
-              isUnlocked: true,
+              isUnlocked: false,
             );
           } else if (currentProvinceId == 'An Giang') {
             selectedProvince = Province(
@@ -58,7 +58,7 @@ class DailyChallengeService {
               nameVietnamese: 'An Giang',
               description: 'Tỉnh Đồng bằng sông Cửu Long',
               facts: [],
-              isUnlocked: true,
+              isUnlocked: false,
             );
           } else if (currentProvinceId == 'Thai Nguyen') {
             selectedProvince = Province(
@@ -67,7 +67,7 @@ class DailyChallengeService {
               nameVietnamese: 'Thái Nguyên',
               description: 'Tỉnh Trung du miền núi Bắc Bộ',
               facts: [],
-              isUnlocked: true,
+              isUnlocked: false,
             );
           } else {
             selectedProvince = await _selectRandomProvince();
@@ -99,7 +99,7 @@ class DailyChallengeService {
             nameVietnamese: 'Hà Nội',
             description: 'Thủ đô của Việt Nam',
             facts: [],
-            isUnlocked: true,
+            isUnlocked: false,
           );
         } else if (selectedProvinceId == 'Hai Phong') {
           selectedProvince = Province(
@@ -108,7 +108,7 @@ class DailyChallengeService {
             nameVietnamese: 'Hải Phòng',
             description: 'Thành phố cảng lớn nhất miền Bắc',
             facts: [],
-            isUnlocked: true,
+            isUnlocked: false,
           );
         } else if (selectedProvinceId == 'An Giang') {
           selectedProvince = Province(
@@ -117,7 +117,7 @@ class DailyChallengeService {
             nameVietnamese: 'An Giang',
             description: 'Tỉnh Đồng bằng sông Cửu Long',
             facts: [],
-            isUnlocked: true,
+            isUnlocked: false,
           );
         } else if (selectedProvinceId == 'Thai Nguyen') {
           selectedProvince = Province(
@@ -126,7 +126,7 @@ class DailyChallengeService {
             nameVietnamese: 'Thái Nguyên',
             description: 'Tỉnh Trung du miền núi Bắc Bộ',
             facts: [],
-            isUnlocked: true,
+            isUnlocked: false,
           );
         }
       }

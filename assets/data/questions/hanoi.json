@@ -1,242 +1,143 @@
 [
-  {
-    "id": "001",
-    "type": "text",
-    "question": "Hà Nội trong quá khứ từng có tên gọi là gì?",
-    "options": [
-      "Phong Châu",
-      "Đại La",
-      "Thăng Long",
-      "Hoa Lư"
-    ],
-    "answer": 2
-  },
-  {
-    "id": "002",
-    "type": "text",
-    "question": "Sông nào chảy qua trung tâm thành phố Hà Nội?",
-    "options": [
-      "Sông Hồng",
-      "Sông Cầu",
-      "Sông Lô",
-      "Sông Đáy"
-    ],
-    "answer": 0
-  },
-  {
-    "id": "003",
-    "type": "text",
-    "question": "Hồ nào nổi tiếng nhất ở trung tâm Hà Nội?",
-    "options": [
-      "Hồ Tây",
-      "Hồ Hoàn Kiếm",
-      "Hồ Bảy Mẫu",
-      "Hồ Giảng Võ"
-    ],
-    "answer": 1
-  },
-  {
-    "id": "004",
-    "type": "text",
-    "question": "Văn Miếu - Quốc Tử Giám được xây dựng vào triều đại nào?",
-    "options": [
-      "Triều Trần",
-      "Triều Lê",
-      "Triều Lý",
-      "Triều Nguyễn"
-    ],
-    "answer": 2
-  },
-  {
-    "id": "005",
-    "type": "text",
-    "question": "Hà Nội trở thành thủ đô của nước Việt Nam Dân chủ Cộng hòa vào năm nào?",
-    "options": [
-      "1945",
-      "1946",
-      "1954",
-      "1976"
-    ],
-    "answer": 0
-  },
-  {
-    "id": "006",
-    "type": "text",
-    "question": "Đền Ngọc Sơn nằm trên hồ nào?",
-    "options": [
-      "Hồ Tây",
-      "Hồ Hoàn Kiếm",
-      "Hồ Trúc Bạch",
-      "Hồ Linh Đàm"
-    ],
-    "answer": 1
-  },
-  {
-    "id": "007",
-    "type": "text",
-    "question": "Biểu tượng kiến trúc cổ nổi tiếng của Hà Nội là?",
-    "options": [
-      "Chùa Một Cột",
-      "Chùa Bái Đính",
-      "Nhà thờ Đức Bà",
-      "Chợ Bến Thành"
-    ],
-    "answer": 0
-  },
-  {
-    "id": "008",
-    "type": "text",
-    "question": "Hà Nội được chính thức mở rộng địa giới hành chính vào năm nào (sáp nhập với Hà Tây)?",
-    "options": [
-      "1986",
-      "1991",
-      "2008",
-      "2010"
-    ],
-    "answer": 2
-  },
-  {
-    "id": "009",
-    "type": "text",
-    "question": "Phố cổ Hà Nội có bao nhiêu phố?",
-    "options": [
-      "30",
-      "36",
-      "40",
-      "45"
-    ],
-    "answer": 1
-  },
-  {
-    "id": "010",
-    "type": "text",
-    "question": "Món ăn đặc sản nổi tiếng nhất của Hà Nội là?",
-    "options": [
-      "Phở",
-      "Bún chả",
-      "Bánh cuốn",
-      "Chả cá"
-    ],
-    "answer": 0
-  },
-  {
-    "id": "011",
-    "type": "text",
-    "question": "Hà Nội có bao nhiêu quận, huyện tính đến năm 2025?",
-    "options": [
-      "30",
-      "32",
-      "35",
-      "38"
-    ],
-    "answer": 0
-  },
-  {
-    "id": "012",
-    "type": "text",
-    "question": "Di tích lịch sử nào được UNESCO công nhận là Di sản văn hóa thế giới?",
-    "options": [
-      "Văn Miếu - Quốc Tử Giám",
-      "Hoàng thành Thăng Long",
-      "Chùa Một Cột",
-      "Đền Ngọc Sơn"
-    ],
-    "answer": 1
-  },
-  {
-    "id": "013",
-    "type": "text",
-    "question": "Quốc lộ số mấy đi qua trung tâm Hà Nội?",
-    "options": [
-      "Quốc lộ 1A",
-      "Quốc lộ 5",
-      "Quốc lộ 6",
-      "Quốc lộ 7"
-    ],
-    "answer": 0
-  },
-  {
-    "id": "014",
-    "type": "text",
-    "question": "Hà Nội có bao nhiêu quận tính đến năm 2025?",
-    "options": [
-      "12",
-      "10",
-      "8",
-      "15"
-    ],
-    "answer": 0
-  },
-  {
-    "id": "015",
-    "type": "text",
-    "question": "Hồ nào rộng nhất Hà Nội?",
-    "options": [
-      "Hồ Gươm",
-      "Hồ Tây",
-      "Hồ Linh Đàm",
-      "Hồ Bảy Mẫu"
-    ],
-    "answer": 1
-  },
-  {
-    "id": "016",
-    "type": "text",
-    "question": "Tên gọi \"Hà Nội\" chính thức xuất hiện từ năm nào?",
-    "options": [
-      "1802",
-      "1831",
-      "1945",
-      "1911"
-    ],
-    "answer": 1
-  },
-  {
-    "id": "017",
-    "type": "text",
-    "question": "Thành cổ nổi tiếng nào còn lại ở Hà Nội?",
-    "options": [
-      "Thành nhà Hồ",
-      "Thành Cổ Loa",
-      "Thành Hà Nội (Hoàng thành Thăng Long)",
-      "Thành Trường Sa"
-    ],
-    "answer": 2
-  },
-  {
-    "id": "018",
-    "type": "text",
-    "question": "Vườn quốc gia nào nằm trên địa phận Hà Nội?",
-    "options": [
-      "Vườn quốc gia Cúc Phương",
-      "Vườn quốc gia Ba Vì",
-      "Vườn quốc gia Xuân Sơn",
-      "Vườn quốc gia Tam Đảo"
-    ],
-    "answer": 1
-  },
-  {
-    "id": "019",
-    "type": "text",
-    "question": "Hà Nội từng là thủ đô của những triều đại nào?",
-    "options": [
-      "Lý, Trần, Lê",
-      "Nguyễn",
-      "Hồ",
-      "Tây Sơn"
-    ],
-    "answer": 0
-  },
-  {
-    "id": "020",
-    "type": "text",
-    "question": "Tên sân bay quốc tế lớn nhất Hà Nội là?",
-    "options": [
-      "Nội Bài",
-      "Tân Sơn Nhất",
-      "Đồng Hới",
-      "Phù Cát"
-    ],
-    "answer": 0
-  }
-]
+    {
+      "id": "001",
+      "type": "text",
+      "question": "Hà Nội trong quá khứ từng có tên gọi là gì?",
+      "options": ["Phong Châu", "Đại La", "Thăng Long", "Hoa Lư"],
+      "answer": 2
+    },
+    {
+      "id": "002",
+      "type": "text",
+      "question": "Sông nào chảy qua trung tâm thành phố Hà Nội?",
+      "options": ["Sông Hồng", "Sông Cầu", "Sông Lô", "Sông Đáy"],
+      "answer": 0
+    },
+    {
+      "id": "003",
+      "type": "text",
+      "question": "Hà Nội chính thức trở thành thủ đô của Việt Nam vào năm nào?",
+      "options": ["1945", "1954", "1976", "1986"],
+      "answer": 1
+    },
+    {
+      "id": "004",
+      "type": "text",
+      "question": "Hồ nào nổi tiếng nằm giữa trung tâm thủ đô Hà Nội?",
+      "options": ["Hồ Trúc Bạch", "Hồ Tây", "Hồ Hoàn Kiếm", "Hồ Bảy Mẫu"],
+      "answer": 2
+    },
+    {
+      "id": "005",
+      "type": "text",
+      "question": "Cầu nào được coi là biểu tượng lịch sử của Hà Nội, do Pháp xây dựng?",
+      "options": ["Cầu Chương Dương", "Cầu Nhật Tân", "Cầu Vĩnh Tuy", "Cầu Long Biên"],
+      "answer": 3
+    },
+    {
+      "id": "006",
+      "type": "text",
+      "question": "Lăng Chủ tịch Hồ Chí Minh tại Hà Nội nằm ở quảng trường nào?",
+      "options": ["Quảng trường Ba Đình", "Quảng trường Đông Kinh Nghĩa Thục", "Quảng trường Cách Mạng Tháng Tám", "Quảng trường Lý Thái Tổ"],
+      "answer": 0
+    },
+    {
+      "id": "007",
+      "type": "text",
+      "question": "Phố nào ở Hà Nội nổi tiếng với món phở truyền thống?",
+      "options": ["Phố Tạ Hiện", "Phố Hàng Đào", "Phố Lò Đúc", "Phố Bát Đàn"],
+      "answer": 3
+    },
+    {
+      "id": "008",
+      "type": "text",
+      "question": "Ngôi chùa Một Cột ở Hà Nội có hình dáng tượng trưng cho điều gì?",
+      "options": ["Cây tre", "Hoa sen", "Ngọn núi", "Con rồng"],
+      "answer": 1
+    },
+    {
+      "id": "009",
+      "type": "text",
+      "question": "Thư viện Quốc gia Việt Nam nằm trên con phố nào của Hà Nội?",
+      "options": ["Tràng Thi", "Tràng Tiền", "Điện Biên Phủ", "Lý Thường Kiệt"],
+      "answer": 0
+    },
+    {
+      "id": "010",
+      "type": "text",
+      "question": "Khu phố nào của Hà Nội được gọi là '36 phố phường'?",
+      "options": ["Phố Cổ", "Phố Tây", "Phố Mới", "Phố Trung Hòa"],
+      "answer": 0
+    },
+    {
+      "id": "011",
+      "type": "text",
+      "question": "Đền Ngọc Sơn nằm trên hòn đảo giữa hồ nào ở Hà Nội?",
+      "options": ["Hồ Tây", "Hồ Trúc Bạch", "Hồ Hoàn Kiếm", "Hồ Thiền Quang"],
+      "answer": 2
+    },
+    {
+      "id": "012",
+      "type": "text",
+      "question": "Công trình nào ở Hà Nội được UNESCO công nhận là Di sản Văn hóa Thế giới?",
+      "options": ["Hoàng thành Thăng Long", "Văn Miếu - Quốc Tử Giám", "Chùa Trấn Quốc", "Nhà hát Lớn"],
+      "answer": 0
+    },
+    {
+      "id": "013",
+      "type": "text",
+      "question": "Văn Miếu - Quốc Tử Giám ở Hà Nội thờ vị danh nhân nào?",
+      "options": ["Khổng Tử", "Chu Văn An", "Lý Thái Tổ", "Nguyễn Trãi"],
+      "answer": 0
+    },
+    {
+      "id": "014",
+      "type": "text",
+      "question": "Hồ Tây của Hà Nội có diện tích xấp xỉ bao nhiêu?",
+      "options": ["200 ha", "400 ha", "500 ha", "700 ha"],
+      "answer": 1
+    },
+    {
+      "id": "015",
+      "type": "text",
+      "question": "Bảo tàng Dân tộc học Việt Nam hiện nằm tại địa bàn phường nào?",
+      "options": ["Phường Dịch Vọng", "Phường Nghĩa Tân", "Phường Ngọc Khánh", "Phường Trung Hòa"],
+      "answer": 0
+    },
+    {
+      "id": "016",
+      "type": "text",
+      "question": "Sân vận động quốc gia Mỹ Đình hiện thuộc địa bàn phường nào?",
+      "options": ["Phường Mỹ Đình 1", "Phường Cổ Nhuế", "Phường Xuân Phương", "Phường Mai Dịch"],
+      "answer": 0
+    },
+    {
+      "id": "017",
+      "type": "text",
+      "question": "Hà Nội được mở rộng địa giới hành chính vào năm nào, khi sáp nhập tỉnh Hà Tây?",
+      "options": ["2005", "2006", "2008", "2010"],
+      "answer": 2
+    },
+    {
+      "id": "018",
+      "type": "text",
+      "question": "Cầu Nhật Tân ở Hà Nội bắc qua con sông nào?",
+      "options": ["Sông Hồng", "Sông Đáy", "Sông Đuống", "Sông Cầu"],
+      "answer": 0
+    },
+    {
+      "id": "019",
+      "type": "text",
+      "question": "Đại học Quốc gia Hà Nội hiện có cơ sở chính đặt tại địa bàn phường nào?",
+      "options": ["Phường Dịch Vọng Hậu", "Phường Trung Hòa", "Phường Láng Thượng", "Phường Phú Diễn"],
+      "answer": 0
+    },
+    {
+      "id": "020",
+      "type": "text",
+      "question": "Biểu tượng Khuê Văn Các tại Văn Miếu - Quốc Tử Giám thường được in trên tờ tiền mệnh giá nào?",
+      "options": ["20.000 đồng", "50.000 đồng", "100.000 đồng", "200.000 đồng"],
+      "answer": 1
+    }
+  ]
+  
