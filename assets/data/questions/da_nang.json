@@ -1,0 +1,143 @@
+[
+    {
+      "id": "001",
+      "type": "text",
+      "question": "Cây cầu nào ở Đà Nẵng có hình con rồng phun lửa vào cuối tuần?",
+      "options": ["Cầu Sông Hàn", "Cầu Thuận Phước", "Cầu Rồng", "Cầu Trần Thị Lý"],
+      "answer": 2
+    },
+    {
+      "id": "002",
+      "type": "text",
+      "question": "Bãi biển nào ở Đà Nẵng được tạp chí Forbes bình chọn là một trong những bãi biển đẹp nhất hành tinh?",
+      "options": ["Biển Mỹ Khê", "Biển Non Nước", "Biển An Bàng", "Biển Cửa Đại"],
+      "answer": 0
+    },
+    {
+      "id": "003",
+      "type": "text",
+      "question": "Khu du lịch Bà Nà Hills nổi tiếng với cây cầu Vàng nằm ở xã nào?",
+      "options": ["Xã Hòa Ninh", "Xã Hòa Phú", "Xã Hòa Sơn", "Xã Hòa Bắc"],
+      "answer": 0
+    },
+    {
+      "id": "004",
+      "type": "text",
+      "question": "Phố cổ nào thuộc Đà Nẵng mới được UNESCO công nhận là Di sản Văn hóa Thế giới?",
+      "options": ["Phố cổ Bao Vinh", "Phố cổ Hội An", "Phố cổ Đồng Văn", "Phố cổ Phố Hiến"],
+      "answer": 1
+    },
+    {
+      "id": "005",
+      "type": "text",
+      "question": "Khu di tích tháp Chăm nổi tiếng, được UNESCO công nhận, nằm tại đâu?",
+      "options": ["Mỹ Sơn", "Po Nagar", "Bánh Ít", "Đồng Dương"],
+      "answer": 0
+    },
+    {
+      "id": "006",
+      "type": "text",
+      "question": "Món mì nào là đặc sản nổi tiếng ở Đà Nẵng mới?",
+      "options": ["Mì Quảng", "Mì Vằn thắn", "Mì gõ", "Mì sợi Huế"],
+      "answer": 0
+    },
+    {
+      "id": "007",
+      "type": "text",
+      "question": "Sông nào chảy qua trung tâm thành phố Đà Nẵng?",
+      "options": ["Sông Hàn", "Sông Thu Bồn", "Sông Vu Gia", "Sông Cu Đê"],
+      "answer": 0
+    },
+    {
+      "id": "008",
+      "type": "text",
+      "question": "Chợ nào nổi tiếng ở Đà Nẵng là nơi mua sắm và ẩm thực nhộn nhịp?",
+      "options": ["Chợ Bến Thành", "Chợ Đồng Xuân", "Chợ Hàn", "Chợ An Đông"],
+      "answer": 2
+    },
+    {
+      "id": "009",
+      "type": "text",
+      "question": "Ngũ Hành Sơn ở Đà Nẵng gồm bao nhiêu ngọn núi đá vôi?",
+      "options": ["3", "4", "5", "6"],
+      "answer": 2
+    },
+    {
+      "id": "010",
+      "type": "text",
+      "question": "Cù Lao nào ngoài khơi Đà Nẵng mới được UNESCO công nhận là Khu dự trữ sinh quyển?",
+      "options": ["Cù Lao Chàm", "Cù Lao Ré", "Cù Lao Xanh", "Cù Lao Câu"],
+      "answer": 0
+    },
+    {
+      "id": "011",
+      "type": "text",
+      "question": "Món bánh tráng thịt heo nổi tiếng nhất thường ăn kèm rau sống ở đâu?",
+      "options": ["Phường Nam Dương", "Phường Hải Châu 1", "Phường Thanh Khê", "Phường Khuê Trung"],
+      "answer": 0
+    },
+    {
+      "id": "012",
+      "type": "text",
+      "question": "Thành phố Tam Kỳ nay thuộc về Đà Nẵng mới nổi tiếng với món gì?",
+      "options": ["Phở bò", "Bánh tráng cuốn thịt heo", "Gà Tam Kỳ", "Bánh tẻ"],
+      "answer": 2
+    },
+    {
+      "id": "013",
+      "type": "text",
+      "question": "Festival nào được tổ chức định kỳ tại Đà Nẵng, thu hút nhiều đội quốc tế?",
+      "options": ["Festival Áo dài", "Festival Trống nước", "Lễ hội pháo hoa quốc tế", "Festival biển"],
+      "answer": 2
+    },
+    {
+      "id": "014",
+      "type": "text",
+      "question": "Ngôi chùa Linh Ứng nổi tiếng với tượng Phật Quan Âm cao 67m nằm ở bán đảo nào?",
+      "options": ["Bán đảo Sơn Trà", "Bán đảo Hòn Tre", "Bán đảo Cù Lao Chàm", "Bán đảo Đầm Môn"],
+      "answer": 0
+    },
+    {
+      "id": "015",
+      "type": "text",
+      "question": "Đặc sản cao lầu thường gắn liền với khu phố nào của Đà Nẵng mới?",
+      "options": ["Phố cổ Hội An", "Phố cổ Bao Vinh", "Phố cổ Phố Hiến", "Phố cổ Đồng Văn"],
+      "answer": 0
+    },
+    {
+      "id": "016",
+      "type": "text",
+      "question": "Ngôi làng đá mỹ nghệ nổi tiếng nằm dưới chân Ngũ Hành Sơn có tên là gì?",
+      "options": ["Làng Non Nước", "Làng Bát Tràng", "Làng Đông Hồ", "Làng Kim Bồng"],
+      "answer": 0
+    },
+    {
+      "id": "017",
+      "type": "text",
+      "question": "Cầu nào ở Đà Nẵng có khả năng quay 90 độ để tàu thuyền qua lại?",
+      "options": ["Cầu Thuận Phước", "Cầu Trần Thị Lý", "Cầu Sông Hàn", "Cầu Rồng"],
+      "answer": 2
+    },
+    {
+      "id": "018",
+      "type": "text",
+      "question": "Bảo tàng nào ở Đà Nẵng lưu giữ nhiều hiện vật Chăm Pa nhất Việt Nam?",
+      "options": ["Bảo tàng Chăm", "Bảo tàng Lịch sử", "Bảo tàng Dân tộc học", "Bảo tàng Văn hóa"],
+      "answer": 0
+    },
+    {
+      "id": "019",
+      "type": "text",
+      "question": "Làng gốm Thanh Hà, một điểm du lịch văn hóa, nằm bên dòng sông nào?",
+      "options": ["Sông Thu Bồn", "Sông Hàn", "Sông Vu Gia", "Sông Cu Đê"],
+      "answer": 0
+    },
+    {
+      "id": "020",
+      "type": "text",
+      "question": "Biểu tượng chính thức trên huy hiệu thành phố Đà Nẵng là hình gì?",
+      "options": ["Ngọn núi", "Cây cầu", "Sóng biển", "Con chim"],
+      "answer": 1
+    }
+  ]
+  

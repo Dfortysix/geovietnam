@@ -1,242 +1,142 @@
 [
   {
-    "id": "",
+    "id": "001",
     "type": "text",
-    "question": "An Giang thuộc vùng địa lý nào của Việt Nam?",
-    "options": [
-      "Đồng bằng sông Hồng",
-      "Đồng bằng sông Cửu Long",
-      "Tây Nguyên",
-      "Duyên hải miền Trung"
-    ],
+    "question": "Thành phố nào được xem là trung tâm hành chính của An Giang?",
+    "options": ["Châu Đốc", "Long Xuyên", "Hà Tiên", "Tân Châu"],
     "answer": 1
   },
   {
-    "id": "",
+    "id": "002",
     "type": "text",
-    "question": "Sau sáp nhập với Kiên Giang năm 2025, An Giang có diện tích bao nhiêu?",
-    "options": [
-      "6.888,91 km²",
-      "7.888,91 km²",
-      "8.888,91 km²",
-      "9.888,91 km²"
-    ],
+    "question": "Ngọn núi nào nổi tiếng nhất trong dãy Thất Sơn ở An Giang?",
+    "options": ["Núi Sam", "Núi Cấm", "Núi Sập", "Núi Ba Thê"],
+    "answer": 1
+  },
+  {
+    "id": "003",
+    "type": "text",
+    "question": "Địa danh nào ở An Giang nổi tiếng với lễ hội Vía Bà Chúa Xứ?",
+    "options": ["Núi Sam", "Núi Cấm", "Núi Ba Thê", "Núi Dài"],
+    "answer": 0
+  },
+  {
+    "id": "004",
+    "type": "text",
+    "question": "Con sông nào chảy qua thành phố Long Xuyên?",
+    "options": ["Sông Hậu", "Sông Tiền", "Sông Cái Lớn", "Sông Vàm Nao"],
+    "answer": 0
+  },
+  {
+    "id": "005",
+    "type": "text",
+    "question": "Đảo nào thuộc An Giang nổi tiếng với du lịch biển và được mệnh danh là 'đảo ngọc'?",
+    "options": ["Đảo Nam Du", "Đảo Phú Quốc", "Đảo Thổ Chu", "Đảo Hòn Tre"],
+    "answer": 1
+  },
+  {
+    "id": "006",
+    "type": "text",
+    "question": "An Giang có chợ nổi nào nổi tiếng trên sông Hậu?",
+    "options": ["Chợ nổi Cái Răng", "Chợ nổi Long Xuyên", "Chợ nổi Cái Bè", "Chợ nổi Ngã Bảy"],
+    "answer": 1
+  },
+  {
+    "id": "007",
+    "type": "text",
+    "question": "Khu rừng ngập mặn lớn ở An Giang được UNESCO công nhận Khu dự trữ sinh quyển là khu nào?",
+    "options": ["Rừng tràm Trà Sư", "U Minh Hạ", "U Minh Thượng", "Rừng Cái Bè"],
+    "answer": 2
+  },
+  {
+    "id": "008",
+    "type": "text",
+    "question": "Làng nghề làm đường thốt nốt truyền thống nổi tiếng ở An Giang thuộc xã nào?",
+    "options": ["Xã Tân Lập", "Xã An Hảo", "Xã Vĩnh Trung", "Xã Châu Lăng"],
+    "answer": 1
+  },
+  {
+    "id": "009",
+    "type": "text",
+    "question": "Người Chăm tại An Giang nổi tiếng với nghề thủ công nào?",
+    "options": ["Dệt thổ cẩm", "Nghề gốm", "Đan lát tre", "Nghề nón lá"],
+    "answer": 0
+  },
+  {
+    "id": "010",
+    "type": "text",
+    "question": "Ngôi chùa Khmer cổ nổi tiếng ở Tri Tôn, An Giang tên là gì?",
+    "options": ["Chùa Hang", "Chùa Khleang", "Chùa Mã Tộc", "Chùa Xvayton"],
+    "answer": 0
+  },
+  {
+    "id": "011",
+    "type": "text",
+    "question": "Thành phố nào của An Giang nổi tiếng với nghề nuôi cá bè trên sông?",
+    "options": ["Long Xuyên", "Châu Đốc", "Hà Tiên", "Tân Châu"],
+    "answer": 1
+  },
+  {
+    "id": "012",
+    "type": "text",
+    "question": "Khu thắng cảnh nào ở An Giang có hồ nước trong xanh được gọi là 'Tuyệt Tình Cốc'?",
+    "options": ["Hồ Tà Pạ", "Hồ Ô Thum", "Hồ Soài Chek", "Hồ Cấm Sơn"],
+    "answer": 0
+  },
+  {
+    "id": "013",
+    "type": "text",
+    "question": "Đặc sản nào sau đây nổi tiếng của An Giang?",
+    "options": ["Mắm Châu Đốc", "Nem Lai Vung", "Bún kèn", "Bún riêu"],
+    "answer": 0
+  },
+  {
+    "id": "014",
+    "type": "text",
+    "question": "Hải sản nào là đặc trưng nổi tiếng nhất ở Phú Quốc?",
+    "options": ["Nước mắm", "Cua rang me", "Tôm càng xanh", "Cá khoai"],
+    "answer": 0
+  },
+  {
+    "id": "015",
+    "type": "text",
+    "question": "Ngọn núi nào của An Giang cao nhất vùng Bảy Núi?",
+    "options": ["Núi Cấm", "Núi Sam", "Núi Ba Thê", "Núi Tô"],
+    "answer": 0
+  },
+  {
+    "id": "016",
+    "type": "text",
+    "question": "Cảng biển lớn phục vụ du lịch và giao thương quốc tế của An Giang đặt tại đâu?",
+    "options": ["Hà Tiên", "Phú Quốc", "Long Xuyên", "Châu Đốc"],
+    "answer": 1
+  },
+  {
+    "id": "017",
+    "type": "text",
+    "question": "Lễ hội đua bò Bảy Núi ở An Giang thường gắn liền với dân tộc nào?",
+    "options": ["Người Kinh", "Người Hoa", "Người Khmer", "Người Chăm"],
+    "answer": 2
+  },
+  {
+    "id": "018",
+    "type": "text",
+    "question": "Đặc sản 'cà na đập' chua ngọt nổi tiếng gắn với địa phương nào của An Giang?",
+    "options": ["Tri Tôn", "Châu Thành", "Thoại Sơn", "Tịnh Biên"],
+    "answer": 0
+  },
+  {
+    "id": "019",
+    "type": "text",
+    "question": "An Giang có cửa khẩu quốc tế nào giáp Campuchia?",
+    "options": ["Cửa khẩu Tịnh Biên", "Cửa khẩu Vĩnh Xương", "Cửa khẩu Khánh Bình", "Cả ba đáp án trên"],
     "answer": 3
   },
   {
-    "id": "",
+    "id": "020",
     "type": "text",
-    "question": "Trung tâm hành chính của tỉnh An Giang mới sau sáp nhập đặt tại đâu?",
-    "options": [
-      "Thành phố Long Xuyên",
-      "Thành phố Rạch Giá",
-      "Thành phố Châu Đốc",
-      "Thành phố Cần Thơ"
-    ],
-    "answer": 1
-  },
-  {
-    "id": "",
-    "type": "text",
-    "question": "Đảo nào thuộc tỉnh An Giang mới sau sáp nhập?",
-    "options": [
-      "Đảo Phú Quốc",
-      "Đảo Côn Đảo",
-      "Đảo Lý Sơn",
-      "Đảo Cồn Cỏ"
-    ],
+    "question": "Biểu tượng chính thức trên huy hiệu của An Giang là hình gì?",
+    "options": ["Núi Thất Sơn", "Con rồng", "Cây lúa", "Hoa sen"],
     "answer": 0
-  },
-  {
-    "id": "",
-    "type": "text",
-    "question": "Lễ hội truyền thống nào của đồng bào Khmer được tổ chức tại An Giang?",
-    "options": [
-      "Lễ hội Ok Om Bok",
-      "Lễ hội Chol Chnam Thmay",
-      "Lễ hội Sen Dolta",
-      "Lễ hội Kathina"
-    ],
-    "answer": 0
-  },
-  {
-    "id": "",
-    "type": "text",
-    "question": "Món ăn đặc sản nổi tiếng của An Giang là gì?",
-    "options": [
-      "Lẩu mắm",
-      "Bún bò Huế",
-      "Phở Hà Nội",
-      "Cao lầu Hội An"
-    ],
-    "answer": 0
-  },
-  {
-    "id": "",
-    "type": "text",
-    "question": "Khu bảo tồn sinh thái nổi tiếng ở An Giang là gì?",
-    "options": [
-      "Rừng tràm Trà Sư",
-      "Vườn quốc gia U Minh Thượng",
-      "Rừng ngập mặn Cần Giờ",
-      "Vườn quốc gia Cát Tiên"
-    ],
-    "answer": 0
-  },
-  {
-    "id": "",
-    "type": "text",
-    "question": "Chợ nổi nào nổi tiếng ở An Giang?",
-    "options": [
-      "Chợ nổi Cái Răng",
-      "Chợ nổi Cái Bè",
-      "Chợ nổi Ngã Năm",
-      "Chợ nổi Phong Điền"
-    ],
-    "answer": 0
-  },
-  {
-    "id": "",
-    "type": "text",
-    "question": "An Giang có bao nhiêu đơn vị hành chính cấp xã sau sáp nhập 2025?",
-    "options": [
-      "92",
-      "95",
-      "100",
-      "102"
-    ],
-    "answer": 3
-  },
-  {
-    "id": "",
-    "type": "text",
-    "question": "Dân số tỉnh An Giang mới sau sáp nhập khoảng bao nhiêu?",
-    "options": [
-      "3 triệu người",
-      "4 triệu người",
-      "5 triệu người",
-      "6 triệu người"
-    ],
-    "answer": 2
-  },
-  {
-    "id": "",
-    "type": "text",
-    "question": "Nghệ thuật dân gian đặc trưng của An Giang là gì?",
-    "options": [
-      "Đờn ca tài tử",
-      "Hát chèo",
-      "Ca trù",
-      "Hát xoan"
-    ],
-    "answer": 0
-  },
-  {
-    "id": "",
-    "type": "text",
-    "question": "An Giang giáp với quốc gia nào?",
-    "options": [
-      "Lào",
-      "Campuchia",
-      "Thái Lan",
-      "Myanmar"
-    ],
-    "answer": 1
-  },
-  {
-    "id": "",
-    "type": "text",
-    "question": "Sông nào chảy qua An Giang?",
-    "options": [
-      "Sông Hồng",
-      "Sông Mekong",
-      "Sông Đồng Nai",
-      "Sông Sài Gòn"
-    ],
-    "answer": 1
-  },
-  {
-    "id": "",
-    "type": "text",
-    "question": "Thành phố nào là trung tâm kinh tế của An Giang?",
-    "options": [
-      "Long Xuyên",
-      "Châu Đốc",
-      "Tân Châu",
-      "An Phú"
-    ],
-    "answer": 0
-  },
-  {
-    "id": "",
-    "type": "text",
-    "question": "An Giang có biệt danh là gì?",
-    "options": [
-      "Vùng đất đa sắc tộc",
-      "Vùng đất ngàn hoa",
-      "Vùng đất thần tiên",
-      "Vùng đất huyền thoại"
-    ],
-    "answer": 0
-  },
-  {
-    "id": "",
-    "type": "text",
-    "question": "Làng nghề truyền thống nào nổi tiếng ở An Giang?",
-    "options": [
-      "Làng gốm Bát Tràng",
-      "Làng lồng đèn",
-      "Làng dệt chiếu",
-      "Làng đúc đồng"
-    ],
-    "answer": 2
-  },
-  {
-    "id": "",
-    "type": "text",
-    "question": "An Giang có bao nhiêu đặc khu hành chính - kinh tế?",
-    "options": [
-      "1",
-      "2",
-      "3",
-      "4"
-    ],
-    "answer": 2
-  },
-  {
-    "id": "",
-    "type": "text",
-    "question": "Mô hình chính quyền của An Giang sau sáp nhập là gì?",
-    "options": [
-      "Ba cấp",
-      "Hai cấp",
-      "Bốn cấp",
-      "Năm cấp"
-    ],
-    "answer": 1
-  },
-  {
-    "id": "",
-    "type": "text",
-    "question": "An Giang có bao nhiêu phường sau sáp nhập 2025?",
-    "options": [
-      "10",
-      "12",
-      "14",
-      "16"
-    ],
-    "answer": 2
-  },
-  {
-    "id": "",
-    "type": "text",
-    "question": "An Giang có bao nhiêu xã sau sáp nhập 2025?",
-    "options": [
-      "80",
-      "82",
-      "85",
-      "88"
-    ],
-    "answer": 2
   }
 ]

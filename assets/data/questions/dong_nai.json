@@ -1,0 +1,143 @@
+[
+    {
+      "id": "001",
+      "type": "text",
+      "question": "Thành phố nào là trung tâm hành chính – kinh tế của Đồng Nai?",
+      "options": ["Long Khánh", "Biên Hòa", "Trảng Bom", "Vĩnh Cửu"],
+      "answer": 1
+    },
+    {
+      "id": "002",
+      "type": "text",
+      "question": "Con sông lớn nào chảy qua thành phố Biên Hòa?",
+      "options": ["Sông Đồng Nai", "Sông Bé", "Sông Sài Gòn", "Sông La Ngà"],
+      "answer": 0
+    },
+    {
+      "id": "003",
+      "type": "text",
+      "question": "Hồ nước lớn nổi tiếng của Đồng Nai, cung cấp thủy điện và du lịch, là hồ nào?",
+      "options": ["Hồ Dầu Tiếng", "Hồ Trị An", "Hồ Thác Mơ", "Hồ Suối Giai"],
+      "answer": 1
+    },
+    {
+      "id": "004",
+      "type": "text",
+      "question": "Vườn quốc gia nào ở Đồng Nai được UNESCO công nhận là Khu dự trữ sinh quyển?",
+      "options": ["Cát Tiên", "Nam Cát Tiên", "Côn Đảo", "Bidoup – Núi Bà"],
+      "answer": 0
+    },
+    {
+      "id": "005",
+      "type": "text",
+      "question": "Khu căn cứ kháng chiến nổi tiếng với tiếng chày giã gạo được nhắc đến trong bài hát cách mạng là ở đâu?",
+      "options": ["Chiến khu D", "Căn cứ Tà Lài", "Sóc Bom Bo", "Chiến khu Đ"],
+      "answer": 2
+    },
+    {
+      "id": "006",
+      "type": "text",
+      "question": "Đặc sản nào sau đây gắn liền với vùng đất Đồng Nai mới?",
+      "options": ["Hạt điều rang muối", "Bưởi Phúc Trạch", "Mít tố nữ", "Sầu riêng Ri6"],
+      "answer": 0
+    },
+    {
+      "id": "007",
+      "type": "text",
+      "question": "Ngôi chùa cổ Bửu Phong nổi tiếng nằm trên ngọn núi nào ở Biên Hòa?",
+      "options": ["Núi Chứa Chan", "Núi Bửu Long", "Núi Cấm", "Núi Dinh"],
+      "answer": 1
+    },
+    {
+      "id": "008",
+      "type": "text",
+      "question": "Ngọn núi cao thứ hai Nam Bộ, còn gọi là Gia Ray, nằm ở Đồng Nai là núi nào?",
+      "options": ["Núi Chứa Chan", "Núi Cấm", "Núi Dinh", "Núi Bà Đen"],
+      "answer": 0
+    },
+    {
+      "id": "009",
+      "type": "text",
+      "question": "Khu du lịch Suối Mơ nổi tiếng với thác nước trong xanh nằm ở huyện nào?",
+      "options": ["Tân Phú", "Xuân Lộc", "Long Thành", "Trảng Bom"],
+      "answer": 0
+    },
+    {
+      "id": "010",
+      "type": "text",
+      "question": "Làng bưởi nổi tiếng Tân Triều thuộc xã nào của Đồng Nai?",
+      "options": ["Xã Tân Bình", "Xã Tân Triều", "Xã Bình Trị", "Xã Vĩnh Thanh"],
+      "answer": 1
+    },
+    {
+      "id": "011",
+      "type": "text",
+      "question": "Công viên nổi tiếng với hồ nước và tượng Quan Âm cao nằm ở Biên Hòa là công viên nào?",
+      "options": ["Công viên Tao Đàn", "Công viên Bửu Long", "Công viên Suối Mơ", "Công viên Văn Miếu"],
+      "answer": 1
+    },
+    {
+      "id": "012",
+      "type": "text",
+      "question": "Đồng Nai có sân bay quốc tế nào đang được xây dựng để thay thế Tân Sơn Nhất?",
+      "options": ["Sân bay Phú Bài", "Sân bay Cam Ranh", "Sân bay Long Thành", "Sân bay Biên Hòa"],
+      "answer": 2
+    },
+    {
+      "id": "013",
+      "type": "text",
+      "question": "Sông nào bắt nguồn từ Tây Nguyên, chảy qua Đồng Nai và đổ ra biển Đông?",
+      "options": ["Sông Bé", "Sông La Ngà", "Sông Đồng Nai", "Sông Vàm Cỏ"],
+      "answer": 2
+    },
+    {
+      "id": "014",
+      "type": "text",
+      "question": "Đặc sản bánh hỏi thịt nướng nổi tiếng của Đồng Nai thường ăn kèm với gì?",
+      "options": ["Mắm ruốc", "Nước mắm chua ngọt", "Tương hột", "Mắm nêm"],
+      "answer": 3
+    },
+    {
+      "id": "015",
+      "type": "text",
+      "question": "Thác nước đẹp Bàu Sen nằm trong khu du lịch nào ở Đồng Nai?",
+      "options": ["Suối Tre", "Bửu Long", "Giang Điền", "Suối Mơ"],
+      "answer": 2
+    },
+    {
+      "id": "016",
+      "type": "text",
+      "question": "Vườn quốc gia Cát Tiên trải rộng trên nhiều tỉnh, phần lớn diện tích thuộc Đồng Nai nằm ở xã nào?",
+      "options": ["Xã Nam Cát Tiên", "Xã Tà Lài", "Xã Hiếu Liêm", "Xã Mã Đà"],
+      "answer": 0
+    },
+    {
+      "id": "017",
+      "type": "text",
+      "question": "Món cơm lam đặc trưng thường được đồng bào dân tộc nấu trong gì?",
+      "options": ["Ống tre", "Nồi đất", "Lá chuối", "Ống nứa"],
+      "answer": 0
+    },
+    {
+      "id": "018",
+      "type": "text",
+      "question": "Câu lạc bộ bóng đá nổi tiếng từng nhiều năm thi đấu V-League của Đồng Nai là đội nào?",
+      "options": ["CLB Long Thành", "CLB Biên Hòa", "CLB Đồng Nai", "CLB Trảng Bom"],
+      "answer": 2
+    },
+    {
+      "id": "019",
+      "type": "text",
+      "question": "Đặc sản 'gà nướng' nổi tiếng ở Đồng Nai thường ăn kèm với gì?",
+      "options": ["Xôi", "Cơm lam", "Bánh hỏi", "Bánh tráng"],
+      "answer": 1
+    },
+    {
+      "id": "020",
+      "type": "text",
+      "question": "Biểu tượng chính thức trên huy hiệu tỉnh Đồng Nai là hình gì?",
+      "options": ["Dòng sông", "Cây cao su", "Ngọn núi", "Con voi"],
+      "answer": 0
+    }
+  ]
+  

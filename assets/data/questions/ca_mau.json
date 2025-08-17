@@ -1,0 +1,143 @@
+[
+    {
+      "id": "001",
+      "type": "text",
+      "question": "Tỉnh Cà Mau nằm ở vị trí nào trên bản đồ Việt Nam?",
+      "options": ["Cực Bắc", "Cực Đông", "Cực Tây", "Cực Nam"],
+      "answer": 3
+    },
+    {
+      "id": "002",
+      "type": "text",
+      "question": "Khu du lịch nổi tiếng với cột mốc tọa độ quốc gia GPS 0001 nằm ở đâu?",
+      "options": ["Mũi Cà Mau", "Đầm Thị Tường", "Hòn Khoai", "Rạch Gốc"],
+      "answer": 0
+    },
+    {
+      "id": "003",
+      "type": "text",
+      "question": "Đầm nước tự nhiên lớn nhất miền Tây Nam Bộ nằm ở Cà Mau là đầm nào?",
+      "options": ["Đầm Thị Tường", "Đầm Ô Loan", "Đầm Vân Long", "Đầm Chuồn"],
+      "answer": 0
+    },
+    {
+      "id": "004",
+      "type": "text",
+      "question": "Ngôi chùa nổi tiếng với tượng Phật bà Nam Hải cao 11m nằm ở Cà Mau là chùa nào?",
+      "options": ["Chùa Quan Âm", "Chùa Gành Hào", "Chùa Hưng Quốc Tự", "Chùa Bửu Sơn"],
+      "answer": 0
+    },
+    {
+      "id": "005",
+      "type": "text",
+      "question": "Khu rừng ngập mặn lớn nhất Việt Nam và là khu dự trữ sinh quyển thế giới ở Cà Mau tên gì?",
+      "options": ["Rừng tràm Trà Sư", "Rừng ngập mặn Cà Mau", "Rừng U Minh Hạ", "Rừng Phú Quốc"],
+      "answer": 2
+    },
+    {
+      "id": "006",
+      "type": "text",
+      "question": "Loại hình nghệ thuật đờn ca nào của Cà Mau đã được UNESCO công nhận?",
+      "options": ["Đờn ca tài tử", "Ca trù", "Quan họ", "Hát xoan"],
+      "answer": 0
+    },
+    {
+      "id": "007",
+      "type": "text",
+      "question": "Hòn đảo nào nằm gần Mũi Cà Mau, gắn với ngọn hải đăng nổi tiếng?",
+      "options": ["Hòn Khoai", "Hòn Chuối", "Hòn Đá Bạc", "Hòn Tre"],
+      "answer": 0
+    },
+    {
+      "id": "008",
+      "type": "text",
+      "question": "Đặc sản 'tôm khô' nổi tiếng của Cà Mau thường được làm ở vùng nào?",
+      "options": ["Đầm Dơi", "Năm Căn", "Ngọc Hiển", "U Minh"],
+      "answer": 1
+    },
+    {
+      "id": "009",
+      "type": "text",
+      "question": "Câu nói 'dưới sông cá chốt, trên bờ Triều Châu' gắn với vùng đất nào ở Cà Mau?",
+      "options": ["Đầm Dơi", "Ngọc Hiển", "Cái Nước", "U Minh"],
+      "answer": 2
+    },
+    {
+      "id": "010",
+      "type": "text",
+      "question": "Biểu tượng 'công tử' gắn với sự xa hoa đầu thế kỷ XX nay thuộc tỉnh Cà Mau mới là ai?",
+      "options": ["Công tử Bạc Liêu", "Công tử Trà Vinh", "Công tử Vĩnh Long", "Công tử Long Xuyên"],
+      "answer": 0
+    },
+    {
+      "id": "011",
+      "type": "text",
+      "question": "Phong điện ven biển nổi tiếng của miền Tây nằm ở đâu tại Cà Mau?",
+      "options": ["Năm Căn", "Đầm Dơi", "Giá Rai", "Phước Long"],
+      "answer": 2
+    },
+    {
+      "id": "012",
+      "type": "text",
+      "question": "Cửa biển nào nổi tiếng của Cà Mau là nơi tàu thuyền tập trung đông đúc?",
+      "options": ["Cửa biển Gành Hào", "Cửa biển Bồ Đề", "Cửa biển Hòn Khoai", "Cửa biển Sông Đốc"],
+      "answer": 3
+    },
+    {
+      "id": "013",
+      "type": "text",
+      "question": "Món 'ba khía muối' là đặc sản nổi tiếng vùng nào của Cà Mau?",
+      "options": ["Năm Căn", "Đầm Dơi", "Ngọc Hiển", "Phước Long"],
+      "answer": 0
+    },
+    {
+      "id": "014",
+      "type": "text",
+      "question": "Nhà thờ Tắc Sậy nổi tiếng với cha Trương Bửu Diệp nay thuộc địa bàn nào?",
+      "options": ["Xã Tân Phong", "Xã Khánh An", "Xã Giá Rai", "Xã Phong Thạnh"],
+      "answer": 2
+    },
+    {
+      "id": "015",
+      "type": "text",
+      "question": "Sân vận động chính của thành phố Cà Mau nằm ở phường nào?",
+      "options": ["Phường 1", "Phường 5", "Phường 7", "Phường 9"],
+      "answer": 0
+    },
+    {
+      "id": "016",
+      "type": "text",
+      "question": "Cà Mau nổi tiếng là nơi sản xuất loại nước mắm nào?",
+      "options": ["Nước mắm Phan Thiết", "Nước mắm Năm Căn", "Nước mắm Phú Quốc", "Nước mắm Sa Huỳnh"],
+      "answer": 1
+    },
+    {
+      "id": "017",
+      "type": "text",
+      "question": "Khu di tích lịch sử Gành Hào gắn liền với lực lượng nào trong kháng chiến?",
+      "options": ["Hải quân nhân dân Việt Nam", "Công an nhân dân", "Bộ đội Trường Sơn", "Quân đội địa phương"],
+      "answer": 0
+    },
+    {
+      "id": "018",
+      "type": "text",
+      "question": "Làng nghề truyền thống sản xuất muối nổi tiếng ở Cà Mau nằm tại xã nào?",
+      "options": ["Xã Tân Thuận", "Xã Hưng Mỹ", "Xã Điền Hải", "Xã Tân Hải"],
+      "answer": 2
+    },
+    {
+      "id": "019",
+      "type": "text",
+      "question": "Lễ hội Nghinh Ông cầu ngư đặc sắc thường tổ chức tại cửa biển nào ở Cà Mau?",
+      "options": ["Cửa biển Sông Đốc", "Cửa biển Gành Hào", "Cửa biển Bồ Đề", "Cửa biển Khánh Hội"],
+      "answer": 0
+    },
+    {
+      "id": "020",
+      "type": "text",
+      "question": "Biểu tượng chính thức trên huy hiệu tỉnh Cà Mau là hình gì?",
+      "options": ["Con cua biển", "Con tàu", "Ngọn hải đăng", "Con chim nhạn"],
+      "answer": 2
+    }
+  ]
+  

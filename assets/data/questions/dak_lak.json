@@ -1,0 +1,143 @@
+[
+    {
+      "id": "001",
+      "type": "text",
+      "question": "Thành phố nào được xem là thủ phủ cà phê của Việt Nam?",
+      "options": ["Pleiku", "Buôn Ma Thuột", "Kon Tum", "Gia Nghĩa"],
+      "answer": 1
+    },
+    {
+      "id": "002",
+      "type": "text",
+      "question": "Hồ nước tự nhiên lớn nổi tiếng ở Đắk Lắk gắn với truyền thuyết voi thần là hồ nào?",
+      "options": ["Hồ Xuân Hương", "Hồ Lắk", "Hồ Ea Kao", "Hồ Ea Đ’răng"],
+      "answer": 1
+    },
+    {
+      "id": "003",
+      "type": "text",
+      "question": "Buôn Đôn nổi tiếng với loài động vật nào?",
+      "options": ["Voi", "Trâu", "Ngựa", "Bò tót"],
+      "answer": 0
+    },
+    {
+      "id": "004",
+      "type": "text",
+      "question": "Con sông lớn chảy qua trung tâm Buôn Ma Thuột là sông nào?",
+      "options": ["Sông Sêrêpôk", "Sông Ba", "Sông Hinh", "Sông Đà Rằng"],
+      "answer": 0
+    },
+    {
+      "id": "005",
+      "type": "text",
+      "question": "Ngọn thác nào ở Đắk Lắk nổi tiếng với cảnh hùng vĩ, còn được gọi là 'ngọn thác chồng'?",
+      "options": ["Thác Trinh Nữ", "Thác Gia Long", "Thác Krông Kmar", "Thác Dray Nur"],
+      "answer": 3
+    },
+    {
+      "id": "006",
+      "type": "text",
+      "question": "Bãi biển nào của Đắk Lắk mới nổi tiếng với bãi cát dài và sạch?",
+      "options": ["Biển Tuy Hòa", "Biển Vũng Rô", "Biển Đá Trắng", "Biển Long Thủy"],
+      "answer": 1
+    },
+    {
+      "id": "007",
+      "type": "text",
+      "question": "Ghềnh đá nào ở Đắk Lắk mới có hình dạng tựa tổ ong độc đáo?",
+      "options": ["Ghềnh Đá Đĩa", "Ghềnh Ráng", "Ghềnh Đèn", "Ghềnh Hào"],
+      "answer": 0
+    },
+    {
+      "id": "008",
+      "type": "text",
+      "question": "Món cơm nào là đặc sản nổi tiếng, thường ăn kèm gà nướng ở Đắk Lắk?",
+      "options": ["Cơm lam", "Cơm cháy", "Cơm niêu", "Cơm gà Hội An"],
+      "answer": 0
+    },
+    {
+      "id": "009",
+      "type": "text",
+      "question": "Thành phố ven biển của Đắk Lắk mới, nổi tiếng với tháp Nhạn, tên là gì?",
+      "options": ["Tuy Hòa", "Nha Trang", "Quy Nhơn", "Đồng Hới"],
+      "answer": 0
+    },
+    {
+      "id": "010",
+      "type": "text",
+      "question": "Loại nhạc cụ cồng chiêng của Tây Nguyên ở Đắk Lắk đã được UNESCO công nhận là gì?",
+      "options": ["Không gian văn hóa cồng chiêng", "Dàn chiêng cổ", "Lễ hội chiêng", "Cồng chiêng đại ngàn"],
+      "answer": 0
+    },
+    {
+      "id": "011",
+      "type": "text",
+      "question": "Ngọn núi Chư Yang Sin ở Đắk Lắk có độ cao khoảng bao nhiêu mét?",
+      "options": ["1.800m", "2.000m", "2.442m", "2.900m"],
+      "answer": 2
+    },
+    {
+      "id": "012",
+      "type": "text",
+      "question": "Ngôi tháp cổ của người Chăm nổi bật ở Đắk Lắk mới tên là gì?",
+      "options": ["Tháp Nhạn", "Tháp Bánh Ít", "Tháp Dương Long", "Tháp Đôi"],
+      "answer": 0
+    },
+    {
+      "id": "013",
+      "type": "text",
+      "question": "Đặc sản cà phê nổi tiếng của Đắk Lắk thường được tổ chức lễ hội vào tháng mấy?",
+      "options": ["Tháng 1", "Tháng 3", "Tháng 6", "Tháng 12"],
+      "answer": 1
+    },
+    {
+      "id": "014",
+      "type": "text",
+      "question": "Món bò một nắng chấm muối kiến vàng là đặc sản vùng nào của Đắk Lắk?",
+      "options": ["Ea Súp", "Buôn Đôn", "Krông Pa", "M’Đrắk"],
+      "answer": 2
+    },
+    {
+      "id": "015",
+      "type": "text",
+      "question": "Đèo Cả nổi tiếng hiểm trở, nối Đắk Lắk mới với tỉnh nào phía Bắc?",
+      "options": ["Khánh Hòa", "Bình Định", "Quảng Ngãi", "Ninh Thuận"],
+      "answer": 0
+    },
+    {
+      "id": "016",
+      "type": "text",
+      "question": "Hòn đảo nào thuộc Đắk Lắk mới, nổi tiếng với hải sản và làng chài truyền thống?",
+      "options": ["Hòn Nưa", "Hòn Yến", "Hòn Khoai", "Hòn Ngư"],
+      "answer": 1
+    },
+    {
+      "id": "017",
+      "type": "text",
+      "question": "Sông nào chảy qua đồng bằng Tuy Hòa ở Đắk Lắk mới?",
+      "options": ["Sông Ba", "Sông Hinh", "Sông Đà Rằng", "Cả ba đáp án trên"],
+      "answer": 3
+    },
+    {
+      "id": "018",
+      "type": "text",
+      "question": "Loại hoa nào gắn liền với Buôn Ma Thuột và thường nở trắng trời tháng 3?",
+      "options": ["Hoa cà phê", "Hoa ban", "Hoa gạo", "Hoa hướng dương"],
+      "answer": 0
+    },
+    {
+      "id": "019",
+      "type": "text",
+      "question": "Làng nghề dệt thổ cẩm truyền thống của người Ê Đê nổi tiếng ở xã nào?",
+      "options": ["Xã Ea Kao", "Xã Cư Êbur", "Xã Krông Ana", "Xã Buôn Triết"],
+      "answer": 1
+    },
+    {
+      "id": "020",
+      "type": "text",
+      "question": "Biểu tượng trên huy hiệu tỉnh Đắk Lắk là hình gì?",
+      "options": ["Con voi", "Ngọn núi", "Bông lúa", "Cây cà phê"],
+      "answer": 0
+    }
+  ]
+  

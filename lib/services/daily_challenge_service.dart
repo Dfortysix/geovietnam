@@ -242,7 +242,14 @@ class DailyChallengeService {
   
   // Kiểm tra xem tỉnh có file questions không
   static bool _hasQuestionsFile(String provinceId) {
-    final availableProvinces = ['Ha Noi', 'Hai Phong', 'An Giang', 'Thai Nguyen'];
+    final availableProvinces = [
+      'Ha Noi', 'Hai Phong', 'An Giang', 'Thai Nguyen', 'Bac Ninh', 'Can Tho', 
+      'Ca Mau', 'Da Nang', 'Vinh Long', 'Tay Ninh', 'Quang Ngai', 'Ho Chi Minh',
+      'Gia Lai', 'Dong Nai', 'Quang Tri', 'Lao Cai', 'Dong Thap', 'Dak Lak',
+      'Khanh Hoa', 'Lam Dong', 'Hung Yen', 'Ninh Binh', 'Lang Son', 'Phu Tho',
+      'Son La', 'Tuyen Quang', 'Dien Bien', 'Ha Tinh', 'Thanh Hoa', 'Nghe An',
+      'Lai Chau', 'Hue', 'Quang Ninh', 'Cao Bang'
+    ];
     return availableProvinces.contains(provinceId);
   }
 
@@ -272,6 +279,66 @@ class DailyChallengeService {
         fileName = 'an_giang.json';
       } else if (provinceId == 'Thai Nguyen') {
         fileName = 'thai_nguyen.json';
+      } else if (provinceId == 'Bac Ninh') {
+        fileName = 'bac_ninh.json';
+      } else if (provinceId == 'Can Tho') {
+        fileName = 'can_tho.json';
+      } else if (provinceId == 'Ca Mau') {
+        fileName = 'ca_mau.json';
+      } else if (provinceId == 'Da Nang') {
+        fileName = 'da_nang.json';
+      } else if (provinceId == 'Vinh Long') {
+        fileName = 'vinh_long.json';
+      } else if (provinceId == 'Tay Ninh') {
+        fileName = 'tay_ninh.json';
+      } else if (provinceId == 'Quang Ngai') {
+        fileName = 'quang_ngai.json';
+      } else if (provinceId == 'Ho Chi Minh') {
+        fileName = 'ho_chi_minh.json';
+      } else if (provinceId == 'Gia Lai') {
+        fileName = 'gia_lai.json';
+      } else if (provinceId == 'Dong Nai') {
+        fileName = 'dong_nai.json';
+      } else if (provinceId == 'Quang Tri') {
+        fileName = 'quang_tri.json';
+      } else if (provinceId == 'Lao Cai') {
+        fileName = 'lao_cai.json';
+      } else if (provinceId == 'Dong Thap') {
+        fileName = 'dong_thap.json';
+      } else if (provinceId == 'Dak Lak') {
+        fileName = 'dak_lak.json';
+      } else if (provinceId == 'Khanh Hoa') {
+        fileName = 'khanh_hoa.json';
+      } else if (provinceId == 'Lam Dong') {
+        fileName = 'lam_dong.json';
+      } else if (provinceId == 'Hung Yen') {
+        fileName = 'hung_yen.json';
+      } else if (provinceId == 'Ninh Binh') {
+        fileName = 'ninh_binh.json';
+      } else if (provinceId == 'Lang Son') {
+        fileName = 'lang_son.json';
+      } else if (provinceId == 'Phu Tho') {
+        fileName = 'phu_tho.json';
+      } else if (provinceId == 'Son La') {
+        fileName = 'son_la.json';
+      } else if (provinceId == 'Tuyen Quang') {
+        fileName = 'tuyen_quang.json';
+      } else if (provinceId == 'Dien Bien') {
+        fileName = 'dien_bien.json';
+      } else if (provinceId == 'Ha Tinh') {
+        fileName = 'ha_tinh.json';
+      } else if (provinceId == 'Thanh Hoa') {
+        fileName = 'thanh_hoa.json';
+      } else if (provinceId == 'Nghe An') {
+        fileName = 'nghe_an.json';
+      } else if (provinceId == 'Lai Chau') {
+        fileName = 'lai_chau.json';
+      } else if (provinceId == 'Hue') {
+        fileName = 'hue.json';
+      } else if (provinceId == 'Quang Ninh') {
+        fileName = 'quang_ninh.json';
+      } else if (provinceId == 'Cao Bang') {
+        fileName = 'cao_bang.json';
       } else {
         fileName = '${provinceId.toLowerCase().replaceAll(' ', '_')}.json';
       }

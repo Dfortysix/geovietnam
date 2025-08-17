@@ -1,0 +1,143 @@
+[
+    {
+      "id": "001",
+      "type": "text",
+      "question": "Chiến thắng lịch sử nào năm 1954 đã làm nên tên tuổi của Điện Biên?",
+      "options": ["Chiến thắng Biên Giới", "Chiến thắng Điện Biên Phủ", "Chiến thắng Việt Bắc", "Chiến thắng Đông Khê"],
+      "answer": 1
+    },
+    {
+      "id": "002",
+      "type": "text",
+      "question": "Cánh đồng nào ở Điện Biên được mệnh danh là 'kho thóc' của Tây Bắc?",
+      "options": ["Cánh đồng Mường Thanh", "Cánh đồng Than Uyên", "Cánh đồng Quỳnh Nhai", "Cánh đồng Phong Thổ"],
+      "answer": 0
+    },
+    {
+      "id": "003",
+      "type": "text",
+      "question": "Sông nào chảy qua thành phố Điện Biên Phủ?",
+      "options": ["Sông Đà", "Sông Nậm Rốm", "Sông Mã", "Sông Chu"],
+      "answer": 1
+    },
+    {
+      "id": "004",
+      "type": "text",
+      "question": "Tên vị tướng chỉ huy quân đội Việt Nam trong chiến dịch Điện Biên Phủ là ai?",
+      "options": ["Nguyễn Chí Thanh", "Võ Nguyên Giáp", "Trần Đăng Ninh", "Lê Trọng Tấn"],
+      "answer": 1
+    },
+    {
+      "id": "005",
+      "type": "text",
+      "question": "Đồi nào ở Điện Biên là nơi diễn ra trận đánh quyết định, buộc địch đầu hàng?",
+      "options": ["Đồi C1", "Đồi A1", "Đồi D1", "Đồi E1"],
+      "answer": 1
+    },
+    {
+      "id": "006",
+      "type": "text",
+      "question": "Di tích lịch sử hầm chỉ huy của tướng De Castries nằm ở phường nào của Điện Biên?",
+      "options": ["Phường Mường Thanh", "Phường Him Lam", "Phường Thanh Bình", "Phường Noong Bua"],
+      "answer": 0
+    },
+    {
+      "id": "007",
+      "type": "text",
+      "question": "Lễ hội Hoa Ban nổi tiếng hằng năm của Điện Biên thường diễn ra vào tháng mấy?",
+      "options": ["Tháng 1", "Tháng 3", "Tháng 6", "Tháng 9"],
+      "answer": 1
+    },
+    {
+      "id": "008",
+      "type": "text",
+      "question": "Loài hoa nào là biểu tượng của tỉnh Điện Biên?",
+      "options": ["Hoa Đào", "Hoa Ban", "Hoa Sen", "Hoa Mai"],
+      "answer": 1
+    },
+    {
+      "id": "009",
+      "type": "text",
+      "question": "Hang động Pa Thơm ở Điện Biên gắn liền với truyền thuyết nào?",
+      "options": ["Nàng Ban", "Chàng Khum", "Nàng Han", "Sơn Tinh – Thủy Tinh"],
+      "answer": 0
+    },
+    {
+      "id": "010",
+      "type": "text",
+      "question": "Món xôi ngũ sắc đặc trưng của Điện Biên thường gắn với dân tộc nào?",
+      "options": ["Người Mông", "Người Thái", "Người Dao", "Người Khơ Mú"],
+      "answer": 1
+    },
+    {
+      "id": "011",
+      "type": "text",
+      "question": "Điện Biên có cửa khẩu quốc tế nào thông thương với Lào?",
+      "options": ["Cửa khẩu Tây Trang", "Cửa khẩu Ma Lù Thàng", "Cửa khẩu Cầu Treo", "Cửa khẩu Na Mèo"],
+      "answer": 0
+    },
+    {
+      "id": "012",
+      "type": "text",
+      "question": "Tên hồ nước tự nhiên lớn nhất Điện Biên, gần đồi A1, là gì?",
+      "options": ["Hồ Pa Khoang", "Hồ Pá Khoang", "Hồ Noong U", "Hồ Tà Lèng"],
+      "answer": 1
+    },
+    {
+      "id": "013",
+      "type": "text",
+      "question": "Người dân tộc H’Mông ở Điện Biên nổi tiếng với nghề thủ công nào?",
+      "options": ["Dệt lanh", "Làm gốm", "Đan lát", "Làm giấy dó"],
+      "answer": 0
+    },
+    {
+      "id": "014",
+      "type": "text",
+      "question": "Tên con đèo nổi tiếng nối Điện Biên với Sơn La là gì?",
+      "options": ["Đèo Pha Đin", "Đèo Ô Quy Hồ", "Đèo Khau Phạ", "Đèo Lũng Lô"],
+      "answer": 0
+    },
+    {
+      "id": "015",
+      "type": "text",
+      "question": "Loại rượu cần nổi tiếng ở Điện Biên thường được làm từ nguyên liệu gì?",
+      "options": ["Ngô", "Sắn", "Gạo nếp", "Khoai"],
+      "answer": 2
+    },
+    {
+      "id": "016",
+      "type": "text",
+      "question": "Đặc sản chẩm chéo của người Thái ở Điện Biên là loại gì?",
+      "options": ["Gia vị chấm", "Món nướng", "Món xôi", "Món canh"],
+      "answer": 0
+    },
+    {
+      "id": "017",
+      "type": "text",
+      "question": "Bảo tàng Chiến thắng Điện Biên Phủ nằm ở phường nào?",
+      "options": ["Phường Him Lam", "Phường Mường Thanh", "Phường Tân Thanh", "Phường Thanh Trường"],
+      "answer": 2
+    },
+    {
+      "id": "018",
+      "type": "text",
+      "question": "Tên thung lũng nổi tiếng ở Điện Biên gắn với nhiều bản làng người Thái?",
+      "options": ["Thung lũng Mai Châu", "Thung lũng Mường Thanh", "Thung lũng Mường Lò", "Thung lũng Nậm Nơn"],
+      "answer": 1
+    },
+    {
+      "id": "019",
+      "type": "text",
+      "question": "Đặc sản thịt trâu gác bếp của Điện Biên thường có vị gì đặc trưng?",
+      "options": ["Cay", "Chua", "Ngọt", "Đắng"],
+      "answer": 0
+    },
+    {
+      "id": "020",
+      "type": "text",
+      "question": "Biểu tượng chính thức trên huy hiệu của tỉnh Điện Biên là hình gì?",
+      "options": ["Khẩu pháo", "Hoa Ban", "Ngọn núi", "Cánh đồng lúa"],
+      "answer": 1
+    }
+  ]
+  

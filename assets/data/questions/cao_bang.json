@@ -1,0 +1,143 @@
+[
+    {
+      "id": "001",
+      "type": "text",
+      "question": "Thác nước nổi tiếng nhất ở Cao Bằng, nằm trên biên giới Việt – Trung, tên là gì?",
+      "options": ["Thác Bản Giốc", "Thác Đầu Đẳng", "Thác Khe Vằn", "Thác Dải Yếm"],
+      "answer": 0
+    },
+    {
+      "id": "002",
+      "type": "text",
+      "question": "Khu di tích lịch sử Pác Bó ở Cao Bằng gắn liền với ai?",
+      "options": ["Trần Hưng Đạo", "Hồ Chí Minh", "Nguyễn Du", "Võ Nguyên Giáp"],
+      "answer": 1
+    },
+    {
+      "id": "003",
+      "type": "text",
+      "question": "Con sông nào chảy qua thác Bản Giốc của Cao Bằng?",
+      "options": ["Sông Bằng Giang", "Sông Kỳ Cùng", "Sông Quây Sơn", "Sông Lô"],
+      "answer": 2
+    },
+    {
+      "id": "004",
+      "type": "text",
+      "question": "Động nào ở Cao Bằng nổi tiếng với nhũ đá đẹp, nằm gần thác Bản Giốc?",
+      "options": ["Động Ngườm Ngao", "Động Tam Thanh", "Động Nguom Puc", "Động Hua Mạ"],
+      "answer": 0
+    },
+    {
+      "id": "005",
+      "type": "text",
+      "question": "Tên con suối nơi Bác Hồ từng ngồi làm việc tại Pác Bó là gì?",
+      "options": ["Suối Lê Nin", "Suối Đăng", "Suối Trúc", "Suối Mơ"],
+      "answer": 0
+    },
+    {
+      "id": "006",
+      "type": "text",
+      "question": "Ngọn núi gắn liền với Pác Bó ở Cao Bằng có tên là gì?",
+      "options": ["Núi Cô Tiên", "Núi Các Mác", "Núi Khau Liêu", "Núi Phja Oắc"],
+      "answer": 1
+    },
+    {
+      "id": "007",
+      "type": "text",
+      "question": "Đặc sản 'bánh khảo' truyền thống của Cao Bằng thường được làm vào dịp nào?",
+      "options": ["Tết Nguyên Đán", "Rằm tháng Giêng", "Lễ hội Lồng Tồng", "Tết Trung Thu"],
+      "answer": 0
+    },
+    {
+      "id": "008",
+      "type": "text",
+      "question": "Địa danh nào ở Cao Bằng được UNESCO công nhận là Công viên địa chất toàn cầu?",
+      "options": ["Non nước Cao Bằng", "Thác Bản Giốc", "Pác Bó", "Hồ Thang Hen"],
+      "answer": 0
+    },
+    {
+      "id": "009",
+      "type": "text",
+      "question": "Hồ nước đẹp nổi tiếng ở Trà Lĩnh, Cao Bằng, còn gọi là 'Tuyệt tình cốc' là hồ nào?",
+      "options": ["Hồ Ba Bể", "Hồ Thang Hen", "Hồ Núi Cốc", "Hồ Nậm Ngư"],
+      "answer": 1
+    },
+    {
+      "id": "010",
+      "type": "text",
+      "question": "Lễ hội Lồng Tồng của người Tày ở Cao Bằng thường tổ chức vào dịp nào?",
+      "options": ["Đầu năm mới", "Mùa gặt", "Tết Trung Thu", "Ngày giỗ Tổ Hùng Vương"],
+      "answer": 0
+    },
+    {
+      "id": "011",
+      "type": "text",
+      "question": "Cao Bằng có cửa khẩu quốc tế nào thông thương với Trung Quốc?",
+      "options": ["Cửa khẩu Hữu Nghị", "Cửa khẩu Tà Lùng", "Cửa khẩu Móng Cái", "Cửa khẩu Lào Cai"],
+      "answer": 1
+    },
+    {
+      "id": "012",
+      "type": "text",
+      "question": "Tên dòng sông chảy qua trung tâm thành phố Cao Bằng là gì?",
+      "options": ["Sông Kỳ Cùng", "Sông Bằng Giang", "Sông Quây Sơn", "Sông Gâm"],
+      "answer": 1
+    },
+    {
+      "id": "013",
+      "type": "text",
+      "question": "Món đặc sản 'lạp xưởng hun khói' của Cao Bằng thường được làm từ nguyên liệu chính nào?",
+      "options": ["Thịt trâu", "Thịt lợn", "Thịt bò", "Thịt dê"],
+      "answer": 1
+    },
+    {
+      "id": "014",
+      "type": "text",
+      "question": "Người dân tộc nào chiếm đa số ở Cao Bằng?",
+      "options": ["Người Tày", "Người Mông", "Người Nùng", "Người Dao"],
+      "answer": 0
+    },
+    {
+      "id": "015",
+      "type": "text",
+      "question": "Chợ phiên Phja Đén nổi tiếng ở Cao Bằng thường họp theo chu kỳ mấy ngày?",
+      "options": ["3 ngày", "5 ngày", "6 ngày", "7 ngày"],
+      "answer": 1
+    },
+    {
+      "id": "016",
+      "type": "text",
+      "question": "Tên ngọn núi cao nhất trong dãy núi Phja Oắc – Phja Đén của Cao Bằng là gì?",
+      "options": ["Núi Khau Liêu", "Núi Phja Oắc", "Núi Các Mác", "Núi Dùm"],
+      "answer": 1
+    },
+    {
+      "id": "017",
+      "type": "text",
+      "question": "Loại miến nào được làm từ dong riềng, đặc sản nổi tiếng của Cao Bằng?",
+      "options": ["Miến dong Nguyên Bình", "Miến dong Bắc Kạn", "Miến dong Hà Giang", "Miến dong Lạng Sơn"],
+      "answer": 0
+    },
+    {
+      "id": "018",
+      "type": "text",
+      "question": "Tên lễ hội truyền thống của người Nùng ở Cao Bằng, thường cầu may mắn mùa màng?",
+      "options": ["Lễ hội Lồng Tồng", "Lễ hội Pháo hoa", "Lễ hội Thanh Minh", "Lễ hội Kỳ Yên"],
+      "answer": 0
+    },
+    {
+      "id": "019",
+      "type": "text",
+      "question": "Món 'vịt quay 7 vị' là đặc sản trứ danh của huyện nào ở Cao Bằng?",
+      "options": ["Hòa An", "Thạch An", "Nguyên Bình", "Trùng Khánh"],
+      "answer": 3
+    },
+    {
+      "id": "020",
+      "type": "text",
+      "question": "Biểu tượng chính thức trên huy hiệu tỉnh Cao Bằng là gì?",
+      "options": ["Ngọn núi", "Thác nước", "Bông lúa", "Con ngựa"],
+      "answer": 1
+    }
+  ]
+  

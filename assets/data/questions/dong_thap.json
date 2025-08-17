@@ -1,0 +1,143 @@
+[
+    {
+      "id": "001",
+      "type": "text",
+      "question": "Thành phố nào là trung tâm hành chính – kinh tế của Đồng Tháp?",
+      "options": ["Cao Lãnh", "Sa Đéc", "Tân An", "Hồng Ngự"],
+      "answer": 0
+    },
+    {
+      "id": "002",
+      "type": "text",
+      "question": "Khu du lịch sinh thái nổi tiếng với rừng tràm và chim trời ở Đồng Tháp là gì?",
+      "options": ["Gáo Giồng", "Tràm Chim", "Xẻo Quýt", "Cồn Phụng"],
+      "answer": 1
+    },
+    {
+      "id": "003",
+      "type": "text",
+      "question": "Loài hoa nào được xem là biểu tượng của Đồng Tháp?",
+      "options": ["Hoa Mai", "Hoa Ban", "Hoa Sen", "Hoa Súng"],
+      "answer": 2
+    },
+    {
+      "id": "004",
+      "type": "text",
+      "question": "Ngôi làng nổi tiếng với nghề trồng hoa kiểng lâu đời ở Đồng Tháp là gì?",
+      "options": ["Làng hoa Thái Phiên", "Làng hoa Tân Quy Đông", "Làng hoa Vạn Thành", "Làng hoa Nhật Tân"],
+      "answer": 1
+    },
+    {
+      "id": "005",
+      "type": "text",
+      "question": "Khu di tích Lăng cụ Phó bảng Nguyễn Sinh Sắc nằm ở thành phố nào?",
+      "options": ["Hồng Ngự", "Sa Đéc", "Cao Lãnh", "Tân An"],
+      "answer": 2
+    },
+    {
+      "id": "006",
+      "type": "text",
+      "question": "Đặc sản 'hủ tiếu' nổi tiếng gắn liền với vùng đất nào của Đồng Tháp?",
+      "options": ["Sa Đéc", "Cao Lãnh", "Tam Nông", "Thanh Bình"],
+      "answer": 0
+    },
+    {
+      "id": "007",
+      "type": "text",
+      "question": "Vùng nào của Đồng Tháp được mệnh danh là 'tháp mười đẹp nhất bông sen'?",
+      "options": ["Tam Nông", "Tháp Mười", "Thanh Bình", "Hồng Ngự"],
+      "answer": 1
+    },
+    {
+      "id": "008",
+      "type": "text",
+      "question": "Chùa Tôn Thạnh – nơi nhà thơ Nguyễn Đình Chiểu từng dạy học – nằm ở xã nào?",
+      "options": ["Xã Nhựt Tảo", "Xã Mỹ Lộc", "Xã Long Hựu Đông", "Xã Tân Kiểng"],
+      "answer": 2
+    },
+    {
+      "id": "009",
+      "type": "text",
+      "question": "Món 'cá lóc nướng trui' thường được ăn kèm với loại rau nào phổ biến ở Đồng Tháp?",
+      "options": ["Rau muống", "Rau rừng", "Rau sống", "Lá sen non"],
+      "answer": 3
+    },
+    {
+      "id": "010",
+      "type": "text",
+      "question": "Đặc sản gạo nàng thơm nổi tiếng của Đồng Tháp mới thường được trồng ở đâu?",
+      "options": ["Chợ Đào", "Sa Đéc", "Tháp Mười", "Tam Nông"],
+      "answer": 0
+    },
+    {
+      "id": "011",
+      "type": "text",
+      "question": "Khu du lịch Xẻo Quýt nổi tiếng gắn liền với di tích lịch sử nào?",
+      "options": ["Căn cứ kháng chiến chống Mỹ", "Chiến khu D", "Chiến dịch Rạch Gầm – Xoài Mút", "Đồn Tuyên Nhơn"],
+      "answer": 0
+    },
+    {
+      "id": "012",
+      "type": "text",
+      "question": "Lễ hội Gò Tháp thường diễn ra vào tháng nào hằng năm?",
+      "options": ["Tháng 1 và 3", "Tháng 2 và 4", "Tháng 4 và 6", "Tháng 10 và 12"],
+      "answer": 0
+    },
+    {
+      "id": "013",
+      "type": "text",
+      "question": "Đặc sản chuột đồng nướng nổi tiếng của Đồng Tháp thường đi kèm với gì?",
+      "options": ["Cơm trắng", "Xôi", "Bánh tráng cuốn", "Xôi ngũ sắc"],
+      "answer": 2
+    },
+    {
+      "id": "014",
+      "type": "text",
+      "question": "Di tích Rạch Gầm – Xoài Mút gắn liền với chiến thắng nào?",
+      "options": ["Chiến thắng Ngọc Hồi – Đống Đa", "Chiến thắng Tây Sơn – Nguyễn Ánh", "Chiến thắng Quang Trung trước quân Xiêm", "Chiến thắng Bạch Đằng"],
+      "answer": 2
+    },
+    {
+      "id": "015",
+      "type": "text",
+      "question": "Đặc sản nem Lai Vung nổi tiếng của Đồng Tháp thường được gói bằng lá gì?",
+      "options": ["Lá chuối", "Lá sen", "Lá dong", "Lá dứa"],
+      "answer": 0
+    },
+    {
+      "id": "016",
+      "type": "text",
+      "question": "Cồn Tân Lộc, được mệnh danh là 'cồn hoa trái', thuộc xã nào?",
+      "options": ["Xã Tân Lộc", "Xã Tân Hòa", "Xã Bình Thạnh", "Xã Mỹ Hòa"],
+      "answer": 0
+    },
+    {
+      "id": "017",
+      "type": "text",
+      "question": "Đặc sản mắm cá linh thường ăn kèm với loại lẩu nổi tiếng nào ở Đồng Tháp?",
+      "options": ["Lẩu cá bông lau", "Lẩu mắm", "Lẩu gà lá giang", "Lẩu cá kèo"],
+      "answer": 1
+    },
+    {
+      "id": "018",
+      "type": "text",
+      "question": "Khu di tích Đồn Tuyên Nhơn gắn liền với cuộc kháng chiến chống thực dân nào?",
+      "options": ["Pháp", "Mỹ", "Xiêm", "Nguyên"],
+      "answer": 0
+    },
+    {
+      "id": "019",
+      "type": "text",
+      "question": "Loại trái cây nào được trồng nhiều và nổi tiếng ở Cao Lãnh?",
+      "options": ["Xoài cát", "Sầu riêng", "Chôm chôm", "Mận An Phước"],
+      "answer": 0
+    },
+    {
+      "id": "020",
+      "type": "text",
+      "question": "Biểu tượng chính thức trên huy hiệu tỉnh Đồng Tháp là hình gì?",
+      "options": ["Hoa Sen", "Ngôi Sao", "Bông Lúa", "Con Rồng"],
+      "answer": 0
+    }
+  ]
+  

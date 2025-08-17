@@ -107,6 +107,7 @@ class _DailyChallengeScreenState extends State<DailyChallengeScreen> {
     final currentQ = _questions[_currentQuestion];
 
     return Scaffold(
+      resizeToAvoidBottomInset: false,
       appBar: AppBar(
         title: const Text('🎯 Daily Challenge'),
         backgroundColor: Colors.transparent,
@@ -151,32 +152,32 @@ class _DailyChallengeScreenState extends State<DailyChallengeScreen> {
             children: [
               // Header với thông tin tỉnh và tiến độ
               Container(
-                padding: const EdgeInsets.all(20),
+                padding: const EdgeInsets.symmetric(horizontal: 20, vertical: 12),
                 child: Column(
                   children: [
                     // Thông tin tỉnh được chọn
                     Container(
-                      padding: const EdgeInsets.all(16),
+                      padding: const EdgeInsets.all(12),
                       decoration: BoxDecoration(
                         gradient: AppTheme.primaryGradient,
-                        borderRadius: BorderRadius.circular(16),
+                        borderRadius: BorderRadius.circular(12),
                         boxShadow: AppTheme.glowShadow,
                       ),
                       child: Row(
                         children: [
                           Container(
-                            padding: const EdgeInsets.all(12),
+                            padding: const EdgeInsets.all(8),
                             decoration: BoxDecoration(
                               color: Colors.white.withValues(alpha: 0.2),
-                              borderRadius: BorderRadius.circular(12),
+                              borderRadius: BorderRadius.circular(8),
                             ),
                             child: const Icon(
                               Icons.location_on,
                               color: Colors.white,
-                              size: 24,
+                              size: 20,
                             ),
                           ),
-                          const SizedBox(width: 16),
+                          const SizedBox(width: 12),
                           Expanded(
                             child: Column(
                               crossAxisAlignment: CrossAxisAlignment.start,
@@ -185,14 +186,14 @@ class _DailyChallengeScreenState extends State<DailyChallengeScreen> {
                                   'Tỉnh hôm nay:',
                                   style: TextStyle(
                                     color: Colors.white.withValues(alpha: 0.8),
-                                    fontSize: 12,
+                                    fontSize: 11,
                                   ),
                                 ),
                                 Text(
                                   _selectedProvince?.nameVietnamese ?? '',
                                   style: const TextStyle(
                                     color: Colors.white,
-                                    fontSize: 18,
+                                    fontSize: 16,
                                     fontWeight: FontWeight.bold,
                                   ),
                                 ),
@@ -203,7 +204,7 @@ class _DailyChallengeScreenState extends State<DailyChallengeScreen> {
                       ),
                     ),
                     
-                    const SizedBox(height: 16),
+                    const SizedBox(height: 12),
                     
                     // Thông tin số lần thử
                     Row(
@@ -214,14 +215,14 @@ class _DailyChallengeScreenState extends State<DailyChallengeScreen> {
                           style: const TextStyle(
                             color: AppTheme.primaryOrange,
                             fontWeight: FontWeight.bold,
-                            fontSize: 16,
+                            fontSize: 14,
                           ),
                         ),
                         Container(
-                          padding: const EdgeInsets.symmetric(horizontal: 12, vertical: 6),
+                          padding: const EdgeInsets.symmetric(horizontal: 10, vertical: 4),
                           decoration: BoxDecoration(
                             color: AppTheme.primaryOrange.withValues(alpha: 0.1),
-                            borderRadius: BorderRadius.circular(20),
+                            borderRadius: BorderRadius.circular(16),
                             border: Border.all(color: AppTheme.primaryOrange.withValues(alpha: 0.3)),
                           ),
                           child: Text(
@@ -229,6 +230,7 @@ class _DailyChallengeScreenState extends State<DailyChallengeScreen> {
                             style: const TextStyle(
                               color: AppTheme.primaryOrange,
                               fontWeight: FontWeight.bold,
+                              fontSize: 12,
                             ),
                           ),
                         ),
@@ -254,30 +256,35 @@ class _DailyChallengeScreenState extends State<DailyChallengeScreen> {
                       ),
                     ],
                   ),
-                  child: Column(
-                    crossAxisAlignment: CrossAxisAlignment.start,
-                    children: [
-                      Text(
-                        currentQ['question'] ?? '',
-                        style: const TextStyle(
-                          fontSize: 18,
-                          fontWeight: FontWeight.w600,
-                          color: Colors.black87,
+                  child: SingleChildScrollView(
+                    child: Column(
+                      crossAxisAlignment: CrossAxisAlignment.start,
+                      children: [
+                        Text(
+                          currentQ['question'] ?? '',
+                          style: const TextStyle(
+                            fontSize: 18,
+                            fontWeight: FontWeight.w600,
+                            color: Colors.black87,
+                          ),
                         ),
-                      ),
-                      
-                      const SizedBox(height: 24),
-                      
-                      // Các lựa chọn
-                      ...List.generate(
-                        (currentQ['options'] as List).length,
-                        (index) => _buildOptionButton(
-                          currentQ['options'][index],
-                          index,
-                          currentQ['answer'] == index,
+                        
+                        const SizedBox(height: 24),
+                        
+                        // Các lựa chọn
+                        ...List.generate(
+                          (currentQ['options'] as List).length,
+                          (index) => _buildOptionButton(
+                            currentQ['options'][index],
+                            index,
+                            currentQ['answer'] == index,
+                          ),
                         ),
-                      ),
-                    ],
+                        
+                        // Thêm padding bottom để tránh bị che bởi keyboard
+                        const SizedBox(height: 20),
+                      ],
+                    ),
                   ),
                 ),
               ),
@@ -429,6 +436,7 @@ class _DailyChallengeScreenState extends State<DailyChallengeScreen> {
 
   Widget _buildGameCompletedScreen() {
     return Scaffold(
+      resizeToAvoidBottomInset: false,
       appBar: AppBar(
         title: const Text('🎯 Daily Challenge'),
         backgroundColor: Colors.transparent,

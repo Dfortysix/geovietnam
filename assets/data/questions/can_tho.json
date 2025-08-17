@@ -1,0 +1,143 @@
+[
+    {
+      "id": "001",
+      "type": "text",
+      "question": "Thành phố Cần Thơ được mệnh danh là gì của miền Tây?",
+      "options": ["Thủ phủ miền Tây", "Thành phố hoa", "Hòn ngọc sông Hậu", "Trung tâm công nghiệp"],
+      "answer": 0
+    },
+    {
+      "id": "002",
+      "type": "text",
+      "question": "Bến nào nổi tiếng là biểu tượng của Cần Thơ?",
+      "options": ["Bến Nhà Rồng", "Bến Ninh Kiều", "Bến Thượng Hải", "Bến Bình Đông"],
+      "answer": 1
+    },
+    {
+      "id": "003",
+      "type": "text",
+      "question": "Chợ nổi nào ở Cần Thơ thu hút đông du khách nhất?",
+      "options": ["Chợ nổi Ngã Bảy", "Chợ nổi Cái Răng", "Chợ nổi Cái Bè", "Chợ nổi Trà Ôn"],
+      "answer": 1
+    },
+    {
+      "id": "004",
+      "type": "text",
+      "question": "Khu vườn trái cây nổi tiếng tại huyện Phong Điền gắn với đặc sản nào?",
+      "options": ["Mận An Phước", "Dâu Hạ Châu", "Chôm chôm Long Khánh", "Sầu riêng Ri6"],
+      "answer": 1
+    },
+    {
+      "id": "005",
+      "type": "text",
+      "question": "Ngôi chùa nào ở Cần Thơ nổi tiếng với tên gọi Chùa Dơi?",
+      "options": ["Chùa Mahatup", "Chùa Som Rong", "Chùa Pitu Khôsa Răngsây", "Chùa Ông"],
+      "answer": 0
+    },
+    {
+      "id": "006",
+      "type": "text",
+      "question": "Loại bánh nào là đặc sản nổi tiếng của vùng Sóc Trăng, nay thuộc Cần Thơ?",
+      "options": ["Bánh pía", "Bánh ít lá gai", "Bánh tét lá cẩm", "Bánh tráng phơi sương"],
+      "answer": 0
+    },
+    {
+      "id": "007",
+      "type": "text",
+      "question": "Khu bảo tồn thiên nhiên ngập nước lớn của Cần Thơ mới tên là gì?",
+      "options": ["Láng Sen", "Tràm Chim", "Lung Ngọc Hoàng", "Đầm Dơi"],
+      "answer": 2
+    },
+    {
+      "id": "008",
+      "type": "text",
+      "question": "Lễ hội Ok Om Bok, thả đèn gió nổi tiếng, gắn liền với dân tộc nào ở Cần Thơ?",
+      "options": ["Người Kinh", "Người Hoa", "Người Khmer", "Người Chăm"],
+      "answer": 2
+    },
+    {
+      "id": "009",
+      "type": "text",
+      "question": "Chợ nổi nào ở Cần Thơ được gọi là 'ngã bảy trên sông'?",
+      "options": ["Chợ nổi Ngã Bảy", "Chợ nổi Cái Răng", "Chợ nổi Long Xuyên", "Chợ nổi Phong Điền"],
+      "answer": 0
+    },
+    {
+      "id": "010",
+      "type": "text",
+      "question": "Khu di tích nào ở Cần Thơ gắn với phong trào khởi nghĩa của Võ Văn Tần?",
+      "options": ["Khu di tích Ngã Bảy", "Khu di tích Xẻo Quýt", "Khu di tích Ấp Bắc", "Khu di tích Lung Cột Cầu"],
+      "answer": 0
+    },
+    {
+      "id": "011",
+      "type": "text",
+      "question": "Món 'bún nước lèo' đặc sản của vùng đất Cần Thơ có nguyên liệu đặc trưng nào?",
+      "options": ["Cá lóc", "Cua đồng", "Tôm khô", "Cá ngừ"],
+      "answer": 0
+    },
+    {
+      "id": "012",
+      "type": "text",
+      "question": "Ngôi chùa Khmer có kiến trúc độc đáo ở phường Châu Văn Liêm, Cần Thơ là chùa nào?",
+      "options": ["Chùa Pitu Khôsa Răngsây", "Chùa Som Rong", "Chùa Dơi", "Chùa Ông"],
+      "answer": 0
+    },
+    {
+      "id": "013",
+      "type": "text",
+      "question": "Khu du lịch sinh thái Mỹ Khánh ở Cần Thơ nổi tiếng với trò chơi gì?",
+      "options": ["Đua heo", "Đua bò", "Đua chó", "Đua trâu"],
+      "answer": 0
+    },
+    {
+      "id": "014",
+      "type": "text",
+      "question": "Đặc sản 'lạp xưởng' nổi tiếng của Cần Thơ mới thường được làm ở đâu?",
+      "options": ["Phường Tân Lộc", "Phường Hưng Lợi", "Phường Cái Khế", "Phường Trà An"],
+      "answer": 0
+    },
+    {
+      "id": "015",
+      "type": "text",
+      "question": "Cần Thơ nổi tiếng với câu ca dao: 'Cần Thơ gạo trắng nước trong, ai đi đến đó…' tiếp theo là gì?",
+      "options": ["không muốn về", "thương nhớ dài", "càng thêm say", "chỉ muốn ở"],
+      "answer": 0
+    },
+    {
+      "id": "016",
+      "type": "text",
+      "question": "Nhà cổ Bình Thủy ở Cần Thơ được xây dựng theo phong cách nào?",
+      "options": ["Pháp – Á kết hợp", "Nhà rường Huế", "Nhà sàn Tây Bắc", "Gothic Châu Âu"],
+      "answer": 0
+    },
+    {
+      "id": "017",
+      "type": "text",
+      "question": "Món bánh nào ở Cần Thơ có màu tím đặc trưng từ lá cẩm?",
+      "options": ["Bánh tét", "Bánh ít", "Bánh pía", "Bánh ú"],
+      "answer": 0
+    },
+    {
+      "id": "018",
+      "type": "text",
+      "question": "Phường nào của Cần Thơ tập trung nhiều khách sạn, nhà hàng lớn ven sông?",
+      "options": ["Phường Cái Khế", "Phường An Cư", "Phường Hưng Lợi", "Phường Xuân Khánh"],
+      "answer": 0
+    },
+    {
+      "id": "019",
+      "type": "text",
+      "question": "Sân vận động lớn nhất Cần Thơ nằm tại phường nào?",
+      "options": ["Phường An Hòa", "Phường Cái Khế", "Phường An Nghiệp", "Phường Hưng Lợi"],
+      "answer": 1
+    },
+    {
+      "id": "020",
+      "type": "text",
+      "question": "Biểu tượng chính thức trên huy hiệu của thành phố Cần Thơ là gì?",
+      "options": ["Cây lúa", "Cây chợ nổi", "Con cá tra", "Con thuyền"],
+      "answer": 0
+    }
+  ]
+  

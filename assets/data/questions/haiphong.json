@@ -2,241 +2,141 @@
   {
     "id": "001",
     "type": "text",
-    "question": "Ai là người được coi là khai phá đất Hải Phòng?",
-    "options": [
-      "Trần Hưng Đạo",
-      "Lê Chân",
-      "Ngô Quyền",
-      "Đinh Bộ Lĩnh"
-    ],
+    "question": "Hải Phòng thường được gọi bằng biệt danh nào?",
+    "options": ["Thành phố Đỏ", "Thành phố Cảng", "Thành phố Hoa", "Thành phố Biển"],
     "answer": 1
   },
   {
     "id": "002",
     "type": "text",
-    "question": "Hải Phòng được thành lập thành phố vào năm nào?",
-    "options": [
-      "1831",
-      "1945",
-      "1888",
-      "1976"
-    ],
+    "question": "Con sông lớn nào chảy qua trung tâm Hải Phòng?",
+    "options": ["Sông Hồng", "Sông Lạch Tray", "Sông Đáy", "Sông Văn Úc"],
+    "answer": 1
+  },
+  {
+    "id": "003",
+    "type": "text",
+    "question": "Cảng biển quốc tế lớn nhất tại Hải Phòng là cảng nào?",
+    "options": ["Cảng Đình Vũ", "Cảng Lạch Huyện", "Cảng Hoàng Diệu", "Cảng Chùa Vẽ"],
+    "answer": 1
+  },
+  {
+    "id": "004",
+    "type": "text",
+    "question": "Đảo nào của Hải Phòng nổi tiếng với bãi tắm Cát Cò?",
+    "options": ["Đảo Bạch Long Vĩ", "Đảo Cát Bà", "Đảo Hòn Dáu", "Đảo Long Châu"],
+    "answer": 1
+  },
+  {
+    "id": "005",
+    "type": "text",
+    "question": "Hoa nào được coi là biểu tượng của thành phố Hải Phòng?",
+    "options": ["Hoa sen", "Hoa đào", "Hoa phượng đỏ", "Hoa mai"],
     "answer": 2
   },
   {
-    "id": "",
+    "id": "006",
     "type": "text",
-    "question": "Dòng sông lớn chảy qua trung tâm Hải Phòng là?",
-    "options": [
-      "Sông Hồng",
-      "Sông Đáy",
-      "Sông Cấm",
-      "Sông Lô"
-    ],
-    "answer": 2
+    "question": "Khu di tích Côn Sơn - Kiếp Bạc gắn liền với nhân vật lịch sử nào?",
+    "options": ["Nguyễn Trãi", "Trần Hưng Đạo", "Chu Văn An", "Cả hai đáp án trên"],
+    "answer": 3
   },
   {
-    "id": "",
+    "id": "007",
     "type": "text",
-    "question": "Hải Phòng có biệt danh là gì?",
-    "options": [
-      "Thành phố ngàn hoa",
-      "Thành phố cảng",
-      "Thành phố biển xanh",
-      "Thành phố đỏ"
-    ],
-    "answer": 1
-  },
-  {
-    "id": "",
-    "type": "text",
-    "question": "Đảo lớn nhất thuộc thành phố Hải Phòng là?",
-    "options": [
-      "Đảo Cồn Cỏ",
-      "Đảo Phú Quốc",
-      "Đảo Cát Bà",
-      "Đảo Lý Sơn"
-    ],
-    "answer": 2
-  },
-  {
-    "id": "",
-    "type": "text",
-    "question": "Khu du lịch biển nổi tiếng gần Hải Phòng là?",
-    "options": [
-      "Sầm Sơn",
-      "Đồ Sơn",
-      "Bãi Cháy",
-      "Cửa Lò"
-    ],
-    "answer": 1
-  },
-  {
-    "id": "",
-    "type": "text",
-    "question": "Hải Phòng giáp với tỉnh nào về phía bắc?",
-    "options": [
-      "Thái Bình",
-      "Quảng Ninh",
-      "Nam Định",
-      "Hải Dương"
-    ],
-    "answer": 1
-  },
-  {
-    "id": "",
-    "type": "text",
-    "question": "Trận chiến trên sông Bạch Đằng nổi tiếng nhất do ai chỉ huy?",
-    "options": [
-      "Lý Thường Kiệt",
-      "Trần Hưng Đạo",
-      "Ngô Quyền",
-      "Lê Lợi"
-    ],
-    "answer": 1
-  },
-  {
-    "id": "",
-    "type": "text",
-    "question": "Hải Phòng có vị trí nằm ở vùng địa lý nào?",
-    "options": [
-      "Tây Nguyên",
-      "Duyên hải Bắc Bộ",
-      "Miền Trung",
-      "Đông Nam Bộ"
-    ],
-    "answer": 1
-  },
-  {
-    "id": "",
-    "type": "text",
-    "question": "Cảng biển lớn nhất Việt Nam đặt tại Hải Phòng tên là gì?",
-    "options": [
-      "Cảng Cái Lân",
-      "Cảng Đình Vũ",
-      "Cảng Hải Phòng",
-      "Cảng Sa Kỳ"
-    ],
-    "answer": 2
-  },
-  {
-    "id": "",
-    "type": "text",
-    "question": "Khu kinh tế lớn thuộc Hải Phòng là?",
-    "options": [
-      "Khu kinh tế Vũng Áng",
-      "Khu kinh tế Đình Vũ - Cát Hải",
-      "Khu kinh tế Nghi Sơn",
-      "Khu kinh tế Chu Lai"
-    ],
-    "answer": 1
-  },
-  {
-    "id": "",
-    "type": "text",
-    "question": "Biểu tượng kiến trúc nổi bật tại trung tâm Hải Phòng là?",
-    "options": [
-      "Nhà thờ Đá",
-      "Nhà hát lớn Hải Phòng",
-      "Nhà rồng",
-      "Văn Miếu"
-    ],
-    "answer": 1
-  },
-  {
-    "id": "",
-    "type": "text",
-    "question": "Sân bay quốc tế của Hải Phòng tên là gì?",
-    "options": [
-      "Tân Sơn Nhất",
-      "Nội Bài",
-      "Cát Bi",
-      "Phú Bài"
-    ],
-    "answer": 2
-  },
-  {
-    "id": "",
-    "type": "text",
-    "question": "Tháng nào hàng năm Hải Phòng tổ chức Lễ hội Hoa phượng đỏ?",
-    "options": [
-      "Tháng 5",
-      "Tháng 6",
-      "Tháng 4",
-      "Tháng 3"
-    ],
+    "question": "Sân vận động lớn nhất tại Hải Phòng có tên là gì?",
+    "options": ["Sân Lạch Tray", "Sân Đồ Sơn", "Sân Kiến An", "Sân Hồng Bàng"],
     "answer": 0
   },
   {
-    "id": "",
+    "id": "008",
     "type": "text",
-    "question": "Đỉnh núi cao nhất tại Hải Phòng là?",
-    "options": [
-      "Núi Yên Tử",
-      "Núi Voi",
-      "Núi Tam Đảo",
-      "Núi Côn Sơn"
-    ],
+    "question": "Hải Phòng nổi tiếng với loại bánh nào làm từ gạo và cua đồng?",
+    "options": ["Bánh cuốn", "Bánh đa cua", "Bánh bèo", "Bánh xèo"],
     "answer": 1
   },
   {
-    "id": "",
+    "id": "009",
     "type": "text",
-    "question": "Quần đảo xa bờ duy nhất thuộc Hải Phòng là?",
-    "options": [
-      "Hoàng Sa",
-      "Trường Sa",
-      "Bạch Long Vĩ",
-      "Cồn Cỏ"
-    ],
-    "answer": 2
-  },
-  {
-    "id": "",
-    "type": "text",
-    "question": "Địa danh Cát Bà thuộc huyện nào của Hải Phòng?",
-    "options": [
-      "Thủy Nguyên",
-      "Kiến Thụy",
-      "Cát Hải",
-      "Vĩnh Bảo"
-    ],
-    "answer": 2
-  },
-  {
-    "id": "",
-    "type": "text",
-    "question": "Địa danh nào sau đây KHÔNG thuộc địa phận Hải Phòng?",
-    "options": [
-      "An Dương",
-      "An Lão",
-      "Đông Anh",
-      "Kiến An"
-    ],
-    "answer": 2
-  },
-  {
-    "id": "",
-    "type": "text",
-    "question": "Đặc sản nào nổi tiếng nhất của Hải Phòng?",
-    "options": [
-      "Phở cuốn",
-      "Bánh đa cua",
-      "Chả cá Lã Vọng",
-      "Cao lầu"
-    ],
+    "question": "Khu du lịch Đồ Sơn của Hải Phòng là loại hình du lịch gì?",
+    "options": ["Du lịch núi rừng", "Du lịch biển", "Du lịch hang động", "Du lịch tâm linh"],
     "answer": 1
   },
   {
-    "id": "",
+    "id": "010",
     "type": "text",
-    "question": "Địa danh nào là cái nôi Hiệp hội cảng biển Việt Nam đặt trụ sở?",
-    "options": [
-      "Quảng Ninh",
-      "Hải Phòng",
-      "Đà Nẵng",
-      "Bà Rịa - Vũng Tàu"
-    ],
+    "question": "Cầu nào tại Hải Phòng được mệnh danh là 'cầu vượt biển dài nhất Việt Nam'?",
+    "options": ["Cầu Bính", "Cầu Hoàng Văn Thụ", "Cầu Tân Vũ - Lạch Huyện", "Cầu Khuể"],
+    "answer": 2
+  },
+  {
+    "id": "011",
+    "type": "text",
+    "question": "Nhà hát lớn Hải Phòng nằm tại phường nào?",
+    "options": ["Phường Hoàng Văn Thụ", "Phường Cầu Đất", "Phường Máy Tơ", "Phường Hạ Lý"],
+    "answer": 0
+  },
+  {
+    "id": "012",
+    "type": "text",
+    "question": "Lễ hội chọi trâu nổi tiếng được tổ chức hằng năm tại đâu ở Hải Phòng?",
+    "options": ["Đồ Sơn", "Cát Bà", "Kiến Thụy", "Thủy Nguyên"],
+    "answer": 0
+  },
+  {
+    "id": "013",
+    "type": "text",
+    "question": "Khu dự trữ sinh quyển thế giới ở Hải Phòng được UNESCO công nhận là khu nào?",
+    "options": ["Cát Bà", "Đồ Sơn", "Hòn Dáu", "Tràng Kênh"],
+    "answer": 0
+  },
+  {
+    "id": "014",
+    "type": "text",
+    "question": "Phường nào của Hải Phòng nổi tiếng với phố ẩm thực và món bánh đa cua?",
+    "options": ["Phường Lạch Tray", "Phường Cầu Đất", "Phường Hàng Kênh", "Phường Gia Viên"],
+    "answer": 2
+  },
+  {
+    "id": "015",
+    "type": "text",
+    "question": "Ngôi chùa nào tại Hải Phòng được xây dựng từ thời nhà Lý, gắn với Phật giáo?",
+    "options": ["Chùa Dư Hàng", "Chùa Hàng", "Chùa Vẽ", "Chùa Hang Kenh"],
+    "answer": 0
+  },
+  {
+    "id": "016",
+    "type": "text",
+    "question": "Hải Phòng là quê hương của danh nhân văn hóa nào sau đây?",
+    "options": ["Nguyễn Bỉnh Khiêm", "Chu Văn An", "Phan Bội Châu", "Nguyễn Trãi"],
+    "answer": 0
+  },
+  {
+    "id": "017",
+    "type": "text",
+    "question": "Đặc sản rươi nổi tiếng gắn liền với xã nào ở Hải Phòng?",
+    "options": ["Xã Đại Hợp", "Xã Tân Trào", "Xã Ngũ Phúc", "Xã An Thọ"],
+    "answer": 0
+  },
+  {
+    "id": "018",
+    "type": "text",
+    "question": "Biểu tượng trên huy hiệu thành phố Hải Phòng là gì?",
+    "options": ["Con rồng", "Hoa phượng đỏ", "Cánh chim biển", "Ngọn đèn biển"],
     "answer": 1
+  },
+  {
+    "id": "019",
+    "type": "text",
+    "question": "Phường nào ở Hải Phòng nổi tiếng với nghề làm bánh mỳ cay?",
+    "options": ["Phường An Dương", "Phường Lê Chân", "Phường Trại Chuối", "Phường Gia Viên"],
+    "answer": 1
+  },
+  {
+    "id": "020",
+    "type": "text",
+    "question": "Hải Phòng có bảo tàng lớn nhất nằm tại phường nào?",
+    "options": ["Phường Minh Khai", "Phường Hoàng Văn Thụ", "Phường Cát Dài", "Phường An Biên"],
+    "answer": 0
   }
 ]
