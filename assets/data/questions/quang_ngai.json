@@ -1,1 +1,142 @@
-[]
+[
+  {
+    "id": "001",
+    "type": "text",
+    "question": "Quảng Ngãi sau sáp nhập nằm ở khu vực nào của Việt Nam?",
+    "options": ["Tây Bắc", "Bắc Trung Bộ", "Duyên hải Nam Trung Bộ và Tây Nguyên", "Đông Bắc"],
+    "answer": 2
+  },
+  {
+    "id": "002",
+    "type": "text",
+    "question": "Hòn đảo nào ngoài khơi nổi tiếng thuộc Quảng Ngãi?",
+    "options": ["Cù Lao Chàm", "Phú Quý", "Lý Sơn", "Côn Đảo"],
+    "answer": 2
+  },
+  {
+    "id": "003",
+    "type": "text",
+    "question": "Khu chứng tích nào ở Quảng Ngãi gắn với sự kiện đau thương trong chiến tranh?",
+    "options": ["Sơn Mỹ", "Ba Chúc", "Đồng Lộc", "Ngã Ba Cò Nòi"],
+    "answer": 0
+  },
+  {
+    "id": "004",
+    "type": "text",
+    "question": "Ngọn núi nào được xem là biểu tượng của Quảng Ngãi?",
+    "options": ["Núi Bà Đen", "Núi Thiên Ấn", "Núi Ngọc Linh", "Núi Bạch Mã"],
+    "answer": 1
+  },
+  {
+    "id": "005",
+    "type": "text",
+    "question": "Nền văn hóa cổ nổi tiếng từng tồn tại ở Quảng Ngãi là gì?",
+    "options": ["Văn hóa Đông Sơn", "Văn hóa Sa Huỳnh", "Văn hóa Óc Eo", "Văn hóa Chămpa"],
+    "answer": 1
+  },
+  {
+    "id": "006",
+    "type": "text",
+    "question": "Cầu treo nổi tiếng bắc qua sông Đăk Bla thuộc Quảng Ngãi sau sáp nhập là gì?",
+    "options": ["Cầu Long Biên", "Cầu Kon Klor", "Cầu Trà Khúc", "Cầu Đăk Rông"],
+    "answer": 1
+  },
+  {
+    "id": "007",
+    "type": "text",
+    "question": "Ngôi nhà thờ gỗ hàng trăm năm tuổi nổi tiếng ở vùng cao Quảng Ngãi là gì?",
+    "options": ["Nhà thờ Phát Diệm", "Nhà thờ Kon Tum", "Nhà thờ gỗ", "Nhà thờ La Vang"],
+    "answer": 2
+  },
+  {
+    "id": "008",
+    "type": "text",
+    "question": "Vườn quốc gia nào tại Quảng Ngãi sau sáp nhập nổi tiếng với đa dạng sinh học?",
+    "options": ["Chư Mom Ray", "Yok Đôn", "Cúc Phương", "Ba Bể"],
+    "answer": 0
+  },
+  {
+    "id": "009",
+    "type": "text",
+    "question": "Đặc sản cá bống sông nào gắn liền với Quảng Ngãi?",
+    "options": ["Sông Lam", "Sông Hàn", "Sông Trà", "Sông Hồng"],
+    "answer": 2
+  },
+  {
+    "id": "010",
+    "type": "text",
+    "question": "Loại đặc sản biển nào được mệnh danh là 'vàng đen' của Quảng Ngãi?",
+    "options": ["Hải sâm", "Yến sào", "Tỏi Lý Sơn", "Cá ngừ"],
+    "answer": 2
+  },
+  {
+    "id": "011",
+    "type": "text",
+    "question": "Món ăn nào sau đây là đặc sản bình dị của Quảng Ngãi?",
+    "options": ["Bánh hỏi lòng heo", "Don", "Cao lầu", "Bánh bèo"],
+    "answer": 1
+  },
+  {
+    "id": "012",
+    "type": "text",
+    "question": "Loại nhạc cụ và lễ hội nào đặc trưng của đồng bào Tây Nguyên trong Quảng Ngãi?",
+    "options": ["Quan họ", "Cồng chiêng", "Chầu văn", "Đờn ca tài tử"],
+    "answer": 1
+  },
+  {
+    "id": "013",
+    "type": "text",
+    "question": "Cây dược liệu quý nào ở dãy Ngọc Linh nổi tiếng tại Quảng Ngãi sau sáp nhập?",
+    "options": ["Sâm Ngọc Linh", "Sâm bố chính", "Tam thất", "Đinh lăng"],
+    "answer": 0
+  },
+  {
+    "id": "014",
+    "type": "text",
+    "question": "Ngục nổi tiếng trong thời Pháp thuộc nằm ở Quảng Ngãi sau sáp nhập là gì?",
+    "options": ["Ngục Côn Đảo", "Ngục Sơn La", "Ngục Kon Tum", "Ngục Buôn Ma Thuột"],
+    "answer": 2
+  },
+  {
+    "id": "015",
+    "type": "text",
+    "question": "Loại cây công nghiệp dài ngày nào được trồng nhiều ở vùng cao Quảng Ngãi?",
+    "options": ["Cao su", "Cà phê", "Chè", "Mía"],
+    "answer": 0
+  },
+  {
+    "id": "016",
+    "type": "text",
+    "question": "Món ăn nào từ măng rừng được chế biến phổ biến trong cộng đồng dân tộc ở Quảng Ngãi?",
+    "options": ["Xôi măng", "Canh măng chua", "Măng kho", "Măng xào"],
+    "answer": 0
+  },
+  {
+    "id": "017",
+    "type": "text",
+    "question": "Đặc sản ngọt truyền thống của Quảng Ngãi thường làm quà biếu là gì?",
+    "options": ["Kẹo mè xửng", "Kẹo gương", "Bánh đậu xanh", "Kẹo lạc"],
+    "answer": 1
+  },
+  {
+    "id": "018",
+    "type": "text",
+    "question": "Tên loại quế nổi tiếng được trồng ở Trà Bồng, Quảng Ngãi?",
+    "options": ["Quế Thanh", "Quế Trà Bồng", "Quế Yên Bái", "Quế Quảng Nam"],
+    "answer": 1
+  },
+  {
+    "id": "019",
+    "type": "text",
+    "question": "Người dân Quảng Ngãi thường dùng loại rượu nào trong các lễ hội truyền thống ở vùng cao?",
+    "options": ["Rượu vang", "Rượu cần", "Rượu táo mèo", "Rượu nếp"],
+    "answer": 1
+  },
+  {
+    "id": "020",
+    "type": "text",
+    "question": "Biểu tượng biển đảo nổi bật nhất của Quảng Ngãi là gì?",
+    "options": ["Cù Lao Chàm", "Đảo Lý Sơn", "Đảo Phú Quý", "Đảo Phú Quốc"],
+    "answer": 1
+  }
+]
