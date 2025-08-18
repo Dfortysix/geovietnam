@@ -1,1 +1,138 @@
-[]
+[
+  {
+    "id": "001",
+    "type": "text",
+    "question": "Trung tâm hành chính của tỉnh Tây Ninh sau sáp nhập đặt tại thành phố nào?",
+    "options": ["Tân An", "Tây Ninh", "Hòa Thành", "Trảng Bàng"],
+    "answer": 1
+  },
+  {
+    "id": "002",
+    "type": "text",
+    "question": "Ngọn núi nào được mệnh danh là 'nóc nhà Nam Bộ' thuộc tỉnh Tây Ninh?",
+    "options": ["Núi Bà Đen", "Núi Cấm", "Núi Sam", "Núi Dinh"],
+    "answer": 0
+  },
+  {
+    "id": "003",
+    "type": "text",
+    "question": "Tòa Thánh của đạo Cao Đài nổi tiếng nằm ở đâu?",
+    "options": ["Tây Ninh", "Huế", "Sóc Trăng", "Cần Thơ"],
+    "answer": 0
+  },
+  {
+    "id": "004",
+    "type": "text",
+    "question": "Tên hồ nhân tạo lớn nằm ở Tây Ninh, cung cấp nước cho sản xuất và sinh hoạt?",
+    "options": ["Hồ Trị An", "Hồ Dầu Tiếng", "Hồ Phú Ninh", "Hồ Thác Bà"],
+    "answer": 1
+  },
+  {
+    "id": "005",
+    "type": "text",
+    "question": "Loại bánh tráng nổi tiếng của Tây Ninh thường được phơi sương có tên gì?",
+    "options": ["Bánh tráng Mỹ Lồng", "Bánh tráng Trảng Bàng", "Bánh tráng Gò Cát", "Bánh tráng Phú Hòa"],
+    "answer": 1
+  },
+  {
+    "id": "006",
+    "type": "text",
+    "question": "Địa danh nào ở Tây Ninh nổi tiếng với rừng tràm ngập nước và đường đi bộ xuyên rừng?",
+    "options": ["Rừng U Minh", "Rừng Tân Lập", "Rừng Tràm Trà Sư", "Rừng Cần Giờ"],
+    "answer": 1
+  },
+  {
+    "id": "007",
+    "type": "text",
+    "question": "Loại rượu nổi tiếng của vùng đất Tây Ninh sau sáp nhập là gì?",
+    "options": ["Rượu Bàu Đá", "Rượu Làng Vân", "Rượu Gò Đen", "Rượu Sim"],
+    "answer": 2
+  },
+  {
+    "id": "008",
+    "type": "text",
+    "question": "Ngôi chùa cổ Gò Kén ở Tây Ninh còn có tên gọi khác là gì?",
+    "options": ["Thiền Lâm Tự", "Phước Lâm Tự", "Vĩnh Nghiêm Tự", "Diệu Đế Tự"],
+    "answer": 0
+  },
+  {
+    "id": "009",
+    "type": "text",
+    "question": "Loại gạo đặc sản nổi tiếng của vùng đất Tây Ninh sau sáp nhập là gì?",
+    "options": ["Nàng Hương", "Nàng Thơm Chợ Đào", "Tám Xoan", "ST25"],
+    "answer": 1
+  },
+  {
+    "id": "010",
+    "type": "text",
+    "question": "Lễ hội núi Bà Đen ở Tây Ninh thường diễn ra vào dịp nào?",
+    "options": ["Tết Nguyên đán", "Rằm tháng Giêng", "Lễ Vu Lan", "Trung thu"],
+    "answer": 1
+  },
+  {
+    "id": "011",
+    "type": "text",
+    "question": "Chợ nổi nào gắn liền với vùng đất Tây Ninh sau sáp nhập?",
+    "options": ["Cái Răng", "Ngã Bảy", "Tân An", "Cái Bè"],
+    "answer": 2
+  },
+  {
+    "id": "012",
+    "type": "text",
+    "question": "Món phở khô đặc trưng ở Tây Ninh sau sáp nhập có nguồn gốc từ cộng đồng dân tộc nào?",
+    "options": ["Khmer", "Hoa", "Chăm", "Kinh"],
+    "answer": 2
+  },
+  {
+    "id": "013",
+    "type": "text",
+    "question": "Tên loại muối nổi tiếng ăn kèm trái cây của Tây Ninh?",
+    "options": ["Muối ớt Tây Ninh", "Muối mè", "Muối tôm Tây Ninh", "Muối tiêu chanh"],
+    "answer": 2
+  },
+  {
+    "id": "014",
+    "type": "text",
+    "question": "Đồng Tháp Mười một phần thuộc về Tây Ninh sau sáp nhập, là kiểu hệ sinh thái nào?",
+    "options": ["Đồi núi đá vôi", "Rừng ngập mặn", "Đồng bằng ngập nước", "Cao nguyên bazan"],
+    "answer": 2
+  },
+  {
+    "id": "015",
+    "type": "text",
+    "question": "Đặc sản bò tơ nổi tiếng của Tây Ninh có nguồn gốc từ huyện nào?",
+    "options": ["Trảng Bàng", "Gò Dầu", "Tân Biên", "Dương Minh Châu"],
+    "answer": 0
+  },
+  {
+    "id": "016",
+    "type": "text",
+    "question": "Tên loại trái cây đặc sản thường trồng tại khu vực giáp biên giới ở Tây Ninh?",
+    "options": ["Thanh long", "Mãng cầu", "Sầu riêng", "Xoài"],
+    "answer": 1
+  },
+  {
+    "id": "017",
+    "type": "text",
+    "question": "Sông nào chảy qua địa phận Tây Ninh, nối liền với sông Vàm Cỏ?",
+    "options": ["Sông Đồng Nai", "Sông Sài Gòn", "Sông Vàm Cỏ Đông", "Sông Tiền"],
+    "answer": 2
+  },
+  {
+    "id": "018",
+    "type": "text",
+    "question": "Tên gọi khác của khu du lịch sinh thái có đường đi bộ xuyên rừng tràm ở Tây Ninh?",
+    "options": ["Làng nổi Tân Lập", "Rừng tràm Trà Sư", "Làng nổi Ngã Bảy", "Rừng tràm Gò Tháp"],
+    "answer": 0
+  },
+  {
+    "id": "019",
+    "type": "text",
+    "question": "Món ăn nào ở Tây Ninh thường dùng để cuốn với bánh tráng phơi sương?",
+    "options": ["Bò nướng lá lốt", "Thịt heo luộc", "Thịt bò tơ", "Cá nướng"],
+    "answer": 2
+  },
+  {
+    "id": "020",
+    "type": "text",
+    "question": "Tây Ninh sau sáp nhập có đ
