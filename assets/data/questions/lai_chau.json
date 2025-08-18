@@ -1,1 +1,142 @@
-[]
+[
+  {
+    "id": "001",
+    "type": "text",
+    "question": "Lai Châu thuộc vùng nào của Việt Nam?",
+    "options": ["Tây Bắc", "Đông Bắc", "Bắc Trung Bộ", "Nam Bộ"],
+    "answer": 0
+  },
+  {
+    "id": "002",
+    "type": "text",
+    "question": "Thành phố nào là trung tâm hành chính của tỉnh Lai Châu?",
+    "options": ["Điện Biên Phủ", "Lai Châu", "Sơn La", "Hà Giang"],
+    "answer": 1
+  },
+  {
+    "id": "003",
+    "type": "text",
+    "question": "Lai Châu có đường biên giới giáp với quốc gia nào?",
+    "options": ["Lào", "Campuchia", "Trung Quốc", "Thái Lan"],
+    "answer": 2
+  },
+  {
+    "id": "004",
+    "type": "text",
+    "question": "Con đèo nổi tiếng nối Lai Châu với Lào Cai là gì?",
+    "options": ["Đèo Pha Đin", "Đèo Ô Quy Hồ", "Đèo Khau Phạ", "Đèo Mã Pì Lèng"],
+    "answer": 1
+  },
+  {
+    "id": "005",
+    "type": "text",
+    "question": "Lai Châu được tái lập vào năm nào sau khi tách tỉnh Điện Biên?",
+    "options": ["1997", "2000", "2004", "2010"],
+    "answer": 2
+  },
+  {
+    "id": "006",
+    "type": "text",
+    "question": "Người dân tộc nào chiếm tỷ lệ đông nhất ở Lai Châu?",
+    "options": ["Thái", "Mông", "Dao", "Kinh"],
+    "answer": 1
+  },
+  {
+    "id": "007",
+    "type": "text",
+    "question": "Bản Sin Suối Hồ ở Lai Châu được mệnh danh là gì?",
+    "options": ["Vùng chè cổ thụ", "Thiên đường hoa lan", "Xứ sở đá", "Cao nguyên trắng"],
+    "answer": 1
+  },
+  {
+    "id": "008",
+    "type": "text",
+    "question": "Món xôi đặc trưng với nhiều màu sắc ở Lai Châu là gì?",
+    "options": ["Xôi vò", "Xôi ngũ sắc", "Xôi lạc", "Xôi đỗ"],
+    "answer": 1
+  },
+  {
+    "id": "009",
+    "type": "text",
+    "question": "Thác nước nổi tiếng gắn với chuyện tình bi thương ở Lai Châu là gì?",
+    "options": ["Thác Bản Giốc", "Thác Tác Tình", "Thác Khe Kèm", "Thác Dray Nur"],
+    "answer": 1
+  },
+  {
+    "id": "010",
+    "type": "text",
+    "question": "Động nào ở Lai Châu nổi tiếng với vẻ đẹp kỳ ảo?",
+    "options": ["Động Phong Nha", "Động Tiên Sơn", "Động Tam Thanh", "Động Pha Luông"],
+    "answer": 1
+  },
+  {
+    "id": "011",
+    "type": "text",
+    "question": "Loại rượu nào là đặc sản của người dân Lai Châu?",
+    "options": ["Rượu ngô", "Rượu cần", "Rượu sim", "Rượu chuối hột"],
+    "answer": 0
+  },
+  {
+    "id": "012",
+    "type": "text",
+    "question": "Loại lạp xưởng nào được làm bằng cách hun khói đặc trưng ở Lai Châu?",
+    "options": ["Lạp xưởng tươi", "Lạp xưởng hun khói", "Lạp xưởng chiên", "Lạp xưởng nướng"],
+    "answer": 1
+  },
+  {
+    "id": "013",
+    "type": "text",
+    "question": "Sông lớn nào chảy qua tỉnh Lai Châu?",
+    "options": ["Sông Đà", "Sông Hồng", "Sông Mã", "Sông Lô"],
+    "answer": 0
+  },
+  {
+    "id": "014",
+    "type": "text",
+    "question": "Người Hà Nhì ở Lai Châu nổi tiếng với loại trang phục nào?",
+    "options": ["Thổ cẩm sặc sỡ", "Áo dài trắng", "Khăn Piêu", "Váy xòe thổ cẩm"],
+    "answer": 0
+  },
+  {
+    "id": "015",
+    "type": "text",
+    "question": "Đỉnh núi Pu Si Lung ở Lai Châu có độ cao khoảng bao nhiêu mét?",
+    "options": ["2.500m", "3.076m", "2.800m", "3.143m"],
+    "answer": 1
+  },
+  {
+    "id": "016",
+    "type": "text",
+    "question": "Món cá nào thường được người dân Lai Châu nướng trên than hồng?",
+    "options": ["Cá suối", "Cá rô phi", "Cá basa", "Cá chép"],
+    "answer": 0
+  },
+  {
+    "id": "017",
+    "type": "text",
+    "question": "Hồ thủy điện lớn nào nằm trên địa bàn Lai Châu?",
+    "options": ["Hồ Hòa Bình", "Hồ Sơn La", "Hồ Lai Châu", "Hồ Trị An"],
+    "answer": 2
+  },
+  {
+    "id": "018",
+    "type": "text",
+    "question": "Lễ hội Gầu Tào ở Lai Châu gắn liền với dân tộc nào?",
+    "options": ["Thái", "Mông", "Dao", "Khơ Mú"],
+    "answer": 1
+  },
+  {
+    "id": "019",
+    "type": "text",
+    "question": "Điệu múa xòe hoa thường được trình diễn trong các lễ hội của dân tộc nào ở Lai Châu?",
+    "options": ["Thái", "Dao", "Mông", "Hà Nhì"],
+    "answer": 0
+  },
+  {
+    "id": "020",
+    "type": "text",
+    "question": "Khí hậu Lai Châu mang đặc trưng nào?",
+    "options": ["Ôn đới gió mùa", "Nhiệt đới gió mùa núi cao", "Cận nhiệt đới ẩm", "Nhiệt đới khô"],
+    "answer": 1
+  }
+]
