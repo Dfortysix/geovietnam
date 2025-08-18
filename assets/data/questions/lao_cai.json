@@ -1,1 +1,142 @@
-[]
+[
+  {
+    "id": "001",
+    "type": "text",
+    "question": "Lào Cai nằm ở khu vực nào của Việt Nam?",
+    "options": ["Đông Bắc", "Tây Bắc", "Bắc Trung Bộ", "Đồng bằng sông Hồng"],
+    "answer": 1
+  },
+  {
+    "id": "002",
+    "type": "text",
+    "question": "Ngọn núi nào được mệnh danh là 'Nóc nhà Đông Dương'?",
+    "options": ["Tà Xùa", "Fansipan", "Ngọc Linh", "Pu Si Lung"],
+    "answer": 1
+  },
+  {
+    "id": "003",
+    "type": "text",
+    "question": "Thị trấn du lịch nổi tiếng với bốn mùa mây phủ ở Lào Cai là gì?",
+    "options": ["Sa Pa", "Mộc Châu", "Tam Đảo", "Đà Lạt"],
+    "answer": 0
+  },
+  {
+    "id": "004",
+    "type": "text",
+    "question": "Hồ nước lớn được gọi là 'Hạ Long trên cạn' của vùng Lào Cai mới là gì?",
+    "options": ["Hồ Ba Bể", "Hồ Thác Bà", "Hồ Núi Cốc", "Hồ Đồng Chương"],
+    "answer": 1
+  },
+  {
+    "id": "005",
+    "type": "text",
+    "question": "Đèo nổi tiếng thuộc 'tứ đại đỉnh đèo' nằm ở vùng Lào Cai mới là gì?",
+    "options": ["Đèo Pha Đin", "Đèo Khau Phạ", "Đèo Mã Pí Lèng", "Đèo Hải Vân"],
+    "answer": 1
+  },
+  {
+    "id": "006",
+    "type": "text",
+    "question": "Ruộng bậc thang nổi tiếng thế giới ở Lào Cai thuộc thung lũng nào?",
+    "options": ["Mường Hoa", "Mường Thanh", "Na Hang", "Bắc Sơn"],
+    "answer": 0
+  },
+  {
+    "id": "007",
+    "type": "text",
+    "question": "Thác nào ở Lào Cai gắn liền với truyền thuyết về tình yêu?",
+    "options": ["Thác Bản Giốc", "Thác Tình Yêu", "Thác Dải Yếm", "Thác Bạc"],
+    "answer": 1
+  },
+  {
+    "id": "008",
+    "type": "text",
+    "question": "Lễ hội mùa xuân đặc sắc của người Mông ở Lào Cai là gì?",
+    "options": ["Lễ hội Lồng Tồng", "Lễ hội Gầu Tào", "Lễ hội Then Kin Pang", "Lễ hội Xên Bản"],
+    "answer": 1
+  },
+  {
+    "id": "009",
+    "type": "text",
+    "question": "Điểm đến nào ở vùng núi cao được coi là thiên đường của 'dân phượt' với cảnh mây bay?",
+    "options": ["Tà Xùa", "Y Tý", "Mù Cang Chải", "Hoàng Su Phì"],
+    "answer": 1
+  },
+  {
+    "id": "010",
+    "type": "text",
+    "question": "Loại chè đặc sản nổi tiếng ở vùng núi Suối Giàng là gì?",
+    "options": ["Chè Shan Tuyết", "Chè Ô Long", "Chè Sen", "Chè Tân Cương"],
+    "answer": 0
+  },
+  {
+    "id": "011",
+    "type": "text",
+    "question": "Cửa khẩu quốc tế lớn của Lào Cai thông thương với Trung Quốc là gì?",
+    "options": ["Hữu Nghị", "Cốc Nam", "Lào Cai – Hà Khẩu", "Móng Cái"],
+    "answer": 2
+  },
+  {
+    "id": "012",
+    "type": "text",
+    "question": "Người dân Lào Cai mới thường tổ chức lễ hội Lồng Tồng với mục đích gì?",
+    "options": ["Cầu mưa thuận gió hòa", "Cầu mùa màng bội thu", "Cầu sức khỏe", "Cầu an lành cho bản làng"],
+    "answer": 1
+  },
+  {
+    "id": "013",
+    "type": "text",
+    "question": "Thác nước hùng vĩ nào nằm ở gần Sa Pa?",
+    "options": ["Thác Cam Ly", "Thác Dải Yếm", "Thác Bạc", "Thác Khe Vằn"],
+    "answer": 2
+  },
+  {
+    "id": "014",
+    "type": "text",
+    "question": "Đặc sản nào sau đây gắn với Lào Cai?",
+    "options": ["Thắng cố", "Phở khô", "Nem nướng", "Bánh khọt"],
+    "answer": 0
+  },
+  {
+    "id": "015",
+    "type": "text",
+    "question": "Điểm du lịch nổi tiếng ở Lào Cai mới với ruộng bậc thang mùa lúa chín vàng rực là gì?",
+    "options": ["Mường Hoa", "Mai Châu", "Mù Cang Chải", "Na Hang"],
+    "answer": 2
+  },
+  {
+    "id": "016",
+    "type": "text",
+    "question": "Loại hình du lịch nổi bật của Sa Pa là gì?",
+    "options": ["Du lịch biển", "Du lịch nghỉ dưỡng núi cao", "Du lịch sông nước", "Du lịch đô thị"],
+    "answer": 1
+  },
+  {
+    "id": "017",
+    "type": "text",
+    "question": "Tên chợ trung tâm nổi tiếng ở thành phố Lào Cai là gì?",
+    "options": ["Chợ Đông Kinh", "Chợ Cốc Lếu", "Chợ Bến Thành", "Chợ Đồng Xuân"],
+    "answer": 1
+  },
+  {
+    "id": "018",
+    "type": "text",
+    "question": "Đặc sản nào gắn liền với vùng cao Mù Cang Chải?",
+    "options": ["Xôi ngũ sắc", "Cốm Tú Lệ", "Thịt trâu gác bếp", "Cả ba đáp án trên"],
+    "answer": 3
+  },
+  {
+    "id": "019",
+    "type": "text",
+    "question": "Người Tày, Dao, Mông sinh sống nhiều ở đâu trong tỉnh Lào Cai mới?",
+    "options": ["Vùng cao núi đá", "Vùng đồng bằng ven sông", "Vùng biển", "Vùng ven đô"],
+    "answer": 0
+  },
+  {
+    "id": "020",
+    "type": "text",
+    "question": "Biểu tượng du lịch nổi bật nhất của Lào Cai là gì?",
+    "options": ["Fansipan", "Đèo Hải Vân", "Hạ Long", "Biển Nha Trang"],
+    "answer": 0
+  }
+]
