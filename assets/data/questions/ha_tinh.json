@@ -1,1 +1,142 @@
-[]
+[
+  {
+    "id": "001",
+    "type": "text",
+    "question": "Dãy núi nào được xem là biểu tượng của Hà Tĩnh?",
+    "options": ["Hồng Lĩnh", "Hoành Sơn", "Trường Sơn", "Ngàn Phố"],
+    "answer": 0
+  },
+  {
+    "id": "002",
+    "type": "text",
+    "question": "Khu di tích Ngã ba Đồng Lộc gắn liền với sự kiện nào?",
+    "options": ["10 cô gái thanh niên xung phong", "Khởi nghĩa Lam Sơn", "Khởi nghĩa Tây Sơn", "Phong trào Xô viết Nghệ Tĩnh"],
+    "answer": 0
+  },
+  {
+    "id": "003",
+    "type": "text",
+    "question": "Động nào được mệnh danh là 'hoàng cung trong lòng đất'?",
+    "options": ["Động Phong Nha", "Động Thiên Đường", "Động Hương Tích", "Hang Én"],
+    "answer": 1
+  },
+  {
+    "id": "004",
+    "type": "text",
+    "question": "Món kẹo đặc sản nổi tiếng của Hà Tĩnh là gì?",
+    "options": ["Cu đơ", "Mè xửng", "Kẹo dừa", "Kẹo gương"],
+    "answer": 0
+  },
+  {
+    "id": "005",
+    "type": "text",
+    "question": "Hang động tự nhiên lớn nhất thế giới nằm trên địa bàn Hà Tĩnh mới là gì?",
+    "options": ["Hang Én", "Hang Sơn Đoòng", "Động Phong Nha", "Động Thiên Đường"],
+    "answer": 1
+  },
+  {
+    "id": "006",
+    "type": "text",
+    "question": "Bãi biển nào nổi tiếng với bãi cát trắng mịn ở Hà Tĩnh?",
+    "options": ["Thiên Cầm", "Cửa Tùng", "Cửa Việt", "Cửa Hội"],
+    "answer": 0
+  },
+  {
+    "id": "007",
+    "type": "text",
+    "question": "Sông nào chảy qua thành phố Hà Tĩnh?",
+    "options": ["Sông Lam", "Sông La", "Sông Ngàn Sâu", "Sông Nhật Lệ"],
+    "answer": 1
+  },
+  {
+    "id": "008",
+    "type": "text",
+    "question": "Quần thể Phong Nha – Kẻ Bàng được UNESCO công nhận là gì?",
+    "options": ["Di sản thiên nhiên thế giới", "Di sản văn hóa", "Di sản hỗn hợp", "Kỳ quan thế giới mới"],
+    "answer": 0
+  },
+  {
+    "id": "009",
+    "type": "text",
+    "question": "Chùa Hương Tích – được mệnh danh là 'Hoan Châu đệ nhất danh lam' – nằm ở huyện nào?",
+    "options": ["Can Lộc", "Hương Sơn", "Cẩm Xuyên", "Thạch Hà"],
+    "answer": 1
+  },
+  {
+    "id": "010",
+    "type": "text",
+    "question": "Dân ca ví giặm Nghệ Tĩnh đã được UNESCO công nhận là gì?",
+    "options": ["Di sản phi vật thể", "Di sản văn hóa thế giới", "Di sản hỗn hợp", "Di sản vật thể"],
+    "answer": 0
+  },
+  {
+    "id": "011",
+    "type": "text",
+    "question": "Bãi biển Nhật Lệ nổi tiếng nằm ở thành phố nào?",
+    "options": ["Đồng Hới", "Hà Tĩnh", "Hồng Lĩnh", "Cẩm Xuyên"],
+    "answer": 0
+  },
+  {
+    "id": "012",
+    "type": "text",
+    "question": "Địa danh nào gắn liền với câu ca dao 'Ai vô xứ Nghệ thì vô'?",
+    "options": ["Sông Lam", "Núi Hồng", "Ngã ba Đồng Lộc", "Chùa Hương Tích"],
+    "answer": 1
+  },
+  {
+    "id": "013",
+    "type": "text",
+    "question": "Món ăn nào nổi tiếng với nguyên liệu là cá nghéo tươi?",
+    "options": ["Gỏi cá nghéo", "Cá kho tộ", "Cá nướng trui", "Cá hấp lá chuối"],
+    "answer": 0
+  },
+  {
+    "id": "014",
+    "type": "text",
+    "question": "Suối nước Moọc nằm gần danh thắng nào?",
+    "options": ["Phong Nha – Kẻ Bàng", "Ngã ba Đồng Lộc", "Chùa Hương Tích", "Biển Thiên Cầm"],
+    "answer": 0
+  },
+  {
+    "id": "015",
+    "type": "text",
+    "question": "Làng Trường Lưu, huyện Can Lộc nổi tiếng với loại hình văn hóa nào?",
+    "options": ["Ca trù", "Ví giặm", "Tuồng", "Hát xoan"],
+    "answer": 0
+  },
+  {
+    "id": "016",
+    "type": "text",
+    "question": "Món đặc sản ram bánh mướt thường xuất hiện trong dịp nào?",
+    "options": ["Tết Nguyên Đán", "Lễ hội chùa Hương Tích", "Giỗ Tổ Hùng Vương", "Lễ hội cầu ngư"],
+    "answer": 1
+  },
+  {
+    "id": "017",
+    "type": "text",
+    "question": "Thành phố nào là trung tâm chính trị – hành chính của Hà Tĩnh mới?",
+    "options": ["Đồng Hới", "Hà Tĩnh", "Hương Sơn", "Kỳ Anh"],
+    "answer": 0
+  },
+  {
+    "id": "018",
+    "type": "text",
+    "question": "Loại cá nào thường được dùng làm nước mắm nổi tiếng ở vùng biển Hà Tĩnh?",
+    "options": ["Cá cơm", "Cá thu", "Cá nục", "Cá đối"],
+    "answer": 0
+  },
+  {
+    "id": "019",
+    "type": "text",
+    "question": "Động Phong Nha được mệnh danh là gì?",
+    "options": ["Kỳ quan đệ nhất động", "Hoàng cung trong lòng đất", "Đệ nhất Nam thiên động", "Thiên đường nơi hạ giới"],
+    "answer": 0
+  },
+  {
+    "id": "020",
+    "type": "text",
+    "question": "Biểu tượng trên huy hiệu Hà Tĩnh mới là sự kết hợp của gì?",
+    "options": ["Núi Hồng và hang động", "Cồng chiêng và biển", "Ngôi sao và lúa", "Con voi và sóng nước"],
+    "answer": 0
+  }
+]
