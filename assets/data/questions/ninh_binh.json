@@ -1,1 +1,142 @@
-[]
+[
+  {
+    "id": "001",
+    "type": "text",
+    "question": "Ninh Bình sau sáp nhập nằm ở vùng nào của Việt Nam?",
+    "options": ["Tây Bắc", "Đồng bằng sông Hồng", "Bắc Trung Bộ", "Đông Bắc"],
+    "answer": 1
+  },
+  {
+    "id": "002",
+    "type": "text",
+    "question": "Quần thể danh thắng nào ở Ninh Bình được UNESCO công nhận Di sản thế giới?",
+    "options": ["Tràng An", "Phong Nha – Kẻ Bàng", "Hạ Long", "Tam Đảo"],
+    "answer": 0
+  },
+  {
+    "id": "003",
+    "type": "text",
+    "question": "Cố đô Hoa Lư thuộc địa phận tỉnh nào hiện nay?",
+    "options": ["Thanh Hóa", "Ninh Bình", "Hà Nội", "Phú Thọ"],
+    "answer": 1
+  },
+  {
+    "id": "004",
+    "type": "text",
+    "question": "Ngôi chùa lớn nhất Việt Nam nằm ở Ninh Bình là gì?",
+    "options": ["Chùa Hương", "Chùa Bái Đính", "Chùa Tam Chúc", "Chùa Keo"],
+    "answer": 1
+  },
+  {
+    "id": "005",
+    "type": "text",
+    "question": "Danh thắng nào được mệnh danh là 'Hạ Long trên cạn'?",
+    "options": ["Tam Cốc – Bích Động", "Thung Nai", "Hồ Ba Bể", "Pác Bó"],
+    "answer": 0
+  },
+  {
+    "id": "006",
+    "type": "text",
+    "question": "Lễ hội Phủ Giầy ở Ninh Bình thờ vị Thánh nào?",
+    "options": ["Thánh Trần", "Thánh Mẫu Liễu Hạnh", "Hai Bà Trưng", "Đức Thánh Gióng"],
+    "answer": 1
+  },
+  {
+    "id": "007",
+    "type": "text",
+    "question": "Đặc sản phở bò nổi tiếng gắn liền với vùng nào trong Ninh Bình?",
+    "options": ["Hoa Lư", "Tam Điệp", "Thành Nam", "Nho Quan"],
+    "answer": 2
+  },
+  {
+    "id": "008",
+    "type": "text",
+    "question": "Ngôi chùa được gọi là 'ngôi chùa lớn nhất thế giới về diện tích' tại Ninh Bình là gì?",
+    "options": ["Chùa Bái Đính", "Chùa Hương", "Chùa Tam Chúc", "Chùa Yên Tử"],
+    "answer": 0
+  },
+  {
+    "id": "009",
+    "type": "text",
+    "question": "Thành phố nào là trung tâm hành chính của Ninh Bình hiện nay?",
+    "options": ["Nam Định", "Phủ Lý", "Ninh Bình", "Hà Nội"],
+    "answer": 2
+  },
+  {
+    "id": "010",
+    "type": "text",
+    "question": "Đặc sản cá kho nổi tiếng của vùng chiêm trũng trong Ninh Bình là gì?",
+    "options": ["Cá kho làng Vũ Đại", "Cá kho Trần Lập", "Cá kho Làng Chuối", "Cá kho Đầm Vạc"],
+    "answer": 0
+  },
+  {
+    "id": "011",
+    "type": "text",
+    "question": "Ngọn núi nào ở Ninh Bình gắn với câu ca 'Ai qua núi Ngọc nhớ người thương'?",
+    "options": ["Núi Ngọc", "Núi Non Nước", "Núi Dục Thúy", "Núi Cánh Diều"],
+    "answer": 0
+  },
+  {
+    "id": "012",
+    "type": "text",
+    "question": "Tên gọi khác của Thành phố Nam trong lịch sử gắn với vùng Ninh Bình hiện nay là gì?",
+    "options": ["Thành Đông", "Thành Nam", "Thành Trung", "Thành Bắc"],
+    "answer": 1
+  },
+  {
+    "id": "013",
+    "type": "text",
+    "question": "Loại kiến trúc tôn giáo nổi bật ở vùng ven biển Ninh Bình là gì?",
+    "options": ["Nhà thờ đá", "Tháp Chăm", "Chùa Khmer", "Đền thờ"],
+    "answer": 0
+  },
+  {
+    "id": "014",
+    "type": "text",
+    "question": "Sản phẩm làng nghề nào nổi tiếng ở Ý Yên, nay thuộc Ninh Bình?",
+    "options": ["Chạm bạc Đồng Xâm", "Đúc đồng", "Thêu ren", "Làm gốm"],
+    "answer": 2
+  },
+  {
+    "id": "015",
+    "type": "text",
+    "question": "Khu du lịch sinh thái nào nổi tiếng ở Ninh Bình với cảnh quan núi rừng?",
+    "options": ["Cúc Phương", "Ba Vì", "Tam Đảo", "Xuân Sơn"],
+    "answer": 0
+  },
+  {
+    "id": "016",
+    "type": "text",
+    "question": "Tên gọi của món bánh đặc sản gắn liền với vùng thành Nam trong Ninh Bình?",
+    "options": ["Bánh cuốn", "Bánh gai", "Bánh nhúng", "Bánh xíu páo"],
+    "answer": 3
+  },
+  {
+    "id": "017",
+    "type": "text",
+    "question": "Chùa Tam Chúc, điểm du lịch tâm linh nổi tiếng nay thuộc tỉnh nào?",
+    "options": ["Thanh Hóa", "Ninh Bình", "Hà Nội", "Hà Tĩnh"],
+    "answer": 1
+  },
+  {
+    "id": "018",
+    "type": "text",
+    "question": "Đặc sản nào sau đây gắn với Ninh Bình?",
+    "options": ["Thịt dê núi", "Bún chả", "Mì Quảng", "Cơm tấm"],
+    "answer": 0
+  },
+  {
+    "id": "019",
+    "type": "text",
+    "question": "Đền thờ Trần Hưng Đạo nổi tiếng ở vùng ven biển nay thuộc Ninh Bình là gì?",
+    "options": ["Đền Kiếp Bạc", "Đền Trần Thương", "Đền Trần Nam Định", "Đền Trần Thái Bình"],
+    "answer": 2
+  },
+  {
+    "id": "020",
+    "type": "text",
+    "question": "Ninh Bình hiện nay có Di sản thế giới nào?",
+    "options": ["Tràng An", "Hoàng thành Thăng Long", "Cố đô Hoa Lư", "Phong Nha – Kẻ Bàng"],
+    "answer": 0
+  }
+]
