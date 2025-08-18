@@ -1,1 +1,142 @@
-[]
+[
+  {
+    "id": "001",
+    "type": "text",
+    "question": "Phú Thọ sau sáp nhập nằm ở vùng nào của Việt Nam?",
+    "options": ["Tây Bắc", "Trung du và miền núi Bắc Bộ", "Bắc Trung Bộ", "Đông Bắc"],
+    "answer": 1
+  },
+  {
+    "id": "002",
+    "type": "text",
+    "question": "Địa danh nào được coi là đất Tổ của người Việt?",
+    "options": ["Huế", "Phú Thọ", "Thăng Long", "Thanh Hóa"],
+    "answer": 1
+  },
+  {
+    "id": "003",
+    "type": "text",
+    "question": "Lễ hội nào ở Phú Thọ tưởng nhớ các Vua Hùng?",
+    "options": ["Lễ hội Gióng", "Lễ hội Đền Hùng", "Hội Lim", "Hội Chùa Hương"],
+    "answer": 1
+  },
+  {
+    "id": "004",
+    "type": "text",
+    "question": "Loại hình hát nào ở Phú Thọ được UNESCO công nhận là Di sản văn hóa phi vật thể?",
+    "options": ["Quan họ", "Hát xoan", "Ca trù", "Chèo"],
+    "answer": 1
+  },
+  {
+    "id": "005",
+    "type": "text",
+    "question": "Thành phố nào là trung tâm hành chính của Phú Thọ?",
+    "options": ["Việt Trì", "Vĩnh Yên", "Hòa Bình", "Sơn Tây"],
+    "answer": 0
+  },
+  {
+    "id": "006",
+    "type": "text",
+    "question": "Công trình thủy điện lớn nằm trên sông Đà thuộc Phú Thọ sau sáp nhập là gì?",
+    "options": ["Thủy điện Sơn La", "Thủy điện Hòa Bình", "Thủy điện Lai Châu", "Thủy điện Ialy"],
+    "answer": 1
+  },
+  {
+    "id": "007",
+    "type": "text",
+    "question": "Khu du lịch nổi tiếng Tam Đảo nay thuộc Phú Thọ sau sáp nhập nằm trên dãy núi nào?",
+    "options": ["Hoàng Liên Sơn", "Tam Đảo", "Ba Vì", "Pù Luông"],
+    "answer": 1
+  },
+  {
+    "id": "008",
+    "type": "text",
+    "question": "Loại rượu nào mang đậm bản sắc văn hóa dân tộc ở vùng núi trong Phú Thọ?",
+    "options": ["Rượu cần", "Rượu nếp than", "Rượu gạo", "Rượu ngô"],
+    "answer": 0
+  },
+  {
+    "id": "009",
+    "type": "text",
+    "question": "Đặc sản nào của Phú Thọ được trồng nhiều tại Đoan Hùng?",
+    "options": ["Cam", "Bưởi", "Vải", "Chè"],
+    "answer": 1
+  },
+  {
+    "id": "010",
+    "type": "text",
+    "question": "Tên ngọn núi thiêng gắn liền với tín ngưỡng thờ Mẫu ở Phú Thọ sau sáp nhập?",
+    "options": ["Núi Nghĩa Lĩnh", "Núi Tam Đảo", "Núi Ba Vì", "Núi Trầm"],
+    "answer": 0
+  },
+  {
+    "id": "011",
+    "type": "text",
+    "question": "Loại đặc sản nào sau đây gắn với vùng Phú Thọ?",
+    "options": ["Cơm lam", "Bánh xèo", "Bánh tét", "Mì Quảng"],
+    "answer": 0
+  },
+  {
+    "id": "012",
+    "type": "text",
+    "question": "Khu sinh thái nổi tiếng với hồ và rừng thông ở Phú Thọ sau sáp nhập là gì?",
+    "options": ["Hồ Ba Bể", "Hồ Đại Lải", "Hồ Núi Cốc", "Hồ Đồng Mô"],
+    "answer": 1
+  },
+  {
+    "id": "013",
+    "type": "text",
+    "question": "Làng nghề gốm truyền thống nào nổi tiếng ở Phú Thọ?",
+    "options": ["Bát Tràng", "Hương Canh", "Phù Lãng", "Chu Đậu"],
+    "answer": 1
+  },
+  {
+    "id": "014",
+    "type": "text",
+    "question": "Thắng cảnh nào được gọi là 'Hạ Long trên núi' ở Phú Thọ?",
+    "options": ["Mai Châu", "Thung Nai", "Tam Cốc", "Mộc Châu"],
+    "answer": 1
+  },
+  {
+    "id": "015",
+    "type": "text",
+    "question": "Loại hình nghệ thuật nào gắn với cộng đồng người Mường trong Phú Thọ?",
+    "options": ["Cồng chiêng", "Trống quân", "Ca trù", "Quan họ"],
+    "answer": 0
+  },
+  {
+    "id": "016",
+    "type": "text",
+    "question": "Đặc sản nào sau đây nổi tiếng ở vùng núi Phú Thọ?",
+    "options": ["Thịt trâu lá lồm", "Bún bò", "Nem nướng", "Bánh bèo"],
+    "answer": 0
+  },
+  {
+    "id": "017",
+    "type": "text",
+    "question": "Tên gọi khu danh thắng quốc gia nổi tiếng ở Phú Thọ gắn với tín ngưỡng Hùng Vương?",
+    "options": ["Đền Cờn", "Đền Hùng", "Đền Trần", "Đền Cổ Loa"],
+    "answer": 1
+  },
+  {
+    "id": "018",
+    "type": "text",
+    "question": "Loại hình văn hóa ẩm thực nào thường thấy trong lễ hội của người Mường ở Phú Thọ?",
+    "options": ["Rượu cần và cơm lam", "Phở và nem", "Bánh cuốn và bún chả", "Mì Quảng và chè"],
+    "answer": 0
+  },
+  {
+    "id": "019",
+    "type": "text",
+    "question": "Tên gọi ngọn núi cao thuộc dãy Tam Đảo trong Phú Thọ?",
+    "options": ["Thiên Thị", "Phia Bióc", "Fansipan", "Pù Luông"],
+    "answer": 0
+  },
+  {
+    "id": "020",
+    "type": "text",
+    "question": "Biểu tượng cây trồng chủ lực của Phú Thọ là gì?",
+    "options": ["Chè", "Cà phê", "Mía", "Lúa"],
+    "answer": 0
+  }
+]
