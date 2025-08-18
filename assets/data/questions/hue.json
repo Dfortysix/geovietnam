@@ -1,1 +1,142 @@
-[]
+[
+  {
+    "id": "001",
+    "type": "text",
+    "question": "Dòng sông nào gắn liền với vẻ đẹp thơ mộng của Huế?",
+    "options": ["Sông Hồng", "Sông Hương", "Sông Lam", "Sông Nhật Lệ"],
+    "answer": 1
+  },
+  {
+    "id": "002",
+    "type": "text",
+    "question": "Ngọn núi nào được xem là biểu tượng thiên nhiên của Huế?",
+    "options": ["Ngự Bình", "Hồng Lĩnh", "Bạch Mã", "Ba Vì"],
+    "answer": 0
+  },
+  {
+    "id": "003",
+    "type": "text",
+    "question": "Công trình nào là biểu tượng kiến trúc Phật giáo ở Huế?",
+    "options": ["Chùa Một Cột", "Chùa Thiên Mụ", "Chùa Hương", "Chùa Bái Đính"],
+    "answer": 1
+  },
+  {
+    "id": "004",
+    "type": "text",
+    "question": "Kinh thành Huế được UNESCO công nhận là gì?",
+    "options": ["Di sản thiên nhiên", "Di sản văn hóa thế giới", "Kỳ quan thế giới", "Di sản hỗn hợp"],
+    "answer": 1
+  },
+  {
+    "id": "005",
+    "type": "text",
+    "question": "Món ăn nào nổi tiếng nhất khi nhắc đến Huế?",
+    "options": ["Phở", "Cơm hến", "Bún bò Huế", "Mì Quảng"],
+    "answer": 2
+  },
+  {
+    "id": "006",
+    "type": "text",
+    "question": "Festival Huế thường được tổ chức với tần suất bao nhiêu năm một lần?",
+    "options": ["1 năm", "2 năm", "3 năm", "5 năm"],
+    "answer": 1
+  },
+  {
+    "id": "007",
+    "type": "text",
+    "question": "Loại hình âm nhạc cung đình nào của Huế được UNESCO công nhận?",
+    "options": ["Nhã nhạc", "Ca trù", "Hát xoan", "Quan họ"],
+    "answer": 0
+  },
+  {
+    "id": "008",
+    "type": "text",
+    "question": "Cầu Trường Tiền bắc qua con sông nào?",
+    "options": ["Sông Hương", "Sông Bến Hải", "Sông Thu Bồn", "Sông Cửu Long"],
+    "answer": 0
+  },
+  {
+    "id": "009",
+    "type": "text",
+    "question": "Lăng tẩm nào nổi tiếng với kiến trúc pha lẫn Đông – Tây ở Huế?",
+    "options": ["Lăng Minh Mạng", "Lăng Gia Long", "Lăng Khải Định", "Lăng Tự Đức"],
+    "answer": 2
+  },
+  {
+    "id": "010",
+    "type": "text",
+    "question": "Biển nào nổi tiếng ở phía Bắc Huế?",
+    "options": ["Cửa Tùng", "Cửa Lò", "Lăng Cô", "Thuận An"],
+    "answer": 2
+  },
+  {
+    "id": "011",
+    "type": "text",
+    "question": "Món ăn vặt chè Huế thường có đặc điểm gì?",
+    "options": ["Chỉ có 1 loại", "Đa dạng hàng chục loại", "Chỉ làm từ đậu xanh", "Chỉ ăn nóng"],
+    "answer": 1
+  },
+  {
+    "id": "012",
+    "type": "text",
+    "question": "Loại trang phục nào thường được nhắc đến khi nói về Huế?",
+    "options": ["Áo bà ba", "Áo dài tím", "Áo tứ thân", "Khăn rằn"],
+    "answer": 1
+  },
+  {
+    "id": "013",
+    "type": "text",
+    "question": "Đại Nội Huế là gì?",
+    "options": ["Khu lăng tẩm", "Kinh thành triều Nguyễn", "Khu chợ cổ", "Khu làng nghề"],
+    "answer": 1
+  },
+  {
+    "id": "014",
+    "type": "text",
+    "question": "Món bánh nào là đặc sản nổi tiếng của Huế?",
+    "options": ["Bánh cuốn", "Bánh nậm", "Bánh tẻ", "Bánh gai"],
+    "answer": 1
+  },
+  {
+    "id": "015",
+    "type": "text",
+    "question": "Trường Quốc Học Huế là nơi học tập của ai trong những năm thiếu niên?",
+    "options": ["Nguyễn Ái Quốc", "Phan Bội Châu", "Trần Phú", "Võ Nguyên Giáp"],
+    "answer": 0
+  },
+  {
+    "id": "016",
+    "type": "text",
+    "question": "Loại hoa nào gắn liền với xứ Huế?",
+    "options": ["Hoa sen", "Hoa đào", "Hoa cúc", "Hoa hướng dương"],
+    "answer": 0
+  },
+  {
+    "id": "017",
+    "type": "text",
+    "question": "Sân bay quốc tế nào phục vụ cho Huế?",
+    "options": ["Chu Lai", "Phú Bài", "Đà Nẵng", "Cam Ranh"],
+    "answer": 1
+  },
+  {
+    "id": "018",
+    "type": "text",
+    "question": "Ngọn đèo Hải Vân nối Huế với tỉnh nào?",
+    "options": ["Quảng Bình", "Quảng Nam", "Đà Nẵng", "Nghệ An"],
+    "answer": 2
+  },
+  {
+    "id": "019",
+    "type": "text",
+    "question": "Người dân Huế thường uống gì vào buổi sáng?",
+    "options": ["Trà sen", "Cà phê sữa đá", "Nước mía", "Rượu cần"],
+    "answer": 0
+  },
+  {
+    "id": "020",
+    "type": "text",
+    "question": "Biểu tượng chính trên logo của Thừa Thiên Huế là gì?",
+    "options": ["Kinh thành Huế", "Chùa Thiên Mụ", "Sông Hương", "Cầu Trường Tiền"],
+    "answer": 0
+  }
+]
