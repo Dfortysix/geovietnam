@@ -1,1 +1,142 @@
-[]
+[
+  {
+    "id": "001",
+    "type": "text",
+    "question": "Thành phố Hồ Chí Minh trước đây từng có tên gọi là gì?",
+    "options": ["Gia Định", "Sài Gòn", "Bến Nghé", "Thủ Đức"],
+    "answer": 1
+  },
+  {
+    "id": "002",
+    "type": "text",
+    "question": "Dinh Độc Lập gắn liền với sự kiện lịch sử nào?",
+    "options": ["Chiến dịch Hồ Chí Minh 1975", "Khởi nghĩa Nam Kỳ", "Khởi nghĩa Yên Bái", "Chiến dịch Điện Biên Phủ"],
+    "answer": 0
+  },
+  {
+    "id": "003",
+    "type": "text",
+    "question": "Công trình nào là biểu tượng hiện đại nổi bật của TP.HCM?",
+    "options": ["Bitexco Tower", "Landmark 81", "Chợ Bến Thành", "Nhà thờ Đức Bà"],
+    "answer": 1
+  },
+  {
+    "id": "004",
+    "type": "text",
+    "question": "Sông nào chảy qua trung tâm TP.HCM?",
+    "options": ["Sông Đồng Nai", "Sông Sài Gòn", "Sông Hậu", "Sông Tiền"],
+    "answer": 1
+  },
+  {
+    "id": "005",
+    "type": "text",
+    "question": "Địa đạo nào nổi tiếng nằm ở ngoại thành TP.HCM?",
+    "options": ["Củ Chi", "Vịnh Mốc", "Kỳ Anh", "Tam Đảo"],
+    "answer": 0
+  },
+  {
+    "id": "006",
+    "type": "text",
+    "question": "Nhà thờ Đức Bà Sài Gòn được xây dựng theo phong cách kiến trúc nào?",
+    "options": ["Gothic", "Baroque", "Roman", "Hiện đại"],
+    "answer": 0
+  },
+  {
+    "id": "007",
+    "type": "text",
+    "question": "Biểu tượng chợ nổi tiếng ở trung tâm thành phố là gì?",
+    "options": ["Chợ Bến Thành", "Chợ Bình Tây", "Chợ Tân Định", "Chợ Hạnh Thông Tây"],
+    "answer": 0
+  },
+  {
+    "id": "008",
+    "type": "text",
+    "question": "Món ăn nào được xem là đặc sản bình dân gắn liền với Sài Gòn?",
+    "options": ["Cơm tấm", "Phở", "Bánh cuốn", "Bún bò"],
+    "answer": 0
+  },
+  {
+    "id": "009",
+    "type": "text",
+    "question": "Tòa nhà nào từng là biểu tượng cao tầng trước Landmark 81?",
+    "options": ["Bitexco Tower", "Saigon One Tower", "Sunwah Tower", "Times Square"],
+    "answer": 0
+  },
+  {
+    "id": "010",
+    "type": "text",
+    "question": "Phố đi bộ nổi tiếng ở TP.HCM là gì?",
+    "options": ["Nguyễn Huệ", "Lê Lợi", "Phạm Ngũ Lão", "Đồng Khởi"],
+    "answer": 0
+  },
+  {
+    "id": "011",
+    "type": "text",
+    "question": "Tên bến cảng nơi Bác Hồ ra đi tìm đường cứu nước năm 1911?",
+    "options": ["Bến Nhà Rồng", "Bến Nghé", "Bến Bình Đông", "Bến Tân Thuận"],
+    "answer": 0
+  },
+  {
+    "id": "012",
+    "type": "text",
+    "question": "Loại hình giao thông công cộng hiện đại đang phát triển tại TP.HCM?",
+    "options": ["Metro", "Monorail", "Xe buýt điện", "Cáp treo"],
+    "answer": 0
+  },
+  {
+    "id": "013",
+    "type": "text",
+    "question": "Tên gọi khác của món 'cà phê sữa đá' nổi tiếng tại TP.HCM?",
+    "options": ["Bạc xỉu", "Nâu đá", "Đen đá", "Nâu nóng"],
+    "answer": 0
+  },
+  {
+    "id": "014",
+    "type": "text",
+    "question": "Khu đô thị mới hiện đại bên kia sông Sài Gòn là gì?",
+    "options": ["Thủ Thiêm", "Phú Mỹ Hưng", "Bình Quới", "Nam Long"],
+    "answer": 0
+  },
+  {
+    "id": "015",
+    "type": "text",
+    "question": "Sân vận động lớn nhất tại TP.HCM là gì?",
+    "options": ["Thống Nhất", "Phú Thọ", "Quân khu 7", "Hoa Lư"],
+    "answer": 0
+  },
+  {
+    "id": "016",
+    "type": "text",
+    "question": "Người dân Sài Gòn thường gọi bánh mì kẹp thịt đơn giản là gì?",
+    "options": ["Bánh mì", "Ổ mì", "Xôi mì", "Ổ thịt"],
+    "answer": 0
+  },
+  {
+    "id": "017",
+    "type": "text",
+    "question": "Công trình nào là trung tâm triển lãm và hội chợ lớn của TP.HCM?",
+    "options": ["SECC Quận 7", "Nhà Văn hóa Thanh niên", "Thống Nhất Hall", "Bitexco"],
+    "answer": 0
+  },
+  {
+    "id": "018",
+    "type": "text",
+    "question": "Loại hình nghệ thuật sân khấu nào đặc trưng tại TP.HCM?",
+    "options": ["Cải lương", "Tuồng", "Chèo", "Hát xoan"],
+    "answer": 0
+  },
+  {
+    "id": "019",
+    "type": "text",
+    "question": "TP.HCM nằm trong vùng khí hậu nào?",
+    "options": ["Nhiệt đới gió mùa cận xích đạo", "Ôn đới hải dương", "Cận nhiệt đới", "Ôn đới lục địa"],
+    "answer": 0
+  },
+  {
+    "id": "020",
+    "type": "text",
+    "question": "Biểu tượng chính trên logo TP.HCM là gì?",
+    "options": ["Bến Nhà Rồng", "Chợ Bến Thành", "Dinh Độc Lập", "Nhà thờ Đức Bà"],
+    "answer": 1
+  }
+]
