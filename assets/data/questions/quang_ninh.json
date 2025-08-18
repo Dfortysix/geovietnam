@@ -1,1 +1,142 @@
-[]
+[
+  {
+    "id": "001",
+    "type": "text",
+    "question": "Trung tâm hành chính của tỉnh Quảng Ninh đặt tại thành phố nào?",
+    "options": ["Uông Bí", "Cẩm Phả", "Móng Cái", "Hạ Long"],
+    "answer": 3
+  },
+  {
+    "id": "002",
+    "type": "text",
+    "question": "Danh thắng nào của Quảng Ninh được UNESCO công nhận là Di sản thiên nhiên thế giới?",
+    "options": ["Vịnh Lan Hạ", "Vịnh Hạ Long", "Vịnh Xuân Đài", "Vịnh Nha Trang"],
+    "answer": 1
+  },
+  {
+    "id": "003",
+    "type": "text",
+    "question": "Ngọn núi nào gắn liền với trung tâm Phật giáo Trúc Lâm tại Quảng Ninh?",
+    "options": ["Yên Tử", "Ba Vì", "Tam Đảo", "Bạch Mã"],
+    "answer": 0
+  },
+  {
+    "id": "004",
+    "type": "text",
+    "question": "Đặc sản nào của Quảng Ninh được mệnh danh là ngon nhất Việt Nam?",
+    "options": ["Chả cá Lã Vọng", "Chả mực Hạ Long", "Nem chua", "Bánh cuốn"],
+    "answer": 1
+  },
+  {
+    "id": "005",
+    "type": "text",
+    "question": "Địa danh nào của Quảng Ninh gắn với trận thủy chiến nổi tiếng chống quân xâm lược phương Bắc?",
+    "options": ["Sông Bạch Đằng", "Sông Cầu", "Sông Hồng", "Sông Lô"],
+    "answer": 0
+  },
+  {
+    "id": "006",
+    "type": "text",
+    "question": "Loài hải sản nào ở Quảng Ninh nổi tiếng nhưng có giá rất đắt?",
+    "options": ["Cua Cà Mau", "Sá sùng", "Tôm hùm", "Bào ngư"],
+    "answer": 1
+  },
+  {
+    "id": "007",
+    "type": "text",
+    "question": "Hòn đảo nào của Quảng Ninh được mệnh danh là 'thiên đường nghỉ dưỡng'?",
+    "options": ["Phú Quốc", "Cô Tô", "Cát Bà", "Cồn Cỏ"],
+    "answer": 1
+  },
+  {
+    "id": "008",
+    "type": "text",
+    "question": "Tên loại rượu đặc sản của Quảng Ninh được ngâm từ lá rừng?",
+    "options": ["Rượu sim", "Rượu nếp Hoành Bồ", "Rượu táo mèo", "Rượu cần"],
+    "answer": 1
+  },
+  {
+    "id": "009",
+    "type": "text",
+    "question": "Ngành công nghiệp nào được coi là truyền thống và quan trọng nhất của Quảng Ninh?",
+    "options": ["Công nghiệp dầu khí", "Công nghiệp khai thác than", "Công nghiệp thủy điện", "Công nghiệp dệt may"],
+    "answer": 1
+  },
+  {
+    "id": "010",
+    "type": "text",
+    "question": "Lễ hội Yên Tử tại Quảng Ninh chủ yếu gắn liền với tôn giáo nào?",
+    "options": ["Đạo Mẫu", "Phật giáo", "Nho giáo", "Thiên Chúa giáo"],
+    "answer": 1
+  },
+  {
+    "id": "011",
+    "type": "text",
+    "question": "Cảng biển nào của Quảng Ninh là cửa ngõ giao thương quốc tế quan trọng?",
+    "options": ["Cái Lân", "Cát Lái", "Đình Vũ", "Nghi Sơn"],
+    "answer": 0
+  },
+  {
+    "id": "012",
+    "type": "text",
+    "question": "Đình nào ở Móng Cái nổi tiếng với kiến trúc đẹp và lịch sử lâu đời?",
+    "options": ["Đình Trà Cổ", "Đình Bảng", "Đình Chu Quyến", "Đình So"],
+    "answer": 0
+  },
+  {
+    "id": "013",
+    "type": "text",
+    "question": "Tên bãi biển nổi tiếng nhất ở thành phố Hạ Long là gì?",
+    "options": ["Bãi Cháy", "Bãi Lữ", "Bãi Trường", "Bãi Nhật Lệ"],
+    "answer": 0
+  },
+  {
+    "id": "014",
+    "type": "text",
+    "question": "Khu vực nào của Quảng Ninh được ví như 'Vịnh Hạ Long trên cạn'?",
+    "options": ["Bái Tử Long", "Tràng An", "Quan Lạn", "Tam Cốc"],
+    "answer": 0
+  },
+  {
+    "id": "015",
+    "type": "text",
+    "question": "Loài động vật biển nào thường xuất hiện trong các món ăn đặc sản ở Quảng Ninh?",
+    "options": ["Sam biển", "Mực lá", "Ghẹ xanh", "Sò huyết"],
+    "answer": 0
+  },
+  {
+    "id": "016",
+    "type": "text",
+    "question": "Khu danh thắng nào ở Quảng Ninh gắn với truyền thuyết về rồng đáp xuống?",
+    "options": ["Vịnh Lan Hạ", "Vịnh Hạ Long", "Vịnh Bái Tử Long", "Vịnh Cát Bà"],
+    "answer": 1
+  },
+  {
+    "id": "017",
+    "type": "text",
+    "question": "Thành phố nào của Quảng Ninh được gọi là thành phố du lịch lễ hội, gắn với Yên Tử?",
+    "options": ["Cẩm Phả", "Uông Bí", "Móng Cái", "Đông Triều"],
+    "answer": 1
+  },
+  {
+    "id": "018",
+    "type": "text",
+    "question": "Quảng Ninh có đường biên giới trên bộ với quốc gia nào?",
+    "options": ["Trung Quốc", "Lào", "Campuchia", "Thái Lan"],
+    "answer": 0
+  },
+  {
+    "id": "019",
+    "type": "text",
+    "question": "Tên hòn đảo thuộc Quảng Ninh nổi tiếng với lễ hội đình làng Quan Lạn?",
+    "options": ["Cô Tô", "Ngọc Vừng", "Quan Lạn", "Vân Đồn"],
+    "answer": 2
+  },
+  {
+    "id": "020",
+    "type": "text",
+    "question": "Quảng Ninh nổi tiếng với loại hình du lịch nào?",
+    "options": ["Du lịch biển đảo", "Du lịch sông nước", "Du lịch hang động đá vôi", "Cả A và C"],
+    "answer": 3
+  }
+]
