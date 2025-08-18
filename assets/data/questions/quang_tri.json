@@ -1,1 +1,142 @@
-[]
+[
+  {
+    "id": "001",
+    "type": "text",
+    "question": "Trung tâm hành chính của tỉnh Quảng Trị sau sáp nhập đặt tại thành phố nào?",
+    "options": ["Đồng Hới", "Đông Hà", "Huế", "Vinh"],
+    "answer": 1
+  },
+  {
+    "id": "002",
+    "type": "text",
+    "question": "Di sản thiên nhiên thế giới nổi tiếng với hệ thống hang động kỳ vĩ nằm tại Quảng Trị sau sáp nhập là gì?",
+    "options": ["Phong Nha – Kẻ Bàng", "Hạ Long", "Tràng An", "Cúc Phương"],
+    "answer": 0
+  },
+  {
+    "id": "003",
+    "type": "text",
+    "question": "Con sông nào gắn liền với ký ức Thành cổ Quảng Trị?",
+    "options": ["Sông Thạch Hãn", "Sông Lam", "Sông Hương", "Sông Nhật Lệ"],
+    "answer": 0
+  },
+  {
+    "id": "004",
+    "type": "text",
+    "question": "Cầu nào được coi là biểu tượng chia cắt đất nước trong chiến tranh, nay thuộc Quảng Trị?",
+    "options": ["Cầu Hiền Lương", "Cầu Long Biên", "Cầu Bến Thủy", "Cầu Nhật Tân"],
+    "answer": 0
+  },
+  {
+    "id": "005",
+    "type": "text",
+    "question": "Địa đạo nào tại Quảng Trị được mệnh danh là 'ngôi làng trong lòng đất'?",
+    "options": ["Địa đạo Vịnh Mốc", "Địa đạo Củ Chi", "Địa đạo Tịnh Khê", "Địa đạo Kỳ Anh"],
+    "answer": 0
+  },
+  {
+    "id": "006",
+    "type": "text",
+    "question": "Động nào ở Quảng Trị sau sáp nhập được mệnh danh là 'hoàng cung dưới lòng đất'?",
+    "options": ["Động Hương Tích", "Động Thiên Đường", "Động Tam Thanh", "Động Ngườm Ngao"],
+    "answer": 1
+  },
+  {
+    "id": "007",
+    "type": "text",
+    "question": "Bãi biển nào được mệnh danh là 'nữ hoàng các bãi tắm' của miền Trung?",
+    "options": ["Biển Nhật Lệ", "Biển Mỹ Khê", "Biển Cửa Tùng", "Biển Lăng Cô"],
+    "answer": 2
+  },
+  {
+    "id": "008",
+    "type": "text",
+    "question": "Loại tiêu nổi tiếng của Quảng Trị thường được nhắc đến là gì?",
+    "options": ["Tiêu Cùa", "Tiêu Phú Quốc", "Tiêu Kỳ Anh", "Tiêu Chư Sê"],
+    "answer": 0
+  },
+  {
+    "id": "009",
+    "type": "text",
+    "question": "Lễ hội nào ở Quảng Trị gắn liền với hành trình về nguồn, tri ân các anh hùng liệt sĩ?",
+    "options": ["Lễ hội Hoa Ban", "Lễ hội Thống Nhất", "Lễ hội Thả hoa đăng sông Thạch Hãn", "Lễ hội Lam Kinh"],
+    "answer": 2
+  },
+  {
+    "id": "010",
+    "type": "text",
+    "question": "Món bánh dân dã nào làm từ khoai lang phơi khô, đặc sản ở vùng đất Quảng Trị sau sáp nhập?",
+    "options": ["Khoai deo", "Bánh đa", "Bánh ít", "Bánh gai"],
+    "answer": 0
+  },
+  {
+    "id": "011",
+    "type": "text",
+    "question": "Tên gọi khác của biển Nhật Lệ – điểm du lịch nổi tiếng của Quảng Trị sau sáp nhập?",
+    "options": ["Biển Ngọc", "Biển Xanh", "Biển Nguyệt", "Biển Hồng"],
+    "answer": 0
+  },
+  {
+    "id": "012",
+    "type": "text",
+    "question": "Thành cổ nào là nơi diễn ra cuộc chiến đấu 81 ngày đêm khốc liệt năm 1972?",
+    "options": ["Thành cổ Quảng Trị", "Thành cổ Huế", "Thành cổ Sơn Tây", "Thành cổ Nam Định"],
+    "answer": 0
+  },
+  {
+    "id": "013",
+    "type": "text",
+    "question": "Tên loại cá đặc trưng của vùng biển Quảng Trị thường dùng để nấu cháo?",
+    "options": ["Cá khoai", "Cá bống", "Cá ngừ", "Cá thu"],
+    "answer": 0
+  },
+  {
+    "id": "014",
+    "type": "text",
+    "question": "Di tích lịch sử Hoành Sơn Quan nằm trên con đèo nào giáp Quảng Trị?",
+    "options": ["Đèo Hải Vân", "Đèo Ngang", "Đèo Lò Xo", "Đèo Cù Mông"],
+    "answer": 1
+  },
+  {
+    "id": "015",
+    "type": "text",
+    "question": "Loại kẹo nào ở Quảng Trị thường được làm từ mè và mạch nha?",
+    "options": ["Kẹo gương", "Mè xửng", "Kẹo lạc", "Kẹo cu đơ"],
+    "answer": 1
+  },
+  {
+    "id": "016",
+    "type": "text",
+    "question": "Sông Bến Hải ở Quảng Trị từng là ranh giới của điều gì trong giai đoạn 1954-1975?",
+    "options": ["Vùng DMZ", "Giới tuyến quân sự tạm thời", "Biên giới quốc tế", "Khu kinh tế đặc biệt"],
+    "answer": 1
+  },
+  {
+    "id": "017",
+    "type": "text",
+    "question": "Tên gọi dân gian của loại nước mắm nổi tiếng vùng biển Quảng Trị?",
+    "options": ["Nước mắm Cửa Việt", "Nước mắm Nam Ô", "Nước mắm Phan Thiết", "Nước mắm Cát Hải"],
+    "answer": 0
+  },
+  {
+    "id": "018",
+    "type": "text",
+    "question": "Người dân Quảng Trị thường làm gì vào dịp tưởng niệm tháng 7 hằng năm tại sông Thạch Hãn?",
+    "options": ["Thả đèn hoa đăng", "Đua thuyền", "Lễ hội cá Ông", "Cầu ngư"],
+    "answer": 0
+  },
+  {
+    "id": "019",
+    "type": "text",
+    "question": "Ngọn núi nào nằm trong khu vực di sản Quảng Trị sau sáp nhập, nổi tiếng với rừng nguyên sinh?",
+    "options": ["Núi Voi Mẹp", "Núi Bạch Mã", "Núi Ngọc Linh", "Núi Tam Đảo"],
+    "answer": 0
+  },
+  {
+    "id": "020",
+    "type": "text",
+    "question": "Đặc sản dân dã nào của Quảng Trị được nấu từ hến bắt dưới sông?",
+    "options": ["Bún hến", "Bún cá", "Bún bò", "Bún chả cá"],
+    "answer": 0
+  }
+]
