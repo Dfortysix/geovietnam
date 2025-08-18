@@ -1,1 +1,142 @@
-[]
+[
+  {
+    "id": "001",
+    "type": "text",
+    "question": "Khánh Hòa thuộc khu vực nào của Việt Nam?",
+    "options": ["Tây Bắc", "Nam Trung Bộ", "Đông Bắc", "Đồng bằng sông Hồng"],
+    "answer": 1
+  },
+  {
+    "id": "002",
+    "type": "text",
+    "question": "Thành phố biển nào là trung tâm du lịch lớn nhất Khánh Hòa?",
+    "options": ["Nha Trang", "Phan Rang", "Phan Thiết", "Vũng Tàu"],
+    "answer": 0
+  },
+  {
+    "id": "003",
+    "type": "text",
+    "question": "Vịnh nào ở Khánh Hòa được công nhận là một trong những vịnh đẹp nhất thế giới?",
+    "options": ["Vịnh Nha Trang", "Vịnh Vân Phong", "Vịnh Cam Ranh", "Vịnh Hạ Long"],
+    "answer": 0
+  },
+  {
+    "id": "004",
+    "type": "text",
+    "question": "Ngọn tháp Chăm nào nổi tiếng tại Khánh Hòa, gắn với tín ngưỡng Thiên Y A Na?",
+    "options": ["Tháp Bà Ponagar", "Tháp Mỹ Sơn", "Tháp Po Klong Garai", "Tháp Đôi"],
+    "answer": 0
+  },
+  {
+    "id": "005",
+    "type": "text",
+    "question": "Vùng đất Khánh Hòa nổi tiếng với loại trái cây nào?",
+    "options": ["Vải", "Nho", "Chôm chôm", "Măng cụt"],
+    "answer": 1
+  },
+  {
+    "id": "006",
+    "type": "text",
+    "question": "Loại động vật nào thường gắn liền với hình ảnh đồng cỏ Khánh Hòa?",
+    "options": ["Trâu", "Cừu", "Ngựa", "Bò tót"],
+    "answer": 1
+  },
+  {
+    "id": "007",
+    "type": "text",
+    "question": "Món nem nào là đặc sản nổi tiếng của Khánh Hòa?",
+    "options": ["Nem Thanh Hóa", "Nem Ninh Hòa", "Nem Phùng", "Nem Lai Vung"],
+    "answer": 1
+  },
+  {
+    "id": "008",
+    "type": "text",
+    "question": "Loại hình nghệ thuật dân gian của người Chăm còn được bảo tồn ở Khánh Hòa?",
+    "options": ["Chèo", "Quan họ", "Múa Apsara", "Ca trù"],
+    "answer": 2
+  },
+  {
+    "id": "009",
+    "type": "text",
+    "question": "Đặc sản nào của Khánh Hòa được gọi là 'vàng trắng của biển cả'?",
+    "options": ["Ngọc trai", "Yến sào", "San hô", "Muối"],
+    "answer": 1
+  },
+  {
+    "id": "010",
+    "type": "text",
+    "question": "Loại hình nghề thủ công truyền thống nào nổi tiếng ở Khánh Hòa?",
+    "options": ["Gốm Bát Tràng", "Gốm Bàu Trúc", "Lụa Vạn Phúc", "Đúc đồng Ngũ Xã"],
+    "answer": 1
+  },
+  {
+    "id": "011",
+    "type": "text",
+    "question": "Đồi cát rộng lớn và đẹp mắt, điểm du lịch nổi tiếng ở Khánh Hòa là gì?",
+    "options": ["Đồi cát Mũi Né", "Đồi cát Nam Cương", "Đồi cát Trà Cổ", "Đồi cát Quảng Phú"],
+    "answer": 1
+  },
+  {
+    "id": "012",
+    "type": "text",
+    "question": "Vịnh Cam Ranh của Khánh Hòa có vai trò chiến lược nào?",
+    "options": ["Nông nghiệp", "Cảng biển quân sự", "Du lịch nghỉ dưỡng", "Nuôi thủy sản"],
+    "answer": 1
+  },
+  {
+    "id": "013",
+    "type": "text",
+    "question": "Món bún nào đặc sản Khánh Hòa được làm từ loài hải sản có vị giòn sần sật?",
+    "options": ["Bún bò", "Bún sứa", "Bún mắm", "Bún chả cá"],
+    "answer": 1
+  },
+  {
+    "id": "014",
+    "type": "text",
+    "question": "Lễ hội Katê ở Khánh Hòa là của cộng đồng dân tộc nào?",
+    "options": ["Kinh", "Chăm", "Ê-đê", "Khơ-me"],
+    "answer": 1
+  },
+  {
+    "id": "015",
+    "type": "text",
+    "question": "Đặc sản trái cây nào ngoài nho còn rất nổi tiếng ở Khánh Hòa?",
+    "options": ["Táo", "Mít", "Sầu riêng", "Thanh long"],
+    "answer": 0
+  },
+  {
+    "id": "016",
+    "type": "text",
+    "question": "Đảo nào thuộc Khánh Hòa nổi tiếng với tôm hùm?",
+    "options": ["Phú Quốc", "Cù Lao Chàm", "Bình Ba", "Phú Quý"],
+    "answer": 2
+  },
+  {
+    "id": "017",
+    "type": "text",
+    "question": "VinWonders Nha Trang được xây dựng trên hòn đảo nào?",
+    "options": ["Hòn Tre", "Hòn Mun", "Hòn Một", "Hòn Miễu"],
+    "answer": 0
+  },
+  {
+    "id": "018",
+    "type": "text",
+    "question": "Món bánh tráng nổi tiếng của Khánh Hòa thường được ăn kèm thịt nướng?",
+    "options": ["Bánh tráng Trảng Bàng", "Bánh tráng Phan Rang", "Bánh tráng Đại Lộc", "Bánh tráng Phú Hòa"],
+    "answer": 1
+  },
+  {
+    "id": "019",
+    "type": "text",
+    "question": "Loại rượu nào được nấu từ nho đặc sản Khánh Hòa?",
+    "options": ["Rượu vang", "Rượu cần", "Rượu nếp", "Rượu chuối hột"],
+    "answer": 0
+  },
+  {
+    "id": "020",
+    "type": "text",
+    "question": "Biểu tượng thường gắn với du lịch Khánh Hòa là gì?",
+    "options": ["Nho", "Tháp Bà Ponagar", "Biển Nha Trang", "Cả ba đáp án trên"],
+    "answer": 3
+  }
+]
