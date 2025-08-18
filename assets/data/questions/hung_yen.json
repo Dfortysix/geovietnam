@@ -1,1 +1,142 @@
-[]
+[
+  {
+    "id": "001",
+    "type": "text",
+    "question": "Tỉnh Hưng Yên mới nằm ở khu vực nào của Việt Nam?",
+    "options": ["Tây Bắc", "Đồng bằng sông Hồng", "Bắc Trung Bộ", "Đông Nam Bộ"],
+    "answer": 1
+  },
+  {
+    "id": "002",
+    "type": "text",
+    "question": "Thương cảng nào từng nổi tiếng ở Hưng Yên thế kỷ XVI – XVII?",
+    "options": ["Hội An", "Phố Hiến", "Vân Đồn", "Cửa Lò"],
+    "answer": 1
+  },
+  {
+    "id": "003",
+    "type": "text",
+    "question": "Loại quả nào là đặc sản nổi tiếng nhất ở Hưng Yên?",
+    "options": ["Vải thiều", "Nhãn lồng", "Mít tố nữ", "Xoài cát"],
+    "answer": 1
+  },
+  {
+    "id": "004",
+    "type": "text",
+    "question": "Giống gà quý hiếm đặc trưng chỉ có ở Hưng Yên?",
+    "options": ["Gà Hồ", "Gà Đông Tảo", "Gà Ri", "Gà Mía"],
+    "answer": 1
+  },
+  {
+    "id": "005",
+    "type": "text",
+    "question": "Loại tương nổi tiếng của Hưng Yên, thường dùng chấm rau luộc?",
+    "options": ["Tương Bần", "Tương Nam Đàn", "Tương Cự Đà", "Tương Đình Tổ"],
+    "answer": 0
+  },
+  {
+    "id": "006",
+    "type": "text",
+    "question": "Món bánh dân gian nào có tên gợi nhớ đến hình ảnh nông cụ?",
+    "options": ["Bánh gai", "Bánh răng bừa", "Bánh chưng", "Bánh ít"],
+    "answer": 1
+  },
+  {
+    "id": "007",
+    "type": "text",
+    "question": "Loại hình nghệ thuật sân khấu dân gian nào rất phổ biến ở vùng này?",
+    "options": ["Cải lương", "Tuồng", "Chèo", "Múa rối nước"],
+    "answer": 2
+  },
+  {
+    "id": "008",
+    "type": "text",
+    "question": "Làng nghề chiếu Hới nổi tiếng ở Hưng Yên mới gắn với sản phẩm gì?",
+    "options": ["Chiếu cói", "Nón lá", "Gốm", "Lụa"],
+    "answer": 0
+  },
+  {
+    "id": "009",
+    "type": "text",
+    "question": "Biển nào là điểm du lịch nổi tiếng ở vùng ven biển của Hưng Yên mới?",
+    "options": ["Biển Cửa Lò", "Biển Đồng Châu", "Biển Sầm Sơn", "Biển Trà Cổ"],
+    "answer": 1
+  },
+  {
+    "id": "010",
+    "type": "text",
+    "question": "Hưng Yên mới nổi tiếng với loại cây lương thực nào?",
+    "options": ["Ngô", "Khoai", "Lúa", "Sắn"],
+    "answer": 2
+  },
+  {
+    "id": "011",
+    "type": "text",
+    "question": "Chùa Chuông ở Hưng Yên còn được gọi bằng tên gì?",
+    "options": ["Kim Chung Tự", "Thiên Mụ Tự", "Phổ Minh Tự", "Trấn Quốc Tự"],
+    "answer": 0
+  },
+  {
+    "id": "012",
+    "type": "text",
+    "question": "Đền nào nổi tiếng thờ các vua Trần tại Hưng Yên mới?",
+    "options": ["Đền Trần", "Đền Hùng", "Đền Kiếp Bạc", "Đền Mẫu"],
+    "answer": 0
+  },
+  {
+    "id": "013",
+    "type": "text",
+    "question": "Loại kẹo dân gian nào gắn liền với vùng đồng bằng này?",
+    "options": ["Kẹo cu đơ", "Kẹo mè xửng", "Kẹo lạc", "Kẹo kéo"],
+    "answer": 2
+  },
+  {
+    "id": "014",
+    "type": "text",
+    "question": "Nghề truyền thống làm dược liệu nổi tiếng ở Nghĩa Trai là gì?",
+    "options": ["Trà sen", "Thuốc nam", "Nhân sâm", "Nước mắm"],
+    "answer": 1
+  },
+  {
+    "id": "015",
+    "type": "text",
+    "question": "Lễ hội nào được tổ chức hằng năm, gắn với đặc sản nhãn?",
+    "options": ["Lễ hội Nhãn lồng", "Lễ hội Trái cây Nam Bộ", "Lễ hội Bưởi", "Lễ hội Xoài"],
+    "answer": 0
+  },
+  {
+    "id": "016",
+    "type": "text",
+    "question": "Đồng bằng Hưng Yên mới chịu ảnh hưởng của con sông lớn nào?",
+    "options": ["Sông Lam", "Sông Hồng", "Sông Mã", "Sông Đà"],
+    "answer": 1
+  },
+  {
+    "id": "017",
+    "type": "text",
+    "question": "Loại hình nghệ thuật nào thường vang lên trong các đêm hội làng ở vùng này?",
+    "options": ["Chèo", "Ca trù", "Quan họ", "Xẩm"],
+    "answer": 0
+  },
+  {
+    "id": "018",
+    "type": "text",
+    "question": "Hưng Yên mới có khí hậu thuộc loại nào?",
+    "options": ["Nhiệt đới gió mùa", "Ôn đới hải dương", "Cận nhiệt ẩm", "Sa mạc"],
+    "answer": 0
+  },
+  {
+    "id": "019",
+    "type": "text",
+    "question": "Biển Đồng Châu nổi tiếng với loại hải sản nào?",
+    "options": ["Ngao", "Mực", "Cá ngừ", "Tôm hùm"],
+    "answer": 0
+  },
+  {
+    "id": "020",
+    "type": "text",
+    "question": "Biểu tượng thường gắn với du lịch Hưng Yên mới là gì?",
+    "options": ["Nhãn lồng", "Chùa Chuông", "Biển Đồng Châu", "Chiếu Hới"],
+    "answer": 0
+  }
+]
