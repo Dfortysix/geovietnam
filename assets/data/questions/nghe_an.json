@@ -1,1 +1,142 @@
-[]
+[
+  {
+    "id": "001",
+    "type": "text",
+    "question": "Nghệ An thuộc vùng nào của Việt Nam?",
+    "options": ["Đông Bắc", "Bắc Trung Bộ", "Tây Nguyên", "Đồng bằng sông Cửu Long"],
+    "answer": 1
+  },
+  {
+    "id": "002",
+    "type": "text",
+    "question": "Tỉnh nào có diện tích lớn nhất Việt Nam?",
+    "options": ["Thanh Hóa", "Nghệ An", "Gia Lai", "Sơn La"],
+    "answer": 1
+  },
+  {
+    "id": "003",
+    "type": "text",
+    "question": "Biển nổi tiếng nhất của Nghệ An là gì?",
+    "options": ["Biển Sầm Sơn", "Biển Cửa Lò", "Biển Thiên Cầm", "Biển Nhật Lệ"],
+    "answer": 1
+  },
+  {
+    "id": "004",
+    "type": "text",
+    "question": "Quê hương của Chủ tịch Hồ Chí Minh thuộc huyện nào của Nghệ An?",
+    "options": ["Nam Đàn", "Thanh Chương", "Nghi Lộc", "Diễn Châu"],
+    "answer": 0
+  },
+  {
+    "id": "005",
+    "type": "text",
+    "question": "Loại hình dân ca nào nổi tiếng gắn với Nghệ An?",
+    "options": ["Quan họ", "Ca trù", "Ví dặm", "Chèo"],
+    "answer": 2
+  },
+  {
+    "id": "006",
+    "type": "text",
+    "question": "Ngọn núi nào cao nhất Nghệ An?",
+    "options": ["Núi Rào Cỏ", "Núi Pù Xai Lai Leng", "Núi Lam Thành", "Núi Pù Huống"],
+    "answer": 1
+  },
+  {
+    "id": "007",
+    "type": "text",
+    "question": "Đặc sản nổi tiếng của Nghệ An làm từ lươn là gì?",
+    "options": ["Lươn nướng", "Cháo lươn", "Lươn om chuối", "Miến lươn"],
+    "answer": 1
+  },
+  {
+    "id": "008",
+    "type": "text",
+    "question": "Loại tương nổi tiếng của Nghệ An là gì?",
+    "options": ["Tương Bần", "Tương Nam Đàn", "Tương Cự Đà", "Tương Gạo"],
+    "answer": 1
+  },
+  {
+    "id": "009",
+    "type": "text",
+    "question": "Lễ hội Làng Sen ở Nghệ An gắn với ai?",
+    "options": ["Trần Hưng Đạo", "Nguyễn Du", "Chủ tịch Hồ Chí Minh", "Phan Bội Châu"],
+    "answer": 2
+  },
+  {
+    "id": "010",
+    "type": "text",
+    "question": "Vườn quốc gia lớn ở phía Tây Nghệ An là gì?",
+    "options": ["Pù Mát", "Cúc Phương", "Bạch Mã", "Phong Nha – Kẻ Bàng"],
+    "answer": 0
+  },
+  {
+    "id": "011",
+    "type": "text",
+    "question": "Tên thác nổi tiếng ở Vườn quốc gia Pù Mát là gì?",
+    "options": ["Thác Bản Giốc", "Thác Khe Kèm", "Thác Dray Nur", "Thác Cam Ly"],
+    "answer": 1
+  },
+  {
+    "id": "012",
+    "type": "text",
+    "question": "Đặc sản nhút nổi tiếng của Nghệ An thuộc huyện nào?",
+    "options": ["Nam Đàn", "Thanh Chương", "Quỳ Hợp", "Anh Sơn"],
+    "answer": 1
+  },
+  {
+    "id": "013",
+    "type": "text",
+    "question": "Tên gọi của hòn đảo nhỏ gần biển Cửa Lò là gì?",
+    "options": ["Đảo Lan Châu", "Đảo Hòn Mun", "Đảo Cồn Cỏ", "Đảo Lý Sơn"],
+    "answer": 0
+  },
+  {
+    "id": "014",
+    "type": "text",
+    "question": "Lễ hội Đền Cuông ở Nghệ An gắn với vị vua nào?",
+    "options": ["An Dương Vương", "Lê Lợi", "Mai Hắc Đế", "Quang Trung"],
+    "answer": 0
+  },
+  {
+    "id": "015",
+    "type": "text",
+    "question": "Loại kẹo nổi tiếng ở Nghệ An thường làm quà biếu là gì?",
+    "options": ["Kẹo lạc", "Kẹo cu đơ", "Kẹo kéo", "Kẹo mè xửng"],
+    "answer": 1
+  },
+  {
+    "id": "016",
+    "type": "text",
+    "question": "Con sông lớn nào chảy qua thành phố Vinh, Nghệ An?",
+    "options": ["Sông Lam", "Sông Hồng", "Sông Mã", "Sông Đà"],
+    "answer": 0
+  },
+  {
+    "id": "017",
+    "type": "text",
+    "question": "Tên gọi khác của núi Hồng Lĩnh (giáp Nghệ An – Hà Tĩnh) là gì?",
+    "options": ["Núi Lam Thành", "Núi Thiên Nhẫn", "Núi Ngàn Hống", "Núi Quỳnh"],
+    "answer": 2
+  },
+  {
+    "id": "018",
+    "type": "text",
+    "question": "Món ăn nào sau đây là đặc sản nổi tiếng của Nghệ An?",
+    "options": ["Phở bò", "Mì Quảng", "Bánh mướt", "Bánh cuốn Thanh Trì"],
+    "answer": 2
+  },
+  {
+    "id": "019",
+    "type": "text",
+    "question": "Khu kinh tế ven biển lớn ở Nghệ An là gì?",
+    "options": ["Nghi Sơn", "Vũng Áng", "Đông Nam", "Dung Quất"],
+    "answer": 2
+  },
+  {
+    "id": "020",
+    "type": "text",
+    "question": "Tên thành phố trực thuộc Nghệ An hiện nay là gì?",
+    "options": ["Hà Tĩnh", "Vinh", "Thanh Hóa", "Huế"],
+    "answer": 1
+  }
+]
