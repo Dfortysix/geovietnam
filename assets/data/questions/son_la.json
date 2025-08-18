@@ -1,1 +1,142 @@
-[]
+[
+  {
+    "id": "001",
+    "type": "text",
+    "question": "Trung tâm hành chính của tỉnh Sơn La đặt tại thành phố nào?",
+    "options": ["Điện Biên Phủ", "Sơn La", "Mộc Châu", "Mai Sơn"],
+    "answer": 1
+  },
+  {
+    "id": "002",
+    "type": "text",
+    "question": "Nhà máy thủy điện lớn nhất Việt Nam nằm ở tỉnh nào?",
+    "options": ["Điện Biên", "Sơn La", "Lai Châu", "Hòa Bình"],
+    "answer": 1
+  },
+  {
+    "id": "003",
+    "type": "text",
+    "question": "Cao nguyên nào nổi tiếng với chè và sữa bò, thuộc Sơn La?",
+    "options": ["Mộc Châu", "Lâm Đồng", "Đồng Văn", "Pleiku"],
+    "answer": 0
+  },
+  {
+    "id": "004",
+    "type": "text",
+    "question": "Tên loại mận đặc sản nổi tiếng ở Sơn La là gì?",
+    "options": ["Mận tam hoa", "Mận hậu", "Mận cơm", "Mận đỏ"],
+    "answer": 1
+  },
+  {
+    "id": "005",
+    "type": "text",
+    "question": "Di tích nào ở Sơn La gắn với cây đào Tô Hiệu?",
+    "options": ["Nhà tù Sơn La", "Thành cổ Sơn La", "Đồn Mộc Châu", "Hang Dơi"],
+    "answer": 0
+  },
+  {
+    "id": "006",
+    "type": "text",
+    "question": "Thác nước nào ở Mộc Châu còn được gọi là 'thác Nàng'?",
+    "options": ["Thác Bản Giốc", "Thác Dải Yếm", "Thác Cam Ly", "Thác Pa Sỹ"],
+    "answer": 1
+  },
+  {
+    "id": "007",
+    "type": "text",
+    "question": "Loại đặc sản nào của người Thái ở Sơn La được làm từ lòng và tiết động vật?",
+    "options": ["Thắng cố", "Nậm pịa", "Pa pỉnh tộp", "Lạp xưởng"],
+    "answer": 1
+  },
+  {
+    "id": "008",
+    "type": "text",
+    "question": "Món cá nướng gập đôi tẩm gia vị đặc trưng của Sơn La có tên là gì?",
+    "options": ["Pa pỉnh tộp", "Cá kho riềng", "Cá lăng nướng", "Cá hấp gừng"],
+    "answer": 0
+  },
+  {
+    "id": "009",
+    "type": "text",
+    "question": "Suối nước nóng nổi tiếng ở Sơn La nằm tại bản nào?",
+    "options": ["Bản Lác", "Bản Moòng", "Bản Ngòi", "Bản Mường"],
+    "answer": 1
+  },
+  {
+    "id": "010",
+    "type": "text",
+    "question": "Lễ hội Hoa Ban là nét văn hóa của tỉnh Sơn La chủ yếu gắn với dân tộc nào?",
+    "options": ["Kinh", "Mường", "Thái", "Dao"],
+    "answer": 2
+  },
+  {
+    "id": "011",
+    "type": "text",
+    "question": "Tên loại chè nổi tiếng nhất trồng ở cao nguyên Mộc Châu là gì?",
+    "options": ["Chè Shan tuyết", "Chè Ô long", "Chè Tân Cương", "Chè Mộc Châu"],
+    "answer": 3
+  },
+  {
+    "id": "012",
+    "type": "text",
+    "question": "Cây đào gắn với chiến sĩ cách mạng Tô Hiệu hiện nay là biểu tượng của địa danh nào?",
+    "options": ["Nhà tù Sơn La", "Cao nguyên Mộc Châu", "Sông Đà", "Hang Dơi"],
+    "answer": 0
+  },
+  {
+    "id": "013",
+    "type": "text",
+    "question": "Tên hang động nổi tiếng nằm trong thị trấn Mộc Châu, Sơn La?",
+    "options": ["Hang Dơi", "Hang Én", "Hang Sửng Sốt", "Hang Hương Tích"],
+    "answer": 0
+  },
+  {
+    "id": "014",
+    "type": "text",
+    "question": "Loại quả nào ngoài mận còn được Sơn La trồng nhiều và xuất khẩu?",
+    "options": ["Xoài", "Chuối", "Dứa", "Vải"],
+    "answer": 0
+  },
+  {
+    "id": "015",
+    "type": "text",
+    "question": "Tên con sông lớn chảy qua Sơn La, gắn với thủy điện Sơn La?",
+    "options": ["Sông Đà", "Sông Hồng", "Sông Lam", "Sông Lô"],
+    "answer": 0
+  },
+  {
+    "id": "016",
+    "type": "text",
+    "question": "Loại sữa nổi tiếng gắn liền với cao nguyên Mộc Châu là gì?",
+    "options": ["Sữa bò Mộc Châu", "Sữa dê Ba Vì", "Sữa bò TH", "Sữa đặc Ông Thọ"],
+    "answer": 0
+  },
+  {
+    "id": "017",
+    "type": "text",
+    "question": "Tên loại gạo nếp nổi tiếng của người Thái Sơn La?",
+    "options": ["Nếp Tú Lệ", "Nếp nương", "Nếp cẩm", "Nếp cái hoa vàng"],
+    "answer": 1
+  },
+  {
+    "id": "018",
+    "type": "text",
+    "question": "Món ăn nào của người Thái ở Sơn La thường được nấu trong ống tre?",
+    "options": ["Xôi ngũ sắc", "Cơm lam", "Bánh chưng", "Bánh giầy"],
+    "answer": 1
+  },
+  {
+    "id": "019",
+    "type": "text",
+    "question": "Loại nhãn nào của huyện Yên Châu (Sơn La) nổi tiếng cả nước?",
+    "options": ["Nhãn xuồng cơm vàng", "Nhãn lồng", "Nhãn Yên Châu", "Nhãn tím"],
+    "answer": 2
+  },
+  {
+    "id": "020",
+    "type": "text",
+    "question": "Sơn La có đường biên giới quốc tế giáp với quốc gia nào?",
+    "options": ["Lào", "Trung Quốc", "Campuchia", "Thái Lan"],
+    "answer": 0
+  }
+]
