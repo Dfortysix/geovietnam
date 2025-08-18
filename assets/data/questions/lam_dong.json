@@ -1,1 +1,142 @@
-[]
+[
+  {
+    "id": "001",
+    "type": "text",
+    "question": "Tỉnh Lâm Đồng nằm ở vùng nào của Việt Nam?",
+    "options": ["Đồng bằng sông Hồng", "Tây Nguyên", "Nam Trung Bộ", "Đông Nam Bộ"],
+    "answer": 1
+  },
+  {
+    "id": "002",
+    "type": "text",
+    "question": "Thành phố nào vẫn là trung tâm hành chính–chính trị sau hợp nhất?",
+    "options": ["Gia Nghĩa", "Phan Thiết", "Đà Lạt", "Đắk R’tih"],
+    "answer": 2
+  },
+  {
+    "id": "003",
+    "type": "text",
+    "question": "Lâm Đồng nổi bật với khí hậu nào?",
+    "options": ["Nhiệt đới khô", "Ôn đới vùng cao", "Cận nhiệt hải dương", "Nhiệt đới gió mùa"], 
+    "answer": 1
+  },
+  {
+    "id": "004",
+    "type": "text",
+    "question": "Điểm du lịch sinh thái nổi bật với hồ nước rộng ở vùng núi mới là gì?",
+    "options": ["Hồ Tuyền Lâm", "Hồ Tà Đùng", "Hồ Trị An", "Hồ Phúc Trạch"],
+    "answer": 1
+  },
+  {
+    "id": "005",
+    "type": "text",
+    "question": "Lễ hội hoa nổi tiếng thường được tổ chức ở Đà Lạt là gì?",
+    "options": ["Festival Hoa", "Lễ hội Cà phê", "Lễ hội Lúa", "Lễ hội Biển"],
+    "answer": 0
+  },
+  {
+    "id": "006",
+    "type": "text",
+    "question": "Rừng nào được UNESCO công nhận là Công viên địa chất toàn cầu?",
+    "options": ["Vườn quốc gia Bạch Mã", "Vườn quốc gia Phong Nha – Kẻ Bàng", "Công viên địa chất Đắk Nông", "Vườn quốc gia Cát Tiên"],
+    "answer": 2
+  },
+  {
+    "id": "007",
+    "type": "text",
+    "question": "Vùng ven biển mới dưới tỉnh Lâm Đồng nổi bật với đặc sản nho và đồi cát là đâu?",
+    "options": ["Phan Rang", "Mũi Né", "Cà Ná", "Quy Nhơn"],
+    "answer": 0
+  },
+  {
+    "id": "008",
+    "type": "text",
+    "question": "Loại cà phê nổi tiếng được trồng nhiều ở Tây Nguyên mới là gì?",
+    "options": ["Cà phê Arabica", "Cà phê Robusta", "Cà phê Culi", "Cà phê Cherry"],
+    "answer": 1
+  },
+  {
+    "id": "009",
+    "type": "text",
+    "question": "Thác nước nổi tiếng nhất trong số này thuộc vùng núi nào?",
+    "options": ["Thác Datanla", "Thác Dray Nur", "Thác Bảo Đại", "Thác Đồng Nai"],
+    "answer": 1
+  },
+  {
+    "id": "010",
+    "type": "text",
+    "question": "Nông sản đặc trưng của vùng Bình Thuận được đưa vào tỉnh mới là gì?",
+    "options": ["Thanh long", "Xoài", "Chôm chôm", "Vải thiều"],
+    "answer": 0
+  },
+  {
+    "id": "011",
+    "type": "text",
+    "question": "Du lịch biển nổi tiếng khu vực mới trong tỉnh gắn với nơi nào?",
+    "options": ["Vịnh Hạ Long", "Biển Nha Trang", "Mũi Né", "Cửa Lò"],
+    "answer": 2
+  },
+  {
+    "id": "012",
+    "type": "text",
+    "question": "Loại hình năng lượng tái tạo phổ biến ở vùng duyên hải là gì?",
+    "options": ["Năng lượng hạt nhân", "Năng lượng gió biển", "Năng lượng địa nhiệt", "Năng lượng thủy triều"],
+    "answer": 1
+  },
+  {
+    "id": "013",
+    "type": "text",
+    "question": "Sản phẩm hoa nổi tiếng của vùng cao nguyên là gì?",
+    "options": ["Hoa hồng Đà Lạt", "Hoa sen", "Hoa đào", "Hoa ban"],
+    "answer": 0
+  },
+  {
+    "id": "014",
+    "type": "text",
+    "question": "Đèo nối tỉnh mới với các vùng khác ở Tây Bắc là gì?",
+    "options": ["Đèo Pha Đin", "Đèo Cù Hin", "Đèo Mã Pí Lèng", "Đèo Khánh Lê"], 
+    "answer": 1
+  },
+  {
+    "id": "015",
+    "type": "text",
+    "question": "Đặc sản bánh nào nổi tiếng từ vùng cao nguyên?",
+    "options": ["Bánh căn", "Bánh tráng nướng", "Bánh ướt", "Bánh mì"], 
+    "answer": 0
+  },
+  {
+    "id": "016",
+    "type": "text",
+    "question": "Loại gỗ quý nào là thế mạnh vùng cao nguyên?",
+    "options": ["Gỗ sao", "Gỗ mun", "Gỗ hương", "Gỗ tràm"], 
+    "answer": 2
+  },
+  {
+    "id": "017",
+    "type": "text",
+    "question": "Loại hoạt động du lịch mới nổi ở vùng biển là gì?",
+    "options": ["Trekking núi cao", "Lướt ván diều", "Săn mây", "Thăm thác"], 
+    "answer": 1
+  },
+  {
+    "id": "018",
+    "type": "text",
+    "question": "Thành phố nào nổi tiếng với hoa, cà phê và khí hậu mát quanh năm?",
+    "options": ["Gia Nghĩa", "Đà Lạt", "Phan Thiết", "Tuy Hòa"], 
+    "answer": 1
+  },
+  {
+    "id": "019",
+    "type": "text",
+    "question": "Loại cây công nghiệp cao được trồng rất phổ biến ở tỉnh mới?",
+    "options": ["Cây cao su", "Cây chè", "Cây ca cao", "Cây điều"], 
+    "answer": 1
+  },
+  {
+    "id": "020",
+    "type": "text",
+    "question": "Biểu tượng du lịch thường gắn với tỉnh mới là gì?",
+    "options": ["Đà Lạt hoa", "Biển cát trắng", "Cà phê Tây Nguyên", "Cả ba đáp án trên"], 
+    "answer": 3
+  }
+]
