@@ -1,1 +1,142 @@
-[]
+[
+  {
+    "id": "001",
+    "type": "text",
+    "question": "Lạng Sơn thuộc vùng nào của Việt Nam?",
+    "options": ["Tây Bắc", "Đông Bắc", "Đồng bằng sông Hồng", "Bắc Trung Bộ"],
+    "answer": 1
+  },
+  {
+    "id": "002",
+    "type": "text",
+    "question": "Lạng Sơn có đường biên giới với quốc gia nào?",
+    "options": ["Lào", "Campuchia", "Trung Quốc", "Thái Lan"],
+    "answer": 2
+  },
+  {
+    "id": "003",
+    "type": "text",
+    "question": "Cửa khẩu quốc tế nổi tiếng nhất ở Lạng Sơn là gì?",
+    "options": ["Hữu Nghị", "Móng Cái", "Lào Cai", "Cầu Treo"],
+    "answer": 0
+  },
+  {
+    "id": "004",
+    "type": "text",
+    "question": "Núi nào nổi tiếng với khí hậu mát mẻ và tuyết rơi vào mùa đông ở Lạng Sơn?",
+    "options": ["Núi Ba Vì", "Núi Tam Đảo", "Núi Mẫu Sơn", "Núi Fansipan"],
+    "answer": 2
+  },
+  {
+    "id": "005",
+    "type": "text",
+    "question": "Động nào ở Lạng Sơn nổi tiếng cùng với Tam Thanh?",
+    "options": ["Động Hương Tích", "Động Phong Nha", "Động Nhị Thanh", "Động Pác Bó"],
+    "answer": 2
+  },
+  {
+    "id": "006",
+    "type": "text",
+    "question": "Trận chiến lịch sử nào gắn với ải Chi Lăng?",
+    "options": ["Ngô Quyền chống Nam Hán", "Lê Lợi chống quân Minh", "Quang Trung đại phá quân Thanh", "Kháng chiến chống Pháp"],
+    "answer": 1
+  },
+  {
+    "id": "007",
+    "type": "text",
+    "question": "Thành cổ nào còn dấu tích ở Lạng Sơn?",
+    "options": ["Thành Nhà Hồ", "Thành Nhà Mạc", "Thành Cổ Loa", "Thành Điện Hải"],
+    "answer": 1
+  },
+  {
+    "id": "008",
+    "type": "text",
+    "question": "Đặc sản vịt quay của Lạng Sơn thường được ướp với loại lá nào?",
+    "options": ["Lá chanh", "Lá ổi", "Lá mắc mật", "Lá bưởi"],
+    "answer": 2
+  },
+  {
+    "id": "009",
+    "type": "text",
+    "question": "Loại quả đặc sản nổi tiếng của vùng Chi Lăng, Lạng Sơn là gì?",
+    "options": ["Mận hậu", "Na", "Vải", "Xoài"],
+    "answer": 1
+  },
+  {
+    "id": "010",
+    "type": "text",
+    "question": "Món phở đặc trưng của Lạng Sơn có tên gọi là gì?",
+    "options": ["Phở gà", "Phở bò", "Phở chua", "Phở cuốn"],
+    "answer": 2
+  },
+  {
+    "id": "011",
+    "type": "text",
+    "question": "Dân tộc nào chiếm đông nhất ở Lạng Sơn?",
+    "options": ["Kinh", "Tày", "Nùng", "Dao"],
+    "answer": 2
+  },
+  {
+    "id": "012",
+    "type": "text",
+    "question": "Chợ nổi tiếng gần biên giới ở Lạng Sơn là gì?",
+    "options": ["Chợ Bến Thành", "Chợ Đông Kinh", "Chợ Đồng Xuân", "Chợ Tân Thanh"],
+    "answer": 3
+  },
+  {
+    "id": "013",
+    "type": "text",
+    "question": "Đặc sản lợn quay Lạng Sơn thường được ăn kèm với gì?",
+    "options": ["Lá chanh", "Hành phi", "Lá mắc mật", "Rau húng"],
+    "answer": 2
+  },
+  {
+    "id": "014",
+    "type": "text",
+    "question": "Ngọn núi nào được coi là nóc nhà của Lạng Sơn?",
+    "options": ["Phia Oắc", "Mẫu Sơn", "Ngọc Linh", "Hoàng Liên Sơn"],
+    "answer": 1
+  },
+  {
+    "id": "015",
+    "type": "text",
+    "question": "Sông chính chảy qua thành phố Lạng Sơn là gì?",
+    "options": ["Sông Đà", "Sông Kỳ Cùng", "Sông Hồng", "Sông Cầu"],
+    "answer": 1
+  },
+  {
+    "id": "016",
+    "type": "text",
+    "question": "Tên gọi khác của động Tam Thanh là gì?",
+    "options": ["Động đá bạc", "Động tiên nữ", "Động Phật", "Động núi đá vôi"],
+    "answer": 2
+  },
+  {
+    "id": "017",
+    "type": "text",
+    "question": "Món bánh tráng đặc sản của Lạng Sơn có tên là gì?",
+    "options": ["Bánh tráng cuốn", "Bánh tráng phơi sương", "Bánh tráng nướng", "Bánh tráng Mè"],
+    "answer": 2
+  },
+  {
+    "id": "018",
+    "type": "text",
+    "question": "Loại hình du lịch nào nổi bật ở núi Mẫu Sơn?",
+    "options": ["Du lịch biển", "Du lịch mạo hiểm và nghỉ dưỡng", "Du lịch đô thị", "Du lịch sinh thái sông nước"],
+    "answer": 1
+  },
+  {
+    "id": "019",
+    "type": "text",
+    "question": "Thành phố Lạng Sơn nằm gần cửa khẩu nào?",
+    "options": ["Hữu Nghị", "Móng Cái", "Tà Lùng", "Tây Trang"],
+    "answer": 0
+  },
+  {
+    "id": "020",
+    "type": "text",
+    "question": "Khí hậu Lạng Sơn mang đặc trưng nào?",
+    "options": ["Nhiệt đới khô", "Ôn đới núi cao", "Cận nhiệt đới gió mùa", "Nhiệt đới ẩm"],
+    "answer": 2
+  }
+]
