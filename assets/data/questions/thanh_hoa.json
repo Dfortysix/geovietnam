@@ -1,1 +1,142 @@
-[]
+[
+  {
+    "id": "001",
+    "type": "text",
+    "question": "Trung tâm hành chính của tỉnh Thanh Hóa đặt tại thành phố nào?",
+    "options": ["Sầm Sơn", "Thanh Hóa", "Ninh Bình", "Bỉm Sơn"],
+    "answer": 1
+  },
+  {
+    "id": "002",
+    "type": "text",
+    "question": "Tên vị vua lãnh đạo cuộc khởi nghĩa Lam Sơn xuất phát từ Thanh Hóa?",
+    "options": ["Quang Trung", "Trần Nhân Tông", "Lê Lợi", "Ngô Quyền"],
+    "answer": 2
+  },
+  {
+    "id": "003",
+    "type": "text",
+    "question": "Di sản thế giới nào tại Thanh Hóa được UNESCO công nhận năm 2011?",
+    "options": ["Thành Nhà Hồ", "Kinh thành Huế", "Phố cổ Hội An", "Văn Miếu"],
+    "answer": 0
+  },
+  {
+    "id": "004",
+    "type": "text",
+    "question": "Tên bãi biển nổi tiếng của Thanh Hóa, thu hút đông du khách?",
+    "options": ["Cửa Lò", "Đồ Sơn", "Sầm Sơn", "Nha Trang"],
+    "answer": 2
+  },
+  {
+    "id": "005",
+    "type": "text",
+    "question": "Đặc sản nổi tiếng gói bằng lá chuối, có vị chua, của Thanh Hóa là gì?",
+    "options": ["Nem chua", "Chả cá", "Bánh cuốn", "Giò me"],
+    "answer": 0
+  },
+  {
+    "id": "006",
+    "type": "text",
+    "question": "Khu di tích Lam Kinh ở Thanh Hóa gắn với triều đại nào?",
+    "options": ["Nhà Trần", "Nhà Lý", "Nhà Hồ", "Nhà Hậu Lê"],
+    "answer": 3
+  },
+  {
+    "id": "007",
+    "type": "text",
+    "question": "Tên con suối nổi tiếng ở Thanh Hóa, nơi cá tụ tập rất nhiều?",
+    "options": ["Suối Tiên", "Suối cá Cẩm Lương", "Suối Mơ", "Suối Yến"],
+    "answer": 1
+  },
+  {
+    "id": "008",
+    "type": "text",
+    "question": "Tên loại bánh nổi tiếng ở Thanh Hóa thường gói bằng lá chuối hoặc lá dong?",
+    "options": ["Bánh gai Tứ Trụ", "Bánh cốm", "Bánh khảo", "Bánh chưng"],
+    "answer": 0
+  },
+  {
+    "id": "009",
+    "type": "text",
+    "question": "Lễ hội Lam Kinh ở Thanh Hóa thường được tổ chức vào dịp nào?",
+    "options": ["Tháng Giêng", "Tháng 8 âm lịch", "Tết Trung thu", "Tết Nguyên đán"],
+    "answer": 1
+  },
+  {
+    "id": "010",
+    "type": "text",
+    "question": "Món mắm tôm nổi tiếng của Thanh Hóa gắn liền với huyện nào?",
+    "options": ["Nga Sơn", "Hậu Lộc", "Thọ Xuân", "Hoằng Hóa"],
+    "answer": 1
+  },
+  {
+    "id": "011",
+    "type": "text",
+    "question": "Tên ngọn núi cao nhất Thanh Hóa, nằm trong khu bảo tồn Pù Luông?",
+    "options": ["Pù Rinh", "Pù Luông", "Pù Nhi", "Pù Lũng"],
+    "answer": 1
+  },
+  {
+    "id": "012",
+    "type": "text",
+    "question": "Dân ca nổi tiếng của Thanh Hóa thường được hát trong lễ hội mùa xuân là gì?",
+    "options": ["Quan họ", "Ca trù", "Dân ca Đông Anh", "Hát xoan"],
+    "answer": 2
+  },
+  {
+    "id": "013",
+    "type": "text",
+    "question": "Tên cầu lớn bắc qua sông Mã ở thành phố Thanh Hóa?",
+    "options": ["Cầu Hàm Rồng", "Cầu Bính", "Cầu Thăng Long", "Cầu Long Biên"],
+    "answer": 0
+  },
+  {
+    "id": "014",
+    "type": "text",
+    "question": "Thanh Hóa nổi tiếng với đặc sản hải sản nào ở vùng biển Sầm Sơn?",
+    "options": ["Cua Huỳnh Đế", "Mực nhảy", "Tôm hùm", "Ngao hai cồi"],
+    "answer": 1
+  },
+  {
+    "id": "015",
+    "type": "text",
+    "question": "Khu bảo tồn thiên nhiên nào ở Thanh Hóa nổi tiếng với cảnh núi non hùng vĩ?",
+    "options": ["Pù Luông", "Cúc Phương", "Xuân Liên", "Ba Vì"],
+    "answer": 0
+  },
+  {
+    "id": "016",
+    "type": "text",
+    "question": "Tên sân bay dân dụng nằm ở Thanh Hóa?",
+    "options": ["Sân bay Sao Vàng", "Sân bay Thọ Xuân", "Sân bay Nà Sản", "Sân bay Cát Bi"],
+    "answer": 1
+  },
+  {
+    "id": "017",
+    "type": "text",
+    "question": "Món chè lam nổi tiếng của Thanh Hóa thường có nguyên liệu chính từ đâu?",
+    "options": ["Gạo nếp", "Đậu xanh", "Khoai môn", "Sắn dây"],
+    "answer": 0
+  },
+  {
+    "id": "018",
+    "type": "text",
+    "question": "Tên dòng sông chảy qua thành phố Thanh Hóa?",
+    "options": ["Sông Lam", "Sông Hồng", "Sông Mã", "Sông Đáy"],
+    "answer": 2
+  },
+  {
+    "id": "019",
+    "type": "text",
+    "question": "Tên loại hình chèo thuyền độc đáo ở Nga Sơn, Thanh Hóa?",
+    "options": ["Thuyền nan", "Thuyền thúng", "Thuyền độc mộc", "Thuyền bè"],
+    "answer": 0
+  },
+  {
+    "id": "020",
+    "type": "text",
+    "question": "Thanh Hóa còn được gọi bằng tên ví von nào?",
+    "options": ["Đất võ", "Đất học", "Đất Lam Sơn", "Đất ngọc"],
+    "answer": 2
+  }
+]
