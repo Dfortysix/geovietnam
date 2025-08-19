@@ -1,1 +1,142 @@
-[]
+[
+  {
+    "id": "001",
+    "type": "text",
+    "question": "Trung tâm hành chính của tỉnh Vĩnh Long đặt tại thành phố nào?",
+    "options": ["Trà Vinh", "Bến Tre", "Vĩnh Long", "Cần Thơ"],
+    "answer": 2
+  },
+  {
+    "id": "002",
+    "type": "text",
+    "question": "Tên cây gắn liền với danh xưng 'xứ Dừa' trong tỉnh Vĩnh Long sau sáp nhập?",
+    "options": ["Cây cau", "Cây dừa", "Cây mít", "Cây xoài"],
+    "answer": 1
+  },
+  {
+    "id": "003",
+    "type": "text",
+    "question": "Tên ngôi chùa mang đậm dấu ấn văn hóa người Hoa tại thành phố Vĩnh Long?",
+    "options": ["Chùa Ông", "Chùa Keo", "Chùa Dâu", "Chùa Cầu"],
+    "answer": 0
+  },
+  {
+    "id": "004",
+    "type": "text",
+    "question": "Cầu Mỹ Thuận bắc qua con sông nào?",
+    "options": ["Sông Hậu", "Sông Tiền", "Sông Cổ Chiên", "Sông Đồng Nai"],
+    "answer": 2
+  },
+  {
+    "id": "005",
+    "type": "text",
+    "question": "Tên loại kẹo đặc sản nổi tiếng gắn liền với hình ảnh trái dừa?",
+    "options": ["Kẹo chuối", "Kẹo dừa", "Kẹo mè xửng", "Kẹo lạc"],
+    "answer": 1
+  },
+  {
+    "id": "006",
+    "type": "text",
+    "question": "Tên thắng cảnh nổi tiếng với hồ nước phẳng lặng và rừng cây cổ thụ ở Trà Vinh?",
+    "options": ["Ao Bà Om", "Ao Sen", "Hồ Tây", "Hồ Kỳ Hòa"],
+    "answer": 0
+  },
+  {
+    "id": "007",
+    "type": "text",
+    "question": "Tên cù lao nổi tiếng ở Vĩnh Long, thu hút khách du lịch với vườn cây ăn trái?",
+    "options": ["Cù lao Chàm", "Cù lao An Bình", "Cù lao Dung", "Cù lao Phú Quốc"],
+    "answer": 1
+  },
+  {
+    "id": "008",
+    "type": "text",
+    "question": "Tên món bún đặc sản của Trà Vinh, có nước dùng từ mắm bò hóc?",
+    "options": ["Bún riêu", "Bún nước lèo", "Bún chả", "Bún mắm"],
+    "answer": 1
+  },
+  {
+    "id": "009",
+    "type": "text",
+    "question": "Tên làng nghề nổi tiếng với sản phẩm gốm đỏ ở Vĩnh Long?",
+    "options": ["Làng gốm Bát Tràng", "Làng gốm Vĩnh Long", "Làng gốm Thanh Hà", "Làng gốm Chu Đậu"],
+    "answer": 1
+  },
+  {
+    "id": "010",
+    "type": "text",
+    "question": "Tên lễ hội truyền thống của người Khmer Trà Vinh, diễn ra vào rằm tháng 10 âm lịch?",
+    "options": ["Lễ hội Oóc Om Bóc", "Lễ hội Đền Hùng", "Hội Gióng", "Lễ hội Chùa Hương"],
+    "answer": 0
+  },
+  {
+    "id": "011",
+    "type": "text",
+    "question": "Đờn ca tài tử – loại hình âm nhạc truyền thống Nam Bộ, được UNESCO công nhận, rất phổ biến ở đâu?",
+    "options": ["Vĩnh Long", "Bến Tre", "Trà Vinh", "Cả ba địa phương"],
+    "answer": 3
+  },
+  {
+    "id": "012",
+    "type": "text",
+    "question": "Tên loại bánh tráng nổi tiếng của vùng này, thường được nướng giòn?",
+    "options": ["Bánh tráng Mỹ Lồng", "Bánh tráng Trảng Bàng", "Bánh tráng phơi sương", "Bánh tráng Đại Lộc"],
+    "answer": 0
+  },
+  {
+    "id": "013",
+    "type": "text",
+    "question": "Tên loại bánh phồng đặc sản, thường xuất hiện trong dịp Tết ở Bến Tre?",
+    "options": ["Bánh phồng Sơn Đốc", "Bánh phồng tôm", "Bánh phồng nếp", "Bánh phồng Phú Đa"],
+    "answer": 0
+  },
+  {
+    "id": "014",
+    "type": "text",
+    "question": "Tên ngôi chùa Khmer nổi tiếng ở Trà Vinh, còn gọi là chùa Lò Gạch?",
+    "options": ["Chùa Hang", "Chùa Angkorajaborey", "Chùa Dơi", "Chùa Côn Sơn"],
+    "answer": 1
+  },
+  {
+    "id": "015",
+    "type": "text",
+    "question": "Trái cây nào được coi là đặc sản nổi bật của Vĩnh Long?",
+    "options": ["Cam sành", "Xoài cát", "Vú sữa", "Chôm chôm"],
+    "answer": 0
+  },
+  {
+    "id": "016",
+    "type": "text",
+    "question": "Tên bến phà nổi tiếng nối Vĩnh Long với Cần Thơ trước khi có cầu Cần Thơ?",
+    "options": ["Phà Mỹ Thuận", "Phà Cần Thơ", "Phà Đình Khao", "Phà Vàm Cống"],
+    "answer": 1
+  },
+  {
+    "id": "017",
+    "type": "text",
+    "question": "Tên chợ nổi trên sông lớn của miền Tây, gần Vĩnh Long?",
+    "options": ["Chợ nổi Cái Răng", "Chợ nổi Cái Bè", "Chợ nổi Ngã Bảy", "Chợ nổi Trà Ôn"],
+    "answer": 3
+  },
+  {
+    "id": "018",
+    "type": "text",
+    "question": "Tên nghệ nhân nổi tiếng trong lĩnh vực đờn ca tài tử, gắn liền với vùng sông nước này?",
+    "options": ["Bạch Huệ", "Ba Vũ", "Năm Cơ", "Trần Văn Khê"],
+    "answer": 3
+  },
+  {
+    "id": "019",
+    "type": "text",
+    "question": "Tên loại hình du lịch đặc trưng của Vĩnh Long với vườn trái cây, homestay, chèo xuồng?",
+    "options": ["Du lịch miệt vườn", "Du lịch biển đảo", "Du lịch hang động", "Du lịch sinh thái rừng"],
+    "answer": 0
+  },
+  {
+    "id": "020",
+    "type": "text",
+    "question": "Tỉnh Vĩnh Long sau sáp nhập tiếp giáp với con sông lớn nào của Đồng bằng sông Cửu Long?",
+    "options": ["Sông Hồng", "Sông Đà", "Sông Tiền", "Sông Hậu"],
+    "answer": 3
+  }
+]
