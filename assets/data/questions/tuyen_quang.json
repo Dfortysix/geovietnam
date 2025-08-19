@@ -1,1 +1,142 @@
-[]
+[
+  {
+    "id": "001",
+    "type": "text",
+    "question": "Trung tâm hành chính của tỉnh Tuyên Quang đặt tại thành phố nào?",
+    "options": ["Hà Giang", "Tuyên Quang", "Bắc Quang", "Chiêm Hóa"],
+    "answer": 1
+  },
+  {
+    "id": "002",
+    "type": "text",
+    "question": "Tên khu di tích lịch sử gắn liền với cách mạng tháng Tám ở Tuyên Quang?",
+    "options": ["Tân Trào", "Pác Bó", "Ba Đình", "Đình Bảng"],
+    "answer": 0
+  },
+  {
+    "id": "003",
+    "type": "text",
+    "question": "Tên cao nguyên đá nổi tiếng nằm ở vùng cực Bắc Việt Nam?",
+    "options": ["Mộc Châu", "Đồng Văn", "Nghĩa Lộ", "Na Hang"],
+    "answer": 1
+  },
+  {
+    "id": "004",
+    "type": "text",
+    "question": "Lễ hội Trung thu lớn nhất cả nước, tổ chức hàng năm tại Tuyên Quang, là gì?",
+    "options": ["Lễ hội đèn Trung thu", "Lễ hội Thành Tuyên", "Hội Lim", "Lễ hội Gầu Tào"],
+    "answer": 1
+  },
+  {
+    "id": "005",
+    "type": "text",
+    "question": "Tên cột mốc được coi là 'nóc nhà cực Bắc' của Việt Nam?",
+    "options": ["Cột cờ Lũng Cú", "Cột mốc A Pa Chải", "Cột cờ Hà Nội", "Cột mốc 0 Km"],
+    "answer": 0
+  },
+  {
+    "id": "006",
+    "type": "text",
+    "question": "Tên con sông lớn chảy qua thành phố Tuyên Quang?",
+    "options": ["Sông Đà", "Sông Hồng", "Sông Lô", "Sông Lam"],
+    "answer": 2
+  },
+  {
+    "id": "007",
+    "type": "text",
+    "question": "Tên loài hoa đặc trưng nở rộ trên cao nguyên đá mỗi mùa thu?",
+    "options": ["Hoa cải vàng", "Hoa đào", "Hoa tam giác mạch", "Hoa ban"],
+    "answer": 2
+  },
+  {
+    "id": "008",
+    "type": "text",
+    "question": "Tên khu du lịch sinh thái nổi tiếng với hồ nước và rừng nguyên sinh ở Tuyên Quang?",
+    "options": ["Na Hang", "Ba Bể", "Cúc Phương", "Mộc Châu"],
+    "answer": 0
+  },
+  {
+    "id": "009",
+    "type": "text",
+    "question": "Tên hẻm vực sâu nhất Đông Nam Á, nằm giữa sông Nho Quế?",
+    "options": ["Hẻm Tu Sản", "Hẻm Pắc Ngòi", "Hẻm Lũng Nặm", "Hẻm Mã Pí Lèng"],
+    "answer": 0
+  },
+  {
+    "id": "010",
+    "type": "text",
+    "question": "Tên suối khoáng nóng nổi tiếng của Tuyên Quang?",
+    "options": ["Mỹ Lâm", "Kim Bôi", "Thanh Thủy", "Bình Châu"],
+    "answer": 0
+  },
+  {
+    "id": "011",
+    "type": "text",
+    "question": "Tên loại chè đặc sản của vùng núi cao Na Hang?",
+    "options": ["Chè Tân Cương", "Chè Shan tuyết", "Chè Ô Long", "Chè Thái Nguyên"],
+    "answer": 1
+  },
+  {
+    "id": "012",
+    "type": "text",
+    "question": "Tên huyện nổi tiếng với những thửa ruộng bậc thang đẹp nhất vùng núi cao?",
+    "options": ["Mù Cang Chải", "Hoàng Su Phì", "Sa Pa", "Đồng Văn"],
+    "answer": 1
+  },
+  {
+    "id": "013",
+    "type": "text",
+    "question": "Tên thắng cảnh gắn liền với truyền thuyết nàng công chúa Ngọc Hoa ở Tuyên Quang?",
+    "options": ["Thác Bản Giốc", "Thác Mơ", "Thác Bản Ba", "Thác Nậm Me"],
+    "answer": 2
+  },
+  {
+    "id": "014",
+    "type": "text",
+    "question": "Tên món ăn truyền thống thường xuất hiện trong các phiên chợ vùng cao?",
+    "options": ["Thắng cố", "Bún riêu", "Bánh cuốn", "Phở"],
+    "answer": 0
+  },
+  {
+    "id": "015",
+    "type": "text",
+    "question": "Tên cánh đồng rộng lớn trồng hoa tam giác mạch thường tổ chức lễ hội?",
+    "options": ["Cao nguyên đá Đồng Văn", "Na Hang", "Chiêm Hóa", "Tân Trào"],
+    "answer": 0
+  },
+  {
+    "id": "016",
+    "type": "text",
+    "question": "Tên loài cá đặc sản sống trong hồ Na Hang?",
+    "options": ["Cá chiên", "Cá lăng", "Cá tầm", "Cá bống"],
+    "answer": 0
+  },
+  {
+    "id": "017",
+    "type": "text",
+    "question": "Tên cây cầu nổi bật bắc qua sông Lô tại thành phố Tuyên Quang?",
+    "options": ["Cầu Nông Tiến", "Cầu Đakrông", "Cầu Chương Dương", "Cầu Bến Thủy"],
+    "answer": 0
+  },
+  {
+    "id": "018",
+    "type": "text",
+    "question": "Tên huyện vùng cao được mệnh danh là 'mái nhà của cực Bắc'?",
+    "options": ["Đồng Văn", "Mèo Vạc", "Hoàng Su Phì", "Bắc Mê"],
+    "answer": 1
+  },
+  {
+    "id": "019",
+    "type": "text",
+    "question": "Tên món bánh truyền thống làm từ gạo nếp và trứng kiến của người Tày?",
+    "options": ["Bánh khảo", "Bánh trứng kiến", "Bánh dày", "Bánh gio"],
+    "answer": 1
+  },
+  {
+    "id": "020",
+    "type": "text",
+    "question": "Tỉnh Tuyên Quang sau sáp nhập có chung đường biên giới quốc tế với quốc gia nào?",
+    "options": ["Trung Quốc", "Lào", "Campuchia", "Thái Lan"],
+    "answer": 0
+  }
+]
