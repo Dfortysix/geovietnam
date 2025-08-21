@@ -145,6 +145,7 @@ flutter_launcher_icons:
     generate: true
     image_path: "assets/images/icon.png"
 
+
   # An image asset can refer to one or more resolution-specific "variants", see
   # https://flutter.dev/to/resolution-aware-images
 
