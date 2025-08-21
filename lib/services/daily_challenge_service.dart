@@ -19,6 +19,7 @@ class DailyChallengeService {
   static const String _dailyChallengeIsCorrectKey = 'daily_challenge_is_correct';
   static const String _dailyChallengeTimeRemainingKey = 'daily_challenge_time_remaining';
   static const int _maxAttemptsPerDay = 3;
+  static const String _dailyChallengeCorrectCountKey = 'daily_challenge_correct_count';
 
   // Lấy key với user ID để phân biệt theo từng tài khoản
   static String _getUserKey(String baseKey) {
@@ -332,12 +333,14 @@ class DailyChallengeService {
     required int currentQuestion,
     required int score,
     required List<Map<String, dynamic>> questions,
+    required int correctCount,
   }) async {
     try {
       final prefs = await SharedPreferences.getInstance();
       await prefs.setInt(_getUserKey(_dailyChallengeCurrentQuestionKey), currentQuestion);
       await prefs.setInt(_getUserKey(_dailyChallengeScoreKey), score);
       await prefs.setString(_getUserKey(_dailyChallengeQuestionsKey), json.encode(questions));
+      await prefs.setInt(_getUserKey(_dailyChallengeCorrectCountKey), correctCount);
       print('✅ Đã lưu trạng thái: câu $currentQuestion, điểm $score');
     } catch (e) {
       print('❌ Lỗi khi lưu trạng thái: $e');
@@ -351,6 +354,7 @@ class DailyChallengeService {
       final currentQuestion = prefs.getInt(_getUserKey(_dailyChallengeCurrentQuestionKey)) ?? 0;
       final score = prefs.getInt(_getUserKey(_dailyChallengeScoreKey)) ?? 0;
       final questionsString = prefs.getString(_getUserKey(_dailyChallengeQuestionsKey));
+      final correctCount = prefs.getInt(_getUserKey(_dailyChallengeCorrectCountKey)) ?? 0;
 
       List<Map<String, dynamic>> questions = [];
       if (questionsString != null) {
@@ -367,6 +371,7 @@ class DailyChallengeService {
         'currentQuestion': currentQuestion,
         'score': score,
         'questions': questions,
+        'correctCount': correctCount,
       };
     } catch (e) {
       print('❌ Lỗi khi khôi phục trạng thái: $e');
@@ -374,6 +379,7 @@ class DailyChallengeService {
         'currentQuestion': 0,
         'score': 0,
         'questions': [],
+        'correctCount': 0,
       };
     }
   }
@@ -384,6 +390,7 @@ class DailyChallengeService {
     await prefs.remove(_getUserKey(_dailyChallengeCurrentQuestionKey));
     await prefs.remove(_getUserKey(_dailyChallengeScoreKey));
     await prefs.remove(_getUserKey(_dailyChallengeQuestionsKey));
+    await prefs.remove(_getUserKey(_dailyChallengeCorrectCountKey));
   }
 
   // Kiểm tra xem có trạng thái chơi đã lưu không

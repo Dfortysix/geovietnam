@@ -20,6 +20,7 @@ class _DailyChallengeScreenState extends State<DailyChallengeScreen> {
   List<Map<String, dynamic>> _questions = [];
   int _currentQuestion = 0;
   int _score = 0;
+  int _correctCount = 0;
   bool _isGameCompleted = false;
   bool _isLoading = true;
   String? _selectedAnswer;
@@ -68,6 +69,7 @@ class _DailyChallengeScreenState extends State<DailyChallengeScreen> {
            _questions = List<Map<String, dynamic>>.from(savedState['questions']);
            _currentQuestion = savedState['currentQuestion'];
            _score = savedState['score'];
+           _correctCount = savedState['correctCount'] ?? 0;
            _isLoading = false;
          });
          print('✅ Đã khôi phục: câu $_currentQuestion, điểm $_score');
@@ -96,6 +98,7 @@ class _DailyChallengeScreenState extends State<DailyChallengeScreen> {
            _questions = selectedQuestions;
            _currentQuestion = 0;
            _score = 0;
+           _correctCount = 0;
            _selectedAnswer = null;
            _showResult = false;
            _isCorrect = false;
@@ -110,6 +113,7 @@ class _DailyChallengeScreenState extends State<DailyChallengeScreen> {
            currentQuestion: _currentQuestion,
            score: _score,
            questions: _questions,
+           correctCount: _correctCount,
          );
          print('💾 Đã lưu trạng thái ban đầu');
       }
@@ -546,8 +550,10 @@ class _DailyChallengeScreenState extends State<DailyChallengeScreen> {
     });
 
     if (isCorrect) {
-      _score += 10;
-      print('✅ Trả lời đúng! +10 điểm');
+      final int gained = 10 * _timeRemaining;
+      _score += gained;
+      _correctCount += 1;
+      print('✅ Trả lời đúng! +$gained điểm (thời gian còn lại: $_timeRemaining s)');
     } else {
       print('❌ Trả lời sai!');
     }
@@ -557,6 +563,7 @@ class _DailyChallengeScreenState extends State<DailyChallengeScreen> {
       currentQuestion: _currentQuestion,
       score: _score,
       questions: _questions,
+      correctCount: _correctCount,
     );
 
     // Chuyển sang câu hỏi tiếp theo sau 2 giây
@@ -575,6 +582,7 @@ class _DailyChallengeScreenState extends State<DailyChallengeScreen> {
           currentQuestion: _currentQuestion,
           score: _score,
           questions: _questions,
+          correctCount: _correctCount,
         );
         
         // Bắt đầu timer cho câu hỏi mới
@@ -597,16 +605,17 @@ class _DailyChallengeScreenState extends State<DailyChallengeScreen> {
     // Tăng số lần thử
     await DailyChallengeService.incrementAttempts();
     
-    // Lưu tiến độ game
-    await GameProgressService.updateScore(_score);
-    await GameProgressService.updateDailyStreak();
-
-    // Kiểm tra xem có mở khóa được tỉnh mới không (70 điểm = 7 câu đúng)
-    if (_score >= 70) {
+    // Kiểm tra xem có mở khóa được tỉnh mới không (ví dụ: đủ điểm)
+    if (_correctCount >= 6) {
       // Unlock chính tỉnh đang chơi trong daily challenge
       if (_selectedProvince != null) {
         await GameProgressService.unlockProvince(_selectedProvince!.id);
         await DailyChallengeService.markProvinceUnlockedToday(); // Đánh dấu đã unlock hôm nay
+        
+        // Chỉ khi đã mở khóa hôm nay mới cập nhật tổng điểm và streak
+        await GameProgressService.updateScore(_score);
+        await GameProgressService.updateDailyStreak();
+        
         setState(() {
           _unlockedProvinceName = _selectedProvince!.nameVietnamese;
           _showUnlockAnimation = true;
