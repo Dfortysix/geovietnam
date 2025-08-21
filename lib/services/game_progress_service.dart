@@ -248,9 +248,11 @@ class GameProgressService extends ChangeNotifier {
     final userDailyStreakKey = '${userPrefix}_$_dailyStreakKey';
     final userLastPlayDateKey = '${userPrefix}_$_lastPlayDateKey';
     
-    DateTime lastPlayDate = DateTime.parse(
-      prefs.getString(userLastPlayDateKey) ?? DateTime.now().toIso8601String()
-    );
+    // Lấy lastPlayDate; nếu chưa có, coi như chưa từng chơi
+    final lastPlayDateString = prefs.getString(userLastPlayDateKey);
+    DateTime? lastPlayDate = lastPlayDateString != null
+        ? DateTime.tryParse(lastPlayDateString)
+        : null;
     int currentStreak = prefs.getInt(userDailyStreakKey) ?? 0;
     
     DateTime today = DateTime.now();
@@ -258,17 +260,27 @@ class GameProgressService extends ChangeNotifier {
     
     int newStreak = currentStreak;
     
-    // Kiểm tra xem có chơi hôm qua không
-    if (lastPlayDate.year == yesterday.year &&
-        lastPlayDate.month == yesterday.month &&
-        lastPlayDate.day == yesterday.day) {
-      // Tăng streak
-      newStreak = currentStreak + 1;
-    } else if (lastPlayDate.year != today.year ||
-               lastPlayDate.month != today.month ||
-               lastPlayDate.day != today.day) {
-      // Reset streak nếu không chơi liên tục
+    if (lastPlayDate == null) {
+      // Lần đầu tiên ghi nhận streak
       newStreak = 1;
+    } else {
+      // Chuẩn hoá so sánh theo ngày (năm/tháng/ngày)
+      final sameAsToday = lastPlayDate.year == today.year &&
+          lastPlayDate.month == today.month &&
+          lastPlayDate.day == today.day;
+      final sameAsYesterday = lastPlayDate.year == yesterday.year &&
+          lastPlayDate.month == yesterday.month &&
+          lastPlayDate.day == yesterday.day;
+      
+      if (sameAsYesterday) {
+        newStreak = currentStreak + 1;
+      } else if (!sameAsToday) {
+        // Không liên tiếp -> bắt đầu lại streak
+        newStreak = 1;
+      } else {
+        // Cùng ngày -> giữ nguyên (không tăng thêm trong ngày)
+        newStreak = currentStreak > 0 ? currentStreak : 1; // đảm bảo >=1 khi lần đầu trong ngày
+      }
     }
     
     // Cập nhật local
@@ -289,7 +301,7 @@ class GameProgressService extends ChangeNotifier {
   }
 
   // Mở khóa tỉnh mới
-  static Future<void> unlockProvince(String provinceId) async {
+  static Future<bool> unlockProvince(String provinceId) async {
     final userId = _currentUserId;
     final prefs = await SharedPreferences.getInstance();
     
@@ -314,7 +326,9 @@ class GameProgressService extends ChangeNotifier {
       
       // Notify listeners về thay đổi
       GameProgressService().notifyProgressChanged();
+      return true;
     }
+    return false;
   }
 
   // Cập nhật điểm số cho tỉnh

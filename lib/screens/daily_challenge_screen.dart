@@ -609,12 +609,13 @@ class _DailyChallengeScreenState extends State<DailyChallengeScreen> {
     if (_correctCount >= 6) {
       // Unlock chính tỉnh đang chơi trong daily challenge
       if (_selectedProvince != null) {
-        await GameProgressService.unlockProvince(_selectedProvince!.id);
-        await DailyChallengeService.markProvinceUnlockedToday(); // Đánh dấu đã unlock hôm nay
-        
-        // Chỉ khi đã mở khóa hôm nay mới cập nhật tổng điểm và streak
-        await GameProgressService.updateScore(_score);
-        await GameProgressService.updateDailyStreak();
+        final didUnlock = await GameProgressService.unlockProvince(_selectedProvince!.id);
+        if (didUnlock) {
+          await DailyChallengeService.markProvinceUnlockedToday(); // Đánh dấu đã unlock hôm nay
+          // Chỉ khi đã mở khóa hôm nay mới cập nhật tổng điểm và streak
+          await GameProgressService.updateScore(_score);
+          await GameProgressService.updateDailyStreak();
+        }
         
         setState(() {
           _unlockedProvinceName = _selectedProvince!.nameVietnamese;
