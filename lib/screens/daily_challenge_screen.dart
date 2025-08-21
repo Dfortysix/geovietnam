@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_animate/flutter_animate.dart';
+import 'dart:async';
 import '../theme/app_theme.dart';
 import '../services/daily_challenge_service.dart';
 import '../services/game_progress_service.dart';
@@ -26,11 +27,21 @@ class _DailyChallengeScreenState extends State<DailyChallengeScreen> {
   bool _isCorrect = false;
   bool _showUnlockAnimation = false;
   String? _unlockedProvinceName;
+  
+  // Timer cho câu hỏi
+  Timer? _questionTimer;
+  int _timeRemaining = 15; // 15 giây cho mỗi câu hỏi
 
   @override
   void initState() {
     super.initState();
     _loadDailyChallenge();
+  }
+
+  @override
+  void dispose() {
+    _questionTimer?.cancel();
+    super.dispose();
   }
 
   Future<void> _loadDailyChallenge() async {
@@ -51,18 +62,25 @@ class _DailyChallengeScreenState extends State<DailyChallengeScreen> {
         print('🔄 Khôi phục trạng thái chơi đã lưu...');
         // Khôi phục trạng thái chơi đã lưu
         final savedState = await DailyChallengeService.getSavedGameState();
-        setState(() {
-          _dailyChallenge = challenge;
-          _selectedProvince = province;
-          _questions = List<Map<String, dynamic>>.from(savedState['questions']);
-          _currentQuestion = savedState['currentQuestion'];
-          _score = savedState['score'];
-          _selectedAnswer = savedState['selectedAnswer'];
-          _showResult = savedState['showResult'];
-          _isCorrect = savedState['isCorrect'];
-          _isLoading = false;
-        });
-        print('✅ Đã khôi phục: câu $_currentQuestion, điểm $_score');
+                 setState(() {
+           _dailyChallenge = challenge;
+           _selectedProvince = province;
+           _questions = List<Map<String, dynamic>>.from(savedState['questions']);
+           _currentQuestion = savedState['currentQuestion'];
+           _score = savedState['score'];
+           _isLoading = false;
+         });
+         print('✅ Đã khôi phục: câu $_currentQuestion, điểm $_score');
+         
+         // Khi khôi phục trạng thái, luôn reset về trạng thái chưa trả lời
+         setState(() {
+           _selectedAnswer = null;
+           _showResult = false;
+           _isCorrect = false;
+         });
+         
+         // Bắt đầu timer với 15 giây mới
+         _startQuestionTimer();
       } else {
         print('🆕 Tạo game mới...');
         // Load câu hỏi mới cho tỉnh được chọn
@@ -72,25 +90,28 @@ class _DailyChallengeScreenState extends State<DailyChallengeScreen> {
         questions.shuffle();
         final selectedQuestions = questions.take(7).toList();
         
-        setState(() {
-          _dailyChallenge = challenge;
-          _selectedProvince = province;
-          _questions = selectedQuestions;
-          _currentQuestion = 0;
-          _score = 0;
-          _selectedAnswer = null;
-          _showResult = false;
-          _isCorrect = false;
-          _isLoading = false;
-        });
-        
-        // Lưu trạng thái ban đầu
-        await DailyChallengeService.saveGameState(
-          currentQuestion: _currentQuestion,
-          score: _score,
-          questions: _questions,
-        );
-        print('💾 Đã lưu trạng thái ban đầu');
+                 setState(() {
+           _dailyChallenge = challenge;
+           _selectedProvince = province;
+           _questions = selectedQuestions;
+           _currentQuestion = 0;
+           _score = 0;
+           _selectedAnswer = null;
+           _showResult = false;
+           _isCorrect = false;
+           _isLoading = false;
+         });
+         
+         // Bắt đầu timer cho câu hỏi đầu tiên
+         _startQuestionTimer();
+         
+         // Lưu trạng thái ban đầu
+         await DailyChallengeService.saveGameState(
+           currentQuestion: _currentQuestion,
+           score: _score,
+           questions: _questions,
+         );
+         print('💾 Đã lưu trạng thái ban đầu');
       }
     } catch (e) {
       print('❌ Lỗi khi load daily challenge: $e');
@@ -118,6 +139,49 @@ class _DailyChallengeScreenState extends State<DailyChallengeScreen> {
         ],
       ),
     );
+  }
+
+  // Bắt đầu timer cho câu hỏi hiện tại
+  void _startQuestionTimer() {
+    // Luôn reset thời gian về 15 giây
+    _timeRemaining = 15;
+    print('🔄 Bắt đầu timer với 15 giây cho câu $_currentQuestion');
+    _startTimer();
+  }
+
+
+
+  // Phương thức chung để bắt đầu timer
+  void _startTimer() {
+    _questionTimer?.cancel();
+    print('⏱️ Bắt đầu timer với $_timeRemaining giây');
+    _questionTimer = Timer.periodic(const Duration(seconds: 1), (timer) {
+      if (mounted) {
+        setState(() {
+          _timeRemaining--;
+        });
+        
+        if (_timeRemaining <= 0) {
+          timer.cancel();
+          print('⏰ Timer kết thúc!');
+          _onTimeUp();
+        }
+      }
+    });
+  }
+
+  // Dừng timer
+  void _stopQuestionTimer() {
+    _questionTimer?.cancel();
+  }
+
+  // Xử lý khi hết thời gian
+  void _onTimeUp() {
+    if (!_showResult) {
+      print('⏰ Hết thời gian! Tự động chọn câu trả lời sai');
+      // Tự động chọn câu trả lời sai (index 0) nếu chưa chọn
+      _checkAnswer(_questions[_currentQuestion]['options'][0], false);
+    }
   }
 
   @override
@@ -248,36 +312,80 @@ class _DailyChallengeScreenState extends State<DailyChallengeScreen> {
                     
                     const SizedBox(height: 12),
                     
-                    // Thông tin số lần thử
-                    Row(
-                      mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                      children: [
-                        Text(
-                          'Câu hỏi ${_currentQuestion + 1}/${_questions.length}',
-                          style: const TextStyle(
-                            color: AppTheme.primaryOrange,
-                            fontWeight: FontWeight.bold,
-                            fontSize: 14,
-                          ),
-                        ),
-                        Container(
-                          padding: const EdgeInsets.symmetric(horizontal: 10, vertical: 4),
-                          decoration: BoxDecoration(
-                            color: AppTheme.primaryOrange.withValues(alpha: 0.1),
-                            borderRadius: BorderRadius.circular(16),
-                            border: Border.all(color: AppTheme.primaryOrange.withValues(alpha: 0.3)),
-                          ),
-                          child: Text(
-                            'Lần thử: ${_dailyChallenge?['attempts'] ?? 0}/${_dailyChallenge?['maxAttempts'] ?? 3}',
-                            style: const TextStyle(
-                              color: AppTheme.primaryOrange,
-                              fontWeight: FontWeight.bold,
-                              fontSize: 12,
-                            ),
-                          ),
-                        ),
-                      ],
-                    ),
+                                         // Thông tin số lần thử và timer
+                     Row(
+                       mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                       children: [
+                         Text(
+                           'Câu hỏi ${_currentQuestion + 1}/${_questions.length}',
+                           style: const TextStyle(
+                             color: AppTheme.primaryOrange,
+                             fontWeight: FontWeight.bold,
+                             fontSize: 14,
+                           ),
+                         ),
+                         Row(
+                           children: [
+                             // Timer
+                             Container(
+                               padding: const EdgeInsets.symmetric(horizontal: 10, vertical: 4),
+                               decoration: BoxDecoration(
+                                 color: _timeRemaining <= 5 
+                                   ? Colors.red.withValues(alpha: 0.1)
+                                   : AppTheme.primaryOrange.withValues(alpha: 0.1),
+                                 borderRadius: BorderRadius.circular(16),
+                                 border: Border.all(
+                                   color: _timeRemaining <= 5 
+                                     ? Colors.red.withValues(alpha: 0.3)
+                                     : AppTheme.primaryOrange.withValues(alpha: 0.3)
+                                 ),
+                               ),
+                               child: Row(
+                                 mainAxisSize: MainAxisSize.min,
+                                 children: [
+                                   Icon(
+                                     Icons.timer,
+                                     size: 14,
+                                     color: _timeRemaining <= 5 
+                                       ? Colors.red 
+                                       : AppTheme.primaryOrange,
+                                   ),
+                                   const SizedBox(width: 4),
+                                   Text(
+                                     '$_timeRemaining',
+                                     style: TextStyle(
+                                       color: _timeRemaining <= 5 
+                                         ? Colors.red 
+                                         : AppTheme.primaryOrange,
+                                       fontWeight: FontWeight.bold,
+                                       fontSize: 12,
+                                     ),
+                                   ),
+                                 ],
+                               ),
+                             ),
+                             const SizedBox(width: 8),
+                             // Số lần thử
+                             Container(
+                               padding: const EdgeInsets.symmetric(horizontal: 10, vertical: 4),
+                               decoration: BoxDecoration(
+                                 color: AppTheme.primaryOrange.withValues(alpha: 0.1),
+                                 borderRadius: BorderRadius.circular(16),
+                                 border: Border.all(color: AppTheme.primaryOrange.withValues(alpha: 0.3)),
+                               ),
+                               child: Text(
+                                 'Lần thử: ${_dailyChallenge?['attempts'] ?? 0}/${_dailyChallenge?['maxAttempts'] ?? 3}',
+                                 style: const TextStyle(
+                                   color: AppTheme.primaryOrange,
+                                   fontWeight: FontWeight.bold,
+                                   fontSize: 12,
+                                 ),
+                               ),
+                             ),
+                           ],
+                         ),
+                       ],
+                     ),
                   ],
                 ),
               ),
@@ -428,6 +536,9 @@ class _DailyChallengeScreenState extends State<DailyChallengeScreen> {
   }
 
   void _checkAnswer(String selectedAnswer, bool isCorrect) async {
+    // Dừng timer hiện tại
+    _stopQuestionTimer();
+    
     setState(() {
       _selectedAnswer = selectedAnswer;
       _showResult = true;
@@ -436,16 +547,16 @@ class _DailyChallengeScreenState extends State<DailyChallengeScreen> {
 
     if (isCorrect) {
       _score += 10;
+      print('✅ Trả lời đúng! +10 điểm');
+    } else {
+      print('❌ Trả lời sai!');
     }
 
-    // Lưu trạng thái hiện tại
+    // Lưu trạng thái hiện tại (không lưu trạng thái tạm thời)
     await DailyChallengeService.saveGameState(
       currentQuestion: _currentQuestion,
       score: _score,
       questions: _questions,
-      selectedAnswer: selectedAnswer,
-      showResult: true,
-      isCorrect: isCorrect,
     );
 
     // Chuyển sang câu hỏi tiếp theo sau 2 giây
@@ -455,6 +566,8 @@ class _DailyChallengeScreenState extends State<DailyChallengeScreen> {
           _currentQuestion++;
           _selectedAnswer = null;
           _showResult = false;
+          // Reset thời gian về 15 giây cho câu hỏi mới
+          _timeRemaining = 15;
         });
         
         // Lưu trạng thái sau khi chuyển câu hỏi
@@ -463,11 +576,17 @@ class _DailyChallengeScreenState extends State<DailyChallengeScreen> {
           score: _score,
           questions: _questions,
         );
+        
+        // Bắt đầu timer cho câu hỏi mới
+        _startQuestionTimer();
       }
     });
   }
 
   void _completeGame() async {
+    // Dừng timer
+    _stopQuestionTimer();
+    
     setState(() {
       _isGameCompleted = true;
     });

@@ -17,6 +17,7 @@ class DailyChallengeService {
   static const String _dailyChallengeSelectedAnswerKey = 'daily_challenge_selected_answer';
   static const String _dailyChallengeShowResultKey = 'daily_challenge_show_result';
   static const String _dailyChallengeIsCorrectKey = 'daily_challenge_is_correct';
+  static const String _dailyChallengeTimeRemainingKey = 'daily_challenge_time_remaining';
   static const int _maxAttemptsPerDay = 3;
 
   // Lấy key với user ID để phân biệt theo từng tài khoản
@@ -331,24 +332,12 @@ class DailyChallengeService {
     required int currentQuestion,
     required int score,
     required List<Map<String, dynamic>> questions,
-    String? selectedAnswer,
-    bool? showResult,
-    bool? isCorrect,
   }) async {
     try {
       final prefs = await SharedPreferences.getInstance();
       await prefs.setInt(_getUserKey(_dailyChallengeCurrentQuestionKey), currentQuestion);
       await prefs.setInt(_getUserKey(_dailyChallengeScoreKey), score);
       await prefs.setString(_getUserKey(_dailyChallengeQuestionsKey), json.encode(questions));
-      if (selectedAnswer != null) {
-        await prefs.setString(_getUserKey(_dailyChallengeSelectedAnswerKey), selectedAnswer);
-      }
-      if (showResult != null) {
-        await prefs.setBool(_getUserKey(_dailyChallengeShowResultKey), showResult);
-      }
-      if (isCorrect != null) {
-        await prefs.setBool(_getUserKey(_dailyChallengeIsCorrectKey), isCorrect);
-      }
       print('✅ Đã lưu trạng thái: câu $currentQuestion, điểm $score');
     } catch (e) {
       print('❌ Lỗi khi lưu trạng thái: $e');
@@ -362,9 +351,6 @@ class DailyChallengeService {
       final currentQuestion = prefs.getInt(_getUserKey(_dailyChallengeCurrentQuestionKey)) ?? 0;
       final score = prefs.getInt(_getUserKey(_dailyChallengeScoreKey)) ?? 0;
       final questionsString = prefs.getString(_getUserKey(_dailyChallengeQuestionsKey));
-      final selectedAnswer = prefs.getString(_getUserKey(_dailyChallengeSelectedAnswerKey));
-      final showResult = prefs.getBool(_getUserKey(_dailyChallengeShowResultKey)) ?? false;
-      final isCorrect = prefs.getBool(_getUserKey(_dailyChallengeIsCorrectKey)) ?? false;
 
       List<Map<String, dynamic>> questions = [];
       if (questionsString != null) {
@@ -381,9 +367,6 @@ class DailyChallengeService {
         'currentQuestion': currentQuestion,
         'score': score,
         'questions': questions,
-        'selectedAnswer': selectedAnswer,
-        'showResult': showResult,
-        'isCorrect': isCorrect,
       };
     } catch (e) {
       print('❌ Lỗi khi khôi phục trạng thái: $e');
@@ -391,9 +374,6 @@ class DailyChallengeService {
         'currentQuestion': 0,
         'score': 0,
         'questions': [],
-        'selectedAnswer': null,
-        'showResult': false,
-        'isCorrect': false,
       };
     }
   }
@@ -404,9 +384,6 @@ class DailyChallengeService {
     await prefs.remove(_getUserKey(_dailyChallengeCurrentQuestionKey));
     await prefs.remove(_getUserKey(_dailyChallengeScoreKey));
     await prefs.remove(_getUserKey(_dailyChallengeQuestionsKey));
-    await prefs.remove(_getUserKey(_dailyChallengeSelectedAnswerKey));
-    await prefs.remove(_getUserKey(_dailyChallengeShowResultKey));
-    await prefs.remove(_getUserKey(_dailyChallengeIsCorrectKey));
   }
 
   // Kiểm tra xem có trạng thái chơi đã lưu không
