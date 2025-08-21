@@ -11,10 +11,8 @@ class LeaderboardScreen extends StatefulWidget {
 
 class _LeaderboardScreenState extends State<LeaderboardScreen> {
   final UserService _userService = UserService();
-  bool _loadingScore = true;
-  bool _loadingUnlocked = true;
-  List<Map<String, dynamic>> _topByScore = [];
-  List<Map<String, dynamic>> _topByUnlocked = [];
+  bool _loading = true;
+  List<Map<String, dynamic>> _rows = [];
 
   @override
   void initState() {
@@ -23,40 +21,21 @@ class _LeaderboardScreenState extends State<LeaderboardScreen> {
   }
 
   Future<void> _load() async {
-    final score = await _userService.getTopUsersByScore(limit: 100);
-    final unlocked = await _userService.getTopUsersByUnlocked(limit: 100);
+    final rows = await _userService.getTopUsersByScoreThenUnlocked(limit: 100);
     if (!mounted) return;
     setState(() {
-      _topByScore = score;
-      _topByUnlocked = unlocked;
-      _loadingScore = false;
-      _loadingUnlocked = false;
+      _rows = rows;
+      _loading = false;
     });
   }
 
   @override
   Widget build(BuildContext context) {
-    return DefaultTabController(
-      length: 2,
-      child: Scaffold(
-        appBar: AppBar(
-          title: const Text('🏆 Bảng xếp hạng'),
-          bottom: const TabBar(
-            tabs: [
-              Tab(text: 'Điểm số'),
-              Tab(text: 'Tỉnh đã mở'),
-            ],
-          ),
-        ),
-        body: Container(
-          decoration: const BoxDecoration(gradient: AppTheme.backgroundGradient),
-          child: TabBarView(
-            children: [
-              _buildList(_loadingScore, _topByScore, valueKey: 'totalScore', suffix: 'đ'),
-              _buildList(_loadingUnlocked, _topByUnlocked, valueKey: 'unlockedProvincesCount', suffix: ' tỉnh'),
-            ],
-          ),
-        ),
+    return Scaffold(
+      appBar: AppBar(title: const Text('🏆 Bảng xếp hạng')),
+      body: Container(
+        decoration: const BoxDecoration(gradient: AppTheme.backgroundGradient),
+        child: _buildList(_loading, _rows, valueKey: 'totalScore', secondaryKey: 'unlockedProvincesCount'),
       ),
     );
   }
@@ -65,7 +44,7 @@ class _LeaderboardScreenState extends State<LeaderboardScreen> {
     bool loading,
     List<Map<String, dynamic>> data, {
     required String valueKey,
-    required String suffix,
+    required String secondaryKey,
   }) {
     if (loading) {
       return const Center(child: CircularProgressIndicator(color: AppTheme.primaryOrange));
@@ -81,6 +60,7 @@ class _LeaderboardScreenState extends State<LeaderboardScreen> {
         final rank = index + 1;
         final title = item['displayName'] ?? 'Người chơi';
         final value = item[valueKey] ?? 0;
+        final unlocked = item[secondaryKey] ?? 0;
         final photoUrl = item['photoUrl'] as String?;
         return ListTile(
           leading: CircleAvatar(
@@ -89,8 +69,8 @@ class _LeaderboardScreenState extends State<LeaderboardScreen> {
             child: photoUrl == null || photoUrl.isEmpty ? Text('$rank') : null,
           ),
           title: Text(title, style: const TextStyle(fontWeight: FontWeight.w600)),
-          trailing: Text('$value$suffix', style: const TextStyle(color: AppTheme.primaryOrange, fontWeight: FontWeight.bold)),
-          subtitle: Text('Hạng #$rank'),
+          subtitle: Text('Hạng #$rank • Tỉnh đã mở: $unlocked'),
+          trailing: Text('$value', style: const TextStyle(color: AppTheme.primaryOrange, fontWeight: FontWeight.bold)),
         );
       },
     );

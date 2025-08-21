@@ -435,6 +435,31 @@ class UserService {
     }
   }
 
+  /// Lấy leaderboard duy nhất: ưu tiên điểm, sau đó số tỉnh đã mở
+  Future<List<Map<String, dynamic>>> getTopUsersByScoreThenUnlocked({int limit = 100}) async {
+    try {
+      final query = await _leaderboardUsers()
+          .orderBy('totalScore', descending: true)
+          .orderBy('unlockedProvincesCount', descending: true)
+          .limit(limit)
+          .get();
+
+      return query.docs.map((doc) {
+        final data = doc.data();
+        return {
+          'userId': doc.id,
+          'displayName': data['displayName'] ?? 'Người chơi',
+          'photoUrl': data['photoUrl'],
+          'totalScore': data['totalScore'] ?? 0,
+          'unlockedProvincesCount': data['unlockedProvincesCount'] ?? 0,
+          'dailyStreak': data['dailyStreak'] ?? 0,
+        };
+      }).toList();
+    } catch (e) {
+      return [];
+    }
+  }
+
   /// Backfill leaderboard từ collection users -> leaderboards/global/users
   /// Trả về số bản ghi đã upsert
   Future<int> backfillLeaderboard() async {
