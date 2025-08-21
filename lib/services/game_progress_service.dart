@@ -6,6 +6,7 @@ import '../models/province.dart';
 import '../data/provinces_data.dart';
 import 'user_service.dart';
 import 'google_play_games_service.dart';
+import 'daily_challenge_service.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 
@@ -781,7 +782,11 @@ class GameProgressService extends ChangeNotifier {
     if (userId != null) {
       // Xóa dữ liệu local để reset về ban đầu
       await clearLocalData();
-      print('User $userId logged out - cleared local data, reset to initial state');
+      
+      // Xóa dữ liệu daily challenge của user
+      await DailyChallengeService.clearAllUserData();
+      
+      print('User $userId logged out - cleared local data and daily challenge data, reset to initial state');
     }
   }
 

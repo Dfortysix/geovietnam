@@ -35,23 +35,65 @@ class _DailyChallengeScreenState extends State<DailyChallengeScreen> {
 
   Future<void> _loadDailyChallenge() async {
     try {
+      print('🚀 Bắt đầu load daily challenge...');
+      
+      // Debug SharedPreferences trước
+      await DailyChallengeService.debugSharedPreferences();
+      
       final challenge = await DailyChallengeService.getCurrentDailyChallenge();
       final province = challenge['selectedProvince'] as Province;
+      print('📍 Tỉnh được chọn: ${province.nameVietnamese}');
       
-      // Load câu hỏi cho tỉnh được chọn
-      final questions = await DailyChallengeService.loadQuestionsForProvince(province.id);
+      // Kiểm tra xem có trạng thái chơi đã lưu không
+      final hasSavedState = await DailyChallengeService.hasSavedGameState();
       
-      // Shuffle câu hỏi để tạo sự đa dạng và chỉ lấy 7 câu đầu tiên
-      questions.shuffle();
-      final selectedQuestions = questions.take(7).toList();
-      
-              setState(() {
+      if (hasSavedState) {
+        print('🔄 Khôi phục trạng thái chơi đã lưu...');
+        // Khôi phục trạng thái chơi đã lưu
+        final savedState = await DailyChallengeService.getSavedGameState();
+        setState(() {
+          _dailyChallenge = challenge;
+          _selectedProvince = province;
+          _questions = List<Map<String, dynamic>>.from(savedState['questions']);
+          _currentQuestion = savedState['currentQuestion'];
+          _score = savedState['score'];
+          _selectedAnswer = savedState['selectedAnswer'];
+          _showResult = savedState['showResult'];
+          _isCorrect = savedState['isCorrect'];
+          _isLoading = false;
+        });
+        print('✅ Đã khôi phục: câu $_currentQuestion, điểm $_score');
+      } else {
+        print('🆕 Tạo game mới...');
+        // Load câu hỏi mới cho tỉnh được chọn
+        final questions = await DailyChallengeService.loadQuestionsForProvince(province.id);
+        
+        // Shuffle câu hỏi để tạo sự đa dạng và chỉ lấy 7 câu đầu tiên
+        questions.shuffle();
+        final selectedQuestions = questions.take(7).toList();
+        
+        setState(() {
           _dailyChallenge = challenge;
           _selectedProvince = province;
           _questions = selectedQuestions;
+          _currentQuestion = 0;
+          _score = 0;
+          _selectedAnswer = null;
+          _showResult = false;
+          _isCorrect = false;
           _isLoading = false;
         });
+        
+        // Lưu trạng thái ban đầu
+        await DailyChallengeService.saveGameState(
+          currentQuestion: _currentQuestion,
+          score: _score,
+          questions: _questions,
+        );
+        print('💾 Đã lưu trạng thái ban đầu');
+      }
     } catch (e) {
+      print('❌ Lỗi khi load daily challenge: $e');
       setState(() {
         _isLoading = false;
       });
@@ -385,7 +427,7 @@ class _DailyChallengeScreenState extends State<DailyChallengeScreen> {
     );
   }
 
-  void _checkAnswer(String selectedAnswer, bool isCorrect) {
+  void _checkAnswer(String selectedAnswer, bool isCorrect) async {
     setState(() {
       _selectedAnswer = selectedAnswer;
       _showResult = true;
@@ -396,14 +438,31 @@ class _DailyChallengeScreenState extends State<DailyChallengeScreen> {
       _score += 10;
     }
 
+    // Lưu trạng thái hiện tại
+    await DailyChallengeService.saveGameState(
+      currentQuestion: _currentQuestion,
+      score: _score,
+      questions: _questions,
+      selectedAnswer: selectedAnswer,
+      showResult: true,
+      isCorrect: isCorrect,
+    );
+
     // Chuyển sang câu hỏi tiếp theo sau 2 giây
-    Future.delayed(const Duration(seconds: 2), () {
+    Future.delayed(const Duration(seconds: 2), () async {
       if (mounted) {
         setState(() {
           _currentQuestion++;
           _selectedAnswer = null;
           _showResult = false;
         });
+        
+        // Lưu trạng thái sau khi chuyển câu hỏi
+        await DailyChallengeService.saveGameState(
+          currentQuestion: _currentQuestion,
+          score: _score,
+          questions: _questions,
+        );
       }
     });
   }
@@ -412,6 +471,9 @@ class _DailyChallengeScreenState extends State<DailyChallengeScreen> {
     setState(() {
       _isGameCompleted = true;
     });
+
+    // Xóa trạng thái chơi đã lưu
+    await DailyChallengeService.clearSavedGameState();
 
     // Tăng số lần thử
     await DailyChallengeService.incrementAttempts();

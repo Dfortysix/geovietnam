@@ -5,12 +5,38 @@ import 'package:shared_preferences/shared_preferences.dart';
 import '../models/province.dart';
 import '../data/provinces_data.dart';
 import 'game_progress_service.dart';
+import 'auth_service.dart';
 
 class DailyChallengeService {
   static const String _dailyChallengeDateKey = 'daily_challenge_date';
   static const String _dailyChallengeAttemptsKey = 'daily_challenge_attempts';
   static const String _dailyChallengeProvinceKey = 'daily_challenge_province';
+  static const String _dailyChallengeCurrentQuestionKey = 'daily_challenge_current_question';
+  static const String _dailyChallengeScoreKey = 'daily_challenge_score';
+  static const String _dailyChallengeQuestionsKey = 'daily_challenge_questions';
+  static const String _dailyChallengeSelectedAnswerKey = 'daily_challenge_selected_answer';
+  static const String _dailyChallengeShowResultKey = 'daily_challenge_show_result';
+  static const String _dailyChallengeIsCorrectKey = 'daily_challenge_is_correct';
   static const int _maxAttemptsPerDay = 3;
+
+  // Lấy key với user ID để phân biệt theo từng tài khoản
+  static String _getUserKey(String baseKey) {
+    final authService = AuthService();
+    final user = authService.currentUser;
+    final googleUser = authService.currentGoogleUser;
+    
+    // Sử dụng Firebase UID nếu có, hoặc Google ID, hoặc fallback
+    String userId;
+    if (user?.uid != null) {
+      userId = user!.uid;
+    } else if (googleUser?.id != null) {
+      userId = googleUser!.id;
+    } else {
+      userId = 'anonymous_user';
+    }
+    
+    return '${userId}_$baseKey';
+  }
 
   // Lấy thông tin daily challenge hiện tại
   static Future<Map<String, dynamic>> getCurrentDailyChallenge() async {
@@ -18,17 +44,17 @@ class DailyChallengeService {
     final today = DateTime.now();
     final todayString = '${today.year}-${today.month.toString().padLeft(2, '0')}-${today.day.toString().padLeft(2, '0')}';
     
-    final lastChallengeDate = prefs.getString(_dailyChallengeDateKey);
-    final attempts = prefs.getInt(_dailyChallengeAttemptsKey) ?? 0;
-    final selectedProvinceId = prefs.getString(_dailyChallengeProvinceKey);
-    final isProvinceUnlockedToday = prefs.getBool('province_unlocked_today') ?? false;
+    final lastChallengeDate = prefs.getString(_getUserKey(_dailyChallengeDateKey));
+    final attempts = prefs.getInt(_getUserKey(_dailyChallengeAttemptsKey)) ?? 0;
+    final selectedProvinceId = prefs.getString(_getUserKey(_dailyChallengeProvinceKey));
+    final isProvinceUnlockedToday = prefs.getBool(_getUserKey('province_unlocked_today')) ?? false;
     
          // Nếu là ngày mới, reset daily challenge
      if (lastChallengeDate != todayString) {
        await _resetDailyChallenge(todayString);
        
-       // Kiểm tra xem có tỉnh được chọn không sau khi reset
-       final currentProvinceId = prefs.getString(_dailyChallengeProvinceKey);
+               // Kiểm tra xem có tỉnh được chọn không sau khi reset
+        final currentProvinceId = prefs.getString(_getUserKey(_dailyChallengeProvinceKey));
        Province selectedProvince;
        
                        if (currentProvinceId != null) {
@@ -93,8 +119,9 @@ class DailyChallengeService {
 
   // Reset daily challenge cho ngày mới
   static Future<void> _resetDailyChallenge(String todayString) async {
+    print('🔄 Bắt đầu reset daily challenge cho ngày: $todayString');
     final prefs = await SharedPreferences.getInstance();
-    final previousProvinceId = prefs.getString(_dailyChallengeProvinceKey);
+    final previousProvinceId = prefs.getString(_getUserKey(_dailyChallengeProvinceKey));
     
     // Kiểm tra xem tỉnh trước đó đã được unlock chưa
     bool shouldChangeProvince = true;
@@ -108,16 +135,26 @@ class DailyChallengeService {
       // Nếu tỉnh trước đó chưa được unlock, giữ nguyên
       if (!previousProvince.isUnlocked) {
         shouldChangeProvince = false;
+        print('📍 Giữ nguyên tỉnh $previousProvinceId vì chưa unlock');
+      } else {
+        print('📍 Tỉnh $previousProvinceId đã unlock, sẽ chọn tỉnh mới');
       }
     }
     
-    await prefs.setString(_dailyChallengeDateKey, todayString);
-    await prefs.setInt(_dailyChallengeAttemptsKey, 0);
-    await prefs.setBool('province_unlocked_today', false); // Reset trạng thái unlock
+    await prefs.setString(_getUserKey(_dailyChallengeDateKey), todayString);
+    await prefs.setInt(_getUserKey(_dailyChallengeAttemptsKey), 0);
+    await prefs.setBool(_getUserKey('province_unlocked_today'), false); // Reset trạng thái unlock
+    
+    // Xóa trạng thái chơi cũ khi reset daily challenge
+    await clearSavedGameState();
+    print('🗑️ Đã xóa trạng thái chơi cũ');
     
     // Chỉ chọn tỉnh mới nếu tỉnh trước đã được unlock
     if (shouldChangeProvince) {
-      await prefs.remove(_dailyChallengeProvinceKey);
+      await prefs.remove(_getUserKey(_dailyChallengeProvinceKey));
+      print('🔄 Đã xóa tỉnh cũ, sẽ chọn tỉnh mới');
+    } else {
+      print('🔄 Giữ nguyên tỉnh cũ: $previousProvinceId');
     }
   }
 
@@ -145,7 +182,7 @@ class DailyChallengeService {
          
          // Lưu tỉnh được chọn
          final prefs = await SharedPreferences.getInstance();
-         await prefs.setString(_dailyChallengeProvinceKey, selectedProvince.id);
+         await prefs.setString(_getUserKey(_dailyChallengeProvinceKey), selectedProvince.id);
          
          return selectedProvince;
        }
@@ -161,7 +198,7 @@ class DailyChallengeService {
        );
        
        final prefs = await SharedPreferences.getInstance();
-       await prefs.setString(_dailyChallengeProvinceKey, defaultProvince.id);
+       await prefs.setString(_getUserKey(_dailyChallengeProvinceKey), defaultProvince.id);
        
        return defaultProvince;
      }
@@ -172,7 +209,7 @@ class DailyChallengeService {
     
     // Lưu tỉnh được chọn
     final prefs = await SharedPreferences.getInstance();
-    await prefs.setString(_dailyChallengeProvinceKey, selectedProvince.id);
+    await prefs.setString(_getUserKey(_dailyChallengeProvinceKey), selectedProvince.id);
     
     return selectedProvince;
   }
@@ -193,14 +230,14 @@ class DailyChallengeService {
   // Tăng số lần thử
   static Future<void> incrementAttempts() async {
     final prefs = await SharedPreferences.getInstance();
-    final attempts = prefs.getInt(_dailyChallengeAttemptsKey) ?? 0;
-    await prefs.setInt(_dailyChallengeAttemptsKey, attempts + 1);
+    final attempts = prefs.getInt(_getUserKey(_dailyChallengeAttemptsKey)) ?? 0;
+    await prefs.setInt(_getUserKey(_dailyChallengeAttemptsKey), attempts + 1);
   }
 
   // Đánh dấu tỉnh đã được unlock hôm nay
   static Future<void> markProvinceUnlockedToday() async {
     final prefs = await SharedPreferences.getInstance();
-    await prefs.setBool('province_unlocked_today', true);
+    await prefs.setBool(_getUserKey('province_unlocked_today'), true);
   }
 
   // Load câu hỏi cho tỉnh được chọn
@@ -287,5 +324,173 @@ class DailyChallengeService {
   static Future<int> getRemainingAttempts() async {
     final challenge = await getCurrentDailyChallenge();
     return _maxAttemptsPerDay - (challenge['attempts'] as int);
+  }
+
+  // Lưu trạng thái chơi hiện tại
+  static Future<void> saveGameState({
+    required int currentQuestion,
+    required int score,
+    required List<Map<String, dynamic>> questions,
+    String? selectedAnswer,
+    bool? showResult,
+    bool? isCorrect,
+  }) async {
+    try {
+      final prefs = await SharedPreferences.getInstance();
+      await prefs.setInt(_getUserKey(_dailyChallengeCurrentQuestionKey), currentQuestion);
+      await prefs.setInt(_getUserKey(_dailyChallengeScoreKey), score);
+      await prefs.setString(_getUserKey(_dailyChallengeQuestionsKey), json.encode(questions));
+      if (selectedAnswer != null) {
+        await prefs.setString(_getUserKey(_dailyChallengeSelectedAnswerKey), selectedAnswer);
+      }
+      if (showResult != null) {
+        await prefs.setBool(_getUserKey(_dailyChallengeShowResultKey), showResult);
+      }
+      if (isCorrect != null) {
+        await prefs.setBool(_getUserKey(_dailyChallengeIsCorrectKey), isCorrect);
+      }
+      print('✅ Đã lưu trạng thái: câu $currentQuestion, điểm $score');
+    } catch (e) {
+      print('❌ Lỗi khi lưu trạng thái: $e');
+    }
+  }
+
+  // Lấy trạng thái chơi đã lưu
+  static Future<Map<String, dynamic>> getSavedGameState() async {
+    try {
+      final prefs = await SharedPreferences.getInstance();
+      final currentQuestion = prefs.getInt(_getUserKey(_dailyChallengeCurrentQuestionKey)) ?? 0;
+      final score = prefs.getInt(_getUserKey(_dailyChallengeScoreKey)) ?? 0;
+      final questionsString = prefs.getString(_getUserKey(_dailyChallengeQuestionsKey));
+      final selectedAnswer = prefs.getString(_getUserKey(_dailyChallengeSelectedAnswerKey));
+      final showResult = prefs.getBool(_getUserKey(_dailyChallengeShowResultKey)) ?? false;
+      final isCorrect = prefs.getBool(_getUserKey(_dailyChallengeIsCorrectKey)) ?? false;
+
+      List<Map<String, dynamic>> questions = [];
+      if (questionsString != null) {
+        try {
+          final List<dynamic> questionsList = json.decode(questionsString);
+          questions = questionsList.map((item) => Map<String, dynamic>.from(item)).toList();
+        } catch (e) {
+          print('Error parsing saved questions: $e');
+        }
+      }
+
+      print('📖 Đã khôi phục trạng thái: câu $currentQuestion, điểm $score');
+      return {
+        'currentQuestion': currentQuestion,
+        'score': score,
+        'questions': questions,
+        'selectedAnswer': selectedAnswer,
+        'showResult': showResult,
+        'isCorrect': isCorrect,
+      };
+    } catch (e) {
+      print('❌ Lỗi khi khôi phục trạng thái: $e');
+      return {
+        'currentQuestion': 0,
+        'score': 0,
+        'questions': [],
+        'selectedAnswer': null,
+        'showResult': false,
+        'isCorrect': false,
+      };
+    }
+  }
+
+  // Xóa trạng thái chơi đã lưu
+  static Future<void> clearSavedGameState() async {
+    final prefs = await SharedPreferences.getInstance();
+    await prefs.remove(_getUserKey(_dailyChallengeCurrentQuestionKey));
+    await prefs.remove(_getUserKey(_dailyChallengeScoreKey));
+    await prefs.remove(_getUserKey(_dailyChallengeQuestionsKey));
+    await prefs.remove(_getUserKey(_dailyChallengeSelectedAnswerKey));
+    await prefs.remove(_getUserKey(_dailyChallengeShowResultKey));
+    await prefs.remove(_getUserKey(_dailyChallengeIsCorrectKey));
+  }
+
+  // Kiểm tra xem có trạng thái chơi đã lưu không
+  static Future<bool> hasSavedGameState() async {
+    try {
+      final prefs = await SharedPreferences.getInstance();
+      final hasState = prefs.containsKey(_getUserKey(_dailyChallengeCurrentQuestionKey));
+      final currentQuestion = prefs.getInt(_getUserKey(_dailyChallengeCurrentQuestionKey));
+      final score = prefs.getInt(_getUserKey(_dailyChallengeScoreKey));
+      print('🔍 Kiểm tra trạng thái đã lưu: $hasState (câu: $currentQuestion, điểm: $score)');
+      return hasState;
+    } catch (e) {
+      print('❌ Lỗi khi kiểm tra trạng thái: $e');
+      return false;
+    }
+  }
+
+  // Debug: In ra tất cả SharedPreferences keys
+  static Future<void> debugSharedPreferences() async {
+    try {
+      final prefs = await SharedPreferences.getInstance();
+      final keys = prefs.getKeys();
+      print('🔍 Tất cả SharedPreferences keys:');
+      for (final key in keys) {
+        if (key.contains('daily_challenge')) {
+          final value = prefs.get(key);
+          print('  $key: $value');
+        }
+      }
+      print('👤 User-specific keys:');
+      final authService = AuthService();
+      final user = authService.currentUser;
+      final googleUser = authService.currentGoogleUser;
+      
+      String userId;
+      if (user?.uid != null) {
+        userId = user!.uid;
+      } else if (googleUser?.id != null) {
+        userId = googleUser!.id;
+      } else {
+        userId = 'anonymous_user';
+      }
+      
+      for (final key in keys) {
+        if (key.startsWith('${userId}_daily_challenge')) {
+          final value = prefs.get(key);
+          print('  $key: $value');
+        }
+      }
+    } catch (e) {
+      print('❌ Lỗi khi debug SharedPreferences: $e');
+    }
+  }
+
+  // Xóa tất cả dữ liệu daily challenge của user hiện tại (khi đăng xuất)
+  static Future<void> clearAllUserData() async {
+    try {
+      final prefs = await SharedPreferences.getInstance();
+      final keys = prefs.getKeys();
+      
+      final authService = AuthService();
+      final user = authService.currentUser;
+      final googleUser = authService.currentGoogleUser;
+      
+      String userId;
+      if (user?.uid != null) {
+        userId = user!.uid;
+      } else if (googleUser?.id != null) {
+        userId = googleUser!.id;
+      } else {
+        userId = 'anonymous_user';
+      }
+      
+      int removedCount = 0;
+      for (final key in keys) {
+        if (key.startsWith('${userId}_daily_challenge')) {
+          await prefs.remove(key);
+          removedCount++;
+        }
+      }
+      
+      print('🗑️ Đã xóa $removedCount keys daily challenge của user $userId');
+    } catch (e) {
+      print('❌ Lỗi khi xóa dữ liệu user: $e');
+    }
   }
 } 
