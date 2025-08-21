@@ -326,6 +326,12 @@ class GameProgressService extends ChangeNotifier {
       
       // Notify listeners về thay đổi
       GameProgressService().notifyProgressChanged();
+      // Cập nhật cloud số tỉnh đã mở khóa để phục vụ leaderboard
+      if (userId != null) {
+        try {
+          await _userService.updateUnlockedProvincesCount(userId, unlockedProvinceIds.length);
+        } catch (_) {}
+      }
       return true;
     }
     return false;

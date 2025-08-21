@@ -332,4 +332,71 @@ class UserService {
       rethrow;
     }
   }
+
+  /// Cập nhật số tỉnh đã mở khóa (để phục vụ leaderboard)
+  Future<void> updateUnlockedProvincesCount(String userId, int count) async {
+    try {
+      final userDoc = _firestore.collection('users').doc(userId);
+      await userDoc.update({
+        'gameProgress.unlockedProvincesCount': count,
+      });
+    } catch (e) {
+      rethrow;
+    }
+  }
+
+  /// Lấy top user theo tổng điểm
+  Future<List<Map<String, dynamic>>> getTopUsersByScore({int limit = 50}) async {
+    try {
+      final query = await _firestore
+          .collection('users')
+          .orderBy('gameProgress.totalScore', descending: true)
+          .limit(limit)
+          .get();
+
+      return query.docs.map((doc) {
+        final data = doc.data();
+        final profile = (data['profile'] ?? {}) as Map<String, dynamic>;
+        final progress = (data['gameProgress'] ?? {}) as Map<String, dynamic>;
+        return {
+          'userId': doc.id,
+          'displayName': profile['displayName'] ?? 'Người chơi',
+          'photoUrl': profile['photoUrl'],
+          'totalScore': progress['totalScore'] ?? 0,
+          'unlockedProvincesCount': progress['unlockedProvincesCount'] ?? 0,
+          'dailyStreak': progress['dailyStreak'] ?? 0,
+        };
+      }).toList();
+    } catch (e) {
+      return [];
+    }
+  }
+
+  /// Lấy top user theo số tỉnh đã mở khóa
+  Future<List<Map<String, dynamic>>> getTopUsersByUnlocked({int limit = 50}) async {
+    try {
+      final query = await _firestore
+          .collection('users')
+          .orderBy('gameProgress.unlockedProvincesCount', descending: true)
+          .orderBy('gameProgress.totalScore', descending: true)
+          .limit(limit)
+          .get();
+
+      return query.docs.map((doc) {
+        final data = doc.data();
+        final profile = (data['profile'] ?? {}) as Map<String, dynamic>;
+        final progress = (data['gameProgress'] ?? {}) as Map<String, dynamic>;
+        return {
+          'userId': doc.id,
+          'displayName': profile['displayName'] ?? 'Người chơi',
+          'photoUrl': profile['photoUrl'],
+          'totalScore': progress['totalScore'] ?? 0,
+          'unlockedProvincesCount': progress['unlockedProvincesCount'] ?? 0,
+          'dailyStreak': progress['dailyStreak'] ?? 0,
+        };
+      }).toList();
+    } catch (e) {
+      return [];
+    }
+  }
 } 

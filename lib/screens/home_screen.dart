@@ -10,6 +10,7 @@ import 'game_screen.dart';
 import 'daily_challenge_screen.dart';
 import 'map_exploration_screen.dart';
 import 'progress_screen.dart';
+import 'leaderboard_screen.dart';
 
 class HomeScreen extends StatefulWidget {
   const HomeScreen({Key? key}) : super(key: key);
@@ -372,8 +373,8 @@ class _HomeScreenState extends State<HomeScreen> {
                         _buildGameOption(
                           context,
                           icon: Icons.leaderboard,
-                          title: '🏆 Tiến độ & Thành tích',
-                          subtitle: 'Xem thống kê chi tiết và thành tích của bạn',
+                          title: '🏆 Bảng xếp hạng',
+                          subtitle: 'Xếp hạng theo điểm số và số tỉnh đã mở khóa',
                           gradient: const LinearGradient(
                             colors: [AppTheme.lightOrange, AppTheme.accentOrange],
                           ),
@@ -383,7 +384,7 @@ class _HomeScreenState extends State<HomeScreen> {
                               Navigator.push(
                                 context,
                                 MaterialPageRoute(
-                                  builder: (context) => const ProgressScreen(),
+                                  builder: (context) => const LeaderboardScreen(),
                                 ),
                               );
                             }
