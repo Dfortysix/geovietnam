@@ -12,6 +12,11 @@ class UserService {
 
   final FirebaseFirestore _firestore = FirebaseFirestore.instance;
 
+  // Collection leaderboard: leaderboards/global/users/{userId}
+  CollectionReference<Map<String, dynamic>> _leaderboardUsers() {
+    return _firestore.collection('leaderboards').doc('global').collection('users');
+  }
+
   /// Tạo hoặc cập nhật user profile
   Future<void> createOrUpdateUserProfile(GoogleSignInAccount user) async {
     try {
@@ -67,6 +72,13 @@ class UserService {
       };
       
       await userDoc.set(profileData, SetOptions(merge: true));
+
+      // Upsert vào leaderboard
+      await _leaderboardUsers().doc(firebaseUid).set({
+        'displayName': googleUser.displayName,
+        'photoUrl': googleUser.photoUrl,
+        'updatedAt': FieldValue.serverTimestamp(),
+      }, SetOptions(merge: true));
       
     } catch (e) {
       rethrow;
@@ -103,6 +115,16 @@ class UserService {
           'unlockedProvincesCount': progress.unlockedProvincesCount,
           'completedDailyChallenges': progress.completedDailyChallenges,
         },
+      }, SetOptions(merge: true));
+
+      // Upsert leaderboard snapshot tổng hợp
+      await _leaderboardUsers().doc(actualUserId).set({
+        'displayName': (await getUserProfile(actualUserId))?['displayName'],
+        'photoUrl': (await getUserProfile(actualUserId))?['photoUrl'],
+        'totalScore': progress.totalScore,
+        'dailyStreak': progress.dailyStreak,
+        'unlockedProvincesCount': progress.unlockedProvincesCount,
+        'updatedAt': FieldValue.serverTimestamp(),
       }, SetOptions(merge: true));
       
       // Game progress saved successfully
@@ -306,11 +328,17 @@ class UserService {
   Future<void> updateDailyStreak(String userId, int streak) async {
     try {
       final userDoc = _firestore.collection('users').doc(userId);
-      
-      await userDoc.update({
-        'gameProgress.dailyStreak': streak,
-        'gameProgress.lastPlayDate': FieldValue.serverTimestamp(),
-      });
+      await userDoc.set({
+        'gameProgress': {
+          'dailyStreak': streak,
+          'lastPlayDate': FieldValue.serverTimestamp(),
+        }
+      }, SetOptions(merge: true));
+
+      await _leaderboardUsers().doc(userId).set({
+        'dailyStreak': streak,
+        'updatedAt': FieldValue.serverTimestamp(),
+      }, SetOptions(merge: true));
       
       // Daily streak updated successfully
     } catch (e) {
@@ -322,10 +350,16 @@ class UserService {
   Future<void> updateTotalScore(String userId, int totalScore) async {
     try {
       final userDoc = _firestore.collection('users').doc(userId);
-      
-      await userDoc.update({
-        'gameProgress.totalScore': totalScore,
-      });
+      await userDoc.set({
+        'gameProgress': {
+          'totalScore': totalScore,
+        }
+      }, SetOptions(merge: true));
+
+      await _leaderboardUsers().doc(userId).set({
+        'totalScore': totalScore,
+        'updatedAt': FieldValue.serverTimestamp(),
+      }, SetOptions(merge: true));
       
       // Total score updated successfully
     } catch (e) {
@@ -337,9 +371,16 @@ class UserService {
   Future<void> updateUnlockedProvincesCount(String userId, int count) async {
     try {
       final userDoc = _firestore.collection('users').doc(userId);
-      await userDoc.update({
-        'gameProgress.unlockedProvincesCount': count,
-      });
+      await userDoc.set({
+        'gameProgress': {
+          'unlockedProvincesCount': count,
+        }
+      }, SetOptions(merge: true));
+
+      await _leaderboardUsers().doc(userId).set({
+        'unlockedProvincesCount': count,
+        'updatedAt': FieldValue.serverTimestamp(),
+      }, SetOptions(merge: true));
     } catch (e) {
       rethrow;
     }
@@ -348,23 +389,20 @@ class UserService {
   /// Lấy top user theo tổng điểm
   Future<List<Map<String, dynamic>>> getTopUsersByScore({int limit = 50}) async {
     try {
-      final query = await _firestore
-          .collection('users')
-          .orderBy('gameProgress.totalScore', descending: true)
+      final query = await _leaderboardUsers()
+          .orderBy('totalScore', descending: true)
           .limit(limit)
           .get();
 
       return query.docs.map((doc) {
         final data = doc.data();
-        final profile = (data['profile'] ?? {}) as Map<String, dynamic>;
-        final progress = (data['gameProgress'] ?? {}) as Map<String, dynamic>;
         return {
           'userId': doc.id,
-          'displayName': profile['displayName'] ?? 'Người chơi',
-          'photoUrl': profile['photoUrl'],
-          'totalScore': progress['totalScore'] ?? 0,
-          'unlockedProvincesCount': progress['unlockedProvincesCount'] ?? 0,
-          'dailyStreak': progress['dailyStreak'] ?? 0,
+          'displayName': data['displayName'] ?? 'Người chơi',
+          'photoUrl': data['photoUrl'],
+          'totalScore': data['totalScore'] ?? 0,
+          'unlockedProvincesCount': data['unlockedProvincesCount'] ?? 0,
+          'dailyStreak': data['dailyStreak'] ?? 0,
         };
       }).toList();
     } catch (e) {
@@ -375,28 +413,68 @@ class UserService {
   /// Lấy top user theo số tỉnh đã mở khóa
   Future<List<Map<String, dynamic>>> getTopUsersByUnlocked({int limit = 50}) async {
     try {
-      final query = await _firestore
-          .collection('users')
-          .orderBy('gameProgress.unlockedProvincesCount', descending: true)
-          .orderBy('gameProgress.totalScore', descending: true)
+      final query = await _leaderboardUsers()
+          .orderBy('unlockedProvincesCount', descending: true)
+          .orderBy('totalScore', descending: true)
           .limit(limit)
           .get();
 
       return query.docs.map((doc) {
         final data = doc.data();
-        final profile = (data['profile'] ?? {}) as Map<String, dynamic>;
-        final progress = (data['gameProgress'] ?? {}) as Map<String, dynamic>;
         return {
           'userId': doc.id,
+          'displayName': data['displayName'] ?? 'Người chơi',
+          'photoUrl': data['photoUrl'],
+          'totalScore': data['totalScore'] ?? 0,
+          'unlockedProvincesCount': data['unlockedProvincesCount'] ?? 0,
+          'dailyStreak': data['dailyStreak'] ?? 0,
+        };
+      }).toList();
+    } catch (e) {
+      return [];
+    }
+  }
+
+  /// Backfill leaderboard từ collection users -> leaderboards/global/users
+  /// Trả về số bản ghi đã upsert
+  Future<int> backfillLeaderboard() async {
+    try {
+      final usersSnap = await _firestore.collection('users').get();
+      int processed = 0;
+      WriteBatch batch = _firestore.batch();
+      int ops = 0;
+
+      for (final doc in usersSnap.docs) {
+        final data = doc.data();
+        final profile = (data['profile'] ?? {}) as Map<String, dynamic>;
+        final progress = (data['gameProgress'] ?? {}) as Map<String, dynamic>;
+
+        final ref = _leaderboardUsers().doc(doc.id);
+        batch.set(ref, {
           'displayName': profile['displayName'] ?? 'Người chơi',
           'photoUrl': profile['photoUrl'],
           'totalScore': progress['totalScore'] ?? 0,
           'unlockedProvincesCount': progress['unlockedProvincesCount'] ?? 0,
           'dailyStreak': progress['dailyStreak'] ?? 0,
-        };
-      }).toList();
+          'updatedAt': FieldValue.serverTimestamp(),
+        }, SetOptions(merge: true));
+        ops++;
+        processed++;
+
+        if (ops >= 400) { // an toàn dưới giới hạn 500 mỗi batch
+          await batch.commit();
+          batch = _firestore.batch();
+          ops = 0;
+        }
+      }
+
+      if (ops > 0) {
+        await batch.commit();
+      }
+
+      return processed;
     } catch (e) {
-      return [];
+      return 0;
     }
   }
 } 

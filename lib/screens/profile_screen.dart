@@ -7,9 +7,10 @@ import '../services/game_progress_service.dart';
 import '../services/auth_service.dart';
 import '../models/game_progress.dart';
 import '../widgets/user_avatar_widget.dart';
+import '../services/user_service.dart';
 
 class ProfileScreen extends StatefulWidget {
-  const ProfileScreen({Key? key}) : super(key: key);
+  const ProfileScreen({super.key});
 
   @override
   State<ProfileScreen> createState() => _ProfileScreenState();
@@ -66,8 +67,9 @@ class _ProfileScreenState extends State<ProfileScreen> {
         _isLoading = false;
       });
        }
+  }
 
-   Widget _buildGooglePlayGamesSection() {
+  Widget _buildGooglePlayGamesSection() {
      return Consumer<GooglePlayGamesService>(
        builder: (context, gamesService, child) {
          return Container(
@@ -77,7 +79,7 @@ class _ProfileScreenState extends State<ProfileScreen> {
              borderRadius: BorderRadius.circular(20),
              boxShadow: [
                BoxShadow(
-                 color: Colors.black.withOpacity(0.1),
+                 color: Colors.black.withValues(alpha: 0.1),
                  blurRadius: 20,
                  offset: const Offset(0, 10),
                ),
@@ -92,7 +94,7 @@ class _ProfileScreenState extends State<ProfileScreen> {
                    Container(
                      padding: const EdgeInsets.all(12),
                      decoration: BoxDecoration(
-                       color: AppTheme.primaryOrange.withOpacity(0.1),
+                       color: AppTheme.primaryOrange.withValues(alpha: 0.1),
                        borderRadius: BorderRadius.circular(12),
                      ),
                      child: const Icon(
@@ -216,7 +218,6 @@ class _ProfileScreenState extends State<ProfileScreen> {
        },
      );
    }
- } 
 
   @override
   Widget build(BuildContext context) {
@@ -239,7 +240,7 @@ class _ProfileScreenState extends State<ProfileScreen> {
               height: 150,
               decoration: BoxDecoration(
                 shape: BoxShape.circle,
-                color: AppTheme.primaryOrange.withOpacity(0.1),
+                color: AppTheme.primaryOrange.withValues(alpha: 0.1),
               ),
             ).animate().scale(duration: 3.seconds).then().scale(duration: 3.seconds),
           ),
@@ -252,7 +253,7 @@ class _ProfileScreenState extends State<ProfileScreen> {
               height: 100,
               decoration: BoxDecoration(
                 shape: BoxShape.circle,
-                color: AppTheme.secondaryYellow.withOpacity(0.1),
+                color: AppTheme.secondaryYellow.withValues(alpha: 0.1),
               ),
             ).animate().scale(duration: 4.seconds).then().scale(duration: 4.seconds),
           ),
@@ -280,8 +281,8 @@ class _ProfileScreenState extends State<ProfileScreen> {
                                 begin: Alignment.topCenter,
                                 end: Alignment.bottomCenter,
                                                                  colors: [
-                                   AppTheme.primaryOrange.withOpacity(0.8),
-                                   AppTheme.secondaryYellow.withOpacity(0.6),
+                                   AppTheme.primaryOrange.withValues(alpha: 0.8),
+                                   AppTheme.secondaryYellow.withValues(alpha: 0.6),
                                  ],
                               ),
                             ),
@@ -299,7 +300,7 @@ class _ProfileScreenState extends State<ProfileScreen> {
                                             shape: BoxShape.circle,
                                             boxShadow: [
                                               BoxShadow(
-                                                color: Colors.black.withOpacity(0.2),
+                                                color: Colors.black.withValues(alpha: 0.2),
                                                 blurRadius: 20,
                                                 offset: const Offset(0, 10),
                                               ),
@@ -328,10 +329,10 @@ class _ProfileScreenState extends State<ProfileScreen> {
                                         // Email
                                         if (gamesService.currentUser?.email != null)
                                           Text(
-                                            gamesService.currentUser!.email!,
+                                            gamesService.currentUser!.email,
                                             style: TextStyle(
                                               fontSize: 14,
-                                              color: Colors.white.withOpacity(0.8),
+                                              color: Colors.white.withValues(alpha: 0.8),
                                             ),
                                           ).animate().fadeIn(delay: 400.ms),
                                       ],
@@ -346,7 +347,7 @@ class _ProfileScreenState extends State<ProfileScreen> {
                           icon: Container(
                             padding: const EdgeInsets.all(8),
                             decoration: BoxDecoration(
-                              color: Colors.white.withOpacity(0.2),
+                              color: Colors.white.withValues(alpha: 0.2),
                               borderRadius: BorderRadius.circular(12),
                             ),
                             child: const Icon(
@@ -362,7 +363,7 @@ class _ProfileScreenState extends State<ProfileScreen> {
                             icon: Container(
                               padding: const EdgeInsets.all(8),
                               decoration: BoxDecoration(
-                                color: Colors.white.withOpacity(0.2),
+                                color: Colors.white.withValues(alpha: 0.2),
                                 borderRadius: BorderRadius.circular(12),
                               ),
                               child: const Icon(
@@ -400,6 +401,8 @@ class _ProfileScreenState extends State<ProfileScreen> {
                                
                                // Menu options
                                _buildMenuOptions(),
+                               const SizedBox(height: 24),
+                               _buildBackfillButton(),
                             ],
                           ),
                         ),
@@ -420,7 +423,7 @@ class _ProfileScreenState extends State<ProfileScreen> {
         borderRadius: BorderRadius.circular(20),
         boxShadow: [
           BoxShadow(
-            color: Colors.black.withOpacity(0.1),
+            color: Colors.black.withValues(alpha: 0.1),
             blurRadius: 20,
             offset: const Offset(0, 10),
           ),
@@ -434,7 +437,7 @@ class _ProfileScreenState extends State<ProfileScreen> {
               Container(
                 padding: const EdgeInsets.all(12),
                 decoration: BoxDecoration(
-                  color: AppTheme.primaryOrange.withOpacity(0.1),
+                  color: AppTheme.primaryOrange.withValues(alpha: 0.1),
                   borderRadius: BorderRadius.circular(12),
                 ),
                 child: const Icon(
@@ -513,10 +516,10 @@ class _ProfileScreenState extends State<ProfileScreen> {
     return Container(
       padding: const EdgeInsets.all(16),
       decoration: BoxDecoration(
-        color: color.withOpacity(0.1),
+        color: color.withValues(alpha: 0.1),
         borderRadius: BorderRadius.circular(16),
         border: Border.all(
-          color: color.withOpacity(0.2),
+          color: color.withValues(alpha: 0.2),
           width: 1,
         ),
       ),
@@ -605,7 +608,7 @@ class _ProfileScreenState extends State<ProfileScreen> {
         borderRadius: BorderRadius.circular(20),
         boxShadow: [
           BoxShadow(
-            color: Colors.black.withOpacity(0.1),
+            color: Colors.black.withValues(alpha: 0.1),
             blurRadius: 20,
             offset: const Offset(0, 10),
           ),
@@ -622,7 +625,7 @@ class _ProfileScreenState extends State<ProfileScreen> {
                 leading: Container(
                   padding: const EdgeInsets.all(10),
                   decoration: BoxDecoration(
-                    color: item['color'].withOpacity(0.1),
+                    color: (item['color'] as Color).withValues(alpha: 0.1),
                     borderRadius: BorderRadius.circular(12),
                   ),
                                    child: Icon(
@@ -666,153 +669,52 @@ class _ProfileScreenState extends State<ProfileScreen> {
     ).animate().slideY(begin: 0.3, duration: 600.ms).fadeIn(delay: 400.ms);
   }
 
-  Widget _buildGooglePlayGamesSection() {
-    return Consumer<GooglePlayGamesService>(
-      builder: (context, gamesService, child) {
-        return Container(
-          padding: const EdgeInsets.all(20),
-          decoration: BoxDecoration(
-            color: Colors.white,
-            borderRadius: BorderRadius.circular(20),
-            boxShadow: [
-              BoxShadow(
-                color: Colors.black.withOpacity(0.1),
-                blurRadius: 20,
-                offset: const Offset(0, 10),
-              ),
-            ],
+  Widget _buildBackfillButton() {
+    return Container(
+      width: double.infinity,
+      decoration: BoxDecoration(
+        color: Colors.white,
+        borderRadius: BorderRadius.circular(16),
+        boxShadow: [
+          BoxShadow(
+            color: Colors.black.withValues(alpha: 0.08),
+            blurRadius: 12,
+            offset: const Offset(0, 6),
           ),
-          child: Column(
-            crossAxisAlignment: CrossAxisAlignment.start,
-            children: [
-              // Header
-              Row(
-                children: [
-                  Container(
-                    padding: const EdgeInsets.all(12),
-                    decoration: BoxDecoration(
-                      color: AppTheme.primaryOrange.withOpacity(0.1),
-                      borderRadius: BorderRadius.circular(12),
-                    ),
-                    child: const Icon(
-                      Icons.games,
-                      color: AppTheme.primaryOrange,
-                      size: 24,
-                    ),
-                  ),
-                  const SizedBox(width: 12),
-                  const Text(
-                    'Google Play Games',
-                    style: TextStyle(
-                      fontSize: 20,
-                      fontWeight: FontWeight.bold,
-                    ),
-                  ),
-                ],
-              ),
-              const SizedBox(height: 20),
-              
-              // Trạng thái đăng nhập
-              Row(
-                children: [
-                  Icon(
-                    gamesService.isSignedIn ? Icons.check_circle : Icons.cancel,
-                    color: gamesService.isSignedIn ? Colors.green : Colors.red,
-                    size: 20,
-                  ),
-                  const SizedBox(width: 8),
-                  Text(
-                    gamesService.isSignedIn ? 'Đã đăng nhập' : 'Chưa đăng nhập',
-                    style: TextStyle(
-                      color: gamesService.isSignedIn ? Colors.green : Colors.red,
-                      fontWeight: FontWeight.w500,
-                    ),
-                  ),
-                ],
-              ),
-              const SizedBox(height: 16),
-              
-              // Nút đăng nhập/đăng xuất
-              SizedBox(
-                width: double.infinity,
-                child: ElevatedButton.icon(
-                  onPressed: () async {
-                    if (gamesService.isSignedIn) {
-                      await gamesService.signOut();
-                      if (context.mounted) {
-                        ScaffoldMessenger.of(context).showSnackBar(
-                          const SnackBar(
-                            content: Text('Đã đăng xuất khỏi Google Play Games'),
-                            backgroundColor: Colors.orange,
-                          ),
-                        );
-                      }
-                    } else {
-                      final success = await gamesService.signIn();
-                      if (context.mounted) {
-                        if (success) {
-                          ScaffoldMessenger.of(context).showSnackBar(
-                            SnackBar(
-                              content: Text('Đăng nhập thành công! Email: ${gamesService.currentUser?.email ?? 'N/A'}'),
-                              backgroundColor: Colors.green,
-                              duration: const Duration(seconds: 3),
-                            ),
-                          );
-                        } else {
-                          ScaffoldMessenger.of(context).showSnackBar(
-                            const SnackBar(
-                              content: Text('Đăng nhập thất bại. Vui lòng thử lại.'),
-                              backgroundColor: Colors.red,
-                            ),
-                          );
-                        }
-                      }
-                    }
-                  },
-                  icon: Icon(
-                    gamesService.isSignedIn ? Icons.logout : Icons.login,
-                  ),
-                  label: Text(
-                    gamesService.isSignedIn ? 'Đăng xuất' : 'Đăng nhập Google Play Games',
-                  ),
-                  style: ElevatedButton.styleFrom(
-                    backgroundColor: gamesService.isSignedIn 
-                        ? Colors.orange 
-                        : AppTheme.primaryOrange,
-                    foregroundColor: Colors.white,
-                    padding: const EdgeInsets.symmetric(vertical: 12),
-                    shape: RoundedRectangleBorder(
-                      borderRadius: BorderRadius.circular(12),
-                    ),
-                  ),
-                ),
-              ),
-              
-              // Thông tin người dùng nếu đã đăng nhập
-              if (gamesService.isSignedIn && gamesService.currentUser != null) ...[
-                const SizedBox(height: 16),
-                Container(
-                  padding: const EdgeInsets.all(12),
-                  decoration: BoxDecoration(
-                    color: Colors.grey[100],
-                    borderRadius: BorderRadius.circular(12),
-                    border: Border.all(
-                      color: Colors.grey[300]!,
-                      width: 1,
-                    ),
-                  ),
-                  child: UserAvatarWithNameWidget(
-                    photoUrl: gamesService.currentUser!.photoUrl,
-                    displayName: gamesService.currentUser!.displayName,
-                    email: gamesService.currentUser!.email,
-                    avatarSize: 40,
-                  ),
-                ),
-              ],
-            ],
+        ],
+      ),
+      padding: const EdgeInsets.all(16),
+      child: Column(
+        crossAxisAlignment: CrossAxisAlignment.start,
+        children: [
+          const Text(
+            'Leaderboard utilities',
+            style: TextStyle(fontWeight: FontWeight.bold),
           ),
-        ).animate().slideY(begin: 0.3, duration: 600.ms).fadeIn(delay: 100.ms);
-      },
-    );
+          const SizedBox(height: 8),
+          ElevatedButton.icon(
+            onPressed: () async {
+              final scaffold = ScaffoldMessenger.of(context);
+              scaffold.showSnackBar(
+                const SnackBar(content: Text('Đang backfill leaderboard...')),
+              );
+              final processed = await UserService().backfillLeaderboard();
+              scaffold.hideCurrentSnackBar();
+              scaffold.showSnackBar(
+                SnackBar(content: Text('Đã đồng bộ $processed người chơi lên leaderboard')),
+              );
+            },
+            icon: const Icon(Icons.sync),
+            label: const Text('Backfill leaderboard'),
+            style: ElevatedButton.styleFrom(
+              backgroundColor: AppTheme.primaryOrange,
+              foregroundColor: Colors.white,
+              padding: const EdgeInsets.symmetric(vertical: 12, horizontal: 16),
+              shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(12)),
+            ),
+          ),
+        ],
+      ),
+    ).animate().fadeIn(duration: 300.ms);
   }
 } 
