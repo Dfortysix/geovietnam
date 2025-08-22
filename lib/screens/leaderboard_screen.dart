@@ -233,7 +233,7 @@ class _LeaderboardScreenState extends State<LeaderboardScreen> {
                // Top 3 Section
                if (data.length >= 3) _buildTop3Section(data.take(3).toList()),
                
-               const SizedBox(height: 20),
+               const SizedBox(height: 8),
                
                // Other Ranks Section
                if (data.length > 3) _buildOtherRanksSection(data.skip(3).toList()),
@@ -246,7 +246,7 @@ class _LeaderboardScreenState extends State<LeaderboardScreen> {
 
      Widget _buildTop3Section(List<Map<String, dynamic>> top3) {
      return Container(
-      padding: const EdgeInsets.fromLTRB(8, 20, 8, 20),
+      padding: const EdgeInsets.fromLTRB(8, 0, 8, 4),
       decoration: BoxDecoration(
         color: const Color(0xFF8B4513), // Dark brown wood
         borderRadius: BorderRadius.circular(20),
@@ -264,55 +264,72 @@ class _LeaderboardScreenState extends State<LeaderboardScreen> {
       ),
      child: Column(
        children: [
-                     // Header with Trophy Icon
-           Container(
-             width: double.infinity,
-             padding: const EdgeInsets.symmetric(vertical: 16),
-             decoration: BoxDecoration(
-               gradient: const LinearGradient(
-                 colors: [Color(0xFFFFD700), Color(0xFFFFA500)],
-                 begin: Alignment.centerLeft,
-                 end: Alignment.centerRight,
-               ),
-               borderRadius: BorderRadius.circular(12),
-             ),
-             child: const Center(
-               child: Icon(
-                 Icons.emoji_events,
-                 size: 48,
-                 color: Colors.white,
-               ),
-             ),
-           ),
-          
-          const SizedBox(height: 24),
-          
-                                 // Top 3 Podium
-            Row(
-              mainAxisAlignment: MainAxisAlignment.spaceBetween,
-              crossAxisAlignment: CrossAxisAlignment.start,
+                     // Header with Ribbon Banner
+          SizedBox(
+            width: double.infinity,
+            height: 156,
+            child: Stack(
+              alignment: Alignment.center,
               children: [
-                // 2nd Place (Left)
-                if (top3.length >= 2) Expanded(
-                  child: Align(
-                    alignment: Alignment.centerLeft,
-                    child: _buildTop3Item(top3[1], 2),
+                // Ribbon image background
+                Center(
+                  child: Image.asset(
+                    'assets/images/icons/ribbon.png',
+                    width: double.infinity,
+                    fit: BoxFit.fitWidth,
                   ),
                 ),
-
-                // 1st Place (Center)
-                Expanded(
-                  child: _buildTop3Item(top3[0], 1),
-                ),
-
-                // 3rd Place (Right)
-                if (top3.length >= 3) Expanded(
-                  child: Align(
-                    alignment: Alignment.centerRight,
-                    child: _buildTop3Item(top3[2], 3),
+                // Text overlay
+                Transform.translate(
+                  offset: const Offset(0, -16),
+                  child: const Text(
+                    'BXH',
+                    style: TextStyle(
+                      color: Colors.white,
+                      fontSize: 32,
+                      fontWeight: FontWeight.w800,
+                      letterSpacing: 2,
+                      shadows: [
+                        Shadow(color: Colors.black54, blurRadius: 4, offset: Offset(0, 1)),
+                      ],
+                    ),
                   ),
                 ),
               ],
+            ),
+          ),
+          
+         const SizedBox(height: 0),
+          
+                                 // Top 3 Podium
+            Transform.translate(
+              offset: const Offset(0, -8),
+              child: Row(
+                mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                crossAxisAlignment: CrossAxisAlignment.start,
+                children: [
+                  // 2nd Place (Left)
+                  if (top3.length >= 2) Expanded(
+                    child: Align(
+                      alignment: Alignment.centerLeft,
+                      child: _buildTop3Item(top3[1], 2),
+                    ),
+                  ),
+ 
+                  // 1st Place (Center)
+                  Expanded(
+                    child: _buildTop3Item(top3[0], 1),
+                  ),
+ 
+                  // 3rd Place (Right)
+                  if (top3.length >= 3) Expanded(
+                    child: Align(
+                      alignment: Alignment.centerRight,
+                      child: _buildTop3Item(top3[2], 3),
+                    ),
+                  ),
+                ],
+              ),
             ),
         ],
       ),
