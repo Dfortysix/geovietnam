@@ -246,24 +246,24 @@ class _LeaderboardScreenState extends State<LeaderboardScreen> {
 
      Widget _buildTop3Section(List<Map<String, dynamic>> top3) {
      return Container(
-       padding: const EdgeInsets.all(20),
-       decoration: BoxDecoration(
-         color: const Color(0xFF8B4513), // Dark brown wood
-         borderRadius: BorderRadius.circular(20),
-         border: Border.all(
-           color: const Color(0xFFD2691E), // Lighter brown border
-           width: 2,
-         ),
-         boxShadow: [
-           BoxShadow(
-             color: Colors.black.withValues(alpha: 0.3),
-             blurRadius: 15,
-             offset: const Offset(0, 8),
-           ),
-         ],
-       ),
-      child: Column(
-        children: [
+      padding: const EdgeInsets.fromLTRB(8, 20, 8, 20),
+      decoration: BoxDecoration(
+        color: const Color(0xFF8B4513), // Dark brown wood
+        borderRadius: BorderRadius.circular(20),
+        border: Border.all(
+          color: const Color(0xFFD2691E), // Lighter brown border
+          width: 2,
+        ),
+        boxShadow: [
+          BoxShadow(
+            color: Colors.black.withValues(alpha: 0.3),
+            blurRadius: 15,
+            offset: const Offset(0, 8),
+          ),
+        ],
+      ),
+     child: Column(
+       children: [
                      // Header with Trophy Icon
            Container(
              width: double.infinity,
@@ -287,31 +287,33 @@ class _LeaderboardScreenState extends State<LeaderboardScreen> {
           
           const SizedBox(height: 24),
           
-                     // Top 3 Podium
-           Row(
-             mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-             crossAxisAlignment: CrossAxisAlignment.start,
-             children: [
-               // 2nd Place (Left)
-               if (top3.length >= 2) Flexible(
-                 child: Padding(
-                   padding: const EdgeInsets.symmetric(horizontal: 8.0),
-                   child: _buildTop3Item(top3[1], 2),
-                 ),
-               ),
+                                 // Top 3 Podium
+            Row(
+              mainAxisAlignment: MainAxisAlignment.spaceBetween,
+              crossAxisAlignment: CrossAxisAlignment.start,
+              children: [
+                // 2nd Place (Left)
+                if (top3.length >= 2) Expanded(
+                  child: Align(
+                    alignment: Alignment.centerLeft,
+                    child: _buildTop3Item(top3[1], 2),
+                  ),
+                ),
 
-               // 1st Place (Center)
-               Flexible(child: _buildTop3Item(top3[0], 1)),
+                // 1st Place (Center)
+                Expanded(
+                  child: _buildTop3Item(top3[0], 1),
+                ),
 
-               // 3rd Place (Right)
-               if (top3.length >= 3) Flexible(
-                 child: Padding(
-                   padding: const EdgeInsets.symmetric(horizontal: 8.0),
-                   child: _buildTop3Item(top3[2], 3),
-                 ),
-               ),
-             ],
-           ),
+                // 3rd Place (Right)
+                if (top3.length >= 3) Expanded(
+                  child: Align(
+                    alignment: Alignment.centerRight,
+                    child: _buildTop3Item(top3[2], 3),
+                  ),
+                ),
+              ],
+            ),
         ],
       ),
     ).animate().slideY(begin: 0.3, duration: 600.ms).fadeIn(delay: 100.ms);
@@ -329,17 +331,17 @@ class _LeaderboardScreenState extends State<LeaderboardScreen> {
                    switch (rank) {
         case 1:
           rankColor = const Color(0xFFFFD700); // Vàng
-          avatarSize = 80;
+          avatarSize = 64;
           scoreSize = 20;
           break;
         case 2:
           rankColor = const Color(0xFFC0C0C0); // Bạc
-          avatarSize = 60;
+          avatarSize = 52;
           scoreSize = 18;
           break;
         case 3:
           rankColor = const Color(0xFFCD7F32); // Đồng
-          avatarSize = 60;
+          avatarSize = 52;
           scoreSize = 18;
           break;
         default:
@@ -348,145 +350,165 @@ class _LeaderboardScreenState extends State<LeaderboardScreen> {
           scoreSize = 16;
       }
 
-                   return Column(
-        children: [
-                     // Avatar with special frame, crown, and laurel wreath for 1st place
-           SizedBox(
-             width: avatarSize + 70,
-             height: rank == 1 ? avatarSize + 40 : avatarSize + 20,
-             child: Stack(
-               clipBehavior: Clip.none,
-               alignment: Alignment.center,
-               children: [
-               // Laurel wreath background for 1st place (from assets)
-               if (rank == 1)
-                 Positioned(
-                   top: -20,
-                   left: -20,
-                   right: -20,
-                   bottom: -20,
-                   child: IgnorePointer(
-                     child: Center(
-                       child: Image.asset(
-                         'assets/images/icons/laurel-wreath.png',
-                         width: avatarSize + 60,
-                         height: avatarSize + 60,
-                         fit: BoxFit.contain,
-                       ),
-                     ),
-                   ),
-                 ),
-               
-                               Container(
-                  width: avatarSize + 10,
-                  height: avatarSize + 10,
-                  decoration: BoxDecoration(
-                    shape: BoxShape.circle,
-                    gradient: rank == 1 
-                      ? const LinearGradient(
-                          colors: [Color(0xFFFFD700), Color(0xFFFFA500)],
-                          begin: Alignment.topLeft,
-                          end: Alignment.bottomRight,
-                        )
-                      : rank == 2
-                        ? const LinearGradient(
-                            colors: [Color(0xFFC0C0C0), Color(0xFFA0A0A0)],
-                            begin: Alignment.topLeft,
-                            end: Alignment.bottomRight,
-                          )
-                        : const LinearGradient(
-                            colors: [Color(0xFFCD7F32), Color(0xFFB8860B)],
-                            begin: Alignment.topLeft,
-                            end: Alignment.bottomRight,
+                                                           return Column(
+                      children: [
+                        // Avatar with special frame, crown, and laurel wreath for 1st place
+                        Center(
+                          child: SizedBox(
+                            width: rank == 1 ? avatarSize + 60 : avatarSize + 40,
+                            height: rank == 1 ? avatarSize + 50 : avatarSize + 14,
+                            child: Stack(
+                              clipBehavior: Clip.none,
+                              alignment: Alignment.center,
+                              children: [
+                                // Laurel wreath background for 1st place (from assets)
+                                if (rank == 1)
+                                  Positioned(
+                                    top: -16,
+                                    left: -16,
+                                    right: -16,
+                                    bottom: -16,
+                                    child: IgnorePointer(
+                                      child: Center(
+                                        child: Image.asset(
+                                          'assets/images/icons/laurel-wreath.png',
+                                          width: avatarSize + 56,
+                                          height: avatarSize + 56,
+                                          fit: BoxFit.contain,
+                                        ),
+                                      ),
+                                    ),
+                                  ),
+                                
+                                Container(
+                                  width: avatarSize + 10,
+                                  height: avatarSize + 10,
+                                  decoration: BoxDecoration(
+                                    shape: BoxShape.circle,
+                                    gradient: rank == 1 
+                                      ? const LinearGradient(
+                                          colors: [Color(0xFFFFD700), Color(0xFFFFA500)],
+                                          begin: Alignment.topLeft,
+                                          end: Alignment.bottomRight,
+                                        )
+                                      : rank == 2
+                                        ? const LinearGradient(
+                                            colors: [Color(0xFFC0C0C0), Color(0xFFA0A0A0)],
+                                            begin: Alignment.topLeft,
+                                            end: Alignment.bottomRight,
+                                          )
+                                        : const LinearGradient(
+                                            colors: [Color(0xFFCD7F32), Color(0xFFB8860B)],
+                                            begin: Alignment.topLeft,
+                                            end: Alignment.bottomRight,
+                                          ),
+                                    boxShadow: [
+                                      BoxShadow(
+                                        color: rankColor.withValues(alpha: 0.4),
+                                        blurRadius: 12,
+                                        offset: const Offset(0, 6),
+                                      ),
+                                    ],
+                                  ),
+                                  child: Container(
+                                    width: avatarSize,
+                                    height: avatarSize,
+                                    margin: const EdgeInsets.all(5),
+                                    decoration: BoxDecoration(
+                                      shape: BoxShape.circle,
+                                      color: Colors.white,
+                                    ),
+                                    child: ClipOval(
+                                      child: photoUrl != null && photoUrl.isNotEmpty
+                                          ? Image.network(
+                                              photoUrl,
+                                              fit: BoxFit.cover,
+                                              errorBuilder: (context, error, stackTrace) {
+                                                return Container(
+                                                  color: AppTheme.lightOrange,
+                                                  child: Center(
+                                                    child: Text(
+                                                      title.isNotEmpty ? title[0].toUpperCase() : '?',
+                                                      style: const TextStyle(
+                                                        fontWeight: FontWeight.bold,
+                                                        color: AppTheme.primaryOrange,
+                                                        fontSize: 16,
+                                                      ),
+                                                    ),
+                                                  ),
+                                                );
+                                              },
+                                            )
+                                          : Container(
+                                              color: AppTheme.lightOrange,
+                                              child: Center(
+                                                child: Text(
+                                                  title.isNotEmpty ? title[0].toUpperCase() : '?',
+                                                  style: const TextStyle(
+                                                    fontWeight: FontWeight.bold,
+                                                    color: AppTheme.primaryOrange,
+                                                    fontSize: 16,
+                                                  ),
+                                                ),
+                                              ),
+                                            ),
+                                    ),
+                                  ),
+                                ),
+                                
+                                // Crown for 1st place (from assets)
+                                if (rank == 1)
+                                  Positioned(
+                                    top: -6,
+                                    left: 0,
+                                    right: 0,
+                                    child: Center(
+                                      child: Image.asset(
+                                        'assets/images/icons/crown.png',
+                                        width: 36,
+                                        height: 36,
+                                        fit: BoxFit.contain,
+                                      ),
+                                    ),
+                                  ),
+                              ],
+                            ),
                           ),
-                    boxShadow: [
-                      BoxShadow(
-                        color: rankColor.withValues(alpha: 0.4),
-                        blurRadius: 12,
-                        offset: const Offset(0, 6),
-                      ),
-                    ],
-                  ),
-                  child: Container(
-                    width: avatarSize,
-                    height: avatarSize,
-                    margin: const EdgeInsets.all(5),
-                    decoration: BoxDecoration(
-                      shape: BoxShape.circle,
-                      color: Colors.white,
-                    ),
-                   child: ClipOval(
-                     child: photoUrl != null && photoUrl.isNotEmpty
-                         ? Image.network(
-                             photoUrl,
-                             fit: BoxFit.cover,
-                             errorBuilder: (context, error, stackTrace) {
-                               return Container(
-                                 color: AppTheme.lightOrange,
-                                 child: Center(
-                                   child: Text(
-                                     title.isNotEmpty ? title[0].toUpperCase() : '?',
-                                     style: const TextStyle(
-                                       fontWeight: FontWeight.bold,
-                                       color: AppTheme.primaryOrange,
-                                       fontSize: 16,
-                                     ),
-                                   ),
-                                 ),
-                               );
-                             },
-                           )
-                         : Container(
-                             color: AppTheme.lightOrange,
-                             child: Center(
-                               child: Text(
-                                 title.isNotEmpty ? title[0].toUpperCase() : '?',
-                                 style: const TextStyle(
-                                   fontWeight: FontWeight.bold,
-                                   color: AppTheme.primaryOrange,
-                                   fontSize: 16,
-                                 ),
-                               ),
-                             ),
-                           ),
-                   ),
-                 ),
-               ),
-               
-               // Crown for 1st place (from assets)
-               if (rank == 1)
-                 Positioned(
-                   top: -8,
-                   left: 0,
-                   right: 0,
-                   child: Center(
-                     child: Image.asset(
-                       'assets/images/icons/crown.png',
-                       width: 40,
-                       height: 40,
-                       fit: BoxFit.contain,
-                     ),
-                   ),
-                 ),
-             
- 
-               ],
-             ),
-           ),
-        
-        const SizedBox(height: 12),
-        
-                 // Score
-         Text(
-           '${_formatNumber(value)}',
-           style: TextStyle(
-             fontSize: scoreSize,
-             fontWeight: FontWeight.bold,
-             color: rankColor,
-           ),
-         ),
-      ],
-    );
+                        ),
+                        
+                        const SizedBox(height: 12),
+                        
+                        // Name
+                        Padding(
+                          padding: const EdgeInsets.symmetric(horizontal: 4),
+                          child: Tooltip(
+                            message: title,
+                            child: Text(
+                              title,
+                              textAlign: TextAlign.center,
+                              maxLines: 2,
+                              overflow: TextOverflow.ellipsis,
+                              style: const TextStyle(
+                                fontSize: 12,
+                                fontWeight: FontWeight.w600,
+                                color: Colors.white,
+                              ),
+                            ),
+                          ),
+                        ),
+                        const SizedBox(height: 6),
+                        
+                        // Score
+                        Text(
+                          '${_formatNumber(value)}',
+                          style: TextStyle(
+                            fontSize: scoreSize,
+                            fontWeight: FontWeight.bold,
+                            color: rankColor,
+                          ),
+                        ),
+                      ],
+                    );
   }
 
      Widget _buildOtherRanksSection(List<Map<String, dynamic>> otherRanks) {
@@ -618,15 +640,18 @@ class _LeaderboardScreenState extends State<LeaderboardScreen> {
           
                      // Name
            Expanded(
-             child: Text(
-               title,
-               style: const TextStyle(
-                 fontSize: 16,
-                 fontWeight: FontWeight.w600,
-                 color: Colors.white, // White text for better contrast
+             child: Tooltip(
+               message: title,
+               child: Text(
+                 title,
+                 style: const TextStyle(
+                   fontSize: 14,
+                   fontWeight: FontWeight.w600,
+                   color: Colors.white, // White text for better contrast
+                 ),
+                 maxLines: 2,
+                 overflow: TextOverflow.ellipsis,
                ),
-               maxLines: 1,
-               overflow: TextOverflow.ellipsis,
              ),
            ),
         ],
