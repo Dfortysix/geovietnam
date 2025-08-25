@@ -143,7 +143,7 @@ class _LeaderboardScreenState extends State<LeaderboardScreen> {
                              ),
                              child: const Icon(
                                Icons.arrow_back_ios,
-                               color: Colors.white,
+                               color: Colors.black,
                                size: 20,
                              ),
                            ),
@@ -154,7 +154,7 @@ class _LeaderboardScreenState extends State<LeaderboardScreen> {
                            style: TextStyle(
                              fontSize: 24,
                              fontWeight: FontWeight.bold,
-                             color: Colors.white,
+                             color: Colors.black,
                            ),
                          ),
                        ],
