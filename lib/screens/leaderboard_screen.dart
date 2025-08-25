@@ -111,72 +111,180 @@ class _LeaderboardScreenState extends State<LeaderboardScreen> {
     print('[Leaderboard] $message');
   }
 
-     Future<void> _showMyPositionModal() async {
-     try {
-       _log('showMyPositionModal: usingMockData=$_usingMockData, myUserId=$_myUserId');
-       
-       if (_usingMockData) {
-         // Với mock data, tính rank từ danh sách hiện tại
-         _log('showMyPositionModal: searching in mock data, rows=${_rows.length}');
-         final idx = _rows.indexWhere((e) => (e['userId'] as String?) == _myUserId);
-         _log('showMyPositionModal: found index=$idx');
-         if (idx >= 0) {
-           _myApproxRank = idx + 1;
-           _myEntry = _rows[idx];
-           _log('showMyPositionModal: mock data - rank=$_myApproxRank, entry=$_myEntry');
-         }
-       } else {
-         // Với real data, lấy từ service
-         _log('showMyPositionModal: fetching from service');
-         _myEntry = await _userService.getMyLeaderboardEntry();
-         _myApproxRank = await _userService.getMyApproxRank();
-         _log('showMyPositionModal: real data - rank=$_myApproxRank, entry=$_myEntry');
-       }
+       Future<void> _showMyPositionModal() async {
+    try {
+      _log('showMyPositionModal: usingMockData=$_usingMockData, myUserId=$_myUserId');
 
-               _log('showMyPositionModal: final check - rank=$_myApproxRank, entry=$_myEntry');
-        if (_myEntry == null) {
-          _log('showMyPositionModal: missing entry data, showing error');
-          ScaffoldMessenger.of(context).showSnackBar(
-            const SnackBar(content: Text('Không tìm thấy thông tin xếp hạng của bạn.')),
-          );
-          return;
+      if (_usingMockData) {
+        // Với mock data, tính rank từ danh sách hiện tại
+        _log('showMyPositionModal: searching in mock data, rows=${_rows.length}');
+        final idx = _rows.indexWhere((e) => (e['userId'] as String?) == _myUserId);
+        _log('showMyPositionModal: found index=$idx');
+        if (idx >= 0) {
+          _myApproxRank = idx + 1;
+          _myEntry = _rows[idx];
+          _log('showMyPositionModal: mock data - rank=$_myApproxRank, entry=$_myEntry');
         }
-        
-        // Nếu rank null, hiển thị "Đang tính toán..." hoặc tìm trong danh sách hiện tại
-        if (_myApproxRank == null) {
-          _log('showMyPositionModal: rank is null, trying to find in current list');
-          final idx = _rows.indexWhere((e) => (e['userId'] as String?) == _myUserId);
-          if (idx >= 0) {
-            _myApproxRank = idx + 1;
-            _log('showMyPositionModal: found in current list at rank $_myApproxRank');
-          }
+      } else {
+        // Với real data, lấy từ service
+        _log('showMyPositionModal: fetching from service');
+        _myEntry = await _userService.getMyLeaderboardEntry();
+        _myApproxRank = await _userService.getMyApproxRank();
+        _log('showMyPositionModal: real data - rank=$_myApproxRank, entry=$_myEntry');
+      }
+
+      _log('showMyPositionModal: final check - rank=$_myApproxRank, entry=$_myEntry');
+      if (_myEntry == null) {
+        _log('showMyPositionModal: missing entry data, showing error');
+        ScaffoldMessenger.of(context).showSnackBar(
+          const SnackBar(content: Text('Không tìm thấy thông tin xếp hạng của bạn.')),
+        );
+        return;
+      }
+
+      // Nếu rank null, hiển thị "Đang tính toán..." hoặc tìm trong danh sách hiện tại
+      if (_myApproxRank == null) {
+        _log('showMyPositionModal: rank is null, trying to find in current list');
+        final idx = _rows.indexWhere((e) => (e['userId'] as String?) == _myUserId);
+        if (idx >= 0) {
+          _myApproxRank = idx + 1;
+          _log('showMyPositionModal: found in current list at rank $_myApproxRank');
         }
+      }
 
       if (!mounted) return;
-      
-      showDialog(
+
+      showModalBottomSheet(
         context: context,
-        builder: (context) => AlertDialog(
-          title: const Text('Vị trí của bạn'),
-          content: Column(
-            mainAxisSize: MainAxisSize.min,
-            crossAxisAlignment: CrossAxisAlignment.start,
-                         children: [
-               Text('Xếp hạng: ${_myApproxRank != null ? '#${_myApproxRank}' : 'Đang tính toán...'}'),
-               const SizedBox(height: 8),
-               Text('Tên: ${(_myEntry!['displayName'] as String?) ?? 'Bạn'}'),
-               const SizedBox(height: 8),
-               Text('Điểm: ${(_myEntry!['totalScore'] as int?) ?? 0}'),
-               const SizedBox(height: 8),
-               Text('Tỉnh đã mở khóa: ${(_myEntry!['unlockedProvincesCount'] as int?) ?? 0}'),
-             ],
-          ),
-          actions: [
-            TextButton(
-              onPressed: () => Navigator.of(context).pop(),
-              child: const Text('Đóng'),
+        backgroundColor: Colors.transparent,
+        isScrollControlled: true,
+        builder: (context) => Container(
+          decoration: const BoxDecoration(
+            color: Color(0xFF8B4513), // Dark brown wood
+            borderRadius: BorderRadius.only(
+              topLeft: Radius.circular(20),
+              topRight: Radius.circular(20),
             ),
-          ],
+          ),
+          child: Container(
+            decoration: BoxDecoration(
+              borderRadius: const BorderRadius.only(
+                topLeft: Radius.circular(20),
+                topRight: Radius.circular(20),
+              ),
+              boxShadow: [
+                BoxShadow(
+                  color: Colors.black.withValues(alpha: 0.3),
+                  blurRadius: 15,
+                  offset: const Offset(0, -8),
+                ),
+              ],
+            ),
+            child: Column(
+              mainAxisSize: MainAxisSize.min,
+              children: [
+                // Header
+                Container(
+                  padding: const EdgeInsets.all(16),
+                  decoration: const BoxDecoration(
+                    color: Color(0xFF654321),
+                    borderRadius: BorderRadius.only(
+                      topLeft: Radius.circular(18),
+                      topRight: Radius.circular(18),
+                    ),
+                  ),
+                  child: Row(
+                    children: [
+                      Icon(
+                        Icons.emoji_events,
+                        color: AppTheme.primaryOrange,
+                        size: 24,
+                      ),
+                      const SizedBox(width: 12),
+                      const Text(
+                        'Vị trí của bạn',
+                        style: TextStyle(
+                          color: Colors.white,
+                          fontSize: 18,
+                          fontWeight: FontWeight.bold,
+                        ),
+                      ),
+                      const Spacer(),
+                      IconButton(
+                        onPressed: () => Navigator.of(context).pop(),
+                        icon: const Icon(Icons.close, color: Colors.white),
+                        style: IconButton.styleFrom(
+                          backgroundColor: Colors.black.withValues(alpha: 0.3),
+                          shape: const CircleBorder(),
+                        ),
+                      ),
+                    ],
+                  ),
+                ),
+                
+                // Content - Sử dụng cùng style với leaderboard
+                Padding(
+                  padding: const EdgeInsets.all(16),
+                  child: _buildOtherRankItem(
+                    rank: _myApproxRank ?? 0,
+                    title: (_myEntry!['displayName'] as String?) ?? 'Bạn',
+                    value: (_myEntry!['totalScore'] as int?) ?? 0,
+                    photoUrl: _myEntry!['photoUrl'] as String?,
+                    userId: _myUserId,
+                    isCompact: false,
+                  ),
+                ),
+                
+                // Additional info
+                Container(
+                  padding: const EdgeInsets.symmetric(horizontal: 16, vertical: 12),
+                  decoration: BoxDecoration(
+                    color: Colors.black.withValues(alpha: 0.1),
+                    borderRadius: const BorderRadius.only(
+                      bottomLeft: Radius.circular(18),
+                      bottomRight: Radius.circular(18),
+                    ),
+                  ),
+                  child: Row(
+                    children: [
+                      Icon(
+                        Icons.location_on,
+                        color: AppTheme.primaryOrange,
+                        size: 16,
+                      ),
+                      const SizedBox(width: 8),
+                      Text(
+                        'Tỉnh đã mở khóa: ${(_myEntry!['unlockedProvincesCount'] as int?) ?? 0}',
+                        style: const TextStyle(
+                          color: Colors.white,
+                          fontSize: 14,
+                          fontWeight: FontWeight.w500,
+                        ),
+                      ),
+                      const Spacer(),
+                      Icon(
+                        Icons.local_fire_department,
+                        color: AppTheme.primaryOrange,
+                        size: 16,
+                      ),
+                      const SizedBox(width: 8),
+                      Text(
+                        'Streak: ${(_myEntry!['dailyStreak'] as int?) ?? 0}',
+                        style: const TextStyle(
+                          color: Colors.white,
+                          fontSize: 14,
+                          fontWeight: FontWeight.w500,
+                        ),
+                      ),
+                    ],
+                  ),
+                ),
+                
+                // Safe area padding for bottom
+                const SizedBox(height: 16),
+              ],
+            ),
+          ),
         ),
       );
     } catch (e) {
