@@ -102,6 +102,90 @@ class _LeaderboardScreenState extends State<LeaderboardScreen> {
   bool _usingMockData = false;
   final ScrollController _scrollController = ScrollController();
   final Map<String, GlobalKey> _itemKeys = {};
+  int? _myApproxRank; // rank xấp xỉ của tôi
+  Map<String, dynamic>? _myEntry; // entry của tôi để render modal
+
+  void _log(String message) {
+    // Bọc để sau này có thể tắt nhanh
+    // ignore: avoid_print
+    print('[Leaderboard] $message');
+  }
+
+     Future<void> _showMyPositionModal() async {
+     try {
+       _log('showMyPositionModal: usingMockData=$_usingMockData, myUserId=$_myUserId');
+       
+       if (_usingMockData) {
+         // Với mock data, tính rank từ danh sách hiện tại
+         _log('showMyPositionModal: searching in mock data, rows=${_rows.length}');
+         final idx = _rows.indexWhere((e) => (e['userId'] as String?) == _myUserId);
+         _log('showMyPositionModal: found index=$idx');
+         if (idx >= 0) {
+           _myApproxRank = idx + 1;
+           _myEntry = _rows[idx];
+           _log('showMyPositionModal: mock data - rank=$_myApproxRank, entry=$_myEntry');
+         }
+       } else {
+         // Với real data, lấy từ service
+         _log('showMyPositionModal: fetching from service');
+         _myEntry = await _userService.getMyLeaderboardEntry();
+         _myApproxRank = await _userService.getMyApproxRank();
+         _log('showMyPositionModal: real data - rank=$_myApproxRank, entry=$_myEntry');
+       }
+
+               _log('showMyPositionModal: final check - rank=$_myApproxRank, entry=$_myEntry');
+        if (_myEntry == null) {
+          _log('showMyPositionModal: missing entry data, showing error');
+          ScaffoldMessenger.of(context).showSnackBar(
+            const SnackBar(content: Text('Không tìm thấy thông tin xếp hạng của bạn.')),
+          );
+          return;
+        }
+        
+        // Nếu rank null, hiển thị "Đang tính toán..." hoặc tìm trong danh sách hiện tại
+        if (_myApproxRank == null) {
+          _log('showMyPositionModal: rank is null, trying to find in current list');
+          final idx = _rows.indexWhere((e) => (e['userId'] as String?) == _myUserId);
+          if (idx >= 0) {
+            _myApproxRank = idx + 1;
+            _log('showMyPositionModal: found in current list at rank $_myApproxRank');
+          }
+        }
+
+      if (!mounted) return;
+      
+      showDialog(
+        context: context,
+        builder: (context) => AlertDialog(
+          title: const Text('Vị trí của bạn'),
+          content: Column(
+            mainAxisSize: MainAxisSize.min,
+            crossAxisAlignment: CrossAxisAlignment.start,
+                         children: [
+               Text('Xếp hạng: ${_myApproxRank != null ? '#${_myApproxRank}' : 'Đang tính toán...'}'),
+               const SizedBox(height: 8),
+               Text('Tên: ${(_myEntry!['displayName'] as String?) ?? 'Bạn'}'),
+               const SizedBox(height: 8),
+               Text('Điểm: ${(_myEntry!['totalScore'] as int?) ?? 0}'),
+               const SizedBox(height: 8),
+               Text('Tỉnh đã mở khóa: ${(_myEntry!['unlockedProvincesCount'] as int?) ?? 0}'),
+             ],
+          ),
+          actions: [
+            TextButton(
+              onPressed: () => Navigator.of(context).pop(),
+              child: const Text('Đóng'),
+            ),
+          ],
+        ),
+      );
+    } catch (e) {
+      if (!mounted) return;
+      ScaffoldMessenger.of(context).showSnackBar(
+        const SnackBar(content: Text('Không thể lấy thông tin vị trí của bạn.')),
+      );
+    }
+  }
 
   @override
   void initState() {
@@ -239,7 +323,7 @@ class _LeaderboardScreenState extends State<LeaderboardScreen> {
             ? FloatingActionButton.extended(
                 backgroundColor: AppTheme.primaryOrange,
                 foregroundColor: Colors.white,
-                onPressed: _scrollToMyPosition,
+                onPressed: _showMyPositionModal,
                 icon: const Icon(Icons.person_pin_circle),
                 label: const Text('Vị trí của tôi'),
               )

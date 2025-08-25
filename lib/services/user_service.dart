@@ -622,30 +622,49 @@ class UserService {
 
   /// Approximate rank using aggregate counts (without Cloud Functions)
   Future<int?> getMyApproxRank() async {
+    print('[UserService] getMyApproxRank: ENTRY POINT');
     try {
+      print('[UserService] getMyApproxRank: starting...');
       final me = await getMyLeaderboardEntry();
-      if (me == null) return null;
+      print('[UserService] getMyApproxRank: getMyLeaderboardEntry result=$me');
+      if (me == null) {
+        print('[UserService] getMyApproxRank: no leaderboard entry found');
+        return null;
+      }
       final int myScore = me['totalScore'] as int? ?? 0;
       final int myUnlocked = me['unlockedProvincesCount'] as int? ?? 0;
+      print('[UserService] getMyApproxRank: myScore=$myScore, myUnlocked=$myUnlocked');
 
-      // Count users with greater score
-      final aggGreaterScore = await _leaderboardUsers()
-          .where('totalScore', isGreaterThan: myScore)
-          .count()
+      // Simplified approach: Count users with greater or equal score, then filter in memory
+      print('[UserService] getMyApproxRank: about to query all users with >= score...');
+      final allUsers = await _leaderboardUsers()
+          .where('totalScore', isGreaterThanOrEqualTo: myScore)
+          .orderBy('totalScore', descending: true)
+          .orderBy('unlockedProvincesCount', descending: true)
           .get();
+      print('[UserService] getMyApproxRank: found ${allUsers.docs.length} users with >= score');
 
-      // Count users with equal score but greater unlocked provinces
-      final aggTieBreak = await _leaderboardUsers()
-          .where('totalScore', isEqualTo: myScore)
-          .where('unlockedProvincesCount', isGreaterThan: myUnlocked)
-          .count()
-          .get();
-
-      final int greater = aggGreaterScore.count ?? 0;
-      final int tieBreak = aggTieBreak.count ?? 0;
-      final rank = greater + tieBreak + 1;
+      // Calculate rank manually
+      int rank = 1;
+      for (final doc in allUsers.docs) {
+        final data = doc.data();
+        final score = data['totalScore'] as int? ?? 0;
+        final unlocked = data['unlockedProvincesCount'] as int? ?? 0;
+        
+        if (score > myScore || (score == myScore && unlocked > myUnlocked)) {
+          rank++;
+        } else if (score == myScore && unlocked == myUnlocked) {
+          // Found our position
+          break;
+        }
+      }
+      
+      print('[UserService] getMyApproxRank: calculated rank=$rank');
+      print('[UserService] getMyApproxRank: SUCCESS - returning rank=$rank');
       return rank;
     } catch (e) {
+      print('[UserService] getMyApproxRank: ERROR caught: $e');
+      print('[UserService] getMyApproxRank: error stack trace: ${StackTrace.current}');
       return null;
     }
   }
