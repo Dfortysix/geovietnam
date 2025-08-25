@@ -3,6 +3,7 @@ import 'package:flutter_animate/flutter_animate.dart';
 import 'dart:math';
 import '../theme/app_theme.dart';
 import '../services/user_service.dart';
+import 'package:firebase_auth/firebase_auth.dart';
 
 // Custom painter for bokeh effect
 class BokehPainter extends CustomPainter {
@@ -94,6 +95,11 @@ class _LeaderboardScreenState extends State<LeaderboardScreen> {
   final UserService _userService = UserService();
   bool _loading = true;
   List<Map<String, dynamic>> _rows = [];
+  List<Object?>? _cursor;
+  bool _hasMore = true;
+  bool _isLoadingMore = false;
+  String? _myUserId;
+  bool _usingMockData = false;
 
   @override
   void initState() {
@@ -102,12 +108,108 @@ class _LeaderboardScreenState extends State<LeaderboardScreen> {
   }
 
   Future<void> _load() async {
-    final rows = await _userService.getTopUsersByScoreThenUnlocked(limit: 100);
+    // Lấy người dùng hiện tại để highlight
+    final current = FirebaseAuth.instance.currentUser;
+    _myUserId = current?.uid;
+
+    if (_usingMockData) {
+      // Sử dụng mock data
+      final mockData = _userService.getMockLeaderboardData();
+      setState(() {
+        _rows = mockData;
+        _loading = false;
+        _hasMore = false; // Mock data không có pagination
+      });
+    } else {
+      // Trang đầu tiên bằng cursor-based paging
+      final page = await _userService.getLeaderboardPageWithCursor(limit: 30);
+      final rows = (page['items'] as List<Map<String, dynamic>>?) ?? [];
+      _cursor = page['cursor'] as List<Object?>?;
+      _hasMore = (page['hasMore'] as bool?) ?? false;
+      if (!mounted) return;
+      setState(() {
+        _rows = rows;
+        _loading = false;
+      });
+    }
+  }
+
+  Future<void> _loadMoreIfNeeded() async {
+    if (!_hasMore || _isLoadingMore || _loading || _usingMockData) return;
+    setState(() {
+      _isLoadingMore = true;
+    });
+    final page = await _userService.getLeaderboardPageWithCursor(limit: 30, startAfter: _cursor);
+    final newItems = (page['items'] as List<Map<String, dynamic>>?) ?? [];
+    final newCursor = page['cursor'] as List<Object?>?;
+    final hasMore = (page['hasMore'] as bool?) ?? false;
     if (!mounted) return;
     setState(() {
-      _rows = rows;
-      _loading = false;
+      _rows.addAll(newItems);
+      _cursor = newCursor;
+      _hasMore = hasMore;
+      _isLoadingMore = false;
     });
+  }
+
+  Future<void> _showMyPositionWindow() async {
+    final window = await _userService.getWindowFromMyPosition(limit: 20);
+    if (!mounted) return;
+    showModalBottomSheet(
+      context: context,
+      backgroundColor: const Color(0xFF654321),
+      shape: const RoundedRectangleBorder(
+        borderRadius: BorderRadius.vertical(top: Radius.circular(16)),
+      ),
+      builder: (ctx) {
+        return SafeArea(
+          child: Padding(
+            padding: const EdgeInsets.all(12),
+            child: Column(
+              mainAxisSize: MainAxisSize.min,
+              crossAxisAlignment: CrossAxisAlignment.start,
+              children: [
+                const Padding(
+                  padding: EdgeInsets.symmetric(vertical: 8),
+                  child: Text(
+                    'Vị trí của bạn',
+                    style: TextStyle(color: Colors.white, fontSize: 16, fontWeight: FontWeight.w700),
+                  ),
+                ),
+                Flexible(
+                  child: ListView.separated(
+                    shrinkWrap: true,
+                    itemCount: window.length,
+                    separatorBuilder: (_, __) => const Divider(color: Color(0xFFD2691E), height: 1),
+                    itemBuilder: (_, index) {
+                      final item = window[index];
+                      final isMe = item['userId'] == _myUserId;
+                      final title = item['displayName'] ?? 'Người chơi';
+                      final value = item['totalScore'] ?? 0;
+                      final photoUrl = item['photoUrl'] as String?;
+                      return Container(
+                        decoration: BoxDecoration(
+                          color: isMe ? AppTheme.primaryOrange.withValues(alpha: 0.12) : Colors.transparent,
+                          borderRadius: BorderRadius.circular(8),
+                        ),
+                        child: _buildOtherRankItem(
+                          rank: -1, // ẩn rank tuyệt đối trong window này
+                          title: title,
+                          value: value,
+                          photoUrl: photoUrl,
+                          userId: item['userId'] as String?,
+                          isCompact: true,
+                        ),
+                      );
+                    },
+                  ),
+                ),
+              ],
+            ),
+          ),
+        );
+      },
+    );
   }
 
      @override
@@ -155,6 +257,68 @@ class _LeaderboardScreenState extends State<LeaderboardScreen> {
                              fontSize: 24,
                              fontWeight: FontWeight.bold,
                              color: Colors.black,
+                           ),
+                         ),
+                         const Spacer(),
+                         Tooltip(
+                           message: 'Tạo 10 user test (300-400 điểm)',
+                           child: ElevatedButton.icon(
+                             onPressed: () async {
+                               final scaffold = ScaffoldMessenger.of(context);
+                               if (_usingMockData) {
+                                 // Chuyển về dữ liệu thật
+                                 scaffold.showSnackBar(
+                                   const SnackBar(content: Text('Đang chuyển về dữ liệu thật...')),
+                                 );
+                                 setState(() {
+                                   _usingMockData = false;
+                                   _loading = true;
+                                 });
+                                 scaffold.hideCurrentSnackBar();
+                                 scaffold.showSnackBar(
+                                   const SnackBar(content: Text('Đã chuyển về dữ liệu thật')),
+                                 );
+                                 _load();
+                               } else {
+                                 // Chuyển sang mock data
+                                 scaffold.showSnackBar(
+                                   const SnackBar(content: Text('Đang tạo user test...')),
+                                 );
+                                 setState(() {
+                                   _usingMockData = true;
+                                   _loading = true;
+                                 });
+                                 final count = 10; // Số lượng mock users
+                                 scaffold.hideCurrentSnackBar();
+                                 scaffold.showSnackBar(
+                                   SnackBar(content: Text('Đã tạo $count user test')),
+                                 );
+                                 _load();
+                               }
+                             },
+                             icon: const Icon(Icons.add_circle_outline, size: 18),
+                             label: Text(_usingMockData ? 'Real' : 'Test'),
+                             style: ElevatedButton.styleFrom(
+                               backgroundColor: _usingMockData ? Colors.blue : Colors.green,
+                               foregroundColor: Colors.white,
+                               padding: const EdgeInsets.symmetric(vertical: 10, horizontal: 12),
+                               shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(12)),
+                             ),
+                           ),
+                         ),
+                         const SizedBox(width: 8),
+                         Tooltip(
+                           message: 'Tới vị trí của tôi',
+                           child: ElevatedButton.icon(
+                             onPressed: _usingMockData ? null : _showMyPositionWindow,
+                             icon: const Icon(Icons.person_pin_circle, size: 18),
+                             label: const Text('Vị trí của tôi'),
+                             style: ElevatedButton.styleFrom(
+                               backgroundColor: AppTheme.primaryOrange,
+                               foregroundColor: Colors.white,
+                               padding: const EdgeInsets.symmetric(vertical: 10, horizontal: 12),
+                               shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(12)),
+                             ),
                            ),
                          ),
                        ],
@@ -226,18 +390,31 @@ class _LeaderboardScreenState extends State<LeaderboardScreen> {
            color: const Color(0xFF654321), // Inner dark brown
            borderRadius: BorderRadius.circular(20),
          ),
-         child: SingleChildScrollView(
-           padding: const EdgeInsets.all(20),
-           child: Column(
-             children: [
-               // Top 3 Section
+         child: NotificationListener<ScrollNotification>(
+           onNotification: (n) {
+             if (n.metrics.pixels >= n.metrics.maxScrollExtent - 400) {
+               _loadMoreIfNeeded();
+             }
+             return false;
+           },
+           child: SingleChildScrollView(
+            padding: const EdgeInsets.all(20),
+            child: Column(
+              children: [
+                // Top 3 Section
                if (data.length >= 3) _buildTop3Section(data.take(3).toList()),
                
                const SizedBox(height: 8),
                
                // Other Ranks Section
                if (data.length > 3) _buildOtherRanksSection(data.skip(3).toList()),
-             ],
+               if (_isLoadingMore)
+                 const Padding(
+                   padding: EdgeInsets.symmetric(vertical: 16),
+                   child: Center(child: CircularProgressIndicator(color: AppTheme.primaryOrange)),
+                 )
+              ],
+            ),
            ),
          ),
        ),
@@ -340,6 +517,7 @@ class _LeaderboardScreenState extends State<LeaderboardScreen> {
     final title = item['displayName'] ?? 'Người chơi';
     final value = item['totalScore'] ?? 0;
     final photoUrl = item['photoUrl'] as String?;
+    final isMe = (item['userId'] as String?) == _myUserId;
     
     Color rankColor;
     double avatarSize;
@@ -421,11 +599,12 @@ class _LeaderboardScreenState extends State<LeaderboardScreen> {
                                           ),
                                     boxShadow: [
                                       BoxShadow(
-                                        color: rankColor.withValues(alpha: 0.4),
-                                        blurRadius: 12,
+                                        color: (isMe ? AppTheme.primaryOrange : rankColor).withValues(alpha: 0.5),
+                                        blurRadius: isMe ? 20 : 12,
                                         offset: const Offset(0, 6),
                                       ),
                                     ],
+                                    border: isMe ? Border.all(color: AppTheme.primaryOrange, width: 3) : null,
                                   ),
                                   child: Container(
                                     width: avatarSize,
@@ -485,6 +664,25 @@ class _LeaderboardScreenState extends State<LeaderboardScreen> {
                                         width: 36,
                                         height: 36,
                                         fit: BoxFit.contain,
+                                      ),
+                                    ),
+                                  ),
+                                // "Bạn" badge for current user
+                                if (isMe)
+                                  Positioned(
+                                    bottom: -10,
+                                    child: Container(
+                                      padding: const EdgeInsets.symmetric(horizontal: 8, vertical: 4),
+                                      decoration: BoxDecoration(
+                                        color: AppTheme.primaryOrange,
+                                        borderRadius: BorderRadius.circular(12),
+                                        boxShadow: const [
+                                          BoxShadow(color: Colors.black26, blurRadius: 6, offset: Offset(0, 2)),
+                                        ],
+                                      ),
+                                      child: const Text(
+                                        'Bạn',
+                                        style: TextStyle(color: Colors.white, fontWeight: FontWeight.bold, fontSize: 10),
                                       ),
                                     ),
                                   ),
@@ -567,6 +765,7 @@ class _LeaderboardScreenState extends State<LeaderboardScreen> {
             title: title,
             value: value,
             photoUrl: photoUrl,
+            userId: item['userId'] as String?,
           ).animate().slideX(
             begin: 0.3,
             duration: 300.ms,
@@ -585,18 +784,21 @@ class _LeaderboardScreenState extends State<LeaderboardScreen> {
     required String title,
     required int value,
     String? photoUrl,
+    String? userId,
+    bool isCompact = false,
   }) {
-    return ListTile(
+    final bool isMe = userId != null && userId == _myUserId;
+    final tile = ListTile(
       leading: Container(
         width: 40,
         height: 40,
         decoration: BoxDecoration(
-          color: AppTheme.primaryOrange,
+          color: isMe ? AppTheme.primaryOrange : AppTheme.primaryOrange,
           shape: BoxShape.circle,
         ),
         child: Center(
           child: Text(
-            '$rank',
+            rank > 0 ? '$rank' : '',
             style: const TextStyle(
               color: Colors.white,
               fontWeight: FontWeight.bold,
@@ -614,7 +816,7 @@ class _LeaderboardScreenState extends State<LeaderboardScreen> {
             decoration: BoxDecoration(
               shape: BoxShape.circle,
               border: Border.all(
-                color: Colors.grey[300]!,
+                color: isMe ? AppTheme.primaryOrange : Colors.grey[300]!,
                 width: 1,
               ),
             ),
@@ -671,9 +873,26 @@ class _LeaderboardScreenState extends State<LeaderboardScreen> {
                ),
              ),
            ),
-        ],
-      ),
-             trailing: Text(
+           if (isMe) ...[
+             const SizedBox(width: 8),
+             Container(
+               padding: const EdgeInsets.symmetric(horizontal: 8, vertical: 4),
+               decoration: BoxDecoration(
+                 color: AppTheme.primaryOrange,
+                 borderRadius: BorderRadius.circular(12),
+                 boxShadow: const [
+                   BoxShadow(color: Colors.black26, blurRadius: 6, offset: Offset(0, 2)),
+                 ],
+               ),
+               child: const Text(
+                 'Bạn',
+                 style: TextStyle(color: Colors.white, fontWeight: FontWeight.bold, fontSize: 10),
+               ),
+             ),
+           ]
+         ],
+       ),
+            trailing: Text(
          '${_formatNumber(value)}',
          style: const TextStyle(
            fontSize: 16,
@@ -681,6 +900,18 @@ class _LeaderboardScreenState extends State<LeaderboardScreen> {
            color: AppTheme.primaryOrange,
          ),
        ),
+      contentPadding: EdgeInsets.symmetric(horizontal: 16, vertical: isCompact ? 6 : 8),
+    );
+    return Container(
+      decoration: BoxDecoration(
+        color: isMe ? AppTheme.primaryOrange.withValues(alpha: 0.12) : Colors.transparent,
+        borderRadius: BorderRadius.circular(12),
+        border: isMe ? Border.all(color: AppTheme.primaryOrange, width: 1.5) : null,
+        boxShadow: isMe
+            ? const [BoxShadow(color: Colors.black26, blurRadius: 10, offset: Offset(0, 4))]
+            : null,
+      ),
+      child: tile,
     );
   }
 

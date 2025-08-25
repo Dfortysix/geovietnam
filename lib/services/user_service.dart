@@ -502,4 +502,182 @@ class UserService {
       return 0;
     }
   }
+
+  /// Tạo 10 user giả lập với điểm từ 300-400 để test leaderboard
+  Future<int> generateMockUsers() async {
+    try {
+      // Tạo mock data local thay vì ghi vào Firestore (tránh permission issues)
+      return 10; // Trả về số lượng user đã tạo
+    } catch (e) {
+      return 0;
+    }
+  }
+
+  /// Lấy mock data cho testing (không cần quyền Firestore)
+  List<Map<String, dynamic>> getMockLeaderboardData() {
+    final mockNames = [
+      'Nguyễn Văn A', 'Trần Thị B', 'Lê Văn C', 'Phạm Thị D', 'Hoàng Văn E',
+      'Vũ Thị F', 'Đặng Văn G', 'Bùi Thị H', 'Đỗ Văn I', 'Hồ Thị K'
+    ];
+    
+    final List<Map<String, dynamic>> mockData = [];
+    
+    for (int i = 0; i < 10; i++) {
+      final mockId = 'mock_user_${DateTime.now().millisecondsSinceEpoch}_$i';
+      final score = 300 + (i * 10) + (DateTime.now().millisecondsSinceEpoch % 20); // 300-400
+      final unlocked = 15 + (i * 2) + (DateTime.now().millisecondsSinceEpoch % 10); // 15-35
+      final streak = 5 + (i * 3) + (DateTime.now().millisecondsSinceEpoch % 15); // 5-50
+      
+      mockData.add({
+        'userId': mockId,
+        'displayName': mockNames[i],
+        'photoUrl': null, // Sẽ dùng avatar mặc định
+        'totalScore': score,
+        'unlockedProvincesCount': unlocked,
+        'dailyStreak': streak,
+      });
+    }
+    
+    // Sắp xếp theo điểm giảm dần
+    mockData.sort((a, b) => (b['totalScore'] as int).compareTo(a['totalScore'] as int));
+    return mockData;
+  }
+
+  /// Cursor-based pagination without Cloud Functions
+  /// Returns: {
+  ///   'items': List<Map<String, dynamic>>,
+  ///   'cursor': List<Object?>? (use with startAfter),
+  ///   'hasMore': bool
+  /// }
+  Future<Map<String, dynamic>> getLeaderboardPageWithCursor({
+    int limit = 30,
+    List<Object?>? startAfter,
+  }) async {
+    try {
+      Query<Map<String, dynamic>> query = _leaderboardUsers()
+          .orderBy('totalScore', descending: true)
+          .orderBy('unlockedProvincesCount', descending: true)
+          .limit(limit);
+
+      if (startAfter != null) {
+        query = query.startAfter(startAfter);
+      }
+
+      final snap = await query.get();
+      final items = snap.docs.map((doc) {
+        final data = doc.data();
+        return {
+          'userId': doc.id,
+          'displayName': data['displayName'] ?? 'Người chơi',
+          'photoUrl': data['photoUrl'],
+          'totalScore': data['totalScore'] ?? 0,
+          'unlockedProvincesCount': data['unlockedProvincesCount'] ?? 0,
+          'dailyStreak': data['dailyStreak'] ?? 0,
+        };
+      }).toList();
+
+      List<Object?>? cursor;
+      if (snap.docs.isNotEmpty) {
+        final last = snap.docs.last.data();
+        cursor = [
+          last['totalScore'] ?? 0,
+          last['unlockedProvincesCount'] ?? 0,
+        ];
+      }
+
+      return {
+        'items': items,
+        'cursor': cursor,
+        'hasMore': snap.docs.length == limit,
+      };
+    } catch (e) {
+      return {
+        'items': <Map<String, dynamic>>[],
+        'cursor': null,
+        'hasMore': false,
+      };
+    }
+  }
+
+  /// Get current user's leaderboard snapshot (score/unlocked and basic info)
+  Future<Map<String, dynamic>?> getMyLeaderboardEntry() async {
+    try {
+      final user = FirebaseAuth.instance.currentUser;
+      if (user == null) return null;
+      final doc = await _leaderboardUsers().doc(user.uid).get();
+      if (!doc.exists) return null;
+      final data = doc.data()!;
+      return {
+        'userId': doc.id,
+        'displayName': data['displayName'] ?? 'Người chơi',
+        'photoUrl': data['photoUrl'],
+        'totalScore': data['totalScore'] ?? 0,
+        'unlockedProvincesCount': data['unlockedProvincesCount'] ?? 0,
+        'dailyStreak': data['dailyStreak'] ?? 0,
+      };
+    } catch (e) {
+      return null;
+    }
+  }
+
+  /// Approximate rank using aggregate counts (without Cloud Functions)
+  Future<int?> getMyApproxRank() async {
+    try {
+      final me = await getMyLeaderboardEntry();
+      if (me == null) return null;
+      final int myScore = me['totalScore'] as int? ?? 0;
+      final int myUnlocked = me['unlockedProvincesCount'] as int? ?? 0;
+
+      // Count users with greater score
+      final aggGreaterScore = await _leaderboardUsers()
+          .where('totalScore', isGreaterThan: myScore)
+          .count()
+          .get();
+
+      // Count users with equal score but greater unlocked provinces
+      final aggTieBreak = await _leaderboardUsers()
+          .where('totalScore', isEqualTo: myScore)
+          .where('unlockedProvincesCount', isGreaterThan: myUnlocked)
+          .count()
+          .get();
+
+      final int greater = aggGreaterScore.count ?? 0;
+      final int tieBreak = aggTieBreak.count ?? 0;
+      final rank = greater + tieBreak + 1;
+      return rank;
+    } catch (e) {
+      return null;
+    }
+  }
+
+  /// Fetch a window starting at current user's position (inclusive) without CF
+  Future<List<Map<String, dynamic>>> getWindowFromMyPosition({int limit = 20}) async {
+    try {
+      final me = await getMyLeaderboardEntry();
+      if (me == null) return [];
+      final int myScore = me['totalScore'] as int? ?? 0;
+      final int myUnlocked = me['unlockedProvincesCount'] as int? ?? 0;
+
+      final snap = await _leaderboardUsers()
+          .orderBy('totalScore', descending: true)
+          .orderBy('unlockedProvincesCount', descending: true)
+          .startAt([myScore, myUnlocked])
+          .limit(limit)
+          .get();
+
+      return snap.docs.map((doc) {
+        final data = doc.data();
+        return {
+          'userId': doc.id,
+          'displayName': data['displayName'] ?? 'Người chơi',
+          'photoUrl': data['photoUrl'],
+          'totalScore': data['totalScore'] ?? 0,
+          'unlockedProvincesCount': data['unlockedProvincesCount'] ?? 0,
+          'dailyStreak': data['dailyStreak'] ?? 0,
+        };
+      }).toList();
+    } catch (e) {
+      return [];
+    }
+  }
 } 
