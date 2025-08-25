@@ -100,6 +100,8 @@ class _LeaderboardScreenState extends State<LeaderboardScreen> {
   bool _isLoadingMore = false;
   String? _myUserId;
   bool _usingMockData = false;
+  final ScrollController _scrollController = ScrollController();
+  final Map<String, GlobalKey> _itemKeys = {};
 
   @override
   void initState() {
@@ -153,6 +155,7 @@ class _LeaderboardScreenState extends State<LeaderboardScreen> {
   }
 
   Future<void> _showMyPositionWindow() async {
+    final approxRank = await _userService.getMyApproxRank();
     final window = await _userService.getWindowFromMyPosition(limit: 20);
     if (!mounted) return;
     showModalBottomSheet(
@@ -162,6 +165,10 @@ class _LeaderboardScreenState extends State<LeaderboardScreen> {
         borderRadius: BorderRadius.vertical(top: Radius.circular(16)),
       ),
       builder: (ctx) {
+        final myIndexInWindow = window.indexWhere((e) => e['userId'] == _myUserId);
+        final int? myDisplayRank = approxRank != null
+            ? (myIndexInWindow >= 0 ? approxRank + myIndexInWindow : approxRank)
+            : (myIndexInWindow >= 0 ? myIndexInWindow + 1 : null);
         return SafeArea(
           child: Padding(
             padding: const EdgeInsets.all(12),
@@ -176,6 +183,18 @@ class _LeaderboardScreenState extends State<LeaderboardScreen> {
                     style: TextStyle(color: Colors.white, fontSize: 16, fontWeight: FontWeight.w700),
                   ),
                 ),
+                if (myDisplayRank != null)
+                  Padding(
+                    padding: const EdgeInsets.only(left: 4, bottom: 8),
+                    child: Text(
+                      'Hạng của bạn: #$myDisplayRank',
+                      style: const TextStyle(
+                        color: Colors.white,
+                        fontSize: 14,
+                        fontWeight: FontWeight.w600,
+                      ),
+                    ),
+                  ),
                 Flexible(
                   child: ListView.separated(
                     shrinkWrap: true,
@@ -187,13 +206,14 @@ class _LeaderboardScreenState extends State<LeaderboardScreen> {
                       final title = item['displayName'] ?? 'Người chơi';
                       final value = item['totalScore'] ?? 0;
                       final photoUrl = item['photoUrl'] as String?;
+                      final displayRank = approxRank != null ? approxRank + index : (index + 1);
                       return Container(
                         decoration: BoxDecoration(
                           color: isMe ? AppTheme.primaryOrange.withValues(alpha: 0.12) : Colors.transparent,
                           borderRadius: BorderRadius.circular(8),
                         ),
                         child: _buildOtherRankItem(
-                          rank: -1, // ẩn rank tuyệt đối trong window này
+                          rank: displayRank,
                           title: title,
                           value: value,
                           photoUrl: photoUrl,
@@ -215,6 +235,16 @@ class _LeaderboardScreenState extends State<LeaderboardScreen> {
      @override
    Widget build(BuildContext context) {
            return Scaffold(
+        floatingActionButton: !_usingMockData
+            ? FloatingActionButton.extended(
+                backgroundColor: AppTheme.primaryOrange,
+                foregroundColor: Colors.white,
+                onPressed: _scrollToMyPosition,
+                icon: const Icon(Icons.person_pin_circle),
+                label: const Text('Vị trí của tôi'),
+              )
+            : null,
+        floatingActionButtonLocation: FloatingActionButtonLocation.endFloat,
         body: Container(
           decoration: const BoxDecoration(
             gradient: AppTheme.backgroundGradient, // Use project's theme gradient
@@ -306,21 +336,7 @@ class _LeaderboardScreenState extends State<LeaderboardScreen> {
                              ),
                            ),
                          ),
-                         const SizedBox(width: 8),
-                         Tooltip(
-                           message: 'Tới vị trí của tôi',
-                           child: ElevatedButton.icon(
-                             onPressed: _usingMockData ? null : _showMyPositionWindow,
-                             icon: const Icon(Icons.person_pin_circle, size: 18),
-                             label: const Text('Vị trí của tôi'),
-                             style: ElevatedButton.styleFrom(
-                               backgroundColor: AppTheme.primaryOrange,
-                               foregroundColor: Colors.white,
-                               padding: const EdgeInsets.symmetric(vertical: 10, horizontal: 12),
-                               shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(12)),
-                             ),
-                           ),
-                         ),
+                         // Nút "Vị trí của tôi" đã được chuyển xuống FloatingActionButton
                        ],
                      ),
                    ),
@@ -337,6 +353,38 @@ class _LeaderboardScreenState extends State<LeaderboardScreen> {
        ),
      );
    }
+
+  Future<void> _scrollToMyPosition() async {
+    try {
+      if (_myUserId == null) return;
+
+      // Thử tìm key hiện có của user trong cây widget
+      GlobalKey? key = _itemKeys[_myUserId!];
+
+      // Nếu chưa thấy widget (chưa được build do chưa tải tới), liên tục load thêm cho đến khi thấy hoặc hết trang
+      while (key?.currentContext == null && !_usingMockData && _hasMore) {
+        await _loadMoreIfNeeded();
+        await Future.delayed(const Duration(milliseconds: 60));
+        key = _itemKeys[_myUserId!];
+      }
+
+      if (key?.currentContext != null) {
+        await Scrollable.ensureVisible(
+          key!.currentContext!,
+          duration: const Duration(milliseconds: 500),
+          alignment: 0.2,
+          curve: Curves.easeOutCubic,
+        );
+      } else {
+        // Không tìm thấy: thông báo cho người dùng
+        if (mounted) {
+          ScaffoldMessenger.of(context).showSnackBar(
+            const SnackBar(content: Text('Chưa tìm thấy vị trí của bạn trong danh sách.')),
+          );
+        }
+      }
+    } catch (_) {}
+  }
 
      Widget _buildLeaderboard(bool loading, List<Map<String, dynamic>> data) {
      if (loading) {
@@ -398,6 +446,7 @@ class _LeaderboardScreenState extends State<LeaderboardScreen> {
              return false;
            },
            child: SingleChildScrollView(
+            controller: _scrollController,
             padding: const EdgeInsets.all(20),
             child: Column(
               children: [
@@ -514,6 +563,9 @@ class _LeaderboardScreenState extends State<LeaderboardScreen> {
   }
 
   Widget _buildTop3Item(Map<String, dynamic> item, int rank) {
+    final key = (item['userId'] as String?) != null
+        ? (_itemKeys[item['userId']] ??= GlobalKey())
+        : null;
     final title = item['displayName'] ?? 'Người chơi';
     final value = item['totalScore'] ?? 0;
     final photoUrl = item['photoUrl'] as String?;
@@ -546,6 +598,7 @@ class _LeaderboardScreenState extends State<LeaderboardScreen> {
       }
 
                                                            return Column(
+                      key: key,
                       children: [
                         // Avatar with special frame, crown, and laurel wreath for 1st place
                         Center(
@@ -788,6 +841,7 @@ class _LeaderboardScreenState extends State<LeaderboardScreen> {
     bool isCompact = false,
   }) {
     final bool isMe = userId != null && userId == _myUserId;
+    final key = userId != null ? (_itemKeys[userId] ??= GlobalKey()) : null;
     final tile = ListTile(
       leading: Container(
         width: 40,
@@ -903,6 +957,7 @@ class _LeaderboardScreenState extends State<LeaderboardScreen> {
       contentPadding: EdgeInsets.symmetric(horizontal: 16, vertical: isCompact ? 6 : 8),
     );
     return Container(
+      key: key,
       decoration: BoxDecoration(
         color: isMe ? AppTheme.primaryOrange.withValues(alpha: 0.12) : Colors.transparent,
         borderRadius: BorderRadius.circular(12),
