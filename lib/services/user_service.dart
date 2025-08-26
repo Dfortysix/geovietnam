@@ -98,6 +98,36 @@ class UserService {
     }
   }
 
+  /// Cập nhật user profile
+  Future<void> updateUserProfile({
+    required String userId,
+    required String displayName,
+    String? photoUrl,
+  }) async {
+    try {
+      final userDoc = _firestore.collection('users').doc(userId);
+      
+      // Cập nhật profile
+      await userDoc.set({
+        'profile': {
+          'displayName': displayName,
+          'photoUrl': photoUrl,
+          'lastUpdated': FieldValue.serverTimestamp(),
+        },
+      }, SetOptions(merge: true));
+
+      // Cập nhật leaderboard
+      await _leaderboardUsers().doc(userId).set({
+        'displayName': displayName,
+        'photoUrl': photoUrl,
+        'updatedAt': FieldValue.serverTimestamp(),
+      }, SetOptions(merge: true));
+      
+    } catch (e) {
+      rethrow;
+    }
+  }
+
   /// Lưu game progress
   Future<void> saveGameProgress(String userId, GameProgress progress) async {
     try {

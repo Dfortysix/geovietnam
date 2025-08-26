@@ -8,6 +8,7 @@ import '../services/auth_service.dart';
 import '../models/game_progress.dart';
 import '../widgets/user_avatar_widget.dart';
 import '../services/user_service.dart';
+import 'edit_profile_screen.dart';
 
 class ProfileScreen extends StatefulWidget {
   const ProfileScreen({super.key});
@@ -372,14 +373,18 @@ class _ProfileScreenState extends State<ProfileScreen> {
                                 size: 20,
                               ),
                             ),
-                            onPressed: () {
-                              // TODO: Implement edit profile
-                              ScaffoldMessenger.of(context).showSnackBar(
-                                const SnackBar(
-                                  content: Text('Tính năng chỉnh sửa profile sẽ sớm ra mắt!'),
-                                  backgroundColor: AppTheme.primaryOrange,
+                            onPressed: () async {
+                              final result = await Navigator.push(
+                                context,
+                                MaterialPageRoute(
+                                  builder: (context) => const EditProfileScreen(),
                                 ),
                               );
+                              
+                              // Refresh profile data if edit was successful
+                              if (result == true) {
+                                setState(() {});
+                              }
                             },
                           ),
                         ],

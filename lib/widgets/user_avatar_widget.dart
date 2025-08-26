@@ -1,67 +1,112 @@
 import 'package:flutter/material.dart';
+import 'dart:io';
 import 'package:cached_network_image/cached_network_image.dart';
+import '../theme/app_theme.dart';
 
 class UserAvatarWidget extends StatelessWidget {
   final String? photoUrl;
-  final String? displayName;
+  final File? imageFile;
   final double size;
   final Color? borderColor;
   final double borderWidth;
+  final VoidCallback? onTap;
 
   const UserAvatarWidget({
     super.key,
     this.photoUrl,
-    this.displayName,
-    this.size = 40,
+    this.imageFile,
+    this.size = 60,
     this.borderColor,
-    this.borderWidth = 2,
+    this.borderWidth = 0,
+    this.onTap,
   });
 
   @override
   Widget build(BuildContext context) {
-    final defaultBorderColor = borderColor ?? Colors.blue;
-    
+    return GestureDetector(
+      onTap: onTap,
+      child: Container(
+        width: size,
+        height: size,
+        decoration: BoxDecoration(
+          shape: BoxShape.circle,
+          border: borderColor != null
+              ? Border.all(
+                  color: borderColor!,
+                  width: borderWidth,
+                )
+              : null,
+        ),
+        child: ClipOval(
+          child: _buildAvatarContent(),
+        ),
+      ),
+    );
+  }
+
+  Widget _buildAvatarContent() {
+    // Ưu tiên file local nếu có
+    if (imageFile != null) {
+      return Image.file(
+        imageFile!,
+        width: size,
+        height: size,
+        fit: BoxFit.cover,
+        errorBuilder: (context, error, stackTrace) {
+          return _buildDefaultAvatar();
+        },
+      );
+    }
+
+    // Sau đó là URL từ network
+    if (photoUrl != null && photoUrl!.isNotEmpty) {
+      return CachedNetworkImage(
+        imageUrl: photoUrl!,
+        width: size,
+        height: size,
+        fit: BoxFit.cover,
+        placeholder: (context, url) => _buildLoadingPlaceholder(),
+        errorWidget: (context, url, error) => _buildDefaultAvatar(),
+      );
+    }
+
+    // Fallback về default avatar
+    return _buildDefaultAvatar();
+  }
+
+  Widget _buildLoadingPlaceholder() {
     return Container(
       width: size,
       height: size,
       decoration: BoxDecoration(
-        borderRadius: BorderRadius.circular(size / 2),
-        border: Border.all(
-          color: defaultBorderColor,
-          width: borderWidth,
+        color: Colors.grey[300],
+        shape: BoxShape.circle,
+      ),
+      child: const Center(
+        child: CircularProgressIndicator(
+          strokeWidth: 2,
+          color: AppTheme.primaryOrange,
         ),
       ),
-      child: ClipRRect(
-        borderRadius: BorderRadius.circular((size - borderWidth) / 2),
-        child: photoUrl != null
-            ? CachedNetworkImage(
-                imageUrl: photoUrl!,
-                fit: BoxFit.cover,
-                placeholder: (context, url) => Container(
-                  color: Colors.grey[300],
-                  child: Icon(
-                    Icons.person,
-                    color: Colors.grey,
-                    size: size * 0.4,
-                  ),
-                ),
-                errorWidget: (context, url, error) => Container(
-                  color: Colors.grey[300],
-                  child: Icon(
-                    Icons.person,
-                    color: Colors.grey,
-                    size: size * 0.4,
-                  ),
-                ),
-              )
-            : Container(
-                color: defaultBorderColor.withOpacity(0.1),
-                child: Icon(
-                  Icons.person,
-                  color: defaultBorderColor,
-                  size: size * 0.6,
-                ),
-              ),
+    );
+  }
+
+  Widget _buildDefaultAvatar() {
+    return Container(
+      width: size,
+      height: size,
+      decoration: BoxDecoration(
+        gradient: const LinearGradient(
+          begin: Alignment.topLeft,
+          end: Alignment.bottomRight,
+          colors: [AppTheme.primaryOrange, AppTheme.secondaryYellow],
+        ),
+        shape: BoxShape.circle,
+      ),
+      child: Icon(
+        Icons.person,
+        size: size * 0.5,
+        color: Colors.white,
       ),
     );
   }
