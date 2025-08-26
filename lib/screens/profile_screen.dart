@@ -399,14 +399,11 @@ class _ProfileScreenState extends State<ProfileScreen> {
                                _buildGameStats(),
                                const SizedBox(height: 24),
                                
-                               // Menu options
-                               _buildMenuOptions(),
-                               const SizedBox(height: 24),
-                               _buildBackfillButton(),
-                            ],
-                          ),
-                        ),
-                      ),
+                               // Đã ẩn các menu/bổ trợ bên dưới theo yêu cầu
+                             ],
+                           ),
+                         ),
+                       ),
                     ],
                   ),
           ),
