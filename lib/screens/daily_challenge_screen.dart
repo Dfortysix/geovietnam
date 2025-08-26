@@ -5,6 +5,7 @@ import '../services/daily_challenge_service.dart';
 import '../services/game_progress_service.dart';
 import '../models/province.dart';
 import 'map_exploration_screen.dart';
+import 'settings_screen.dart';
 
 class DailyChallengeScreen extends StatefulWidget {
   const DailyChallengeScreen({Key? key}) : super(key: key);
@@ -222,6 +223,19 @@ class _DailyChallengeScreenState extends State<DailyChallengeScreen> {
         elevation: 0,
         iconTheme: const IconThemeData(color: AppTheme.primaryOrange),
         actions: [
+          Container(
+            margin: const EdgeInsets.only(right: 8),
+            child: IconButton(
+              icon: const Icon(Icons.settings, color: AppTheme.primaryOrange),
+              onPressed: () {
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(builder: (context) => const SettingsScreen()),
+                );
+              },
+              tooltip: 'Cài đặt',
+            ),
+          ),
           Container(
             margin: const EdgeInsets.only(right: 16),
             padding: const EdgeInsets.symmetric(horizontal: 12, vertical: 6),
@@ -630,6 +644,18 @@ class _DailyChallengeScreenState extends State<DailyChallengeScreen> {
         backgroundColor: Colors.transparent,
         elevation: 0,
         iconTheme: const IconThemeData(color: AppTheme.primaryOrange),
+        actions: [
+          IconButton(
+            icon: const Icon(Icons.settings, color: AppTheme.primaryOrange),
+            onPressed: () {
+              Navigator.push(
+                context,
+                MaterialPageRoute(builder: (context) => const SettingsScreen()),
+              );
+            },
+            tooltip: 'Cài đặt',
+          ),
+        ],
       ),
       body: Container(
         decoration: const BoxDecoration(

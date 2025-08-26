@@ -1,14 +1,13 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_animate/flutter_animate.dart';
 import '../theme/app_theme.dart';
 import '../widgets/svg_canvas_vietnam_map_widget.dart';
 import '../widgets/province_detail_widget.dart';
 import '../widgets/province_overview_widget.dart';
 import '../services/game_progress_service.dart';
-import '../services/province_detail_service.dart';
 import '../models/game_progress.dart';
 import '../models/province.dart';
 import '../data/provinces_data.dart';
+import 'settings_screen.dart';
 
 class MapExplorationScreen extends StatefulWidget {
   const MapExplorationScreen({super.key});
@@ -165,6 +164,16 @@ class _MapExplorationScreenState extends State<MapExplorationScreen> with Ticker
         elevation: 0,
         iconTheme: const IconThemeData(color: AppTheme.primaryOrange),
         actions: [
+          IconButton(
+            icon: const Icon(Icons.settings, color: AppTheme.primaryOrange),
+            onPressed: () {
+              Navigator.push(
+                context,
+                MaterialPageRoute(builder: (context) => const SettingsScreen()),
+              );
+            },
+            tooltip: 'Cài đặt',
+          ),
           // Nút mở khóa tất cả (chỉ hiển thị khi chưa mở khóa hết)
           if (_gameProgress != null && _gameProgress!.unlockedProvincesCount < _gameProgress!.provinces.length)
             IconButton(

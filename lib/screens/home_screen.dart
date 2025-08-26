@@ -6,11 +6,10 @@ import '../services/daily_challenge_service.dart';
 import '../services/auth_service.dart';
 import '../models/game_progress.dart';
 import 'profile_screen.dart';
-import 'game_screen.dart';
 import 'daily_challenge_screen.dart';
 import 'map_exploration_screen.dart';
-import 'progress_screen.dart';
 import 'leaderboard_screen.dart';
+import 'settings_screen.dart';
 
 class HomeScreen extends StatefulWidget {
   const HomeScreen({Key? key}) : super(key: key);
@@ -400,32 +399,25 @@ class _HomeScreenState extends State<HomeScreen> {
 
                         const SizedBox(height: 16),
                         
-                        // Profile Button
-                        Container(
-                          width: double.infinity,
-                          child: ElevatedButton.icon(
-                            onPressed: () async {
-                              final isLoggedIn = await AuthService.requireLogin(context);
-                              if (isLoggedIn) {
-                                Navigator.push(
-                                  context,
-                                  MaterialPageRoute(
-                                    builder: (context) => const ProfileScreen(),
-                                  ),
-                                );
-                              }
-                            },
-                            icon: const Icon(Icons.person),
-                            label: const Text('Hồ sơ người chơi'),
-                            style: ElevatedButton.styleFrom(
-                              backgroundColor: AppTheme.primaryOrange,
-                              foregroundColor: Colors.white,
-                              padding: const EdgeInsets.symmetric(vertical: 16),
-                              shape: RoundedRectangleBorder(
-                                borderRadius: BorderRadius.circular(12),
-                              ),
-                            ),
+                        _buildGameOption(
+                          context,
+                          icon: Icons.person,
+                          title: '👤 Hồ sơ người chơi',
+                          subtitle: 'Xem thông tin cá nhân và thành tích',
+                          gradient: const LinearGradient(
+                            colors: [AppTheme.accentOrange, AppTheme.primaryOrange],
                           ),
+                          onTap: () async {
+                            final isLoggedIn = await AuthService.requireLogin(context);
+                            if (isLoggedIn) {
+                              Navigator.push(
+                                context,
+                                MaterialPageRoute(
+                                  builder: (context) => const ProfileScreen(),
+                                ),
+                              );
+                            }
+                          },
                         ).animate().fadeIn(
                           duration: 800.ms,
                           delay: 1800.ms,
@@ -435,7 +427,30 @@ class _HomeScreenState extends State<HomeScreen> {
                           delay: 1800.ms,
                         ),
 
-
+                        const SizedBox(height: 16),
+                        
+                        _buildGameOption(
+                          context,
+                          icon: Icons.settings,
+                          title: '⚙️ Cài đặt',
+                          subtitle: 'Tùy chỉnh âm thanh, thông báo và cài đặt khác',
+                          gradient: LinearGradient(
+                            colors: [Colors.grey, Colors.grey.shade600],
+                          ),
+                          onTap: () {
+                            Navigator.push(
+                              context,
+                              MaterialPageRoute(builder: (context) => const SettingsScreen()),
+                            );
+                          },
+                        ).animate().fadeIn(
+                          duration: 800.ms,
+                          delay: 2100.ms,
+                        ).slideX(
+                          begin: 0.3,
+                          duration: 800.ms,
+                          delay: 2100.ms,
+                        ),
 
                         const SizedBox(height: 40),
                         
@@ -468,11 +483,11 @@ class _HomeScreenState extends State<HomeScreen> {
                           ),
                         ).animate().fadeIn(
                           duration: 800.ms,
-                          delay: 2100.ms,
+                          delay: 2400.ms,
                         ).slideY(
                           begin: 0.3,
                           duration: 800.ms,
-                          delay: 2100.ms,
+                          delay: 2400.ms,
                         ),
                       ],
                     ),

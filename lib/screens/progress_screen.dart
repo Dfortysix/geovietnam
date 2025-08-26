@@ -3,6 +3,7 @@ import 'package:flutter_animate/flutter_animate.dart';
 import '../theme/app_theme.dart';
 import '../services/game_progress_service.dart';
 import '../models/game_progress.dart';
+import 'settings_screen.dart';
 
 class ProgressScreen extends StatefulWidget {
   const ProgressScreen({Key? key}) : super(key: key);
@@ -43,6 +44,18 @@ class _ProgressScreenState extends State<ProgressScreen> {
           title: const Text('🏆 Tiến độ & Thành tích'),
           backgroundColor: Colors.transparent,
           elevation: 0,
+          actions: [
+            IconButton(
+              icon: const Icon(Icons.settings, color: AppTheme.primaryOrange),
+              onPressed: () {
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(builder: (context) => const SettingsScreen()),
+                );
+              },
+              tooltip: 'Cài đặt',
+            ),
+          ],
         ),
         body: const Center(
           child: CircularProgressIndicator(
@@ -58,6 +71,18 @@ class _ProgressScreenState extends State<ProgressScreen> {
         backgroundColor: Colors.transparent,
         elevation: 0,
         iconTheme: const IconThemeData(color: AppTheme.primaryOrange),
+        actions: [
+          IconButton(
+            icon: const Icon(Icons.settings, color: AppTheme.primaryOrange),
+            onPressed: () {
+              Navigator.push(
+                context,
+                MaterialPageRoute(builder: (context) => const SettingsScreen()),
+              );
+            },
+            tooltip: 'Cài đặt',
+          ),
+        ],
       ),
       body: Container(
         decoration: const BoxDecoration(

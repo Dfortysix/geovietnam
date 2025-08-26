@@ -3,6 +3,7 @@ import 'package:flutter_animate/flutter_animate.dart';
 import '../theme/app_theme.dart';
 import '../services/game_progress_service.dart';
 import '../widgets/google_play_games_widget.dart';
+import 'settings_screen.dart';
 
 class GameScreen extends StatefulWidget {
   const GameScreen({Key? key}) : super(key: key);
@@ -322,6 +323,18 @@ class _GameScreenState extends State<GameScreen> {
         backgroundColor: Colors.transparent,
         elevation: 0,
         iconTheme: const IconThemeData(color: AppTheme.primaryOrange),
+        actions: [
+          IconButton(
+            icon: const Icon(Icons.settings, color: AppTheme.primaryOrange),
+            onPressed: () {
+              Navigator.push(
+                context,
+                MaterialPageRoute(builder: (context) => const SettingsScreen()),
+              );
+            },
+            tooltip: 'Cài đặt',
+          ),
+        ],
       ),
       body: Container(
         decoration: const BoxDecoration(

@@ -4,6 +4,7 @@ import 'dart:math';
 import '../theme/app_theme.dart';
 import '../services/user_service.dart';
 import 'package:firebase_auth/firebase_auth.dart';
+import 'settings_screen.dart';
 
 // Custom painter for bokeh effect
 class BokehPainter extends CustomPainter {
@@ -451,7 +452,26 @@ class _LeaderboardScreenState extends State<LeaderboardScreen> {
                            ),
                          ),
                          const Spacer(),
-                         // Nút "Vị trí của tôi" đã được chuyển xuống FloatingActionButton
+                         IconButton(
+                           onPressed: () {
+                             Navigator.push(
+                               context,
+                               MaterialPageRoute(builder: (context) => const SettingsScreen()),
+                             );
+                           },
+                           icon: Container(
+                             padding: const EdgeInsets.all(8),
+                             decoration: BoxDecoration(
+                               color: Colors.white.withValues(alpha: 0.2),
+                               borderRadius: BorderRadius.circular(12),
+                             ),
+                             child: const Icon(
+                               Icons.settings,
+                               color: Colors.black,
+                               size: 20,
+                             ),
+                           ),
+                         ),
                        ],
                      ),
                    ),
