@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:image_picker/image_picker.dart';
 import 'dart:io';
+import 'package:flutter/foundation.dart';
 import '../theme/app_theme.dart';
 import '../services/user_service.dart';
 import '../services/auth_service.dart';
@@ -68,6 +69,14 @@ class _EditProfileScreenState extends State<EditProfileScreen> {
 
   Future<void> _pickImage() async {
     try {
+      // Kiểm tra nếu đang chạy trên web
+      if (kIsWeb) {
+        setState(() {
+          _errorMessage = 'Tính năng chọn ảnh chưa hỗ trợ trên web. Vui lòng sử dụng ứng dụng mobile.';
+        });
+        return;
+      }
+
       final ImagePicker picker = ImagePicker();
       final XFile? image = await picker.pickImage(
         source: ImageSource.gallery,
@@ -86,11 +95,20 @@ class _EditProfileScreenState extends State<EditProfileScreen> {
       setState(() {
         _errorMessage = 'Không thể chọn ảnh: $e';
       });
+      print('Error picking image: $e');
     }
   }
 
   Future<void> _takePhoto() async {
     try {
+      // Kiểm tra nếu đang chạy trên web
+      if (kIsWeb) {
+        setState(() {
+          _errorMessage = 'Tính năng chụp ảnh chưa hỗ trợ trên web. Vui lòng sử dụng ứng dụng mobile.';
+        });
+        return;
+      }
+
       final ImagePicker picker = ImagePicker();
       final XFile? image = await picker.pickImage(
         source: ImageSource.camera,
@@ -109,6 +127,7 @@ class _EditProfileScreenState extends State<EditProfileScreen> {
       setState(() {
         _errorMessage = 'Không thể chụp ảnh: $e';
       });
+      print('Error taking photo: $e');
     }
   }
 
@@ -289,39 +308,54 @@ class _EditProfileScreenState extends State<EditProfileScreen> {
                             ),
                             const SizedBox(height: 16),
                             
-                            // Image picker buttons
-                            Row(
-                              mainAxisAlignment: MainAxisAlignment.center,
-                              children: [
-                                ElevatedButton.icon(
-                                  onPressed: _pickImage,
-                                  icon: const Icon(Icons.photo_library),
-                                  label: const Text('Thư viện'),
-                                  style: ElevatedButton.styleFrom(
-                                    backgroundColor: AppTheme.primaryOrange,
-                                    foregroundColor: Colors.white,
-                                    padding: const EdgeInsets.symmetric(horizontal: 16, vertical: 8),
-                                    shape: RoundedRectangleBorder(
-                                      borderRadius: BorderRadius.circular(20),
-                                    ),
-                                  ),
-                                ),
-                                const SizedBox(width: 12),
-                                ElevatedButton.icon(
-                                  onPressed: _takePhoto,
-                                  icon: const Icon(Icons.camera_alt),
-                                  label: const Text('Chụp ảnh'),
-                                  style: ElevatedButton.styleFrom(
-                                    backgroundColor: AppTheme.secondaryYellow,
-                                    foregroundColor: Colors.white,
-                                    padding: const EdgeInsets.symmetric(horizontal: 16, vertical: 8),
-                                    shape: RoundedRectangleBorder(
-                                      borderRadius: BorderRadius.circular(20),
-                                    ),
-                                  ),
-                                ),
-                              ],
-                            ),
+                                                         // Image picker buttons
+                             Row(
+                               mainAxisAlignment: MainAxisAlignment.center,
+                               children: [
+                                 ElevatedButton.icon(
+                                   onPressed: kIsWeb ? null : _pickImage,
+                                   icon: const Icon(Icons.photo_library),
+                                   label: const Text('Thư viện'),
+                                   style: ElevatedButton.styleFrom(
+                                     backgroundColor: kIsWeb ? Colors.grey : AppTheme.primaryOrange,
+                                     foregroundColor: Colors.white,
+                                     padding: const EdgeInsets.symmetric(horizontal: 16, vertical: 8),
+                                     shape: RoundedRectangleBorder(
+                                       borderRadius: BorderRadius.circular(20),
+                                     ),
+                                   ),
+                                 ),
+                                 const SizedBox(width: 12),
+                                 ElevatedButton.icon(
+                                   onPressed: kIsWeb ? null : _takePhoto,
+                                   icon: const Icon(Icons.camera_alt),
+                                   label: const Text('Chụp ảnh'),
+                                   style: ElevatedButton.styleFrom(
+                                     backgroundColor: kIsWeb ? Colors.grey : AppTheme.secondaryYellow,
+                                     foregroundColor: Colors.white,
+                                     padding: const EdgeInsets.symmetric(horizontal: 16, vertical: 8),
+                                     shape: RoundedRectangleBorder(
+                                       borderRadius: BorderRadius.circular(20),
+                                     ),
+                                   ),
+                                 ),
+                               ],
+                             ),
+                             
+                             // Thông báo cho web
+                             if (kIsWeb)
+                               Padding(
+                                 padding: const EdgeInsets.only(top: 12),
+                                 child: Text(
+                                   'Tính năng chọn ảnh chỉ khả dụng trên ứng dụng mobile',
+                                   style: TextStyle(
+                                     fontSize: 12,
+                                     color: Colors.grey[600],
+                                     fontStyle: FontStyle.italic,
+                                   ),
+                                   textAlign: TextAlign.center,
+                                 ),
+                               ),
                           ],
                         ),
                       ),
