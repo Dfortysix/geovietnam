@@ -99,39 +99,18 @@ class _LeaderboardScreenState extends State<LeaderboardScreen> {
   bool _hasMore = true;
   bool _isLoadingMore = false;
   String? _myUserId;
-  bool _usingMockData = false;
   final ScrollController _scrollController = ScrollController();
   final Map<String, GlobalKey> _itemKeys = {};
   int? _myApproxRank; // rank xấp xỉ của tôi
   Map<String, dynamic>? _myEntry; // entry của tôi để render modal
 
-  void _log(String message) {
-    // Bọc để sau này có thể tắt nhanh
-    // ignore: avoid_print
-    print('[Leaderboard] $message');
-  }
+  void _log(String message) {}
 
        Future<void> _showMyPositionModal() async {
     try {
-      _log('showMyPositionModal: usingMockData=$_usingMockData, myUserId=$_myUserId');
-
-      if (_usingMockData) {
-        // Với mock data, tính rank từ danh sách hiện tại
-        _log('showMyPositionModal: searching in mock data, rows=${_rows.length}');
-        final idx = _rows.indexWhere((e) => (e['userId'] as String?) == _myUserId);
-        _log('showMyPositionModal: found index=$idx');
-        if (idx >= 0) {
-          _myApproxRank = idx + 1;
-          _myEntry = _rows[idx];
-          _log('showMyPositionModal: mock data - rank=$_myApproxRank, entry=$_myEntry');
-        }
-      } else {
-        // Với real data, lấy từ service
-        _log('showMyPositionModal: fetching from service');
-        _myEntry = await _userService.getMyLeaderboardEntry();
-        _myApproxRank = await _userService.getMyApproxRank();
-        _log('showMyPositionModal: real data - rank=$_myApproxRank, entry=$_myEntry');
-      }
+      _log('showMyPositionModal: myUserId=$_myUserId');
+      _myEntry = await _userService.getMyLeaderboardEntry();
+      _myApproxRank = await _userService.getMyApproxRank();
 
       _log('showMyPositionModal: final check - rank=$_myApproxRank, entry=$_myEntry');
       if (_myEntry == null) {
@@ -306,18 +285,7 @@ class _LeaderboardScreenState extends State<LeaderboardScreen> {
     final current = FirebaseAuth.instance.currentUser;
     _myUserId = current?.uid;
 
-    if (_usingMockData) {
-      // Sử dụng mock data với pagination giống data thật
-      final page = await _userService.getMockLeaderboardPageWithCursor(limit: 30);
-      final rows = (page['items'] as List<Map<String, dynamic>>?) ?? [];
-      _cursor = page['cursor'] as List<Object?>?;
-      _hasMore = (page['hasMore'] as bool?) ?? false;
-      if (!mounted) return;
-      setState(() {
-        _rows = rows;
-        _loading = false;
-      });
-    } else {
+    {
       // Trang đầu tiên bằng cursor-based paging
       final page = await _userService.getLeaderboardPageWithCursor(limit: 30);
       final rows = (page['items'] as List<Map<String, dynamic>>?) ?? [];
@@ -336,9 +304,7 @@ class _LeaderboardScreenState extends State<LeaderboardScreen> {
     setState(() {
       _isLoadingMore = true;
     });
-    final page = _usingMockData 
-        ? await _userService.getMockLeaderboardPageWithCursor(limit: 30, startAfter: _cursor)
-        : await _userService.getLeaderboardPageWithCursor(limit: 30, startAfter: _cursor);
+    final page = await _userService.getLeaderboardPageWithCursor(limit: 30, startAfter: _cursor);
     final newItems = (page['items'] as List<Map<String, dynamic>>?) ?? [];
     final newCursor = page['cursor'] as List<Object?>?;
     final hasMore = (page['hasMore'] as bool?) ?? false;
@@ -432,15 +398,13 @@ class _LeaderboardScreenState extends State<LeaderboardScreen> {
      @override
    Widget build(BuildContext context) {
            return Scaffold(
-        floatingActionButton: !_usingMockData
-            ? FloatingActionButton.extended(
+        floatingActionButton: FloatingActionButton.extended(
                 backgroundColor: AppTheme.primaryOrange,
                 foregroundColor: Colors.white,
                 onPressed: _showMyPositionModal,
                 icon: const Icon(Icons.person_pin_circle),
                 label: const Text('Vị trí của tôi'),
-              )
-            : null,
+              ),
         floatingActionButtonLocation: FloatingActionButtonLocation.endFloat,
         body: Container(
           decoration: const BoxDecoration(
@@ -487,52 +451,6 @@ class _LeaderboardScreenState extends State<LeaderboardScreen> {
                            ),
                          ),
                          const Spacer(),
-                         Tooltip(
-                           message: 'Tạo 10 user test (300-400 điểm)',
-                           child: ElevatedButton.icon(
-                             onPressed: () async {
-                               final scaffold = ScaffoldMessenger.of(context);
-                               if (_usingMockData) {
-                                 // Chuyển về dữ liệu thật
-                                 scaffold.showSnackBar(
-                                   const SnackBar(content: Text('Đang chuyển về dữ liệu thật...')),
-                                 );
-                                 setState(() {
-                                   _usingMockData = false;
-                                   _loading = true;
-                                 });
-                                 scaffold.hideCurrentSnackBar();
-                                 scaffold.showSnackBar(
-                                   const SnackBar(content: Text('Đã chuyển về dữ liệu thật')),
-                                 );
-                                 _load();
-                               } else {
-                                 // Chuyển sang mock data
-                                 scaffold.showSnackBar(
-                                   const SnackBar(content: Text('Đang tạo user test...')),
-                                 );
-                                 setState(() {
-                                   _usingMockData = true;
-                                   _loading = true;
-                                 });
-                                 final count = 10; // Số lượng mock users
-                                 scaffold.hideCurrentSnackBar();
-                                 scaffold.showSnackBar(
-                                   SnackBar(content: Text('Đã tạo $count user test')),
-                                 );
-                                 _load();
-                               }
-                             },
-                             icon: const Icon(Icons.add_circle_outline, size: 18),
-                             label: Text(_usingMockData ? 'Real' : 'Test'),
-                             style: ElevatedButton.styleFrom(
-                               backgroundColor: _usingMockData ? Colors.blue : Colors.green,
-                               foregroundColor: Colors.white,
-                               padding: const EdgeInsets.symmetric(vertical: 10, horizontal: 12),
-                               shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(12)),
-                             ),
-                           ),
-                         ),
                          // Nút "Vị trí của tôi" đã được chuyển xuống FloatingActionButton
                        ],
                      ),
@@ -559,7 +477,7 @@ class _LeaderboardScreenState extends State<LeaderboardScreen> {
       GlobalKey? key = _itemKeys[_myUserId!];
 
       // Nếu chưa thấy widget (chưa được build do chưa tải tới), liên tục load thêm cho đến khi thấy hoặc hết trang
-      while (key?.currentContext == null && !_usingMockData && _hasMore) {
+      while (key?.currentContext == null && _hasMore) {
         await _loadMoreIfNeeded();
         await Future.delayed(const Duration(milliseconds: 60));
         key = _itemKeys[_myUserId!];

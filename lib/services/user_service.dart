@@ -503,170 +503,6 @@ class UserService {
     }
   }
 
-  /// Tạo 10 user giả lập với điểm từ 300-400 để test leaderboard
-  Future<int> generateMockUsers() async {
-    try {
-      // Tạo mock data local thay vì ghi vào Firestore (tránh permission issues)
-      return 10; // Trả về số lượng user đã tạo
-    } catch (e) {
-      return 0;
-    }
-  }
-
-  /// Lấy mock data cho testing (không cần quyền Firestore)
-  List<Map<String, dynamic>> getMockLeaderboardData() {
-    final currentUserId = FirebaseAuth.instance.currentUser?.uid ?? 'current_user';
-    
-    // Tạo 32 user test với điểm từ 65-398
-    final mockUsers = [
-      // Top 10 users (300-400 điểm)
-      {'userId': 'user_1', 'displayName': 'Nguyễn Văn A', 'totalScore': 398, 'unlockedProvincesCount': 15, 'dailyStreak': 7, 'photoUrl': null},
-      {'userId': 'user_2', 'displayName': 'Trần Thị B', 'totalScore': 385, 'unlockedProvincesCount': 14, 'dailyStreak': 5, 'photoUrl': null},
-      {'userId': 'user_3', 'displayName': 'Lê Văn C', 'totalScore': 372, 'unlockedProvincesCount': 13, 'dailyStreak': 3, 'photoUrl': null},
-      {'userId': 'user_4', 'displayName': 'Phạm Thị D', 'totalScore': 365, 'unlockedProvincesCount': 12, 'dailyStreak': 6, 'photoUrl': null},
-      {'userId': 'user_5', 'displayName': 'Hoàng Văn E', 'totalScore': 358, 'unlockedProvincesCount': 11, 'dailyStreak': 4, 'photoUrl': null},
-      {'userId': 'user_6', 'displayName': 'Vũ Thị F', 'totalScore': 345, 'unlockedProvincesCount': 10, 'dailyStreak': 2, 'photoUrl': null},
-      {'userId': 'user_7', 'displayName': 'Đặng Văn G', 'totalScore': 332, 'unlockedProvincesCount': 9, 'dailyStreak': 8, 'photoUrl': null},
-      {'userId': 'user_8', 'displayName': 'Bùi Thị H', 'totalScore': 318, 'unlockedProvincesCount': 8, 'dailyStreak': 1, 'photoUrl': null},
-      {'userId': 'user_9', 'displayName': 'Đỗ Văn I', 'totalScore': 305, 'unlockedProvincesCount': 7, 'dailyStreak': 5, 'photoUrl': null},
-      {'userId': currentUserId, 'displayName': 'Bạn', 'totalScore': 295, 'unlockedProvincesCount': 6, 'dailyStreak': 3, 'photoUrl': null}, // User hiện tại ở vị trí 10
-      
-      // 22 users tiếp theo (65-290 điểm)
-      {'userId': 'user_11', 'displayName': 'Ngô Văn K', 'totalScore': 288, 'unlockedProvincesCount': 6, 'dailyStreak': 4, 'photoUrl': null},
-      {'userId': 'user_12', 'displayName': 'Dương Thị L', 'totalScore': 275, 'unlockedProvincesCount': 5, 'dailyStreak': 2, 'photoUrl': null},
-      {'userId': 'user_13', 'displayName': 'Lý Văn M', 'totalScore': 262, 'unlockedProvincesCount': 5, 'dailyStreak': 6, 'photoUrl': null},
-      {'userId': 'user_14', 'displayName': 'Hồ Thị N', 'totalScore': 248, 'unlockedProvincesCount': 4, 'dailyStreak': 1, 'photoUrl': null},
-      {'userId': 'user_15', 'displayName': 'Mai Văn O', 'totalScore': 235, 'unlockedProvincesCount': 4, 'dailyStreak': 3, 'photoUrl': null},
-      {'userId': 'user_16', 'displayName': 'Tô Thị P', 'totalScore': 222, 'unlockedProvincesCount': 3, 'dailyStreak': 5, 'photoUrl': null},
-      {'userId': 'user_17', 'displayName': 'Võ Văn Q', 'totalScore': 218, 'unlockedProvincesCount': 3, 'dailyStreak': 2, 'photoUrl': null},
-      {'userId': 'user_18', 'displayName': 'Đinh Thị R', 'totalScore': 205, 'unlockedProvincesCount': 2, 'dailyStreak': 4, 'photoUrl': null},
-      {'userId': 'user_19', 'displayName': 'Tạ Văn S', 'totalScore': 198, 'unlockedProvincesCount': 2, 'dailyStreak': 1, 'photoUrl': null},
-      {'userId': 'user_20', 'displayName': 'Trịnh Thị T', 'totalScore': 185, 'unlockedProvincesCount': 1, 'dailyStreak': 3, 'photoUrl': null},
-      {'userId': 'user_21', 'displayName': 'Lưu Văn U', 'totalScore': 172, 'unlockedProvincesCount': 1, 'dailyStreak': 2, 'photoUrl': null},
-      {'userId': 'user_22', 'displayName': 'Châu Thị V', 'totalScore': 165, 'unlockedProvincesCount': 1, 'dailyStreak': 5, 'photoUrl': null},
-      {'userId': 'user_23', 'displayName': 'Hà Văn W', 'totalScore': 158, 'unlockedProvincesCount': 1, 'dailyStreak': 1, 'photoUrl': null},
-      {'userId': 'user_24', 'displayName': 'Tăng Thị X', 'totalScore': 145, 'unlockedProvincesCount': 1, 'dailyStreak': 4, 'photoUrl': null},
-      {'userId': 'user_25', 'displayName': 'Phan Văn Y', 'totalScore': 138, 'unlockedProvincesCount': 1, 'dailyStreak': 2, 'photoUrl': null},
-      {'userId': 'user_26', 'displayName': 'Vương Thị Z', 'totalScore': 125, 'unlockedProvincesCount': 1, 'dailyStreak': 3, 'photoUrl': null},
-      {'userId': 'user_27', 'displayName': 'Thạch Văn AA', 'totalScore': 118, 'unlockedProvincesCount': 1, 'dailyStreak': 1, 'photoUrl': null},
-      {'userId': 'user_28', 'displayName': 'Lâm Thị BB', 'totalScore': 105, 'unlockedProvincesCount': 1, 'dailyStreak': 2, 'photoUrl': null},
-      {'userId': 'user_29', 'displayName': 'Huỳnh Văn CC', 'totalScore': 98, 'unlockedProvincesCount': 1, 'dailyStreak': 4, 'photoUrl': null},
-      {'userId': 'user_30', 'displayName': 'Đoàn Thị DD', 'totalScore': 85, 'unlockedProvincesCount': 1, 'dailyStreak': 1, 'photoUrl': null},
-      {'userId': 'user_31', 'displayName': 'Trương Văn EE', 'totalScore': 78, 'unlockedProvincesCount': 1, 'dailyStreak': 3, 'photoUrl': null},
-      {'userId': 'user_32', 'displayName': 'Nguyễn Thị FF', 'totalScore': 65, 'unlockedProvincesCount': 1, 'dailyStreak': 2, 'photoUrl': null},
-    ];
-    
-    return mockUsers;
-  }
-
-  /// Mock cursor-based pagination cho testing (giống data thật)
-  /// Returns: {
-  ///   'items': List<Map<String, dynamic>>,
-  ///   'cursor': List<Object?>? (use with startAfter),
-  ///   'hasMore': bool
-  /// }
-  Future<Map<String, dynamic>> getMockLeaderboardPageWithCursor({
-    int limit = 30,
-    List<Object?>? startAfter,
-  }) async {
-    final allUsers = getMockLeaderboardData();
-    
-    // Tìm vị trí bắt đầu dựa trên cursor
-    int startIndex = 0;
-    if (startAfter != null && startAfter.length >= 2) {
-      final lastScore = startAfter[0] as int? ?? 0;
-      final lastUnlocked = startAfter[1] as int? ?? 0;
-      
-      // Tìm vị trí của user cuối cùng từ trang trước
-      for (int i = 0; i < allUsers.length; i++) {
-        final user = allUsers[i];
-        final score = user['totalScore'] as int? ?? 0;
-        final unlocked = user['unlockedProvincesCount'] as int? ?? 0;
-        
-        if (score == lastScore && unlocked == lastUnlocked) {
-          startIndex = i + 1; // Bắt đầu từ user tiếp theo
-          break;
-        }
-      }
-    }
-    
-    // Lấy trang hiện tại
-    final endIndex = (startIndex + limit).clamp(0, allUsers.length);
-    final pageUsers = allUsers.sublist(startIndex, endIndex);
-    
-    // Tạo cursor cho trang tiếp theo
-    List<Object?>? cursor;
-    if (pageUsers.isNotEmpty) {
-      final lastUser = pageUsers.last;
-      cursor = [
-        lastUser['totalScore'] as int? ?? 0,
-        lastUser['unlockedProvincesCount'] as int? ?? 0,
-      ];
-    }
-    
-    return {
-      'items': pageUsers,
-      'cursor': cursor,
-      'hasMore': endIndex < allUsers.length,
-    };
-  }
-
-  /// Cursor-based pagination without Cloud Functions
-  /// Returns: {
-  ///   'items': List<Map<String, dynamic>>,
-  ///   'cursor': List<Object?>? (use with startAfter),
-  ///   'hasMore': bool
-  /// }
-  Future<Map<String, dynamic>> getLeaderboardPageWithCursor({
-    int limit = 30,
-    List<Object?>? startAfter,
-  }) async {
-    try {
-      Query<Map<String, dynamic>> query = _leaderboardUsers()
-          .orderBy('totalScore', descending: true)
-          .orderBy('unlockedProvincesCount', descending: true)
-          .limit(limit);
-
-      if (startAfter != null) {
-        query = query.startAfter(startAfter);
-      }
-
-      final snap = await query.get();
-      final items = snap.docs.map((doc) {
-        final data = doc.data();
-        return {
-          'userId': doc.id,
-          'displayName': data['displayName'] ?? 'Người chơi',
-          'photoUrl': data['photoUrl'],
-          'totalScore': data['totalScore'] ?? 0,
-          'unlockedProvincesCount': data['unlockedProvincesCount'] ?? 0,
-          'dailyStreak': data['dailyStreak'] ?? 0,
-        };
-      }).toList();
-
-      List<Object?>? cursor;
-      if (snap.docs.isNotEmpty) {
-        final last = snap.docs.last.data();
-        cursor = [
-          last['totalScore'] ?? 0,
-          last['unlockedProvincesCount'] ?? 0,
-        ];
-      }
-
-      return {
-        'items': items,
-        'cursor': cursor,
-        'hasMore': snap.docs.length == limit,
-      };
-    } catch (e) {
-      return {
-        'items': <Map<String, dynamic>>[],
-        'cursor': null,
-        'hasMore': false,
-      };
-    }
-  }
-
   /// Get current user's leaderboard snapshot (score/unlocked and basic info)
   Future<Map<String, dynamic>?> getMyLeaderboardEntry() async {
     try {
@@ -690,49 +526,33 @@ class UserService {
 
   /// Approximate rank using aggregate counts (without Cloud Functions)
   Future<int?> getMyApproxRank() async {
-    print('[UserService] getMyApproxRank: ENTRY POINT');
     try {
-      print('[UserService] getMyApproxRank: starting...');
       final me = await getMyLeaderboardEntry();
-      print('[UserService] getMyApproxRank: getMyLeaderboardEntry result=$me');
       if (me == null) {
-        print('[UserService] getMyApproxRank: no leaderboard entry found');
         return null;
       }
       final int myScore = me['totalScore'] as int? ?? 0;
       final int myUnlocked = me['unlockedProvincesCount'] as int? ?? 0;
-      print('[UserService] getMyApproxRank: myScore=$myScore, myUnlocked=$myUnlocked');
 
-      // Simplified approach: Count users with greater or equal score, then filter in memory
-      print('[UserService] getMyApproxRank: about to query all users with >= score...');
       final allUsers = await _leaderboardUsers()
           .where('totalScore', isGreaterThanOrEqualTo: myScore)
           .orderBy('totalScore', descending: true)
           .orderBy('unlockedProvincesCount', descending: true)
           .get();
-      print('[UserService] getMyApproxRank: found ${allUsers.docs.length} users with >= score');
 
-      // Calculate rank manually
       int rank = 1;
       for (final doc in allUsers.docs) {
         final data = doc.data();
         final score = data['totalScore'] as int? ?? 0;
         final unlocked = data['unlockedProvincesCount'] as int? ?? 0;
-        
         if (score > myScore || (score == myScore && unlocked > myUnlocked)) {
           rank++;
         } else if (score == myScore && unlocked == myUnlocked) {
-          // Found our position
           break;
         }
       }
-      
-      print('[UserService] getMyApproxRank: calculated rank=$rank');
-      print('[UserService] getMyApproxRank: SUCCESS - returning rank=$rank');
       return rank;
     } catch (e) {
-      print('[UserService] getMyApproxRank: ERROR caught: $e');
-      print('[UserService] getMyApproxRank: error stack trace: ${StackTrace.current}');
       return null;
     }
   }
@@ -765,6 +585,55 @@ class UserService {
       }).toList();
     } catch (e) {
       return [];
+    }
+  }
+
+  /// Phân trang leaderboard theo cursor (score desc, unlocked desc)
+  Future<Map<String, dynamic>> getLeaderboardPageWithCursor({int limit = 30, List<Object?>? startAfter}) async {
+    try {
+      Query<Map<String, dynamic>> query = _leaderboardUsers()
+          .orderBy('totalScore', descending: true)
+          .orderBy('unlockedProvincesCount', descending: true);
+
+      if (startAfter != null && startAfter.isNotEmpty) {
+        query = query.startAfter(startAfter);
+      }
+
+      final snap = await query.limit(limit).get();
+      final docs = snap.docs;
+      final items = docs.map((doc) {
+        final data = doc.data();
+        return {
+          'userId': doc.id,
+          'displayName': data['displayName'] ?? 'Người chơi',
+          'photoUrl': data['photoUrl'],
+          'totalScore': data['totalScore'] ?? 0,
+          'unlockedProvincesCount': data['unlockedProvincesCount'] ?? 0,
+          'dailyStreak': data['dailyStreak'] ?? 0,
+        };
+      }).toList();
+
+      final bool hasMore = docs.length >= limit;
+      List<Object?>? nextCursor;
+      if (hasMore && docs.isNotEmpty) {
+        final last = docs.last.data();
+        nextCursor = [
+          last['totalScore'] ?? 0,
+          last['unlockedProvincesCount'] ?? 0,
+        ];
+      }
+
+      return {
+        'items': items,
+        'cursor': nextCursor,
+        'hasMore': hasMore,
+      };
+    } catch (e) {
+      return {
+        'items': <Map<String, dynamic>>[],
+        'cursor': null,
+        'hasMore': false,
+      };
     }
   }
 } 
