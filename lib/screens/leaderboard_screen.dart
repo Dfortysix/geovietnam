@@ -307,12 +307,15 @@ class _LeaderboardScreenState extends State<LeaderboardScreen> {
     _myUserId = current?.uid;
 
     if (_usingMockData) {
-      // Sử dụng mock data
-      final mockData = _userService.getMockLeaderboardData();
+      // Sử dụng mock data với pagination giống data thật
+      final page = await _userService.getMockLeaderboardPageWithCursor(limit: 30);
+      final rows = (page['items'] as List<Map<String, dynamic>>?) ?? [];
+      _cursor = page['cursor'] as List<Object?>?;
+      _hasMore = (page['hasMore'] as bool?) ?? false;
+      if (!mounted) return;
       setState(() {
-        _rows = mockData;
+        _rows = rows;
         _loading = false;
-        _hasMore = false; // Mock data không có pagination
       });
     } else {
       // Trang đầu tiên bằng cursor-based paging
@@ -329,11 +332,13 @@ class _LeaderboardScreenState extends State<LeaderboardScreen> {
   }
 
   Future<void> _loadMoreIfNeeded() async {
-    if (!_hasMore || _isLoadingMore || _loading || _usingMockData) return;
+    if (!_hasMore || _isLoadingMore || _loading) return;
     setState(() {
       _isLoadingMore = true;
     });
-    final page = await _userService.getLeaderboardPageWithCursor(limit: 30, startAfter: _cursor);
+    final page = _usingMockData 
+        ? await _userService.getMockLeaderboardPageWithCursor(limit: 30, startAfter: _cursor)
+        : await _userService.getLeaderboardPageWithCursor(limit: 30, startAfter: _cursor);
     final newItems = (page['items'] as List<Map<String, dynamic>>?) ?? [];
     final newCursor = page['cursor'] as List<Object?>?;
     final hasMore = (page['hasMore'] as bool?) ?? false;
