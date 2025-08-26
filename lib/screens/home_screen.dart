@@ -402,7 +402,7 @@ class _HomeScreenState extends State<HomeScreen> {
                         _buildGameOption(
                           context,
                           icon: Icons.person,
-                          title: '👤 Hồ sơ người chơi',
+                          title: 'Hồ sơ người chơi',
                           subtitle: 'Xem thông tin cá nhân và thành tích',
                           gradient: const LinearGradient(
                             colors: [AppTheme.accentOrange, AppTheme.primaryOrange],
@@ -432,7 +432,7 @@ class _HomeScreenState extends State<HomeScreen> {
                         _buildGameOption(
                           context,
                           icon: Icons.settings,
-                          title: '⚙️ Cài đặt',
+                          title: 'Cài đặt',
                           subtitle: 'Tùy chỉnh âm thanh, thông báo và cài đặt khác',
                           gradient: LinearGradient(
                             colors: [Colors.grey, Colors.grey.shade600],
@@ -452,43 +452,7 @@ class _HomeScreenState extends State<HomeScreen> {
                           delay: 2100.ms,
                         ),
 
-                        const SizedBox(height: 40),
-                        
-                        // Footer với animation
-                        Container(
-                          padding: const EdgeInsets.all(16),
-                          decoration: BoxDecoration(
-                            color: AppTheme.lightOrange.withOpacity(0.1),
-                            borderRadius: BorderRadius.circular(16),
-                            border: Border.all(
-                              color: AppTheme.lightOrange.withOpacity(0.3),
-                            ),
-                          ),
-                          child: Row(
-                            mainAxisAlignment: MainAxisAlignment.center,
-                            children: [
-                              Icon(
-                                Icons.info_outline,
-                                color: AppTheme.textSecondary,
-                                size: 16,
-                              ),
-                              const SizedBox(width: 8),
-                              Text(
-                                'Phiên bản 1.0.0 - Hệ thống Unlock Daily',
-                                style: Theme.of(context).textTheme.bodyMedium?.copyWith(
-                                  color: AppTheme.textSecondary,
-                                ),
-                              ),
-                            ],
-                          ),
-                        ).animate().fadeIn(
-                          duration: 800.ms,
-                          delay: 2400.ms,
-                        ).slideY(
-                          begin: 0.3,
-                          duration: 800.ms,
-                          delay: 2400.ms,
-                        ),
+
                       ],
                     ),
                   ),
