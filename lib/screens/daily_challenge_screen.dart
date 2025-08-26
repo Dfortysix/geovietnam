@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_animate/flutter_animate.dart';
 import 'dart:async';
 import '../theme/app_theme.dart';
 import '../services/daily_challenge_service.dart';
@@ -25,7 +24,7 @@ class _DailyChallengeScreenState extends State<DailyChallengeScreen> {
   bool _isLoading = true;
   String? _selectedAnswer;
   bool _showResult = false;
-  bool _isCorrect = false;
+  
   bool _showUnlockAnimation = false;
   String? _unlockedProvinceName;
   
@@ -78,7 +77,7 @@ class _DailyChallengeScreenState extends State<DailyChallengeScreen> {
          setState(() {
            _selectedAnswer = null;
            _showResult = false;
-           _isCorrect = false;
+           
          });
          
          // Bắt đầu timer với 15 giây mới
@@ -101,7 +100,6 @@ class _DailyChallengeScreenState extends State<DailyChallengeScreen> {
            _correctCount = 0;
            _selectedAnswer = null;
            _showResult = false;
-           _isCorrect = false;
            _isLoading = false;
          });
          
@@ -546,7 +544,6 @@ class _DailyChallengeScreenState extends State<DailyChallengeScreen> {
     setState(() {
       _selectedAnswer = selectedAnswer;
       _showResult = true;
-      _isCorrect = isCorrect;
     });
 
     if (isCorrect) {
@@ -656,13 +653,13 @@ class _DailyChallengeScreenState extends State<DailyChallengeScreen> {
                     child: Column(
                       children: [
                         Icon(
-                          _score >= 70 ? Icons.celebration : Icons.sentiment_dissatisfied,
+                          _correctCount >= 6 ? Icons.celebration : Icons.sentiment_dissatisfied,
                           size: 64,
-                          color: _score >= 70 ? AppTheme.primaryOrange : Colors.grey,
+                          color: _correctCount >= 6 ? AppTheme.primaryOrange : Colors.grey,
                         ),
                         const SizedBox(height: 24),
                         Text(
-                          _score >= 70 ? 'Chúc mừng!' : 'Cố gắng hơn!',
+                          _correctCount >= 6 ? 'Chúc mừng!' : 'Cố gắng hơn!',
                           style: Theme.of(context).textTheme.headlineMedium?.copyWith(
                             color: AppTheme.textPrimary,
                             fontWeight: FontWeight.bold,
