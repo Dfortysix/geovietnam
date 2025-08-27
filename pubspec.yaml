@@ -63,8 +63,9 @@ dependencies:
   firebase_storage: ^12.2.3
   # Image picker for profile editing
   image_picker: ^1.0.7
-  # Package info for app version
-  package_info_plus: ^4.2.0
+
+  flutter_local_notifications: ^19.4.1
+  timezone: ^0.10.1
   # Thay thế games_services bằng package khác hoặc tự implement
 
 dev_dependencies:

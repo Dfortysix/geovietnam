@@ -3,6 +3,7 @@ import '../theme/app_theme.dart';
 import '../services/settings_service.dart';
 import '../services/background_audio_service.dart';
 import 'about_app_screen.dart';
+import '../services/notification_service.dart';
 
 class SettingsScreen extends StatefulWidget {
   const SettingsScreen({Key? key}) : super(key: key);
@@ -42,6 +43,9 @@ class _SettingsScreenState extends State<SettingsScreen> {
     // Đồng bộ trạng thái audio
     await BackgroundAudioService().setEnabled(_soundEnabled);
     await BackgroundAudioService().setVolume(_musicVolume);
+    // Khởi tạo thông báo và áp dụng lịch hiện tại
+    await NotificationService().init();
+    await NotificationService().scheduleDailyReminders();
   }
 
   @override
@@ -92,6 +96,12 @@ class _SettingsScreenState extends State<SettingsScreen> {
                       onChanged: (v) async {
                         setState(() => _notificationsEnabled = v);
                         await SettingsService().setNotificationsEnabled(v);
+                        await NotificationService().init();
+                        if (v) {
+                          await NotificationService().scheduleDailyReminders();
+                        } else {
+                          await NotificationService().cancelAll();
+                        }
                       },
                     ),
                     const SizedBox(height: 16),

@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:package_info_plus/package_info_plus.dart';
 import '../theme/app_theme.dart';
 
 class AboutAppScreen extends StatefulWidget {
@@ -10,26 +9,9 @@ class AboutAppScreen extends StatefulWidget {
 }
 
 class _AboutAppScreenState extends State<AboutAppScreen> {
-  String _version = '1.0.0';
-  String _buildNumber = '1';
-
-  @override
-  void initState() {
-    super.initState();
-    _loadAppInfo();
-  }
-
-  Future<void> _loadAppInfo() async {
-    try {
-      final packageInfo = await PackageInfo.fromPlatform();
-      setState(() {
-        _version = packageInfo.version;
-        _buildNumber = packageInfo.buildNumber;
-      });
-    } catch (e) {
-      // Fallback to default values
-    }
-  }
+  // Giá trị cố định từ pubspec.yaml
+  final String _version = '1.0.0';
+  final String _buildNumber = '1';
 
   @override
   Widget build(BuildContext context) {
@@ -107,31 +89,31 @@ class _AboutAppScreenState extends State<AboutAppScreen> {
                 
                 const SizedBox(height: 24),
                 
-                                 // Tính năng chính
-                 _buildSection(
-                   title: 'Tính năng chính',
-                   content: '• Khám phá bản đồ tương tác với 34 tỉnh thành\n'
-                           '• Thử thách hàng ngày với câu hỏi địa lý\n'
-                           '• Hệ thống điểm và mở khóa tỉnh mới\n'
-                           '• Thống kê tiến độ và thành tích cá nhân',
-                 ),
+                // Tính năng chính
+                _buildSection(
+                  title: 'Tính năng chính',
+                  content: '• Khám phá bản đồ tương tác với 34 tỉnh thành\n'
+                          '• Thử thách hàng ngày với câu hỏi địa lý\n'
+                          '• Hệ thống điểm và mở khóa tỉnh mới\n'
+                          '• Thống kê tiến độ và thành tích cá nhân',
+                ),
                 
                 const SizedBox(height: 24),
                 
-                                 // Dữ liệu cập nhật
-                 _buildSection(
-                   title: 'Dữ liệu cập nhật',
-                   content: 'Ứng dụng sử dụng dữ liệu chính xác về 34 tỉnh thành Việt Nam sau đợt sáp nhập 1/7/2025, bao gồm thông tin chi tiết về địa lý, lịch sử, văn hóa và các sự kiện nổi bật của từng tỉnh thành.',
-                 ),
+                // Dữ liệu cập nhật
+                _buildSection(
+                  title: 'Dữ liệu cập nhật',
+                  content: 'Ứng dụng sử dụng dữ liệu chính xác về 34 tỉnh thành Việt Nam sau đợt sáp nhập 1/7/2025, bao gồm thông tin chi tiết về địa lý, lịch sử, văn hóa và các sự kiện nổi bật của từng tỉnh thành.',
+                ),
                 
                 const SizedBox(height: 24),
                 
-                                 // Nhà phát triển
-                 _buildSection(
-                   title: 'Nhà phát triển',
-                   content: 'Nguyễn Trí Dũng\n'
-                           'Email: tridug04062003@gmail.com',
-                 ),
+                // Nhà phát triển
+                _buildSection(
+                  title: 'Nhà phát triển',
+                  content: 'Nguyễn Trí Dũng\n'
+                          'Email: tridug04062003@gmail.com',
+                ),
                 
                 const SizedBox(height: 24),
                 

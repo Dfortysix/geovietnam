@@ -4,6 +4,7 @@ import 'package:provider/provider.dart';
 import 'services/google_play_games_service.dart';
 import 'theme/app_theme.dart';
 import 'screens/home_screen.dart';
+import 'services/notification_service.dart';
 
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
@@ -13,6 +14,8 @@ void main() async {
   
   // Khởi tạo Google Play Games Services
   await GooglePlayGamesService().initialize();
+  // Khởi tạo NotificationService (không lập lịch nếu user tắt)
+  await NotificationService().init();
   
   runApp(const GeoVietnamApp());
 }
