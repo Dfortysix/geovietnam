@@ -1,6 +1,9 @@
 buildscript {
     repositories {
         google()
+        maven("https://maven.aliyun.com/repository/public")
+        maven("https://maven.aliyun.com/repository/central")
+        maven("https://mirrors.tencent.com/repository/maven/")
         mavenCentral()
     }
     dependencies {
@@ -11,6 +14,9 @@ buildscript {
 allprojects {
     repositories {
         google()
+        maven("https://maven.aliyun.com/repository/public")
+        maven("https://maven.aliyun.com/repository/central")
+        maven("https://mirrors.tencent.com/repository/maven/")
         mavenCentral()
     }
 }
