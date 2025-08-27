@@ -9,6 +9,8 @@ import '../models/game_progress.dart';
 import '../widgets/user_avatar_widget.dart';
 import '../services/user_service.dart';
 import 'edit_profile_screen.dart';
+import '../widgets/user_display_widget.dart';
+import '../services/user_display_service.dart';
 
 class ProfileScreen extends StatefulWidget {
   const ProfileScreen({super.key});
@@ -205,11 +207,10 @@ class _ProfileScreenState extends State<ProfileScreen> {
                        width: 1,
                      ),
                    ),
-                   child: UserAvatarWithNameWidget(
-                     photoUrl: gamesService.currentUser!.photoUrl,
-                     displayName: gamesService.currentUser!.displayName,
-                     email: gamesService.currentUser!.email,
+                   child: UserDisplayWidget(
                      avatarSize: 40,
+                     showEmail: true,
+                     showSource: false,
                    ),
                  ),
                ],
@@ -307,8 +308,7 @@ class _ProfileScreenState extends State<ProfileScreen> {
                                               ),
                                             ],
                                           ),
-                                          child: UserAvatarWidget(
-                                            photoUrl: gamesService.currentUser?.photoUrl,
+                                          child: UserAvatarDisplayWidget(
                                             size: 80,
                                             borderColor: Colors.white,
                                             borderWidth: 4,
@@ -318,8 +318,7 @@ class _ProfileScreenState extends State<ProfileScreen> {
                                         const SizedBox(height: 16),
                                         
                                         // Tên người dùng
-                                        Text(
-                                          gamesService.currentUser?.displayName ?? 'Người chơi',
+                                        UserNameDisplayWidget(
                                           style: const TextStyle(
                                             fontSize: 24,
                                             fontWeight: FontWeight.bold,
@@ -328,14 +327,21 @@ class _ProfileScreenState extends State<ProfileScreen> {
                                         ).animate().fadeIn(delay: 200.ms),
                                         
                                         // Email
-                                        if (gamesService.currentUser?.email != null)
-                                          Text(
-                                            gamesService.currentUser!.email,
-                                            style: TextStyle(
-                                              fontSize: 14,
-                                              color: Colors.white.withValues(alpha: 0.8),
-                                            ),
-                                          ).animate().fadeIn(delay: 400.ms),
+                                        FutureBuilder<String?>(
+                                          future: UserDisplayService().getEmail(),
+                                          builder: (context, snapshot) {
+                                            if (snapshot.hasData && snapshot.data != null) {
+                                              return Text(
+                                                snapshot.data!,
+                                                style: TextStyle(
+                                                  fontSize: 14,
+                                                  color: Colors.white.withValues(alpha: 0.8),
+                                                ),
+                                              ).animate().fadeIn(delay: 400.ms);
+                                            }
+                                            return const SizedBox.shrink();
+                                          },
+                                        ),
                                       ],
                                     );
                                   },

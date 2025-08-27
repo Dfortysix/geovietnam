@@ -6,6 +6,8 @@ import '../theme/app_theme.dart';
 import '../services/user_service.dart';
 import '../services/auth_service.dart';
 import '../widgets/user_avatar_widget.dart';
+import '../services/user_display_service.dart';
+import '../services/storage_service.dart';
 
 class EditProfileScreen extends StatefulWidget {
   const EditProfileScreen({super.key});
@@ -18,6 +20,7 @@ class _EditProfileScreenState extends State<EditProfileScreen> {
   final TextEditingController _displayNameController = TextEditingController();
   final UserService _userService = UserService();
   final AuthService _authService = AuthService();
+  final StorageService _storageService = StorageService();
   
   bool _isLoading = false;
   bool _isSaving = false;
@@ -86,8 +89,25 @@ class _EditProfileScreenState extends State<EditProfileScreen> {
       );
 
       if (image != null) {
+        final imageFile = File(image.path);
+        
+        // Kiểm tra định dạng và kích thước file
+        if (!_storageService.isValidImageFormat(imageFile)) {
+          setState(() {
+            _errorMessage = 'Định dạng ảnh không được hỗ trợ. Vui lòng chọn ảnh JPG, PNG hoặc WebP.';
+          });
+          return;
+        }
+
+        if (!_storageService.isValidFileSize(imageFile)) {
+          setState(() {
+            _errorMessage = 'Kích thước ảnh quá lớn. Vui lòng chọn ảnh nhỏ hơn 5MB.';
+          });
+          return;
+        }
+
         setState(() {
-          _selectedImage = File(image.path);
+          _selectedImage = imageFile;
           _errorMessage = null;
         });
       }
@@ -118,8 +138,25 @@ class _EditProfileScreenState extends State<EditProfileScreen> {
       );
 
       if (image != null) {
+        final imageFile = File(image.path);
+        
+        // Kiểm tra định dạng và kích thước file
+        if (!_storageService.isValidImageFormat(imageFile)) {
+          setState(() {
+            _errorMessage = 'Định dạng ảnh không được hỗ trợ. Vui lòng chọn ảnh JPG, PNG hoặc WebP.';
+          });
+          return;
+        }
+
+        if (!_storageService.isValidFileSize(imageFile)) {
+          setState(() {
+            _errorMessage = 'Kích thước ảnh quá lớn. Vui lòng chọn ảnh nhỏ hơn 5MB.';
+          });
+          return;
+        }
+
         setState(() {
-          _selectedImage = File(image.path);
+          _selectedImage = imageFile;
           _errorMessage = null;
         });
       }
@@ -150,20 +187,35 @@ class _EditProfileScreenState extends State<EditProfileScreen> {
         throw Exception('Người dùng chưa đăng nhập');
       }
 
-      // TODO: Implement image upload to Firebase Storage
-      // For now, we'll just update the display name
       String? newPhotoUrl = _currentPhotoUrl;
       
       // If user selected a new image, upload it
       if (_selectedImage != null) {
-        // TODO: Upload image to Firebase Storage and get URL
-        // newPhotoUrl = await _uploadImage(_selectedImage!);
-        ScaffoldMessenger.of(context).showSnackBar(
-          const SnackBar(
-            content: Text('Tính năng upload ảnh sẽ sớm ra mắt!'),
-            backgroundColor: AppTheme.primaryOrange,
-          ),
-        );
+        try {
+          // Hiển thị thông báo đang upload
+          if (mounted) {
+            ScaffoldMessenger.of(context).showSnackBar(
+              const SnackBar(
+                content: Text('Đang upload ảnh...'),
+                backgroundColor: AppTheme.primaryOrange,
+                duration: Duration(seconds: 2),
+              ),
+            );
+          }
+
+          // Upload ảnh lên Firebase Storage
+          newPhotoUrl = await _storageService.uploadAvatarImage(_selectedImage!);
+          
+          // Xóa ảnh cũ nếu có
+          if (_currentPhotoUrl != null && _currentPhotoUrl != newPhotoUrl) {
+            await _storageService.deleteOldAvatar(_currentPhotoUrl);
+          }
+        } catch (e) {
+          setState(() {
+            _errorMessage = 'Không thể upload ảnh: $e';
+          });
+          return;
+        }
       }
 
       // Update profile in Firestore
@@ -174,6 +226,9 @@ class _EditProfileScreenState extends State<EditProfileScreen> {
       );
 
       if (mounted) {
+        // Refresh user display info
+        await UserDisplayService().refreshUserDisplayInfo();
+        
         ScaffoldMessenger.of(context).showSnackBar(
           const SnackBar(
             content: Text('Cập nhật hồ sơ thành công!'),

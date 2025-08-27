@@ -10,6 +10,7 @@ import 'daily_challenge_screen.dart';
 import 'map_exploration_screen.dart';
 import 'leaderboard_screen.dart';
 import 'settings_screen.dart';
+import '../widgets/user_display_widget.dart';
 
 class HomeScreen extends StatefulWidget {
   const HomeScreen({Key? key}) : super(key: key);
@@ -164,7 +165,7 @@ class _HomeScreenState extends State<HomeScreen> {
                           ),
                           
                           // User info if logged in
-                          if (_authService.isLoggedIn && _authService.currentGoogleUser != null)
+                          if (_authService.isLoggedIn)
                             Container(
                               padding: const EdgeInsets.symmetric(horizontal: 12, vertical: 6),
                               decoration: BoxDecoration(
@@ -175,25 +176,10 @@ class _HomeScreenState extends State<HomeScreen> {
                                   width: 1,
                                 ),
                               ),
-                              child: Row(
-                                mainAxisSize: MainAxisSize.min,
-                                children: [
-                                  CircleAvatar(
-                                    radius: 12,
-                                    backgroundImage: NetworkImage(
-                                      _authService.currentGoogleUser!.photoUrl ?? '',
-                                    ),
-                                  ),
-                                  const SizedBox(width: 6),
-                                  Text(
-                                    _authService.currentGoogleUser!.displayName ?? 'Người chơi',
-                                    style: const TextStyle(
-                                      color: Colors.white,
-                                      fontSize: 12,
-                                      fontWeight: FontWeight.w500,
-                                    ),
-                                  ),
-                                ],
+                              child: UserDisplayWidget(
+                                avatarSize: 24,
+                                showEmail: false,
+                                showSource: false,
                               ),
                             ),
                         ],

@@ -5,6 +5,7 @@ import '../theme/app_theme.dart';
 import '../services/user_service.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'settings_screen.dart';
+import '../services/user_display_service.dart';
 
 // Custom painter for bokeh effect
 class BokehPainter extends CustomPainter {
