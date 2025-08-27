@@ -89,50 +89,48 @@ class _UserDisplayWidgetState extends State<UserDisplayWidget> {
 
     return GestureDetector(
       onTap: widget.onTap,
-      child: Row(
+      child: Wrap(
+        crossAxisAlignment: WrapCrossAlignment.center,
+        spacing: 12,
+        runSpacing: 4,
         children: [
           UserAvatarWidget(
             photoUrl: displayInfo.photoUrl,
             size: widget.avatarSize,
           ),
-          const SizedBox(width: 12),
-          Expanded(
-            child: Column(
-              crossAxisAlignment: CrossAxisAlignment.start,
-              children: [
-                Row(
-                  children: [
-                    Expanded(
-                      child: Text(
-                        displayInfo.displayName,
-                        style: const TextStyle(
-                          fontWeight: FontWeight.bold,
-                          fontSize: 16,
-                        ),
-                        overflow: TextOverflow.ellipsis,
-                        maxLines: 1,
-                      ),
-                    ),
-                    if (widget.showSource) ...[
-                      const SizedBox(width: 8),
-                      _buildSourceIndicator(displayInfo.source),
-                    ],
-                  ],
-                ),
-                if (widget.showEmail && displayInfo.email != null) ...[
-                  const SizedBox(height: 2),
+          Column(
+            mainAxisSize: MainAxisSize.min,
+            crossAxisAlignment: CrossAxisAlignment.start,
+            children: [
+              Row(
+                mainAxisSize: MainAxisSize.min,
+                children: [
                   Text(
-                    displayInfo.email!,
-                    style: TextStyle(
-                      fontSize: 12,
-                      color: Colors.grey[600],
+                    displayInfo.displayName,
+                    style: const TextStyle(
+                      fontWeight: FontWeight.bold,
+                      fontSize: 16,
                     ),
-                    overflow: TextOverflow.ellipsis,
-                    maxLines: 1,
+                    softWrap: false,
                   ),
+                  if (widget.showSource) ...[
+                    const SizedBox(width: 6),
+                    _buildSourceIndicator(displayInfo.source),
+                  ],
                 ],
+              ),
+              if (widget.showEmail && displayInfo.email != null) ...[
+                const SizedBox(height: 2),
+                Text(
+                  displayInfo.email!,
+                  style: TextStyle(
+                    fontSize: 12,
+                    color: Colors.grey[600],
+                  ),
+                  softWrap: true,
+                ),
               ],
-            ),
+            ],
           ),
         ],
       ),
