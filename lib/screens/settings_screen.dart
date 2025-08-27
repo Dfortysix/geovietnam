@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 import '../theme/app_theme.dart';
+import '../services/settings_service.dart';
+import '../services/background_audio_service.dart';
 
 class SettingsScreen extends StatefulWidget {
   const SettingsScreen({Key? key}) : super(key: key);
@@ -12,6 +14,34 @@ class _SettingsScreenState extends State<SettingsScreen> {
   bool _soundEnabled = true;
   bool _vibrationEnabled = true;
   bool _notificationsEnabled = true;
+  double _musicVolume = 0.6;
+  bool _loading = true;
+
+  @override
+  void initState() {
+    super.initState();
+    _loadSettings();
+  }
+
+  Future<void> _loadSettings() async {
+    final settings = SettingsService();
+    final sound = await settings.isSoundEnabled();
+    final vib = await settings.isVibrationEnabled();
+    final noti = await settings.isNotificationsEnabled();
+    final vol = await settings.getMusicVolume();
+    setState(() {
+      _soundEnabled = sound;
+      _vibrationEnabled = vib;
+      _notificationsEnabled = noti;
+      _musicVolume = vol;
+      _loading = false;
+    });
+    // Đảm bảo khởi tạo audio
+    await BackgroundAudioService().init();
+    // Đồng bộ trạng thái audio
+    await BackgroundAudioService().setEnabled(_soundEnabled);
+    await BackgroundAudioService().setVolume(_musicVolume);
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -26,42 +56,54 @@ class _SettingsScreenState extends State<SettingsScreen> {
         decoration: const BoxDecoration(
           gradient: AppTheme.backgroundGradient,
         ),
-        child: SafeArea(
-          child: ListView(
-            padding: const EdgeInsets.all(16),
-            children: [
-              _buildSectionTitle('Âm thanh & rung'),
-              _buildSwitchTile(
-                icon: Icons.volume_up,
-                title: 'Âm thanh',
-                value: _soundEnabled,
-                onChanged: (v) => setState(() => _soundEnabled = v),
+        child: _loading
+            ? const Center(child: CircularProgressIndicator(color: AppTheme.primaryOrange))
+            : SafeArea(
+                child: ListView(
+                  padding: const EdgeInsets.all(16),
+                  children: [
+                    _buildSectionTitle('Âm thanh & rung'),
+                    _buildSwitchTile(
+                      icon: Icons.volume_up,
+                      title: 'Âm thanh',
+                      value: _soundEnabled,
+                      onChanged: (v) async {
+                        setState(() => _soundEnabled = v);
+                        await BackgroundAudioService().setEnabled(v);
+                      },
+                    ),
+                    _buildVolumeSlider(),
+                    _buildSwitchTile(
+                      icon: Icons.vibration,
+                      title: 'Rung',
+                      value: _vibrationEnabled,
+                      onChanged: (v) async {
+                        setState(() => _vibrationEnabled = v);
+                        await SettingsService().setVibrationEnabled(v);
+                      },
+                    ),
+                    const SizedBox(height: 16),
+                    _buildSectionTitle('Thông báo'),
+                    _buildSwitchTile(
+                      icon: Icons.notifications_active,
+                      title: 'Bật thông báo',
+                      value: _notificationsEnabled,
+                      onChanged: (v) async {
+                        setState(() => _notificationsEnabled = v);
+                        await SettingsService().setNotificationsEnabled(v);
+                      },
+                    ),
+                    const SizedBox(height: 16),
+                    _buildSectionTitle('Khác'),
+                    _buildNavTile(
+                      icon: Icons.info_outline,
+                      title: 'Về ứng dụng',
+                      subtitle: 'Phiên bản và thông tin',
+                      onTap: () {},
+                    ),
+                  ],
+                ),
               ),
-              _buildSwitchTile(
-                icon: Icons.vibration,
-                title: 'Rung',
-                value: _vibrationEnabled,
-                onChanged: (v) => setState(() => _vibrationEnabled = v),
-              ),
-              const SizedBox(height: 16),
-              _buildSectionTitle('Thông báo'),
-              _buildSwitchTile(
-                icon: Icons.notifications_active,
-                title: 'Bật thông báo',
-                value: _notificationsEnabled,
-                onChanged: (v) => setState(() => _notificationsEnabled = v),
-              ),
-              const SizedBox(height: 16),
-              _buildSectionTitle('Khác'),
-              _buildNavTile(
-                icon: Icons.info_outline,
-                title: 'Về ứng dụng',
-                subtitle: 'Phiên bản và thông tin',
-                onTap: () {},
-              ),
-            ],
-          ),
-        ),
       ),
     );
   }
@@ -103,6 +145,41 @@ class _SettingsScreenState extends State<SettingsScreen> {
             Text(title),
           ],
         ),
+      ),
+    );
+  }
+
+  Widget _buildVolumeSlider() {
+    return Container(
+      margin: const EdgeInsets.only(bottom: 8),
+      padding: const EdgeInsets.symmetric(horizontal: 16, vertical: 8),
+      decoration: BoxDecoration(
+        color: Colors.white.withOpacity(0.9),
+        borderRadius: BorderRadius.circular(12),
+        boxShadow: AppTheme.softShadow,
+      ),
+      child: Column(
+        crossAxisAlignment: CrossAxisAlignment.start,
+        children: [
+          Row(
+            children: const [
+              Icon(Icons.music_note, color: AppTheme.primaryOrange),
+              SizedBox(width: 12),
+              Text('Âm lượng nhạc nền'),
+            ],
+          ),
+          Slider(
+            value: _musicVolume,
+            onChanged: (v) async {
+              setState(() => _musicVolume = v);
+              await BackgroundAudioService().setVolume(v);
+            },
+            min: 0.0,
+            max: 1.0,
+            divisions: 10,
+            label: (_musicVolume * 100).round().toString(),
+          ),
+        ],
       ),
     );
   }
