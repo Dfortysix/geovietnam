@@ -6,6 +6,7 @@ import '../services/game_progress_service.dart';
 import '../models/province.dart';
 import 'map_exploration_screen.dart';
 import 'settings_screen.dart';
+import '../services/haptic_service.dart';
 
 class DailyChallengeScreen extends StatefulWidget {
   const DailyChallengeScreen({Key? key}) : super(key: key);
@@ -182,6 +183,7 @@ class _DailyChallengeScreenState extends State<DailyChallengeScreen> {
   void _onTimeUp() {
     if (!_showResult) {
       print('⏰ Hết thời gian! Tự động chọn câu trả lời sai');
+      HapticService().medium();
       // Tự động chọn câu trả lời sai (index 0) nếu chưa chọn
       _checkAnswer(_questions[_currentQuestion]['options'][0], false);
     }
@@ -565,8 +567,10 @@ class _DailyChallengeScreenState extends State<DailyChallengeScreen> {
       _score += gained;
       _correctCount += 1;
       print('✅ Trả lời đúng! +$gained điểm (thời gian còn lại: $_timeRemaining s)');
+      HapticService().light();
     } else {
       print('❌ Trả lời sai!');
+      HapticService().medium();
     }
 
     // Lưu trạng thái hiện tại (không lưu trạng thái tạm thời)
@@ -622,6 +626,7 @@ class _DailyChallengeScreenState extends State<DailyChallengeScreen> {
       if (_selectedProvince != null) {
         final didUnlock = await GameProgressService.unlockProvince(_selectedProvince!.id);
         if (didUnlock) {
+          HapticService().heavy();
           await DailyChallengeService.markProvinceUnlockedToday(); // Đánh dấu đã unlock hôm nay
           // Chỉ khi đã mở khóa hôm nay mới cập nhật tổng điểm và streak
           await GameProgressService.updateScore(_score);
