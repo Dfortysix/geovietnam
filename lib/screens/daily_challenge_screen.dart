@@ -184,8 +184,23 @@ class _DailyChallengeScreenState extends State<DailyChallengeScreen> {
     if (!_showResult) {
       print('⏰ Hết thời gian! Tự động chọn câu trả lời sai');
       HapticService().medium();
-      // Tự động chọn câu trả lời sai (index 0) nếu chưa chọn
-      _checkAnswer(_questions[_currentQuestion]['options'][0], false);
+      
+      // Tìm một đáp án sai để chọn
+      final currentQ = _questions[_currentQuestion];
+      final correctAnswerIndex = currentQ['answer'] as int;
+      final options = currentQ['options'] as List;
+      
+      // Tìm đáp án sai đầu tiên (không phải đáp án đúng)
+      String wrongAnswer = '';
+      for (int i = 0; i < options.length; i++) {
+        if (i != correctAnswerIndex) {
+          wrongAnswer = options[i];
+          break;
+        }
+      }
+      
+      // Tự động chọn đáp án sai
+      _checkAnswer(wrongAnswer, false);
     }
   }
 

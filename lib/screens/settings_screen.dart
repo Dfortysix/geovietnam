@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import '../theme/app_theme.dart';
 import '../services/settings_service.dart';
 import '../services/background_audio_service.dart';
+import 'about_app_screen.dart';
 
 class SettingsScreen extends StatefulWidget {
   const SettingsScreen({Key? key}) : super(key: key);
@@ -99,7 +100,14 @@ class _SettingsScreenState extends State<SettingsScreen> {
                       icon: Icons.info_outline,
                       title: 'Về ứng dụng',
                       subtitle: 'Phiên bản và thông tin',
-                      onTap: () {},
+                      onTap: () {
+                        Navigator.push(
+                          context,
+                          MaterialPageRoute(
+                            builder: (context) => const AboutAppScreen(),
+                          ),
+                        );
+                      },
                     ),
                   ],
                 ),

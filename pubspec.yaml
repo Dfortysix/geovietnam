@@ -63,6 +63,8 @@ dependencies:
   firebase_storage: ^12.2.3
   # Image picker for profile editing
   image_picker: ^1.0.7
+  # Package info for app version
+  package_info_plus: ^4.2.0
   # Thay thế games_services bằng package khác hoặc tự implement
 
 dev_dependencies:
