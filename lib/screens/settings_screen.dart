@@ -43,9 +43,8 @@ class _SettingsScreenState extends State<SettingsScreen> {
     // Đồng bộ trạng thái audio
     await BackgroundAudioService().setEnabled(_soundEnabled);
     await BackgroundAudioService().setVolume(_musicVolume);
-    // Khởi tạo thông báo và áp dụng lịch hiện tại
+    // Khởi tạo thông báo
     await NotificationService().init();
-    await NotificationService().scheduleDailyReminders();
   }
 
   @override
@@ -94,6 +93,8 @@ class _SettingsScreenState extends State<SettingsScreen> {
                       title: 'Bật thông báo',
                       value: _notificationsEnabled,
                       onChanged: (v) async {
+                        if (v == _notificationsEnabled) return; // Tránh gọi lại nếu giá trị không đổi
+                        
                         setState(() => _notificationsEnabled = v);
                         await SettingsService().setNotificationsEnabled(v);
                         await NotificationService().init();
@@ -104,35 +105,7 @@ class _SettingsScreenState extends State<SettingsScreen> {
                         }
                       },
                     ),
-                    if (_notificationsEnabled) ...[
-                      const SizedBox(height: 8),
-                      _buildButtonTile(
-                        icon: Icons.notifications,
-                        title: 'Test thông báo',
-                        subtitle: 'Gửi thông báo test ngay',
-                        onTap: () async {
-                          await NotificationService().showTestNotification();
-                        },
-                      ),
-                      const SizedBox(height: 8),
-                      _buildButtonTile(
-                        icon: Icons.list,
-                        title: 'Kiểm tra lịch',
-                        subtitle: 'Xem notification đã lập lịch',
-                        onTap: () async {
-                          await NotificationService().checkScheduledNotifications();
-                        },
-                      ),
-                      const SizedBox(height: 8),
-                      _buildButtonTile(
-                        icon: Icons.schedule,
-                        title: 'Test lập lịch',
-                        subtitle: 'Lập lịch notification trong 10 giây',
-                        onTap: () async {
-                          await NotificationService().showTestScheduledNotification();
-                        },
-                      ),
-                    ],
+
                     const SizedBox(height: 16),
                     _buildSectionTitle('Khác'),
                     _buildNavTile(
@@ -254,28 +227,7 @@ class _SettingsScreenState extends State<SettingsScreen> {
     );
   }
 
-  Widget _buildButtonTile({
-    required IconData icon,
-    required String title,
-    required String subtitle,
-    required VoidCallback onTap,
-  }) {
-    return Container(
-      margin: const EdgeInsets.only(bottom: 8),
-      decoration: BoxDecoration(
-        color: Colors.white.withOpacity(0.9),
-        borderRadius: BorderRadius.circular(12),
-        boxShadow: AppTheme.softShadow,
-      ),
-      child: ListTile(
-        onTap: onTap,
-        leading: Icon(icon, color: AppTheme.primaryOrange),
-        title: Text(title),
-        subtitle: Text(subtitle),
-        trailing: const Icon(Icons.play_arrow, size: 16),
-      ),
-    );
-  }
+
 }
 
 

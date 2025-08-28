@@ -28,28 +28,7 @@ class NotificationService {
           enableVibration: true,
           channelShowBadge: true,
         ),
-        NotificationChannel(
-          channelKey: 'test_scheduled_channel',
-          channelName: 'Test Scheduled Notifications',
-          channelDescription: 'Test scheduled notifications',
-          importance: NotificationImportance.Max,
-          defaultColor: const Color(0xFF4CAF50),
-          ledColor: const Color(0xFFFFFFFF),
-          playSound: true,
-          enableVibration: true,
-          channelShowBadge: true,
-        ),
-        NotificationChannel(
-          channelKey: 'test_channel',
-          channelName: 'Test Notifications',
-          channelDescription: 'Test notifications',
-          importance: NotificationImportance.Max,
-          defaultColor: const Color(0xFFFFC107),
-          ledColor: const Color(0xFFFFFFFF),
-          playSound: true,
-          enableVibration: true,
-          channelShowBadge: true,
-        ),
+
       ],
       debug: false,
     );
@@ -77,10 +56,11 @@ class NotificationService {
     print('🔔 NotificationService: Thông báo được bật, lập lịch...');
     await cancelAll();
 
+    // Lập lịch thông báo hàng ngày
     await _scheduleDaily(
       id: 1001,
-      hour: 15,
-      minute: 40,
+      hour: 19,
+      minute: 0,
       title: 'Daily Challenge đang chờ bạn!',
       body: 'Vào chơi để duy trì streak hôm nay nhé.',
       channelKey: 'daily_channel',
@@ -88,15 +68,16 @@ class NotificationService {
 
     await _scheduleDaily(
       id: 1002,
-      hour: 15,
-      minute: 41,
+      hour: 22,
+      minute: 0,
       title: 'Sắp mất streak!',
-      body: 'Bạn còn 28 phút để hoàn thành thử thách hôm nay.',
+      body: 'Bạn còn 2 giờ để hoàn thành thử thách hôm nay.',
       channelKey: 'daily_channel',
     );
 
+
+
     print('🔔 NotificationService: Hoàn thành lập lịch thông báo');
-    await checkScheduledNotifications();
   }
 
   Future<void> cancelAll() async {
@@ -104,62 +85,7 @@ class NotificationService {
     await AwesomeNotifications().cancelAll();
   }
 
-  Future<void> showTestNotification() async {
-    print('🔔 NotificationService: Hiển thị test notification (awesome)');
-    try {
-      await AwesomeNotifications().createNotification(
-        content: NotificationContent(
-          id: 999,
-          channelKey: 'test_channel',
-          title: 'Test Notification',
-          body: 'Đây là test notification từ app!',
-          wakeUpScreen: true,
-          category: NotificationCategory.Reminder,
-        ),
-      );
-      print('🔔 NotificationService: Test notification thành công');
-    } catch (e) {
-      print('🔔 NotificationService: Lỗi test notification: $e');
-    }
-  }
 
-  Future<void> showTestScheduledNotification() async {
-    print('🔔 NotificationService: Lập lịch test notification trong 10 giây (awesome)');
-    try {
-      final DateTime fireDate = DateTime.now().add(const Duration(seconds: 10));
-      await AwesomeNotifications().createNotification(
-        content: NotificationContent(
-          id: 998,
-          channelKey: 'test_scheduled_channel',
-          title: 'Test Scheduled Notification',
-          body: 'Đây là test notification được lập lịch!',
-          category: NotificationCategory.Reminder,
-          wakeUpScreen: true,
-        ),
-        schedule: NotificationCalendar.fromDate(
-          date: fireDate,
-          preciseAlarm: true,
-          allowWhileIdle: true,
-        ),
-      );
-      print('🔔 NotificationService: Lập lịch test notification thành công cho ' + fireDate.toString());
-    } catch (e) {
-      print('🔔 NotificationService: Lỗi lập lịch test notification: $e');
-    }
-  }
-
-  Future<void> checkScheduledNotifications() async {
-    print('🔔 NotificationService: Kiểm tra notification đã lập lịch (awesome)...');
-    try {
-      final List<NotificationModel> pending = await AwesomeNotifications().listScheduledNotifications();
-      print('🔔 NotificationService: Có ${pending.length} notification đang chờ');
-      for (final n in pending) {
-        print('🔔 NotificationService: ID: ${n.content?.id}, Title: ${n.content?.title}');
-      }
-    } catch (e) {
-      print('🔔 NotificationService: Lỗi kiểm tra: $e');
-    }
-  }
 
   Future<void> _scheduleDaily({
     required int id,
@@ -171,6 +97,15 @@ class NotificationService {
   }) async {
     print('🔔 NotificationService: Lập lịch ID $id lúc $hour:$minute (awesome)');
     try {
+      // Tính thời gian cụ thể cho notification
+      final now = DateTime.now();
+      DateTime fireDate = DateTime(now.year, now.month, now.day, hour, minute);
+      
+      // Nếu thời gian đã qua hôm nay, đặt cho ngày mai
+      if (fireDate.isBefore(now)) {
+        fireDate = fireDate.add(const Duration(days: 1));
+      }
+      
       await AwesomeNotifications().createNotification(
         content: NotificationContent(
           id: id,
@@ -180,14 +115,11 @@ class NotificationService {
           category: NotificationCategory.Reminder,
           wakeUpScreen: true,
         ),
-        schedule: NotificationCalendar(
-          hour: hour,
-          minute: minute,
-          second: 0,
-          millisecond: 0,
-          repeats: true,
-          allowWhileIdle: true,
+        schedule: NotificationCalendar.fromDate(
+          date: fireDate,
           preciseAlarm: true,
+          allowWhileIdle: true,
+          repeats: true,
         ),
       );
       print('🔔 NotificationService: Lập lịch thành công cho ID $id');
