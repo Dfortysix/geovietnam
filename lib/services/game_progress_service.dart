@@ -37,6 +37,9 @@ class GameProgressService extends ChangeNotifier {
   static Future<GameProgress> getCurrentProgress() async {
     final userId = _currentUserId;
     
+    // Kiểm tra và reset streak nếu cần thiết
+    await checkAndResetStreakIfNeeded();
+    
     // Luôn lấy từ local storage trước
     final localProgress = await _getLocalProgress(userId);
     
@@ -275,11 +278,11 @@ class GameProgressService extends ChangeNotifier {
       if (sameAsYesterday) {
         newStreak = currentStreak + 1;
       } else if (!sameAsToday) {
-        // Không liên tiếp -> bắt đầu lại streak
-        newStreak = 1;
+        // Không chơi trong ngày -> reset về 0
+        newStreak = 0;
       } else {
         // Cùng ngày -> giữ nguyên (không tăng thêm trong ngày)
-        newStreak = currentStreak > 0 ? currentStreak : 1; // đảm bảo >=1 khi lần đầu trong ngày
+        newStreak = currentStreak;
       }
     }
     
@@ -298,6 +301,55 @@ class GameProgressService extends ChangeNotifier {
     
     // Notify listeners về thay đổi
     GameProgressService().notifyProgressChanged();
+  }
+
+  // Kiểm tra và reset streak nếu không mở khóa tỉnh trong ngày
+  static Future<void> checkAndResetStreakIfNeeded() async {
+    final userId = _currentUserId;
+    final prefs = await SharedPreferences.getInstance();
+    
+    // Tạo key riêng cho từng user
+    final userPrefix = userId ?? 'anonymous';
+    final userDailyStreakKey = '${userPrefix}_$_dailyStreakKey';
+    final userLastPlayDateKey = '${userPrefix}_$_lastPlayDateKey';
+    final userProvinceUnlockedTodayKey = '${userPrefix}_province_unlocked_today';
+    
+    // Lấy thông tin hiện tại
+    final lastPlayDateString = prefs.getString(userLastPlayDateKey);
+    final currentStreak = prefs.getInt(userDailyStreakKey) ?? 0;
+    final provinceUnlockedToday = prefs.getBool(userProvinceUnlockedTodayKey) ?? false;
+    
+    if (lastPlayDateString != null) {
+      final lastPlayDate = DateTime.tryParse(lastPlayDateString);
+      if (lastPlayDate != null) {
+        final today = DateTime.now();
+        
+        // Kiểm tra xem có phải ngày hôm nay không
+        final sameAsToday = lastPlayDate.year == today.year &&
+            lastPlayDate.month == today.month &&
+            lastPlayDate.day == today.day;
+        
+        // Nếu đã chơi hôm nay nhưng không mở khóa tỉnh nào -> reset streak về 0
+        if (sameAsToday && !provinceUnlockedToday && currentStreak > 0) {
+          print('🔄 Reset streak về 0 vì không mở khóa tỉnh trong ngày hôm nay');
+          
+          // Reset streak về 0
+          await prefs.setInt(userDailyStreakKey, 0);
+          
+          // Cập nhật cloud nếu user đã đăng nhập
+          if (userId != null) {
+            try {
+              await _userService.updateDailyStreak(userId, 0);
+            } catch (e) {
+              // Ignore cloud update error
+            }
+          }
+          
+          // Notify listeners về thay đổi
+          GameProgressService().notifyProgressChanged();
+        }
+      }
+    }
   }
 
   // Mở khóa tỉnh mới
@@ -491,6 +543,30 @@ class GameProgressService extends ChangeNotifier {
       print('User not logged in');
     }
     print('=============================');
+  }
+
+  // Test logic reset streak
+  static Future<void> testStreakReset() async {
+    final userId = _currentUserId;
+    final prefs = await SharedPreferences.getInstance();
+    
+    // Tạo key riêng cho từng user
+    final userPrefix = userId ?? 'anonymous';
+    final userDailyStreakKey = '${userPrefix}_$_dailyStreakKey';
+    final userLastPlayDateKey = '${userPrefix}_$_lastPlayDateKey';
+    final userProvinceUnlockedTodayKey = '${userPrefix}_province_unlocked_today';
+    
+    print('=== TEST STREAK RESET ===');
+    print('User ID: $userId');
+    print('Current streak: ${prefs.getInt(userDailyStreakKey) ?? 0}');
+    print('Last play date: ${prefs.getString(userLastPlayDateKey)}');
+    print('Province unlocked today: ${prefs.getBool(userProvinceUnlockedTodayKey) ?? false}');
+    
+    // Gọi logic kiểm tra
+    await checkAndResetStreakIfNeeded();
+    
+    print('After check - Current streak: ${prefs.getInt(userDailyStreakKey) ?? 0}');
+    print('==========================');
   }
 
   // Debug: In tất cả dữ liệu trong SharedPreferences
