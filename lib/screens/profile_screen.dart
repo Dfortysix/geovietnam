@@ -481,8 +481,8 @@ class _ProfileScreenState extends State<ProfileScreen> {
               Expanded(
                                  child: _buildStatCard(
                    icon: Icons.explore,
-                   title: 'Tỉnh đã khám phá',
-                   value: '${_gameProgress?.unlockedCount ?? 0}/63',
+                   title: 'Tiến độ khám phá',
+                   value: '${_gameProgress?.unlockedCount ?? 0}/${_gameProgress?.provinces.length ?? 0}',
                    color: AppTheme.secondaryYellow,
                  ),
               ),
