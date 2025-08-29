@@ -167,7 +167,7 @@ class _HomeScreenState extends State<HomeScreen> {
                           // User info if logged in
                           if (_authService.isLoggedIn)
                             Container(
-                              padding: const EdgeInsets.symmetric(horizontal: 12, vertical: 6),
+                              padding: const EdgeInsets.all(4),
                               decoration: BoxDecoration(
                                 color: Colors.white.withOpacity(0.2),
                                 borderRadius: BorderRadius.circular(20),
@@ -176,10 +176,8 @@ class _HomeScreenState extends State<HomeScreen> {
                                   width: 1,
                                 ),
                               ),
-                              child: UserDisplayWidget(
-                                avatarSize: 24,
-                                showEmail: false,
-                                showSource: false,
+                              child: const UserAvatarDisplayWidget(
+                                size: 28,
                               ),
                             ),
                         ],
