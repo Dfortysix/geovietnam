@@ -197,20 +197,23 @@ class _ProfileScreenState extends State<ProfileScreen> {
                // Thông tin người dùng nếu đã đăng nhập
                if (gamesService.isSignedIn && gamesService.currentUser != null) ...[
                  const SizedBox(height: 16),
-                 Container(
-                   padding: const EdgeInsets.all(12),
-                   decoration: BoxDecoration(
-                     color: Colors.grey[100],
-                     borderRadius: BorderRadius.circular(12),
-                     border: Border.all(
-                       color: Colors.grey[300]!,
-                       width: 1,
+                 SizedBox(
+                   width: double.infinity,
+                   child: Container(
+                     padding: const EdgeInsets.all(12),
+                     decoration: BoxDecoration(
+                       color: Colors.grey[100],
+                       borderRadius: BorderRadius.circular(12),
+                       border: Border.all(
+                         color: Colors.grey[300]!,
+                         width: 1,
+                       ),
                      ),
-                   ),
-                   child: UserDisplayWidget(
-                     avatarSize: 40,
-                     showEmail: true,
-                     showSource: false,
+                     child: const UserDisplayWidget(
+                       avatarSize: 40,
+                       showEmail: true,
+                       showSource: false,
+                     ),
                    ),
                  ),
                ],
