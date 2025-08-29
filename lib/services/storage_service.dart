@@ -23,11 +23,27 @@ class StorageService {
       final fileName = 'avatar_${userId}_${DateTime.now().millisecondsSinceEpoch}${path.extension(imageFile.path)}';
       final storageRef = _storage.ref().child('avatars/$fileName');
 
+      // Xác định contentType theo đuôi file để khớp Storage Rules
+      final ext = path.extension(imageFile.path).toLowerCase();
+      String contentType;
+      switch (ext) {
+        case '.png':
+          contentType = 'image/png';
+          break;
+        case '.webp':
+          contentType = 'image/webp';
+          break;
+        case '.jpg':
+        case '.jpeg':
+        default:
+          contentType = 'image/jpeg';
+      }
+
       // Upload file
       final uploadTask = storageRef.putFile(
         imageFile,
         SettableMetadata(
-          contentType: 'image/jpeg',
+          contentType: contentType,
           customMetadata: {
             'userId': userId,
             'uploadedAt': DateTime.now().toIso8601String(),
