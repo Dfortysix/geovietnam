@@ -444,15 +444,17 @@ class _LeaderboardScreenState extends State<LeaderboardScreen> {
                            ),
                          ),
                          const SizedBox(width: 12),
-                         const Text(
-                           '🏆 Bảng xếp hạng',
-                           style: TextStyle(
-                             fontSize: 24,
-                             fontWeight: FontWeight.bold,
-                             color: Colors.black,
+                         const Expanded(
+                           child: Text(
+                             'Bảng xếp hạng',
+                             overflow: TextOverflow.ellipsis,
+                             style: TextStyle(
+                               fontSize: 24,
+                               fontWeight: FontWeight.bold,
+                               color: Colors.black,
+                             ),
                            ),
                          ),
-                         const Spacer(),
                          IconButton(
                            onPressed: () {
                              Navigator.push(
