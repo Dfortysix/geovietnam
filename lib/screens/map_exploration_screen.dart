@@ -174,13 +174,6 @@ class _MapExplorationScreenState extends State<MapExplorationScreen> with Ticker
             },
             tooltip: 'Cài đặt',
           ),
-          // Nút mở khóa tất cả (chỉ hiển thị khi chưa mở khóa hết)
-          if (_gameProgress != null && _gameProgress!.unlockedProvincesCount < _gameProgress!.provinces.length)
-            IconButton(
-              onPressed: _unlockAllProvinces,
-              icon: const Icon(Icons.lock_open, color: AppTheme.primaryOrange),
-              tooltip: 'Mở khóa tất cả tỉnh',
-            ),
         ],
       ),
       body: Container(
