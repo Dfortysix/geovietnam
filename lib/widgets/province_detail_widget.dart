@@ -144,6 +144,26 @@ class _ProvinceDetailWidgetState extends State<ProvinceDetailWidget> {
             const SizedBox(height: 16),
           ],
 
+          // Button hiển thị Gallery
+          SizedBox(
+            width: double.infinity,
+            child: ElevatedButton.icon(
+              onPressed: () => _showFullScreenGallery(_getGalleryImages(), 0),
+              icon: const Icon(Icons.photo_library, size: 20),
+              label: const Text('Xem Gallery ảnh'),
+              style: ElevatedButton.styleFrom(
+                backgroundColor: AppTheme.primaryOrange,
+                foregroundColor: Colors.white,
+                padding: const EdgeInsets.symmetric(vertical: 12),
+                shape: RoundedRectangleBorder(
+                  borderRadius: BorderRadius.circular(12),
+                ),
+              ),
+            ),
+          ).animate().fadeIn(duration: 300.ms).slideY(begin: 0.2, end: 0),
+
+          const SizedBox(height: 16),
+
           // Sáp nhập 2025
           if (sapNhap2025 != null) ...[
             _buildInfoCard(
@@ -240,24 +260,6 @@ class _ProvinceDetailWidgetState extends State<ProvinceDetailWidget> {
             ),
             const SizedBox(height: 16),
           ],
-
-          // Button hiển thị Gallery
-          SizedBox(
-            width: double.infinity,
-            child: ElevatedButton.icon(
-              onPressed: () => _showFullScreenGallery(_getGalleryImages(), 0),
-              icon: const Icon(Icons.photo_library, size: 20),
-              label: const Text('Xem Gallery ảnh'),
-              style: ElevatedButton.styleFrom(
-                backgroundColor: AppTheme.primaryOrange,
-                foregroundColor: Colors.white,
-                padding: const EdgeInsets.symmetric(vertical: 12),
-                shape: RoundedRectangleBorder(
-                  borderRadius: BorderRadius.circular(12),
-                ),
-              ),
-            ),
-          ).animate().fadeIn(duration: 300.ms).slideY(begin: 0.2, end: 0),
         ],
       ),
     );
