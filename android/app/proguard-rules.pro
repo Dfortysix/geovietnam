@@ -36,6 +36,15 @@
 -keep class com.google.android.gms.games.** { *; }
 -keep class com.google.android.gms.auth.** { *; }
 
+# Google Play Core Library (for App Bundle)
+-keep class com.google.android.play.core.** { *; }
+-keep class com.google.android.play.core.splitcompat.** { *; }
+-keep class com.google.android.play.core.splitinstall.** { *; }
+-keep class com.google.android.play.core.tasks.** { *; }
+-keep class com.google.android.play.core.install.** { *; }
+-keep class com.google.android.play.core.review.** { *; }
+-keep class com.google.android.play.core.appupdate.** { *; }
+
 # Keep native methods
 -keepclasseswithmembernames class * {
     native <methods>;

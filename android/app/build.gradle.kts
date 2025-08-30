@@ -53,8 +53,9 @@ android {
         release {
             // Sử dụng release signing config
             signingConfig = signingConfigs.getByName("release")
-            isMinifyEnabled = true
-            proguardFiles(getDefaultProguardFile("proguard-android-optimize.txt"), "proguard-rules.pro")
+            isMinifyEnabled = false  // Tắt minification để tránh lỗi R8
+            isShrinkResources = false  // Tắt resource shrinking
+            // proguardFiles(getDefaultProguardFile("proguard-android-optimize.txt"), "proguard-rules.pro")
         }
         debug {
             // Sử dụng debug signing config
