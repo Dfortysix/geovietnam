@@ -34,11 +34,32 @@ android {
         versionName = flutter.versionName
     }
 
+    // Cấu hình signing cho cả debug và release
+    signingConfigs {
+        create("release") {
+            // Đường dẫn đến release keystore (sẽ tạo sau)
+            storeFile = file("release.keystore")
+            storePassword = "geovietnam123"
+            keyAlias = "release"
+            keyPassword = "geovietnam123"
+        }
+        // Debug keystore mặc định
+        getByName("debug") {
+            // Sử dụng debug keystore mặc định của Android
+        }
+    }
+
     buildTypes {
         release {
-            // TODO: Add your own signing config for the release build.
-            // Signing with the debug keys for now, so `flutter run --release` works.
+            // Sử dụng release signing config
+            signingConfig = signingConfigs.getByName("release")
+            isMinifyEnabled = true
+            proguardFiles(getDefaultProguardFile("proguard-android-optimize.txt"), "proguard-rules.pro")
+        }
+        debug {
+            // Sử dụng debug signing config
             signingConfig = signingConfigs.getByName("debug")
+            isDebuggable = true
         }
     }
 }
